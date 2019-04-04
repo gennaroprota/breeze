@@ -29,7 +29,9 @@ namespace breath {
 //!     will not optimize the function out); useful to zeroize passwords
 //!     and other sensitive data.
 //!
-//!     Note that a convenience overload for built-in arrays is provided.
+//!     Note that a convenience overload for built-in arrays is
+//!     provided. For technical reasons, this overload is guaranteed to
+//!     work for arrays of built-in types only.
 //!
 //!     Many thanks go to David R Tribble and Douglas A. Gwyn who clarified
 //!     my doubts on comp.std.c; see the thread starting with
