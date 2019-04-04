@@ -60,9 +60,8 @@ rotate_left( word_type w )
 
 void sha1_engine::init_state( state_type & state )
 {
-    //
-    // Reference: section 5.3.1
-    //
+    //      Reference: section 5.3.1
+    // ---------------------------------------------------------------------
     state[ 0 ] = 0x67452301 ;
     state[ 1 ] = 0xefcdab89 ;
     state[ 2 ] = 0x98badcfe ;
@@ -71,15 +70,16 @@ void sha1_engine::init_state( state_type & state )
 }
 
 //
-// Block processing - reference: section 6.1.2
-//
+//      Block processing - reference: section 6.1.2
+// -------------------------------------------------------------------------
 void sha1_engine::process_block( state_type & state
                                , const block_type & block )
 {
     using sha_common_private::ch ;
     using sha_common_private::maj ;
 
-    // expand the message-block to an 80-word "schedule"
+    //      Expand the message-block to an 80-word "schedule"
+    // ---------------------------------------------------------------------
     int const           sz( 80 ) ;
     typedef word_type   schedule_type[ sz ] ;
     sensitive_buffer< schedule_type > sched(

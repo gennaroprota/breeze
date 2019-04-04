@@ -31,22 +31,23 @@ md5_rotate_left( word_type w )
     return ( w << amount ) | ( w >> ( md5_engine::word_width - amount ) ) ;
 }
 
-// Auxiliary functions described in 3.4 Step 4
+//      Auxiliary functions described in 3.4 Step 4
 //
-// Except for the parity function there seems to be no significant name we can
-// give them. Initially these were standalone inline functions (as opposed to
-// class template members), e.g.:
+//      Except for the parity function there seems to be no significant
+//      name we can give them. Initially these were standalone inline
+//      functions (as opposed to class template members), e.g.:
 //
-//      inline word aux_f( word x, word y, word z )
-//      {
-//        return x & y | ~x & z ;
-//      }
-//      inline word aux_g ...
-//      inline word aux_h ...
+//        inline word aux_f( word x, word y, word z )
+//        {
+//            return x & y | ~x & z ;
+//        }
+//        inline word aux_g() ...
+//        inline word aux_h() ...
 //
-// but few compilers seemed to be able to inline them when an array was formed
-// with their addresses, despite the inlining being proved beneficial. That's
-// why we "index" by template parameter.
+//      but few compilers seemed to be able to inline them when an array
+//      was formed with their addresses, despite the inlining being
+//      proved beneficial. That's why we "index" by template parameter.
+// -------------------------------------------------------------------------
 template< int round > struct aux_f
 {
     static word_type    f( word_type, word_type, word_type ) ;
