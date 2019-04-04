@@ -46,3 +46,9 @@
 *.PDF  diff=astextplain
 *.rtf  diff=astextplain
 *.RTF  diff=astextplain
+
+# These files need Unix line-endings for the init_file tool to work
+# correctly
+/tool/init_file/language_traits.txt   eol=lf
+/tool/init_file/license_reference.txt eol=lf
+/tool/init_file/pvs_studio_text.txt   eol=lf
