@@ -33,7 +33,7 @@ main()
         { 5,   255,   251 },
         { 1,   255,   255 },
         { 0,   255,   255 }
-    
+
     };
     for ( auto elem : values ) {
         DO_TEST( breath::subrange_max( elem.m, elem.x ) == elem.result ) ;
