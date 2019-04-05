@@ -1,5 +1,5 @@
 # =========================================================================
-#                    Copyright 2007-2018 Gennaro Prota
+#                    Copyright 2007-2019 Gennaro Prota
 #                       Copyright 2004 James Kanze
 #
 #                 Licensed under the 3-Clause BSD License.
@@ -97,7 +97,8 @@ cpp_basic_options =  -std=c++14                      \
                      -U _GNU_SOURCE                  \
                      -D _GLIBCXX_USE_CXX11_ABI=1
 
-cpp_basic_options += -pipe                           \
+cpp_basic_options += -flto-odr-type-merging          \
+                     -pipe                           \
                      -Wabi                           \
                      -Warray-bounds=2                \
                      -Wcast-align                    \
