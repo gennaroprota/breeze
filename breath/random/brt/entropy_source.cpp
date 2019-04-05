@@ -11,7 +11,6 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
-
 #include "breath/random/entropy_source.hpp"
 #include "breath/porting/dependent_code.hpp"
 #include BREATH_DEPENDENT_CODE( system, entropy_source.cpp )
