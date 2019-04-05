@@ -7,37 +7,37 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Metafunction yielding the \e precision of a type.
+//!     \brief Metafunction yielding the number of \e padding bits of a
+//!            type.
 // -------------------------------------------------------------------------
 
-#ifndef BREATH_GUARD_crv8sfpsGwWru7Bdt9WKSehiAw6f4zgz
-#define BREATH_GUARD_crv8sfpsGwWru7Bdt9WKSehiAw6f4zgz
+#ifndef BREATH_GUARD_t29jfKYZ9OI7vFPLyiSoFtL9Jw9Lntnr
+#define BREATH_GUARD_t29jfKYZ9OI7vFPLyiSoFtL9Jw9Lntnr
 
-#include "breath/meta/constant.hpp"
-
-#include <limits>
+#include "breath/meta/width.hpp"
 
 namespace breath {
 namespace meta {
 
-//      precision:
-//      ==========
+//      padding:
+//      ========
 //
-//!     Metafunction yielding the \e precision of \c T, i.e. the number
-//!     of bits it uses to represent values, excluding any sign and
-//!     padding bits.
+//!     Metafunction yielding the number of \e padding bits of \c T.
 //!
 //!     This is a meta::constant, with \c value_type \c int.
 //!
-//!     See also: meta::width and meta::padding.
+//!     See also: meta::precision and meta::width.
 //!
-//!     \par Type requirements:
+//!     \par Type requirements
 //!         \c T shall be an integral type or a cv-qualified version
 //!         thereof.
 // -------------------------------------------------------------------------
 template< typename T >
-class precision
-    : public constant< int, std::numeric_limits< T >::digits >
+class padding
+    : public constant< int,
+                       width< unsigned char >::value * sizeof( T ) -
+                       width< T             >::value
+                     >
 {
 } ;
 

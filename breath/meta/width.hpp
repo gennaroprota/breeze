@@ -30,7 +30,7 @@ namespace meta {
 //!
 //!     This is a meta::constant, with \c value_type \c int.
 //!
-//!     See also: meta::precision.
+//!     See also: meta::precision and meta::padding.
 //!
 //!     \par Type requirements
 //!         \c T shall be an integral type or a cv-qualified version
