@@ -19,7 +19,7 @@
 namespace breath {
 
 class test_exception
-    : public virtual breath::exception
+    :   public virtual breath::exception
 {
 public:
                         test_exception( char const * file_name,

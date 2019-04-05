@@ -128,7 +128,8 @@ private:
 //!     \brief  The type of exceptions thrown by \c entropy_source's
 //!             members.
 // -------------------------------------------------------------------------
-class entropy_source::exception : public virtual breath::exception
+class entropy_source::exception
+    :   public virtual breath::exception
 {
 public:
     //! \cond

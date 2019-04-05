@@ -57,9 +57,9 @@ private:
 // -------------------------------------------------------------------------
 template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_null_stream
-    : private basic_null_stream_buffer< Ch, Traits >,
-      public  std::basic_ostream< Ch, Traits >,
-      public  std::basic_istream< Ch, Traits >
+    :   private basic_null_stream_buffer< Ch, Traits >,
+        public  std::basic_ostream< Ch, Traits >,
+        public  std::basic_istream< Ch, Traits >
 {
 public:
                         basic_null_stream() ;

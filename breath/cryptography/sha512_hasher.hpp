@@ -36,7 +36,7 @@ typedef digest< sha512_hasher >
 //!     SHA-512 policy class for merkle_damgard_machine.
 // -------------------------------------------------------------------------
 class sha512_engine
-    : public merkle_damgard_engine< 512, 1024, big_endian_policy, 64 >
+    :   public merkle_damgard_engine< 512, 1024, big_endian_policy, 64 >
 {
 public:
     static void         init_state( state_type & state ) ;

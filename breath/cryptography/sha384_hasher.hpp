@@ -29,7 +29,7 @@ typedef digest< sha384_hasher >
                     sha384_digest ;
 
 class sha384_engine
-    : public merkle_damgard_engine< 384, 1024, big_endian_policy, 64, 512 >
+    :   public merkle_damgard_engine< 384, 1024, big_endian_policy, 64, 512 >
 {
 public:
     static void         init_state( state_type & state ) ;

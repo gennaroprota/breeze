@@ -38,10 +38,10 @@ namespace meta {
 // -------------------------------------------------------------------------
 template< typename T >
 class width
-    : public select< has_sign< T >,
-                     successor< precision < T > >,
-                     precision < T >
-                   >::type
+    :   public select< has_sign< T >,
+                       successor< precision < T > >,
+                       precision < T >
+                     >::type
 {
 } ;
 

@@ -50,7 +50,7 @@ namespace breath {
 //      which neither is "higher" or "lower" than the other.
 // --------------------------------------------------------------------------
 class os_id
-    : private equality_comparison< os_id >
+    :   private equality_comparison< os_id >
 {
 private:
     typedef int     id_type ;

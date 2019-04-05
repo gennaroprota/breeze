@@ -37,7 +37,7 @@ namespace meta {
 // -------------------------------------------------------------------------
 template< typename T >
 class precision
-    : public constant< int, std::numeric_limits< T >::digits >
+    :   public constant< int, std::numeric_limits< T >::digits >
 {
 } ;
 

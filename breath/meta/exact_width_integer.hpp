@@ -80,7 +80,7 @@ public:
 // -------------------------------------------------------------------------
 template< std::size_t width >
 class exact_width_unsigned_integer
-    : public exact_width_integer< width, unsigned >
+    :   public exact_width_integer< width, unsigned >
 {
 } ;
 

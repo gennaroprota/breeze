@@ -23,7 +23,8 @@ namespace breath {
 //      console_reporter:
 //      =================
 //
-class console_reporter : public test_reporter
+class console_reporter
+    :   public test_reporter
 {
 public:
     //      Declare this explicitly to avoid Visual C++ C4626 (and

@@ -34,7 +34,7 @@ typedef digest< sha224_hasher >
 //!     SHA-224 policy class for merkle_damgard_machine.
 // -------------------------------------------------------------------------
 class sha224_engine
-    : public merkle_damgard_engine< 224, 512, big_endian_policy, 32, 256 >
+    :   public merkle_damgard_engine< 224, 512, big_endian_policy, 32, 256 >
 {
 public:
     static void         init_state( state_type & state ) ;

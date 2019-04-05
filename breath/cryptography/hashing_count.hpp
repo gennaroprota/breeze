@@ -32,7 +32,7 @@ public:
 } ;
 
 class hashing_count::exception
-    : public virtual breath::exception
+    :   public virtual breath::exception
 {
 public:
     explicit            exception( char const * what_message ) ;

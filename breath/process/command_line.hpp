@@ -82,7 +82,7 @@ private:
 } ;
 
 class command_line_error
-    : public virtual breath::exception
+    :   public virtual breath::exception
 {
 public:
     explicit            command_line_error( std::string const & msg ) ;

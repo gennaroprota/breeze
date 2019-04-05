@@ -20,10 +20,11 @@ namespace meta {
 //!     value equal to <code>T::value - 1</code>.
 // ---------------------------------------------------------------------------
 template< typename T >
-class predecessor : public constant<
-                                typename T::value_type
-                                ,        T::value - 1
-                            >
+class predecessor
+    :   public constant<
+                        typename T::value_type
+                        ,        T::value - 1
+                       >
 {
 } ;
 

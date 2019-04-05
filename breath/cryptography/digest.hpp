@@ -26,7 +26,7 @@ namespace breath {
 // -------------------------------------------------------------------------
 template< typename Hasher >
 class digest
-    : private equality_comparison< digest< Hasher > >
+    :   private equality_comparison< digest< Hasher > >
 {
 public:
     typedef typename Hasher::byte_type const *

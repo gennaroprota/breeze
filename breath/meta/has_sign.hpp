@@ -31,7 +31,7 @@ class has_sign
     // template with T being an unsigned type. Of course it also
     // warns if using "!( T( -1 ) >= 0 )"
     // ---------------------------------------------------------------------
-    : public constant< bool, ! ( T( -1 ) > 0 ) >
+    :   public constant< bool, ! ( T( -1 ) > 0 ) >
 {
 } ;
 
@@ -40,7 +40,7 @@ class has_sign
 // -------------------------------------------------------------------------
 template<>
 class has_sign< bool >
-    : public constant< bool, false >
+    :   public constant< bool, false >
 {
 } ;
 

@@ -33,8 +33,8 @@ typedef digest< md5_hasher >                 md5_digest ;
 //!     The MD5 policy class for merkle_damgard_machine.
 // -------------------------------------------------------------------------
 class md5_engine
-    : public merkle_damgard_engine< 128, 512, little_endian_policy,
-                                    32, 128, hashing_count::wraps >
+    :   public merkle_damgard_engine< 128, 512, little_endian_policy,
+                                       32, 128, hashing_count::wraps >
 {
 public:
     static void         init_state( state_type & state ) ;

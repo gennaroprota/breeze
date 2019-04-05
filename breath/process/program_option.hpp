@@ -29,7 +29,8 @@ public:
 } ;
 
 template< typename T >
-class default_reader : public option_reader< T >
+class default_reader
+    :   public option_reader< T >
 {
 public:
     virtual T           operator()( std::string const & str ) const override
@@ -41,7 +42,8 @@ public:
 } ;
 
 template< typename T >
-class range_reader : public option_reader< T >
+class range_reader
+    :   public option_reader< T >
 {
 public:
                         range_reader( T const & low, T const & high )
@@ -71,7 +73,8 @@ range( T const & low, T const & high )
 }
 
 template< typename T >
-class oneof_reader : public option_reader< T >
+class oneof_reader
+    :   public option_reader< T >
 {
 public:
     virtual T           operator()( std::string const & s ) const override
@@ -237,7 +240,7 @@ public:
   };
 
 class program_option_without_value
-        : public option_base
+        :   public option_base
  {
   public:
                         program_option_without_value( const std::string &name,
@@ -263,7 +266,8 @@ class program_option_without_value
 } ;
 
 template< class T >
-class program_option_with_value : public option_base
+class program_option_with_value
+    :   public option_base
 {
 public:
     //      Declare this explicitly to avoid Visual C++ C4626 (and

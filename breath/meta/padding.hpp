@@ -34,10 +34,10 @@ namespace meta {
 // -------------------------------------------------------------------------
 template< typename T >
 class padding
-    : public constant< int,
-                       width< unsigned char >::value * sizeof( T ) -
-                       width< T             >::value
-                     >
+    :   public constant< int,
+                         width< unsigned char >::value * sizeof( T ) -
+                         width< T             >::value
+                       >
 {
 } ;
 

@@ -25,7 +25,8 @@ namespace breath {
 //!     from \c std::exception. With respect to the latter, it manages
 //!     a custom what() message.
 // -------------------------------------------------------------------------
-class exception : public virtual std::exception
+class exception
+    :   public virtual std::exception
 {
 public:
     //!     Constructs an object giving a default what() message.

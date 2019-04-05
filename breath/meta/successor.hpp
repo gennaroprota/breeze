@@ -21,10 +21,11 @@ namespace breath {
 namespace meta {
 
 template< typename T >
-class successor : public constant<
-                              typename T::value_type
-                              ,        T::value + 1
-                          >
+class successor
+    :   public constant<
+                        typename T::value_type
+                        ,        T::value + 1
+                       >
 {
 } ;
 
