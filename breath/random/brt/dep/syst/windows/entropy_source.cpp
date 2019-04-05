@@ -47,7 +47,7 @@ public:
 
 private:
     bool                acquire( DWORD flags = 0 ) ;
-    bool                is_done() const noexcept ;          // true == can no longer use this object (gps BETTER name?)
+    bool                is_released() const noexcept ;
     void                to_buffer( unsigned char * buffer, DWORD count ) ;
 } ;
 
@@ -89,7 +89,7 @@ entropy_source::impl::acquire( DWORD flags )
 }
 
 bool
-entropy_source::impl::is_done() const noexcept
+entropy_source::impl::is_released() const noexcept
 {
     return ! m_handle_is_valid ;
 }
@@ -101,7 +101,7 @@ bool
 entropy_source::impl::release() noexcept
 {
     bool                success = false ;
-    if ( ! is_done() ) {
+    if ( ! is_released() ) {
         success = ::CryptReleaseContext( m_provider_handle,
                                          0 // this is reserved (future use) and must be zero
                                        ) != 0 ;
@@ -123,7 +123,7 @@ entropy_source::impl::to_buffer( unsigned char * buffer, DWORD count )
 entropy_source::result_type
 entropy_source::impl::next()
 {
-    BREATH_ASSERT( ! is_done() ) ;
+    BREATH_ASSERT( ! is_released() ) ;
 
     unsigned char       c ;
     to_buffer( &c, sizeof c ) ;
