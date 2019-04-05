@@ -28,9 +28,9 @@ public:
     // ---------------------------------------------------------------------
     void                operator=( test_descriptor const & ) = delete ;
 
-    //      Declare this explicitly to avoid a Clang -Wdeprecated
-    //      warning (the implicit definition of the copy constructor is
-    //      deprecated because of the user-declared copy assignment).
+    //      Declare this explicitly, since, due to the user-declared
+    //      copy-assignment above, the implicit definition of the copy
+    //      constructor as defaulted is deprecated.
     // ---------------------------------------------------------------------
                         test_descriptor( test_descriptor const & ) = default ;
 
