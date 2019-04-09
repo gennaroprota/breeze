@@ -26,7 +26,7 @@ void
 single_check( std::string const & first, std::string const & second,
               std::size_t distance )
 {
-    BREATH_CHECK( breath::damerau_levenshtein_distance( first, second ) 
+    BREATH_CHECK( breath::damerau_levenshtein_distance( first, second )
                                                                 == distance ) ;
     BREATH_CHECK( breath::damerau_levenshtein_distance( second, first )
                                                                 == distance ) ;

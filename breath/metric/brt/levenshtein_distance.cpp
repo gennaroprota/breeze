@@ -23,7 +23,7 @@ levenshtein_distance( std::string const & first, std::string const & second )
 {
     std::size_t const   len1 = first.length() ;
     std::size_t const   len2 = second.length() ;
- 
+
     std::vector< std::size_t > costs( len2 + 1 ) ;
     std::iota( costs.begin(), costs.end(), 0 ) ;
 
