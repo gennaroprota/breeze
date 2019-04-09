@@ -47,6 +47,12 @@ cpp_exit( int exit_code )
     std::exit( exit_code ) ;
 }
 
+bool
+has_program_name( int argc, char const * const * argv )
+{
+    return argc > 0 && argv[ 0 ][ 0 ] != '\0' ;
+}
+
 }
 
 
@@ -83,7 +89,7 @@ program::set_name( int argc, char const * const * argv )
 {
     BREATH_ASSERT( ! m_program_name.is_valid() ) ;
 
-    if ( argc > 0 && argv[ 0 ][ 0 ] != '\0' ) {
+    if ( has_program_name( argc, argv ) ) {
         do_set_name( argv[ 0 ] ) ;
     }
 }
@@ -95,7 +101,7 @@ program::set_name( int argc, char const * const * argv,
     BREATH_ASSERT( ! m_program_name.is_valid() ) ;
     BREATH_ASSERT( ! fallback.empty() ) ;
 
-    std::string const     name = ( argc > 0 && argv[ 0 ][ 0 ] != '\0' )
+    std::string const     name = has_program_name( argc, argv )
                                     ? argv[ 0 ]
                                     : fallback
                                     ;
