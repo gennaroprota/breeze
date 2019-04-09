@@ -11,7 +11,6 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
-
 #include "breath/text/set_of_chars.hpp"
 #include <algorithm>
 #include <climits>
