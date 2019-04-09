@@ -101,11 +101,9 @@ program::set_name( int argc, char const * const * argv,
     BREATH_ASSERT( ! m_program_name.is_valid() ) ;
     BREATH_ASSERT( ! fallback.empty() ) ;
 
-    std::string const     name = has_program_name( argc, argv )
-                                    ? argv[ 0 ]
-                                    : fallback
-                                    ;
-    do_set_name( name ) ;
+    do_set_name( has_program_name( argc, argv )
+                    ? argv[ 0 ]
+                    : fallback ) ;
 }
 
 void
