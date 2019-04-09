@@ -26,7 +26,7 @@
 namespace {
 
 //      NOTE:
-//          keep in sync with enum gravity, in the class definition and
+//          keep in sync with enum gravity in the class definition and
 //          the switch-case in declare_error().
 // ----------------------------------------------------------------------
 int const           exit_codes[] = {
