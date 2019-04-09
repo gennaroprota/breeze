@@ -55,7 +55,8 @@ entropy_source::impl::impl()
     // note: m_handle_is_valid intentionally not initialized here --see below
 {
     if ( ! acquire() ) {
-        entropy_source::exception::raise( "cannot acquire the HCRYPTPROV handle" ) ;
+        entropy_source::exception::raise( "cannot acquire the HCRYPTPROV handle"
+                                        ) ;
     }
     //      Note that this member is intentionally not initialized in
     //      the ctor initializer list; in case of exceptions there is
@@ -103,7 +104,8 @@ entropy_source::impl::release() noexcept
     bool                success = false ;
     if ( ! is_released() ) {
         success = ::CryptReleaseContext( m_provider_handle,
-                                         0 // this is reserved (future use) and must be zero
+                                         0 // this is reserved (future use) and
+                                           // must be zero
                                        ) != 0 ;
         m_handle_is_valid = ! success ;
     }

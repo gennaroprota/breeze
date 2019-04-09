@@ -20,9 +20,11 @@ namespace {
 
 void do_tests()
 {
-    BREATH_CHECK( breath::remove_from_end( "hello world", "world") == "hello " ) ;
+    BREATH_CHECK( breath::remove_from_end( "hello world", "world") ==
+                                                                    "hello " ) ;
     BREATH_CHECK( breath::remove_from_end( "dummy", "" ) == "dummy" ) ;
-    BREATH_CHECK( breath::remove_from_end( "nel mezzo del", "cammin" ) == "nel mezzo del") ;
+    BREATH_CHECK( breath::remove_from_end( "nel mezzo del", "cammin" ) ==
+                                                              "nel mezzo del") ;
     BREATH_CHECK( breath::remove_from_end( "foo", "foo") == "" ) ;
     BREATH_CHECK( breath::remove_from_end( "foo", "xfoo") == "foo" ) ;
 }
