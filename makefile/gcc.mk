@@ -134,6 +134,7 @@ cpp_basic_options += -flto-odr-type-merging          \
                      -Wsync-nand                     \
                      -Wundef                         \
                      -Wunreachable-code              \
+                     -Wunused-const-variable         \
                      -Wunused-macros                 \
                      -Wzero-as-null-pointer-constant
 
