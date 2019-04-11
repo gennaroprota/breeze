@@ -63,7 +63,6 @@
 #       ---
 #       note1 This will replace -Wcast-align
 # ----------------------------------------------------------------------------
-
 minimum_gcc_version := 6.4.0
 
 #       Note:
