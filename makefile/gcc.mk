@@ -81,8 +81,8 @@ lowest_version := $(shell                                            \
   )
 
 ifneq "$(lowest_version)" "$(minimum_gcc_version)"
-    $(error Your GCC version is $(actual_gcc_version) but the minimum supported \
-    version is $(minimum_gcc_version))
+    $(error Your GCC version is $(actual_gcc_version) but the minimum \
+    supported version is $(minimum_gcc_version))
 endif
 
 #       KEEP in sync! (See above.)
