@@ -93,6 +93,7 @@ cpp_basic_options =  -std=c++14                      \
                      -Wextra                         \
                      -pedantic                       \
                      -Werror                         \
+                     -fuse-cxa-atexit                \
                      -D _POSIX_C_SOURCE=200112L      \
                      -U _GNU_SOURCE                  \
                      -D _GLIBCXX_USE_CXX11_ABI=1
