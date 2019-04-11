@@ -14,6 +14,7 @@
 #include "breath/conversion/roman.hpp"
 #include "breath/environment/find_environment_string.hpp"
 #include "breath/testing/testing.hpp"
+#include "breath/text/to_string.hpp"
 
 #include <fstream>
 #include <string>
@@ -44,9 +45,8 @@ check()
         std::string         rep ;
         is >> rep ;
 
-        std::ostringstream  os ;
-        os << breath::roman( n ) ;
-        BREATH_CHECK( rep == os.str() ) ;
+        std::string const   s = breath::to_string( breath::roman( n ) ) ;
+        BREATH_CHECK( rep == s ) ;
     } while ( n != max_roman ) ;
 }
 
