@@ -33,6 +33,14 @@
 #           we can be sure. Thus I give up using /Za, for any source
 #           file.
 #
+#           Visual C++ 2017 has a more useful conformance switch:
+#           /permissive-, which is usable with the Microsoft headers,
+#           too, so can be enabled globally. We are using it for 2017
+#           only, and we'll enable it unconditionally when it will be
+#           reasonable to require Visual Studio 2017. Note that it
+#           implies /Zc:strictStrings and /Zc:rvalueCast, so those two
+#           will be removed.
+#
 #       /analyze [not used]:
 #
 #           I'd love to use it, but it's giving the following apparently
@@ -94,7 +102,8 @@ cpp_basic_options += /wd4365 /wd4514 /wd4571   \
                      /wd4668 /wd4710 /wd4820
 
 #      For Visual C++ 2017, disable these, most of which arise in
-#      standard headers. But enable /permissive-.
+#      standard headers. But enable /permissive- (TODO: about the
+#      latter, keep the comment above up-to-date).
 # ----------------------------------------------------------------------------
 ifeq "$(actual_msvc_version)" "19.15.26726"
     cpp_basic_options += /wd4625 /wd4626 /wd4774        \
