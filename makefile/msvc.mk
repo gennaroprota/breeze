@@ -93,6 +93,13 @@ cpp_basic_options = /std:c++14                 \
 cpp_basic_options += /wd4365 /wd4514 /wd4571   \
                      /wd4668 /wd4710 /wd4820
 
+#      For Visual C++ 2017, disable these, most of which arise in
+#      standard headers. But enable /permissive-.
+# ----------------------------------------------------------------------------
+ifeq "$(actual_msvc_version)" "19.15.26726"
+    cpp_basic_options += /wd4625 /wd4626 /wd4774        \
+                         /wd5026 /wd5027 /wd5045 /permissive-
+endif
 
 
 include_switch = /I
