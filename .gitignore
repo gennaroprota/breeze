@@ -1,6 +1,9 @@
 # Generic backup files
 *.bak
 
+# Generic log files (includes those of Visual C++)
+*.log
+
 # Make dependency files
 *.d
 
