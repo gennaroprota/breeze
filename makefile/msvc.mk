@@ -55,7 +55,7 @@ cygwin_root = 'C:/cygwin64'
 
 minimum_msvc_version := 19.00.24215.1
 actual_msvc_version := $(shell cl 2>&1 | head -1 | grep -E -o \
-                               "[1-9][0-9]*\.[0-9]+\.[0-9]+\.[0-9]+")
+                               "[1-9][0-9]*\.[0-9]+\.[0-9]+\.?[0-9]*")
 
 lowest_version := $(shell                                                \
   printf '%s\n%s\n' $(minimum_msvc_version) $(actual_msvc_version)  |    \
