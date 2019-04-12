@@ -48,6 +48,26 @@
 #                 this).
 # ----------------------------------------------------------------------------
 
+
+#	Needed, otherwise we'll get Windows' sort, below.
+# ----------------------------------------------------------------------------
+cygwin_root = 'C:/cygwin64'
+
+minimum_msvc_version := 19.00.24215.1
+actual_msvc_version := $(shell cl 2>&1 | head -1 | grep -E -o \
+                               "[1-9][0-9]*\.[0-9]+\.[0-9]+\.[0-9]+")
+
+lowest_version := $(shell                                                \
+  printf '%s\n%s\n' $(minimum_msvc_version) $(actual_msvc_version)  |    \
+  $(cygwin_root)/bin/sort -t . -k 1,1n -k 2,2n -k 3,3n -k 4,4n | head -1 \
+  )
+
+ifneq "$(lowest_version)" "$(minimum_msvc_version)"
+    $(error You are using Visual C++ $(actual_msvc_version) but the minimum \
+            supported version is $(minimum_msvc_version))
+endif
+
+
 #       KEEP in sync! (See above.)
 # ----------------------------------------------------------------------------
 cpp_basic_options = /std:c++14                 \
