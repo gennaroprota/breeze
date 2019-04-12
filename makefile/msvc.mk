@@ -41,6 +41,13 @@
 #           implies /Zc:strictStrings and /Zc:rvalueCast, so those two
 #           will be removed.
 #
+#       /Zc:referenceBinding [not used]:
+#
+#           this disables binding rvalues to references to non-const.
+#           It's not really necessary: VC++ emits a warning at /W4 and
+#           higher and we don't admit warnings (and mutate them into
+#           errors).
+#
 #       /analyze [not used]:
 #
 #           I'd love to use it, but it's giving the following apparently
