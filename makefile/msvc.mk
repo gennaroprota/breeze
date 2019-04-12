@@ -49,7 +49,7 @@
 # ----------------------------------------------------------------------------
 
 
-#	Needed, otherwise we'll get Windows' sort, below.
+#       Needed, otherwise we'll get Windows' sort, below.
 # ----------------------------------------------------------------------------
 cygwin_root = 'C:/cygwin64'
 
