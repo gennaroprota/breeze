@@ -29,9 +29,9 @@ namespace breath {
 //!         This constexpr function supersedes meta::integer_log2, which
 //!         is declared deprecated.
 //!     \note
-//!         This function does not compile with Visual C++ 2015 (=v14)
-//!         because the compiler does not yet implement constexpr
-//!         functions in all their power.
+//!         This function does not compile with Visual C++ 2015 because
+//!         the compiler does not yet implement \c constexpr functions
+//!         as generalized in C++14.
 // -------------------------------------------------------------------------
 constexpr int       integer_log2( std::uintmax_t x ) noexcept ;
 
