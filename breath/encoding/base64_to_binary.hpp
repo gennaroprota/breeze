@@ -15,6 +15,9 @@
 
 namespace breath {
 
+//      base64_to_binary():
+//      ===================
+//
 //!     Decodes a Base64 representation.
 //!
 //!     This function conforms to RFC 3548 with one exception: it

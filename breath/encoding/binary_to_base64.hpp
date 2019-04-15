@@ -15,6 +15,9 @@
 
 namespace breath {
 
+//      binary_to_base64():
+//      ===================
+//
 //!     Converts a binary sequence to Base64. Conforms to RFC 3548,
 //!     except that it allows to line-wrap the generated Base64 output
 //!     (\c wrap_column != 0).
