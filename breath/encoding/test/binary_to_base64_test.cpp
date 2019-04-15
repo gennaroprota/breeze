@@ -21,7 +21,7 @@
 void
 check()
 {
-    //  A bunch of known base64 encodings. Some from RFC 3548, some
+    //  A bunch of known Base64 encodings. Some from RFC 3548, some
     //  from RFC 4648 and some verified with:
     //      <https://www.base64encode.org/>.
     //  The latter is not an authoritative reference but I wanted some

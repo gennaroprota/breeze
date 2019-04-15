@@ -15,7 +15,7 @@
 
 namespace breath {
 
-//!     Decodes a base64 representation.
+//!     Decodes a Base64 representation.
 //!
 //!     This function conforms to RFC 3548 with one exception: it
 //!     allows \e newlines to appear anywhere in the input.
@@ -24,7 +24,7 @@ namespace breath {
 //!         A \c breath::exception on any invalid input character.
 //!
 //!     \param begin
-//!         Iterator to the first element of the input (i.e. base64)
+//!         Iterator to the first element of the input (i.e. Base64)
 //!         sequence.
 //!
 //!     \param end

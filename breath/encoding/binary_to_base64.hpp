@@ -15,8 +15,8 @@
 
 namespace breath {
 
-//!     Converts a binary sequence to base64. Conforms to RFC 3548,
-//!     except that it allows to line-wrap the generated base64 output
+//!     Converts a binary sequence to Base64. Conforms to RFC 3548,
+//!     except that it allows to line-wrap the generated Base64 output
 //!     (\c wrap_column != 0).
 //!
 //!     \pre
@@ -29,7 +29,7 @@ namespace breath {
 //!         One-past-the-end iterator in the binary sequence.
 //!
 //!     \param out
-//!         Iterator to the first element of the base64 output.
+//!         Iterator to the first element of the Base64 output.
 //!
 //!     \param wrap_column
 //!         Column where line-wrapping must occur in the generated

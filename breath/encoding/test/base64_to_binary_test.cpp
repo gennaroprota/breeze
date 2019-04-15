@@ -28,7 +28,7 @@ check_valid()
     //  first the vectors here contain some newlines too, in order
     //  to check that the decoding function ignores them; and second
     //  because the two arrays might diverge in the future in order
-    //  to accommodate particular tests for the base64->binary
+    //  to accommodate particular tests for the Base64->binary
     //  conversion.
     //  ----------------------------------------------------------------
     struct
