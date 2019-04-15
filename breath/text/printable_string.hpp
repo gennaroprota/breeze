@@ -35,7 +35,7 @@ namespace breath {
 //!     <code>std::ceil( CHAR_ BIT / 4.0 )</code> (they are left-padded
 //!     with zeroes); note that this is different from character and
 //!     string literals, where there's no limit to the number of
-//!     hexadecimal digits. Thus, to read a printable_string
+//!     hexadecimal digits. Thus, to read a \c %printable_string
 //!     unambiguously all that is needed is to know the value of \c
 //!     CHAR_BIT on the source machine.
 //!
