@@ -379,7 +379,6 @@
     <ClCompile Include="..\..\breath\process\brt\child_process.cpp" />
     <ClCompile Include="..\..\breath\process\brt\command_line.cpp" />
     <ClCompile Include="..\..\breath\process\brt\current_directory.cpp" />
-    <ClCompile Include="..\..\breath\process\brt\dep\syst\windows\win32_process.cpp" />
     <ClCompile Include="..\..\breath\process\brt\exit_code.cpp" />
     <ClCompile Include="..\..\breath\process\brt\find_executable_in_path.cpp" />
     <ClCompile Include="..\..\breath\process\brt\process.cpp" />
@@ -640,7 +639,6 @@
     <ClInclude Include="..\..\breath\process\program.hpp" />
     <ClInclude Include="..\..\breath\process\program_option.hpp" />
     <ClInclude Include="..\..\breath\process\set_current_directory.hpp" />
-    <ClInclude Include="..\..\breath\process\win32_process.hpp" />
     <ClInclude Include="..\..\breath\random\entropy_source.hpp" />
     <ClInclude Include="..\..\breath\random\subrange_adaptor.hpp" />
     <ClInclude Include="..\..\breath\random\subrange_max.hpp" />
