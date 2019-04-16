@@ -1,11 +1,11 @@
-# =========================================================================
-#                    Copyright 2006-2013 Gennaro Prota
-#                       Copyright 2000 James Kanze
+# ============================================================================
+#                      Copyright 2006-2013 Gennaro Prota
+#                         Copyright 2000 James Kanze
 #
-#                 Licensed under the 3-Clause BSD License.
-#            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
-#             <https://opensource.org/licenses/BSD-3-Clause>.)
-# _________________________________________________________________________
+#                   Licensed under the 3-Clause BSD License.
+#              (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+#               <https://opensource.org/licenses/BSD-3-Clause>.)
+# ____________________________________________________________________________
 
 
 # This file assumes the following variables are defined:

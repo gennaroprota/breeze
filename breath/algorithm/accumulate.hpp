@@ -1,9 +1,9 @@
 // ===========================================================================
-//                    Copyright 2006-2011 Gennaro Prota
+//                     Copyright 2006-2011 Gennaro Prota
 //
-//                 Licensed under the 3-Clause BSD License.
-//            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
-//             <https://opensource.org/licenses/BSD-3-Clause>.)
+//                  Licensed under the 3-Clause BSD License.
+//             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 //
 //!     \file

@@ -1,10 +1,10 @@
-// =========================================================================
-//                    Copyright 2016-2017 Gennaro Prota
+// ===========================================================================
+//                     Copyright 2016-2017 Gennaro Prota
 //
-//                 Licensed under the 3-Clause BSD License.
-//            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
-//             <https://opensource.org/licenses/BSD-3-Clause>.)
-// _________________________________________________________________________
+//                  Licensed under the 3-Clause BSD License.
+//             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>.)
+// ___________________________________________________________________________
 
 #include "breath/diagnostics/exception.hpp"
 #include "breath/type_identification/readable_type_name.hpp"

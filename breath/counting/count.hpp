@@ -1,10 +1,10 @@
-// =========================================================================
-//                       Copyright 2007 Gennaro Prota
+// ===========================================================================
+//                        Copyright 2007 Gennaro Prota
 //
-//                 Licensed under the 3-Clause BSD License.
-//            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
-//             <https://opensource.org/licenses/BSD-3-Clause>.)
-// _________________________________________________________________________
+//                  Licensed under the 3-Clause BSD License.
+//             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>.)
+// ___________________________________________________________________________
 //
 //!     \file
 //!     \brief Arrays and containers element counter.

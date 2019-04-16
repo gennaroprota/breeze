@@ -1,11 +1,11 @@
 #! /bin/sh --
-# =========================================================================
-#                       Copyright 2013 Gennaro Prota
+# ============================================================================
+#                         Copyright 2013 Gennaro Prota
 #
-#                 Licensed under the 3-Clause BSD License.
-#            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
-#             <https://opensource.org/licenses/BSD-3-Clause>.)
-# _________________________________________________________________________
+#                   Licensed under the 3-Clause BSD License.
+#              (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+#               <https://opensource.org/licenses/BSD-3-Clause>.)
+# ____________________________________________________________________________
 #
 #       NOTE:
 #           this isn't meant to be used on its own; it's just invoked by

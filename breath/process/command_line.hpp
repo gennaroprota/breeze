@@ -1,11 +1,11 @@
-// =========================================================================
-//                       Copyright 2017 Gennaro Prota
-//                      Copyright 2009 Hideyuki Tanaka
+// ===========================================================================
+//                        Copyright 2017 Gennaro Prota
+//                       Copyright 2009 Hideyuki Tanaka
 //
-//                 Licensed under the 3-Clause BSD License.
-//            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
-//             <https://opensource.org/licenses/BSD-3-Clause>.)
-// _________________________________________________________________________
+//                  Licensed under the 3-Clause BSD License.
+//             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>.)
+// ___________________________________________________________________________
 
 #ifndef BREATH_GUARD_wv85pwyBmJzlhg6z02PPsgOP4CY3kdBn
 #define BREATH_GUARD_wv85pwyBmJzlhg6z02PPsgOP4CY3kdBn

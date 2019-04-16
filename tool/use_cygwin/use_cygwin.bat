@@ -1,11 +1,11 @@
 @echo off
-REM =========================================================================
-REM                       Copyright 2013 Gennaro Prota
+REM ==========================================================================
+REM                        Copyright 2013 Gennaro Prota
 REM
-REM                 Licensed under the 3-Clause BSD License.
-REM            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
-REM             <https://opensource.org/licenses/BSD-3-Clause>.)
-REM _________________________________________________________________________
+REM                  Licensed under the 3-Clause BSD License.
+REM             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+REM              <https://opensource.org/licenses/BSD-3-Clause>.)
+REM __________________________________________________________________________
 REM
 REM     A quick tool to invoke before compiling with Cygwin, on
 REM     Windows.

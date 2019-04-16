@@ -1,11 +1,11 @@
 #! /bin/sh --
-# =========================================================================
-#                    Copyright 2007-2008 Gennaro Prota
+# ============================================================================
+#                      Copyright 2007-2008 Gennaro Prota
 #
-#                 Licensed under the 3-Clause BSD License.
-#            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
-#             <https://opensource.org/licenses/BSD-3-Clause>.)
-# _________________________________________________________________________
+#                   Licensed under the 3-Clause BSD License.
+#              (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+#               <https://opensource.org/licenses/BSD-3-Clause>.)
+# ____________________________________________________________________________
 #
 #       init_file.sh:
 #       =============
@@ -75,7 +75,6 @@ dump()
     #
     #
     prefix="$prefix"                        \
-    min_prefix_pad=5                        \
     width=` get_line_width `                \
     comment_pattern="$comment_pattern"      \
     alignment="$2"      awk -f "$BREATH_ROOT/tool/prefixed_dump.awk" "$1"

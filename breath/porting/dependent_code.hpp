@@ -1,10 +1,10 @@
-// =========================================================================
-//                    Copyright 2008-2013 Gennaro Prota
+// ===========================================================================
+//                     Copyright 2008-2013 Gennaro Prota
 //
-//                 Licensed under the 3-Clause BSD License.
-//            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
-//             <https://opensource.org/licenses/BSD-3-Clause>.)
-// _________________________________________________________________________
+//                  Licensed under the 3-Clause BSD License.
+//             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>.)
+// ___________________________________________________________________________
 //
 //      This is the file which is internally included every time we need
 //      to select code according to one or more of the configuration

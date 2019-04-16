@@ -1,11 +1,11 @@
 #! /bin/awk -f
-# =========================================================================
-#                       Copyright 2008 Gennaro Prota
+# ============================================================================
+#                         Copyright 2008 Gennaro Prota
 #
-#                 Licensed under the 3-Clause BSD License.
-#            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
-#             <https://opensource.org/licenses/BSD-3-Clause>.)
-# _________________________________________________________________________
+#                   Licensed under the 3-Clause BSD License.
+#              (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+#               <https://opensource.org/licenses/BSD-3-Clause>.)
+# ____________________________________________________________________________
 #
 #       Arguments:
 #       ==========
@@ -18,16 +18,9 @@
 #       * prefix
 #           A string to be prefixed to every line of the input; can be
 #           empty
-#       * min_prefix_pad
-#           A non-negative integer specifying the minimum character
-#           length of each line prefix: if the prefix is shorter
-#           than min_prefix_pad, spaces are added at the right;
-#           otherwise the prefix and exactly one space after it are
-#           output (e.g. min_prefix_pad=3 -> "//  " or "rem ")
 #       * width
-#           An integer >= min_prefix_pad, (gps) integer giving the
-#           maximum length in characters of the whole output line
-#           (including prefix)
+#           An integer > length( prefix ), giving the maximum length in
+#           characters of the whole output line (including prefix)
 #       * comment_pattern
 #           An ERE. Input lines matching this regular expression are
 #           considered "comments": they yield no corresponding output
@@ -50,11 +43,8 @@ function centered( text, room )
 BEGIN {
     alignment =       ENVIRON[ "alignment" ]
     prefix =          ENVIRON[ "prefix" ]
-    min_prefix_pad =  ENVIRON[ "min_prefix_pad" ]
     width =           ENVIRON[ "width" ]
     comment_pattern = ENVIRON[ "comment_pattern" ]
-
-    prefix_pad = max( min_prefix_pad, length( prefix ) + 1 )
 }
 
 $0 ~ comment_pattern {
@@ -67,13 +57,9 @@ length() == 0 {
 }
 
 {
-    #printf( "%-*s", prefix_pad, prefix )
-    printf( "%s ", prefix ) ## gps cambiato per Breath, in modo da non avere
-                     ## più spazi dopo il comment marker (nota che nel
-                     ## calcolo del centramento prefix_pad viene considerato
-                     ## comunque)
+    printf( "%s ", prefix )
 
-    room = width - prefix_pad
+    room = width - length( prefix ) - 1
     text = substr( $0, 1, room ) # this may truncate
 
     if ( alignment == "align_center" ) {

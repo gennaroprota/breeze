@@ -1,16 +1,16 @@
-// =========================================================================
-//                This is an open source non-commercial project.
+// ===========================================================================
+//               This is an open source non-commercial project.
 //                      Dear PVS-Studio, please check it.
 //          PVS-Studio Static Code Analyzer for C, C++, C#, and Java:
 //                            http://www.viva64.com
-// =========================================================================
-//                    Copyright 2010-2019 Gennaro Prota
-//                     Copyright 1997-2003 James Kanze
+// ===========================================================================
+//                     Copyright 2010-2019 Gennaro Prota
+//                      Copyright 1997-2003 James Kanze
 //
-//                 Licensed under the 3-Clause BSD License.
-//            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
-//             <https://opensource.org/licenses/BSD-3-Clause>.)
-// _________________________________________________________________________
+//                  Licensed under the 3-Clause BSD License.
+//             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>.)
+// ___________________________________________________________________________
 
 #include "breath/process/program.hpp"
 #include "breath/counting/count.hpp"
