@@ -41,7 +41,8 @@ namespace breath {
 //      begin():
 //      ========
 //
-//!     The same as c.begin(), for any standard container.
+//!     \return
+//!         The same as c.begin(), for any standard container.
 // ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::iterator
@@ -53,7 +54,8 @@ begin( C & c ) noexcept( noexcept( c.begin() ) )
 //      begin():
 //      ========
 //
-//!     The same as c.begin(), for any standard container.
+//!     \return
+//!         The same as c.begin(), for any standard container.
 // ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
@@ -65,7 +67,8 @@ begin( C const & c ) noexcept( noexcept( c.begin() ) )
 //      cbegin():
 //      =========
 //
-//!     The same as c.begin(), for any standard container.
+//!     \return
+//!         The same as c.begin(), for any standard container.
 // ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
@@ -77,7 +80,8 @@ cbegin( C const & c ) noexcept( noexcept( c.begin() ) )
 //      end():
 //      ======
 //
-//!     The same as c.end(), for any standard container.
+//!     \return
+//!         The same as c.end(), for any standard container.
 // ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::iterator
@@ -89,7 +93,8 @@ end( C & c ) noexcept( noexcept( c.end() ) )
 //      end():
 //      ======
 //
-//!     The same as c.end(), for any standard container.
+//!     \return
+//!         The same as c.end(), for any standard container.
 // ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
@@ -101,7 +106,8 @@ end( C const & c ) noexcept( noexcept( c.end() ) )
 //      cend():
 //      =======
 //
-//!     The same as c.end(), for any standard container.
+//!     \return
+//!         The same as c.end(), for any standard container.
 // ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
