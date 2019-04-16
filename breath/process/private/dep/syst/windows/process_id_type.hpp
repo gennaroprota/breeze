@@ -11,7 +11,7 @@
 
 //      Avoid using "DWORD", because we have a policy to not include
 //      Windows headers from include files.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 typedef unsigned long
                     process_id_type ;
 

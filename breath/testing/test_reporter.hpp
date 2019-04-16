@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A test reporter base class.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_I2oO3QRDodQiGPSBaYNHr4wsSe5AloUX
 #define BREATH_GUARD_I2oO3QRDodQiGPSBaYNHr4wsSe5AloUX

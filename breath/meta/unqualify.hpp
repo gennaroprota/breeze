@@ -11,7 +11,7 @@
 //!            its argument.
 //!
 //!     Example: <code>unqualify< char const >::type == char</code>
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_y2qhOILUvLqZ79ED32KSdlOabmhuefgQ
 #define BREATH_GUARD_y2qhOILUvLqZ79ED32KSdlOabmhuefgQ
@@ -31,13 +31,13 @@ namespace meta {
 //      ==========
 //
 //!     Gives the corresponding unqualified type of its argument.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 class unqualify
 {
 public:
     //!     A typedef for the type \c T.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     typedef T type ;
 } ;
 
@@ -47,7 +47,7 @@ class unqualify< T const >
 {
 public:
     //!     A typedef for the type \c T.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     typedef T type ;
 } ;
 
@@ -56,7 +56,7 @@ class unqualify< T volatile >
 {
 public:
     //!     A typedef for the type \c T.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     typedef T type ;
 } ;
 
@@ -65,7 +65,7 @@ class unqualify< T volatile const >
 {
 public:
     //!     A typedef for the type \c T.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     typedef T type ;
 } ;
 //! \endcond

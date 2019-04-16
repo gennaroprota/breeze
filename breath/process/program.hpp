@@ -10,7 +10,7 @@
 //!     \file
 //!     \brief A singleton class to manage the overall status of the
 //!            program and its termination.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_1kA1ToNG1qsz9KwlXD9MfVvhaHxMym5b
 #define BREATH_GUARD_1kA1ToNG1qsz9KwlXD9MfVvhaHxMym5b
@@ -26,7 +26,7 @@ namespace breath {
 //      ========
 //
 //!     Manager of the overall program status and termination.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class program
 {
 public:
@@ -41,7 +41,7 @@ public:
     //
     //      NOTE: keep the enumeration in sync with the exit_codes[]
     //            array in the implementation file.
-    // ----------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     enum gravity
     {
         comment = 0, // equivalent to success
@@ -66,7 +66,7 @@ public:
     //!     Important: this function also flushes \c std::cout, and
     //!     calls \c declare_error() if the flush fails (for this
     //!     reason, it is not const).
-    // ----------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     int                 exit_code() ;
 
     //!     Sets the program name from the arguments to main, if they
@@ -80,7 +80,7 @@ public:
     //!
     //!     \post
     //!         \e none
-    // ----------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     void                set_name( int argc, char const * const * argv ) ;
 
     //!     Sets the program name from the arguments to main, if they
@@ -95,7 +95,7 @@ public:
     //!
     //!     \post
     //!         <tt>name().is_valid()</tt>
-    // ----------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     void                set_name( int argc, char const * const * argv,
                                   std::string const & fallback ) ;
 
@@ -108,12 +108,12 @@ public:
     //!
     //!     \post
     //!         <tt>name().is_valid()</tt>
-    // ----------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     void                set_name( std::string const & name ) ;
 
     //!     \return
     //!         The program name set by \c set_name().
-    // ----------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     maybe< std::string >
                         name() const ;
 
@@ -127,7 +127,7 @@ public:
     //!     If the gravity is \c fatal or higher, this will also
     //!     terminate the program by calling \c terminate() (gravity
     //!     == \c fatal) or \c std::abort() (gravity == \c internal).
-    // ----------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     void                declare_error( gravity g ) ;
 
     //!     Triggers the termination of the program with the exit

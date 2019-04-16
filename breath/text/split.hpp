@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Splits a \c std::string into a \c std::vector of strings.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace breath {
 //!
 //!     \note
 //!         This should probably use \c set_of_chars.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 std::vector< std::string >
                     split( std::string const & s,
                            std::string const & delimiters ) ;

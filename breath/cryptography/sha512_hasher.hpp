@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief SHA-512 function.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_wCcpHSPgQuuMlLcoiraq0109Dj5dIMnV
 #define BREATH_GUARD_wCcpHSPgQuuMlLcoiraq0109Dj5dIMnV
@@ -24,7 +24,7 @@ template< typename Hasher >
 class               digest ;
 
 //!     Convenience typedefs
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 typedef merkle_damgard_machine< sha512_engine >
                     sha512_hasher ;
 typedef digest< sha512_hasher >
@@ -34,7 +34,7 @@ typedef digest< sha512_hasher >
 //      ==============
 //
 //!     SHA-512 policy class for merkle_damgard_machine.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class sha512_engine
     :   public merkle_damgard_engine< 512, 1024, big_endian_policy, 64 >
 {

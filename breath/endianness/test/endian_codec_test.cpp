@@ -66,7 +66,7 @@ check2()
 
     //      std::size_t changes size in 64-bit mode, so take into
     //      account that the representation may "enlarge".
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     BREATH_CHECK( repr[ sizeof amount / sizeof repr[ 0 ] - 1 ] == 24 ) ;
 }
 

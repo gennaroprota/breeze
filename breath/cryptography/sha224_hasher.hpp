@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief  SHA-224 function.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_OKBGme15I2KXAgAlHJL4gxgCmNkNyA1w
 #define BREATH_GUARD_OKBGme15I2KXAgAlHJL4gxgCmNkNyA1w
@@ -32,7 +32,7 @@ typedef digest< sha224_hasher >
 //      ==============
 //
 //!     SHA-224 policy class for merkle_damgard_machine.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class sha224_engine
     :   public merkle_damgard_engine< 224, 512, big_endian_policy, 32, 256 >
 {

@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief  SHA-256 function.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_t9rt82w9uC5ZSdNs25Tb0en1bhYQjfnf
 #define BREATH_GUARD_t9rt82w9uC5ZSdNs25Tb0en1bhYQjfnf
@@ -25,7 +25,7 @@ class               digest ;
 
 
 //!     Convenience typedefs
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 typedef merkle_damgard_machine< sha256_engine >
                     sha256_hasher ;
 typedef digest< sha256_hasher >
@@ -35,7 +35,7 @@ typedef digest< sha256_hasher >
 //      ==============
 //
 //!     SHA-256 policy class for merkle_damgard_machine.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class sha256_engine
     :   public merkle_damgard_engine< 256, 512, big_endian_policy >
 {

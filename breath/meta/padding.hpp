@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief Metafunction yielding the number of \e padding bits of a
 //!            type.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_t29jfKYZ9OI7vFPLyiSoFtL9Jw9Lntnr
 #define BREATH_GUARD_t29jfKYZ9OI7vFPLyiSoFtL9Jw9Lntnr
@@ -31,7 +31,7 @@ namespace meta {
 //!     \par Type requirements
 //!         \c T shall be an integral type or a cv-qualified version
 //!         thereof.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 class padding
     :   public constant< int,

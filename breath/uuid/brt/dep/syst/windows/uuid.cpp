@@ -55,7 +55,7 @@ uuid::uuid( uuid::variant var, uuid::version ver )
     //      desirable). To distinguish it from a real MAC address, RFC
     //      4122 requires that the least significant bit of the first
     //      octet be set to 1.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     for ( std::size_t i = 0 ; i < breath::count( m_node ) ; ++ i ) {
         m_node[ i ] = static_cast< std::uint8_t >( es.next() ) ;
     }
@@ -73,7 +73,7 @@ output_as_hex( std::ostream & os, T t )
 
     //      About the static_cast: see the note near the declarations of
     //      the class data members. Keep in sync.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     os << std::setw( hex_digits_per_t ) << static_cast< std::uint32_t >( t ) ;
     return os ;
 }

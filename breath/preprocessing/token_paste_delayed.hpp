@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A token concatenation macro.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_TtY9fvceSS7uDBmVi38DjzXQQYbGSOLw
 #define BREATH_GUARD_TtY9fvceSS7uDBmVi38DjzXQQYbGSOLw
@@ -16,7 +16,7 @@
 #include "breath/preprocessing/token_paste.hpp"
 
 //!     See BREATH_TOKEN_PASTE() for the naming rationale.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 #define BREATH_TOKEN_PASTE_DELAYED( x, y )    BREATH_TOKEN_PASTE( x, y )
 
 #endif

@@ -19,7 +19,7 @@ digital_root( T n, T base ) noexcept
     //  You have to use at least C99 or at least C++11 for the
     //  remainder to be specified for n == 0; so we special case it
     //  for C++03 compatibility.
-    // ---------------------------------------------------------------
+    // -----------------------------------------------------------------------
     return n == 0
              ? 0
              : 1 + ( n - 1 ) % ( base - 1 ) ;

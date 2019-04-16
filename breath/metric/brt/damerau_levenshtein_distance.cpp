@@ -49,7 +49,7 @@ private:
 
 //      I could not find any algorithm with a space complexity below
 //      O( n^2 ). If you know of one, please drop me a mail.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 std::size_t
 damerau_levenshtein_distance( std::string const & first,
                               std::string const & second )

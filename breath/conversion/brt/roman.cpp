@@ -38,7 +38,7 @@ roman::roman( int n )
     //
     //    int const           max_roman_length = 15 ;
     //    m_representation.reserve( max_roman_length ) ;
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
 
     entry const *       p = &table[ 0 ] ;
     for ( ; p->value != 0 ; ++ p ) {

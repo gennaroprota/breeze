@@ -27,7 +27,7 @@ main()
     //      Note:
     //          if you change this type, change it in the output below,
     //          too.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     typedef std::uint_fast32_t
                         fast32_type ;
 

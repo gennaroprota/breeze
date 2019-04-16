@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief Returns the integer part of the log, base 2, of its
 //!            argument.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_4uQJExogJdntOgg4rVCN5jmuqREdR7xS
 #define BREATH_GUARD_4uQJExogJdntOgg4rVCN5jmuqREdR7xS
@@ -34,7 +34,7 @@ namespace  integer_log2_private {
 //      integer_log2_argument_type and that recursion always
 //      terminates with x = 1 and n = 0 (see the algorithm's
 //      invariant).
-// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 typedef unsigned long long
                         argument_type ;
 typedef int             result_type ;
@@ -90,7 +90,7 @@ const result_type initial_n = choose_initial_n<n_zero>::value ;
 //      value bits. (Note: If larger types will be standardized -e.g.
 //      unsigned long long- then the argument_type typedef can be
 //      changed without affecting the rest of the code.)
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< argument_type x, result_type n = initial_n >
 struct integer_log2_impl {
 

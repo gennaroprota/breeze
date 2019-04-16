@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Base64 decoding.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ubEInhYBWjgftwkYlSFbSOFcFUILqJgK
 #define BREATH_GUARD_ubEInhYBWjgftwkYlSFbSOFcFUILqJgK
@@ -36,7 +36,7 @@ namespace breath {
 //!     \param out
 //!         Iterator to the first element of the output sequence
 //!         (binary).
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename InputIter, typename OutputIter >
 void                base64_to_binary( InputIter begin, InputIter end,
                                       OutputIter out ) ;

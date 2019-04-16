@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief The representation of a non-negative integer, in base b.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_lqF1VhyaeQBA6t5SZLvv9rpFKK1iZVzu
 #define BREATH_GUARD_lqF1VhyaeQBA6t5SZLvv9rpFKK1iZVzu
@@ -22,7 +22,7 @@ namespace breath {
 //!
 //!     \return
 //!         The representation, in base \c base, of the integer \c n.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 std::string
 representation_in_base( T n, T base ) ;

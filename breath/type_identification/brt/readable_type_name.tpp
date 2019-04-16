@@ -33,7 +33,7 @@ class wrapper
 //      So, we take typeid( wrapper< T > ).name(), then remove
 //      "wrapper" and its angle brackets. This gets rid of all three
 //      limitations.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 std::string
 readable_type_name()

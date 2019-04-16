@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief A stream that discards any output to it and never has
 //!            characters in input.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_CnvhAthmCrzPoNDMrZPUfBrAGrgy3Xe0
 #define BREATH_GUARD_CnvhAthmCrzPoNDMrZPUfBrAGrgy3Xe0
@@ -41,7 +41,7 @@ private:
     void                set_buffer() ;
 
     //  Having a buffer avoids some virtual function calls.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     Ch                  m_dummy_buffer[ 64 ] ;
 } ;
 //! \endcond
@@ -54,7 +54,7 @@ private:
 //!     always on EOF. The behavior is similar to a file stream
 //!     opened on /dev/null under Unix, but this is portable and
 //!     doesn't make system calls.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_null_stream
     :   private basic_null_stream_buffer< Ch, Traits >,

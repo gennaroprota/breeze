@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A smart pointer to array objects.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_FvaoTt7c3pTltKsed1Av5CAvE3SvnVIn
 #define BREATH_GUARD_FvaoTt7c3pTltKsed1Av5CAvE3SvnVIn
@@ -27,7 +27,7 @@ namespace breath {
 //!     Like for \c unique_ptr, instances of this template satisfy the
 //!     requirements of MoveConstructible and MoveAssignable, but not
 //!     the requirements of either CopyConstructible or CopyAssignable.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 class auto_array
 {

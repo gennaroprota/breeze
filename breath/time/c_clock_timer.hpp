@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A timer based on \c std::clock().
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_u43dOQ8kSA0wS32RQRLI7UM66PBoXLSA
 #define BREATH_GUARD_u43dOQ8kSA0wS32RQRLI7UM66PBoXLSA

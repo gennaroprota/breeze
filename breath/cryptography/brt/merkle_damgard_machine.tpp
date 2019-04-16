@@ -16,7 +16,7 @@
 namespace breath {
 
 //!     Support for \c breath::accumulate().
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename Engine >
 class accumulate_traits< merkle_damgard_machine< Engine > >
 {
@@ -90,7 +90,7 @@ merkle_damgard_machine< Engine >::compress()
     //
     //      We always clear potentially sensitive data (i.e.:
     //      m_input_buffer and m_input_in_words).
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     std::size_t const   sz = block_length / word_length ;
     word_type           input_in_words[ sz ] ;
 
@@ -245,7 +245,7 @@ merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
     //      Encode a base-n representation of amount (n=32, 64, etc.);
     //      note that we *need* to zero out repr[], as it is
     //      typically larger than the type of the amount parameter.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     length_unit_type    repr[ length_count ] = {} ;
     codec::encode( amount, breath::begin( repr ) ) ;
 
@@ -267,7 +267,7 @@ merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
     //      on_length_exhausted will throw an exception. With numbers
     //      such as 2**64 and bigger, this is of course a very
     //      unlikely case.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     if ( carry != 0 ) {
         hashing_count::on_length_exhausted( Engine::count_mode ) ;
     }

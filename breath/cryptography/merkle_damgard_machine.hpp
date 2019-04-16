@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief  A Merkle-Damgard machine.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_fZUJ99c94EAQyLGNzV2BUxw0nzawpWpw
 #define BREATH_GUARD_fZUJ99c94EAQyLGNzV2BUxw0nzawpWpw
@@ -63,13 +63,13 @@ class               digest ;
 //          (Note that internally we already keep the *bit* count
 //          of the input, not the byte count, so extending it
 //          should be fairly straightforward - gps )
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename Engine >
 class merkle_damgard_machine
 {
     //      These are basically the algorithm (<=> the Engine's)
     //      "traits".
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
 public:
     enum
     {
@@ -81,7 +81,7 @@ public:
 
 private:
     //      Lengths
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     enum
     {
         block_length = Engine::block_width / byte_width,
@@ -104,18 +104,18 @@ private:
 public:
     //!     \name Initialization.
     //!     \{
-    // -------------------------------------------------------------------
+    // -----------------------------------------------------------------------
                         merkle_damgard_machine() ;
 
     //!     Constructs from an input range.
-    // -------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     template< typename InputIter >
                         merkle_damgard_machine( InputIter begin, InputIter end ) ;
     //!     \}
 
     //!     \name Operations: "appending" one or more bytes
     //!     \{
-    // -------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     void                push_back( byte_type b ) ;
 
     template< typename InputIter >

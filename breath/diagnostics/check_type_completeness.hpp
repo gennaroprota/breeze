@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief Checks that a type is complete at the point of
 //!            instantiation.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_zosglTB4b62CILKxpxWmmQwQ28EfOH6T
 #define BREATH_GUARD_zosglTB4b62CILKxpxWmmQwQ28EfOH6T
@@ -26,7 +26,7 @@ namespace breath {
 //!         check_type_completeness< T >()
 //!     \endcode
 //!     renders the program \e ill-formed.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 void
 check_type_completeness()

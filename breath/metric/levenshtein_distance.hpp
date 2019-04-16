@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Levenshtein distance between two strings.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_VVpm0oaMKolmpySje2Hc9KAsKdaGIZSb
 #define BREATH_GUARD_VVpm0oaMKolmpySje2Hc9KAsKdaGIZSb
@@ -23,7 +23,7 @@ namespace breath {
 //
 //!     \return
 //!         The Levenshtein distance between \c first and \c second.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 std::size_t         levenshtein_distance( std::string const & first,
                                           std::string const & second ) ;
 

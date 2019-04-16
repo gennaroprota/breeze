@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A unit test descriptor.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_R3D9wTLwfq8uQKxez4dTpXq0jrHzBXkC
 #define BREATH_GUARD_R3D9wTLwfq8uQKxez4dTpXq0jrHzBXkC
@@ -25,13 +25,13 @@ class test_descriptor
 public:
     //      Declare this explicitly to avoid Visual C++ C4626 (and
     //      C5027).
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     void                operator=( test_descriptor const & ) = delete ;
 
     //      Declare this explicitly, since, due to the user-declared
     //      copy-assignment above, the implicit definition of the copy
     //      constructor as defaulted is deprecated.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
                         test_descriptor( test_descriptor const & ) = default ;
 
     //!     Constructs the descriptor for a test having a given \c
@@ -40,7 +40,7 @@ public:
     //!     <code>
     //!       test_runner::instance().run( { func1, func2... funcN } ) ;
     //!     </code>.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
                         test_descriptor( void( & )(), char const * name = "" ) noexcept ;
     typedef      void( &test_function )() ;
 

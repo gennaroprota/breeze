@@ -34,7 +34,7 @@ void replace_all(
     //
     //      ). This is fine, because find() has no preconditions and
     //      handles that case correctly.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     while ( (pos = s.find( from, pos )) != s.npos ) {
         s.replace( pos, from.length(), to ) ;
         pos += to.length() ;

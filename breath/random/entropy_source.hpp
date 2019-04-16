@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Represents the system entropy source (random numbers).
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_zRk6qVzrOdWWtkjYcUpuIkpnrRj8cg0q
 #define BREATH_GUARD_zRk6qVzrOdWWtkjYcUpuIkpnrRj8cg0q
@@ -31,7 +31,7 @@ namespace breath {
 //!
 //!     What about the complexity of g()? [gps]
 //!
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class entropy_source
 {
 public:
@@ -53,7 +53,7 @@ public:
     //!     </code>
     //!
     //!     to output a character instead of a number.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     typedef unsigned int
                         result_type ;
 
@@ -62,47 +62,47 @@ public:
     //!     Acquires the resource(s) necessary to generate random
     //!     numbers. May throw an \c entropy_source::exception or a
     //!     \c std::bad_alloc.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
                         entropy_source() ;
 
     //!     Calls \c release() ignoring its return value, and destroys
     //!     the object.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     virtual             ~entropy_source() noexcept ;
 
     //!     \return
     //!         A new random value, evenly distributed in [min(),
     //!         max()]. Each call gives, with overwhelming probability,
     //!         a different value.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     result_type         next() ;
 
     //!     \return
     //!         The minimum random number that can be emitted, i.e.
     //!         zero.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     result_type         min BREATH_PREVENT_MACRO_EXPANSION () const noexcept ;
 
     //!     \return
     //!         The maximum random number that can be emitted.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     result_type         max BREATH_PREVENT_MACRO_EXPANSION () const noexcept ;
 
     //!     \todo:
     //!         define entropy()??? It should be 8 for /dev/random...
     //!         what about the CryptoAPI?
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
 
 
     //!     \return
     //!         A new random value: the same as \c next().
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     result_type         operator ()() ;
 
     //!     \return
     //!         A new random value in the range <code>[min(), maximum]
     //!         </code>.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     result_type         operator ()( result_type maximum ) ;
 
 
@@ -117,7 +117,7 @@ public:
     //!
     //!     \warning
     //!         You cannot reattempt a release if it already succeeded.
-    // ------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     bool                release() noexcept ;
 
 private:
@@ -127,7 +127,7 @@ private:
 
 //!     \brief  The type of exceptions thrown by \c entropy_source's
 //!             members.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class entropy_source::exception
     :   public virtual breath::exception
 {
@@ -140,7 +140,7 @@ public:
     //!     Constructs an entropy_source::exception with the given
     //!     string as \c what() message. The string returned by \c
     //!     what() could be truncated.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     explicit            exception( std::string const & msg ) noexcept ;
 } ;
 

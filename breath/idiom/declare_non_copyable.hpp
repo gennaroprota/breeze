@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Macro to declare a class non-copyable.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_BssKAsCiqQzBgpiZdcF0pqcl37YyLxoi
 #define BREATH_GUARD_BssKAsCiqQzBgpiZdcF0pqcl37YyLxoi
@@ -16,7 +16,7 @@
 //!     Handy macro to declare a class as non-copyable. It is better
 //!     invoked in a public section of the class definition (gives
 //!     better error messages).
-// ----------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 #define BREATH_DECLARE_NON_COPYABLE( class_name )                       \
                                                                         \
                         class_name( class_name const & ) = delete ;     \

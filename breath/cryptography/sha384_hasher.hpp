@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief  SHA-384 function.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_K9MoyAqzzHMnugSwsAjPtZppm3h4NXaI
 #define BREATH_GUARD_K9MoyAqzzHMnugSwsAjPtZppm3h4NXaI

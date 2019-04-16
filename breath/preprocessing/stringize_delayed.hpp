@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Stringizing macro.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_oC4DKLgCzbQ7cdHjPg7UM8ShKNKAc32G
 #define BREATH_GUARD_oC4DKLgCzbQ7cdHjPg7UM8ShKNKAc32G
@@ -20,7 +20,7 @@
 //
 //!     Stringizes (with \c BREATH_STRINGIZE()) the result of performing
 //!     macro replacement on the argument \c x.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 #define BREATH_STRINGIZE_DELAYED( x )   BREATH_STRINGIZE( x )
 
 #endif

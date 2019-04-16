@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Metafunction yielding the \e width of a type.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
 #define BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
@@ -35,7 +35,7 @@ namespace meta {
 //!     \par Type requirements
 //!         \c T shall be an integral type or a cv-qualified version
 //!         thereof.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 class width
     :   public select< has_sign< T >,

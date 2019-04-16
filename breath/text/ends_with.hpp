@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Returns whether a string ends with another one.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_FXhivw6tI6cV0C3govXyzZBmNCWa1e2o
 #define BREATH_GUARD_FXhivw6tI6cV0C3govXyzZBmNCWa1e2o
@@ -23,7 +23,7 @@ namespace breath {
 //!
 //!     [FUTURE] C++20 will have std::basic_string::ends_with() and
 //!              std::basic_string_view::ends_with() for this.
-//  ------------------------------------------------------------------------
+//  --------------------------------------------------------------------------
 bool                ends_with( std::string const & str,
                                std::string const & with ) noexcept ;
 

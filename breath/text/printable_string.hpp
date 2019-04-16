@@ -9,7 +9,7 @@
 //
 //!     \file
 //!     \brief A string with non-printable chars escaped.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_03plpMI2VjgMEb2QhWRYStxFLQ2UshCk
 #define BREATH_GUARD_03plpMI2VjgMEb2QhWRYStxFLQ2UshCk

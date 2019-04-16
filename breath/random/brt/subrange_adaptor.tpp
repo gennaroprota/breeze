@@ -18,7 +18,7 @@ subrange_adaptor< Engine >::subrange_adaptor( Engine & e, result_type new_max)
 {
     //      Parenthesizing the expression m_engine.max, as Visual
     //      Studio 2017 has problems with BREATH_PREVENT_MACRO_EXPANSION.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     BREATH_ASSERT( m_max <= (m_engine.max)() ) ;
 }
 

@@ -29,7 +29,7 @@
 //!     standard versions and ours should just go with time. The only
 //!     reason these are still around is that I haven't had time
 //!     to update the code that uses them.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Ve2uzZNiUDgCTZXgV1iB3bUD5U0n1kKD
 #define BREATH_GUARD_Ve2uzZNiUDgCTZXgV1iB3bUD5U0n1kKD
@@ -42,7 +42,7 @@ namespace breath {
 //      ========
 //
 //!     The same as c.begin(), for any standard container.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::iterator
 begin( C & c ) noexcept( noexcept( c.begin() ) )
@@ -54,7 +54,7 @@ begin( C & c ) noexcept( noexcept( c.begin() ) )
 //      ========
 //
 //!     The same as c.begin(), for any standard container.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
 begin( C const & c ) noexcept( noexcept( c.begin() ) )
@@ -66,7 +66,7 @@ begin( C const & c ) noexcept( noexcept( c.begin() ) )
 //      =========
 //
 //!     The same as c.begin(), for any standard container.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
 cbegin( C const & c ) noexcept( noexcept( c.begin() ) )
@@ -78,7 +78,7 @@ cbegin( C const & c ) noexcept( noexcept( c.begin() ) )
 //      ======
 //
 //!     The same as c.end(), for any standard container.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::iterator
 end( C & c ) noexcept( noexcept( c.end() ) )
@@ -90,7 +90,7 @@ end( C & c ) noexcept( noexcept( c.end() ) )
 //      ======
 //
 //!     The same as c.end(), for any standard container.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
 end( C const & c ) noexcept( noexcept( c.end() ) )
@@ -102,7 +102,7 @@ end( C const & c ) noexcept( noexcept( c.end() ) )
 //      =======
 //
 //!     The same as c.end(), for any standard container.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
 cend( C const & c ) noexcept( noexcept( c.end() ) )
@@ -116,7 +116,7 @@ cend( C const & c ) noexcept( noexcept( c.end() ) )
 //!     Like container::begin, but for a built-in array.
 //!
 //!     (Note that there's no need for a "T const overload".)
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T, std::size_t n >
 constexpr T *
 begin( T ( &a )[ n ] ) noexcept
@@ -128,7 +128,7 @@ begin( T ( &a )[ n ] ) noexcept
 //      =========
 //
 //!     Like container::begin, but for a built-in array.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T, std::size_t n >
 constexpr T const *
 cbegin( T const ( &a )[ n ] ) noexcept
@@ -143,7 +143,7 @@ cbegin( T const ( &a )[ n ] ) noexcept
 //
 //!     (The remark about begin() and overloading on const applies
 //!     here as well.)
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T, std::size_t n >
 constexpr T *
 end( T ( &a )[ n ] ) noexcept
@@ -155,7 +155,7 @@ end( T ( &a )[ n ] ) noexcept
 //      =======
 //
 //!     Like container::end, but for a built-in array.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T, std::size_t n >
 constexpr T const *
 cend( T const ( &a )[ n ] ) noexcept

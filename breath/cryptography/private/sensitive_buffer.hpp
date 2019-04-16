@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief  A buffer for sensitive data.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_cYIOKCI73iMumaonvDavBYvSD0UPrlq4
 #define BREATH_GUARD_cYIOKCI73iMumaonvDavBYvSD0UPrlq4
@@ -19,7 +19,7 @@ namespace breath {
 
 //      This template is a quick hack to be replaced with a more
 //      complete solution.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 class sensitive_buffer ;
 

@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A test exception.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_8msuVkqs5IBc3s7j1mDOtGC97uqTUGg0
 #define BREATH_GUARD_8msuVkqs5IBc3s7j1mDOtGC97uqTUGg0

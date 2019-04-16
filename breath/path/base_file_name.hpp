@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Returns the file name part of a path.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_t4h0OWeS8sua5gWE50YSmGUx15Kw2wrR
 #define BREATH_GUARD_t4h0OWeS8sua5gWE50YSmGUx15Kw2wrR
@@ -23,7 +23,7 @@ namespace breath {
 //!     \return
 //!         The file name part of a path. Assumes that the path is
 //!         well-formed.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 std::string         base_file_name( std::string const & full_path ) ;
 
 }

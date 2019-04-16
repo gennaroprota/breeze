@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Metafunction yielding the predecessor of a type.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_UdGvvEgZV1WGbMzbsiKOg7UnnY910Qsa
 #define BREATH_GUARD_UdGvvEgZV1WGbMzbsiKOg7UnnY910Qsa

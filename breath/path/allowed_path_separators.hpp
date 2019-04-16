@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief Returns the allowed path separators in the running
 //!            system.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_bvA1h6sHG51DDAzrkOaJBHIxlZBpgVnA
 #define BREATH_GUARD_bvA1h6sHG51DDAzrkOaJBHIxlZBpgVnA
@@ -21,7 +21,7 @@ namespace breath {
 //
 //!     Note that the separators are returned with the "preferred" one
 //!     first.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 char const *        allowed_path_separators() noexcept ; //gps constexpr?
 
 }

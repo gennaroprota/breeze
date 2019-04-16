@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief The last error from the OS API.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 //!
 //!     An exception class representing the last error encountered
 //!     in an OS API call. It corresponds to \c GetLastError() under
@@ -23,7 +23,7 @@
 //!     The class is OutputStreamable, so you can also use
 //!     \c breath::as_string(), which gives more information than the
 //!     member \c what(), but may throw.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #include "breath/diagnostics/private/last_api_error.hpp"
 

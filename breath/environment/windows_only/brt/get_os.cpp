@@ -27,7 +27,7 @@
 //      following has just historical value.
 //      Also, the minimum supported Windows version is now Windows
 //      2000.
-//      ---------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 //
 //      Necessary background:
 //      ---------------------

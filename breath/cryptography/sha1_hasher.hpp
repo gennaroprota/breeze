@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief  SHA-1 function.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_lTc6ZJg4kodcuFjtlYBwwj0hqDplySkG
 #define BREATH_GUARD_lTc6ZJg4kodcuFjtlYBwwj0hqDplySkG
@@ -24,7 +24,7 @@ template< typename Hasher >
 class               digest ;
 
 //!     Convenience typedefs
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 typedef merkle_damgard_machine< sha1_engine >
                     sha1_hasher ;
 typedef digest< sha1_hasher >
@@ -32,7 +32,7 @@ typedef digest< sha1_hasher >
 
 
 //!     SHA-1 policy class for merkle_damgard_machine.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class sha1_engine
     :   public merkle_damgard_engine< 160, 512, big_endian_policy >
 {

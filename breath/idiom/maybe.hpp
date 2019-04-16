@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A template for "maybe" values.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_93j8pelTutz7YloouImWg9M7REakYYSD
 #define BREATH_GUARD_93j8pelTutz7YloouImWg9M7REakYYSD
@@ -20,7 +20,7 @@ namespace breath {
 //! \brief
 //!     The default traits class for maybe. Logically corresponds to a
 //!     boolean (valid/invalid).
-// --------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class boolean_maybe_traits
 {
 public:
@@ -28,7 +28,7 @@ public:
     //      =======
     //
     //!     The type of the status to associate to the maybe value.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     class status
     {
     public:
@@ -37,21 +37,21 @@ public:
     } ;
 
     //!     See the maybe documentation.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     static bool         is_valid( status s ) noexcept
     {
         return s.m_status ;
     }
 
     //!     See the maybe documentation.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     static status       default_invalid() noexcept
     {
         return status( false ) ;
     }
 
     //!     See the maybe documentation.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     static status       default_valid() noexcept
     {
         return status( true ) ;
@@ -191,7 +191,7 @@ public:
     //!     \post
     //!         - ! is_valid()
     //!         - status() == status
-    // ------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     explicit            maybe( status_type status =
                                           Traits::default_invalid() ) noexcept ;
 
@@ -210,7 +210,7 @@ public:
     //!         - is_valid()
     //!         - value() == value
     //!         - status() == status
-    // ------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     explicit            maybe( T const & value, status_type status =
                                                      Traits::default_valid() ) ;
 
@@ -227,7 +227,7 @@ public:
     //!         - is_valid()
     //!         - value() is moved from value
     //!         - status() == status
-    // ------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     explicit            maybe( T && value, status_type status =
                                                    Traits::default_valid() ) ;
 
@@ -235,14 +235,14 @@ public:
     //!     \post
     //!         - status() == other.status()
     //!         - ! is_valid() || value() == other.value()
-    // ------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
                         maybe( maybe const & other ) ;
 
     //!     \post
     //!         - value() is moved from other.value()
     //!         - status() == other.status()
     //!         - other.status() == Traits::default_invalid()
-    // ------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
                         maybe( maybe && other ) ;
 
                         ~maybe() noexcept ;
@@ -250,13 +250,13 @@ public:
     //!     \post
     //!         - ! is_valid() || value() == other.value()
     //!         - status() == other.status()
-    // ------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     maybe &             operator =( maybe const & other ) ;
 
     //!     \post
     //!         - ! is_valid() || value() is moved from other.value()
     //!         - status() == other.status()
-    // ------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     maybe &             operator =( maybe && other ) ;
 
     //!     \param value
@@ -266,7 +266,7 @@ public:
     //!         - is_valid()
     //!         - value() == value
     //!         - status == Traits::default_valid()
-    // ------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     maybe &             operator =( T const & value ) ;
 
 
@@ -274,17 +274,17 @@ public:
     //!         - is_valid()
     //!         - value() is moved from value
     //!         - status() == Traits::default_valid()
-    // ------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     maybe &             operator =( T && value ) ;
 
     //!     \return
     //!         The validity status.
-    // ------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     status_type         status() const noexcept ;
 
     //!     \return
     //!         Traits::is_valid( status() )
-    // ------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     bool                is_valid() const noexcept ;
 
     //!     \return
@@ -292,7 +292,7 @@ public:
     //!
     //!     \pre
     //!         is_valid()
-    // ------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     T const &           value() const noexcept ;
 
     //!     \return
@@ -305,7 +305,7 @@ public:
     //!     conditional noexcept() would be an option, but it adds too
     //!     much complexity, in our opinion, and of course we would have
     //!     to use it consistently, not just for \c %default_to().
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     T                   default_to( T const & default_value ) const ;
 
 private:

@@ -44,7 +44,7 @@ private:
 
 public:
     //!     The library arranges for calling this before main starts().
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     static command_line &
                         instance() ;
 

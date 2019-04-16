@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Tells if an integer is a power of two.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_33316YlRoQ2LToi0iu44YByR2XFvlCOy
 #define BREATH_GUARD_33316YlRoQ2LToi0iu44YByR2XFvlCOy
@@ -31,7 +31,7 @@ namespace breath {
 //!           (current as of writing this);
 //!
 //!           <http://wg21.link/p0556> (latest).
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 constexpr typename std::enable_if< std::numeric_limits< T >::is_integer &&
                                    ! std::numeric_limits< T >::is_signed &&

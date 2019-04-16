@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Microsoft Windows version information.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #include "breath/idiom/declare_non_copyable.hpp"
 #include <string>
@@ -19,7 +19,7 @@ namespace breath {
 //      =====================
 //
 //!     Microsoft Windows version information.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class windows_version_info
 {
 public:

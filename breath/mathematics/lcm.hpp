@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief The least common multiple of two integers.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_OFEP2tStNzXnzGYEV6JdW1XUXcS6lA7p
 #define BREATH_GUARD_OFEP2tStNzXnzGYEV6JdW1XUXcS6lA7p
@@ -32,7 +32,7 @@ namespace breath {
 //!     \return
 //!         If either \c m or \c n is zero, returns zero. Otherwise it
 //!         returns the least common multiple of |m| and |n|.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename M, typename N >
 constexpr std::common_type_t< M, N >
                     lcm( M m, N n ) noexcept ;

@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A security-aware fill algorithm.
-// --------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
 #define BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
@@ -38,7 +38,7 @@ namespace breath {
 //!
 //!       message-id: <38i6r2d5uksv7eovk0os7506k9bbshgl2j@4ax.com>
 //!
-// --------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 //      Note how this is intentionally implemented with a hand-coded
 //      loop. It's not crystal clear whether we could use std::fill
 //      or std::fill_n (which would bring the advantage of debugging
@@ -56,7 +56,7 @@ namespace breath {
 //      [alg.fill], is to be interpreted. Does it allow anything
 //      different from the obvious *first = value, *first ++ = value
 //      and similar?
-// --------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T, std::size_t n >
 void
 secure_fill( T volatile ( &arr )[ n ], T const & value = T() )
@@ -70,7 +70,7 @@ secure_fill( T volatile ( &arr )[ n ], T const & value = T() )
 //      ==============
 //
 //!     Version for sequences.
-// --------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 //
 //      [FUTURE], [C++11] [gps]:
 //      As a result of core issue 226, C++11 is likely to allow
@@ -82,7 +82,7 @@ secure_fill( T volatile ( &arr )[ n ], T const & value = T() )
 //        >
 //        void secure_fill( ForwardIterator begin, ForwardIterator end,
 //                          T const & value = T() )
-// --------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename ForwardIterator, typename T >
 void
 secure_fill( ForwardIterator begin, ForwardIterator end, T const & value )

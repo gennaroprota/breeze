@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A saver/restorer for stream formatting info.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Z4DMqDrKXOIFeJ4e9o0vyecTiAF4rmvr
 #define BREATH_GUARD_Z4DMqDrKXOIFeJ4e9o0vyecTiAF4rmvr
@@ -88,7 +88,7 @@ namespace breath {
 //!     to suggest using \c copyfmt, in order to save the additional
 //!     stream info. James also gave, as usual, excellent feedback on
 //!     various design issues, in particular about locales and imbue.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_format_saver
 {

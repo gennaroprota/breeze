@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 //
 //      Implementation for systems that have /dev/random (Unix)
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #include "breath/random/entropy_source.hpp"
 #include "breath/counting/count.hpp"
@@ -59,7 +59,7 @@ entropy_source::impl::impl()
     // (If the need arises to verify this, I might store the information
     // given by setvbuf's return value and add an is_buffered() member
     // function.)
-    // -----------------------------------------------------------------
+    // -----------------------------------------------------------------------
     ::setvbuf( m_file, nullptr, _IONBF, 0 ) ;
 }
 

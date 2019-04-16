@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief Tells whether a type uses a two's complement
 //!            representation.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_tWPolV5CdSeUDR2dhiin3jIbwnOhvgwW
 #define BREATH_GUARD_tWPolV5CdSeUDR2dhiin3jIbwnOhvgwW
@@ -23,7 +23,7 @@ namespace meta {
 //!     If \c T is not an integral type, the program is ill-formed.
 //!     Otherwise \c is_twos_complement() returns true if and only if
 //!     the type \c T uses a two's complement representation.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 constexpr bool      is_twos_complement() noexcept ;
 

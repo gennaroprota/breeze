@@ -91,7 +91,7 @@ operator <<( std::ostream & dest, printable_string const & ps )
         default:
             // Note: if you change this values, keep the documentation
             //       in sync.
-            // -------------------------------------------------------------
+            // ---------------------------------------------------------------
             char const      printable_min = 0x20 ;
             char const      printable_max = 0x7e ;
             if ( printable_min <= c && c <= printable_max ) {

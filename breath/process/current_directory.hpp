@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Gets the current directory of the current process.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_KrwlefOEgShOBz9iqPeAc0R8iN3Lfl9g
 #define BREATH_GUARD_KrwlefOEgShOBz9iqPeAc0R8iN3Lfl9g
@@ -21,7 +21,7 @@ namespace breath {
 //      ====================
 //
 //!     Gets the current directory of the current process.
-// ------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 std::string         current_directory() ;
 
 }

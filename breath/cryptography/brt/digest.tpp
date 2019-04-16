@@ -70,7 +70,7 @@ digest< Hasher >::is_equal( digest< Hasher > const & other ) const
 //      That's one of main reason why we have a digest abstraction:
 //      it is an entity on its own and has its own mechanism of
 //      construction.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename Ch, typename Tr, typename Hasher >
 std::basic_ostream< Ch, Tr > &
 operator <<( std::basic_ostream< Ch, Tr >   & os,

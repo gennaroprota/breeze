@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Random or pseudo-random number generator adaptor.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_fuCxVYYJ2LdcmZesVYlZ9PyrSKmKj97I
 #define BREATH_GUARD_fuCxVYYJ2LdcmZesVYlZ9PyrSKmKj97I
@@ -24,13 +24,13 @@ namespace breath {
 //!
 //!     \note
 //!         Does NOT support min != 0.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename Engine >
 class subrange_adaptor
 {
 public:
     //!     The same as the Engine's result type.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     typedef typename Engine::result_type
                         result_type ;
 
@@ -38,12 +38,12 @@ public:
 
     //!     Constructs a subrange adaptor from a given Engine and a new max
     //!     value.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
                         subrange_adaptor( Engine & e, result_type new_max ) ;
 
     //!     \return
     //!         A new random value in the adaptor's subrange.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     result_type         next() ;
 
 private:

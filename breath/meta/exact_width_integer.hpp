@@ -11,7 +11,7 @@
 //!
 //!     As for their C99 counterparts, there's no guarantee that the
 //!     types are provided for any given value of \c N.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_HdHZPdx1OyaeosOjcrni6ByNfUBalEG4
 #define BREATH_GUARD_HdHZPdx1OyaeosOjcrni6ByNfUBalEG4
@@ -27,7 +27,7 @@ namespace exact_width_integer_private {
 //      This might be elegantly implemented via type lists or maps, but
 //      we chose to keep metaprogramming (and dependencies) to a
 //      minimum.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename IntType, int index > struct types ;
 
 //      "list" of unsigned (list of signed not yet implemented [gps])
@@ -66,7 +66,7 @@ public:
 //!
 //!     \par Type requirements
 //!         \p T shall be either \c signed \c int or \c unsigned \c int.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< std::size_t width, typename T /* gps temp = signed */ >
 class exact_width_integer
 {
@@ -77,7 +77,7 @@ public:
 
 //!
 //!     A synonym of <code>exact_width_integer< N, unsigned ></code>.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< std::size_t width >
 class exact_width_unsigned_integer
     :   public exact_width_integer< width, unsigned >

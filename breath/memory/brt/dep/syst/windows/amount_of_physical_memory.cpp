@@ -26,14 +26,14 @@ amount_of_physical_memory()
     //  if available, with a fallback to GlobalMemoryStatusEx().
     //  This is to make the function work pre Vista SP1. However
     //  only the first API gives an accurate value.
-    // --------------------------------------------------------------
+    // -----------------------------------------------------------------------
     HMODULE const       module = GetModuleHandle( L"kernel32" ) ;
 
     typedef BOOL ( WINAPI * fn_ptr_type )( ULONGLONG * ) ;
 
     // Note: the intermediate cast to void * is to silence Visual C++
     //       C4191, which is a useful warning to have.
-    // -------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     fn_ptr_type const   get_physical_memory = module == NULL
                                 ? nullptr
                                 : reinterpret_cast< fn_ptr_type >(

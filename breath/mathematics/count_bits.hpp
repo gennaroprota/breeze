@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A simple bit counter.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_D5dKoDqQ2v7QNXhW1F8zF0ZKijovEPgp
 #define BREATH_GUARD_D5dKoDqQ2v7QNXhW1F8zF0ZKijovEPgp
@@ -23,7 +23,7 @@ namespace breath {
 //!     \return
 //!         The number of on bits in the value \c t. \p T must be an
 //!         unsigned built-in type.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 constexpr std::size_t
                     count_bits( T t ) noexcept ;

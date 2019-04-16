@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Represents a system process.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ZrGNfF85u9RhKIbhXAPdD2JlFPjWlGjV
 #define BREATH_GUARD_ZrGNfF85u9RhKIbhXAPdD2JlFPjWlGjV
@@ -24,7 +24,7 @@ namespace breath {
 //      ========
 //
 //!     A system process.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class process
 {
 public:

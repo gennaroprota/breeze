@@ -108,7 +108,7 @@ maybe< T, Traits >::operator =( maybe && other )
 
 //      Note that T's assignment operator exception guarantee reflects
 //      that of this operator =().
-// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T, typename Traits >
 maybe< T, Traits > &
 maybe< T, Traits >::operator =( T const & value )

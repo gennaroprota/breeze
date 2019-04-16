@@ -33,7 +33,7 @@
 //            Also, it seemed natural to add an is_eof_value(), since
 //            using eq_int_type would still require #including the
 //            <string> header.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_9qsz7UnvkOIvyedOe6ND5qSGfNeCMIU0
 #define BREATH_GUARD_9qsz7UnvkOIvyedOe6ND5qSGfNeCMIU0
@@ -47,7 +47,7 @@ namespace breath {
 //
 //!     \return
 //!         The end-of-file value for the given \c Stream.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename Stream >
 typename Stream::int_type
 eof_value( Stream const & )
@@ -61,7 +61,7 @@ eof_value( Stream const & )
 //!     \return
 //!         Whether \c x equals the eof value for the \c Stream given as
 //!         the second argument.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename Stream >
 bool
 is_eof_value( typename Stream::int_type x, Stream const & )

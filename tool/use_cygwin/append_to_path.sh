@@ -10,7 +10,7 @@
 #       NOTE:
 #           this isn't meant to be used on its own; it's just invoked by
 #           use_cygwin.bat, in this same directory.
-# -------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 
 export PATH=$PATH:/usr/local/bin:/usr/bin
 bash

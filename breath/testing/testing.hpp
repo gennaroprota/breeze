@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Cumulative header for the unit testing facilities.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ntjESDWS7R0VczgCNAyZQonfItWUZ2As
 #define BREATH_GUARD_ntjESDWS7R0VczgCNAyZQonfItWUZ2As

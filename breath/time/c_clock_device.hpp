@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A clock device based on \c std::clock().
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
 #define BREATH_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA

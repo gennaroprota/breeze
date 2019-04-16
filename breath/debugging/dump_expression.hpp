@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Displays an expression to \c std::cout.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_v4ifHvyokFutGDGkksKs5kPv6rpDcUGv
 #define BREATH_GUARD_v4ifHvyokFutGDGkksKs5kPv6rpDcUGv

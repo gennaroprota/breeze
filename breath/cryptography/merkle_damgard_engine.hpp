@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief  Base template class to ease the definition of policies
 //!             for the \c merkle_damgard_machine template..
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_fYqwSU8p6zoTOMzKlvSB4iz96M3PyUF5
 #define BREATH_GUARD_fYqwSU8p6zoTOMzKlvSB4iz96M3PyUF5
@@ -30,7 +30,7 @@ namespace breath {
 //      by the parameter count_type (in theory there's no guarantee
 //      that the maximum length, if any, is of the form 2**e - 1, but
 //      that's what all one-way hash functions I know of do).
-// ------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< std::size_t         bits_per_digest,
           std::size_t         bits_per_block,
           typename            EndianPolicy,
@@ -91,7 +91,7 @@ public:
     //      in bits, is encoded into an array of *word_types*, even
     //      though the general hasher templates could in theory use
     //      a different type.
-    // --------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     static void encode_length( word_type( &len )[ max_words ],
                                byte_type * dest )
     {
@@ -102,7 +102,7 @@ public:
         //          b) the order in which the words are "copied" into
         //             dest, and the order of the bytes within each
         //             word, follow EndianPolicy
-        // ----------------------------------------------------------------
+        // -------------------------------------------------------------------
         std::size_t const   step( word_width / byte_width ) ;
         for ( std::size_t i = 0 ; i < max_words ; ++ i ) {
 

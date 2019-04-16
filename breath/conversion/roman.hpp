@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Roman numerals.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_hMt6bmZCT9RIwijJe5QSttMMotHJsr1N
 #define BREATH_GUARD_hMt6bmZCT9RIwijJe5QSttMMotHJsr1N
@@ -22,13 +22,13 @@ namespace breath {
 //      ======
 //
 //!     A number that outputs in roman numerals.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class roman
 {
 public:
     //!     Constructs a roman number object corresponding to number
     //!     \c n.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     explicit            roman( int n ) ;
 
 private:
@@ -37,12 +37,12 @@ private:
     //      inserter, we do it in the constructor and store the
     //      resulting representation in a std::string object. Consider
     //      this implementation detail somewhat experimental.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     std::string         m_representation ;
 
     //!     Stream output operator: outputs the number in roman
     //!     numerals.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     friend std::ostream &
                     operator <<( std::ostream &, roman const & ) ;
 } ;

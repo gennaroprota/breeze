@@ -27,7 +27,7 @@ void do_tests()
 
     //  Conversion from double. Note that these are not the same
     //  results as std::to_string().
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     BREATH_CHECK( breath::to_string( 12.34 ) == "12.34" ) ;
     BREATH_CHECK( breath::to_string( 1e-10 ) == "1e-10" ) ;
     BREATH_CHECK( breath::to_string( 1e+50 ) == "1e+50" ) ;

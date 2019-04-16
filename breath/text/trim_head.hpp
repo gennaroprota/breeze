@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A \c std::string trimmer (head of string).
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_VJhjD7vyKemLfcukUGXm4RzXGSsdvmrL
 #define BREATH_GUARD_VJhjD7vyKemLfcukUGXm4RzXGSsdvmrL

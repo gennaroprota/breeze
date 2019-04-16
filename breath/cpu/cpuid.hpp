@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Interface to the CPUID instruction.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 //
 //!     Interface to the CPUID instruction available on x86 and Intel
 //!     64 architectures.
@@ -32,14 +32,14 @@
 //!     It's intended that these functions are the lowest level before
 //!     dealing with assembly. And that higher level interfaces be
 //!     defined upper in the library/application logic.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #include <stdint.h>
 
 extern "C" {
 
 //!     Represents the result of the CPUID instruction.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 struct cpuid_result
 {
     uint32_t        eax ;
@@ -56,7 +56,7 @@ struct cpuid_result
 //!     \return
 //!         \c true if and only if the executing CPU supports the CPUID
 //!         machine instruction.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 bool                is_cpuid_supported() ;
 
 //      get_cpuid_info():
@@ -74,7 +74,7 @@ bool                is_cpuid_supported() ;
 //!     \return
 //!         a struct with the values of \c EAX, \c EBX, \c ECX, \c EDX
 //!         returned by the CPUID instruction itself.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 cpuid_result        get_cpuid_info( uint32_t eax, uint32_t ecx ) ;
 
 }

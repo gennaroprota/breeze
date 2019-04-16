@@ -11,7 +11,7 @@
 //      variables (system, compiler, etc.). Note that it only relies on
 //      the preprocessing facilities, which, in turn, don't need any
 //      configuration.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_LJrbr2rF89IS3w34IDEgr8K9ZUsCl9Ll
 #define BREATH_GUARD_LJrbr2rF89IS3w34IDEgr8K9ZUsCl9Ll
@@ -142,7 +142,7 @@
 //      confirmation that we correctly interpreted the intent, as
 //      described above; the more so, considering that the same
 //      example exists in C90, C99, C++98, C++03 and C++0x.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #define BREATH_DEPENDENT_CODE( variant, file_name )                        \
     BREATH_TOKEN_PASTE( BREATH_DEPENDENT_CODE_, variant )( file_name )  /**/

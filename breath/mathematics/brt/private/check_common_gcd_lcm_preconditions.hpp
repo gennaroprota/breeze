@@ -19,7 +19,7 @@ namespace gcd_lcm_private {
 
 //      Renouncing to have a separate .tpp file, since this is a
 //      private component.
-// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename M, typename N >
 constexpr void
 check_common_gcd_lcm_preconditions( M a, N b )

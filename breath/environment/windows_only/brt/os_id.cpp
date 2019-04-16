@@ -58,7 +58,7 @@ static char const * const
 //      word "edition" appears directly as a part of the OS name,
 //      rather than in the edition name (as in "Web Edition", "Home
 //      Edition" etc.) -- what should we do? leave "edition" or not?
-// --------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 os_id const
         os_id::windows_unknown                    ( 0 ),
         //

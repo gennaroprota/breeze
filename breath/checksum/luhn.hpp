@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Luhn checksum routines.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_tIQHBNytA88Bkj4QJcjMo5Tyy8QmG29Y
 #define BREATH_GUARD_tIQHBNytA88Bkj4QJcjMo5Tyy8QmG29Y
@@ -27,7 +27,7 @@ namespace breath {
 //!     \throw
 //!         A \c breath::exception if any of the characters in \c s is
 //!         not a decimal digit.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 int                 luhn_sum( std::string const & s ) ;
 
 //      has_luhn_sum():
@@ -40,7 +40,7 @@ int                 luhn_sum( std::string const & s ) ;
 //!     \throw
 //!         A \c breath::exception if any of the characters in \c s is
 //!         not a decimal digit.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 bool                has_luhn_sum( std::string const & s ) ;
 
 //      luhn_check_digit():
@@ -52,7 +52,7 @@ bool                has_luhn_sum( std::string const & s ) ;
 //!     \throw
 //!         A \c breath::exception if any of the characters in \c s is
 //!         not a decimal digit.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 char                luhn_check_digit( std::string const & s ) ;
 
 }

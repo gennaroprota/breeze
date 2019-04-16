@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Operating system identifier.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_y14wSYOBPQ4ReQuQzkBRjijvOvqDhYc7
 #define BREATH_GUARD_y14wSYOBPQ4ReQuQzkBRjijvOvqDhYc7
@@ -27,7 +27,7 @@ namespace breath {
 //!
 //!     A thin wrapper around an int: we assign distinct integral
 //!     numbers to the different Windows versions.
-//      ---------------------------------------------------------
+// ---------------------------------------------------------------------------
 //
 //      Rationale for the absence of comparison operators:
 //
@@ -48,7 +48,7 @@ namespace breath {
 //      "server line" (Windows Server 2003 etc.); in the future it
 //      seems to me they could well release two Windows variants of
 //      which neither is "higher" or "lower" than the other.
-// --------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class os_id
     :   private equality_comparison< os_id >
 {

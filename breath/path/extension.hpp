@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Returns the file name extension from a given path.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_BtNGaSvg9IBya5J9FQZmayMQRBx2oBwo
 #define BREATH_GUARD_BtNGaSvg9IBya5J9FQZmayMQRBx2oBwo
@@ -35,7 +35,7 @@ namespace breath {
 //!     \note
 //!         This behavior is aligned with that of <code>
 //!         std::filesystem::path::extension()</code> (C++17).
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 std::string         extension( std::string const & path ) ;
 
 }

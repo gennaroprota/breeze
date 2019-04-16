@@ -16,7 +16,7 @@ namespace breath {
 namespace process_private {
 
 //      RAII class to automatically close a process handle.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class handle
 {
 public:

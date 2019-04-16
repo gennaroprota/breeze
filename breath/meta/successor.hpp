@@ -10,7 +10,7 @@
 //!     \brief Metafunction yielding the successor of another constant.
 //!
 //!     \todo: document behavior in case of overflow
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_DjUmH0WQBIis1gQMNQWYhB7KQHMzHYQQ
 #define BREATH_GUARD_DjUmH0WQBIis1gQMNQWYhB7KQHMzHYQQ

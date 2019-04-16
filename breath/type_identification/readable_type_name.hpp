@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Returns a human readable name for its type argument.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_e0aZnjL0UZmNVTa9XkUU1WypgFnHm24u
 #define BREATH_GUARD_e0aZnjL0UZmNVTa9XkUU1WypgFnHm24u
@@ -22,7 +22,7 @@ namespace breath {
 //
 //!     \return
 //!         A human readable name for the type \c T.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 std::string         readable_type_name() ;
 

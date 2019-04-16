@@ -25,7 +25,7 @@
 //      All references in the comments below are relative to
 //      FIPS 180-2 (with change notice), as indicated in the
 //      module documentation. [gps]
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 namespace breath {
 namespace        {
@@ -33,7 +33,7 @@ namespace        {
 typedef sha1_engine::word_type word_type ;
 
 //      Constants: section 4.2.1
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 static word_type const k[] = { 0x5a827999, 0x6ed9eba1,
                                0x8f1bbcdc, 0xca62c1d6 } ;
 
@@ -48,7 +48,7 @@ parity( word_type x, word_type y, word_type z )
 //          this is not a general rotate-left function: it assumes
 //          (which always happens with MD5 and SHA-1), that
 //          0 < amount < 32.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< int amount >
 word_type
 rotate_left( word_type w )
@@ -61,7 +61,7 @@ rotate_left( word_type w )
 void sha1_engine::init_state( state_type & state )
 {
     //      Reference: section 5.3.1
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     state[ 0 ] = 0x67452301 ;
     state[ 1 ] = 0xefcdab89 ;
     state[ 2 ] = 0x98badcfe ;
@@ -71,7 +71,7 @@ void sha1_engine::init_state( state_type & state )
 
 //
 //      Block processing - reference: section 6.1.2
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 void sha1_engine::process_block( state_type & state
                                , const block_type & block )
 {
@@ -79,7 +79,7 @@ void sha1_engine::process_block( state_type & state
     using sha_common_private::maj ;
 
     //      Expand the message-block to an 80-word "schedule"
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     int const           sz( 80 ) ;
     typedef word_type   schedule_type[ sz ] ;
     sensitive_buffer< schedule_type > sched(

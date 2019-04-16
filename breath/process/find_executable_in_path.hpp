@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Finds an executable file in a given path.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_FY2GqgDJYLYk2fqwzgZI8Nhxv6QAdsQW
 #define BREATH_GUARD_FY2GqgDJYLYk2fqwzgZI8Nhxv6QAdsQW
@@ -31,7 +31,7 @@ namespace breath {
 //!     \return
 //!         A \c maybe< std::string > that is invalid (for failure) or
 //!         contains the full path of the found executable.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 maybe< std::string >
                     find_executable_in_path(
                         std::string const & name,

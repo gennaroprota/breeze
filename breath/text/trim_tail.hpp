@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A \c std::string trimmer (tail of string).
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_rAf6FomrfEupsrKlsZvh9xwbNaeg8pxp
 #define BREATH_GUARD_rAf6FomrfEupsrKlsZvh9xwbNaeg8pxp

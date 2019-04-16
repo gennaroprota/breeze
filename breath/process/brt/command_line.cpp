@@ -54,7 +54,7 @@ command_line::instance()
 }
 
 //      TODO: This function is too long.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 bool
 command_line::parse( int argc,  char const * const * argv )
 {

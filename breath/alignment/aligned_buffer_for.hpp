@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A byte buffer to host an object of type \c T.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ilYRG2ibsfCoQd4vz7X5Cik5Q8E0z1pO
 #define BREATH_GUARD_ilYRG2ibsfCoQd4vz7X5Cik5Q8E0z1pO
@@ -24,7 +24,7 @@ class               aligned_buffer_for ;
 
 //!     "Empty" specialization to disable usage of the template for
 //!     arrays.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T, std::size_t n >
 class               aligned_buffer_for< T[ n ] >
 {
@@ -119,17 +119,17 @@ struct pod_with_same_align
 //!     So: this facility exists basically for C++03; and all of the
 //!     alternatives (this one, TR1's one and the library-based
 //!     C++11's one) will be made superfluous by C++11's core support.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 class aligned_buffer_for
 {
 public:
     //!     Copy constructor and copy-assignment operator deleted.
-    // ----------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     BREATH_DECLARE_NON_COPYABLE( aligned_buffer_for )
 
     //!     Constructs an uninitialized buffer.
-    // ----------------------------------------------------------------------
+    // -----------------------------------------------------------------------
                         aligned_buffer_for() noexcept {}
 
 private:
@@ -145,13 +145,13 @@ public:
     //!     \return
     //!         The address of the internal (aligned) buffer, as a
     //!         <code>void *</code>.
-    // ----------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     void *              address() noexcept       { return m_raw_buffer ; }
 
     //!     \return
     //!         The address of the internal (aligned) buffer, as a
     //!         <code>void const *</code>.
-    // ----------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     void const *        address() const noexcept { return m_raw_buffer ; }
 } ;
 

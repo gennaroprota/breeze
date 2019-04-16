@@ -19,7 +19,7 @@
 //!     scope std::size()'s. However our version uses, for containers,
 //!     a conditional noexcept that the standard version is not
 //!     required to have.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
 #define BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
@@ -34,7 +34,7 @@ namespace breath {
 //!     \return
 //!         The number of elements of the array argument
 //!         (obviously, \c n). See also the file-level documentation.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T, std::size_t n >
 constexpr std::size_t
 count( T const ( & )[ n ] ) noexcept
@@ -47,7 +47,7 @@ count( T const ( & )[ n ] ) noexcept
 //
 //!     The same as \c t.size(), for any standard container. See also
 //!     the file-level documentation.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 constexpr typename T::size_type
 count( T const & t ) noexcept( noexcept( t.size() ) )

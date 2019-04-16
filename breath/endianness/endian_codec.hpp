@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Converter from/to byte sequences representations.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_KF72jjCHTZHZqOBTMYHp95Fij2ZyYgaS
 #define BREATH_GUARD_KF72jjCHTZHZqOBTMYHp95Fij2ZyYgaS
@@ -51,7 +51,7 @@ public:
 //      =====================
 //
 //!     Little-endian policy for endian_codec.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 //
 //      NOTE:
 //
@@ -64,7 +64,7 @@ public:
 //      endianness type only into account. Your will need to provide
 //      your own policy for more exotic cases (e.g. if you are dealing
 //      with PDP-11 endianness).
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class little_endian_policy
 {
 public:
@@ -87,7 +87,7 @@ public:
 //      ==================
 //
 //!     Big-endian policy for endian_codec.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class big_endian_policy
 {
 public:
@@ -136,7 +136,7 @@ public:
 //!         but no need has so far arisen for such a generalization.
 //!         This only deals with a linear sequence of "Bytes",
 //!         representing a \c T value according to a given convention.
-// --------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template<
     typename EndianPolicy,
     typename T,
@@ -201,7 +201,7 @@ std::size_t const
 endian_codec< EndianPolicy, T, Byte, n >::required_count ;
 
 //!     Convenience functions
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename EndianPolicy, typename T, typename ByteRandomIter >
 T
 endian_store( T const & value, ByteRandomIter it )

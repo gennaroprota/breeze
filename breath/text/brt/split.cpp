@@ -33,7 +33,7 @@ split( std::string const & s, std::string const & delimiters )
     //          In theory, this is susceptible of an infinite loop, but
     //          this would only occur with a string of std::size_t( -1 )
     //          characters, which we do not support.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     for ( std::size_t i = 0 ; i <= s.size() ; ++ i ) {
         auto const          start = i ;
         i = s.find_first_of( delimiters, i );

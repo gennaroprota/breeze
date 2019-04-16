@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Named constants for program termination codes.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_jUGeAMeGfcMWbQ12OyJckoIpy0CYCBq0
 #define BREATH_GUARD_jUGeAMeGfcMWbQ12OyJckoIpy0CYCBq0
@@ -21,7 +21,7 @@ extern int const    exit_failure ;
 //      Maintenance note:
 //          keep in sync with *all* the .cpp files of the various code
 //          variants (brt/dep/ subdirectory).
-//   -----------------------------------------------------------------------
+//   -------------------------------------------------------------------------
 extern int const    exit_warning ;
 extern int const    exit_error ;
 extern int const    exit_fatal ;

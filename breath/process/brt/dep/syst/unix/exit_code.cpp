@@ -21,7 +21,7 @@ namespace breath {
 //
 //          - many de facto conventions exist and it is generally better
 //            to stay below 64 anyway
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 int const           exit_warning  = 10 ;
 int const           exit_error    = 20 ;
 int const           exit_fatal    = 30 ;

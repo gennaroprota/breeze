@@ -25,7 +25,7 @@ extension( std::string const & path )
 
     // Note that last_sep can equal npos or path.size() - 1; in both
     // cases, adding 1 is OK (see the preconditions of substr()).
-    // ---------------------------------------------------------------
+    // -----------------------------------------------------------------------
     std::string const   last_name = path.substr( last_sep + 1 ) ;
 
     auto const          pos = last_name.rfind( '.' ) ;

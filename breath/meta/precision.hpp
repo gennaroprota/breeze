@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Metafunction yielding the \e precision of a type.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_crv8sfpsGwWru7Bdt9WKSehiAw6f4zgz
 #define BREATH_GUARD_crv8sfpsGwWru7Bdt9WKSehiAw6f4zgz
@@ -34,7 +34,7 @@ namespace meta {
 //!     \par Type requirements:
 //!         \c T shall be an integral type or a cv-qualified version
 //!         thereof.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 class precision
     :   public constant< int, std::numeric_limits< T >::digits >

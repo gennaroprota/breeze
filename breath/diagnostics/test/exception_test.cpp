@@ -47,7 +47,7 @@ test_what_message_handling()
 
     //  The idea, here, is that std::strlen will crash if the string
     //  is not null-terminated.
-    // --------------------------------------------------------------
+    // -----------------------------------------------------------------------
     std::size_t const volatile
                         length = std::strlen( e3.what() ) ;
     static_cast< void >( length ) ;

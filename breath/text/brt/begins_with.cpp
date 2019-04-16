@@ -28,7 +28,7 @@ namespace breath {
 //            <https://wg21.link/lwg2967>.
 //
 //          Of course, our unit tests verify that this is the case.)
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 bool
 begins_with( std::string const & str, std::string const & with ) noexcept
 {

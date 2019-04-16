@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief The integer part of the log, base 2, of its argument.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Kym3FA1ex9fw5x3d1rVgY686BX4YRKvw
 #define BREATH_GUARD_Kym3FA1ex9fw5x3d1rVgY686BX4YRKvw
@@ -32,7 +32,7 @@ namespace breath {
 //!         This function does not compile with Visual C++ 2015 because
 //!         the compiler does not yet implement \c constexpr functions
 //!         as generalized in C++14.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 constexpr int       integer_log2( std::uintmax_t x ) noexcept ;
 
 }

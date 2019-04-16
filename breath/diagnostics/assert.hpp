@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A basic assertion facility.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_k8gjtzbloTDgF7FRM6AWORSGsE1IHkXq
 #define BREATH_GUARD_k8gjtzbloTDgF7FRM6AWORSGsE1IHkXq

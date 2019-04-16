@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief  SHA functions common code.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_YZVt6T2boY9RlFkqeiYohH0bEc6w6tsM
 #define BREATH_GUARD_YZVt6T2boY9RlFkqeiYohH0bEc6w6tsM
@@ -20,7 +20,7 @@ namespace sha_common_private {
 
 //      The "choice" function - for each bit position p it acts as a
 //      conditional: "if x(p) then y(p) else z(p)".
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 T
 ch( T x, T y, T z )
@@ -30,7 +30,7 @@ ch( T x, T y, T z )
 
 //      "Majority" function - for each bit position the result is 1 if
 //      and only if at least two of the three bits are 1.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 T
 maj( T x, T y, T z )
@@ -39,7 +39,7 @@ maj( T x, T y, T z )
 }
 
 //      Rotate right - usual constraints on amount apply.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< int amount, typename T >
 T
 ror( T x )

@@ -18,7 +18,7 @@ namespace integer_log2_private {
 //      unsigned type (width of unsigned char) is 8, we start from 4.
 //      We could actually start from 32, because uintmax_t must have
 //      at least 64 value bits.
-// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 constexpr int       start_at = 4 ;
 
 constexpr int

@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A description of the operating system.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_vUmfBUe7uRgM2lw3OI5BLE0BSMMDnzDS
 #define BREATH_GUARD_vUmfBUe7uRgM2lw3OI5BLE0BSMMDnzDS
@@ -21,7 +21,7 @@ namespace breath {
 //      ======================
 //
 //!     A streamable description of the operating system.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class operating_system_name
 {
 } ;

@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Thin wrapper around \c std::getenv().
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_DJJ43p6UR3Ib7dPq3Qi3OoGCOlpQ0iRV
 #define BREATH_GUARD_DJJ43p6UR3Ib7dPq3Qi3OoGCOlpQ0iRV
@@ -47,7 +47,7 @@ namespace breath {
 //!     The behavior on passing an empty string for the \c name
 //!     parameter is implementation-defined: please check the
 //!     documentation provided with your C++ implementation.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 maybe< std::string >
                     find_environment_string( std::string const & name ) ;
 

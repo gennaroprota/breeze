@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Cryptographic hash digest object.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_HJb5zsPZzS9ztbt5GdVJMPv00mZUAnQI
 #define BREATH_GUARD_HJb5zsPZzS9ztbt5GdVJMPv00mZUAnQI
@@ -23,7 +23,7 @@ namespace breath {
 //
 //!     A digest object represents the result of applying a digest
 //!     algorithm to a given input sequence.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename Hasher >
 class digest
     :   private equality_comparison< digest< Hasher > >
@@ -36,18 +36,18 @@ public:
     //!\{
     //! Constructs a digest from a Hasher. Since the \p Hasher argument
     //! is passed by value its state is not affected.
-    // -------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     explicit            digest( Hasher hasher_copy ) ;
     //!\}
 
     //!     Copy and destruction.
     //!     Compiler-generated copy ctor, copy assignment operator and
     //!     dtor.
-    // -------------------------------------------------------------------
+    // -----------------------------------------------------------------------
 
     //!
     //!     Equality comparison (both \c == and \c != are provided).
-    // -------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     bool                is_equal( digest< Hasher > const & ) const ;
 
     //!     \name Byte-based iteration (read-only)
@@ -64,7 +64,7 @@ private:
 
 
 //!     Digests are output-streamable.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename Ch, typename Tr, typename Hasher >
 std::basic_ostream< Ch, Tr > &
 operator <<( std::basic_ostream< Ch, Tr >   & os,
@@ -74,7 +74,7 @@ operator <<( std::basic_ostream< Ch, Tr >   & os,
 //!
 //!     \return
 //!         digest< Hasher >( h )
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename Hasher >
 digest< Hasher > make_digest( Hasher const & h ) ;
 

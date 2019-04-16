@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief An object to report unit tests errors to a \c
 //!            std::ostream.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_XgKxFi9sRq7YDgySOH2206PWX2ZxQrtB
 #define BREATH_GUARD_XgKxFi9sRq7YDgySOH2206PWX2ZxQrtB
@@ -29,7 +29,7 @@ class console_reporter
 public:
     //      Declare this explicitly to avoid Visual C++ C4626 (and
     //      C5027).
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     void                operator=( console_reporter const & ) = delete ;
 
     explicit            console_reporter( std::ostream & os ) ;

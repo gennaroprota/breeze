@@ -47,7 +47,7 @@ md5_rotate_left( word_type w )
 //      but few compilers seemed to be able to inline them when an array
 //      was formed with their addresses, despite the inlining being
 //      proven beneficial. That's why we "index" by template parameter.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< int round > struct aux_f
 {
     static word_type    f( word_type, word_type, word_type ) ;

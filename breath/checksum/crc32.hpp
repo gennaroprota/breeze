@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief CRC-32, as used by Ethernet, Serial ATA, PKZIP, Gzip,
 //!            Bzip2, PNG.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_K46CqplQJyZFGjsXe5vROIAJbKonAZ10
 #define BREATH_GUARD_K46CqplQJyZFGjsXe5vROIAJbKonAZ10
@@ -24,7 +24,7 @@ namespace breath {
 //!     \return
 //!         The CRC-32 of the sequence identified by <code>
 //!         [ begin, end )</code>.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename InputIterator >
 std::uint_fast32_t  crc32( InputIterator begin, InputIterator end ) ;
 

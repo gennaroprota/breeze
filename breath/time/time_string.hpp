@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A thin wrapper around \c std::strftime().
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_wR9yYhDtICLHOJ6c2LmBkhMWoYoaeVkS
 #define BREATH_GUARD_wR9yYhDtICLHOJ6c2LmBkhMWoYoaeVkS
@@ -23,7 +23,7 @@ namespace breath {
 //
 //!     The type of timezone (UTC/local) in which the time must be
 //!     returned.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class time_string_zone
 {
 public:
@@ -50,7 +50,7 @@ public:
 //!
 //!     NOTE:
 //!         document reentrancy issues (see C99, 7.23.3)
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 breath::maybe< std::string >
                     time_string( std::string const & format,
                                  time_string_zone::zone =

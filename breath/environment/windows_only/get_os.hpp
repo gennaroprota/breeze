@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Determines the running operating system.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_lc9dZp5eUrNd9dbNZHDcvW36RGyTlJ77
 #define BREATH_GUARD_lc9dZp5eUrNd9dbNZHDcvW36RGyTlJ77
@@ -23,7 +23,7 @@ namespace breath {
     //!     in compatibility mode; now it uses an API which doesn't
     //!     appear to be affected by the compatibility settings, so we
     //!     should detect the "true" OS, anyway.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     os_id           get_os() ;
 
 }

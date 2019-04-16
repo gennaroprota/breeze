@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Universally unique identifiers.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_jjJFg8dCizQ6ClSYgT8Zsg2zo7zFYgfG
 #define BREATH_GUARD_jjJFg8dCizQ6ClSYgT8Zsg2zo7zFYgfG
@@ -22,7 +22,7 @@ namespace breath {
 //      =====
 //
 //!     A universally unique identifier.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class uuid
 {
 public:
@@ -35,7 +35,7 @@ public:
 private:
     //      Note: the stream inserter assumes the largest type, here, is
     //      uint32_t. Keep in sync.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     uint32_t            m_time_low ;
     uint16_t            m_time_mid ;
     uint16_t            m_time_hi_and_version ;

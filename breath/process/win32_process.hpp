@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Represents a Win32 process.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_R609ymqmTeLeF2v3mTEcOyW8AqCEibGg
 #define BREATH_GUARD_R609ymqmTeLeF2v3mTEcOyW8AqCEibGg
@@ -25,7 +25,7 @@ namespace breath {
 //
 //!     A Win32 process. Provides operations which aren't available in
 //!     the portable process class.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class win32_process
     :   public process
 {

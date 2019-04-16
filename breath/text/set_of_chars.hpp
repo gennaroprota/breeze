@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A set of chars.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Gq4RCdDZQAIMmQBL7I3lbPfT3oHjV7of
 #define BREATH_GUARD_Gq4RCdDZQAIMmQBL7I3lbPfT3oHjV7of
@@ -25,7 +25,7 @@ namespace breath {
 //      =============
 //
 //!     A set of chars.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 class set_of_chars
 {
 public:
@@ -36,7 +36,7 @@ public:
                         set_of_chars( FwdIterator begin, FwdIterator end ) ;
 
     //!     A special value used by some constructors.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     enum except_for { except } ;
 
                         set_of_chars( except_for, char ) ;
@@ -74,7 +74,7 @@ public:
     typedef iterator    const_iterator ;
 
     //!     Read-only iterators for the standard library.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     iterator            begin() const ;
     iterator            end() const ;
 
@@ -96,12 +96,12 @@ public:
     //
     //!     Iterates over all of the characters in the set.  It is a
     //!     forward iterator.
-    // ---------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     class               iterator
     {
     public:
         //!     Typedefs for the Standard Library
-        // -----------------------------------------------------------------
+        // -------------------------------------------------------------------
         typedef std::forward_iterator_tag
                             iterator_category  ;
         typedef char        value_type         ;

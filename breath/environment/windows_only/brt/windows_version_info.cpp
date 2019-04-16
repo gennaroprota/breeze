@@ -59,7 +59,7 @@ raise_api_exception( char const * msg )
 
 //      Used to workaround two Visual Studio /analyze warnings (C6286
 //      and C6326).
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 T
 make_non_const( T value )
@@ -85,7 +85,7 @@ make_non_const( T value )
 //
 //        <https://docs.microsoft.com/en-us/windows/desktop/SysInfo/getting-the-system-version>
 //      ).
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 windows_version_info::windows_version_info()
 {
     static wchar_t const
@@ -363,7 +363,7 @@ windows_version_info::is_wow64_process()
 
     // Note: the intermediate cast to void * is to silence Visual C++
     //       C4191, which is a useful warning to have.
-    // -------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     fn_ptr_type const   is_wow64_process =
                 reinterpret_cast< fn_ptr_type >(
                     reinterpret_cast< void * >(
@@ -403,7 +403,7 @@ windows_version_info::is_client()
 //
 //      but I read somewhere (unconfirmed) that Microsoft broke it with
 //      Windows Vista. - gps TODO
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 int
 windows_version_info::service_pack_level()
 {

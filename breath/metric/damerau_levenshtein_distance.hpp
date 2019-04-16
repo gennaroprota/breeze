@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Damerau-Levenshtein distance between two strings.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_DdgXuNwmaHGONiwKca8ikqBoDHQThmMu
 #define BREATH_GUARD_DdgXuNwmaHGONiwKca8ikqBoDHQThmMu
@@ -24,7 +24,7 @@ namespace breath {
 //!     \return
 //!         The Damerau-Levenshtein distance between \c first and
 //!         \c second.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 std::size_t         damerau_levenshtein_distance( std::string const & first,
                                                   std::string const & second ) ;
 

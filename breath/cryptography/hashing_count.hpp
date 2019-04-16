@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Hashing count policy.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_TFkXJUZ0hYDDlcmPKYMI9GfC5n42i9kF
 #define BREATH_GUARD_TFkXJUZ0hYDDlcmPKYMI9GfC5n42i9kF

@@ -28,7 +28,7 @@ namespace {
 //      NOTE:
 //          keep in sync with enum gravity in the class definition and
 //          the switch-case in declare_error().
-// ----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 int const           exit_codes[] = {
     breath::exit_success,
     breath::exit_warning,
@@ -40,7 +40,7 @@ int const           exit_codes[] = {
 
 //      Because it is implementation-defined whether exit() has C
 //      linkage or C++ linkage.
-// ----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 [[noreturn]] void
 cpp_exit( int exit_code )
 {

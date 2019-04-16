@@ -26,7 +26,7 @@ check()
     //      <https://www.base64encode.org/>.
     //  The latter is not an authoritative reference but I wanted some
     //  more test vectors.
-    //  ----------------------------------------------------------------
+    //  ----------------------------------------------------------------------
     struct
     {
         std::string binary ;

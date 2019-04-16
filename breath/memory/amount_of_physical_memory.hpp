@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief Returns the amount of physical memory in the system, in
 //!            KiB.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_MGUaDhlpQlBVyyLZNOhIfvYsz5BgazUe
 #define BREATH_GUARD_MGUaDhlpQlBVyyLZNOhIfvYsz5BgazUe
@@ -22,7 +22,7 @@ namespace breath {
 //!     \return
 //!         The amount of physical memory installed in the system, in
 //!         KiB.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 unsigned long long  amount_of_physical_memory() ;
 
 }

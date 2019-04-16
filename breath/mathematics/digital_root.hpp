@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Digital root of a (non-negative) integer.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_XtTcG5ymuoVaWgnKITP3OQP7ggHKE44e
 #define BREATH_GUARD_XtTcG5ymuoVaWgnKITP3OQP7ggHKE44e
@@ -23,7 +23,7 @@ namespace breath {
 //!
 //!     \pre
 //!         n >= 0 && base > 2
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 constexpr T         digital_root( T n, T base = 10 ) noexcept ;
 

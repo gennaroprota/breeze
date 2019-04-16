@@ -61,7 +61,7 @@ entropy_source::impl::impl()
     //      Note that this member is intentionally not initialized in
     //      the ctor initializer list; in case of exceptions there is
     //      no way it could be used.
-    // ---------------------------------------------------------------------------
+    // -----------------------------------------------------------------------
     m_handle_is_valid = true ;
 }
 

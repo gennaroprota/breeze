@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Returns an object given its textual representation.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Q6sxk1RUMey9fbjLvtacucg61F39I6ob
 #define BREATH_GUARD_Q6sxk1RUMey9fbjLvtacucg61F39I6ob
@@ -21,7 +21,7 @@ namespace breath {
 //!         \c T shall be default constructible and either move
 //!         constructible or copy constructible. Furthermore it shall
 //!         be input streamable.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 T                   from_string( std::string const & s ) ;
 
@@ -31,7 +31,7 @@ T                   from_string( std::string const & s ) ;
 //!     \note
 //!         This specialization is not just an optimization: it ensures
 //!         that e.g. " test " converts to " test " and not "test".
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template<>
 inline std::string  from_string< std::string >( std::string const & s ) ;
 

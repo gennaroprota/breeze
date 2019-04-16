@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief Base class template to provide equality comparison
 //!            operators.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI
 #define BREATH_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI
@@ -58,7 +58,7 @@ namespace adl_shield {
 //!     (as opposed, for instance, to "equality_comparable"),
 //!     consistently with the general naming style of the Breath C++
 //!     components.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 class equality_comparison
 {

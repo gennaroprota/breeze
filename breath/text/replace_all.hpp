@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A function that replaces substrings.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_oNNLAbfLiNCB1qfs0q2QLDtlsFTosyBu
 #define BREATH_GUARD_oNNLAbfLiNCB1qfs0q2QLDtlsFTosyBu

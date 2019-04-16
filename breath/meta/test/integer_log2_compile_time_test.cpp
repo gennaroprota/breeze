@@ -23,7 +23,7 @@
 //
 //      Of course this will be initially invoked with 2 ** (w - 1),
 //      where w is the width of static_log2's argument type.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 using breath::meta::integer_log2 ;
 
 template< breath::meta::integer_log2_argument_type x,

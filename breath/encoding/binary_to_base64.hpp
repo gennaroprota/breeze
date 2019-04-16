@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Base64 encoding.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_m83AHFwUQlZBwnHisbdZpcYHaazyL2sn
 #define BREATH_GUARD_m83AHFwUQlZBwnHisbdZpcYHaazyL2sn
@@ -37,7 +37,7 @@ namespace breath {
 //!     \param wrap_column
 //!         Column where line-wrapping must occur in the generated
 //!         output (\c 0 means "no wrapping").
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename InputIter, typename OutputIter >
 void                binary_to_base64( InputIter begin, InputIter end,
                                       OutputIter out,

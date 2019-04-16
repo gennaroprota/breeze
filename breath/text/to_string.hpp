@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Returns the textual representation of an object.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_JRFfcCLm3oqVulEWGOycMApryPN2pq33
 #define BREATH_GUARD_JRFfcCLm3oqVulEWGOycMApryPN2pq33
@@ -22,7 +22,7 @@ namespace breath {
 //
 //!     \return
 //!         The textual representation of its argument.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename OutputStreamable >
 std::string         to_string( OutputStreamable const & ) ;
 

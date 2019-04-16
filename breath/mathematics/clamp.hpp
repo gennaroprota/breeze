@@ -9,13 +9,13 @@
 //!     \file
 //!     \brief An implementation of the clamp() templates proposed for
 //!            C++17.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 //  See:
 //    <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4536.html>,
 //    <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0025r1.html>
 //  and
 //    <http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-active.html#2688>.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_iVIpJl3Xhjhnj23ACP0NU6ffWo7q8kd4
 #define BREATH_GUARD_iVIpJl3Xhjhnj23ACP0NU6ffWo7q8kd4
@@ -39,7 +39,7 @@ namespace breath {
 //!     Remarks:
 //!         Returns a reference to \c value when \c value is
 //!         equivalent to one (or both) of the boundary arguments.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T >
 constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
 
@@ -59,7 +59,7 @@ constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
 //!     Remarks:
 //!         Returns a reference to \c value when \c value is
 //!         equivalent to one (or both) of the boundary arguments.
-// --------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 template< typename T, typename Compare  >
 constexpr T const & clamp( T const & value,
                            T const & low,

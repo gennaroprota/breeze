@@ -21,7 +21,7 @@ namespace breath {
 namespace assert_private {
 
 //      Sends a message to std:cerr and aborts.
-// -----------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 [[ noreturn ]] void
 fire( char const * message,
       char const * file_name, unsigned long line_number ) noexcept

@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A token concatenation macro.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_FQYU7dF1crCo42cp2n1PRVbw1ctMjDqe
 #define BREATH_GUARD_FQYU7dF1crCo42cp2n1PRVbw1ctMjDqe

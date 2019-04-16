@@ -30,7 +30,7 @@ check_valid()
     //  because the two arrays might diverge in the future in order
     //  to accommodate particular tests for the Base64->binary
     //  conversion.
-    //  ----------------------------------------------------------------
+    //  ----------------------------------------------------------------------
     struct
     {
         std::string binary ;
