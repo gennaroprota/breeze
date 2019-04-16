@@ -19,10 +19,10 @@ namespace breath {
 
 performance_counter_policy::performance_counter_policy()
 {
-    // Note that restart() is not called here. It will be called by
-    // the timer template, if needed. Note that this causes the member
-    // m_start to be left uninitialized.
-    //
+    //      Note that restart() is not called here. It will be called by
+    //      the timer template, if needed. Note that this causes the
+    //      member m_start to be left uninitialized.
+    // -----------------------------------------------------------------------
     LARGE_INTEGER       f ;
     if ( QueryPerformanceFrequency( &f ) == 0 ) {
         throw last_api_error( "QueryPerformanceFrequency() failed" ) ;
