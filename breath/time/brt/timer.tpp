@@ -9,7 +9,7 @@
 namespace breath {
 
 template< typename Device >
-elapsed_timer< Device >::elapsed_timer( start_mode mode )
+timer< Device >::timer( start_mode mode )
     : m_device()
 {
     if ( mode == auto_start) {
@@ -19,21 +19,21 @@ elapsed_timer< Device >::elapsed_timer( start_mode mode )
 
 template< typename Device >
 void
-elapsed_timer< Device >::restart()
+timer< Device >::restart()
 {
     return m_device.restart() ;
 }
 
 template< typename Device >
-typename elapsed_timer< Device >::duration_type
-elapsed_timer< Device>::elapsed() const
+typename timer< Device >::duration_type
+timer< Device>::elapsed() const
 {
     return m_device.elapsed() ;
 }
 
 template< typename Device >
-typename elapsed_timer< Device >::duration_type
-elapsed_timer< Device >::resolution() const
+typename timer< Device >::duration_type
+timer< Device >::resolution() const
 {
     return m_device.resolution() ;
 }

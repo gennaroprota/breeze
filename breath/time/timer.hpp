@@ -15,8 +15,8 @@
 
 namespace breath {
 
-//      elapsed_timer:
-//      ==============
+//      timer:
+//      ======
 //
 //!     A policy based timer which allows the user to retrieve the
 //!     amount of time elapsed from its start.
@@ -35,7 +35,7 @@ namespace breath {
 //!      - \c duration_type
 // ---------------------------------------------------------------------------
 template< class Device >
-class elapsed_timer
+class timer
 {
 public:
     typedef typename Device::duration_type
@@ -46,7 +46,7 @@ public:
     //!     Initializes the underlying device and, if <code>mode ==
     //!     auto_start</code> calls \c restart().
     // -----------------------------------------------------------------------
-    explicit            elapsed_timer( start_mode mode = auto_start ) ;
+    explicit            timer( start_mode mode = auto_start ) ;
 
     //!     Starts or restarts the timer. See \c elapsed().
     // -----------------------------------------------------------------------
@@ -70,7 +70,7 @@ private:
 
 }
 
-#include "brt/elapsed_timer.tpp"
+#include "brt/timer.tpp"
 #endif
 
 // Local Variables:

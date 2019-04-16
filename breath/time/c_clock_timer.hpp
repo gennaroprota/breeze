@@ -13,12 +13,12 @@
 #ifndef BREATH_GUARD_u43dOQ8kSA0wS32RQRLI7UM66PBoXLSA
 #define BREATH_GUARD_u43dOQ8kSA0wS32RQRLI7UM66PBoXLSA
 
-#include "breath/time/elapsed_timer.hpp"
+#include "breath/time/timer.hpp"
 #include "breath/time/c_clock_device.hpp"
 
 namespace breath {
 
-typedef elapsed_timer< c_clock_device >
+typedef timer< c_clock_device >
                     c_clock_timer ;
 
 }
