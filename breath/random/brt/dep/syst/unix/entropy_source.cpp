@@ -53,12 +53,12 @@ entropy_source::impl::impl()
         entropy_source::exception::raise( "cannot open /dev/random" ) ;
     }
 
-    // Attempt to turn off the library-level buffering. If that fails
-    // we ignore the failure.
+    //      Attempt to turn off the library-level buffering. If that
+    //      fails we ignore the failure.
     //
-    // (If the need arises to verify this, I might store the information
-    // given by setvbuf's return value and add an is_buffered() member
-    // function.)
+    //      (If the need arises to verify this, I might store the
+    //      information given by setvbuf()'s return value and add an
+    //      is_buffered() member function.)
     // -----------------------------------------------------------------------
     ::setvbuf( m_file, nullptr, _IONBF, 0 ) ;
 }
