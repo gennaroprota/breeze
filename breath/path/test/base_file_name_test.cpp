@@ -11,7 +11,6 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-
 #include "breath/path/base_file_name.hpp"
 
 ///////// gps

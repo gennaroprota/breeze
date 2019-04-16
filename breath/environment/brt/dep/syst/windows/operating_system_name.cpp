@@ -11,7 +11,6 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-
 #include "breath/environment/windows_only/get_os.hpp"
 #include <ostream>
 

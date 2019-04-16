@@ -11,7 +11,6 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-
 // gps temp
 #undef NDEBUG
 #include <assert.h>
