@@ -7,9 +7,6 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 #
-#       init_file.sh:
-#       =============
-#
 #       This script must be used to initialize all text files intended
 #       for Breath. It ensures, among other things, that our copyright
 #       notice and license reference (plus, guards for C++ includes)
