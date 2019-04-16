@@ -17,8 +17,8 @@
 
 namespace breath {
 
-//      c_clock_policy
-//      ==============
+//      c_clock_policy:
+//      ===============
 //
 //!     Note that on some (non-conforming) implementations
 //!     std::clock() will actually measure wall-clock time.
