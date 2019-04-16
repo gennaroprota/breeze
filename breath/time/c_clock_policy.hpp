@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A clock device based on \c std::clock().
+//!     \brief A timer policy using \c std::clock().
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
