@@ -4,7 +4,7 @@
 //          PVS-Studio Static Code Analyzer for C, C++, C#, and Java:
 //                            http://www.viva64.com
 // ===========================================================================
-//                        Copyright 2008 Gennaro Prota
+//                     Copyright 2008-2019 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -12,27 +12,27 @@
 // ___________________________________________________________________________
 
 #include "breath/text/trim_head.hpp"
-#include "breath/text/set_of_chars.hpp"
+#include "breath/text/trim_head_if.hpp"
+#include <locale>
 
 namespace breath {
 
 std::string
-trim_head( std::string const & str )
+trim_head( std::string const & str, std::locale const & loc )
 {
-    return breath::trim_head( str, set_of_chars( " \f\n\r\t\v" ) ) ;
+    return breath::trim_head_if( str, [ & ]( char c ) -> bool
+                                      {
+                                          return std::isspace( c, loc ) ;
+                                      } ) ;
 }
 
 std::string
-trim_head( std::string const & source, set_of_chars const & to_remove )
+trim_head( std::string const & str, set_of_chars const & to_remove )
 {
-    auto const          pos =
-        source.find_first_not_of( to_remove.as_string() ) ;
-    return pos == std::string::npos
-        ? ""
-        : std::string( source, pos )
-        ;
-
-
+    return breath::trim_head_if( str, [ & ]( char c ) -> bool
+                                      {
+                                          return to_remove.contains( c ) ;
+                                      } ) ;
 }
 
 }

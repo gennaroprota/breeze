@@ -348,6 +348,9 @@
     </None>
     <None Include="..\..\breath\mathematics\brt\representation_in_base.tpp" />
     <None Include="..\..\breath\cryptography\brt\merkle_damgard_machine.tpp" />
+    <None Include="..\..\breath\text\brt\trim_tail_if.tpp" />
+    <None Include="..\..\breath\text\brt\trim_head_if.tpp" />
+    <None Include="..\..\breath\text\brt\trim_if.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\accumulate.hpp">
@@ -699,6 +702,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\cryptography\merkle_damgard_machine.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\text\trim_head_if.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\text\trim_if.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\text\trim_tail_if.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

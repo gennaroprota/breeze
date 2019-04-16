@@ -1,5 +1,5 @@
 // ===========================================================================
-//                     Copyright 2008-2015 Gennaro Prota
+//                     Copyright 2008-2019 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -13,13 +13,14 @@
 #ifndef BREATH_GUARD_rAf6FomrfEupsrKlsZvh9xwbNaeg8pxp
 #define BREATH_GUARD_rAf6FomrfEupsrKlsZvh9xwbNaeg8pxp
 
+#include "breath/text/set_of_chars.hpp"
+#include <locale>
 #include <string>
 
 namespace breath {
 
-class               set_of_chars ;
-
-std::string         trim_tail( std::string const & str ) ;
+std::string         trim_tail( std::string const & str,
+                               std::locale const & loc = std::locale() ) ;
 
 std::string         trim_tail( std::string const &  str,
                                set_of_chars const & to_remove ) ;

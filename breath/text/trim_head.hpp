@@ -1,5 +1,5 @@
 // ===========================================================================
-//                        Copyright 2011 Gennaro Prota
+//                     Copyright 2011-2019 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -13,13 +13,14 @@
 #ifndef BREATH_GUARD_VJhjD7vyKemLfcukUGXm4RzXGSsdvmrL
 #define BREATH_GUARD_VJhjD7vyKemLfcukUGXm4RzXGSsdvmrL
 
+#include "breath/text/set_of_chars.hpp"
+#include <locale>
 #include <string>
 
 namespace breath {
 
-class               set_of_chars ;
-// gps dovrebbe rimuovere gli space secondo il locale?
-std::string         trim_head( std::string const & str ) ;
+std::string         trim_head( std::string const & str,
+                               std::locale const & loc = std::locale() ) ;
 
 std::string         trim_head( std::string const &  str,
                                set_of_chars const & to_remove ) ;

@@ -11,9 +11,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breath/text/set_of_chars.hpp"
 #include "breath/text/trim_head.hpp"
-
-#include <string>
 
 // gps temp
 #include "breath/diagnostics/assert.hpp"
@@ -24,6 +23,7 @@ int
 main()
 {
     using breath::trim_head ;
+    using breath::set_of_chars ;
 
     DO_TEST( trim_head( "" ) == "" ) ;
     DO_TEST( trim_head( " " ) == "" ) ;
@@ -36,10 +36,10 @@ main()
     DO_TEST( trim_head( "\t abc" ) == "abc" ) ;
     DO_TEST( trim_head( "abc a" ) == "abc a" ) ;
 
-    DO_TEST( trim_head( "abcd", "ab" ) == "cd" ) ;
-    DO_TEST( trim_head( "abcde", "badc" ) == "e" ) ;
-    DO_TEST( trim_head( "a", "bcde" ) == "a" ) ;
-    DO_TEST( trim_head( "abcd", "bce" ) == "abcd" ) ;
+    DO_TEST( trim_head( "abcd", set_of_chars( "ab" ) ) == "cd" ) ;
+    DO_TEST( trim_head( "abcde", set_of_chars( "badc" ) ) == "e" ) ;
+    DO_TEST( trim_head( "a", set_of_chars( "bcde" ) ) == "a" ) ;
+    DO_TEST( trim_head( "abcd", set_of_chars( "bce" ) ) == "abcd" ) ;
 }
 
 // Local Variables:

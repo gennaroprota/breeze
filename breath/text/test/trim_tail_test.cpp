@@ -4,17 +4,15 @@
 //          PVS-Studio Static Code Analyzer for C, C++, C#, and Java:
 //                            http://www.viva64.com
 // ===========================================================================
-//                        Copyright 2008 Gennaro Prota
+//                     Copyright 2008-2019 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/text/trim_tail.hpp"
 #include "breath/text/set_of_chars.hpp"
-
-#include <string>
+#include "breath/text/trim_tail.hpp"
 
 // gps temp
 #include "breath/diagnostics/assert.hpp"
@@ -25,6 +23,7 @@ int
 main()
 {
     using breath::trim_tail ;
+    using breath::set_of_chars ;
 
     DO_TEST( trim_tail( "" ) == "" ) ;
     DO_TEST( trim_tail( " " ) == "" ) ;
@@ -37,10 +36,10 @@ main()
     DO_TEST( trim_tail( "abc \t" ) == "abc" ) ;
     DO_TEST( trim_tail( "abc a" ) == "abc a" ) ;
 
-    DO_TEST( trim_tail( "abcd", breath::set_of_chars( "db" ) ) == "abc" ) ;
-    DO_TEST( trim_tail( "abcd", breath::set_of_chars( "badc" ) ) == "" ) ;
-    DO_TEST( trim_tail( "a", breath::set_of_chars( "bcde" ) ) == "a" ) ;
-    DO_TEST( trim_tail( "abcd", breath::set_of_chars( "bce" ) ) == "abcd" ) ;
+    DO_TEST( trim_tail( "abcd", set_of_chars( "db" ) ) == "abc" ) ;
+    DO_TEST( trim_tail( "abcd", set_of_chars( "badc" ) ) == "" ) ;
+    DO_TEST( trim_tail( "a", set_of_chars( "bcde" ) ) == "a" ) ;
+    DO_TEST( trim_tail( "abcd", set_of_chars( "bce" ) ) == "abcd" ) ;
 }
 
 // Local Variables:

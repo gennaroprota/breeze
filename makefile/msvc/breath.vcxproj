@@ -549,6 +549,9 @@
     <None Include="..\..\breath\stream\brt\null_stream.tpp" />
     <None Include="..\..\breath\text\brt\from_string.tpp" />
     <None Include="..\..\breath\text\brt\to_string.tpp" />
+    <None Include="..\..\breath\text\brt\trim_head_if.tpp" />
+    <None Include="..\..\breath\text\brt\trim_if.tpp" />
+    <None Include="..\..\breath\text\brt\trim_tail_if.tpp" />
     <None Include="..\..\breath\time\brt\timer.tpp" />
     <None Include="..\..\breath\type_identification\brt\readable_type_name.tpp" />
   </ItemGroup>
@@ -662,7 +665,10 @@
     <ClInclude Include="..\..\breath\text\to_string.hpp" />
     <ClInclude Include="..\..\breath\text\trim.hpp" />
     <ClInclude Include="..\..\breath\text\trim_head.hpp" />
+    <ClInclude Include="..\..\breath\text\trim_head_if.hpp" />
+    <ClInclude Include="..\..\breath\text\trim_if.hpp" />
     <ClInclude Include="..\..\breath\text\trim_tail.hpp" />
+    <ClInclude Include="..\..\breath\text\trim_tail_if.hpp" />
     <ClInclude Include="..\..\breath\time\c_clock_policy.hpp" />
     <ClInclude Include="..\..\breath\time\c_clock_timer.hpp" />
     <ClInclude Include="..\..\breath\time\timer.hpp" />
