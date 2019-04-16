@@ -27,12 +27,13 @@ c_clock_policy::retrieve()
 
 
 c_clock_policy::c_clock_policy()
-    : m_start_tick() // just to remove compiler warnings
+    :   m_start_tick() // just to remove compiler warnings
 {
     restart() ;
 }
 
-void c_clock_policy::restart()
+void
+c_clock_policy::restart()
 {
     // synchronize our start
     std::clock_t const  s( retrieve() ) ;
