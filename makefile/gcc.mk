@@ -113,6 +113,7 @@ cpp_basic_options += -flto-odr-type-merging          \
                      -Wformat-signedness             \
                      -Winvalid-pch                   \
                      -Wlogical-op                    \
+                     -Wmissing-declarations          \
                      -Wmissing-include-dirs          \
                      -Wnoexcept                      \
                      -Wnon-virtual-dtor              \
