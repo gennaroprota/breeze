@@ -14,11 +14,11 @@
 #define BREATH_GUARD_u43dOQ8kSA0wS32RQRLI7UM66PBoXLSA
 
 #include "breath/time/timer.hpp"
-#include "breath/time/c_clock_device.hpp"
+#include "breath/time/c_clock_policy.hpp"
 
 namespace breath {
 
-typedef timer< c_clock_device >
+typedef timer< c_clock_policy >
                     c_clock_timer ;
 
 }

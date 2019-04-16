@@ -240,13 +240,13 @@
     <ClCompile Include="..\..\breath\text\test\trim_tail_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\time\brt\c_clock_device.cpp">
+    <ClCompile Include="..\..\breath\time\brt\c_clock_policy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breath\time\brt\time_string.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\time\windows_only\brt\performance_counter_timer.cpp">
+    <ClCompile Include="..\..\breath\time\windows_only\brt\performance_counter_policy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breath\uuid\brt\uuid.cpp">
@@ -635,7 +635,7 @@
     <ClInclude Include="..\..\breath\text\trim_tail.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\time\c_clock_device.hpp">
+    <ClInclude Include="..\..\breath\time\c_clock_policy.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\time\c_clock_timer.hpp">
@@ -647,7 +647,7 @@
     <ClInclude Include="..\..\breath\time\time_string.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\time\windows_only\performance_counter_timer.hpp">
+    <ClInclude Include="..\..\breath\time\windows_only\performance_counter_policy.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\uuid\uuid.hpp">

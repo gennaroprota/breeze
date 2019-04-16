@@ -17,18 +17,18 @@
 
 namespace breath {
 
-//      c_clock_device
+//      c_clock_policy
 //      ==============
 //
 //!     Note that on some (non-conforming) implementations
 //!     std::clock() will actually measure wall-clock time.
 // ---------------------------------------------------------------------------
-class c_clock_device
+class c_clock_policy
 {
 public:
     typedef double      duration_type ;
 
-                        c_clock_device() ;
+                        c_clock_policy() ;
 
     void                restart() ;
     duration_type       elapsed() const ;

@@ -16,16 +16,16 @@
 
 namespace breath {
 
-//      performance_counter_timer:
-//      ==========================
+//      performance_counter_policy:
+//      ===========================
 //
 //!     A timer policy using Windows' \c QueryPerformanceCounter().
 // ---------------------------------------------------------------------------
-class performance_counter_timer
+class performance_counter_policy
 {
 public:
     typedef long double duration_type ;
-                        performance_counter_timer() ;
+                        performance_counter_policy() ;
 
     void                restart() ;
     duration_type       elapsed() const ;

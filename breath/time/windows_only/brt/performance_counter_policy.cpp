@@ -11,13 +11,13 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/time/windows_only/performance_counter_timer.hpp"
+#include "breath/time/windows_only/performance_counter_policy.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
 #include <Windows.h>
 
 namespace breath {
 
-performance_counter_timer::performance_counter_timer()
+performance_counter_policy::performance_counter_policy()
 {
     // Note that restart() is not called here. It will be called by
     // the timer template, if needed. Note that this causes the member
@@ -31,7 +31,7 @@ performance_counter_timer::performance_counter_timer()
 }
 
 void
-performance_counter_timer::restart()
+performance_counter_policy::restart()
 {
     LARGE_INTEGER       li ;
     if ( QueryPerformanceCounter( &li ) == 0 ) {
@@ -41,8 +41,8 @@ performance_counter_timer::restart()
 
 }
 
-performance_counter_timer::duration_type
-performance_counter_timer::elapsed() const
+performance_counter_policy::duration_type
+performance_counter_policy::elapsed() const
 {
     LARGE_INTEGER       li ;
     if ( QueryPerformanceCounter( &li ) == 0 ) {
@@ -51,8 +51,8 @@ performance_counter_timer::elapsed() const
     return ( li.QuadPart - m_start ) * resolution() ;
 }
 
-performance_counter_timer::duration_type
-performance_counter_timer::resolution() const
+performance_counter_policy::duration_type
+performance_counter_policy::resolution() const
 {
     // resolution is in milliseconds
     return 1000.0 / m_frequency ;

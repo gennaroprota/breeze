@@ -492,9 +492,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\breath\time\brt\c_clock_device.cpp" />
+    <ClCompile Include="..\..\breath\time\brt\c_clock_policy.cpp" />
     <ClCompile Include="..\..\breath\time\brt\time_string.cpp" />
-    <ClCompile Include="..\..\breath\time\windows_only\brt\performance_counter_timer.cpp" />
+    <ClCompile Include="..\..\breath\time\windows_only\brt\performance_counter_policy.cpp" />
     <ClCompile Include="..\..\breath\type_identification\test\readable_type_name_test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -663,11 +663,11 @@
     <ClInclude Include="..\..\breath\text\trim.hpp" />
     <ClInclude Include="..\..\breath\text\trim_head.hpp" />
     <ClInclude Include="..\..\breath\text\trim_tail.hpp" />
-    <ClInclude Include="..\..\breath\time\c_clock_device.hpp" />
+    <ClInclude Include="..\..\breath\time\c_clock_policy.hpp" />
     <ClInclude Include="..\..\breath\time\c_clock_timer.hpp" />
     <ClInclude Include="..\..\breath\time\timer.hpp" />
     <ClInclude Include="..\..\breath\time\time_string.hpp" />
-    <ClInclude Include="..\..\breath\time\windows_only\performance_counter_timer.hpp" />
+    <ClInclude Include="..\..\breath\time\windows_only\performance_counter_policy.hpp" />
     <ClInclude Include="..\..\breath\type_identification\readable_type_name.hpp" />
     <ClInclude Include="..\..\breath\uuid\uuid.hpp" />
   </ItemGroup>

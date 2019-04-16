@@ -11,13 +11,13 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/time/c_clock_device.hpp"
+#include "breath/time/c_clock_policy.hpp"
 #include "breath/diagnostics/exception.hpp"
 
 namespace breath {
 
 std::clock_t
-c_clock_device::retrieve()
+c_clock_policy::retrieve()
 {
     std::clock_t const  ret( std::clock() ) ;
     return ret != ( static_cast< std::clock_t >( -1 ) )
@@ -26,21 +26,21 @@ c_clock_device::retrieve()
 }
 
 
-c_clock_device::c_clock_device()
+c_clock_policy::c_clock_policy()
     : m_start_tick() // just to remove compiler warnings
 {
     restart() ;
 }
 
-void c_clock_device::restart()
+void c_clock_policy::restart()
 {
     // synchronize our start
     std::clock_t const  s( retrieve() ) ;
     while ( s == ( m_start_tick = retrieve() ) ) { }
 }
 
-c_clock_device::duration_type
-c_clock_device::elapsed() const
+c_clock_policy::duration_type
+c_clock_policy::elapsed() const
 {
     double const        elapsed_ticks( retrieve() - m_start_tick ) ;
 
@@ -52,8 +52,8 @@ c_clock_device::elapsed() const
 }
 
 
-c_clock_device::duration_type
-c_clock_device::resolution() const
+c_clock_policy::duration_type
+c_clock_policy::resolution() const
 {
     std::clock_t        start ;
     std::clock_t        end ;
