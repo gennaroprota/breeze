@@ -16,8 +16,8 @@
 #include "breath/process/exit_code.hpp"
 #include "breath/process/private/handle.hpp"
 
-#include <vector>
 #include <Windows.h>
+#include <vector>
 
 namespace breath {
 
