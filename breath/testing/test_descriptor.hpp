@@ -41,7 +41,8 @@ public:
     //!       test_runner::instance().run( { func1, func2... funcN } ) ;
     //!     </code>.
     // -----------------------------------------------------------------------
-                        test_descriptor( void( & )(), char const * name = "" ) noexcept ;
+                        test_descriptor( void( & )(),
+                                         char const * name = "" ) noexcept ;
     typedef      void( &test_function )() ;
 
 public:
