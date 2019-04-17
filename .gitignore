@@ -5,7 +5,7 @@
 *.log
 
 # Make dependency files
-*.d
+*.dep
 
 # Compiled object files
 *.slo
