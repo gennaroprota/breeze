@@ -15,6 +15,12 @@
 
 #include "breath/preprocessing/paste.hpp"
 
+//      BREATH_PASTE_AFTER_EXPANSION():
+//      ===============================
+//
+//!     Applies BREATH_PASTE() to the result of performing macro
+//!     replacement on the arguments \c x and \c y.
+//!
 //!     See BREATH_PASTE() for the naming rationale.
 // ---------------------------------------------------------------------------
 #define BREATH_PASTE_AFTER_EXPANSION( x, y )    BREATH_PASTE( x, y )

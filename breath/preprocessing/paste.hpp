@@ -13,29 +13,29 @@
 #ifndef BREATH_GUARD_FQYU7dF1crCo42cp2n1PRVbw1ctMjDqe
 #define BREATH_GUARD_FQYU7dF1crCo42cp2n1PRVbw1ctMjDqe
 
-/*!
-        A facility for concatenation of preprocessing tokens.
-
-        Concatenates the two preprocessing tokens which end the
-        argument x and start the argument y, respectively. The ##
-        operator is used for that.
-
-        Naming rationale:
-        -----------------
-
-        Though both the C and the C++ standard use the term
-        "concatenate", and not "paste", with reference to what ## does,
-        we preferred the shorter word, especially considering that this
-        macro is often invoked within other macro invocations. "Token
-        pasting" is a well-established expression within the C and C++
-        communities. (A similar comment applies, obviously, to the
-        _AFTER_EXPANSION variant, which has an even longer name.)
-
-        Also, "TOKEN_PASTE" and "PASTE_TOKENS" were rejected as,
-        respectively, not verb-based and using plurals (which would have
-        been inconsistent in our library).
-*/
-
+//      BREATH_PASTE():
+//      ===============
+//
+//!     A facility for concatenation of preprocessing tokens.
+//!
+//!     Concatenates the two preprocessing tokens which end the
+//!     argument \c x and start the argument \c y, respectively. The
+//!     \c ## operator is used for that.
+//!
+//!     \par Naming rationale:
+//!
+//!     Though both the C and the C++ standard use the term
+//!     "concatenate", and not "paste", with reference to what \c ##
+//!     does, we preferred the shorter word, especially considering that
+//!     this macro is often invoked within other macro invocations.
+//!     "Token pasting" is a well-established expression within the C
+//!     and C++ communities. (A similar comment applies, obviously, to
+//!     the \c _AFTER_EXPANSION variant, which has an even longer name.)
+//!
+//!     Also, the names "TOKEN_PASTE" and "PASTE_TOKENS" were rejected
+//!     as, respectively, not verb-based and using plural (which would
+//!     have been inconsistent in our library).
+// ---------------------------------------------------------------------------
 #define BREATH_PASTE( x, y )  x ## y
 
 #endif
