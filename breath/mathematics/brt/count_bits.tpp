@@ -56,7 +56,7 @@ count_bits( T t ) noexcept
     static_assert( ! meta::has_sign< T >::value, "" ) ;
 
     std::size_t         count = 0 ;
-    while ( t ) {
+    while ( t != 0 ) {
         count += count_table[ t & ( ( 1u << table_width ) - 1 ) ] ;
         t >>= table_width ;
     }
