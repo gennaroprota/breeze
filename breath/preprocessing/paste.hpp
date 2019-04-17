@@ -22,7 +22,7 @@
 //!     argument \c x and start the argument \c y, respectively. The
 //!     \c ## operator is used for that.
 //!
-//!     \par Naming rationale:
+//!     \par Naming rationale
 //!
 //!     Though both the C and the C++ standard use the term
 //!     "concatenate", and not "paste", with reference to what \c ##
