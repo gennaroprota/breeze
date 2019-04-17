@@ -16,8 +16,8 @@
 #ifndef BREATH_GUARD_LJrbr2rF89IS3w34IDEgr8K9ZUsCl9Ll
 #define BREATH_GUARD_LJrbr2rF89IS3w34IDEgr8K9ZUsCl9Ll
 
-#include "breath/preprocessing/token_paste.hpp"
-#include "breath/preprocessing/stringize_delayed.hpp"
+#include "breath/preprocessing/paste.hpp"
+#include "breath/preprocessing/stringize_after_expansion.hpp"
 
 //      Dependent #includes:
 //      ====================
@@ -144,15 +144,15 @@
 //      example exists in C90, C99, C++98, C++03 and C++0x.
 // ---------------------------------------------------------------------------
 
-#define BREATH_DEPENDENT_CODE( variant, file_name )                        \
-    BREATH_TOKEN_PASTE( BREATH_DEPENDENT_CODE_, variant )( file_name )  /**/
+#define BREATH_DEPENDENT_CODE( variant, file_name )                           \
+    BREATH_PASTE( BREATH_DEPENDENT_CODE_, variant )( file_name )           /**/
 
 
-#define BREATH_DEPENDENT_CODE_compiler( file_name )                        \
-    BREATH_STRINGIZE_DELAYED( dep/comp/BREATH_COMPILER/file_name )      /**/
+#define BREATH_DEPENDENT_CODE_compiler( file_name )                           \
+    BREATH_STRINGIZE_AFTER_EXPANSION( dep/comp/BREATH_COMPILER/file_name ) /**/
 
-#define BREATH_DEPENDENT_CODE_system( file_name )                          \
-    BREATH_STRINGIZE_DELAYED( dep/syst/BREATH_SYSTEM/file_name )        /**/
+#define BREATH_DEPENDENT_CODE_system( file_name )                             \
+    BREATH_STRINGIZE_AFTER_EXPANSION( dep/syst/BREATH_SYSTEM/file_name )   /**/
 
 
 #endif

@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/preprocessing/stringize_delayed.hpp"
+#include "breath/preprocessing/stringize_after_expansion.hpp"
 #include "breath/testing/testing.hpp"
 #include <cstring>
 #include <iostream>
@@ -30,10 +30,13 @@ namespace {
 void
 do_tests()
 {
-    BREATH_CHECK( std::strcmp( BREATH_STRINGIZE_DELAYED( FOO2 ), "1" )  == 0 ) ;
-    BREATH_CHECK( std::strcmp( BREATH_STRINGIZE_DELAYED( BAR2 ), "\"a\"" )  == 0 ) ;
+    BREATH_CHECK( std::strcmp( BREATH_STRINGIZE_AFTER_EXPANSION( FOO2 ),
+                               "1" )  == 0 ) ;
+    BREATH_CHECK( std::strcmp( BREATH_STRINGIZE_AFTER_EXPANSION( BAR2 ),
+                               "\"a\"" )  == 0 ) ;
 
-    BREATH_CHECK( std::strcmp( BREATH_STRINGIZE_DELAYED( FIRST_TOKEN tokens),
+    BREATH_CHECK( std::strcmp( BREATH_STRINGIZE_AFTER_EXPANSION( FIRST_TOKEN
+                                                                 tokens),
                                "multiple tokens" ) == 0 ) ;
 }
 

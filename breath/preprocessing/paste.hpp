@@ -25,15 +25,18 @@
 
         Though both the C and the C++ standard use the term
         "concatenate", and not "paste", with reference to what ## does,
-        it was deemed that the name BREATH_CONCATENATE_TOKEN was a tad
-        too long, especially considering that this macro is often
-        invoked within other macro invocations. "Token pasting" is a
-        well-established expression within the C and C++ communities.
-        (A similar comment applies, obviously, to the _DELAYED
-        variant.)
+        we preferred the shorter word, especially considering that this
+        macro is often invoked within other macro invocations. "Token
+        pasting" is a well-established expression within the C and C++
+        communities. (A similar comment applies, obviously, to the
+        _AFTER_EXPANSION variant, which has an even longer name.)
+
+        Also, "TOKEN_PASTE" and "PASTE_TOKENS" were rejected as,
+        respectively, not verb-based and using plurals (which would have
+        been inconsistent in our library).
 */
 
-#define BREATH_TOKEN_PASTE( x, y )  x ## y
+#define BREATH_PASTE( x, y )  x ## y
 
 #endif
 

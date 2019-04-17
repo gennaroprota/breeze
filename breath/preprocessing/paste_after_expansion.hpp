@@ -7,21 +7,17 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Stringizing macro.
+//!     \brief A token concatenation macro.
 // ---------------------------------------------------------------------------
 
-#ifndef BREATH_GUARD_oC4DKLgCzbQ7cdHjPg7UM8ShKNKAc32G
-#define BREATH_GUARD_oC4DKLgCzbQ7cdHjPg7UM8ShKNKAc32G
+#ifndef BREATH_GUARD_TtY9fvceSS7uDBmVi38DjzXQQYbGSOLw
+#define BREATH_GUARD_TtY9fvceSS7uDBmVi38DjzXQQYbGSOLw
 
-#include "breath/preprocessing/stringize.hpp"
+#include "breath/preprocessing/paste.hpp"
 
-//      BREATH_STRINGIZE_DELAYED():
-//      ===========================
-//
-//!     Stringizes (with \c BREATH_STRINGIZE()) the result of performing
-//!     macro replacement on the argument \c x.
+//!     See BREATH_PASTE() for the naming rationale.
 // ---------------------------------------------------------------------------
-#define BREATH_STRINGIZE_DELAYED( x )   BREATH_STRINGIZE( x )
+#define BREATH_PASTE_AFTER_EXPANSION( x, y )    BREATH_PASTE( x, y )
 
 #endif
 

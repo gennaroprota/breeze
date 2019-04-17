@@ -13,7 +13,7 @@
 #ifndef BREATH_GUARD_v4ifHvyokFutGDGkksKs5kPv6rpDcUGv
 #define BREATH_GUARD_v4ifHvyokFutGDGkksKs5kPv6rpDcUGv
 
-#include "breath/preprocessing/stringize_delayed.hpp"
+#include "breath/preprocessing/stringize_after_expansion.hpp"
 #include <cstring>
 #include <iostream>
 #include <ostream> // not necessary in C++11
@@ -47,7 +47,7 @@
 #define BREATH_DUMP_EXPRESSION( expr )                                        \
         do {                                                                  \
             char const              expanded[] =                              \
-                                          BREATH_STRINGIZE_DELAYED( expr )  ; \
+                                  BREATH_STRINGIZE_AFTER_EXPANSION( expr )  ; \
             char const              unexpanded[] = #expr ;                    \
             std::ostream &          os = std::cout ;                          \
             os << expanded << " = " << ( expr ) ;                             \
