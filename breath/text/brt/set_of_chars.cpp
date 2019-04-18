@@ -23,8 +23,6 @@ set_of_chars::set_of_chars()
 {
 }
 
-// gps note that this contructor cannot add a '\0'; to do that
-// you must use the overload taking an std::string.
 set_of_chars::set_of_chars( char const * elements )
     : m_bits()
 {

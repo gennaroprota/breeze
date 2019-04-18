@@ -29,9 +29,26 @@ namespace breath {
 class set_of_chars
 {
 public:
+    //!     Constructs an empty set.
+    //!
+    //!     \post
+    //!         is_empty()
+    // -----------------------------------------------------------------------
                         set_of_chars() ;
-    explicit            set_of_chars( char const * ) ;
-    explicit            set_of_chars( std::string const & ) ;
+
+    //!     Constructs a set containing all and only the non-null
+    //!     elements of the string pointed to by \c s.
+    // -----------------------------------------------------------------------
+    explicit            set_of_chars( char const * s ) ;
+
+    //!     Constructs a set containing all and only the characters in
+    //!     \c s (including null characters, if any).
+    // -----------------------------------------------------------------------
+    explicit            set_of_chars( std::string const & s ) ;
+
+    //!     Constructs a set containing all and only the characters in
+    //!     the range <code>[begin, end)</code>.
+    // -----------------------------------------------------------------------
     template< typename FwdIterator>
                         set_of_chars( FwdIterator begin, FwdIterator end ) ;
 
@@ -39,33 +56,102 @@ public:
     // -----------------------------------------------------------------------
     enum except_for { except } ;
 
-                        set_of_chars( except_for, char ) ;
-                        set_of_chars( except_for, char const * ) ;
-                        set_of_chars( except_for, std::string const & ) ;
+    //!     Constructs a set containing all characters except \c c.
+    // -----------------------------------------------------------------------
+                        set_of_chars( except_for, char c ) ;
 
-                        set_of_chars( set_of_chars const & ) ;
-    set_of_chars &      operator =( set_of_chars const & ) ;
+    //!     Constructs a set containing all characters except the
+    //!     non-null characters in the string pointed to by \c s.
+    // -----------------------------------------------------------------------
+                        set_of_chars( except_for, char const * s ) ;
 
+    //!     Constructs a set containing all characters except those in
+    //!     \c s.
+    // -----------------------------------------------------------------------
+                        set_of_chars( except_for, std::string const & s ) ;
+
+    //!     Constructs a copy of \c other.
+    //!
+    //!     \post
+    //!         *this == other
+    // -----------------------------------------------------------------------
+                        set_of_chars( set_of_chars const & other ) ;
+
+    //!     Copy-assigns from \c other.
+    //!
+    //!     \post
+    //!         *this == other
+    // -----------------------------------------------------------------------
+    set_of_chars &      operator =( set_of_chars const & other ) ;
+
+    //!     Destroys the set.
+    // -----------------------------------------------------------------------
                         ~set_of_chars() noexcept ;
 
-    bool                operator ==( set_of_chars const & ) const ;
+    //!     Compares \c *this and \c other.
+    //!
+    //!     \return
+    //!         \c true if and only if the two sets contain the same
+    //!         characters.
+    // -----------------------------------------------------------------------
+    bool                operator ==( set_of_chars const & other ) const ;
+
+    //!     \return
+    //!         \c true if an only if \c *this contains the character
+    //!         \c c.
+    // -----------------------------------------------------------------------
     bool                contains( char c ) const ;
 
+    //!     Adds the character \c c to the set.
+    // -----------------------------------------------------------------------
     set_of_chars &      add( char c ) ;
-    set_of_chars &      add( char const * ) ;
-    set_of_chars &      add( std::string const & ) ;
+
+    //!     Adds all the non-null characters in the string pointed to by
+    //!     \c s to the set.
+    // -----------------------------------------------------------------------
+    set_of_chars &      add( char const * s ) ;
+
+    //!     Adds all the characters in \c s to the set.
+    // -----------------------------------------------------------------------
+    set_of_chars &      add( std::string const & s ) ;
+
+    //!     Adds all the characters in the range <code>[begin, end)
+    //!     </code> to the set.
+    // -----------------------------------------------------------------------
     template< typename FwdIterator >
     set_of_chars &      add( FwdIterator begin, FwdIterator end ) ;
 
+    //!     Removes the character \c c from the set.
+    // -----------------------------------------------------------------------
     set_of_chars &      remove( char c ) ;
-    set_of_chars &      remove( char const * ) ;
-    set_of_chars &      remove( std::string const & ) ;
 
+    //!     Removes all the non-null characters in the string pointed to
+    //!     by \c s from the set.
+    // -----------------------------------------------------------------------
+    set_of_chars &      remove( char const * s ) ;
+
+    //!     Removes all the characters in \c s from the set.
+    // -----------------------------------------------------------------------
+    set_of_chars &      remove( std::string const & s ) ;
+
+    //!     Mutates the set into its complement.
+    // -----------------------------------------------------------------------
     void                complement() ;
 
+    //!     \return
+    //!         A string with all and only the characters contained in
+    //!         the set.
+    // -----------------------------------------------------------------------
     std::string         as_string() const ;
 
+    //!     \return
+    //!         The cardinality of the set.
+    // -----------------------------------------------------------------------
     std::size_t         count() const ;
+
+    //!     \return
+    //!         Whether the set contains no characters.
+    // -----------------------------------------------------------------------
     bool                is_empty() const ;
 
 
@@ -73,13 +159,14 @@ public:
     friend class        iterator ;
     typedef iterator    const_iterator ;
 
-    //!     Read-only iterators for the standard library.
+    //!\{   Read-only iterators for the standard library.
     // -----------------------------------------------------------------------
     iterator            begin() const ;
     iterator            end() const ;
 
     const_iterator      cbegin() const ;
     const_iterator      cend() const ;
+    //!\}
 
 private:
     enum { size = CHAR_MAX - CHAR_MIN + 1 } ;
@@ -93,14 +180,14 @@ public:
     //      =========
     //
     //!     An iterator for the set.
-    //
+    //!
     //!     Iterates over all of the characters in the set.  It is a
     //!     forward iterator.
     // -----------------------------------------------------------------------
     class               iterator
     {
     public:
-        //!     Typedefs for the standard library.
+        //!\{   Typedefs for the standard library.
         // -------------------------------------------------------------------
         typedef std::forward_iterator_tag
                             iterator_category  ;
@@ -108,14 +195,24 @@ public:
         typedef int         difference_type    ;
         typedef char const *pointer            ;
         typedef char const &reference          ;
+        //!\}
 
+        //!     Constructs a one-past-the-end iterator.
+        // -------------------------------------------------------------------
                             iterator() ;
+
+        //!     Constructs an iterator to the first character in \c sc.
+        // -------------------------------------------------------------------
         explicit            iterator( set_of_chars const & sc ) ;
+
+        //!\{   Iterator operations.
+        // -------------------------------------------------------------------
         value_type          operator * () const ;
         iterator &          operator ++() ;
         iterator            operator ++( int ) ;
         bool                operator ==( iterator const & ) const ;
         bool                operator !=( iterator const & ) const ;
+        //!\}
 
     private:
         enum { infinity = size } ;
