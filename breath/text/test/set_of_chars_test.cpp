@@ -155,6 +155,18 @@ main()
 
         DO_TEST( sc_min.begin() != sc_min.end() ) ;
         DO_TEST( *sc_min.begin() == CHAR_MIN ) ;
+
+        sc_min.remove( CHAR_MIN ) ;
+        DO_TEST( sc_min.begin() == sc_min.end() ) ;
+
+        set_of_chars        sc_max ;
+        sc_max.add( static_cast< char >( CHAR_MAX ) ) ;
+
+        DO_TEST( sc_max.begin() != sc_max.end() ) ;
+        DO_TEST( *sc_max.begin() == CHAR_MAX ) ;
+
+        sc_max.remove( CHAR_MAX ) ;
+        DO_TEST( sc_max.begin() == sc_max.end() ) ;
     }
 
 }
