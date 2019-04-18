@@ -100,7 +100,7 @@ public:
     class               iterator
     {
     public:
-        //!     Typedefs for the Standard Library.
+        //!     Typedefs for the standard library.
         // -------------------------------------------------------------------
         typedef std::forward_iterator_tag
                             iterator_category  ;
