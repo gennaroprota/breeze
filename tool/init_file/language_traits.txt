@@ -32,7 +32,13 @@
 #           absolutely necessary.
 #
 #       NOTE 2:
-#           keep in sync with $BREATH_ROOT/.gitattributes.
+#
+#           keep the following files in sync:
+#
+#            - .editorconfig
+#            - .gitattributes
+#            - language_traits.txt
+#            - make_file_trailer.sh
 # ----------------------------------------------------------------------------
 
 

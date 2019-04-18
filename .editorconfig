@@ -1,7 +1,12 @@
 #       EditorConfig file: see <https://editorconfig.org/>.
 #
-#       Keep in sync with language_traits.txt, .gitattributes and
-#       make_file_trailer.sh.
+#       Maintenance note:
+#           keep the following files in sync:
+#
+#            - .editorconfig
+#            - .gitattributes
+#            - language_traits.txt
+#            - make_file_trailer.sh
 # ----------------------------------------------------------------------------
 
 root = true

@@ -52,9 +52,13 @@ sed 's/VimModeline/vim/g'
 #       ========
 #
 #        - keep the entries in alphabetical order (C locale)
-#        - keep in sync with the language traits file
-#          (gps perhaps we could merge the two files) and with
-#          .editorconfig
+#        - keep the following files in sync:
+#
+#           - .editorconfig
+#           - .gitattributes
+#           - language_traits.txt (could perhaps be merged with this)
+#           - make_file_trailer.sh
+#
 #        - when modifying this file (if ever) please review *all*
 #          the entries.
 # ----------------------------------------------------------------------------

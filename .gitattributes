@@ -7,8 +7,12 @@
 # files are excluded from this list and set later).
 #
 # Maintenance note:
-#   keep in sync with
-#   $BREATH_ROOT/tool/init_file/language_traits.txt
+#       keep the following files in sync:
+#
+#        - .editorconfig
+#        - .gitattributes
+#        - language_traits.txt
+#        - make_file_trailer.sh
 #
 *.asm   text
 *.awk   text eol=lf
