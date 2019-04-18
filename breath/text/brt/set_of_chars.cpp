@@ -234,7 +234,9 @@ set_of_chars::iterator::operator ++( int )
 bool
 set_of_chars::iterator::operator ==( iterator const & other ) const
 {
-    // gps note: it's UB to compare iterators into different containers [OK?]
+    //      Note that it's UB to compare iterators into different
+    //      owners.
+    // -----------------------------------------------------------------------
     return m_index == other.m_index ;
 }
 

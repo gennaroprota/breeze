@@ -212,7 +212,17 @@ public:
         value_type          operator * () const ;
         iterator &          operator ++() ;
         iterator            operator ++( int ) ;
+
+        //!     \note
+        //!         It's undefined behavior to compare iterators into
+        //!         different objects.
+        // -------------------------------------------------------------------
         bool                operator ==( iterator const & ) const ;
+
+        //!     \note
+        //!         It's undefined behavior to compare iterators into
+        //!         different objects.
+        // -------------------------------------------------------------------
         bool                operator !=( iterator const & ) const ;
         //!\}
 
