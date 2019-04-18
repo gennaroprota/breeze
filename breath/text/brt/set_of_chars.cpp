@@ -152,7 +152,7 @@ set_of_chars::complement()
 std::string
 set_of_chars::as_string() const
 {
-    return std::string( begin(), end() ) ;
+    return std::string( cbegin(), cend() ) ;
 }
 
 std::size_t
