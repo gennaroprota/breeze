@@ -6,8 +6,8 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 
-#       Maintenance note
-#       ----------------
+#       Maintenance note:
+#       -----------------
 #
 #       Be sure that modifications to these options don't put the various
 #       compiler-specific makefiles out of sync (e.g. by requiring
