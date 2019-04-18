@@ -171,7 +171,7 @@ set_of_chars::is_empty() const
 // ---------------------------------------------------------------------------
 set_of_chars::iterator::iterator()
     : m_owner( nullptr ),
-      m_index( infinity )
+      m_index( size )
 
 {
 }
@@ -217,7 +217,7 @@ set_of_chars::iterator &
 set_of_chars::iterator::operator ++()
 {
     ++m_index ;
-    while ( m_index < infinity && ! ( *m_owner )[ m_index ] ) {
+    while ( m_index < size && ! ( *m_owner )[ m_index ] ) {
         ++ m_index ;
     }
 
