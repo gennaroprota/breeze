@@ -18,6 +18,12 @@
 
 namespace breath {
 
+int
+set_of_chars::to_index( char c )
+{
+    return c - CHAR_MIN ;
+}
+
 set_of_chars::set_of_chars()
     :   m_bits()
 {
@@ -82,13 +88,13 @@ set_of_chars::operator ==( set_of_chars const & other ) const
 bool
 set_of_chars::contains( char c ) const
 {
-    return m_bits[ c - CHAR_MIN ] ; //gps duplication!
+    return m_bits[ to_index( c ) ] ;
 }
 
 set_of_chars &
 set_of_chars::add( char c )
 {
-    m_bits.set( c - CHAR_MIN ) ;
+    m_bits.set( to_index( c ) ) ;
     return *this ;
 }
 
@@ -114,7 +120,7 @@ set_of_chars::add( std::string const & s )
 set_of_chars &
 set_of_chars::remove( char c )
 {
-    m_bits.reset( c - CHAR_MIN ) ;
+    m_bits.reset( to_index( c ) ) ;
     return *this ;
 }
 
