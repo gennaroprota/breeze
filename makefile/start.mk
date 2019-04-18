@@ -58,7 +58,6 @@ exe_dir = $(bin_dir)
 
 # Local Variables:
 # mode: makefile
-# indent-tabs-mode: t
-# tab-width: 8
+# indent-tabs-mode: nil
 # End:
-# vim: set ft=make noet ts=8 sts=0 sw=8:
+# vim: set ft=make et sts=4 sw=4:

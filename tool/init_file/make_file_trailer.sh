@@ -155,10 +155,9 @@ XHTML
 :   <<Make
 EmacsVariablesList:
 mode: makefile
-indent-tabs-mode: t
-tab-width: 8
+indent-tabs-mode: nil
 End:
-VimModeline: set ft=make noet ts=8 sts=0 sw=8:
+VimModeline: set ft=make et sts=$sts sw=$sw:
 Make
 
 
