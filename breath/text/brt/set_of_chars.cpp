@@ -216,10 +216,9 @@ set_of_chars::iterator::operator * () const
 set_of_chars::iterator &
 set_of_chars::iterator::operator ++()
 {
-    ++m_index ;
-    while ( m_index < size && ! ( *m_owner )[ m_index ] ) {
+    do {
         ++ m_index ;
-    }
+    } while ( m_index < size && ! ( *m_owner )[ m_index ] ) ;
 
     return *this ;
 }
