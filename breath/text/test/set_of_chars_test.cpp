@@ -143,6 +143,12 @@ main()
         sc.remove( 'b' ) ;
         DO_TEST( std::find( sc.begin(), sc.end(), 'a' ) != sc.end() ) ;
         DO_TEST( std::find( sc.begin(), sc.end(), 'b' ) == sc.end() ) ;
+
+        set_of_chars        sc_min ;
+        sc_min.add( static_cast< char >( CHAR_MIN ) ) ;
+
+        DO_TEST( sc_min.begin() != sc_min.end() ) ;
+        DO_TEST( *sc_min.begin() == CHAR_MIN ) ;
     }
 
 }

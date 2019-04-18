@@ -178,7 +178,7 @@ set_of_chars::iterator::iterator()
 
 set_of_chars::iterator::iterator( set_of_chars const & sc )
     : m_owner( &sc.m_bits ),
-      m_index( 0 )
+      m_index( -1 )
 {
      ++ *this ;
 }
