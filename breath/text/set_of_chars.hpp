@@ -210,6 +210,14 @@ public:
         // -------------------------------------------------------------------
         explicit            iterator( set_of_chars const & sc ) noexcept ;
 
+        //!     Compiler-provided copy constructor.
+        // -------------------------------------------------------------------
+                            iterator( iterator const & ) = default ;
+
+        //!     Compiler-provided copy-assignment operator.
+        // -------------------------------------------------------------------
+        iterator &          operator =( iterator const & ) = default ;
+
         //!\{   Iterator operations.
         // -------------------------------------------------------------------
         value_type          operator * () const noexcept ;
