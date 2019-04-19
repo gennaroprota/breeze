@@ -36,8 +36,8 @@ namespace breath {
 //!     with zeroes); note that this is different from character and
 //!     string literals, where there's no limit to the number of
 //!     hexadecimal digits. Thus, to read a \c %printable_string
-//!     unambiguously you only need to know the value of \c CHAR_BIT on
-//!     the source machine.
+//!     unambiguously you need to know the value of \c CHAR_BIT on the
+//!     source machine.
 //!
 //!     A \c %printable_string can be constructed "from a non-string"
 //!     (i.e. from a null pointer): this is useful for debugging purposes.
