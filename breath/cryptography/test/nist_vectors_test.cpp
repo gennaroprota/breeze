@@ -173,7 +173,8 @@ read_compact_string( nist_file & messages, int z )
     }
 
     return msg ;
-    }
+}
+
 }
 
 void
