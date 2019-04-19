@@ -30,13 +30,13 @@ set_of_chars::set_of_chars() noexcept
 }
 
 set_of_chars::set_of_chars( char const * elements ) noexcept
-    : m_bits()
+    :   m_bits()
 {
     add( elements ) ;
 }
 
 set_of_chars::set_of_chars( std::string const & s ) noexcept
-    : m_bits()
+    :   m_bits()
 {
     add( s ) ;
 }
@@ -67,7 +67,7 @@ set_of_chars::~set_of_chars() noexcept
 }
 
 set_of_chars::set_of_chars( set_of_chars const & other ) noexcept
-    : m_bits( other.m_bits )
+    :   m_bits( other.m_bits )
 {
 
 }
@@ -111,7 +111,7 @@ set_of_chars::add( char const * s ) noexcept
 set_of_chars &
 set_of_chars::add( std::string const & s ) noexcept
 {
-    for( auto curr = s.cbegin() ; curr != s.cend() ; ++ curr ) {
+    for ( auto curr = s.cbegin() ; curr != s.cend() ; ++ curr ) {
         add( *curr ) ;
     }
     return *this ;
@@ -170,15 +170,15 @@ set_of_chars::is_empty() const noexcept
 //      iterators:
 // ---------------------------------------------------------------------------
 set_of_chars::iterator::iterator() noexcept
-    : m_owner( nullptr ),
-      m_index( set_of_chars::size )
+    :   m_owner( nullptr ),
+        m_index( set_of_chars::size )
 
 {
 }
 
 set_of_chars::iterator::iterator( set_of_chars const & sc ) noexcept
-    : m_owner( &sc.m_bits ),
-      m_index( -1 )
+    :   m_owner( &sc.m_bits ),
+        m_index( -1 )
 {
      ++ *this ;
 }
