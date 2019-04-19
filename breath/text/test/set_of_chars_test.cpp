@@ -135,13 +135,19 @@ main()
     {
         set_of_chars        sc ;
         DO_TEST( sc.begin() == sc.end() ) ;
+        DO_TEST( sc.cbegin() == sc.cend() ) ;
         sc.add('a') ;
         DO_TEST( *sc.begin() == 'a' ) ;
+        DO_TEST( *sc.cbegin() == 'a' ) ;
 
         sc.add('b') ;
-        DO_TEST( std::find( sc.begin(), sc.end(), 'b' ) != sc.end() ) ;
+        set_of_chars::iterator
+                            it = std::find( sc.begin(), sc.end(), 'b' ) ;
+        DO_TEST(  it != sc.end() && *it == 'b' ) ;
         sc.remove( 'b' ) ;
-        DO_TEST( std::find( sc.begin(), sc.end(), 'a' ) != sc.end() ) ;
+        it = std::find( sc.begin(), sc.end(), 'a' ) ;
+        DO_TEST( it == sc.begin() ) ;
+        DO_TEST( it != sc.end() && *it == 'a' ) ;
         DO_TEST( std::find( sc.begin(), sc.end(), 'b' ) == sc.end() ) ;
 
         set_of_chars        sc_min ;
