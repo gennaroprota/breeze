@@ -45,7 +45,7 @@ class nist_file
 public:
     explicit            nist_file( char const * file_name ) ;
     bool                good() const ;
-    bool                new_section() ;
+    bool                start_new_section() ;
 } ;
 
 nist_file::nist_file( char const * file_name )
@@ -73,7 +73,7 @@ nist_file::good() const
 }
 
 bool
-nist_file::new_section()
+nist_file::start_new_section()
 {
     for ( std::string s ; s != "D>" && m_stream ; ) {
         m_stream >> s ;
@@ -205,8 +205,8 @@ tests()
             std::string         s ;
             messages >> s ;
             if ( s == "<D" ) {
-                messages.new_section() ;
-                hashes.new_section() ;
+                messages.start_new_section() ;
+                hashes.start_new_section() ;
                 ++ sn ;
                 continue ;
             }
