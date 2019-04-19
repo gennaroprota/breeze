@@ -61,7 +61,7 @@ nist_file::nist_file( char const * file_name )
     m_stream.open( ( subdir + file_name ).c_str() ) ;
     if ( ! m_stream.fail() ) {
         for ( std::string s ; s != "D>" ; ) {
-            m_stream >> s;
+            m_stream >> s ;
         }
     }
 
@@ -158,7 +158,7 @@ read_compact_string( nist_file & messages, int z )
         unsigned            n ;
         messages >> n ;
 
-        while ( n-- > 0 ) {
+        while ( n -- > 0 ) {
             if ( b ) {
                 curr |= mask ;
             }
