@@ -59,7 +59,7 @@ nist_file::nist_file( char const * file_name )
     std::string const   subdir( breath_root +
                                     "/breath/cryptography/test/nist_vectors/" ) ;
     m_stream.open( ( subdir + file_name ).c_str() ) ;
-    if ( m_stream ) {
+    if ( ! m_stream.fail() ) {
         for ( std::string s ; s != "D>" ; ) {
             m_stream >> s;
         }
@@ -82,7 +82,7 @@ nist_file::good() const
 bool
 nist_file::start_new_section()
 {
-    for ( std::string s ; s != "D>" && m_stream ; ) {
+    for ( std::string s ; s != "D>" && ! m_stream.fail() ; ) {
         m_stream >> s ;
     }
 
@@ -123,11 +123,11 @@ public:
     breath::sha1_digest next()
     {
         breath::sha1_digest result( m /* bogus argument */ ) ;
-        word_type const     tot( 50 * 1000 ) ;
-        for ( word_type i = 1 ; i <= tot ; ++ i )
-        {
-            for ( byte_type a( 1 ) ; a <= m_count / 4 + 3 ; ++ a )
+        word_type const     tot = 50 * 1000 ;
+        for ( word_type i = 1 ; i <= tot ; ++ i ) {
+            for ( byte_type a = 1 ; a <= m_count / 4 + 3 ; ++ a ) {
                 m.push_back( '\0' ) ;
+            }
 
             m.push_back( static_cast< char >( ( i >> 24 ) & 0xff ) ) ;
             m.push_back( static_cast< char >( ( i >> 16 ) & 0xff ) ) ;
@@ -203,8 +203,7 @@ tests()
     std::string         msg ;
     montecarlo_test     montecarlo_harness ;
 
-    for ( std::size_t sn = 0 ; sn < sections && hashes.good() ; /*++sn*/ )
-    {
+    for ( std::size_t sn = 0 ; sn < sections && hashes.good() ; /*++sn*/ ) {
         bool                montecarlo_section = section_types[ sn ].pseudorandom ;
         if ( /*!montecarlo_section ||*/ montecarlo_harness.get_count() == 0 ) {
             // terminator found?
