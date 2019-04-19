@@ -152,7 +152,8 @@ read_compact_string( nist_file & messages, int z )
 
     std::string         msg ;
     char                curr = '\0' ;
-    unsigned            mask = 128; // gps
+    unsigned const      initial_mask = 128 ;
+    unsigned            mask = initial_mask ;
     for ( int i = 0 ; i < z ; ++ i ) {
         unsigned            n ;
         messages >> n ;
@@ -164,7 +165,7 @@ read_compact_string( nist_file & messages, int z )
 
             mask /= 2 ;
             if ( mask == 0 ) {
-                msg += curr, curr = 0, mask = 128 ;
+                msg += curr, curr = 0, mask = initial_mask ;
             }
         }
 
