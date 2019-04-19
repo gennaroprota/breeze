@@ -61,7 +61,7 @@ nist_file::nist_file( char const * file_name )
         }
     }
 
-    if ( m_stream.rdstate() & ( std::ios::failbit | std::ios::eofbit ) ) {
+    if ( m_stream.fail() || m_stream.eof() ) {
         throw std::ios::failure( "cannot construct nist_file object" ) ;
     }
 }
