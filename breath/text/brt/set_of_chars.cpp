@@ -171,7 +171,7 @@ set_of_chars::is_empty() const noexcept
 // ---------------------------------------------------------------------------
 set_of_chars::iterator::iterator() noexcept
     : m_owner( nullptr ),
-      m_index( size )
+      m_index( set_of_chars::size )
 
 {
 }
@@ -218,7 +218,7 @@ set_of_chars::iterator::operator ++() noexcept
 {
     do {
         ++ m_index ;
-    } while ( m_index < size && ! ( *m_owner )[ m_index ] ) ;
+    } while ( m_index < set_of_chars::size && ! ( *m_owner )[ m_index ] ) ;
 
     return *this ;
 }
