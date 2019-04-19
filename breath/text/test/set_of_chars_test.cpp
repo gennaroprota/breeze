@@ -156,7 +156,7 @@ main()
         DO_TEST( sc_min.begin() != sc_min.end() ) ;
         DO_TEST( *sc_min.begin() == CHAR_MIN ) ;
 
-        sc_min.remove( CHAR_MIN ) ;
+        sc_min.remove( static_cast< char >( CHAR_MIN ) ) ;
         DO_TEST( sc_min.begin() == sc_min.end() ) ;
 
         set_of_chars        sc_max ;
