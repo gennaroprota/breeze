@@ -13,7 +13,7 @@
 
 #include "breath/text/set_of_chars.hpp"
 
-#include <climits> // gps could use our meta::stuff, or C++11 numeric_limits
+#include <climits> // avoid the verbosity of numeric_limits
 #include <cstddef>
 
 namespace breath {

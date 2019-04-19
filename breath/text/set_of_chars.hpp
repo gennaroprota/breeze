@@ -14,7 +14,7 @@
 #define BREATH_GUARD_Gq4RCdDZQAIMmQBL7I3lbPfT3oHjV7of
 
 #include <bitset>
-#include <climits>
+#include <climits> // avoid the verbosity of numeric_limits
 #include <cstddef>
 #include <iterator>
 #include <string>
