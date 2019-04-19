@@ -11,8 +11,12 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 //
-//      Tests the SHA-1 implementation with the test vectors described
-//      at <http://www.nsrl.nist.gov/testdata/>.
+//      Tests the SHA-1 implementation with the test vectors which were
+//      described at <http://www.nsrl.nist.gov/testdata/>. The relevant
+//      documentation seems to be no longer available at nist.gov, but I
+//      managed to recover it from the dbus project
+//      (https://github.com/itemis/dbus), which has (or had) a copy: it
+//      is the read_me in the nist_vectors/ subdirectory.
 // ---------------------------------------------------------------------------
 
 #include "breath/counting/count.hpp"
