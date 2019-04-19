@@ -57,7 +57,7 @@ nist_file::nist_file( char const * file_name )
     std::string const   breath_root( breath::find_environment_string(
                                                     "BREATH_ROOT" ).value() ) ;
     std::string const   subdir( breath_root +
-                                    "/breath/cryptography/test/nist_vectors/" ) ;
+                                   "/breath/cryptography/test/nist_vectors/" ) ;
     m_stream.open( ( subdir + file_name ).c_str() ) ;
     if ( ! m_stream.fail() ) {
         for ( std::string s ; s != "D>" ; ) {
@@ -205,7 +205,8 @@ tests()
     montecarlo_test     montecarlo_harness ;
 
     for ( std::size_t sn = 0 ; sn < sections && hashes.good() ; /*++sn*/ ) {
-        bool                montecarlo_section = section_types[ sn ].pseudorandom ;
+        bool                montecarlo_section = section_types[
+                                                             sn ].pseudorandom ;
         if ( /*!montecarlo_section ||*/ montecarlo_harness.get_count() == 0 ) {
             // terminator found?
             //
