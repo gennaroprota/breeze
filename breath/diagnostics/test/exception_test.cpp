@@ -24,7 +24,6 @@ test_throwability()
 {
     try {
         throw breath::exception( "test" ) ;
-        BREATH_CHECK( false ) ;
     } catch ( std::exception const & ) {
     }
 }
