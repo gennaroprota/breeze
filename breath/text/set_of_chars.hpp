@@ -220,7 +220,7 @@ public:
 
         //!\{   Iterator operations.
         // -------------------------------------------------------------------
-        value_type          operator * () const noexcept ;
+        value_type          operator *() const noexcept ;
         iterator &          operator ++() noexcept ;
         iterator            operator ++( int ) noexcept ;
 
