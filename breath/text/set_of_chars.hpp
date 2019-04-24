@@ -38,6 +38,9 @@ public:
 
     //!     Constructs a set containing all and only the non-null
     //!     elements of the string pointed to by \c s.
+    //!
+    //!     \pre
+    //!         s != nullptr
     // -----------------------------------------------------------------------
     explicit            set_of_chars( char const * s ) noexcept ;
 
@@ -63,6 +66,9 @@ public:
 
     //!     Constructs a set containing all characters except the
     //!     non-null characters in the string pointed to by \c s.
+    //!
+    //!     \pre
+    //!         s != nullptr
     // -----------------------------------------------------------------------
                         set_of_chars( except_for, char const * s ) noexcept ;
 
@@ -111,6 +117,9 @@ public:
 
     //!     Adds all the non-null characters in the string pointed to by
     //!     \c s to the set.
+    //!
+    //!     \pre
+    //!         s != nullptr
     // -----------------------------------------------------------------------
     set_of_chars &      add( char const * s ) noexcept ;
 
@@ -130,6 +139,9 @@ public:
 
     //!     Removes all the non-null characters in the string pointed to
     //!     by \c s from the set.
+    //!
+    //!     \pre
+    //!         s != nullptr
     // -----------------------------------------------------------------------
     set_of_chars &      remove( char const * s ) noexcept ;
 

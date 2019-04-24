@@ -12,6 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/text/set_of_chars.hpp"
+#include "breath/diagnostics/assert.hpp"
 
 #include <climits> // avoid the verbosity of numeric_limits
 #include <cstddef>
@@ -108,6 +109,8 @@ set_of_chars::add( char c ) noexcept
 set_of_chars &
 set_of_chars::add( char const * s ) noexcept
 {
+    BREATH_ASSERT( s != nullptr ) ;
+
     while ( *s != '\0' ) {
         add( *s ) ;
         ++ s ;
@@ -134,6 +137,8 @@ set_of_chars::remove( char c ) noexcept
 set_of_chars &
 set_of_chars::remove( char const * s ) noexcept
 {
+    BREATH_ASSERT( s != nullptr ) ;
+
     while ( *s != '\0' ) {
         remove( *s ) ;
         ++ s ;
