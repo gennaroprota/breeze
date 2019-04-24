@@ -179,6 +179,8 @@ private:
     bits_type           m_bits ;
 
     static int          to_index( char c ) noexcept ;
+    static char         to_char( std::size_t index ) noexcept ;
+
 
 public:
     //      iterator:

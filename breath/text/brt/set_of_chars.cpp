@@ -24,6 +24,13 @@ set_of_chars::to_index( char c ) noexcept
     return c - CHAR_MIN ;
 }
 
+char
+set_of_chars::to_char( std::size_t index ) noexcept
+{
+    return static_cast< char >( index + CHAR_MIN ) ;
+}
+
+
 set_of_chars::set_of_chars() noexcept
     :   m_bits()
 {
@@ -210,7 +217,7 @@ set_of_chars::cend() const noexcept
 char
 set_of_chars::iterator::operator *() const noexcept
 {
-    return static_cast< char >( m_index + CHAR_MIN ) ;
+    return to_char( m_index ) ;
 }
 
 set_of_chars::iterator &
