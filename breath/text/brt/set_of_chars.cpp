@@ -210,7 +210,7 @@ set_of_chars::cend() const noexcept
 char
 set_of_chars::iterator::operator * () const noexcept
 {
-    return static_cast< char >( m_index - CHAR_MIN ) ;
+    return static_cast< char >( m_index + CHAR_MIN ) ;
 }
 
 set_of_chars::iterator &
