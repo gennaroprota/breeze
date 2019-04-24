@@ -37,10 +37,10 @@ set_of_chars::set_of_chars() noexcept
 {
 }
 
-set_of_chars::set_of_chars( char const * elements ) noexcept
+set_of_chars::set_of_chars( char const * s ) noexcept
     :   m_bits()
 {
-    add( elements ) ;
+    add( s ) ;
 }
 
 set_of_chars::set_of_chars( std::string const & s ) noexcept
