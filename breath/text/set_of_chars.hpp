@@ -25,6 +25,28 @@ namespace breath {
 //      =============
 //
 //!     A set of chars.
+//!
+//!     Note that several functions, below, are overloaded on \c char
+//!     and <code>char const *</code>. Now, depending on whether plain
+//!     \c char has a sign, CHAR_MIN may expand to a (non-char) null
+//!     pointer constant, which means that e.g. the call to add() in
+//!
+//!     <code>
+//!     set_of_chars sc ;
+//!     sc.add( CHAR_MIN ) ;
+//!     </code>
+//!
+//!     may be ambiguous. To avoid the ambiguity, write:
+//!
+//!     <code>
+//!     sc.add( static_cast< char >( CHAR_MIN ) ) ;
+//!     </code>
+//!
+//!     or use
+//!
+//!     <code>
+//!     std::numeric_limits< char >::min()
+//!     </code>.
 // ---------------------------------------------------------------------------
 class set_of_chars
 {
