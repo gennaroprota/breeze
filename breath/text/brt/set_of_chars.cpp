@@ -28,7 +28,12 @@ set_of_chars::to_index( char c ) noexcept
 char
 set_of_chars::to_char( std::size_t index ) noexcept
 {
-    return static_cast< char >( index + CHAR_MIN ) ;
+    //  Note that without the static_cast to int, CHAR_MIN would be
+    //  converted to an unsigned, and the result of converting the sum
+    //  to char would be implementation-defined (unless, of course,
+    //  CHAR_MIN == 0).
+    // -----------------------------------------------------------------------
+    return static_cast< char >( static_cast< int >( index ) + CHAR_MIN ) ;
 }
 
 
