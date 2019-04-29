@@ -19,10 +19,10 @@
 
 namespace breath {
 
-int
+std::size_t
 set_of_chars::to_index( char c ) noexcept
 {
-    return c - CHAR_MIN ;
+    return static_cast< std::size_t >( c - CHAR_MIN ) ;
 }
 
 char

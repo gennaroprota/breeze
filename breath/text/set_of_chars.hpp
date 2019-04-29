@@ -212,7 +212,7 @@ private:
     typedef std::size_t index_type ;
     bits_type           m_bits ;
 
-    static int          to_index( char c ) noexcept ;
+    static std::size_t  to_index( char c ) noexcept ;
     static char         to_char( std::size_t index ) noexcept ;
 
 
