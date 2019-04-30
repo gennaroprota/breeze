@@ -48,8 +48,7 @@ namespace breath {
 //!
 //!      - synchronized output stream (\c tie())
 //!
-//!     Rationale:
-//!     ----------
+//!     \par Rationale
 //!
 //!     We chose to have a single class to save all the relevant
 //!     format information, rather than one class for each attribute
@@ -82,8 +81,7 @@ namespace breath {
 //!     the problem so the choice, at least for now, is to not restore
 //!     any locale.
 //!
-//!     Credits:
-//!     --------
+//!     \par Credits
 //!
 //!     This template was born as a further elaboration of a class by
 //!     James Kanze, named \c IOSave. And it was a comment in his code
