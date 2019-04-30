@@ -37,14 +37,16 @@ namespace breath {
 //!
 //!     This facility restores everything except:
 //!
-//!      - integrity state ( \c rdstate() )
-//!        since it represents errors; restoring would be a non-sense
+//!      - integrity state (\c rdstate()), since it represents errors;
+//!        restoring would be a non-sense
 //!
-//!      - pointer to stream buffer ( \c rdbuf() )
+//!      - pointer to stream buffer (\c rdbuf())
+//!
 //!      - stream and stream buffer locale
-//!      - exception mask
-//!      - synchronized output stream ( \c tie() )
 //!
+//!      - exception mask
+//!
+//!      - synchronized output stream (\c tie())
 //!
 //!     Rationale:
 //!     ----------
