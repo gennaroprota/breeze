@@ -186,12 +186,6 @@ set_of_chars::is_empty() const noexcept
 
 //      iterators:
 // ---------------------------------------------------------------------------
-set_of_chars::iterator::iterator() noexcept
-    :   m_owner( nullptr ),
-        m_index( set_of_chars::size )
-
-{
-}
 
 set_of_chars::iterator::iterator( set_of_chars const & sc ) noexcept
     :   m_owner( &sc.m_bits ),
@@ -202,6 +196,15 @@ set_of_chars::iterator::iterator( set_of_chars const & sc ) noexcept
     }
 }
 
+
+set_of_chars::iterator::iterator( set_of_chars const & sc, end_tag ) noexcept
+    :   m_owner( &sc.m_bits ),
+        m_index( set_of_chars::size )
+
+{
+}
+
+
 set_of_chars::iterator
 set_of_chars::begin() const noexcept
 {
@@ -211,7 +214,7 @@ set_of_chars::begin() const noexcept
 set_of_chars::iterator
 set_of_chars::end() const noexcept
 {
-    return iterator() ;
+    return iterator( *this, iterator::end ) ;
 }
 
 set_of_chars::const_iterator
