@@ -129,10 +129,10 @@ public:
                 m.push_back( '\0' ) ;
             }
 
-            m.push_back( static_cast< char >( ( i >> 24 ) & 0xff ) ) ;
-            m.push_back( static_cast< char >( ( i >> 16 ) & 0xff ) ) ;
-            m.push_back( static_cast< char >( ( i >>  8 ) & 0xff ) ) ;
-            m.push_back( static_cast< char >( ( i       ) & 0xff ) ) ;
+            m.push_back( static_cast< byte_type >( ( i >> 24 ) & 0xff ) ) ;
+            m.push_back( static_cast< byte_type >( ( i >> 16 ) & 0xff ) ) ;
+            m.push_back( static_cast< byte_type >( ( i >>  8 ) & 0xff ) ) ;
+            m.push_back( static_cast< byte_type >( ( i       ) & 0xff ) ) ;
 
             // our "moral equivalent" of m = SHA1( m )
             result = breath::sha1_digest( m ) ;
