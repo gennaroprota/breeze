@@ -47,7 +47,7 @@ public:
     // -----------------------------------------------------------------------
     exception &         operator =( exception const & ) noexcept = default ;
 
-    //!     Compiler-generated destructor
+    //!     Compiler-generated destructor.
     // -----------------------------------------------------------------------
     virtual             ~exception() noexcept override = default ;
 
