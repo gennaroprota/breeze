@@ -212,7 +212,7 @@ tests()
     montecarlo_test     montecarlo_harness ;
 
     for ( std::size_t sn = 0 ; sn < sections && hashes.good() ; /*++sn*/ ) {
-        bool                montecarlo_section = section_types[
+        bool const          montecarlo_section = section_types[
                                                              sn ].pseudorandom ;
         if ( /*!montecarlo_section ||*/ montecarlo_harness.get_count() == 0 ) {
             // terminator found?
@@ -226,7 +226,7 @@ tests()
                 continue ;
             }
 
-            int                 z( from_string< int >( s ) ) ;
+            int const           z( from_string< int >( s ) ) ;
 
             if ( montecarlo_section ) {
                 if ( montecarlo_harness.get_count() == 0 ) {
