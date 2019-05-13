@@ -44,8 +44,8 @@ test_what_message_handling()
     breath::exception const
                         e3( very_long_string ) ;
 
-    //  The idea, here, is that std::strlen will crash if the string
-    //  is not null-terminated.
+    //      The idea, here, is that std::strlen will crash if the string
+    //      is not null-terminated.
     // -----------------------------------------------------------------------
     std::size_t const volatile
                         length = std::strlen( e3.what() ) ;
