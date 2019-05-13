@@ -41,8 +41,8 @@ public:
     //!\}
 
     //!     Copy and destruction.
-    //!     Compiler-generated copy ctor, copy assignment operator and
-    //!     dtor.
+    //!     Compiler-generated copy constructor, copy assignment
+    //!     operator and destructor.
     // -----------------------------------------------------------------------
 
     //!
