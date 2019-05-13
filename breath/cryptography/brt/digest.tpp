@@ -56,16 +56,15 @@ digest< Hasher >::is_equal( digest< Hasher > const & other ) const
 //      Stream insertion
 //      ================
 //
-//      Note the logic here: the Hasher keeps an input buffer
-//      and only computes a (partial) digest when the buffer is
-//      full. Now, we could request the output when the buffer
-//      is, for instance, just half-filled. If that triggered
-//      the computation we would be in the situation that an
-//      output operation would need to modify the object being
-//      output. To avoid this, we can make a copy of the
+//      Note the logic here: the Hasher keeps an input buffer and only
+//      computes a (partial) digest when the buffer is full. Now, we
+//      could request the output when the buffer is, for instance, just
+//      half-filled. If that triggered the computation we would be in
+//      the situation that an output operation would need to modify the
+//      object being output. To avoid this, we can make a copy of the
 //      hasher and only trigger the computation on the copy.
-//      But it would be silly to do the copy here, as in that way
-//      we would copy at *every* output operation.
+//      But it would be silly to do the copy here, as in that way we
+//      would copy at *every* output operation.
 //
 //      That's one of the main reasons why we have a digest abstraction:
 //      it is an entity on its own and has its own mechanism of
