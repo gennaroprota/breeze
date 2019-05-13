@@ -24,6 +24,13 @@ digest< Hasher >::digest( Hasher hasher_copy )
 }
 
 template< typename Hasher >
+bool
+digest< Hasher >::is_equal( digest< Hasher > const & other ) const
+{
+    return std::equal( this->begin(), this->end(), other.begin() ) ;
+}
+
+template< typename Hasher >
 typename digest< Hasher >::const_iterator
 digest< Hasher >::begin() const
 {
@@ -37,12 +44,6 @@ digest< Hasher >::end() const
     return breath::end( m_raw_digest ) ;
 }
 
-template< typename Hasher >
-bool
-digest< Hasher >::is_equal( digest< Hasher > const & other ) const
-{
-    return std::equal( this->begin(), this->end(), other.begin() ) ;
-}
 
 //      Stream insertion
 //      ================
