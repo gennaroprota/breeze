@@ -229,13 +229,10 @@ tests()
             int const           z( from_string< int >( s ) ) ;
 
             if ( montecarlo_section ) {
-                if ( montecarlo_harness.get_count() == 0 ) {
+                msg = read_compact_string( messages, z ) ;
+                BREATH_ASSERT( 8 * msg.size() == 416 ) ;
 
-                    msg = read_compact_string( messages, z ) ;
-                    BREATH_ASSERT( 8 * msg.size() == 416 ) ;
-
-                    montecarlo_harness.init( msg ) ;
-                }
+                montecarlo_harness.init( msg ) ;
             } else {
                 msg = read_compact_string( messages, z ) ;
             }
