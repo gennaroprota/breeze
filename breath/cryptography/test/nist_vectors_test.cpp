@@ -157,8 +157,8 @@ read_compact_string( nist_file & messages, int z )
     std::vector< byte_type >
                         msg ;
     byte_type           curr = 0 ;
-    unsigned const      initial_mask = 128 ;
-    unsigned            mask = initial_mask ;
+    byte_type const     initial_mask = 128 ;
+    byte_type           mask = initial_mask ;
     for ( int i = 0 ; i < z ; ++ i ) {
         unsigned            n ;
         messages >> n ;
