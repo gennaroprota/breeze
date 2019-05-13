@@ -192,7 +192,7 @@ set_of_chars::iterator::iterator( set_of_chars const & sc ) noexcept
         m_index( 0 )
 {
     if ( ! ( *m_owner )[ 0 ] ) {
-        ++ *this ;
+        increment() ;
     }
 }
 
@@ -232,16 +232,19 @@ set_of_chars::cend() const noexcept
 char
 set_of_chars::iterator::operator *() const noexcept
 {
+    BREATH_ASSERT( m_index < set_of_chars::size ) ;
+    BREATH_ASSERT( ( ( *m_owner )[ m_index ] ) ) ;
+
     return to_char( m_index ) ;
 }
 
 set_of_chars::iterator &
 set_of_chars::iterator::operator ++() noexcept
 {
-    do {
-        ++ m_index ;
-    } while ( m_index < set_of_chars::size && ! ( *m_owner )[ m_index ] ) ;
+    BREATH_ASSERT( m_index < set_of_chars::size ) ;
+    BREATH_ASSERT( ( ( *m_owner )[ m_index ] ) ) ;
 
+    increment() ;
     return *this ;
 }
 
@@ -266,6 +269,17 @@ bool
 set_of_chars::iterator::operator !=( iterator const & other ) const noexcept
 {
     return ! ( *this == other ) ;
+}
+
+//  Unchecked increment. Works also if *this doesn't refer to a
+//  character: used e.g. in one of the constructors.
+// ---------------------------------------------------------------------------
+void
+set_of_chars::iterator::increment() noexcept
+{
+    do {
+        ++ m_index ;
+    } while ( m_index < set_of_chars::size && ! ( *m_owner )[ m_index ] ) ;
 }
 
 }

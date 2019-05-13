@@ -313,6 +313,8 @@ public:
     private:
         bits_type const *   m_owner ;
         index_type          m_index ;
+
+        void                increment() noexcept ;
     } ;
 } ;
 
