@@ -67,7 +67,7 @@ digest< Hasher >::is_equal( digest< Hasher > const & other ) const
 //      But it would be silly to do the copy here, as in that way
 //      we would copy at *every* output operation.
 //
-//      That's one of main reason why we have a digest abstraction:
+//      That's one of the main reasons why we have a digest abstraction:
 //      it is an entity on its own and has its own mechanism of
 //      construction.
 // ---------------------------------------------------------------------------
