@@ -111,10 +111,16 @@ public:
     //!
     //!     \post
     //!         *this == other
+    //!
+    //!     \note
+    //!         All iterators into \c *this are invalidated.
     // -----------------------------------------------------------------------
     set_of_chars &      operator =( set_of_chars const & other ) noexcept ;
 
     //!     Destroys the set.
+    //!
+    //!     \note
+    //!         All iterators into \c *this are invalidated.
     // -----------------------------------------------------------------------
                         ~set_of_chars() noexcept ;
 
@@ -134,6 +140,9 @@ public:
     bool                contains( char c ) const noexcept ;
 
     //!     Adds the character \c c to the set.
+    //!
+    //!     \note
+    //!         No iterators are invalidated.
     // -----------------------------------------------------------------------
     set_of_chars &      add( char c ) noexcept ;
 
@@ -142,20 +151,32 @@ public:
     //!
     //!     \pre
     //!         s != nullptr
+    //!
+    //!     \note
+    //!         No iterators are invalidated.
     // -----------------------------------------------------------------------
     set_of_chars &      add( char const * s ) noexcept ;
 
     //!     Adds all the characters in \c s to the set.
+    //!
+    //!     \note
+    //!         No iterators are invalidated.
     // -----------------------------------------------------------------------
     set_of_chars &      add( std::string const & s ) noexcept ;
 
     //!     Adds all the characters in the range <code>[begin, end)
     //!     </code> to the set.
+    //!
+    //!     \note
+    //!         No iterators are invalidated.
     // -----------------------------------------------------------------------
     template< typename FwdIterator >
     set_of_chars &      add( FwdIterator begin, FwdIterator end ) noexcept ;
 
     //!     Removes the character \c c from the set.
+    //!
+    //!     \note
+    //!         All iterators referring to \c c are invalidated.
     // -----------------------------------------------------------------------
     set_of_chars &      remove( char c ) noexcept ;
 
@@ -164,14 +185,25 @@ public:
     //!
     //!     \pre
     //!         s != nullptr
+    //!
+    //!     \note
+    //!         All iterators referring to removed characters are
+    //!         invalidated.
     // -----------------------------------------------------------------------
     set_of_chars &      remove( char const * s ) noexcept ;
 
     //!     Removes all the characters in \c s from the set.
+    //!
+    //!     \note
+    //!         All iterators referring to removed characters are
+    //!         invalidated.
     // -----------------------------------------------------------------------
     set_of_chars &      remove( std::string const & s ) noexcept ;
 
     //!     Mutates the set into its complement.
+    //!
+    //!     \note
+    //!         All iterators into \c *this are invalidated.
     // -----------------------------------------------------------------------
     void                complement() noexcept ;
 
