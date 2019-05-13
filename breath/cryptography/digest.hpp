@@ -34,8 +34,8 @@ public:
 
     //!\name Initialization
     //!\{
-    //! Constructs a digest from a Hasher. Since the \p Hasher argument
-    //! is passed by value its state is not affected.
+    //!     Constructs a digest from a Hasher. Since the \p Hasher
+    //!     argument is passed by value its state is not affected.
     // -----------------------------------------------------------------------
     explicit            digest( Hasher hasher_copy ) ;
     //!\}
