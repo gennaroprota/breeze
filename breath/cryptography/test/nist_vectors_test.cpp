@@ -29,6 +29,7 @@
 
 #include <algorithm>
 #include <cstddef>
+#include <cstdlib>
 #include <exception>
 #include <fstream>
 #include <iostream>
@@ -182,7 +183,7 @@ read_compact_string( nist_file & messages, int z )
 
 }
 
-void
+bool
 tests()
 {
     using namespace breath ;
@@ -289,17 +290,23 @@ tests()
                      ? "Test passed"
                      : "*** TEST FAILED ***" )
               << std::endl ;
+
+    return test_passed ;
 }
 
 int
 main()
 try
 {
-    tests() ;
+    return tests()
+               ? EXIT_SUCCESS
+               : EXIT_FAILURE
+               ;
 }
 catch ( std::exception const & ex )
 {
     std::cerr << "Error: '" << ex.what() << '\'' << std::endl ;
+    return EXIT_FAILURE ;
 }
 
 // Local Variables:
