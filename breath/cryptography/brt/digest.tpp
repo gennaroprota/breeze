@@ -15,9 +15,6 @@
 
 namespace breath {
 
-//      Initialization
-//      ==============
-//
 template< typename Hasher >
 digest< Hasher >::digest( Hasher hasher_copy )
 {
@@ -26,9 +23,6 @@ digest< Hasher >::digest( Hasher hasher_copy )
     hasher_copy.create_digest( m_raw_digest ) ;
 }
 
-//      Iteration
-//      =========
-//
 template< typename Hasher >
 typename digest< Hasher >::const_iterator
 digest< Hasher >::begin() const
@@ -43,9 +37,6 @@ digest< Hasher >::end() const
     return breath::end( m_raw_digest ) ;
 }
 
-//      Equality comparison
-//      ===================
-//
 template< typename Hasher >
 bool
 digest< Hasher >::is_equal( digest< Hasher > const & other ) const
