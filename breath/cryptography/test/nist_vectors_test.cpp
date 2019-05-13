@@ -36,6 +36,7 @@
 #include <ostream>
 #include <sstream>
 #include <string>
+#include <vector>
 
 namespace {
 
@@ -115,7 +116,7 @@ public:
         return m_count ;
     }
 
-    void                init( std::string const & seed )
+    void                init( std::vector< byte_type > const & seed )
     {
         m.append( seed.cbegin(), seed.cend() ) ;
     }
@@ -126,7 +127,7 @@ public:
         word_type const     tot = 50 * 1000 ;
         for ( word_type i = 1 ; i <= tot ; ++ i ) {
             for ( byte_type a = 1 ; a <= m_count / 4 + 3 ; ++ a ) {
-                m.push_back( '\0' ) ;
+                m.push_back( 0 ) ;
             }
 
             m.push_back( static_cast< byte_type >( ( i >> 24 ) & 0xff ) ) ;
@@ -144,14 +145,18 @@ public:
     }
 };
 
-std::string
+std::vector< breath::sha1_engine::byte_type >
 read_compact_string( nist_file & messages, int z )
 {
+    typedef breath::sha1_engine::byte_type
+                        byte_type ;
+
     bool                b ;
     messages >> b ;
 
-    std::string         msg ;
-    char                curr = '\0' ;
+    std::vector< byte_type >
+                        msg ;
+    byte_type           curr = 0 ;
     unsigned const      initial_mask = 128 ;
     unsigned            mask = initial_mask ;
     for ( int i = 0 ; i < z ; ++ i ) {
@@ -165,7 +170,7 @@ read_compact_string( nist_file & messages, int z )
 
             mask /= 2 ;
             if ( mask == 0 ) {
-                msg += curr, curr = 0, mask = initial_mask ;
+                msg.push_back( curr ) , curr = 0, mask = initial_mask ;
             }
         }
 
@@ -202,7 +207,8 @@ tests()
     std::size_t const   sections = breath::count( section_types ) ;
 
     std::string         calculated ;
-    std::string         msg ;
+    std::vector< breath::sha1_engine::byte_type >
+                        msg ;
     montecarlo_test     montecarlo_harness ;
 
     for ( std::size_t sn = 0 ; sn < sections && hashes.good() ; /*++sn*/ ) {
@@ -226,7 +232,7 @@ tests()
                 if ( montecarlo_harness.get_count() == 0 ) {
 
                     msg = read_compact_string( messages, z ) ;
-                    BREATH_ASSERT( 8 * msg.length() == 416 ) ;
+                    BREATH_ASSERT( 8 * msg.size() == 416 ) ;
 
                     montecarlo_harness.init( msg ) ;
                 }
