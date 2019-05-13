@@ -115,7 +115,7 @@ public:
         return m_count ;
     }
 
-    void                init( std::string const & seed ) // gps come la chiamo (vedi rnd)
+    void                init( std::string const & seed )
     {
         m.append( seed.cbegin(), seed.cend() ) ;
     }
