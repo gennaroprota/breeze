@@ -71,11 +71,12 @@
 ;       Special note:
 ;
 ;           the quote above from the Intel manual talks about setting
-;           *and* clearing, so one should really verify both. The
-;           application note however just considers *modifying*
-;           (flipping), and so do all the code snippets I've seen from
-;           Intel. I'm assuming, therefore, that the error is in the
-;           wording used in the manual.
+;           *and* clearing. It is not clear whether one should really
+;           verify both (and, in that case, whether they should be
+;           verified in order), or if one implies the other. The
+;           application note just considers *modifying* (flipping), and
+;           so do all the code snippets I've seen from Intel. I'm
+;           assuming, therefore, that this is enough.
 ; ----------------------------------------------------------------------------
 ;
 ;       C interface:    int is_cpuid_supported() ;
