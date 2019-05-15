@@ -21,7 +21,7 @@ namespace breath {
 //      ===========
 //
 //      \return
-//!         The Luhn sum of the given string. The result is a number in
+//!         The Luhn sum of the given string. This is a number in
 //!         <code>[0, 9]</code>.
 //!
 //!     \throw
