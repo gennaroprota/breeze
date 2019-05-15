@@ -53,6 +53,7 @@ class comparison
     {
         return lhs.compare( rhs ) >= 0 ;
     }
+
 protected:
                         ~comparison() noexcept = default ;
 } ;
