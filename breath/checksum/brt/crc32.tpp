@@ -95,8 +95,8 @@ crc32( InputIterator begin, InputIterator end )
                               initial_value,
             [ = ]( std::uint_fast32_t checksum, std::uint_fast8_t value )
             {
-                return table[ ( checksum ^ value ) & ( table_size - 1 ) ]
-                            ^ ( checksum / table_size ) ;
+                return        ( checksum / table_size ) ^
+                       table[ ( checksum ^ value ) & ( table_size - 1 ) ] ;
             }
 
             ) ;
