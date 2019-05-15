@@ -156,6 +156,10 @@ public:
     static std::size_t const
                         required_count = n ; // gps experimental
 
+    //!     Writes (encodes) the value \c value as a sequence of \c
+    //!     Bytes, according to \c EndianPolicy and starting with \c
+    //!     dest.
+    // -----------------------------------------------------------------------
     template< typename ByteRandomIter >
     static T encode( T const & value, ByteRandomIter dest )
     {
@@ -168,6 +172,11 @@ public:
                    dest ) ;
     }
 
+    //!     \return
+    //!         The value of type \c T encoded, according to \c
+    //!         EndianPolicy, as the sequence of \c Bytes that begins
+    //!         with \c source.
+    // -----------------------------------------------------------------------
     template< typename ByteRandomIter >
     static T decode( ByteRandomIter source )
     {
