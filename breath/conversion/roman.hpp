@@ -28,6 +28,9 @@ class roman
 public:
     //!     Constructs a roman number object corresponding to number
     //!     \c n.
+    //!
+    //!     \pre
+    //!         1 <= n && n <= 3999
     // -----------------------------------------------------------------------
     explicit            roman( int n ) ;
 
