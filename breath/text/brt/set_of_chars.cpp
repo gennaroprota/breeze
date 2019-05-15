@@ -251,7 +251,7 @@ set_of_chars::iterator::operator ++() & noexcept
 set_of_chars::iterator
 set_of_chars::iterator::operator ++( int ) & noexcept
 {
-    auto                    result( *this ) ;
+    auto                result( *this ) ;
     operator ++() ;
     return result ;
 }
