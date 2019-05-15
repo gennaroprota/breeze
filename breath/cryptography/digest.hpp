@@ -63,7 +63,10 @@ private:
 } ;
 
 
-//!     Digests are output-streamable.
+//!     Outputs a hexadecimal representation of the digest. The case of
+//!     the letters A-F is unspecified (this allows us to support e.g.
+//!     \c std::uppercase and \c std::nouppercase in the future). But
+//!     it's guaranteed that all letters will have the same case.
 // ---------------------------------------------------------------------------
 template< typename Ch, typename Tr, typename Hasher >
 std::basic_ostream< Ch, Tr > &

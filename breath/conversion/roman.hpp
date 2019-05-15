@@ -41,7 +41,10 @@ private:
     std::string         m_representation ;
 
     //!     Stream output operator: outputs the number in roman
-    //!     numerals.
+    //!     numerals. The case of the letters is unspecified (this
+    //!     allows us to support e.g. \c std::uppercase and
+    //!     \c std::nouppercase in the future). But it's guaranteed that
+    //!     all letters will have the same case.
     // -----------------------------------------------------------------------
     friend std::ostream &
                     operator <<( std::ostream &, roman const & ) ;
