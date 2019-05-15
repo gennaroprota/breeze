@@ -110,11 +110,11 @@ public:
 //!     Converts generic values to/from (byte-)sequence
 //!     representations.
 //!
-//!     In general, \c endian_codec can read and store a
-//!     representation of a value as a sequence of smaller units,
-//!     regardless of their widths. It is mostly useful to read and
-//!     write values independently of the endianness they are stored
-//!     in, as long as the endianness type is known.
+//!     In general, \c endian_codec can read and store a representation
+//!     of a value as a sequence of smaller units, regardless of their
+//!     widths. It is mostly useful to read and write values
+//!     independently of the endianness they are stored in, as long as
+//!     the endianness type is known.
 //!
 //!     It is only designed for reads and writes in memory.
 //!
