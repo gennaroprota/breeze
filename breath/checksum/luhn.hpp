@@ -47,7 +47,8 @@ bool                has_luhn_sum( std::string const & s ) ;
 //      ===================
 //
 //      \return
-//!         The Luhn checksum digit for the given string.
+//!         The Luhn checksum digit for the given string. This is a char
+//!         in ['0', '9'].
 //!
 //!     \throw
 //!         A \c breath::exception if any of the characters in \c s is
