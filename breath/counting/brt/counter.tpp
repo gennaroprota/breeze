@@ -38,9 +38,9 @@ template< typename Int >
 counter< Int >
 counter< Int >::operator ++( int ) &
 {
-    auto const          temp( *this ) ;
-    ++ *this ;
-    return temp ;
+    auto                result( *this ) ;
+    operator ++() ;
+    return result ;
 }
 
 template< typename Int >
@@ -56,9 +56,9 @@ template< typename Int >
 counter< Int >
 counter< Int >::operator --( int ) &
 {
-    auto const          temp( *this ) ;
-    -- *this ;
-    return temp ;
+    auto                result( *this ) ;
+    operator --() ;
+    return result ;
 }
 
 template< typename Int >

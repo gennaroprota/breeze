@@ -300,8 +300,8 @@ public:
         //!\{   Iterator operations.
         // -------------------------------------------------------------------
         value_type          operator *() const noexcept ;
-        iterator &          operator ++() noexcept ;
-        iterator            operator ++( int ) noexcept ;
+        iterator &          operator ++() & noexcept ;
+        iterator            operator ++( int ) & noexcept ;
 
         //!     \note
         //!         It's undefined behavior to compare iterators into

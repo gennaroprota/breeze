@@ -239,7 +239,7 @@ set_of_chars::iterator::operator *() const noexcept
 }
 
 set_of_chars::iterator &
-set_of_chars::iterator::operator ++() noexcept
+set_of_chars::iterator::operator ++() & noexcept
 {
     BREATH_ASSERT( m_index < set_of_chars::size ) ;
     BREATH_ASSERT( ( ( *m_owner )[ m_index ] ) ) ;
@@ -249,11 +249,11 @@ set_of_chars::iterator::operator ++() noexcept
 }
 
 set_of_chars::iterator
-set_of_chars::iterator::operator ++( int ) noexcept
+set_of_chars::iterator::operator ++( int ) & noexcept
 {
-    auto                    tmp( *this ) ;
+    auto                    result( *this ) ;
     operator ++() ;
-    return tmp ;
+    return result ;
 }
 
 bool
