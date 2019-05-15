@@ -29,7 +29,7 @@ namespace adl_shield {
 //!     member function, which accepts a \c C argument \c rhs to compare
 //!     with \c *this, and returns a value \c < \c 0, \c == \c 0 or \c >
 //!     \c 0 if \c *this is respectively less than \c rhs, equal to \c
-//!     rhs or greater then rhs.
+//!     rhs or greater than rhs.
 // ---------------------------------------------------------------------------
 template< typename T >
 class comparison
