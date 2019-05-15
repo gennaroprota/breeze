@@ -43,8 +43,10 @@ check_known()
         { "Nel mezzo del cammin di nostra vita",         0x5BFBCBF8 }
       } ;
 
-    for ( auto it = breath::cbegin( known ) ; it != breath::cend( known ) ; ++ it ) {
-        BREATH_CHECK( breath::crc32( it->text.cbegin(), it->text.cend() ) == it->crc32 ) ;
+    for ( auto it = breath::cbegin( known ) ; it != breath::cend( known ) ;
+                                                                       ++ it ) {
+        BREATH_CHECK( breath::crc32( it->text.cbegin(), it->text.cend() ) ==
+                                                                   it->crc32 ) ;
     }
 }
 
