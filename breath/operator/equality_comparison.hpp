@@ -62,6 +62,8 @@ namespace adl_shield {
 template< typename T >
 class equality_comparison
 {
+    // [FUTURE], [C++17], [gps]:
+    //      These are all candidates for [[ nodiscard ]]
     friend bool         operator ==( T const & lhs, T const & rhs)
     {
         return lhs.is_equal( rhs ) ;
