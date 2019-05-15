@@ -68,7 +68,7 @@ cpu_vendor_id_string()
 
     int const           len = 12 ;
     char                id_string[ len ] ;
-    *reinterpret_cast< int * >( id_string + 0 ) = r.ebx ;
+    *reinterpret_cast< int * >( id_string     ) = r.ebx ;
     *reinterpret_cast< int * >( id_string + 4 ) = r.edx ;
     *reinterpret_cast< int * >( id_string + 8 ) = r.ecx ;
     return std::string( id_string, len ) ;
