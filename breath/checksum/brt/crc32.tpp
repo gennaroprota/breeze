@@ -21,8 +21,9 @@ namespace breath {
 //          used in the ISO 3309 standard and in section 8.1.1.6.2 of
 //          ITU-T recommendation V.42.
 //
-//      I didn't have access to those documents, but the code here is
-//      mathematically equivalent to that in the appendix of the RFC.
+//      I didn't have access to those documents, but the code here, and
+//      in extra/generate_crc32_table.cpp, is mathematically equivalent
+//      to that in the appendix of the RFC.
 // ---------------------------------------------------------------------------
 template< typename InputIterator >
 std::uint_fast32_t

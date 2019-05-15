@@ -21,6 +21,9 @@
 #include <ostream>
 #include <string>
 
+//      Implementation:
+//          see crc32.tpp for a (pseudo-)reference on the calculations.
+// ---------------------------------------------------------------------------
 int
 main()
 {
