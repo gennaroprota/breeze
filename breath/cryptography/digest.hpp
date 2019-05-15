@@ -76,7 +76,7 @@ operator <<( std::basic_ostream< Ch, Tr >   & os,
 //      make_digest():
 //      ==============
 //
-//!     Convenience function (can use type deduction)
+//!     Convenience function (can use type deduction).
 //!
 //!     \return
 //!         digest< Hasher >( h )
