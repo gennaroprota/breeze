@@ -24,6 +24,13 @@ namespace breath {
 //!     \return
 //!         The CRC-32 of the sequence identified by <code>
 //!         [ begin, end )</code>.
+//!
+//!     \note
+//!         I guess some applications might not have the whole sequence
+//!         available, and need to calculate the CRC-32 in multiple
+//!         steps. If so, I might add a third argument, with a default
+//!         to zero, giving the CRC calculated in the previous step, so
+//!         that the user could "update" it as needed.
 // ---------------------------------------------------------------------------
 template< typename InputIterator >
 std::uint_fast32_t  crc32( InputIterator begin, InputIterator end ) ;
