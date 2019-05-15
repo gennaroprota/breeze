@@ -296,15 +296,12 @@ tests()
 
 int
 main()
-try
-{
+try {
     return tests()
                ? EXIT_SUCCESS
                : EXIT_FAILURE
                ;
-}
-catch ( std::exception const & ex )
-{
+} catch ( std::exception const & ex ) {
     std::cerr << "Error: '" << ex.what() << '\'' << std::endl ;
     return EXIT_FAILURE ;
 }
