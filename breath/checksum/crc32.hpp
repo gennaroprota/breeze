@@ -23,7 +23,7 @@ namespace breath {
 //
 //!     \return
 //!         The CRC-32 of the sequence identified by <code>
-//!         [ begin, end )</code>.
+//!         [begin, end)</code>.
 //!
 //!     \note
 //!         I guess some applications might not have the whole sequence
