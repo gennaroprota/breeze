@@ -27,7 +27,7 @@ _get_cpuid_info:
 
     cpuid
 
-    mov [ esi ],     eax
+    mov [ esi      ], eax
     mov [ esi + 4  ], ebx
     mov [ esi + 8  ], ecx
     mov [ esi + 12 ], edx
