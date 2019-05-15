@@ -89,8 +89,8 @@ crc32( InputIterator begin, InputIterator end )
 
     static_assert( table_size == 256, "wrong table size" ) ;
 
-    return all_ones &
-           ~ std::accumulate( begin, end,
+    return all_ones ^
+           std::accumulate( begin, end,
                               initial_value,
             [ = ]( std::uint_fast32_t checksum, std::uint_fast8_t value )
             {
