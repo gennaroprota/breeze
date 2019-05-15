@@ -106,7 +106,7 @@ public:
 //!           (but, of course, the latter is stylistically rare: one
 //!           would usually assign the function return value first)
 //!
-//!         - when \p T itself has a user defined conversion, which
+//!         - when \c T itself has a user defined conversion, which
 //!           you want to be applied
 //!
 //!        As shown above, in these cases you have to explicitly

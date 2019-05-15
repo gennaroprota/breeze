@@ -65,7 +65,7 @@ public:
 //!     representation different from two's complement.
 //!
 //!     \par Type requirements
-//!         \p T shall be either \c signed \c int or \c unsigned \c int.
+//!         \c T shall be either \c signed \c int or \c unsigned \c int.
 // ---------------------------------------------------------------------------
 template< std::size_t width, typename T /* gps temp = signed */ >
 class exact_width_integer

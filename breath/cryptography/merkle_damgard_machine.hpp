@@ -35,14 +35,14 @@ class               digest ;
 //!     easily by means of this class template.
 //!
 //!
-//!     \p Engine, which is the algorithm-specific policy, must
+//!     \c Engine, which is the algorithm-specific policy, must
 //!     provide the two static member functions described below:
 //!
 //!     - init_state( state_type & state )
 //!        \c state_type is either a built-in array or an
 //!        array-like type which provides const and non-const
 //!        operator [] functions; the machine guarantees that data
-//!        stored in the \p state parameter are wiped automatically
+//!        stored in the \c state parameter are wiped automatically
 //!        when \c init_state() returns to the caller (for obvious
 //!        security reasons)
 //!

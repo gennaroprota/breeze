@@ -21,7 +21,7 @@ namespace breath {
 //      =============
 //
 //!     \return
-//!         The number of on bits in the value \c t. \p T must be an
+//!         The number of on bits in the value \c t. \c T must be an
 //!         unsigned built-in type.
 // ---------------------------------------------------------------------------
 template< typename T >
