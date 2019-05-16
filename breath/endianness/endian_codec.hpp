@@ -154,15 +154,15 @@ public:
     //!     dest.
     // -----------------------------------------------------------------------
     template< typename ByteRandomIter >
-    static T encode( T const & value, ByteRandomIter dest )
+    static void encode( T const & value, ByteRandomIter dest )
     {
         // cast the least significant part
         dest[ policy::template index< T, Byte, n - 1 >()
             ] = static_cast< Byte >( value ) ;
-        return next::encode(
-                   // '* (n > 1)' silences spurious warnings
-                   n > 1 ? ( value >> shift * (n > 1) ) : 0,
-                   dest ) ;
+        next::encode(
+            // '* (n > 1)' silences spurious warnings
+            n > 1 ? ( value >> shift * (n > 1) ) : 0,
+            dest ) ;
     }
 
     //!     \return
@@ -183,9 +183,8 @@ class endian_codec< EndianPolicy, T, Byte, 0 >
 {
 public:
     template< typename ByteIter >
-    static T encode( T const & value, ByteIter )
+    static void encode( T const &, ByteIter )
     {
-        return value ;
     }
 
     template< typename ByteIter >
@@ -205,13 +204,12 @@ endian_codec< EndianPolicy, T, Byte, n >::required_count ;
 //!     Convenience functions
 // ---------------------------------------------------------------------------
 template< typename EndianPolicy, typename T, typename ByteRandomIter >
-T
+void
 endian_store( T const & value, ByteRandomIter it )
 {
     typedef typename std::iterator_traits< ByteRandomIter >::value_type
                         Byte ;
-    return breath::endian_codec< EndianPolicy, T, Byte >
-        ::encode( value, it ) ;
+    breath::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
 }
 
 template< typename EndianPolicy, typename T, typename ByteRandomIter >
