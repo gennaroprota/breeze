@@ -74,7 +74,7 @@ public:
 class little_endian_policy
 {
 public:
-    // n == 0 for most significant byte
+    // n == 0 for the most significant byte
     //
     template< typename T, typename Byte, std::size_t n >
     static std::size_t index()
