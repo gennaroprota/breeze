@@ -14,7 +14,6 @@
 #include "breath/checksum/luhn.hpp"
 #include "breath/counting/count.hpp"
 #include "breath/diagnostics/exception.hpp"
-#include <cctype>
 #include <numeric>
 
 namespace breath {
@@ -22,6 +21,16 @@ namespace        {
 
 int const           table[] = { 0, 2, 4, 6, 8, 1, 3, 5, 7, 9 } ;
 int const           base = static_cast< int >( breath::count( table ) ) ;
+
+//      Use this in lieu of std::isdigit(), because, under Microsoft
+//      with codepage 1252, std::isdigit() also returns true for some
+//      superscript digits (which is non-conforming).
+// ---------------------------------------------------------------------------
+bool
+portable_is_digit( char c )
+{
+    return '0' <= c && c <= '9' ;
+}
 
 }
 
@@ -31,7 +40,7 @@ luhn_sum( std::string const & str )
     bool                from_table = false ;
     auto checked_adder = [ & ]( int s, char c )
     {
-        if ( ! std::isdigit( static_cast< unsigned char >( c ) ) ) {
+        if ( ! portable_is_digit( c ) ) {
             throw exception( "non-digit char in Luhn string" ) ;
         }
         int const           value = c - '0' ;
