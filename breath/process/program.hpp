@@ -149,7 +149,7 @@ public:
     //!     destructors of stack based objects), for example, by
     //!     raising an exception with the argument, having taken
     //!     the precaution to encapsulate the entire contents of
-    //!     main() with:
+    //!     \c main() with:
     //!
     //!     \code
     //!         try {
