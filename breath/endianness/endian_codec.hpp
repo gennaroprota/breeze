@@ -24,6 +24,9 @@ namespace endian_codec_private {
 template< typename T, typename Byte >
 class width_ratio
 {
+    static_assert( meta::width< T >::value % meta::width< Byte >::value == 0,
+                   "a T must be wide exactly n Bytes" ) ;
+
     enum { q = meta::width< T >::value / meta::width< Byte >::value } ;
 
 public:
