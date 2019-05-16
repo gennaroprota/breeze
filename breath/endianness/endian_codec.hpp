@@ -8,6 +8,9 @@
 //
 //!     \file
 //!     \brief Converter from/to byte sequences representations.
+//
+//      NOTE: to avoid overcomplicated syntax (template members of class
+//      templates), this file doesn't have a corresponding .tpp file.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_KF72jjCHTZHZqOBTMYHp95Fij2ZyYgaS
