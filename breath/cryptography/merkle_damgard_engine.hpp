@@ -75,9 +75,9 @@ private:
                         word_codec ;
 
 public:
-    static word_type    encode_word( word_type w, byte_type * dest )
+    static void         encode_word( word_type w, byte_type * dest )
     {
-        return word_codec::encode( w, dest ) ;
+        word_codec::encode( w, dest ) ;
     }
 
     static word_type    decode_word( byte_type const * src )
