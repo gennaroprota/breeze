@@ -26,7 +26,7 @@ namespace breath {
 //!
 //!     \throw
 //!         A \c breath::exception if any of the characters in \c s is
-//!         not a decimal digit.
+//!         not a decimal digit (i.e. one of \c 0123456789).
 // ---------------------------------------------------------------------------
 int                 luhn_sum( std::string const & s ) ;
 
@@ -39,7 +39,7 @@ int                 luhn_sum( std::string const & s ) ;
 //!
 //!     \throw
 //!         A \c breath::exception if any of the characters in \c s is
-//!         not a decimal digit.
+//!         not a decimal digit (i.e. one of \c 0123456789).
 // ---------------------------------------------------------------------------
 bool                has_luhn_sum( std::string const & s ) ;
 
@@ -52,7 +52,7 @@ bool                has_luhn_sum( std::string const & s ) ;
 //!
 //!     \throw
 //!         A \c breath::exception if any of the characters in \c s is
-//!         not a decimal digit.
+//!         not a decimal digit (i.e. one of 0123456789).
 // ---------------------------------------------------------------------------
 char                luhn_check_digit( std::string const & s ) ;
 
