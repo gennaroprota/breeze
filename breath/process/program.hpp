@@ -132,24 +132,21 @@ public:
 
     //!     Triggers the termination of the program with the exit
     //!     code which corresponds to the maximum value seen until
-    //!     now. This function calls the function defined by
+    //!     now. This function calls the function specified by
     //!     set_terminate_handler(), if set_terminate_handler() has
-    //!     been called; otherwise, it invokes \c std::exit().
-    //!
-    //!     The terminate handler should not return, or \c
-    //!     std::abort() will be called after it returns.
+    //!     been called; otherwise, it calls \c std::exit().
     // -----------------------------------------------------------------------
     [[noreturn]] void   terminate() ;
 
-    //!     The function passed through the parameter to this function
-    //!     is called, instead of \c exit(), with the exit code as an
+    //!     Sets \c *user_function as the "terminate handler", i.e. as
+    //!     the function which is called, with the exit code as an
     //!     argument, if there is a fatal error or if the user calls
-    //!     \c terminate(). This makes it possible for the user to
-    //!     avoid calling \c exit() (and thus to avoid \e not calling
-    //!     destructors of stack based objects), for example, by
-    //!     raising an exception with the argument, having taken
-    //!     the precaution to encapsulate the entire contents of
-    //!     \c main() with:
+    //!     terminate(). This makes it possible for the user to avoid
+    //!     calling the default terminate handler, which is \c std::exit
+    //!     (and thus to avoid \e not calling destructors of local
+    //!     objects), for example, by raising an exception with the
+    //!     argument, having taken the precaution to encapsulate the
+    //!     entire contents of \c main() with:
     //!
     //!     \code
     //!         try {
@@ -160,6 +157,10 @@ public:
     //!             return exit_code ;
     //!         }
     //!     \endcode
+    //!
+    //!     \note
+    //!         The terminate handler should not return, or \c
+    //!         std::abort() will be called immediately after.
     // -----------------------------------------------------------------------
     void                set_terminate_handler( void (*user_function)( int ) ) ;
 
