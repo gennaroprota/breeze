@@ -156,7 +156,7 @@ public:
     template< typename ByteRandomIter >
     static void encode( T const & value, ByteRandomIter dest )
     {
-        // cast the least significant part
+        // write the least significant part
         dest[ policy::template index< T, Byte, n - 1 >()
             ] = static_cast< Byte >( value ) ;
         next::encode(
