@@ -77,13 +77,13 @@ public:
     // n == 0 for the most significant byte
     //
     template< typename T, typename Byte, std::size_t n >
-    static std::size_t index()
+    static std::size_t  index()
     {
         return endian_codec_private::width_ratio< T, Byte >::value - 1 - n ;
     }
 
     template< typename T, typename Byte >
-    static std::size_t index( std::size_t n )
+    static std::size_t  index( std::size_t n )
     {
         return endian_codec_private::width_ratio< T, Byte >::value - 1 - n ;
     }
@@ -98,13 +98,13 @@ class big_endian_policy
 {
 public:
     template< typename T, typename Byte, std::size_t n >
-    static std::size_t index()
+    static std::size_t  index()
     {
         return n ;
     }
 
     template< typename T, typename Byte >
-    static std::size_t index( std::size_t n )
+    static std::size_t  index( std::size_t n )
     {
         return n ;
     }
@@ -160,7 +160,7 @@ public:
     //!     dest.
     // -----------------------------------------------------------------------
     template< typename ByteRandomIter >
-    static void encode( T const & value, ByteRandomIter dest )
+    static void         encode( T const & value, ByteRandomIter dest )
     {
         // write the least significant part
         dest[ policy::template index< T, Byte, n - 1 >()
@@ -177,7 +177,7 @@ public:
     //!         with \c source.
     // -----------------------------------------------------------------------
     template< typename ByteRandomIter >
-    static T decode( ByteRandomIter source )
+    static T            decode( ByteRandomIter source )
     {
         return source[ policy:: template index< T, Byte, n - 1 >() ]
              | next::decode( source ) << shift ;
@@ -189,12 +189,12 @@ class endian_codec< EndianPolicy, T, Byte, 0 >
 {
 public:
     template< typename ByteIter >
-    static void encode( T const &, ByteIter )
+    static void         encode( T const &, ByteIter )
     {
     }
 
     template< typename ByteIter >
-    static T decode( ByteIter )
+    static T            decode( ByteIter )
     {
         return 0 ;
     }
