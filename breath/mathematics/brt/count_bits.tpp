@@ -70,7 +70,7 @@ count_bits( T t ) noexcept
 constexpr std::size_t
 count_bits( bool b ) noexcept
 {
-    return b 
+    return b
         ? 1
         : 0
         ;
