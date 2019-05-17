@@ -44,12 +44,12 @@ test_what_message_handling()
     breath::exception const
                         e3( very_long_string ) ;
 
-    //      The idea, here, is that std::strlen will crash if the string
-    //      is not null-terminated.
+    //      This is, of course, coupled with the particular choice made
+    //      in the implementation of the class. But that's not a
+    //      problem: if the number will be changed in the implementation
+    //      then the test will fail, and will thus be updated.
     // -----------------------------------------------------------------------
-    std::size_t const volatile
-                        length = std::strlen( e3.what() ) ;
-    static_cast< void >( length ) ;
+    BREATH_CHECK( std::strlen( e3.what() ) == 1022 ) ;
 }
 
 void
