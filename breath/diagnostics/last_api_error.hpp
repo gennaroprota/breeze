@@ -23,6 +23,9 @@
 //!     The class is OutputStreamable, so you can also use
 //!     \c breath::to_string(), which gives more information than the
 //!     member \c what(), but may throw.
+//!
+//!     \warning
+//!         This class is experimental.
 // ---------------------------------------------------------------------------
 
 #include "breath/diagnostics/private/last_api_error.hpp"
