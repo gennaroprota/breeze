@@ -12,7 +12,7 @@
 
 namespace breath {
 
-template< typename Int>
+template< typename Int >
 counter< Int >::counter()
     :   m_count( 0 )
 {
@@ -20,7 +20,7 @@ counter< Int >::counter()
 
 template< typename Int>
 counter< Int >::counter( Int n )
-    :   m_count( (BREATH_ASSERT( n >= 0 ), n) )
+    :   m_count( ( BREATH_ASSERT( n >= 0 ), n ) )
 {
 }
 
