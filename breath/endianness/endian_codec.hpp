@@ -16,6 +16,7 @@
 #ifndef BREATH_GUARD_KF72jjCHTZHZqOBTMYHp95Fij2ZyYgaS
 #define BREATH_GUARD_KF72jjCHTZHZqOBTMYHp95Fij2ZyYgaS
 
+#include "breath/meta/has_sign.hpp"
 #include "breath/meta/width.hpp"
 #include <cstddef>
 #include <iterator>
@@ -145,6 +146,10 @@ template<
 >
 class endian_codec
 {
+    static_assert( ! meta::has_sign< T >::value &&
+                   ! meta::has_sign< Byte >::value,
+                   "T and Byte can't have a sign") ;
+
     typedef EndianPolicy
                         policy ;
     typedef endian_codec< policy, T, Byte, n - 1 >
