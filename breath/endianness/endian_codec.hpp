@@ -51,6 +51,72 @@ public:
                         value = n * width_ratio< T, Byte >::value ;
 } ;
 
+template<
+    typename EndianPolicy,
+    typename T,
+    typename Byte,
+    //      Hiding this parameter from the user is the reason why we
+    //      have endian_codec_private::endian_codec.
+    std::size_t n = endian_codec_private::width_ratio< T, Byte >::value
+>
+class endian_codec
+{
+    static_assert( ! meta::has_sign< T >::value &&
+                   ! meta::has_sign< Byte >::value,
+                   "T and Byte can't have a sign") ;
+
+    typedef EndianPolicy
+                        policy ;
+    typedef endian_codec< policy, T, Byte, n - 1 >
+                        next ;
+    enum {              shift = meta::width< Byte >::value } ;
+
+public:
+    //!     Writes (encodes) the value \c value as a sequence of \c
+    //!     Bytes, according to \c EndianPolicy and starting with \c
+    //!     dest.
+    // -----------------------------------------------------------------------
+    template< typename ByteRandomIter >
+    static void         encode( T const & value, ByteRandomIter dest )
+    {
+        // write the least significant part
+        dest[ policy::template index< T, Byte, n - 1 >()
+            ] = static_cast< Byte >( value ) ;
+        next::encode(
+            // '* (n > 1)' silences spurious warnings
+            n > 1 ? ( value >> shift * (n > 1) ) : 0,
+            dest ) ;
+    }
+
+    //!     \return
+    //!         The value of type \c T encoded, according to \c
+    //!         EndianPolicy, as the sequence of \c Bytes that begins
+    //!         with \c source.
+    // -----------------------------------------------------------------------
+    template< typename ByteRandomIter >
+    static T            decode( ByteRandomIter source )
+    {
+        return source[ policy:: template index< T, Byte, n - 1 >() ]
+             | next::decode( source ) << shift ;
+    }
+} ;
+
+template< typename EndianPolicy, typename T, typename Byte >
+class endian_codec< EndianPolicy, T, Byte, 0 >
+{
+public:
+    template< typename ByteIter >
+    static void         encode( T const &, ByteIter )
+    {
+    }
+
+    template< typename ByteIter >
+    static T            decode( ByteIter )
+    {
+        return 0 ;
+    }
+} ;
+
 }
 //! \endcond
 
@@ -140,22 +206,14 @@ public:
 template<
     typename EndianPolicy,
     typename T,
-    typename Byte,
-    // next parameter not intended for the user -gps
-    std::size_t n = endian_codec_private::width_ratio< T, Byte >::value
+    typename Byte
 >
 class endian_codec
 {
-    static_assert( ! meta::has_sign< T >::value &&
-                   ! meta::has_sign< Byte >::value,
-                   "T and Byte can't have a sign") ;
-
-    typedef EndianPolicy
-                        policy ;
-    typedef endian_codec< policy, T, Byte, n - 1 >
-                        next ;
-    enum {              shift = meta::width< Byte >::value } ;
-
+private:
+    static std::size_t const
+                        n = endian_codec_private::
+                              width_ratio< T, Byte >::value ;
 public:
     static std::size_t const
                         required_count = n ; // gps experimental
@@ -167,13 +225,10 @@ public:
     template< typename ByteRandomIter >
     static void         encode( T const & value, ByteRandomIter dest )
     {
-        // write the least significant part
-        dest[ policy::template index< T, Byte, n - 1 >()
-            ] = static_cast< Byte >( value ) ;
-        next::encode(
-            // '* (n > 1)' silences spurious warnings
-            n > 1 ? ( value >> shift * (n > 1) ) : 0,
-            dest ) ;
+        endian_codec_private::endian_codec< EndianPolicy,
+                                            T,
+                                            Byte,
+                                            n >::encode( value, dest ) ;
     }
 
     //!     \return
@@ -184,33 +239,19 @@ public:
     template< typename ByteRandomIter >
     static T            decode( ByteRandomIter source )
     {
-        return source[ policy:: template index< T, Byte, n - 1 >() ]
-             | next::decode( source ) << shift ;
-    }
-} ;
-
-template< typename EndianPolicy, typename T, typename Byte >
-class endian_codec< EndianPolicy, T, Byte, 0 >
-{
-public:
-    template< typename ByteIter >
-    static void         encode( T const &, ByteIter )
-    {
-    }
-
-    template< typename ByteIter >
-    static T            decode( ByteIter )
-    {
-        return 0 ;
+        return endian_codec_private::endian_codec< EndianPolicy,
+                                                   T,
+                                                   Byte,
+                                                   n >::decode( source ) ;
     }
 } ;
 
 template< typename EndianPolicy,
           typename T,
-          typename Byte,
-          std::size_t n >
+          typename Byte >
 std::size_t const
-endian_codec< EndianPolicy, T, Byte, n >::required_count ;
+endian_codec< EndianPolicy, T, Byte >::required_count ;
+
 
 //!     Convenience functions
 // ---------------------------------------------------------------------------
