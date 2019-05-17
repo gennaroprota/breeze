@@ -73,8 +73,9 @@ damerau_levenshtein_distance( std::string const & first,
             std::size_t const   insertion    = m[ i ][ j - 1 ] + 1 ;
             std::size_t const   deletion     = m[ i - 1 ][ j ] + 1 ;
             std::size_t const   substitution = m[ i - 1 ][ j - 1 ] + cost ;
-            std::size_t         distance     = (std::min)( { insertion, deletion,
-                                                           substitution } ) ;
+            std::size_t         distance     = (std::min)( { insertion,
+                                                             deletion,
+                                                             substitution } ) ;
             if ( i > 1 && j > 1  && first[ i - 1 ] == second[ j - 2 ] &&
                 first[ i - 2 ] == second[ j - 1 ] ) {
                 distance = (std::min)( distance, m[ i - 2 ][ j - 2 ] + cost ) ;
