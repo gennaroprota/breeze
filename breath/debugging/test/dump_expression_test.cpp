@@ -77,7 +77,8 @@ main()
     clear_stringstream( oss ) ;
 
     BREATH_DUMP_EXPRESSION( FUNCTION_LIKE_DUMMY() ) ;
-    DO_TEST( oss.str() == "1 << 3 * 4 = 4096 [from: FUNCTION_LIKE_DUMMY()]\n" ) ;
+    DO_TEST( oss.str() ==
+             "1 << 3 * 4 = 4096 [from: FUNCTION_LIKE_DUMMY()]\n" ) ;
     clear_stringstream( oss ) ;
 
     // the one case that the macro doesn't detect: a macro that is object-like
