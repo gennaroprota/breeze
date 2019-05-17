@@ -193,9 +193,9 @@ public:
 //!
 //!     \par Type requirements
 //!         \c T and \c Byte shall be unsigned integral types.
-//!         There's no requirement that \c Byte have a smaller
-//!         \em width than \c T, but the width of \c Byte must evenly
-//!         divide the width of \c T.
+//!         There's no requirement that \c Byte have a smaller em width
+//!         than \c T, but the width of \c Byte must evenly divide the
+//!         width of \c T.
 //!
 //!     \warning
 //!         Given its generality it might be a good idea to rename
