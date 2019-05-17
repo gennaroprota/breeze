@@ -19,6 +19,8 @@
 #include <iostream>
 #include <string>
 
+namespace {
+
 void
 test_throwability()
 {
@@ -62,6 +64,8 @@ test_copy()
     breath::exception   ex3 ;
     ex3 = ex ;
     BREATH_CHECK( std::strcmp( ex.what(), ex3.what() ) == 0 ) ;
+}
+
 }
 
 int
