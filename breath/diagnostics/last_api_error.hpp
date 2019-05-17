@@ -21,7 +21,7 @@
 //!     and you're done with error handling.
 //!
 //!     The class is OutputStreamable, so you can also use
-//!     \c breath::as_string(), which gives more information than the
+//!     \c breath::to_string(), which gives more information than the
 //!     member \c what(), but may throw.
 // ---------------------------------------------------------------------------
 
