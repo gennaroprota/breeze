@@ -1,5 +1,5 @@
 # ============================================================================
-#                      Copyright 2006-2013 Gennaro Prota
+#                      Copyright 2006-2019 Gennaro Prota
 #                         Copyright 2000 James Kanze
 #
 #                   Licensed under the 3-Clause BSD License.
@@ -19,7 +19,6 @@ ifeq ($(and $(compiler), $(system)),)
 endif
 
 
-include $(root)/makefile/$(compiler).mk
 
 #
 # Function originally taken from James Kanze's GABI Library version 2005v01 (named "doForAll", there).
@@ -55,6 +54,29 @@ bin_root = $(root)/bin
 bin_dir = $(bin_root)/$(arch)/$(system)/$(compiler)
 exe_dir = $(bin_dir)
          # ^^^^ variant debug/release?
+
+
+#       Automatic dependency generation; the method use here is
+#       described in:
+#
+#         <http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/>.
+# ----------------------------------------------------------------------------
+dependency_dir := .dependency
+$(shell mkdir -p $(dependency_dir) > /dev/null)
+post_compile = @mv -f $(dependency_dir)/$*.temp_dep $(dependency_dir)/$*.dep && touch $@
+
+%.o: %.cpp
+%.o: %.cpp $(dependency_dir)/%.dep
+	$(compile_to_dependency)
+	$(compile_to_object)
+	$(post_compile)
+
+$(dependency_dir)/%.dep: ;
+.PRECIOUS: $(dependency_dir)/%.dep
+
+include $(wildcard $(patsubst %,$(dependency_dir)/%.dep,$(basename $(source_files))))
+
+include $(root)/makefile/$(compiler).mk
 
 # Local Variables:
 # mode: makefile
