@@ -19,8 +19,12 @@ namespace breath {
 //      allowed_path_separators():
 //      ==========================
 //
-//!     Note that the separators are returned with the "preferred" one
-//!     first.
+//!     \return
+//!         A pointer to a C string with static lifetime containing the
+//!         path separators allowed in the system.
+//!
+//!         If a "preferred" separator exists, it is guaranteed to be
+//!         the first character of the string.
 // ---------------------------------------------------------------------------
 char const *        allowed_path_separators() noexcept ; //gps constexpr?
 
