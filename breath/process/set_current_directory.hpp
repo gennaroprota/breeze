@@ -19,8 +19,8 @@
 
 namespace breath {
 
-//!     Sets the current directory of the current process; \c dir
-//!     must be a valid directory path.
+//!     Sets the current directory of the current process to \c dir; \c
+//!     dir must be a valid directory path.
 // ---------------------------------------------------------------------------
 void                set_current_directory( std::string const & dir ) ;
 
