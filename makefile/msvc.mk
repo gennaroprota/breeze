@@ -132,8 +132,7 @@ define compile_to_object
     $(compiler_command) $(cpp_options) /c /Fo$@ $<
 endef
 
-# gps Per tutte le link_to_exec, non dobbiamo passare anche $(cpp_options)?
-#     Note that the /link option (and its arguments) must appear last.
+#       Note that the /link option (and its arguments) must appear last.
 #
 #       We need to invoke the linker, not the compiler; but using cl.exe
 #       is handy because it automatically translates some of the options
