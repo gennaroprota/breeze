@@ -163,17 +163,17 @@ compiler_command = g++
 # gps mostly by James!
 define compile_to_object
 # gps controlla la riga seguente!!!
-$(compiler_command) $(cpp_options) -c -o $@ $<
+    $(compiler_command) $(cpp_options) -c -o $@ $<
 endef
 
 define compile_to_dependency
-$(compiler_command) $(cpp_options) -MT $@ -M -MP -MF $(dependency_dir)/$*.temp_dep $<
+    $(compiler_command) $(cpp_options) -MT $@ -M -MP -MF $(dependency_dir)/$*.temp_dep $<
 endef
 
 # gps mostly by James!
 #
 define link_to_exec
-$(compiler_command) $(cpp_options) -o $@ $+
+    $(compiler_command) $(cpp_options) -o $@ $+
 endef
 
 # Local Variables:

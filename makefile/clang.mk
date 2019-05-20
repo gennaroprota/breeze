@@ -84,13 +84,13 @@ compiler_command = clang++
 # gps mostly by James!
 define compile_to_object
 # gps controlla la riga seguente!!!
-$(compiler_command) $(cpp_options) -c -o $@ $<
+    $(compiler_command) $(cpp_options) -c -o $@ $<
 endef
 
 # gps mostly by James!
 #
 define link_to_exec
-$(compiler_command) $(cpp_options) -o $@ $+
+    $(compiler_command) $(cpp_options) -o $@ $+
 endef
 
 

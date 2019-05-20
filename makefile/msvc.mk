@@ -129,7 +129,7 @@ linker_options = /WX /LTCG
 # gps per tutte le compile_to_object, notare che usiamo $<.
 #     Dobbiamo documentare che devono avere UN SOLO prerequisito?
 define compile_to_object
-$(compiler_command) $(cpp_options) /c /Fo$@ $<
+    $(compiler_command) $(cpp_options) /c /Fo$@ $<
 endef
 
 # gps Per tutte le link_to_exec, non dobbiamo passare anche $(cpp_options)?
@@ -143,7 +143,7 @@ endef
 #       ones. [gps]
 # ----------------------------------------------------------------------------
 define link_to_exec
-$(compiler_command) $(cpp_options) /Fe$@  $+ /link $(linker_options) $(libraries)
+    $(compiler_command) $(cpp_options) /Fe$@  $+ /link $(linker_options) $(libraries)
 endef
 
 # Local Variables:
