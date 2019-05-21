@@ -7,7 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief The integer part of the log, base 2, of its argument.
+//!     \brief The integer part of the logarithm, base 2, of its
+//!            argument.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Kym3FA1ex9fw5x3d1rVgY686BX4YRKvw

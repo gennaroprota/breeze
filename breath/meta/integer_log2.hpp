@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Returns the integer part of the log, base 2, of its
+//!     \brief Returns the integer part of the logarithm, base 2, of its
 //!            argument.
 // ---------------------------------------------------------------------------
 
