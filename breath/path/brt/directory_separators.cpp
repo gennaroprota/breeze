@@ -11,17 +11,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/path/allowed_path_separators.hpp"
-
-namespace breath {
-
-char const *
-allowed_path_separators() noexcept
-{
-    return "\\/" ;
-}
-
-}
+#include "breath/porting/dependent_code.hpp"
+#include BREATH_DEPENDENT_CODE( system, directory_separators.cpp )
 
 // Local Variables:
 // mode: c++

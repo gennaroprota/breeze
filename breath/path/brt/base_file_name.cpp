@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/path/base_file_name.hpp"
-#include "breath/path/allowed_path_separators.hpp"
+#include "breath/path/directory_separators.hpp"
 #include <string>
 
 namespace breath {
@@ -22,7 +22,7 @@ base_file_name( std:: string const & full_path)
 {
     std::string::size_type const
                         pos = full_path.find_last_of(
-                                breath::allowed_path_separators() ) ;
+                                breath::directory_separators() ) ;
     return pos == std::string::npos
                     ? full_path
                     : full_path.substr( pos + 1 )

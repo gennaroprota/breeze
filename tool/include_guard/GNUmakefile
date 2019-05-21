@@ -22,8 +22,8 @@ source_files := main.cpp                        \
                 exception.cpp                   \
                 last_api_error.cpp              \
                                                 \
-                allowed_path_separators.cpp     \
                 base_file_name.cpp              \
+                directory_separators.cpp        \
                                                 \
                 command_line.cpp                \
                 exit_code.cpp                   \

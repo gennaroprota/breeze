@@ -129,7 +129,7 @@
     <ClCompile Include="..\..\breath\meta\test\integer_log2_compile_time_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\path\brt\allowed_path_separators.cpp">
+    <ClCompile Include="..\..\breath\path\brt\directory_separators.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breath\path\brt\base_file_name.cpp">
@@ -518,7 +518,7 @@
     <ClInclude Include="..\..\breath\operator\equality_comparison.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\path\allowed_path_separators.hpp">
+    <ClInclude Include="..\..\breath\path\directory_separators.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\path\base_file_name.hpp">

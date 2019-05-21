@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Returns the allowed path separators in the running
+//!     \brief Returns the allowed directory separators in the running
 //!            system.
 // ---------------------------------------------------------------------------
 
@@ -16,17 +16,17 @@
 
 namespace breath {
 
-//      allowed_path_separators():
-//      ==========================
+//      directory_separators():
+//      =======================
 //
 //!     \return
 //!         A pointer to a C string with static lifetime containing the
-//!         path separators allowed in the system.
+//!         directory separators allowed in the system.
 //!
 //!         If a "preferred" separator exists, it is guaranteed to be
 //!         the first character of the string.
 // ---------------------------------------------------------------------------
-char const *        allowed_path_separators() noexcept ; //gps constexpr?
+char const *        directory_separators() noexcept ; //gps constexpr?
 
 }
 #endif

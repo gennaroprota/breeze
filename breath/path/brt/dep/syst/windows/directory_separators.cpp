@@ -11,14 +11,14 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/path/allowed_path_separators.hpp"
+#include "breath/path/directory_separators.hpp"
 
 namespace breath {
 
 char const *
-allowed_path_separators() noexcept
+directory_separators() noexcept
 {
-    return "/" ;
+    return "\\/" ;
 }
 
 }

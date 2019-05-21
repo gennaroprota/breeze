@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/path/extension.hpp"
-#include "breath/path/allowed_path_separators.hpp"
+#include "breath/path/directory_separators.hpp"
 
 namespace breath {
 
@@ -20,7 +20,7 @@ std::string
 extension( std::string const & path )
 {
     auto const          last_sep = path.find_last_of(
-                            breath::allowed_path_separators()
+                            breath::directory_separators()
                         ) ;
 
     //      Note that last_sep can equal npos or path.size() - 1; in
