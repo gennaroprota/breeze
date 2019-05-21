@@ -28,6 +28,17 @@ single_check( std::string const & first, std::string const & second,
 {
     BREATH_CHECK( breath::levenshtein_distance( first, second ) == distance ) ;
     BREATH_CHECK( breath::levenshtein_distance( second, first ) == distance ) ;
+
+    //      The distance shall remain the same if both strings are
+    //      reversed.
+    // -----------------------------------------------------------------------
+    std::string const   reversed_first( first.crbegin(), first.crend() ) ;
+    std::string const   reversed_second( second.crbegin(), second.crend() ) ;
+
+    BREATH_CHECK( breath::levenshtein_distance( reversed_first,
+                                               reversed_second ) == distance ) ;
+    BREATH_CHECK( breath::levenshtein_distance( reversed_second,
+                                                reversed_first ) == distance ) ;
 }
 
 void
