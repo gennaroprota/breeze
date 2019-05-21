@@ -39,6 +39,7 @@ check()
     single_check( "hello", "hallo", 1 ) ;
     single_check( "sitting", "kitten", 3 ) ;
     single_check( "spell", "spel", 1 ) ;
+    single_check( "spell", "aspell", 1 ) ;
     single_check( "suggest", "suggets", 2 ) ;
     single_check( "wikipedia", "encyclopedia", 7 ) ;
 }
