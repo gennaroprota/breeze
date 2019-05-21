@@ -28,9 +28,9 @@ namespace breath {
 //!
 //!     With respect to a \c std::string, a \c set_of_chars can't have
 //!     duplicates and may model the concept more closely; and it has
-//!     different complexity guarantees (adding a char, removing a char,
-//!     and testing if a char is in the set are all O(1). On the other
-//!     hand, incrementing an iterator is a linear search).
+//!     different complexity guarantees: adding a char, removing a char,
+//!     and testing if a char is in the set are all O(1); on the other
+//!     hand, incrementing an iterator is a linear search.
 //!
 //!     Note that several functions, below, are overloaded on \c char
 //!     and <code>char const *</code>. Now, depending on whether plain
