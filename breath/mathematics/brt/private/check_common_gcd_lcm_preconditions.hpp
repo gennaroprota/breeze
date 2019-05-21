@@ -28,9 +28,10 @@ check_common_gcd_lcm_preconditions( M a, N b )
                 && std::is_integral< N >::value, "M and N must be integral" ) ;
 
     BREATH_ASSERT( ( ! meta::is_twos_complement< M >()
-        || a != std::numeric_limits< M >::min BREATH_PREVENT_MACRO_EXPANSION () )
-        &&         ( ! meta::is_twos_complement< N >()
-        || b != std::numeric_limits< N >::min BREATH_PREVENT_MACRO_EXPANSION () ) ) ;
+       || a != std::numeric_limits< M >::min BREATH_PREVENT_MACRO_EXPANSION () )
+     &&            ( ! meta::is_twos_complement< N >()
+       || b != std::numeric_limits< N >::min BREATH_PREVENT_MACRO_EXPANSION () )
+    ) ;
 
 }
 
