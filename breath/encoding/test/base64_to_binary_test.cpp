@@ -21,15 +21,15 @@
 void
 check_valid()
 {
-    //  The following array of vectors is almost identical to the one
-    //  in
-    //      binary_to_base64_test.cpp
-    //  I have not put the code in common for two reasons:
-    //  first the vectors here contain some newlines too, in order
-    //  to check that the decoding function ignores them; and second
-    //  because the two arrays might diverge in the future in order
-    //  to accommodate particular tests for the Base64->binary
-    //  conversion.
+    //      The following array of vectors is almost identical to the
+    //      one in
+    //          binary_to_base64_test.cpp
+    //      I have not put the code in common for two reasons:
+    //      first the vectors here contain some newlines too, in order
+    //      to check that the decoding function ignores them; and second
+    //      because the two arrays might diverge in the future in order
+    //      to accommodate particular tests for the Base64->binary
+    //      conversion.
     //  ----------------------------------------------------------------------
     struct
     {
@@ -75,23 +75,23 @@ check_valid()
 void
 check_invalid()
 {
-    // This has an invalid character.
-    //
+    //      This has an invalid character.
+    // -----------------------------------------------------------------------
     std::string const   invalid = "#AB"  ;
     std::string         out ;
     BREATH_CHECK_THROW( breath::base64_to_binary( invalid.cbegin(),
                                                   invalid.cend(),
                                                  std::back_inserter( out ) ) ) ;
 
-    // This has equal signs followed by non-equal-signs.
-    //
+    //      This has equal signs followed by non-equal-signs.
+    // -----------------------------------------------------------------------
     std::string const   invalid2 = "Zm9=x" ;
     BREATH_CHECK_THROW( breath::base64_to_binary( invalid2.cbegin(),
                                                   invalid2.cend(),
                                                  std::back_inserter( out ) ) ) ;
 
-    // This is composed of NULs
-    //
+    //      This is composed of NULs.
+    // -----------------------------------------------------------------------
     std::string const   invalid3 = { '\0', '\0' } ;
     BREATH_CHECK_THROW( breath::base64_to_binary( invalid3.cbegin(),
                                                   invalid3.cend(),

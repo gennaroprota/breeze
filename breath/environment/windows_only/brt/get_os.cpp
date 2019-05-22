@@ -172,8 +172,9 @@ win_version( int major, int minor )
 bool
 is_server_2003_r2()
 {
-    // define the sm_* constant ourselves, for now, to avoid requiring
-    // the latest SDK headers [FUTURE]
+    //      Define the sm_* constant ourselves, for now, to avoid
+    //      requiring the latest SDK headers. [FUTURE]
+    // -----------------------------------------------------------------------
     int const           sm_serverr2( 89 ) ;
     return 0 != ::GetSystemMetrics( sm_serverr2 ) ;
 }
@@ -279,10 +280,12 @@ get_os()
 {
     windows_version_info const
                         info ;
-    // When Windows 9x was supported as well, the function identify_nt()
-    // was accompanied by a corresponding identify_9x(). Now that the
-    // latter has disappeared, identify_nt() could be incorporated directly
-    // into get_os().
+
+    //      When Windows 9x was supported as well, the function
+    //      identify_nt() was accompanied by a corresponding
+    //      identify_9x(). Now that the latter has disappeared,
+    //      identify_nt() could be incorporated directly into get_os().
+    // -----------------------------------------------------------------------
     return identify_nt( info ) ;
 }
 

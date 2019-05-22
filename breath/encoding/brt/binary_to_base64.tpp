@@ -44,9 +44,9 @@ binary_to_base64( InputIter begin, InputIter end,
       }
     } ;
 
-    //  This code is ugly because we stick to input iterators and don't
-    //  assume random access. Furthermore we have to check for the end
-    //  of the range at each increment.
+    //      This code is ugly because we stick to input iterators and
+    //      don't assume random access. Furthermore we have to check for
+    //      the end of the range at each increment.
     //  ----------------------------------------------------------------------
     while ( curr != end ) {
         do_output( alphabet[ static_cast< unsigned char>( *curr ) >> 2 ] ) ;

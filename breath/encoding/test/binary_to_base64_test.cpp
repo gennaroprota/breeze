@@ -21,11 +21,11 @@
 void
 check()
 {
-    //  A bunch of known Base64 encodings. Some from RFC 3548, some
-    //  from RFC 4648 and some verified with:
-    //      <https://www.base64encode.org/>.
-    //  The latter is not an authoritative reference but I wanted some
-    //  more test vectors.
+    //      A bunch of known Base64 encodings. Some from RFC 3548, some
+    //      from RFC 4648 and some verified with:
+    //          <https://www.base64encode.org/>.
+    //      The latter is not an authoritative reference but I wanted
+    //      some more test vectors.
     //  ----------------------------------------------------------------------
     struct
     {
@@ -75,7 +75,9 @@ check_string_of_nuls()
     std::string         out ;
     breath::binary_to_base64( s.cbegin(), s.cend(),
                               std::back_inserter( out ) ) ;
-    // this one checked with base64 8.25 under Cygwin
+
+    //      This one checked with base64 8.25 under Cygwin.
+    // -----------------------------------------------------------------------
     BREATH_CHECK( out == "AAA=" ) ;
 }
 
@@ -109,8 +111,9 @@ check_line_wrap()
     int const           wrap_column = 72 ;
     breath::binary_to_base64( s.cbegin(), s.cend(),
                               std::back_inserter( out ), wrap_column ) ;
-    // This one self-verified
-    //
+
+    //      This one self-verified.
+    // -----------------------------------------------------------------------
     BREATH_CHECK( out ==
     "TmVsIG1lenpvIGRlbCBjYW1taW4gZGkgbm9zdHJhIHZpdGEKbWkgcml0cm92YWkgcGVyIHVu\n"
     "YSBzZWx2YSBvc2N1cmEKY2hlJyBsYSBkaXJpdHRhIHZpYSBlcmEgc21hcnJpdGEuCkFoaSBx\n"

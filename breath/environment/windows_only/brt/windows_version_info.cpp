@@ -30,7 +30,7 @@ namespace breath {
 namespace        {
 
 //      RAII class to automatically close a registry key handle.
-//
+// ---------------------------------------------------------------------------
 class key_handle_manager
 {
 public:
@@ -44,6 +44,7 @@ public:
     ~key_handle_manager() noexcept
     {
         //      NOTE: the return value is ignored.
+        // -------------------------------------------------------------------
         RegCloseKey( m_key ) ;
     }
 
@@ -142,7 +143,8 @@ windows_version_info::build_number() const
 std::string
 windows_version_info::edition() const
 {
-    // GetProductInfo() works only when major_version() >= 6.
+    //      GetProductInfo() works only when major_version() >= 6.
+    // -----------------------------------------------------------------------
     if ( major_version() < 6 ) {
         return "" ;
     }
@@ -361,8 +363,8 @@ windows_version_info::is_wow64_process()
 
     BOOL                is_wow64 = 0 ;
 
-    // Note: the intermediate cast to void * is to silence Visual C++
-    //       C4191, which is a useful warning to have.
+    //      Note: the intermediate cast to void * is to silence Visual
+    //            C++ C4191, which is a useful warning to have.
     // -----------------------------------------------------------------------
     fn_ptr_type const   is_wow64_process =
                 reinterpret_cast< fn_ptr_type >(
@@ -379,11 +381,11 @@ windows_version_info::is_wow64_process()
 bool
 windows_version_info::is_64_bit()
 {
-    // If the process is 64-bit and it runs at all, then it runs
-    // on a 64-bit Windows version. Otherwise, it is a 32-bit process,
-    // and the system is 64-bit if and only if the process runs under
-    // WOW64.
-    //
+    //      If the process is 64-bit and it runs at all, then it runs on
+    //      a 64-bit Windows version. Otherwise, it is a 32-bit process,
+    //      and the system is 64-bit if and only if the process runs
+    //      under WOW64.
+    // -----------------------------------------------------------------------
     return ( make_non_const( sizeof ( void * ) * CHAR_BIT ) == 64 )
         || is_wow64_process() ;
 }
@@ -391,9 +393,10 @@ windows_version_info::is_64_bit()
 bool
 windows_version_info::is_client()
 {
-    // It has no real impact on us, however this function is
-    // documented to return a BOOL but declared to return a bool in
-    // the corresponding header [last checked: November 2016].
+    //      It has no real impact on us, however this function is
+    //      documented to return a BOOL but declared to return a bool in
+    //      the corresponding header [last checked: November 2016].
+    // -----------------------------------------------------------------------
     return IsWindowsServer() == 0 ;
 }
 

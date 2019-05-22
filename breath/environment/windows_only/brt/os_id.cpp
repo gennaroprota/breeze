@@ -20,7 +20,8 @@ namespace breath {
 
 namespace {
 
-// Attention: keep in sync with the declaration in [note 1]
+//      Attention: keep in sync with the declaration in [note 1].
+// ---------------------------------------------------------------------------
 static char const * const
                     names[] =
 {
@@ -52,21 +53,21 @@ static char const * const
 } ;
 
 }
-// [note 1] Attention: keep in sync with the array declaration above
+//      [note 1] Attention: keep in sync with the array declaration above.
 //
-//    * windows_xp_professional_x64_edition is the only case where the
-//      word "edition" appears directly as a part of the OS name,
-//      rather than in the edition name (as in "Web Edition", "Home
-//      Edition" etc.) -- what should we do? leave "edition" or not?
+//      * windows_xp_professional_x64_edition is the only case where the
+//        word "edition" appears directly as a part of the OS name,
+//        rather than in the edition name (as in "Web Edition", "Home
+//        Edition" etc.) -- what should we do? leave "edition" or not?
 // ---------------------------------------------------------------------------
 os_id const
         os_id::windows_unknown                    ( 0 ),
-        //
-        // The numbers 1 to 5 were used by Win32s, Win95,
-        // Win98, Win Me and Win NT which are no longer
-        // supported. Do not eliminate the room here or the
-        // corresponding array of strings will not work.
-        //
+
+        //      The numbers 1 to 5 were used by Win32s, Win95, Win98,
+        //      Win Me and Win NT which are no longer supported. Do not
+        //      eliminate the room here or the corresponding array of
+        //      strings will not work.
+        // -------------------------------------------------------------------
         os_id::windows_2000                       ( 6 ),
         os_id::windows_xp                         ( 7 ),
         os_id::windows_server_2003                ( 8 ),
