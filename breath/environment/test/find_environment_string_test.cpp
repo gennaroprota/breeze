@@ -29,4 +29,5 @@ main()
                         e = find_environment_string( "BREATH_ROOT" ) ;
 
     DO_TEST( e.is_valid() ) ;
+    DO_TEST( ! e.value().empty() ) ;
 }
