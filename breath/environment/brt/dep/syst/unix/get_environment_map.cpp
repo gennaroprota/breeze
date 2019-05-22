@@ -22,6 +22,7 @@ get_environment_map()
 {
     typedef std::map< std::string, std::string >
                         result_type ;
+
     if ( environ == nullptr ) {
         // Can this really happen?
         throw exception( "environ is a null pointer" ) ;
