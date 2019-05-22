@@ -21,12 +21,12 @@ namespace breath {
 //      roman:
 //      ======
 //
-//!     A number that outputs in roman numerals.
+//!     A number that outputs in Roman numerals.
 // ---------------------------------------------------------------------------
 class roman
 {
 public:
-    //!     Constructs a roman number object corresponding to number
+    //!     Constructs a Roman number object corresponding to number
     //!     \c n.
     //!
     //!     \pre
@@ -36,14 +36,14 @@ public:
 
 private:
     //      The implementation here is different from usual: rather than
-    //      doing the conversion to roman numerals in the stream
+    //      doing the conversion to Roman numerals in the stream
     //      inserter, we do it in the constructor and store the
     //      resulting representation in a std::string object. Consider
     //      this implementation detail somewhat experimental.
     // -----------------------------------------------------------------------
     std::string         m_representation ;
 
-    //!     Stream output operator: outputs the number in roman
+    //!     Stream output operator: outputs the number in Roman
     //!     numerals. The case of the letters is unspecified (this
     //!     allows us to support e.g. \c std::uppercase and
     //!     \c std::nouppercase in the future). But it's guaranteed that
