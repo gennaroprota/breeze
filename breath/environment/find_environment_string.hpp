@@ -41,10 +41,10 @@ namespace breath {
 //!        if that value is passed to one of the constructors of
 //!        \c std::string which take a <code>char const *</code>
 //!
-//! Warning:
-//!     The behavior on passing an empty string for the \c name
-//!     parameter is implementation-defined: please check the
-//!     documentation provided with your C++ implementation.
+//!     \note
+//!         The behavior on passing an empty string for the \c name
+//!         parameter is implementation-defined: please check the
+//!         documentation provided with your C++ implementation.
 // ---------------------------------------------------------------------------
 maybe< std::string >
                     find_environment_string( std::string const & name ) ;
