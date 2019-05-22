@@ -41,14 +41,15 @@ roman::roman( int n )
     // -----------------------------------------------------------------------
 
     entry const *       p = &table[ 0 ] ;
-    for ( ; n != 0 ; ++ p ) {
+    do {
         int                 value = n / p->value ;
         n %= p->value ;
         while ( value != 0 ) {
             m_representation += p->repr ;
             -- value ;
         }
-    }
+        ++ p ;
+    } while ( n != 0 ) ;
 }
 
 std::ostream &
