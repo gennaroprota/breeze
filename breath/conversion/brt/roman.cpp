@@ -41,7 +41,7 @@ roman::roman( int n )
     // -----------------------------------------------------------------------
 
     entry const *       p = &table[ 0 ] ;
-    for ( ; p->value != 0 ; ++ p ) {
+    for ( ; n != 0 ; ++ p ) {
         int                 value = n / p->value ;
         n %= p->value ;
         while ( value != 0 ) {
