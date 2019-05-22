@@ -25,9 +25,7 @@ namespace breath {
 //!     \c std::getenv(), for a string that matches \c name.
 //!
 //!     We emphasize that the 'as if' above is part of this function's
-//!     contract; thus the function is subject to the same limitations
-//!     as \c getenv() for what concerns e.g. calling it before \c
-//!     main() is entered and others.
+//!     contract.
 //!
 //!     This function overcomes three usability issues of \c
 //!     std::getenv():
