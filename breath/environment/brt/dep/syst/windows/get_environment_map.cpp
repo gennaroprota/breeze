@@ -56,9 +56,13 @@ get_environment_map()
             // On my system the string pointed to by start begins with
             // "=::=::\", hence the test on empty().
             if ( ! name.empty() ) {
+                std::string const   value = pos != single.npos
+                                                ? single.substr( pos + 1 )
+                                                : ""
+                                                ;
                 result.insert( result_type::value_type(
                                     name,
-                                    single.substr( pos + 1 )
+                                    value
                                 ) ) ;
             }
             curr += ( single.length() + 1 ) ;

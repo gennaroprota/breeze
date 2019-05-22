@@ -36,10 +36,14 @@ get_environment_map()
         std::string const   single = *curr ;
         auto const          pos = single.find( '=' ) ;
         std::string const   name = single.substr( 0, pos ) ;
+        std::string const   value = pos != single.npos
+                                        ? single.substr( pos + 1 )
+                                        : ""
+                                        ;
 
         result.insert( result_type::value_type(
                             name,
-                            single.substr( pos + 1 )
+                            value
                         ) ) ;
         ++ curr ;
     }
