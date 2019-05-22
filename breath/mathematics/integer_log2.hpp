@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief The integer part of the logarithm, base 2, of its
+//!     \brief The integer part of the logarithm, to base 2, of its
 //!            argument.
 // ---------------------------------------------------------------------------
 
