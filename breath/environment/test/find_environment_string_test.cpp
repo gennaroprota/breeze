@@ -25,7 +25,7 @@ main()
 {
     using namespace breath ;
 
-    maybe< std::string >
+    maybe< std::string > const
                         e = find_environment_string( "BREATH_ROOT" ) ;
 
     DO_TEST( e.is_valid() ) ;
