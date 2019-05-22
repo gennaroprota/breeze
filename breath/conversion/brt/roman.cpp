@@ -34,7 +34,7 @@ roman::roman( int n )
     } ;
 
     //  If using libstdc++ without -D_GLIBCXX_USE_CXX11_ABI, this
-    //  reserve() is, on average, beneficial:
+    //  reserve() might be, on average, beneficial:
     //
     //    int const           max_roman_length = 15 ;
     //    m_representation.reserve( max_roman_length ) ;
