@@ -43,11 +43,11 @@ roman::roman( int n )
     entry const *       p = &table[ 0 ] ;
     do {
         int                 value = n / p->value ;
-        n %= p->value ;
         while ( value != 0 ) {
             m_representation += p->repr ;
             -- value ;
         }
+        n %= p->value ;
         ++ p ;
     } while ( n != 0 ) ;
 }
