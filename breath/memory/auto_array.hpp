@@ -25,8 +25,9 @@ namespace breath {
 //!     Deleter ></code> but was written way before C++11.
 //!
 //!     Like for \c unique_ptr, instances of this template satisfy the
-//!     requirements of MoveConstructible and MoveAssignable, but not
-//!     the requirements of either CopyConstructible or CopyAssignable.
+//!     requirements of \c MoveConstructible and \c MoveAssignable, but
+//!     not the requirements of either \c CopyConstructible or
+//!     \c CopyAssignable.
 // ---------------------------------------------------------------------------
 template< typename T >
 class auto_array
