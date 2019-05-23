@@ -20,7 +20,10 @@ namespace breath {
 //!     \par Type requirements
 //!         \c T shall be \c DefaultConstructible and either
 //!         \c MoveConstructible or \c CopyConstructible. Furthermore it
-//!         shall be input streamable.
+//!         shall be \c input \c streamable from a \c std::istream,
+//!         meaning that an <code>operator &gt;&gt;()</code> function
+//!         may be called that takes an instance of \c std::istream as
+//!         first argument and an instance of \c T as second argument.
 // ---------------------------------------------------------------------------
 template< typename T >
 T                   from_string( std::string const & s ) ;
