@@ -15,9 +15,11 @@
 //!     Windows and \c errno under Unix.
 //!
 //!     The idea is that after an unsuccessful API call you write:
+//!
 //!     <code>
 //!         throw last_api_error( "<APIName>() failed" ) ;
 //!     </code>
+//!
 //!     and you're done with error handling.
 //!
 //!     The class is OutputStreamable, so you can also use
