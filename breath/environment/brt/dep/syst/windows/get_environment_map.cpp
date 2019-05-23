@@ -53,11 +53,13 @@ get_environment_map()
             std::string const   single = curr ;
             auto const          pos = single.find( '=' ) ;
             std::string const   name = single.substr( 0, pos ) ;
-            // On my system the string pointed to by start begins with
-            // "=::=::\", hence the test on empty(). Note that this
-            // makes things consistent, because
-            // find_environment_string( "" ) fails (at least in my
-            // tests).
+
+            //      On my system the string pointed to by start begins
+            //      with "=::=::\", hence the test on empty(). Note that
+            //      this makes things consistent, because
+            //      find_environment_string( "" ) fails (at least in my
+            //      tests).
+            // ---------------------------------------------------------------
             if ( ! name.empty() ) {
                 std::string const   value = pos != single.npos
                                                 ? single.substr( pos + 1 )
