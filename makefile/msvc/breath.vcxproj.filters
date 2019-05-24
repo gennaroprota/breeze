@@ -153,9 +153,6 @@
     <ClCompile Include="..\..\breath\process\brt\exit_code.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\process\brt\find_executable_in_path.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\breath\process\brt\process.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -549,9 +546,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\process\exit_code.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breath\process\find_executable_in_path.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\process\process.hpp">
