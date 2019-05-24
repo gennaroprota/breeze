@@ -103,6 +103,11 @@ $(target): $(patsubst %.cpp, %.o, $(source_files))
 
 include $(root)/makefile/start.mk
 
+clean:
+	rm -fr .dependency/
+	rm -f $(patsubst %.cpp, %.o, $(source_files))
+	rm -f breath.lib
+
 # Local Variables:
 # mode: makefile
 # indent-tabs-mode: nil
