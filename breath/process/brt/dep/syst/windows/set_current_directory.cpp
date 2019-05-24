@@ -11,6 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breath/process/set_current_directory.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include <Windows.h>
