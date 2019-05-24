@@ -64,7 +64,7 @@ char
 luhn_check_digit( std::string const & s )
 {
     int const           sum = luhn_sum( s + '0' ) ;
-    return '0' + ( ( base - sum ) % base ) ;
+    return static_cast< char >( '0' + ( ( base - sum ) % base ) ) ;
 }
 
 }
