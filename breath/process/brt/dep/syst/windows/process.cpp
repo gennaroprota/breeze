@@ -59,7 +59,8 @@ process::start( std::string const & app_name,
     std::vector< char > args( arguments.cbegin(), arguments.cend() ) ;
     args.resize( args.size() + 1 ) ;
 
-    STARTUPINFOA        si = { sizeof si } ;
+    STARTUPINFOA        si = { } ;
+    si.cb = sizeof si ;
     DWORD const         creation_flags = ( GetConsoleWindow()
                                               ? 0
                                               : CREATE_NO_WINDOW ) ;
