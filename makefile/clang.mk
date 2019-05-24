@@ -35,6 +35,17 @@
 #           it would be difficult to silence it by modifying the code,
 #           as in the case (as of Febrary 27, 2009) for the class
 #           command_line_error, in command_line.hpp.
+#
+#       -Wno-zero-as-null-pointer-constant
+#
+#           Silences warnings on things like:
+#
+#             if ( GetModuleHandle( L"kernel32" ) == NULL )
+#                 ...
+#
+#           (we don't want to use nullptr, there). GCC seems to be
+#           smarter and doesn't give such warnings when the option is
+#           enabled.
 # ----------------------------------------------------------------------------
 
 #       KEEP in sync! (See above.)
@@ -52,7 +63,8 @@ cpp_basic_options =  -std=c++14                 \
 cpp_basic_options += -pipe                      \
                      -Wno-padded                \
                      -Wno-sign-conversion       \
-                     -Wno-weak-vtables
+                     -Wno-weak-vtables          \
+                     -Wno-zero-as-null-pointer-constant
 
 #       The following three options are temporary (the -Wno-documentation...
 #       is because Clang doesn't seem to recognize the \cond command)- gps
