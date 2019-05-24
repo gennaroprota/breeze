@@ -18,9 +18,9 @@
 namespace breath {
 
 //!     \par Type requirements
-//!         \c T shall be default constructible and either move
-//!         constructible or copy constructible. Furthermore it shall
-//!         be input streamable.
+//!         \c T shall be \c DefaultConstructible and either
+//!         \c MoveConstructible or \c CopyConstructible. Furthermore it
+//!         shall be input streamable.
 // ---------------------------------------------------------------------------
 template< typename T >
 T                   from_string( std::string const & s ) ;
