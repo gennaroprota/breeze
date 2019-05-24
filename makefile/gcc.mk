@@ -29,6 +29,10 @@
 #
 #             <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html>
 #
+#       -Wsign-conversion [not used]:
+#
+#           this simply gives too many false positives.
+#
 #       -pipe:
 #
 #           just an optimization, "but it can also allow compilations to
@@ -124,7 +128,6 @@ cpp_basic_options += -flto-odr-type-merging          \
                      -Wredundant-decls               \
                      -Wshadow                        \
                      -Wshift-overflow=2              \
-                     -Wsign-conversion               \
                      -Wstack-usage=66560             \
                      -Wstrict-null-sentinel          \
                      -Wstrict-overflow=5             \

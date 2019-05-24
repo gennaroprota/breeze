@@ -51,6 +51,7 @@ cpp_basic_options =  -std=c++14                 \
 
 cpp_basic_options += -pipe                      \
                      -Wno-padded                \
+                     -Wno-sign-conversion       \
                      -Wno-weak-vtables
 
 #       The following three options are temporary (the -Wno-documentation...
