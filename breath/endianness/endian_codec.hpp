@@ -254,7 +254,14 @@ std::size_t const
 endian_codec< EndianPolicy, T, Byte >::required_count ;
 
 
-//!     Convenience functions
+//!     Convenience wrapper around \c endian_codec::encode();
+//!     \c endian_store< EndianPolicy( value, it ) > is equivalent to:
+//!
+//!     <code>
+//!         typedef typename std::iterator_traits< ByteRandomIter >::value_type
+//!                             Byte ;
+//!         breath::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
+//!     </code>
 // ---------------------------------------------------------------------------
 template< typename EndianPolicy, typename T, typename ByteRandomIter >
 void
@@ -265,6 +272,15 @@ endian_store( T const & value, ByteRandomIter it )
     breath::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
 }
 
+//!     Conveniente wrapper around \c endian_codec::decode();
+//!     \c endian_load< EndianPolicy >( it ) is equivalent to:
+//!
+//!     <code>
+//!         typedef typename std::iterator_traits< ByteRandomIter >::value_type
+//!                             Byte ;
+//!         return breath::endian_codec< EndianPolicy, T, Byte >::decode( it ) ;
+//!     </code>
+// ---------------------------------------------------------------------------
 template< typename EndianPolicy, typename T, typename ByteRandomIter >
 T
 endian_load( ByteRandomIter it )
