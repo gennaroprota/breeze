@@ -9,7 +9,9 @@
 #       Breath Library - Root makefile (GNU Make)
 # ----------------------------------------------------------------------------
 
-subdirs = tool
+subdirs = breath    \
+          tool
+
 root = .
 include $(root)/makefile/start.mk
 
