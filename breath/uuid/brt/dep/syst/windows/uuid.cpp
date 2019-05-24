@@ -45,11 +45,13 @@ uuid::uuid( uuid::variant var, uuid::version ver )
 
     m_time_low = time_stamp & 0xFFFF'FFFF ;
     m_time_mid = (time_stamp >> 32) & 0xFFFF ;
-    m_time_hi_and_version = ( (time_stamp >> 48) & 0x0FFF ) + ( 1 << 12 ) ;
+    m_time_hi_and_version = static_cast< std::uint16_t >(
+                            ( (time_stamp >> 48) & 0x0FFF ) + ( 1 << 12 ) ) ;
     entropy_source      es ;
     std::uint32_t const rnd = ( es.next() << 24 ) | ( es.next() << 16 )
                             | ( es.next() << 8 )  |   es.next() ;
-    m_clock_seq = ( ( rnd >> 4 ) & 0x3fff ) | 0x8000 ;
+    m_clock_seq = static_cast< std::uint16_t >(
+                            ( ( rnd >> 4 ) & 0x3fff ) | 0x8000 ) ;
 
     //      A random MAC address (this is allowed by RFC 4122, and
     //      desirable). To distinguish it from a real MAC address, RFC
