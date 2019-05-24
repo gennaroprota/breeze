@@ -84,7 +84,8 @@ process::start( std::string const & app_name,
     if ( timeout_in_ms.is_valid() ) {
         BREATH_ASSERT( timeout_in_ms.value() > 0 ) ;
         if ( WaitForSingleObject( m_impl->m_info.hProcess,
-                                 timeout_in_ms.value() ) == WAIT_FAILED ) {
+                                  static_cast< DWORD >( timeout_in_ms.value() )
+                                ) == WAIT_FAILED ) {
             throw last_api_error( "WaitForSingleObject() failed" ) ;
         }
         try {
