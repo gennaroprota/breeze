@@ -9,9 +9,9 @@
 #       Maintenance note:
 #       -----------------
 #
-#       Be sure that modifications to these options don't put the various
-#       compiler-specific makefiles out of sync (e.g. by requiring
-#       C++14 with one compiler and C++17 with another).
+#       Be sure that modifications to these options don't put the
+#       various compiler-specific makefiles out of sync (e.g. by
+#       requiring C++14 with one compiler and C++17 with another).
 #
 #
 #       As usual, the options are listed in two groups. The group
@@ -31,9 +31,9 @@
 #           and because the linker will likely collapse the duplicated
 #           vtables anyway.
 #
-#           So this warning can be safely suppressed. Note, too, that
-#           it would be difficult to silence it by modifying the code,
-#           as in the case (as of Febrary 27, 2009) for the class
+#           So this warning can be safely suppressed. Note, too, that it
+#           would be difficult to silence it by modifying the code, as
+#           in the case (as of Febrary 27, 2009) for the class
 #           command_line_error, in command_line.hpp.
 #
 #       -Wno-zero-as-null-pointer-constant

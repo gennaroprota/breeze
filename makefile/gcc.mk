@@ -10,9 +10,9 @@
 #       Maintenance note:
 #       -----------------
 #
-#       Be sure that modifications to these options don't put the various
-#       compiler-specific makefiles out of sync (e.g. by requiring
-#       C++14 with one compiler and C++17 with another).
+#       Be sure that modifications to these options don't put the
+#       various compiler-specific makefiles out of sync (e.g. by
+#       requiring C++14 with one compiler and C++17 with another).
 #
 #
 #       As usual, the options are listed in two groups. The group
@@ -47,8 +47,8 @@
 # ----------------------------------------------------------------------------
 
 
-#       This check on the minimum compiler version was implemented thanks to
-#       Jonathan Wakely.
+#       This check on the minimum compiler version was implemented
+#       thanks to Jonathan Wakely.
 #
 #       Note:
 #           when incrementing the minimum version number, check:
@@ -73,8 +73,8 @@ minimum_gcc_version := 6.4.0
 #           starting from GCC 7 -dumpversion might print the major
 #           version only, and we need -dumpfullversion to print the
 #           major.minor.patch version (this depends on the
-#           --with-gcc-major-version-only configure option).
-#           This insight is from Jonathan Wakely, as well.
+#           --with-gcc-major-version-only configure option). This
+#           insight is from Jonathan Wakely, as well.
 # ----------------------------------------------------------------------------
 actual_gcc_version := $(shell g++ -dumpfullversion 2>/dev/null \
                            || g++ -dumpversion)
