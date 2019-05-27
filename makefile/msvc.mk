@@ -142,7 +142,8 @@ endef
 #       ones. [gps]
 # ----------------------------------------------------------------------------
 define link_to_exec
-    $(compiler_command) $(cpp_options) /Fe$@  $+ /link $(linker_options) $(libraries)
+    $(compiler_command) $(cpp_options) /Fe$@  $+                \
+                        /link $(linker_options) $(libraries)
 endef
 
 # Local Variables:

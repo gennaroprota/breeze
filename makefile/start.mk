@@ -49,10 +49,15 @@ clean:
 
 include_dir     = $(root)
 
-cpp_options = $(cpp_basic_options) $(cpp_debug_options) $(cpp_extra_options) $(include_switch)"$(include_dir)" \
+cpp_options = $(cpp_basic_options)                  \
+              $(cpp_debug_options)                  \
+              $(cpp_extra_options)                  \
+              $(include_switch)"$(include_dir)"     \
               $(cpp_preprocessing_defines)
 
-cpp_preprocessing_defines = -D BREATH_ARCHITECTURE=$(arch) -D BREATH_SYSTEM=$(system) -D BREATH_COMPILER=$(compiler)
+cpp_preprocessing_defines = -D BREATH_ARCHITECTURE=$(arch)  \
+                            -D BREATH_SYSTEM=$(system)      \
+                            -D BREATH_COMPILER=$(compiler)
 
 bin_root = $(root)/bin
 bin_dir = $(bin_root)/$(arch)/$(system)/$(compiler)
@@ -67,7 +72,8 @@ exe_dir = $(bin_dir)
 # ----------------------------------------------------------------------------
 dependency_dir := .dependency
 $(shell mkdir -p $(dependency_dir) > /dev/null)
-post_compile = @mv -f $(dependency_dir)/$*.temp_dep $(dependency_dir)/$*.dep && touch $@
+post_compile = @mv -f $(dependency_dir)/$*.temp_dep $(dependency_dir)/$*.dep \
+                 && touch $@
 
 %.o: %.cpp
 %.o: %.cpp $(dependency_dir)/%.dep
@@ -78,7 +84,8 @@ post_compile = @mv -f $(dependency_dir)/$*.temp_dep $(dependency_dir)/$*.dep && 
 $(dependency_dir)/%.dep: ;
 .PRECIOUS: $(dependency_dir)/%.dep
 
-include $(wildcard $(patsubst %,$(dependency_dir)/%.dep,$(basename $(source_files))))
+include $(wildcard $(patsubst %,$(dependency_dir)/%.dep,    \
+                     $(basename $(source_files))))
 
 include $(root)/makefile/$(compiler).mk
 

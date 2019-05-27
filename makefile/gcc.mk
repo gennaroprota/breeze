@@ -168,7 +168,8 @@ define compile_to_object
 endef
 
 define compile_to_dependency
-    $(compiler_command) $(cpp_options) -MT $@ -M -MP -MF $(dependency_dir)/$*.temp_dep $<
+    $(compiler_command) $(cpp_options) -MT $@ -M -MP            \
+                        -MF $(dependency_dir)/$*.temp_dep $<
 endef
 
 define link_to_exec
