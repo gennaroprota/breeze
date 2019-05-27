@@ -50,27 +50,27 @@
 
 #       KEEP in sync! (See above.)
 # ----------------------------------------------------------------------------
-cpp_basic_options =  -std=c++14                 \
-                     -Weverything               \
-                     -Wno-c++98-compat          \
-                     -Wno-c++98-compat-pedantic \
-                     -Werror                    \
-                     -fuse-cxa-atexit           \
-                     -D _POSIX_C_SOURCE=200112L \
-                     -U _GNU_SOURCE             \
+cpp_basic_options =  -std=c++14                         \
+                     -Weverything                       \
+                     -Wno-c++98-compat                  \
+                     -Wno-c++98-compat-pedantic         \
+                     -Werror                            \
+                     -fuse-cxa-atexit                   \
+                     -D _POSIX_C_SOURCE=200112L         \
+                     -U _GNU_SOURCE                     \
                      -D _GLIBCXX_USE_CXX11_ABI=1
 
-cpp_basic_options += -pipe                      \
-                     -Wno-padded                \
-                     -Wno-sign-conversion       \
-                     -Wno-weak-vtables          \
+cpp_basic_options += -pipe                              \
+                     -Wno-padded                        \
+                     -Wno-sign-conversion               \
+                     -Wno-weak-vtables                  \
                      -Wno-zero-as-null-pointer-constant
 
 #       The following three options are temporary (the -Wno-documentation...
 #       is because Clang doesn't seem to recognize the \cond command)- gps
 # ----------------------------------------------------------------------------
-cpp_basic_options += -Wno-exit-time-destructors \
-                     -Wno-global-constructors   \
+cpp_basic_options += -Wno-exit-time-destructors         \
+                     -Wno-global-constructors           \
                      -Wno-documentation-unknown-command
 
 #       See:
@@ -78,9 +78,9 @@ cpp_basic_options += -Wno-exit-time-destructors \
 #
 #       Keep in sync with gcc.mk.
 # ----------------------------------------------------------------------------
-cpp_debug_options =  -D _GLIBCXX_ASSERTIONS=1        \
-                     -D _GLIBCXX_CONCEPT_CHECKS      \
-                     -D _GLIBCXX_DEBUG               \
+cpp_debug_options =  -D _GLIBCXX_ASSERTIONS=1           \
+                     -D _GLIBCXX_CONCEPT_CHECKS         \
+                     -D _GLIBCXX_DEBUG                  \
                      -D _GLIBCXX_DEBUG_PEDANTIC
 
 cpp_debug_options += -ggdb3
