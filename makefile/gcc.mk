@@ -33,6 +33,11 @@
 #
 #           this simply gives too many false positives.
 #
+#       -Wno-format-nonliteral:
+#
+#           our time_string() facility relies on passing a non-literal
+#           to std::strftime().
+#
 #       -pipe:
 #
 #           just an optimization, "but it can also allow compilations to
@@ -141,6 +146,8 @@ cpp_basic_options += -flto-odr-type-merging          \
                      -Wunused-const-variable         \
                      -Wunused-macros                 \
                      -Wzero-as-null-pointer-constant
+
+cpp_basic_options += -Wno-format-nonliteral
 
 #       See:
 #       <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html>.
