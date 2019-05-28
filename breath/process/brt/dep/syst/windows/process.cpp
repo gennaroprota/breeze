@@ -132,14 +132,11 @@ process::terminate()
             throw last_api_error( "GetProcAddress() failed" ) ;
         }
         unsigned            dummy = 0 ;
-        // Note: the intermediate cast to void * is to silence Visual C++
-        //       C4191, which is a useful warning to have.
-        // -------------------------------------------------------------------
         process_private::handle const
                             h( CreateRemoteThread(
                                     m_impl->m_info.hProcess, nullptr, 0,
                                      reinterpret_cast< LPTHREAD_START_ROUTINE >(
-                                          reinterpret_cast< void * >( exit_proc ) ),
+                                                             exit_proc ),
                                      &dummy, 0, nullptr ) ) ;
         if ( h.get() == NULL ) {
             throw last_api_error( "CreateRemoteThread() failed" ) ;

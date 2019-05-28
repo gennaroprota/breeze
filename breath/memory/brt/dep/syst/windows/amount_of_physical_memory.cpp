@@ -31,14 +31,10 @@ amount_of_physical_memory()
 
     typedef BOOL ( WINAPI * fn_ptr_type )( ULONGLONG * ) ;
 
-    // Note: the intermediate cast to void * is to silence Visual C++
-    //       C4191, which is a useful warning to have.
-    // -----------------------------------------------------------------------
     fn_ptr_type const   get_physical_memory = module == NULL
                                 ? nullptr
                                 : reinterpret_cast< fn_ptr_type >(
-                                    reinterpret_cast< void * >(
-             GetProcAddress( module, "GetPhysicallyInstalledSystemMemory" ) ) ) ;
+             GetProcAddress( module, "GetPhysicallyInstalledSystemMemory" ) ) ;
     ULONGLONG           amount ;
     if ( get_physical_memory == nullptr
         || get_physical_memory( &amount ) == 0 ) {
