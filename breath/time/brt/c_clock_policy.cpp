@@ -43,10 +43,13 @@ c_clock_policy::restart()
 c_clock_policy::duration_type
 c_clock_policy::elapsed() const
 {
-    double const        elapsed_ticks( retrieve() - m_start_tick ) ;
+    double const        now   = retrieve() ;
 
-    //! gps - we should throw if elapsed < 0
-    //!       and probably when elapsed == 0 too
+    if ( now < m_start_tick ) {
+        throw breath::exception( "std::clock() wrapped around" ) ;
+    }
+
+    double const        elapsed_ticks( now - m_start_tick ) ;
     double const        elapsed_seconds( elapsed_ticks / CLOCKS_PER_SEC ) ;
 
     return 1000 * elapsed_seconds ;

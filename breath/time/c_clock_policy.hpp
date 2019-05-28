@@ -31,6 +31,11 @@ public:
                         c_clock_policy() ;
 
     void                restart() ;
+
+    //!     The time, in milliseconds, elapsed from the last (re)start.
+    //!
+    //!     Will throw, if it detects wrap-around.
+    // -----------------------------------------------------------------------
     duration_type       elapsed() const ;
 
     //!     \return
