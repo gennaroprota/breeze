@@ -66,7 +66,7 @@ c_clock_policy::resolution() const
     while ( s     == ( start = retrieve() ) ) { }
     while ( start == (   end = retrieve() ) ) { }
 
-    return 1000.0l * ( static_cast< duration_type >( end ) - start )
+    return static_cast< duration_type >( 1000.0 ) * ( end - start )
                        / CLOCKS_PER_SEC ;
 }
 
