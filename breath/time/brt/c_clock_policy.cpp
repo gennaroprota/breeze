@@ -43,14 +43,14 @@ c_clock_policy::restart()
 c_clock_policy::duration_type
 c_clock_policy::elapsed() const
 {
-    double const        now   = retrieve() ;
+    duration_type const now   = retrieve() ;
 
     if ( now < m_start_tick ) {
         throw breath::exception( "std::clock() wrapped around" ) ;
     }
 
-    double const        elapsed_ticks( now - m_start_tick ) ;
-    double const        elapsed_seconds( elapsed_ticks / CLOCKS_PER_SEC ) ;
+    duration_type const elapsed_ticks( now - m_start_tick ) ;
+    duration_type const elapsed_seconds( elapsed_ticks / CLOCKS_PER_SEC ) ;
 
     return 1000 * elapsed_seconds ;
 }

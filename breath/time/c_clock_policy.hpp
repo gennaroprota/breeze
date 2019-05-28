@@ -26,7 +26,7 @@ namespace breath {
 class c_clock_policy
 {
 public:
-    typedef double      duration_type ;
+    typedef long double duration_type ;
 
                         c_clock_policy() ;
 
