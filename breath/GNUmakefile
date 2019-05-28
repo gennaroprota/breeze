@@ -20,7 +20,6 @@ all: $(target)
 # ----------------------------------------------------------------------------
 vpath %.cpp     $(root)/breath/checksum/brt         \
                 $(root)/breath/conversion/brt       \
-                $(root)/breath/cpu/                 \
                 $(root)/breath/cryptography/brt     \
                 $(root)/breath/diagnostics/brt      \
                 $(root)/breath/environment/brt      \
@@ -34,6 +33,7 @@ vpath %.cpp     $(root)/breath/checksum/brt         \
                 $(root)/breath/time/brt             \
                 $(root)/breath/uuid/brt
 
+vpath %.asm     $(root)/breath/cpu
 
 source_files := luhn.cpp                            \
                                                     \
@@ -98,8 +98,17 @@ source_files := luhn.cpp                            \
                 uuid.cpp
 
 
-$(target): $(patsubst %.cpp, %.o, $(source_files))
+
+$(target): $(patsubst %.cpp, %.o, $(source_files))  \
+             get_cpuid_info.o is_cpuid_supported.o
 	$(build_library)
+
+define assemble_to_object
+    as --warn --fatal-warnings --32 -o $@ $<
+endef
+
+%.o: %.asm
+	$(assemble_to_object)
 
 include $(root)/makefile/start.mk
 
