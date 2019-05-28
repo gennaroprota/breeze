@@ -703,10 +703,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="..\..\breath\cpu\get_cpuid_info.asm">
+    <CustomBuild Include="..\..\breath\cpu\brt\get_cpuid_info.asm">
       <Filter>Source Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="..\..\breath\cpu\is_cpuid_supported.asm">
+    <CustomBuild Include="..\..\breath\cpu\brt\is_cpuid_supported.asm">
       <Filter>Source Files</Filter>
     </CustomBuild>
   </ItemGroup>

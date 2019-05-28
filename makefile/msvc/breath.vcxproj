@@ -505,7 +505,7 @@
     <None Include="..\..\breath\algorithm\brt\accumulate.tpp" />
     <None Include="..\..\breath\checksum\brt\crc32.tpp" />
     <None Include="..\..\breath\counting\brt\counter.tpp" />
-    <CustomBuild Include="..\..\breath\cpu\get_cpuid_info.asm">
+    <CustomBuild Include="..\..\breath\cpu\brt\get_cpuid_info.asm">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">as --32 --warn --fatal-warnings "%(FullPath)" -o"%(FileName).obj"</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).obj</Outputs>
@@ -514,7 +514,7 @@
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Assembling %(FileName).asm</Message>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Assembling %(FileName).asm</Message>
     </CustomBuild>
-    <CustomBuild Include="..\..\breath\cpu\is_cpuid_supported.asm">
+    <CustomBuild Include="..\..\breath\cpu\brt\is_cpuid_supported.asm">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">as --32 --warn --fatal-warnings "%(FullPath)" -o"%(FileName).obj"</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).obj</Outputs>

@@ -33,7 +33,7 @@ vpath %.cpp     $(root)/breath/checksum/brt         \
                 $(root)/breath/time/brt             \
                 $(root)/breath/uuid/brt
 
-vpath %.asm     $(root)/breath/cpu
+vpath %.asm     $(root)/breath/cpu/brt
 
 source_files := luhn.cpp                            \
                                                     \
