@@ -10,7 +10,7 @@ namespace breath {
 
 template< typename Device >
 timer< Device >::timer( start_mode mode )
-    : m_device()
+    :   m_device()
 {
     if ( mode == auto_start) {
         restart() ;
