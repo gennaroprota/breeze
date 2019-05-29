@@ -24,8 +24,8 @@ endif
 #       version 2005v01 (named "doForAll", there).
 # ----------------------------------------------------------------------------
 define do_for_all_subdirs
-    for x in $(subdirs) ; \
-    do \
+    for x in $(subdirs) ;               \
+    do                                  \
         $(MAKE) -C $$x $@ || exit $$? ; \
     done
 endef
