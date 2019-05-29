@@ -9,34 +9,13 @@ libraries = advapi32.lib
 
 all: $(target)
 
-vpath %.cpp     $(root)/breath/diagnostics/brt  \
-                $(root)/breath/path/brt         \
-                $(root)/breath/process/brt      \
-                $(root)/breath/random/brt       \
-                $(root)/breath/text/brt
+vpath %.a       $(root)/bin # Note: update this when we'll separate
+                            #       the build directories -gps
 
 source_files := main.cpp                        \
                 macro_name.cpp                  \
-                                                \
-                assert.cpp                      \
-                exception.cpp                   \
-                last_api_error.cpp              \
-                                                \
-                base_file_name.cpp              \
-                directory_separators.cpp        \
-                                                \
-                command_line.cpp                \
-                exit_code.cpp                   \
-                program.cpp                     \
-                program_option.cpp              \
-                                                \
-                entropy_source.cpp              \
-                subrange_max.cpp                \
-                                                \
-                begins_with.cpp
 
-
-$(target): $(patsubst %.cpp, %.o, $(source_files))
+$(target): $(patsubst %.cpp, %.o, $(source_files)) breath.a
 	$(link_to_exec)
 
 include $(root)/makefile/start.mk
