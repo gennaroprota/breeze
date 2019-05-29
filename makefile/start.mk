@@ -88,6 +88,7 @@ include $(wildcard $(patsubst %,$(dependency_dir)/%.dep,    \
                      $(basename $(source_files))))
 
 include $(root)/makefile/$(compiler).mk
+include $(root)/makefile/$(system).mk
 
 # Local Variables:
 # mode: makefile

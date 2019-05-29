@@ -8,10 +8,6 @@
 
 root := ..
 
-target = breath.lib
-
-all: $(target)
-
 #       Using vpath is a temporary solution; it doesn't work in case
 #       there exist homonym files.
 #
@@ -100,6 +96,11 @@ source_files := luhn.cpp                            \
 asm_source_files := get_cpuid_info.asm              \
                     is_cpuid_supported.asm
 
+
+include $(root)/makefile/start.mk
+
+target = $(library_name_prefix)breath$(library_name_suffix)
+
 $(target): $(patsubst %.cpp, %.o, $(source_files))  \
              $(patsubst %.asm, %.o, $(asm_source_files))
 	$(build_library)
@@ -111,13 +112,14 @@ endef
 %.o: %.asm
 	$(assemble_to_object)
 
-include $(root)/makefile/start.mk
+
+all: $(target)
 
 clean:
 	rm -fr .dependency/
 	rm -f $(patsubst %.cpp, %.o, $(source_files))
 	rm -f $(patsubst %.asm, %.o, $(asm_source_files))
-	rm -f breath.lib
+	rm -f $(target)
 
 # Local Variables:
 # mode: makefile
