@@ -97,10 +97,11 @@ source_files := luhn.cpp                            \
                                                     \
                 uuid.cpp
 
-
+asm_source_files := get_cpuid_info.asm              \
+                    is_cpuid_supported.asm
 
 $(target): $(patsubst %.cpp, %.o, $(source_files))  \
-             get_cpuid_info.o is_cpuid_supported.o
+             $(patsubst %.asm, %.o, $(asm_source_files))
 	$(build_library)
 
 define assemble_to_object
@@ -115,6 +116,7 @@ include $(root)/makefile/start.mk
 clean:
 	rm -fr .dependency/
 	rm -f $(patsubst %.cpp, %.o, $(source_files))
+	rm -f $(patsubst %.asm, %.o, $(asm_source_files))
 	rm -f breath.lib
 
 # Local Variables:
