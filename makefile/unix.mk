@@ -9,7 +9,6 @@
 library_name_prefix := lib
 library_name_suffix := .a
 
-binary_name_prefix  :=
 binary_name_suffix  :=
 
 # Local Variables:

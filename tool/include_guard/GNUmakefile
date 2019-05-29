@@ -5,7 +5,7 @@ root := ../..
 
 include $(root)/makefile/start.mk
 
-target = $(binary_name_prefix)include_guard$(binary_name_suffix)
+target = include_guard$(binary_name_suffix)
 
 libraries = advapi32.lib
             ##gps temp! (Windows only :-() --coupled with msvc.mk!!!

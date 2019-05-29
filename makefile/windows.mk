@@ -10,7 +10,6 @@
 library_name_prefix :=
 library_name_suffix := .lib
 
-binary_name_prefix  :=
 binary_name_suffix  := .exe
 
 # Local Variables:
