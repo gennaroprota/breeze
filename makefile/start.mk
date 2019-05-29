@@ -20,9 +20,9 @@ endif
 
 
 
-#
-# Function originally taken from James Kanze's GABI Library version 2005v01 (named "doForAll", there).
-#
+#       Function originally taken from James Kanze's GABI Library
+#       version 2005v01 (named "doForAll", there).
+# ----------------------------------------------------------------------------
 define do_for_all_subdirs
     for x in $(subdirs) ; \
     do \
