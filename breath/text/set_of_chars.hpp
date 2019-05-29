@@ -261,7 +261,8 @@ public:
     //!     An iterator for the set.
     //!
     //!     Iterates over all of the characters in the set.  It is a
-    //!     forward iterator.
+    //!     \em constant forward iterator (\c iterator and \c
+    //!     const_iterator have the same semantics).
     // -----------------------------------------------------------------------
     class               iterator
     {
