@@ -47,7 +47,7 @@ c_clock_policy::restart()
 c_clock_policy::duration_type
 c_clock_policy::elapsed() const
 {
-    std::clock_t const  now = retrieve() ;
+    std::clock_t const  now( retrieve() ) ;
 
     if ( now < m_start_tick ) {
         throw breath::exception( "std::clock() wrapped around" ) ;
