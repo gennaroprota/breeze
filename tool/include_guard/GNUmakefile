@@ -23,3 +23,8 @@ breath_library = $(library_name_prefix)breath$(library_name_suffix)
 
 $(target): $(patsubst %.cpp, %.o, $(source_files)) $(breath_library)
 	$(link_to_exec)
+
+clean:
+	rm -fr .dependency/
+	rm -f $(patsubst %.cpp, %.o, $(source_files))
+	rm -f $(target)
