@@ -23,6 +23,10 @@ namespace meta {
 //!     If \c T is not an integral type, the program is ill-formed.
 //!     Otherwise \c is_twos_complement() returns true if and only if
 //!     the type \c T uses a two's complement representation.
+//!
+//!     \note
+//!         Starting with C++20, two's complement is the only
+//!         representation allowed by the standard.
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr bool      is_twos_complement() noexcept ;
