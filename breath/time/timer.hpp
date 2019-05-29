@@ -23,16 +23,25 @@ namespace breath {
 //!
 //!     \c Device is a policy modeling the "clock device" concept: this
 //!     can be a hardware device, a network time provider, a GPS system
-//!     or pretty much anything else. It must provide the member
-//!     functions:
+//!     or pretty much anything else. It must be \c DefaultConstructible
+//!     and provide the member functions:
 //!
-//!      - \c restart()
-//!      - \c elapsed()
-//!      - \c resolution()
+//!      - \c %restart(),
+//!            which must start or restart the \c Device
+//!
+//!      - \c %elapsed(),
+//!            which must return the amount of time elapsed from the
+//!            last call to \c %restart()
+//!
+//!      - \c %resolution(),
+//!            which must return the resolution of the \c Device, i.e.
+//!            the smallest amount of time it can measure
 //!
 //!     and the typedef
 //!
-//!      - \c duration_type
+//!      - \c duration_type,
+//!            which is the return type of \c %elapsed() and
+//!            \c %resolution()
 // ---------------------------------------------------------------------------
 template< class Device >
 class timer
@@ -43,24 +52,26 @@ public:
 
     enum start_mode { auto_start, manual_start } ;
 
-    //!     Initializes the underlying device and, if <code>mode ==
-    //!     auto_start</code> calls \c restart().
+    //!     Initializes the underlying device by calling the default
+    //!     constructor and, if <code>mode == auto_start</code> calls
+    //!     restart().
     // -----------------------------------------------------------------------
     explicit            timer( start_mode mode = auto_start ) ;
 
-    //!     Starts or restarts the timer. See \c elapsed().
+    //!     Calls Device::restart().
     // -----------------------------------------------------------------------
     void                restart() ;
 
     //!     \return
-    //!         The amount of time elapsed from the last call to \c
-    //!         restart(). TODO gps: unit of measure.
+    //!         The result of calling %elapsed() on the underlying \c
+    //!         Device.
+    //!
+    //!         TODO gps: unit of measure.
     // -----------------------------------------------------------------------
     duration_type       elapsed() const ;
 
     //!     \return
-    //!         The resolution of the timer, i.e. the smallest amount of
-    //!         time that it can measure.
+    //!         The result of calling Device::resolution().
     // -----------------------------------------------------------------------
     duration_type       resolution() const ;
 
