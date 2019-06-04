@@ -70,7 +70,7 @@ namespace assert_private {
     (                                                                        \
         ( expression )                                                       \
           ? static_cast< void >( 0 )                                         \
-          : breath::assert_private::fire( #expression, __FILE__, __LINE__ )  \
+          : breath::assert_private::fire( # expression, __FILE__, __LINE__ ) \
     )                                                                     /**/
 
 #endif
