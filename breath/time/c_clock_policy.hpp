@@ -34,7 +34,7 @@ public:
 
     //!     The time, in milliseconds, elapsed from the last (re)start.
     //!
-    //!     Will throw, if it detects wrap-around. (It only detects \em
+    //!     Will throw, if it detects wrap-around. (It only detects \e
     //!     some wrap-arounds.)
     // -----------------------------------------------------------------------
     duration_type       elapsed() const ;
