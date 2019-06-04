@@ -140,7 +140,9 @@ main()
         DO_TEST( *sc.begin() == 'a' ) ;
         DO_TEST( *sc.cbegin() == 'a' ) ;
 
-        DO_TEST( ++ sc.begin() == sc.end() ) ;
+        set_of_chars::iterator
+                            beg = sc.begin() ;
+        DO_TEST( ++ beg == sc.end() ) ;
 
         sc.add('b') ;
 
