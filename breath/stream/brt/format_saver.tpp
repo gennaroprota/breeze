@@ -9,34 +9,34 @@
 //      Some notes:
 //      -----------
 //
-//      1. We use basic_ios::copyfmt because we also want to save and
+//      1. We use basic_ios::copyfmt() because we also want to save and
 //      restore all the iword()/pword() data, and that function is the
 //      only standard way to copy them. However, despite its name,
-//      copyfmt also copies information which have nothing to do with
+//      copyfmt() also copies information which have nothing to do with
 //      the format; for instance, the exception mask. So we "undo"
-//      part of its job. (In practice, copyfmt "does too much": I
+//      part of its job. (In practice, copyfmt() "does too much": I
 //      think there's a need for a more elementary function in the
-//      stream interface, which copies the iword/pword data and
+//      stream interface, which copies the iword()/pword() data and
 //      nothing else. Note, by the way, that the latter could be
 //      provided at the ios_base level.)
 //
 //      2. The reason for the ios_base:: qualification in the call to
-//      imbue is the following:
+//      imbue() is the following:
 //
 //      both basic_ios and its base ios_base have an imbue() function.
 //      (Neither is virtual.) The base one deals with the stream locale
 //      (and callbacks). The derived one (which hides the base version)
 //      deals with both the stream locale and the stream buffer locale
-//      (if rdbuf() != 0) [C++03: 27.4.2.3 and 27.4.4.2]. Since copyfmt
-//      does not copy the stream buffer locale --only the stream one--
-//      we invoke the base version.
+//      (if rdbuf() != 0) [C++03: 27.4.2.3 and 27.4.4.2]. Since
+//      copyfmt() does not copy the stream buffer locale --only the
+//      stream one-- we invoke the base version.
 // ---------------------------------------------------------------------------
 
 namespace breath {
 
 //      note: the initialization m_store( user_stream.rdbuf() )
 //      ensures that our m_store will not have badbit set and thus
-//      that copyfmt won't throw due to the copy of the exception mask
+//      that copyfmt() won't throw due to the copy of the exception mask
 //      [1] (we don't want to eat _any_ exception it might throw,
 //      differently from what we do in the destructor); for the rest
 //      it is really irrelevant, first because we don't do any
@@ -64,7 +64,7 @@ namespace breath {
 //          m_store( nullptr )
 //      just to limit needlessly throwing: when a null stream buffer
 //      pointer is passed, m_store is constructed in bad state; in that
-//      case copyfmt'ing when the badbit exception is enabled in the
+//      case copyfmt()'ing when the badbit exception is enabled in the
 //      source will cause an exception to be thrown and eaten. (For
 //      the rest which form we use is irrelevant, first because we
 //      don't do any input/output on m_store, second because rdbuf()
@@ -82,8 +82,8 @@ basic_format_saver< Ch, Traits >::basic_format_saver(
         m_store( user_stream.rdbuf() )
 {
     // note that there can still be an exception, for instance because
-    // copyfmt fails to allocate memory in which to copy the
-    // iword/pword elements
+    // copyfmt() fails to allocate memory in which to copy the
+    // iword()/pword() elements
     try {
         m_store.copyfmt( m_user_stream ) ;
     } catch ( ios_failure_type & ) {
@@ -93,7 +93,7 @@ basic_format_saver< Ch, Traits >::basic_format_saver(
 template< typename Ch, typename Traits >
 basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
 {
-    // We prepare m_store for the data (besides those that copyfmt
+    // We prepare m_store for the data (besides those that copyfmt()
     // won't copy anyway) we don't want to restore: tie, locale,
     // exception mask.
 
@@ -136,7 +136,7 @@ basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
     }
 
     // The question arises here of what state the stream should be
-    // left in if copyfmt exits with an exception (not due to the last
+    // left in if copyfmt() exits with an exception (not due to the last
     // assignment, which copies the exception mask).
     //
     // The standard provides NO GUARANTEE.
