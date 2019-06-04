@@ -136,7 +136,7 @@ main()
         set_of_chars        sc ;
         DO_TEST( sc.begin() == sc.end() ) ;
         DO_TEST( sc.cbegin() == sc.cend() ) ;
-        sc.add('a') ;
+        sc.add( 'a' ) ;
         DO_TEST( *sc.begin() == 'a' ) ;
         DO_TEST( *sc.cbegin() == 'a' ) ;
 
@@ -144,7 +144,7 @@ main()
                             beg = sc.begin() ;
         DO_TEST( ++ beg == sc.end() ) ;
 
-        sc.add('b') ;
+        sc.add( 'b' ) ;
 
         set_of_chars::iterator
                             it = std::find( sc.cbegin(), sc.cend(), 'a' ) ;
