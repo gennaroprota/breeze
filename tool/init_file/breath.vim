@@ -81,6 +81,12 @@ function            s:InitPhaseTwo()
     endif
 endfunction
 
+"       Support for the gf command ("go to file"). Unfortunately, this
+"       won't work on our dependent #includes.
+" ----------------------------------------------------------------------------
+set path +=$BREATH_ROOT,.
+set suffixesadd +=.hpp,.tpp
+
 " Local Variables:
 " indent-tabs-mode: nil
 " End:
