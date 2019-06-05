@@ -101,15 +101,15 @@ include $(root)/makefile/start.mk
 
 target = $(library_name_prefix)breath$(library_name_suffix)
 
-$(target): $(patsubst %.cpp, %.o, $(source_files))  \
-             $(patsubst %.asm, %.o, $(asm_source_files))
+$(target): $(patsubst %.cpp, %$(object_file_suffix), $(source_files))  \
+             $(patsubst %.asm, %$(object_file_suffix), $(asm_source_files))
 	$(build_library)
 
 define assemble_to_object
     as --warn --fatal-warnings --32 -o $@ $<
 endef
 
-%.o: %.asm
+%$(object_file_suffix): %.asm
 	$(assemble_to_object)
 
 
@@ -117,8 +117,8 @@ all: $(target)
 
 clean:
 	rm -fr .dependency/
-	rm -f $(patsubst %.cpp, %.o, $(source_files))
-	rm -f $(patsubst %.asm, %.o, $(asm_source_files))
+	rm -f $(patsubst %.cpp, %$(object_file_suffix), $(source_files))
+	rm -f $(patsubst %.asm, %$(object_file_suffix), $(asm_source_files))
 	rm -f $(target)
 
 # Local Variables:

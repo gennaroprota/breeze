@@ -21,10 +21,11 @@ source_files := main.cpp                        \
 
 breath_library = $(library_name_prefix)breath$(library_name_suffix)
 
-$(target): $(patsubst %.cpp, %.o, $(source_files)) $(breath_library)
+$(target): $(patsubst %.cpp, %$(object_file_suffix), $(source_files)) \
+               $(breath_library)
 	$(link_to_exec)
 
 clean:
 	rm -fr .dependency/
-	rm -f $(patsubst %.cpp, %.o, $(source_files))
+	rm -f $(patsubst %.cpp, %$(object_file_suffix), $(source_files))
 	rm -f $(target)
