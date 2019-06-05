@@ -15,7 +15,8 @@
 
 
 ifeq ($(and $(compiler), $(system)),)
-    $(error Please, define 'compiler' and 'system' on the command line)
+    $(error Please, define 'compiler' and 'system' on the command line; e.g. \
+            run 'compiler=gcc system=unix make')
 endif
 
 
