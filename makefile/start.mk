@@ -20,6 +20,9 @@ endif
 
 
 
+#       Recurses on the same target. $(subdirs) must be defined before
+#       including this file for it to work.
+#
 #       Function originally taken from James Kanze's GABI Library
 #       version 2005v01 (named "doForAll", there).
 # ----------------------------------------------------------------------------
