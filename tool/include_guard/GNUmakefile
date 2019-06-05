@@ -26,6 +26,6 @@ $(target): $(patsubst %.cpp, %$(object_file_suffix), $(source_files)) \
 	$(link_to_exec)
 
 clean:
-	rm -fr .dependency/
+	rm -fr $(dependency_dir)
 	rm -f $(patsubst %.cpp, %$(object_file_suffix), $(source_files))
 	rm -f $(target)

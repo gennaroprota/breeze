@@ -116,7 +116,7 @@ endef
 all: $(target)
 
 clean:
-	rm -fr .dependency/
+	rm -fr $(dependency_dir)
 	rm -f $(patsubst %.cpp, %$(object_file_suffix), $(source_files))
 	rm -f $(patsubst %.asm, %$(object_file_suffix), $(asm_source_files))
 	rm -f $(target)
