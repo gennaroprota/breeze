@@ -147,9 +147,6 @@
     <ClCompile Include="..\..\breath\preprocessing\test\prevent_macro_expansion_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\process\brt\child_process.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\breath\process\brt\exit_code.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -540,9 +537,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\preprocessing\paste_after_expansion.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breath\process\child_process.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\process\exit_code.hpp">

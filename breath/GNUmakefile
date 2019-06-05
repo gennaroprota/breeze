@@ -60,7 +60,6 @@ source_files := luhn.cpp                            \
                 directory_separators.cpp            \
                 extension.cpp                       \
                                                     \
-                child_process.cpp                   \
                 command_line.cpp                    \
                 current_directory.cpp               \
                 exit_code.cpp                       \
