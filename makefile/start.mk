@@ -64,25 +64,28 @@ cpp_preprocessing_defines = -D BREATH_ARCHITECTURE=$(arch)  \
                             -D BREATH_COMPILER=$(compiler)
 
 bin_root = $(root)/bin
-bin_dir = $(bin_root)/$(arch)/$(system)/$(compiler)
+dependent_subdir = $(system)/$(compiler)
+bin_dir = $(bin_root)/$(dependent_subdir)
 exe_dir = $(bin_dir)
          # ^^^^ variant debug/release?
 
 include $(root)/makefile/$(compiler).mk
 include $(root)/makefile/$(system).mk
 
+$(shell mkdir -p $(bin_dir))
+
 #       Automatic dependency generation; the method use here is
 #       described in:
 #
 #         <http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/>.
 # ----------------------------------------------------------------------------
-dependency_dir := .dependency
+dependency_dir := .dependency/$(dependent_subdir)
 $(shell mkdir -p $(dependency_dir) > /dev/null)
 post_compile = @mv -f $(dependency_dir)/$*.temp_dep $(dependency_dir)/$*.dep \
                  && touch $@
 
-%$(object_file_suffix): %.cpp
-%$(object_file_suffix): %.cpp $(dependency_dir)/%.dep
+$(bin_dir)/%$(object_file_suffix): %.cpp
+$(bin_dir)/%$(object_file_suffix): %.cpp $(dependency_dir)/%.dep
 	$(compile_to_dependency)
 	$(compile_to_object)
 	$(post_compile)
