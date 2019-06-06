@@ -134,7 +134,7 @@ endef
 
 define compile_to_dependency
     $(compiler_command) $(cpp_options) /E $<                        |   \
-        sed -n 's/^\#line *[0-9][0-9]* *"\([^"]*\)".*/$@: \1/p'     |   \
+        sed -n 's|^\#line *[0-9][0-9]* *"\([^"]*\)".*|$@: \1|p'     |   \
         $(cygwin_root)/bin/sort -u > $(dependency_dir)/$*.temp_dep
 endef
 
