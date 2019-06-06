@@ -132,9 +132,16 @@ define compile_to_object
     $(compiler_command) $(cpp_options) /c /Fo$@ $<
 endef
 
+#       Note: the two final sed substitutions escape the drive separator
+#       (colon) and the spaces in the path (excluding the space right
+#       before the path itself, which can be easily recognized because
+#       it's preceded by a colon).
+# ----------------------------------------------------------------------------
 define compile_to_dependency
     $(compiler_command) $(cpp_options) /E $<                        |   \
         sed -n 's|^\#line *[0-9][0-9]* *"\([^"]*\)".*|$@: \1|p'     |   \
+        sed -e 's|\:\\|\\:\\|'                                      |   \
+        sed -e 's|\([^:]\) |\1\\ |g'                                |   \
         $(cygwin_root)/bin/sort -u > $(dependency_dir)/$*.temp_dep
 endef
 
