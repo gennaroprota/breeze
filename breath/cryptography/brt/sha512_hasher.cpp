@@ -129,10 +129,10 @@ sha512_engine::process_block( state_type & state, block_type const & block )
     sensitive_buffer< schedule_type >
                         sched(
                             breath::cbegin( block ), breath::cend( block ) ) ;
-    for ( int i = 16 ; i < 80 ; ++ i )
+    for ( int i = 16 ; i < 80 ; ++ i ) {
         sched[ i ] = sigma1( sched[ i -  2 ] ) + sched[ i -  7 ]
                    + sigma0( sched[ i - 15 ] ) + sched[ i - 16 ] ;
-
+    }
     sensitive_buffer< word_type[ 8 ] > working( state ) ;
 
     // 0 1 2 3 4 5 6 7

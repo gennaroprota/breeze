@@ -83,7 +83,9 @@ command_line::parse( int argc,  char const * const * argv )
                                                                "' is ambiguous" ) ;
                 return false ;
             }
-            else lookup[ initial ] = it->first ;
+            else {
+                lookup[ initial ] = it->first ;
+            }
         }
     }
 
@@ -154,11 +156,11 @@ command_line::parse( int argc,  char const * const * argv )
         }
     }
 
-    for ( auto it = m_options.cbegin() ; it != m_options.cend() ; ++ it )
+    for ( auto it = m_options.cbegin() ; it != m_options.cend() ; ++ it ) {
         if ( ! it->second->is_valid() ) {
             m_errors.push_back( "need option: --" + std::string( it->first ) ) ;
         }
-
+    }
     return m_errors.empty() ;
 }
 
