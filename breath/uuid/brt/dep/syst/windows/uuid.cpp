@@ -80,7 +80,8 @@ output_as_hex( std::ostream & os, T t )
     return os ;
 }
 
-std::ostream & operator <<( std::ostream & os, uuid const & uu )
+std::ostream &
+operator <<( std::ostream & os, uuid const & uu )
 {
     format_saver const  saver( os ) ;
 
