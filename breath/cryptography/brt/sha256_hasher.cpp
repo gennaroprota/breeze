@@ -102,10 +102,10 @@ void sha256_engine::process_block( state_type & state,
     sensitive_buffer< schedule_type >
                         sched(
                             breath::cbegin( block ), breath::cend( block ) ) ;
-    for ( int i = 16 ; i < sz ; ++ i )
+    for ( int i = 16 ; i < sz ; ++ i ) {
         sched[ i ] = sigma1( sched[ i - 2  ] ) + sched[ i - 7  ]
                    + sigma0( sched[ i - 15 ] ) + sched[ i - 16 ] ;
-
+    }
    // 0 1 2 3 4 5 6 7
    // a b c d e f g h
    //
