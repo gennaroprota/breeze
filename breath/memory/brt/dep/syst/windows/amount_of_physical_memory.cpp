@@ -24,8 +24,8 @@ amount_of_physical_memory()
 {
     //      This implementation uses GetPhysicallyInstalledSystemMemory(),
     //      if available, with a fallback to GlobalMemoryStatusEx().
-    //      This is to make the function work pre Vista SP1. However,
-    //      only the first API gives an accurate value.
+    //      The fallback is to make the function work pre Vista SP1.
+    //      However, only the first API gives an accurate value.
     // -----------------------------------------------------------------------
     HMODULE const       module = GetModuleHandle( L"kernel32" ) ;
 
