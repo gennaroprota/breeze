@@ -40,7 +40,8 @@ typedef unsigned long long
 typedef int             result_type ;
 
 template< result_type n >
-struct choose_initial_n {
+struct choose_initial_n
+{
 
     // Note the repeated conversions to argument_type: we
     // must convert at *each* shift, because the operands
@@ -66,7 +67,8 @@ result_type const
 choose_initial_n< n >::value ;
 
 template<>
-struct choose_initial_n< 0 > {
+struct choose_initial_n< 0 >
+{
     static result_type const value = 0 ;
 } ;
 
@@ -92,7 +94,8 @@ const result_type initial_n = choose_initial_n<n_zero>::value ;
 //      changed without affecting the rest of the code.)
 // ---------------------------------------------------------------------------
 template< argument_type x, result_type n = initial_n >
-struct integer_log2_impl {
+struct integer_log2_impl
+{
 
     enum { c = (x >> n) > 0 } ; // x >= 2**n ?
     static result_type const
@@ -103,7 +106,8 @@ struct integer_log2_impl {
 } ;
 
 template<>
-struct integer_log2_impl< 1, 0 > {
+struct integer_log2_impl< 1, 0 >
+{
     static result_type const
                         value = 0 ;
 } ;
@@ -124,7 +128,8 @@ typedef integer_log2_private::result_type
 
 template< integer_log2_argument_type x >
 class [[ deprecated( "consider using the constexpr"
-                     " breath::integer_log2()" ) ]] integer_log2 {
+                     " breath::integer_log2()" ) ]] integer_log2
+{
 public:
     static integer_log2_result_type const
          value = integer_log2_private::
@@ -134,7 +139,9 @@ public:
 
 
 template<>
-class integer_log2< 0 > { } ;
+class integer_log2< 0 >
+{
+} ;
 
 template< integer_log2_argument_type x >
 integer_log2_result_type const
