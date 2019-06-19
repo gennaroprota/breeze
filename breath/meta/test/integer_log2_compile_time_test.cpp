@@ -60,17 +60,18 @@ main()
     static_assert(    arg_type( -1 ) > 0, "" ) ;
     static_assert( result_type( -1 ) < 0, "" ) ;
 
-    result_type const width = std::numeric_limits< arg_type >::digits ;
+    result_type const   width = std::numeric_limits< arg_type >::digits ;
 
     // check the maximum allowed argument...
     //
-    arg_type const maximum = arg_type( -1 ) ;
+    arg_type const      maximum = arg_type( -1 ) ;
     static_assert( integer_log2< maximum >::value == width - 1, "" ) ;
 
     // ... then go with the recursive check
     //
-    arg_type const recursion_start = maximum - ( maximum >> 1 ) ;
-    int const dummy = log2_checker< recursion_start, width - 1 >::dummy ;
+    arg_type const      recursion_start = maximum - ( maximum >> 1 ) ;
+    int const           dummy = log2_checker< recursion_start,
+                                              width - 1 >:: dummy ;
 
     static_cast< void >( dummy ) ;
 }
