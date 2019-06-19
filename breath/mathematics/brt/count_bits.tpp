@@ -45,7 +45,7 @@ constexpr std::size_t
 static_assert( breath::count( count_table ) == ( 1u << table_width ), "" ) ;
 
 //      This equality isn't necessary for the code to work; but, if you
-//      have e.g. UCHAR_MAX == 512 you might want to enlarge the table.
+//      have e.g. UCHAR_MAX == 511 you might want to enlarge the table.
 // ---------------------------------------------------------------------------
 static_assert( breath::count( count_table ) == ( UCHAR_MAX + 1 ), "" ) ;
 
