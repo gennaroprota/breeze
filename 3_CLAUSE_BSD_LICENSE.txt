@@ -22,7 +22,7 @@ NOTES:
 The 3-Clause BSD License:
 =========================
 
-© Copyright 2006-2019 Gennaro Prota
+© Copyright 2003-2019 Gennaro Prota
 © Copyright 1997-2003 James Kanze
 © Copyright 2009 Hideyuki Tanaka
 All rights reserved.
