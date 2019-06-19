@@ -43,10 +43,10 @@ template< result_type n >
 struct choose_initial_n
 {
 
-    // Note the repeated conversions to argument_type: we
-    // must convert at *each* shift, because the operands
-    // of << are promoted.
-    //
+    //      Note the repeated conversions to argument_type: we must
+    //      convert at *each* shift, because the operands of << are
+    //      promoted.
+    // -----------------------------------------------------------------------
     static bool const
                 c = argument_type(argument_type(
                                     argument_type(1) << n ) << n ) != 0
@@ -74,8 +74,8 @@ struct choose_initial_n< 0 >
 
 
 
-// start computing from n_zero - must be a power of two
-//
+//      Start computing from n_zero - must be a power of two.
+// ---------------------------------------------------------------------------
 const result_type n_zero = 4 ;
 const result_type initial_n = choose_initial_n<n_zero>::value ;
 
