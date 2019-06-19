@@ -22,7 +22,8 @@ namespace breath {
 //
 //!     \return
 //!         The number of on bits in the value \c t. \c T must be an
-//!         unsigned built-in type.
+//!         built-in integral type with no sign (\c bool is supported,
+//!         too).
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr std::size_t
