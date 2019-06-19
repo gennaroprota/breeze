@@ -366,11 +366,15 @@ windows_version_info::is_wow64_process()
     fn_ptr_type const   is_wow64_process =
                 reinterpret_cast< fn_ptr_type >(
                         GetProcAddress( module, "IsWow64Process" ) ) ;
-    if ( is_wow64_process != nullptr ) {
-        if ( is_wow64_process( GetCurrentProcess(), &is_wow64 ) == 0 ) {
-            throw last_api_error( "IsWow64Process() failed" ) ;
-        }
+
+    if ( is_wow64_process == nullptr ) {
+        throw last_api_error( "cannot get the address of IsWow64Process()" ) ;
     }
+
+    if ( is_wow64_process( GetCurrentProcess(), &is_wow64 ) == 0 ) {
+        throw last_api_error( "IsWow64Process() failed" ) ;
+    }
+
     return is_wow64 != 0 ;
 }
 
