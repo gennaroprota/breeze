@@ -43,6 +43,7 @@ class constant
 {
 private:
     typedef typename unqualify< T >::type unqualified_type ;
+
 public:
     //!     The type of the member constant (cv-unqualified).
     // -----------------------------------------------------------------------
