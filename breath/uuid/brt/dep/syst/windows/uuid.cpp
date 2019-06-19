@@ -79,6 +79,7 @@ output_as_hex( std::ostream & os, T t )
     os << std::setw( hex_digits_per_t ) << static_cast< std::uint32_t >( t ) ;
     return os ;
 }
+
 std::ostream & operator <<( std::ostream & os, uuid const & uu )
 {
     format_saver const  saver( os ) ;
