@@ -359,7 +359,7 @@ windows_version_info::is_wow64_process()
         throw last_api_error( "cannot get a handle to kernel32.dll" ) ;
     }
 
-    typedef BOOL ( WINAPI * fn_ptr_type )( HANDLE, PBOOL ) ;
+    typedef BOOL ( WINAPI * fn_ptr_type )( HANDLE, BOOL * ) ;
 
     BOOL                is_wow64 = 0 ;
 
