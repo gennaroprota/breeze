@@ -139,7 +139,6 @@ merkle_damgard_machine< Engine >::do_append( RandomIter begin,
                                              RandomIter end,
                                      std::random_access_iterator_tag const * )
 {
-
     typedef typename std::iterator_traits< RandomIter >::difference_type
                         difference_type ;
 
