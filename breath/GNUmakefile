@@ -63,7 +63,6 @@ source_files := luhn.cpp                            \
                 command_line.cpp                    \
                 current_directory.cpp               \
                 exit_code.cpp                       \
-                process.cpp                         \
                 program.cpp                         \
                 program_option.cpp                  \
                 set_current_directory.cpp           \

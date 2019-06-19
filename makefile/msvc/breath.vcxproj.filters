@@ -150,9 +150,6 @@
     <ClCompile Include="..\..\breath\process\brt\exit_code.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\process\brt\process.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\breath\random\brt\entropy_source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -542,13 +539,7 @@
     <ClInclude Include="..\..\breath\process\exit_code.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\process\process.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\breath\process\private\handle.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breath\process\private\process_id_type.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\random\entropy_source.hpp">

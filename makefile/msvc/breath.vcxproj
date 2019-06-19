@@ -379,7 +379,6 @@
     <ClCompile Include="..\..\breath\process\brt\command_line.cpp" />
     <ClCompile Include="..\..\breath\process\brt\current_directory.cpp" />
     <ClCompile Include="..\..\breath\process\brt\exit_code.cpp" />
-    <ClCompile Include="..\..\breath\process\brt\process.cpp" />
     <ClCompile Include="..\..\breath\process\brt\program.cpp" />
     <ClCompile Include="..\..\breath\process\brt\program_option.cpp" />
     <ClCompile Include="..\..\breath\process\brt\set_current_directory.cpp" />
@@ -630,8 +629,6 @@
     <ClInclude Include="..\..\breath\process\current_directory.hpp" />
     <ClInclude Include="..\..\breath\process\exit_code.hpp" />
     <ClInclude Include="..\..\breath\process\private\handle.hpp" />
-    <ClInclude Include="..\..\breath\process\private\process_id_type.hpp" />
-    <ClInclude Include="..\..\breath\process\process.hpp" />
     <ClInclude Include="..\..\breath\process\program.hpp" />
     <ClInclude Include="..\..\breath\process\program_option.hpp" />
     <ClInclude Include="..\..\breath\process\set_current_directory.hpp" />
