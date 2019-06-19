@@ -150,8 +150,6 @@ integer_log2< x >::value ;
 }
 }
 
-
-
 #endif
 
 // Local Variables:
