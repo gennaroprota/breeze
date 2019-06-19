@@ -40,7 +40,7 @@ public:
     // -----------------------------------------------------------------------
     typedef U type ;
 
-    //!     A typedef for <code>select_< true, T, U ></code>
+    //!     A typedef for <code>select_< true, T, U ></code>.
     typedef select_< true, T, U > opposite ;
 } ;
 
