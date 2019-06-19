@@ -13,8 +13,6 @@
 #ifndef BREATH_GUARD_E6f26R6Om6D3dxAUPssS2yROHiV0L8sv
 #define BREATH_GUARD_E6f26R6Om6D3dxAUPssS2yROHiV0L8sv
 
-#include "breath/idiom/declare_non_copyable.hpp"
-#include "breath/process/process.hpp"
 #include <string>
 
 namespace breath {
