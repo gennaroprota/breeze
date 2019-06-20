@@ -21,6 +21,8 @@
 #include <sstream>
 #include <iostream>
 
+namespace {
+
 void
 check()
 {
@@ -48,6 +50,8 @@ check()
         std::string const   s = breath::to_string( breath::roman( n ) ) ;
         BREATH_CHECK( rep == s ) ;
     } while ( n != max_roman ) ;
+}
+
 }
 
 int
