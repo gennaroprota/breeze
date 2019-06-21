@@ -33,6 +33,8 @@ The library requires a Unix toolkit, with GNU Make and the GNU Assembler. On
 Microsoft Windows, you'll need Cygwin. (If I had to redo it today, most things
 would probably use Python.)
 
+Note that only Cygwin 64-bit is supported.
+
 For the build to work, for the editor support, and for some tests, you need to
 define the environment variable `BREATH_ROOT` to the full path of the source
 tree. Use forward slashes, even on Windows.
