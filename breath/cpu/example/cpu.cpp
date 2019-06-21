@@ -56,13 +56,13 @@ processor_brand_string()
 std::string
 cpu_vendor_id_string()
 {
-    cpuid_result const  r = get_cpuid_info( 0, 0 ) ;
+    cpuid_result const  info = get_cpuid_info( 0, 0 ) ;
 
     int const           len = 12 ;
     char                id_string[ len ] ;
-    std::memcpy( id_string,     &r.ebx, sizeof( r.ebx ) ) ;
-    std::memcpy( id_string + 4, &r.edx, sizeof( r.edx ) ) ;
-    std::memcpy( id_string + 8, &r.ecx, sizeof( r.ecx ) ) ;
+    std::memcpy( id_string,     &info.ebx, sizeof( info.ebx ) ) ;
+    std::memcpy( id_string + 4, &info.edx, sizeof( info.edx ) ) ;
+    std::memcpy( id_string + 8, &info.ecx, sizeof( info.ecx ) ) ;
 
     return std::string( id_string, len ) ;
 }
