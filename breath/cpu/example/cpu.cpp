@@ -12,7 +12,6 @@
 // ___________________________________________________________________________
 
 #include "breath/cpu/cpuid.hpp"
-#include "breath/diagnostics/assert.hpp"
 
 #include <cstdlib>
 #include <cstring>
@@ -25,10 +24,6 @@ namespace {
 bool
 has_processor_brand_string()
 {
-    if ( ! is_cpuid_supported() ) {
-        return false ;
-    }
-
     unsigned const      mask = 0x8000'0000 ;
     cpuid_result const  r = get_cpuid_info( mask, 0 ) ;
 
@@ -39,8 +34,6 @@ has_processor_brand_string()
 std::string
 processor_brand_string()
 {
-    BREATH_ASSERT( is_cpuid_supported() ) ;
-
     // Reference: Intel Manual, 3-176, Vol. 2A
     //
     unsigned long const from = 0x8000'0002 ;
@@ -62,8 +55,6 @@ processor_brand_string()
 std::string
 cpu_vendor_id_string()
 {
-    BREATH_ASSERT( is_cpuid_supported() ) ;
-
     cpuid_result const  r = get_cpuid_info( 0, 0 ) ;
 
     int const           len = 12 ;
@@ -80,11 +71,6 @@ cpu_vendor_id_string()
 int
 main()
 {
-    if ( ! is_cpuid_supported() ) {
-        std::cerr << "CPUID instruction not available" << std::endl ;
-        return EXIT_FAILURE ;
-    }
-
     std::cout << "CPU vendor ID string: " <<
                      cpu_vendor_id_string() << std::endl ;
     std::cout << "Processor brand string: " << ( has_processor_brand_string()

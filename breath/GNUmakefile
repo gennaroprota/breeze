@@ -91,8 +91,7 @@ source_files := luhn.cpp                            \
                                                     \
                 uuid.cpp
 
-asm_source_files := get_cpuid_info.asm              \
-                    is_cpuid_supported.asm
+asm_source_files := get_cpuid_info.asm
 
 
 include $(root)/makefile/start.mk
@@ -104,7 +103,7 @@ $(target): $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), $(source_files))
 	$(build_library)
 
 define assemble_to_object
-    as --warn --fatal-warnings --32 -o $@ $<
+    as --warn --fatal-warnings -o $@ $<
 endef
 
 $(bin_dir)/%$(object_file_suffix): %.asm

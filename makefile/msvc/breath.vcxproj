@@ -511,15 +511,12 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).obj</Outputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Assembling %(FileName).asm</Message>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Assembling %(FileName).asm</Message>
-    </CustomBuild>
-    <CustomBuild Include="..\..\breath\cpu\brt\is_cpuid_supported.asm">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">as --32 --warn --fatal-warnings "%(FullPath)" -o"%(FileName).obj"</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">as --32 --warn --fatal-warnings "%(FullPath)" -o"%(FileName).obj"</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).obj</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Assembling %(FileName).asm</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Assembling %(FileName).asm</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">as --warn --fatal-warnings "%(FullPath)" -o"%(FileName).obj"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">as --warn --fatal-warnings "%(FullPath)" -o"%(FileName).obj"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Assembling %(FileName).asm</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Assembling %(FileName).asm</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(FileName).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(FileName).obj</Outputs>
     </CustomBuild>
     <None Include="..\..\breath\cryptography\brt\digest.tpp" />
     <None Include="..\..\breath\cryptography\brt\merkle_damgard_machine.tpp" />

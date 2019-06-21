@@ -48,17 +48,6 @@ struct cpuid_result
     uint32_t        edx ;
 } ;
 
-//      is_cpuid_supported():
-//      =====================
-//
-//!     Namespace: global (see above)
-//!
-//!     \return
-//!         \c true if and only if the executing CPU supports the CPUID
-//!         machine instruction.
-// ---------------------------------------------------------------------------
-bool                is_cpuid_supported() ;
-
 //      get_cpuid_info():
 //      =================
 //
