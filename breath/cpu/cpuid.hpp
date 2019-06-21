@@ -57,8 +57,8 @@ struct cpuid_result
 //!     EAX and \c ECX.
 //!
 //!     \pre
-//!         the CPUID instruction is supported (see
-//!         is_cpuid_supported())
+//!         the CPUID instruction is supported (this is always true on
+//!         x64 CPUs).
 //!
 //!     \return
 //!         a struct with the values of \c EAX, \c EBX, \c ECX, \c EDX
