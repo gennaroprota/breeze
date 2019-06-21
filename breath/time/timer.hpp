@@ -19,7 +19,7 @@ namespace breath {
 //      ======
 //
 //!     A policy based timer which allows the user to retrieve the
-//!     amount of time elapsed from its start.
+//!     amount of time elapsed from its start (i.e. a "stopwatch").
 //!
 //!     \c Device is a policy modeling the "clock device" concept: this
 //!     can be a hardware device, a network time provider, a GPS system
