@@ -20,7 +20,6 @@ REM            (x86, x64, etc.)
 REM         2. run this batch file.
 REM --------------------------------------------------------------------------
 
-@echo on
 setlocal
 
 set CYGWIN_ROOT=C:\cygwin64
