@@ -73,15 +73,12 @@ class merkle_damgard_machine
 public:
     enum
     {
-        // widths
         byte_width   = Engine::byte_width,
         word_width   = Engine::word_width,
         digest_width = Engine::digest_width
     } ;
 
 private:
-    //      Lengths
-    // -----------------------------------------------------------------------
     enum
     {
         block_length = Engine::block_width / byte_width,
