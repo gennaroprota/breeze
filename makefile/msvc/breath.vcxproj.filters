@@ -365,9 +365,6 @@
     <ClInclude Include="..\..\breath\counting\counter.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\cpu\cpuid.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\breath\cryptography\digest.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -684,6 +681,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\text\trim_tail_if.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\cpu\get_cpuid_info.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

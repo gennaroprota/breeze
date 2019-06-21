@@ -559,7 +559,7 @@
     <ClInclude Include="..\..\breath\conversion\roman.hpp" />
     <ClInclude Include="..\..\breath\counting\count.hpp" />
     <ClInclude Include="..\..\breath\counting\counter.hpp" />
-    <ClInclude Include="..\..\breath\cpu\cpuid.hpp" />
+    <ClInclude Include="..\..\breath\cpu\get_cpuid_info.hpp" />
     <ClInclude Include="..\..\breath\cryptography\digest.hpp" />
     <ClInclude Include="..\..\breath\cryptography\hashing_count.hpp" />
     <ClInclude Include="..\..\breath\cryptography\md5_hasher.hpp" />

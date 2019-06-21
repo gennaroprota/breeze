@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/cpu/cpuid.hpp"
+#include "breath/cpu/get_cpuid_info.hpp"
 
 #include <cstdlib>
 #include <cstring>
