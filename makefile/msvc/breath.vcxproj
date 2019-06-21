@@ -517,6 +517,8 @@
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Assembling %(FileName).asm</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(FileName).obj</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(FileName).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </CustomBuild>
     <None Include="..\..\breath\cryptography\brt\digest.tpp" />
     <None Include="..\..\breath\cryptography\brt\merkle_damgard_machine.tpp" />
