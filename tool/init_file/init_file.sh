@@ -133,7 +133,7 @@ then
 fi
 
 tool_root="$BREATH_ROOT/tool"
-exe_root="$BREATH_ROOT/exec"
+exe_root="$BREATH_ROOT/bin"
 
 #       Header
 # ----------------------------------------------------------------------------
