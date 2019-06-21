@@ -49,6 +49,7 @@ processor_brand_string()
         std::memcpy( p + 8,  &info.ecx, sizeof( info.ecx ) ) ;
         std::memcpy( p + 12, &info.edx, sizeof( info.edx ) ) ;
     }
+
     return std::string( s ) ;
 }
 
