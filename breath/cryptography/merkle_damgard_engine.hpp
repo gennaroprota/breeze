@@ -31,14 +31,14 @@ namespace breath {
 //      that the maximum length, if any, is of the form 2**e - 1, but
 //      that's what all one-way hash functions I know of do).
 // ---------------------------------------------------------------------------
-template< std::size_t         bits_per_digest,
-          std::size_t         bits_per_block,
+template< int                 bits_per_digest,
+          int                 bits_per_block,
           typename            EndianPolicy,
-          std::size_t         bits_per_word   = 32,
-          std::size_t         bits_per_state  = bits_per_digest,
+          int                 bits_per_word   = 32,
+          int                 bits_per_state  = bits_per_digest,
           hashing_count::type count_type = hashing_count::is_limited,
-          std::size_t         bits_per_byte   = 8,
-          std::size_t         length_exponent = 2 * bits_per_word
+          int                 bits_per_byte   = 8,
+          int                 length_exponent = 2 * bits_per_word
 >
 class merkle_damgard_engine
 {
@@ -116,14 +116,14 @@ public:
     }
 } ;
 
-template< std::size_t bits_per_digest,
-        std::size_t bits_per_block,
+template< int bits_per_digest,
+        int bits_per_block,
         typename EndianPolicy,
-        std::size_t bits_per_word,
-        std::size_t bits_per_state,
+        int bits_per_word,
+        int bits_per_state,
         hashing_count::type count_type,
-        std::size_t bits_per_byte,
-        std::size_t length_exponent
+        int bits_per_byte,
+        int length_exponent
 >
 hashing_count::type const
 merkle_damgard_engine< bits_per_digest,
