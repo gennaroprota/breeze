@@ -53,10 +53,10 @@ last_api_error::last_api_error( char const * p ) noexcept
         strcpy( m_message + (offset - sizeof sep + 1), sep ) ;
     }
     int  const                   ret = strerror_r( m_errno,
-                                                   &m_message[ 0 ],
+                                                   m_message + offset,
                                                    sizeof m_message - 1 ) ;
     if ( ret != 0 ) {
-         strcpy( m_message, strerror_r_failed ) ;
+         strcpy( m_message + offset, strerror_r_failed ) ;
     }
 
 }
