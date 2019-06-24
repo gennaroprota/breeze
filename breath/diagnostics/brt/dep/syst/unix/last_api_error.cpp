@@ -42,16 +42,20 @@ last_api_error::last_api_error( char const * p ) noexcept
 
     if ( p != nullptr ) {
         strncpy( m_message, p, max_incipit_size ) ;
+
+        std::size_t const   len = strlen( p ) ;
+
+        char const          sep[] = ": " ;
+        if ( len != 0 ) {
+            strcpy( m_message + len, sep ) ;
+        }
     }
 
-    char const          sep[] = ": " ;
     std::size_t const   offset = p == nullptr
                                     ? 0
-                                    : strlen( p ) + sizeof sep - 1
+                                    : strlen( m_message )
                                     ;
-    if ( p != nullptr ) {
-        strcpy( m_message + (offset - sizeof sep + 1), sep ) ;
-    }
+
     int  const                   ret = strerror_r( m_errno,
                                                    m_message + offset,
                                                    sizeof m_message - 1 ) ;
