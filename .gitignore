@@ -45,7 +45,7 @@
 *.swo
 *.swn
 
-# Visual C++ files and dirs
+# Visual C++ files and directories
 *.idb
 *.ilk
 *.lastbuildstate
