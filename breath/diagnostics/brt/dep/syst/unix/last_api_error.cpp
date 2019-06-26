@@ -20,7 +20,7 @@ namespace breath {
 char const          strerror_r_failed[] = "strerror_r failed: see error code" ;
 
 last_api_error::last_api_error( char const * p ) noexcept
-    : m_last_error( errno )
+    :   m_last_error( errno )
 {
     //! \todo
     //! Most of this code is duplicated with the Windows variant.
@@ -56,7 +56,8 @@ last_api_error::last_api_error( char const * p ) noexcept
 }
 
 last_api_error::last_api_error( last_api_error const & other ) noexcept
-    :   exception( other ), m_last_error( other.m_last_error )
+    :   exception( other ),
+        m_last_error( other.m_last_error )
 {
     strcpy( &m_message[ 0 ], &other.m_message[ 0 ] ) ;
 }
