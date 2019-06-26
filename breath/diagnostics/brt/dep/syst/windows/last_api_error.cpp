@@ -37,7 +37,7 @@ last_api_error::last_api_error( char const * p ) noexcept
 
     std::size_t const   offset = p == nullptr
                                     ? 0
-                                    : strlen( m_message )
+                                    : std::strlen( m_message )
                                     ;
 
     DWORD const         dw = ::FormatMessageA(
