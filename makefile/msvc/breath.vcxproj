@@ -419,6 +419,7 @@
     <ClCompile Include="..\..\breath\text\brt\replace_all.cpp" />
     <ClCompile Include="..\..\breath\text\brt\set_of_chars.cpp" />
     <ClCompile Include="..\..\breath\text\brt\split.cpp" />
+    <ClCompile Include="..\..\breath\text\brt\tail.cpp" />
     <ClCompile Include="..\..\breath\text\brt\trim.cpp" />
     <ClCompile Include="..\..\breath\text\brt\trim_head.cpp" />
     <ClCompile Include="..\..\breath\text\brt\trim_tail.cpp" />
@@ -652,6 +653,7 @@
     <ClInclude Include="..\..\breath\text\replace_all.hpp" />
     <ClInclude Include="..\..\breath\text\set_of_chars.hpp" />
     <ClInclude Include="..\..\breath\text\split.hpp" />
+    <ClInclude Include="..\..\breath\text\tail.hpp" />
     <ClInclude Include="..\..\breath\text\to_string.hpp" />
     <ClInclude Include="..\..\breath\text\trim.hpp" />
     <ClInclude Include="..\..\breath\text\trim_head.hpp" />

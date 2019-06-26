@@ -303,6 +303,9 @@
     <ClCompile Include="..\..\breath\mathematics\test\representation_in_base_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\text\brt\tail.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\algorithm\brt\accumulate.tpp" />
@@ -684,6 +687,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\cpu\get_cpuid_info.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\text\tail.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
