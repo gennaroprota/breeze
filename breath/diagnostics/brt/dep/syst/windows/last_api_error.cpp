@@ -43,8 +43,6 @@ last_api_error::last_api_error( char const * p ) noexcept
     DWORD const         dw = ::FormatMessageA(
         FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
         nullptr,
-        // this cast silences a -Wconversion warning under Cygwin64
-        // (which typedefs DWORD to unsigned int)
         static_cast< DWORD >( m_last_error ),
         0,
         m_message + offset,
@@ -71,7 +69,7 @@ last_api_error::~last_api_error() noexcept
 {
 }
 
-unsigned long
+long long
 last_api_error::code() const noexcept
 {
     return m_last_error ;

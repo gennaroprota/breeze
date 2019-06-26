@@ -19,19 +19,8 @@ namespace breath {
 
 char const          strerror_r_failed[] = "strerror_r failed: see error code" ;
 
-last_api_error::last_api_error() noexcept
-    : m_errno( errno )
-{
-    int const           ret = strerror_r( m_errno,
-                                          &m_message[ 0 ],
-                                          sizeof m_message - 1 ) ;
-    if ( ret != 0 ) {
-        strcpy( &m_message[ 0 ], strerror_r_failed ) ;
-    }
-}
-
 last_api_error::last_api_error( char const * p ) noexcept
-    : m_errno( errno )
+    : m_last_error( errno )
 {
     //! \todo
     //! Most of this code is duplicated with the Windows variant.
@@ -56,7 +45,8 @@ last_api_error::last_api_error( char const * p ) noexcept
                                     : strlen( m_message )
                                     ;
 
-    int  const                   ret = strerror_r( m_errno,
+    int  const                   ret = strerror_r( static_cast< int >(
+                                                       m_last_error ),
                                                    m_message + offset,
                                                    sizeof m_message - 1 ) ;
     if ( ret != 0 ) {
@@ -66,7 +56,7 @@ last_api_error::last_api_error( char const * p ) noexcept
 }
 
 last_api_error::last_api_error( last_api_error const & other ) noexcept
-    :   exception( other ), m_errno( other.m_errno )
+    :   exception( other ), m_last_error( other.m_last_error )
 {
     strcpy( &m_message[ 0 ], &other.m_message[ 0 ] ) ;
 }
@@ -75,10 +65,10 @@ last_api_error::~last_api_error() noexcept
 {
 }
 
-int
+long long
 last_api_error::code() const noexcept
 {
-    return m_errno ;
+    return m_last_error ;
 }
 
 char const *
