@@ -65,7 +65,7 @@ merkle_damgard_machine< Engine>::push_back( byte_type b )
     increase_count( byte_width ) ;
 
     if ( index == ( block_length - 1 ) ) {
-        this->compress() ;
+        compress() ;
     }
 }
 
@@ -151,7 +151,7 @@ merkle_damgard_machine< Engine >::do_append( RandomIter begin,
 
         std::copy( curr, curr + avail,
             breath::begin( m_input_buffer ) + index ) ;
-        this->compress() ;
+        compress() ;
         index = 0 ;
     }
 
