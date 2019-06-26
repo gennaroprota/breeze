@@ -112,7 +112,7 @@ soon as possible.
 ## Acknowledgments
 
 My most heartfelt thank you goes to James Kanze, without whom I wouldn't be the
-programmer that I am.
+programmer I am.
 
 
 [//]: # (
