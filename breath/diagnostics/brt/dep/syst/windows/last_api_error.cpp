@@ -26,15 +26,19 @@ last_api_error::last_api_error( char const * p ) noexcept
 
     if ( p != nullptr ) {
         std::strncpy( m_message, p, max_incipit_size ) ;
+
+        std::size_t const   len = std::strlen( p ) ;
+
+        char const          sep[] = ": " ;
+        if ( len != 0 ) {
+            std::strcpy( m_message + len, sep ) ;
+        }
     }
-    char const          sep[] = ": " ;
+
     std::size_t const   offset = p == nullptr
                                     ? 0
-                                    : strlen( p ) + sizeof sep - 1
+                                    : strlen( m_message )
                                     ;
-    if ( p != nullptr ) {
-        std::strcpy( m_message + (offset - sizeof sep + 1), sep ) ;
-    }
 
     DWORD const         dw = ::FormatMessageA(
         FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
