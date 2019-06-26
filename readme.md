@@ -15,8 +15,9 @@ range from cryptography (MD5, SHA-1, SHA-2) to string utilities, operating
 system identification and much more. You'll get a precise idea by exploring the
 breath/ subdirectory of the source tree.
 
-The library has been developed over a period of about 16 years (as of June 2019)
-and I don't claim that all of it is of production quality.
+The library has been developed, in my spare time, over a period of about 16
+years (as of June 2019) and I don't claim that all of it is of production
+quality.
 
 Some components don't take full advantage of the latest standards (e.g. they
 don't use `noexcept`) and some are or will be superseded by standard components
