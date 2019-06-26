@@ -42,7 +42,11 @@ private:
     uint16_t            m_clock_seq ;
     uint8_t             m_node[ 6 ] ;
 
-    friend std::ostream & operator <<( std::ostream &, uuid const & ) ;
+    //!     Outputs \c uu to the provided \c std::ostream, as prescribed
+    //!     by RFC 4122 (in particular, the letters 'a' to 'f' are
+    //!     output as lowercase).
+    // -----------------------------------------------------------------------
+    friend std::ostream & operator <<( std::ostream &, uuid const & uu ) ;
 } ;
 
 }
