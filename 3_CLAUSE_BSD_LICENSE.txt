@@ -1,5 +1,5 @@
 The Breath library is made available subject to the terms of the 3-Clause BSD
-License, reproduced below for your convenience.
+License, reproduced below.
 
 Note:
     this license is also known as "New BSD License" (as documented at the site
