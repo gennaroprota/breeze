@@ -25,6 +25,7 @@ do_tests()
     BREATH_CHECK( breath::tail( "", 1   ) == "" ) ;
     BREATH_CHECK( breath::tail( "", 100 ) == "" ) ;
 
+    BREATH_CHECK( breath::tail( "hello", 0   ) == "" ) ;
     BREATH_CHECK( breath::tail( "hello", 2   ) == "lo" ) ;
     BREATH_CHECK( breath::tail( "hello", 5   ) == "hello" ) ;
     BREATH_CHECK( breath::tail( "hello", 6   ) == "hello" ) ;
