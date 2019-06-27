@@ -81,9 +81,10 @@ basic_format_saver< Ch, Traits >::basic_format_saver(
     :   m_user_stream( user_stream ),
         m_store( user_stream.rdbuf() )
 {
-    // note that there can still be an exception, for instance because
-    // copyfmt() fails to allocate memory in which to copy the
-    // iword()/pword() elements
+    //      Note that there can still be an exception, for instance
+    //      because copyfmt() fails to allocate memory in which to copy
+    //      the iword()/pword() elements.
+    // -----------------------------------------------------------------------
     try {
         m_store.copyfmt( m_user_stream ) ;
     } catch ( ios_failure_type & ) {
@@ -93,80 +94,87 @@ basic_format_saver< Ch, Traits >::basic_format_saver(
 template< typename Ch, typename Traits >
 basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
 {
-    // We prepare m_store for the data (besides those that copyfmt()
-    // won't copy anyway) we don't want to restore: tie, locale,
-    // exception mask.
+    //      We prepare m_store for the data (besides those that
+    //      copyfmt() won't copy anyway) we don't want to restore: tie,
+    //      locale, exception mask.
 
-    // [tie]
-    // I'm not sure whether the intent is for copyfmt to copy the tie
-    // pointer, too. The standard looks unclear and as a matter of
-    // fact some libraries copy it (e.g. libstdc++), some don't. So we
-    // just play safe...
+    //      [tie]
+    //
+    //      I'm not sure whether the intent is for copyfmt to copy the
+    //      tie pointer, too. The standard looks unclear and as a matter
+    //      of fact some libraries copy it (e.g. libstdc++), some don't.
+    //      So we just play safe...
+    //
+    //      Note: the C++11 standard is clear: tie() shall be copied.
+    // -----------------------------------------------------------------------
     try {
         m_store.tie( m_user_stream.tie() ) ;
     } catch ( ... ) {
     }
 
-    // [locale]
+    //      [locale]
     //
-    // To avoid needless invocations of callbacks I had an if here:
+    //      To avoid needless invocations of callbacks I had an if here:
     //
-    //      if ( m_store.ios_base::getloc() != m_user_stream.getloc() )
+    //        if ( m_store.ios_base::getloc() != m_user_stream.getloc() )
     //
-    // which I've removed due to what I think is a bug in VC8's Dinkum
-    // lib:
+    //      which I've removed due to what I think is a bug in VC8's
+    //      Dinkum lib:
     //
-    //      std::locale const & tmp( std::locale( "C" ) ) ;
-    //      std::locale loc( tmp, new dummy_facet ) ;
+    //        std::locale const & tmp( std::locale( "C" ) ) ;
+    //        std::locale loc( tmp, new dummy_facet ) ;
     //
-    // constructs, contrarily to [lib.locale], a named locale loc
-    // (with name "C") and this in turn makes tmp == loc yield true,
-    // even though the locales must clearly be different.
-    //
+    //      constructs, contrarily to [lib.locale], a named locale loc
+    //      (with name "C") and this in turn makes tmp == loc yield
+    //      true, even though the locales must clearly be different.
+    // -----------------------------------------------------------------------
     {
-        // so that the locale is NOT restored
-        // (but what about callbacks? -gps)
+        //      So that the locale is NOT restored
+        //      (but what about callbacks? -gps).
+        // -------------------------------------------------------------------
         m_store.std::ios_base::imbue( m_user_stream.getloc() ) ;
     }
 
-    // [exception mask]
+    //      [exception mask]
+    // -----------------------------------------------------------------------
     try {
         m_store.exceptions( m_user_stream.exceptions() ) ; // ok?? and gps what can this throw?
     } catch ( ios_failure_type & ) {
     }
 
-    // The question arises here of what state the stream should be
-    // left in if copyfmt() exits with an exception (not due to the last
-    // assignment, which copies the exception mask).
+    //      The question arises here of what state the stream should be
+    //      left in if copyfmt() exits with an exception (not due to the
+    //      last assignment, which copies the exception mask).
     //
-    // The standard provides NO GUARANTEE.
-    // The standard doesn't require the strong guarantee but it is
-    // easy to provide: none of the callbacks is allowed to throw
-    // [27.4.2.6] and the only reasonable source of such an exception
-    // is a dynamic allocation. So the implementation can attempt the
-    // allocation before anything else and do nothing if it fails. But
-    // is this the best thing to do? It could be argued that it would
-    // be better to copy the "normal" members (fmtflags, fill, etc.)
-    // anyway, leaving only the extended info uncopied.
+    //      The standard provides NO GUARANTEE.
+    //      The standard doesn't require the strong guarantee but it is
+    //      easy to provide: none of the callbacks is allowed to throw
+    //      [27.4.2.6] and the only reasonable source of such an
+    //      exception is a dynamic allocation. So the implementation can
+    //      attempt the allocation before anything else and do nothing
+    //      if it fails. But is this the best thing to do? It could be
+    //      argued that it would be better to copy the "normal" members
+    //      (fmtflags, fill, etc.) anyway, leaving only the extended
+    //      info uncopied.
     //
-    // An idea for C++0x --to be verified-- is using the new
-    // swap(basic_ios&& rhs) member function:
+    //      An idea for C++0x --to be verified-- is using the new
+    //      swap(basic_ios&& rhs) member function:
     //
-    //  temp.copyfmt( m_store ) ;
-    //  temp.swap( m_user_stream ) ;        // [FUTURE], [C++11]
+    //        temp.copyfmt( m_store ) ;
+    //        temp.swap( m_user_stream ) ;        // [FUTURE], [C++11]
     //
-    // This way, we could still guarantee a copy of the normal members
-    // when copyfmt fails.
-    //
+    //      This way, we could still guarantee a copy of the normal
+    //      members when copyfmt fails.
+    // -----------------------------------------------------------------------
     try {
         m_user_stream.copyfmt( m_store ) ;  // what about callbacks?
     } catch ( ios_failure_type & ) {
         // OK
     } catch ( ... ) {
-        // NOT OK:
-        // an exception not due to setting the state
-        // so an allocation error or something else:
-        // we don't know in what state the stream is now :-( gps
+        //      NOT OK: an exception not due to setting the state so an
+        //      allocation error or something else: we don't know in
+        //      what state the stream is now :-( gps
+        // -------------------------------------------------------------------
         try {
             m_user_stream.setstate( std::ios_base::badbit ) ;
         } catch ( ... ) {
