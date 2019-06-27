@@ -85,7 +85,7 @@ namespace breath {
 //!
 //!     This template was born as a further elaboration of a class by
 //!     James Kanze, named \c IOSave. And it was a comment in his code
-//!     to suggest using \c copyfmt, in order to save the additional
+//!     to suggest using \c copyfmt(), in order to save the additional
 //!     stream info. James also gave, as usual, excellent feedback on
 //!     various design issues, in particular about locales and imbue.
 // ---------------------------------------------------------------------------

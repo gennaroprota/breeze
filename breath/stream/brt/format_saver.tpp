@@ -100,7 +100,7 @@ basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
 
     //      [tie]
     //
-    //      I'm not sure whether the intent is for copyfmt to copy the
+    //      I'm not sure whether the intent is for copyfmt() to copy the
     //      tie pointer, too. The standard looks unclear and as a matter
     //      of fact some libraries copy it (e.g. libstdc++), some don't.
     //      So we just play safe...
@@ -164,7 +164,7 @@ basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
     //        temp.swap( m_user_stream ) ;        // [FUTURE], [C++11]
     //
     //      This way, we could still guarantee a copy of the normal
-    //      members when copyfmt fails.
+    //      members when copyfmt() fails.
     // -----------------------------------------------------------------------
     try {
         m_user_stream.copyfmt( m_store ) ;  // what about callbacks?
