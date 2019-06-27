@@ -16,7 +16,8 @@ namespace breath {
 
 //!     \return
 //!         If <code>count >= s.length()</code>, \c s; otherwise the
-//!         string composed of the last \c count characters of \c s.
+//!         string composed of the last \c count characters of \c s (an
+//!         empty string if <code>count == 0</code>).
 // ---------------------------------------------------------------------------
 std::string         tail( std::string const & s, std::size_t count ) ;
 
