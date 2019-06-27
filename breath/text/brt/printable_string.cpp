@@ -89,7 +89,7 @@ operator <<( std::ostream & dest, printable_string const & ps )
             break ;
 
         default:
-            // Note: if you change this values, keep the documentation
+            // Note: if you change these values, keep the documentation
             //       in sync.
             // ---------------------------------------------------------------
             char const      printable_min = 0x20 ;
