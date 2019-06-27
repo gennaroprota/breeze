@@ -111,8 +111,8 @@ soon as possible.
 
 ## Acknowledgments
 
-My most heartfelt thank you goes to James Kanze, without whom I wouldn't be the
-programmer I am.
+My most heartfelt *thank you* goes to James Kanze, without whom I wouldn't be
+the programmer I am.
 
 
 [//]: # (
