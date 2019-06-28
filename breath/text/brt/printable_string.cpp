@@ -97,10 +97,11 @@ operator <<( std::ostream & dest, printable_string const & ps )
             if ( printable_min <= c && c <= printable_max ) {
                 dest << c ;
             }  else {
-                static_assert( CHAR_BIT == 8, "please, adjust the setw()"
-                                                                    " below") ;
+                int const       width = CHAR_BIT / 4 + ( CHAR_BIT % 4 != 0
+                                                            ? 1
+                                                            : 0 ) ;
                 dest << "\\x"
-                     << std::setw( 2 )
+                     << std::setw( width )
                      << static_cast< unsigned int >(
                          static_cast< unsigned char>( c ) ) ;
             }
