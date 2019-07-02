@@ -65,7 +65,7 @@ digest< Hasher >::end() const
 template< typename Ch, typename Tr, typename Hasher >
 std::basic_ostream< Ch, Tr > &
 operator <<( std::basic_ostream< Ch, Tr >   & os,
-             breath::digest< Hasher > const & d )
+             digest< Hasher > const & d )
 {
     enum
     {
@@ -81,7 +81,7 @@ operator <<( std::basic_ostream< Ch, Tr >   & os,
                       && sizeof digits == ( 2 + mask ),
                     "wrong bits_per_digit and/or bits_per_byte" ) ;
 
-    typedef typename breath::digest< Hasher >::const_iterator
+    typedef typename digest< Hasher >::const_iterator
                         it_type ;
     for ( it_type it( d.begin() ) ; it != d.end() ; ++ it ) {
         for ( int t = bits_per_byte - bits_per_digit ;
@@ -95,7 +95,7 @@ operator <<( std::basic_ostream< Ch, Tr >   & os,
 }
 
 template< typename Hasher >
-breath::digest< Hasher >
+digest< Hasher >
 make_digest( Hasher const & h )
 {
     return digest< Hasher >( h ) ;

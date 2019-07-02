@@ -71,7 +71,7 @@ private:
     enum { max_words =   ( length_exp / bits_per_word )
                      + ( ( length_exp % bits_per_word ) ? 1 : 0 ) } ;
 
-    typedef breath::endian_codec< EndianPolicy, word_type, byte_type >
+    typedef endian_codec< EndianPolicy, word_type, byte_type >
                         word_codec ;
 
 public:
