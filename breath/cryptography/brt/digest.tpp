@@ -95,7 +95,8 @@ operator <<( std::basic_ostream< Ch, Tr >   & os,
 }
 
 template< typename Hasher >
-breath::digest< Hasher > make_digest( Hasher const & h )
+breath::digest< Hasher >
+make_digest( Hasher const & h )
 {
     return digest< Hasher >( h ) ;
 }

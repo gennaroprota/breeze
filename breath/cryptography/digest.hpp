@@ -70,8 +70,8 @@ private:
 // ---------------------------------------------------------------------------
 template< typename Ch, typename Tr, typename Hasher >
 std::basic_ostream< Ch, Tr > &
-operator <<( std::basic_ostream< Ch, Tr >   & os,
-            breath::digest< Hasher > const & d ) ;
+                    operator <<( std::basic_ostream< Ch, Tr >   & os,
+                                 breath::digest< Hasher > const & d ) ;
 
 //      make_digest():
 //      ==============
@@ -82,7 +82,7 @@ operator <<( std::basic_ostream< Ch, Tr >   & os,
 //!         digest< Hasher >( h )
 // ---------------------------------------------------------------------------
 template< typename Hasher >
-digest< Hasher > make_digest( Hasher const & h ) ;
+digest< Hasher >    make_digest( Hasher const & h ) ;
 
 }
 
