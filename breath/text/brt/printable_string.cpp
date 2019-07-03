@@ -98,8 +98,9 @@ operator <<( std::ostream & dest, printable_string const & ps )
             if ( printable_min <= c && c <= printable_max ) {
                 dest << c ;
             }  else {
-                int const       width = CHAR_BIT / 4 +
-                    ( breath::as_non_constant( CHAR_BIT % 4 ) != 0
+                int const       bits_per_hex_digit = 4 ;
+                int const       width = CHAR_BIT / bits_per_hex_digit +
+                 ( breath::as_non_constant( CHAR_BIT % bits_per_hex_digit ) != 0
                                                 ? 1
                                                 : 0 ) ;
                 dest << "\\x"
