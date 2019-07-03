@@ -342,6 +342,7 @@
     <None Include="..\..\breath\text\brt\trim_tail_if.tpp" />
     <None Include="..\..\breath\text\brt\trim_head_if.tpp" />
     <None Include="..\..\breath\text\brt\trim_if.tpp" />
+    <None Include="..\..\breath\workaround\brt\as_non_constant.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\accumulate.hpp">
@@ -690,6 +691,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\text\tail.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\workaround\as_non_constant.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

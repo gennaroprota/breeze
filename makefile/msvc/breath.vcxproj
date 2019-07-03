@@ -550,6 +550,7 @@
     <None Include="..\..\breath\text\brt\trim_tail_if.tpp" />
     <None Include="..\..\breath\time\brt\timer.tpp" />
     <None Include="..\..\breath\type_identification\brt\readable_type_name.tpp" />
+    <None Include="..\..\breath\workaround\brt\as_non_constant.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\accumulate.hpp" />
@@ -668,6 +669,7 @@
     <ClInclude Include="..\..\breath\time\windows_only\performance_counter_policy.hpp" />
     <ClInclude Include="..\..\breath\type_identification\readable_type_name.hpp" />
     <ClInclude Include="..\..\breath\uuid\uuid.hpp" />
+    <ClInclude Include="..\..\breath\workaround\as_non_constant.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\3_CLAUSE_BSD_LICENSE.txt" />

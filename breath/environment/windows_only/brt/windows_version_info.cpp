@@ -15,6 +15,7 @@
 #include "breath/diagnostics/last_api_error.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/text/to_string.hpp"
+#include "breath/workaround/as_non_constant.hpp"
 
 #define UNICODE
 #include <Windows.h>
@@ -56,16 +57,6 @@ private:
 raise_api_exception( char const * msg )
 {
     throw breath::last_api_error( msg ) ;
-}
-
-//      Used to workaround two Visual Studio /analyze warnings (C6286
-//      and C6326).
-// ---------------------------------------------------------------------------
-template< typename T >
-T
-make_non_const( T value )
-{
-    return value ;
 }
 
 }
@@ -386,7 +377,7 @@ windows_version_info::is_64_bit()
     //      and the system is 64-bit if and only if the process runs
     //      under WOW64.
     // -----------------------------------------------------------------------
-    return ( make_non_const( sizeof ( void * ) * CHAR_BIT ) == 64 )
+    return ( breath::as_non_constant( sizeof ( void * ) * CHAR_BIT ) == 64 )
         || is_wow64_process() ;
 }
 

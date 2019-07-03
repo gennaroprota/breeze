@@ -14,6 +14,7 @@
 
 #include "breath/text/printable_string.hpp"
 #include "breath/stream/format_saver.hpp"
+#include "breath/workaround/as_non_constant.hpp"
 #include <climits>
 #include <iomanip>
 #include <ios>
@@ -97,9 +98,10 @@ operator <<( std::ostream & dest, printable_string const & ps )
             if ( printable_min <= c && c <= printable_max ) {
                 dest << c ;
             }  else {
-                int const       width = CHAR_BIT / 4 + ( CHAR_BIT % 4 != 0
-                                                            ? 1
-                                                            : 0 ) ;
+                int const       width = CHAR_BIT / 4 +
+                    ( breath::as_non_constant( CHAR_BIT % 4 ) != 0
+                                                ? 1
+                                                : 0 ) ;
                 dest << "\\x"
                      << std::setw( width )
                      << static_cast< unsigned int >(
