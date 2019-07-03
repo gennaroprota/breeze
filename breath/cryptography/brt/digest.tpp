@@ -69,24 +69,25 @@ operator <<( std::basic_ostream< Ch, Tr >   & os,
 {
     enum
     {
-        bits_per_digit = 4, // hex base
+        bits_per_hex_digit = 4,
         bits_per_byte  = Hasher::byte_width
     } ;
 
     static char const   digits[] = "0123456789abcdef" ;
-    unsigned const      mask = ( 1u << bits_per_digit ) - 1 ;
+    unsigned const      mask = ( 1u << bits_per_hex_digit ) - 1 ;
 
     static_assert(
-                    0 < bits_per_digit && bits_per_byte % bits_per_digit == 0
-                      && sizeof digits == ( 2 + mask ),
-                    "wrong bits_per_digit and/or bits_per_byte" ) ;
+                    0 < bits_per_hex_digit &&
+                        bits_per_byte % bits_per_hex_digit == 0 &&
+                        sizeof digits == ( 2 + mask ),
+                    "wrong bits_per_hex_digit and/or bits_per_byte" ) ;
 
     typedef typename digest< Hasher >::const_iterator
                         it_type ;
     for ( it_type it( d.begin() ) ; it != d.end() ; ++ it ) {
-        for ( int t = bits_per_byte - bits_per_digit ;
+        for ( int t = bits_per_byte - bits_per_hex_digit ;
                 t >= 0 ;
-                t -= bits_per_digit ) {
+                t -= bits_per_hex_digit ) {
             os.put( os.widen( digits[ *it >> t & mask ] ) ) ;
         }
     }
