@@ -50,7 +50,7 @@ uuid::uuid( uuid::variant var, uuid::version ver )
     //      + 18 years and 5 leap days.
     // -----------------------------------------------------------------------
     FILETIME            ft ;
-    ::GetSystemTimeAsFileTime( &ft ) ;
+    GetSystemTimeAsFileTime( &ft ) ;
     std::uint64_t const time_stamp =
                                  to_uint64( ft ) +
                                  std::uint64_t( 1000 * 1000 * 10 )
