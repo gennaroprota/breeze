@@ -40,14 +40,15 @@ namespace breath {
 
 uuid::uuid( uuid::variant var, uuid::version ver )
 {
-    // other variants/versions not implemented
+    //      Other variants/versions not implemented.
+    // -----------------------------------------------------------------------
     BREATH_ASSERT( var == rfc_4122 && ver == time_based ) ;
 
-    // NT keeps time in FILETIME format, which is 100ns ticks since
-    // Jan 1, 1601.  UUIDs use time in 100ns ticks since Oct 15, 1582.
-    // The difference is 17 Days in Oct + 30 (Nov) + 31 (Dec)
-    // + 18 years and 5 leap days.
-    //
+    //      NT keeps time in FILETIME format, which is 100ns ticks since
+    //      Jan 1, 1601. UUIDs use time in 100ns ticks since Oct 15,
+    //      1582. The difference is 17 Days in Oct + 30 (Nov) + 31 (Dec)
+    //      + 18 years and 5 leap days.
+    // -----------------------------------------------------------------------
     FILETIME            ft ;
     ::GetSystemTimeAsFileTime( &ft ) ;
     std::uint64_t const time_stamp =
