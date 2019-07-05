@@ -24,6 +24,18 @@
 #include <ostream>
 #include <Windows.h>
 
+namespace {
+
+std::uint64_t
+to_uint64( FILETIME const & ft )
+{
+    int const           dword_bits = 32 ;
+    return ( static_cast< std::uint64_t >( ft.dwHighDateTime ) << dword_bits ) |
+           ft.dwLowDateTime ;
+}
+
+}
+
 namespace breath {
 
 uuid::uuid( uuid::variant var, uuid::version ver )
@@ -39,7 +51,7 @@ uuid::uuid( uuid::variant var, uuid::version ver )
     FILETIME            ft ;
     ::GetSystemTimeAsFileTime( &ft ) ;
     std::uint64_t const time_stamp =
-                              reinterpret_cast< std::uint64_t const & >( ft ) +
+                                 to_uint64( ft ) +
                                  std::uint64_t( 1000 * 1000 * 10 )
                                * std::uint64_t( 60 * 60 * 24 )
                                * std::uint64_t( 17 + 30 + 31 + 365 * 18 + 5 ) ;
