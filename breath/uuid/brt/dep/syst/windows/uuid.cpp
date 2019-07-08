@@ -18,11 +18,12 @@
 #include "breath/random/entropy_source.hpp"
 #include "breath/stream/format_saver.hpp"
 
+#include <Windows.h>
+
 #include <cstddef>
 #include <cstdint>
 #include <iomanip>
 #include <ostream>
-#include <Windows.h>
 
 namespace {
 
