@@ -104,10 +104,10 @@ operator <<( std::ostream & os, uuid const & uu )
     os.fill( '0' ) ;
     os.unsetf( std::ios_base::uppercase ) ;
 
-    output_as_hex( os, uu.m_time_low ) << '-' ;
-    output_as_hex( os, uu.m_time_mid ) << '-' ;
+    output_as_hex( os, uu.m_time_low )            << '-' ;
+    output_as_hex( os, uu.m_time_mid )            << '-' ;
     output_as_hex( os, uu.m_time_hi_and_version ) << '-' ;
-    output_as_hex( os, uu.m_clock_seq ) << '-' ;
+    output_as_hex( os, uu.m_clock_seq )           << '-' ;
     for ( std::size_t i = 0 ; i < count( uu.m_node ) ; ++ i ) {
         output_as_hex( os, uu.m_node[ i ] ) ;
     }
