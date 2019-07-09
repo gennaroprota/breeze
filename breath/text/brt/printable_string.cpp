@@ -42,7 +42,10 @@ operator <<( std::ostream & dest, printable_string const & ps )
     }
 
     format_saver const  saver( dest ) ;
+
     dest.setf( std::ios_base::hex, std::ios_base::basefield ) ;
+    dest.setf( std::ios_base::right, std::ios_base::adjustfield ) ;
+    dest.unsetf( std::ios_base::showbase ) ;
     dest.fill( '0' ) ;
 
     dest << '\"' ;

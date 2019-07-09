@@ -34,6 +34,8 @@ main()
         printable_string    p( "\'\"\?\\\a\b\f\n\r\t\v\x1\x2\x3\x1F\x20\x7e\x7F"
                                "\xA0\xFF" ) ;
         std::ostringstream  ss ;
+        ss.setf( std::ios_base::left, std::ios_base::adjustfield ) ;
+        ss.setf( std::ios_base::showbase ) ;
         ss << p ;
         DO_TEST( ss.str() == "\"'\\\"\\?\\\\\\a\\b\\f\\n\\r\\t\\v\\x01\\x02"
                              "\\x03\\x1f ~\\x7f\\xa0\\xff\"") ;
