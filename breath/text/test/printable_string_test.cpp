@@ -24,7 +24,8 @@ main()
     using breath::printable_string ;
 
     {
-        printable_string    p( nullptr ) ;
+        printable_string const
+                            p( nullptr ) ;
         std::ostringstream  ss ;
         ss << p ;
         DO_TEST( ! ss.fail() ) ;
@@ -32,7 +33,8 @@ main()
     }
 
     {
-        printable_string    p( "\'\"\?\\\a\b\f\n\r\t\v\x1\x2\x3\x1F\x20\x7e\x7F"
+        printable_string const
+                            p( "\'\"\?\\\a\b\f\n\r\t\v\x1\x2\x3\x1F\x20\x7e\x7F"
                                "\xA0\xFF" ) ;
         std::ostringstream  ss ;
         ss.setf( std::ios_base::left, std::ios_base::adjustfield ) ;
@@ -44,7 +46,8 @@ main()
     }
 
     {
-        printable_string    no_trigraph( "\?\?!" ) ;
+        printable_string const
+                            no_trigraph( "\?\?!" ) ;
         std::ostringstream  ss ;
         ss << no_trigraph ;
         DO_TEST( ! ss.fail() ) ;
