@@ -102,6 +102,9 @@ operator <<( std::ostream & os, uuid const & uu )
     format_saver const  saver( os ) ;
 
     os.fill( '0' ) ;
+
+    os.setf( std::ios_base::right, std::ios_base::adjustfield ) ;
+    os.unsetf( std::ios_base::showbase ) ;
     os.unsetf( std::ios_base::uppercase ) ;
 
     output_as_hex( os, uu.m_time_low )            << '-' ;
