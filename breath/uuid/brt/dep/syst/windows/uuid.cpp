@@ -86,7 +86,8 @@ output_as_hex( std::ostream & os, T value )
     int const           bits_per_hex_digit = 4 ;
     int const           hex_digits_per_value = meta::width< T >::value /
                                                bits_per_hex_digit ;
-    os << std::hex ;
+
+    os.setf( std::ios_base::hex, std::ios_base::basefield ) ;
 
     //      About the static_cast: see the note near the declarations of
     //      the class data members. Keep in sync.
