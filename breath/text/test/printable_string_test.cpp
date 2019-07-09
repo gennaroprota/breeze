@@ -27,6 +27,7 @@ main()
         printable_string    p( nullptr ) ;
         std::ostringstream  ss ;
         ss << p ;
+        DO_TEST( ! ss.fail() ) ;
         DO_TEST( ss.str() == "(null)" ) ;
     }
 
@@ -37,6 +38,7 @@ main()
         ss.setf( std::ios_base::left, std::ios_base::adjustfield ) ;
         ss.setf( std::ios_base::showbase ) ;
         ss << p ;
+        DO_TEST( ! ss.fail() ) ;
         DO_TEST( ss.str() == "\"'\\\"\\?\\\\\\a\\b\\f\\n\\r\\t\\v\\x01\\x02"
                              "\\x03\\x1f ~\\x7f\\xa0\\xff\"") ;
     }
@@ -45,6 +47,7 @@ main()
         printable_string    no_trigraph( "\?\?!" ) ;
         std::ostringstream  ss ;
         ss << no_trigraph ;
+        DO_TEST( ! ss.fail() ) ;
         DO_TEST( ss.str() == "\"\\?\\?!\"" ) ;
     }
 }
