@@ -149,13 +149,13 @@ basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
     //      The standard provides NO GUARANTEE.
     //      The standard doesn't require the strong guarantee but it is
     //      easy to provide: none of the callbacks is allowed to throw
-    //      [27.4.2.6] and the only reasonable source of such an
-    //      exception is a dynamic allocation. So the implementation can
-    //      attempt the allocation before anything else and do nothing
-    //      if it fails. But is this the best thing to do? It could be
-    //      argued that it would be better to copy the "normal" members
-    //      (fmtflags, fill, etc.) anyway, leaving only the extended
-    //      info uncopied.
+    //      [(lib.)ios.base.callback] and the only reasonable source of
+    //      such an exception is a dynamic allocation. So the
+    //      implementation can attempt the allocation before anything
+    //      else and do nothing if it fails. But is this the best thing
+    //      to do? It could be argued that it would be better to copy
+    //      the "normal" members (fmtflags, fill, etc.) anyway, leaving
+    //      only the extended info uncopied.
     //
     //      An idea for C++0x --to be verified-- is using the new
     //      swap(basic_ios&& rhs) member function:
