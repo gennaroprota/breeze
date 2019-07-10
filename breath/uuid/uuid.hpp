@@ -36,7 +36,15 @@ public:
     variant_type        variant() const noexcept ;
     version_type        version() const noexcept ;
 
+    //!     \return
+    //!         A nil uuid, i.e. a uuid that has all 128 bits set to
+    //!         zero.
+    // -----------------------------------------------------------------------
+    static uuid         nil() noexcept ;
+
 private:
+                        uuid() noexcept ;
+
     //      Note: the stream inserter assumes the largest type, here, is
     //      uint32_t. Keep in sync.
     // -----------------------------------------------------------------------

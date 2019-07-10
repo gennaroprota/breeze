@@ -89,6 +89,21 @@ uuid::version() const noexcept
     return static_cast< version_type >( version_number ) ;
 }
 
+uuid
+uuid::nil() noexcept
+{
+    return uuid() ;
+}
+
+uuid::uuid() noexcept
+    :   m_time_low( 0 ),
+        m_time_mid( 0 ),
+        m_time_hi_and_version( 0 ),
+        m_clock_seq( 0 ),
+        m_node()
+{
+}
+
 
 template< typename T >
 std::ostream &
