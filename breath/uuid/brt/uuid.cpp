@@ -28,7 +28,7 @@
 
 namespace breath {
 
-uuid::uuid( uuid::variant var, uuid::version ver )
+uuid::uuid( uuid::variant_type var, uuid::version_type ver )
 {
     //      Other variants/versions not implemented.
     // -----------------------------------------------------------------------
@@ -56,6 +56,39 @@ uuid::uuid( uuid::variant var, uuid::version ver )
     }
     m_node[ 0 ] |= 1 ;
 }
+
+uuid::variant_type
+uuid::variant() const noexcept
+{
+    //      Reference: RFC 4122
+    // -----------------------------------------------------------------------
+    std::uint8_t const  octet8 = m_clock_seq >> 8 ;
+    std::uint8_t const  high3 = octet8 >> 5 ;
+
+    if ( ( high3 & 0b100 ) == 0 ) {
+        return ncs ;
+    } else if ( ( high3 & 0b110 ) == 0b100 ) {
+        return rfc_4122 ;
+    } else if ( ( high3 & 0b111 ) == 0b110 ) {
+        return microsoft ;
+    } else {
+        BREATH_ASSERT( ( high3 & 0b111 ) == 0b111 ) ;
+        return future ;
+    }
+
+}
+
+uuid::version_type
+uuid::version() const noexcept
+{
+    //      Reference: RFC 4122
+    // -----------------------------------------------------------------------
+    std::uint8_t const  version_number = m_time_hi_and_version >> 12 ;
+
+    BREATH_ASSERT( 1 <= version_number && version_number <= 5 ) ;
+    return static_cast< version_type >( version_number ) ;
+}
+
 
 template< typename T >
 std::ostream &

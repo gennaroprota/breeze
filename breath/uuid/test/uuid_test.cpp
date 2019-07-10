@@ -24,8 +24,11 @@ void
 do_tests()
 {
     breath::uuid const  uu( breath::uuid::rfc_4122, breath::uuid::time_based ) ;
-    std::string const   representation = breath::to_string( uu ) ;
 
+    BREATH_CHECK( uu.variant() == breath::uuid::rfc_4122 ) ;
+    BREATH_CHECK( uu.version() == breath::uuid::time_based ) ;
+
+    std::string const   representation = breath::to_string( uu ) ;
     char const          hyphen = '-' ;
 
     BREATH_CHECK( representation[  8 ] == hyphen &&

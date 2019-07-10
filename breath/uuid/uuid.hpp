@@ -1,5 +1,5 @@
 // ===========================================================================
-//                        Copyright 2016 Gennaro Prota
+//                     Copyright 2016-2019 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -26,11 +26,15 @@ namespace breath {
 class uuid
 {
 public:
-    enum variant { ncs, rfc_4122, microsoft, future } ;
-    enum version { time_based, dce_security, name_based_md5, pseudo_random,
-                   name_based_sha1 } ;
+    enum variant_type { ncs, rfc_4122, microsoft, future } ;
 
-                        uuid( variant, version ) ;
+    enum version_type { time_based = 1, dce_security = 2, name_based_md5 = 3,
+                        pseudo_random = 4, name_based_sha1 = 5 } ;
+
+                        uuid( variant_type, version_type ) ;
+
+    variant_type        variant() const noexcept ;
+    version_type        version() const noexcept ;
 
 private:
     //      Note: the stream inserter assumes the largest type, here, is
