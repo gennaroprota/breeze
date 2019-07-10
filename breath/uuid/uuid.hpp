@@ -26,7 +26,7 @@ namespace breath {
 class uuid
 {
 public:
-    enum variant { reserved, rfc_4122, microsoft, future } ;
+    enum variant { ncs, rfc_4122, microsoft, future } ;
     enum version { time_based, dce_security, name_based_md5, pseudo_random,
                    name_based_sha1 } ;
 
