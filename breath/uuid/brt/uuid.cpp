@@ -42,9 +42,15 @@ adjusted_system_time()
 {
     int const           max_uuids_per_tick = 1024 ;
     static std::uint64_t
-                        last_time = breath::uuid_private::
-                                    system_time_for_uuid() ;
+                        last_time ; // no initializer, see if below
     static int          uuids_on_this_tick = 0 ;
+    static bool         is_first_call = true ;
+
+    if ( is_first_call ) {
+        last_time = breath::uuid_private::system_time_for_uuid() ;
+        is_first_call = false ;
+        return last_time ;
+    }
 
     std::uint64_t       now ;
     while ( true ) {
