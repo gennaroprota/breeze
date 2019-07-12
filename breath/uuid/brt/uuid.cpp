@@ -26,6 +26,48 @@
 #include <iomanip>
 #include <ostream>
 
+namespace {
+
+//      adjusted_system_time():
+//      =======================
+//
+//      Gets the system time and compensates for the fact that the
+//      system clock resolution is (or may be) less than 100ns, which is
+//      the resolution that would be required for UUIDs.
+//
+//      Note: this function is the reason why the uuid class is not
+//      thread-safe.
+// ---------------------------------------------------------------------------
+std::uint64_t
+adjusted_system_time()
+{
+    int const           max_uuids_per_tick = 1024 ;
+    static std::uint64_t
+                        last_time = breath::uuid_private::
+                                    system_time_for_uuid() ;
+    static int          uuids_on_this_tick = 0 ;
+
+    std::uint64_t       now ;
+    while ( true ) {
+        now = breath::uuid_private::system_time_for_uuid() ;
+        if ( last_time != now ) {
+            last_time = now ;
+            uuids_on_this_tick = 0 ;
+            break ;
+        } else if ( uuids_on_this_tick < max_uuids_per_tick ) {
+            ++ uuids_on_this_tick ;
+            break ;
+        }
+
+        // Requesting too many UUIDs on the same tick; busy wait.
+    }
+
+    return now + uuids_on_this_tick ;
+}
+
+}
+
+
 namespace breath {
 
 uuid::uuid() noexcept
@@ -43,7 +85,7 @@ uuid::uuid( uuid::variant_type var, uuid::version_type ver )
     // -----------------------------------------------------------------------
     BREATH_ASSERT( var == rfc_4122 && ver == time_based ) ;
 
-    std::uint64_t const time_stamp = uuid_private::system_time_for_uuid() ;
+    std::uint64_t const time_stamp = ::adjusted_system_time() ;
 
     m_time_low = time_stamp & 0xFFFF'FFFF ;
     m_time_mid = (time_stamp >> 32) & 0xFFFF ;
