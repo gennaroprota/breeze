@@ -31,20 +31,23 @@ public:
     enum version_type { time_based = 1, dce_security = 2, name_based_md5 = 3,
                         pseudo_random = 4, name_based_sha1 = 5 } ;
 
+    //!     Constructs a nil uuid, i.e. a uuid that has all 128 bits set
+    //!     to zero.
+    // -----------------------------------------------------------------------
+                        uuid() noexcept ;
                         uuid( variant_type, version_type ) ;
 
     variant_type        variant() const noexcept ;
     version_type        version() const noexcept ;
 
+    //!     A named alternative to the default constructor.
+    //!
     //!     \return
-    //!         A nil uuid, i.e. a uuid that has all 128 bits set to
-    //!         zero.
+    //!         uuid()
     // -----------------------------------------------------------------------
     static uuid         nil() noexcept ;
 
 private:
-                        uuid() noexcept ;
-
     //      Note: the stream inserter assumes the largest type, here, is
     //      uint32_t. Keep in sync.
     // -----------------------------------------------------------------------

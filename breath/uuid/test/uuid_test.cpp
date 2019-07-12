@@ -23,18 +23,27 @@ namespace {
 void
 do_tests()
 {
-    breath::uuid const  uu( breath::uuid::rfc_4122, breath::uuid::time_based ) ;
+    {
+        breath::uuid        nil ;
+        BREATH_CHECK( breath::to_string( nil ) ==
+                      "00000000-0000-0000-0000-000000000000" ) ;
+    }
 
-    BREATH_CHECK( uu.variant() == breath::uuid::rfc_4122 ) ;
-    BREATH_CHECK( uu.version() == breath::uuid::time_based ) ;
+    {
+        breath::uuid const  uu( breath::uuid::rfc_4122,
+                                breath::uuid::time_based ) ;
 
-    std::string const   representation = breath::to_string( uu ) ;
-    char const          hyphen = '-' ;
+        BREATH_CHECK( uu.variant() == breath::uuid::rfc_4122 ) ;
+        BREATH_CHECK( uu.version() == breath::uuid::time_based ) ;
 
-    BREATH_CHECK( representation[  8 ] == hyphen &&
-                  representation[ 13 ] == hyphen &&
-                  representation[ 18 ] == hyphen &&
-                  representation[ 23 ] == hyphen    ) ;
+        std::string const   representation = breath::to_string( uu ) ;
+        char const          hyphen = '-' ;
+
+        BREATH_CHECK( representation[  8 ] == hyphen &&
+                      representation[ 13 ] == hyphen &&
+                      representation[ 18 ] == hyphen &&
+                      representation[ 23 ] == hyphen    ) ;
+    }
 }
 
 }
