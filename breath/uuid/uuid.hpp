@@ -35,9 +35,25 @@ public:
     //!     to zero.
     // -----------------------------------------------------------------------
                         uuid() noexcept ;
+
+    //!     Constructs a uuid having the given variant and version.
+    // -----------------------------------------------------------------------
                         uuid( variant_type, version_type ) ;
 
+    //!     \pre
+    //!         *this is not a nil uuid.
+    //!
+    //!     \return
+    //!         The variant of the uuid.
+    // -----------------------------------------------------------------------
     variant_type        variant() const noexcept ;
+
+    //!     \pre
+    //!         *this is not a nil uuid.
+    //!
+    //!     \return
+    //!         The version of the uuid.
+    // -----------------------------------------------------------------------
     version_type        version() const noexcept ;
 
     //!     A named alternative to the default constructor.
