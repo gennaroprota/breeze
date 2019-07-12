@@ -124,7 +124,7 @@ uuid::variant() const noexcept
 {
     //      Reference: RFC 4122
     // -----------------------------------------------------------------------
-    std::uint8_t const  high3 = m_octets[ 8 ] >> 5 ;
+    int const           high3 = m_octets[ 8 ] >> 5 ;
 
     if ( ( high3 & 0b100 ) == 0 ) {
         return ncs ;
@@ -144,7 +144,7 @@ uuid::version() const noexcept
 {
     //      Reference: RFC 4122
     // -----------------------------------------------------------------------
-    std::uint8_t const  version_number = m_octets[ 6 ] >> 4 ;
+    int const           version_number = m_octets[ 6 ] >> 4 ;
 
     BREATH_ASSERT( 1 <= version_number && version_number <= 5 ) ;
     return static_cast< version_type >( version_number ) ;
