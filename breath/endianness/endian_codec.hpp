@@ -83,8 +83,10 @@ public:
         dest[ policy::template index< T, Byte, n - 1 >()
             ] = static_cast< Byte >( value ) ;
         next::encode(
-            // '* (n > 1)' silences spurious warnings
-            n > 1 ? ( value >> shift * (n > 1) ) : 0,
+            // '* (n > 1)' silences spurious warnings;
+            // the static_cast also silences a warning (GCC
+            // -Wconversion).
+            n > 1 ? static_cast< T >( value >> shift * (n > 1) ) : 0,
             dest ) ;
     }
 
