@@ -42,12 +42,13 @@ adjusted_system_time()
 {
     int const           max_uuids_per_tick = 1024 ;
     static std::uint64_t
-                        last_time ; // no initializer, see if below
-    static int          uuids_on_this_tick = 0 ;
+                        last_time ;          // no initializer, see if below
+    static int          uuids_on_this_tick ; // no initializer, see if below
     static bool         is_first_call = true ;
 
     if ( is_first_call ) {
         last_time = breath::uuid_private::system_time_for_uuid() ;
+        uuids_on_this_tick = 1 ;
         is_first_call = false ;
         return last_time ;
     }
@@ -57,7 +58,7 @@ adjusted_system_time()
         now = breath::uuid_private::system_time_for_uuid() ;
         if ( last_time != now ) {
             last_time = now ;
-            uuids_on_this_tick = 0 ;
+            uuids_on_this_tick = 1 ;
             break ;
         } else if ( uuids_on_this_tick < max_uuids_per_tick ) {
             ++ uuids_on_this_tick ;
@@ -67,7 +68,7 @@ adjusted_system_time()
         // Requesting too many UUIDs on the same tick; busy wait.
     }
 
-    return now + uuids_on_this_tick ;
+    return now + ( uuids_on_this_tick - 1 ) ;
 }
 
 }
