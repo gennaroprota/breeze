@@ -4,8 +4,8 @@
 # Generic log files (includes those of Visual C++)
 *.log
 
-# Make dependency files
-*.dep
+# Directories of Make dependency files
+.dependency/
 
 # Compiled object files
 *.slo
