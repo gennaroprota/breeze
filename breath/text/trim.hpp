@@ -27,7 +27,7 @@ class               set_of_chars ;
 //!         A string obtained from \c str by removing all the leading
 //!         and all the trailing characters \c for which <code>
 //!         std::isspace( c, loc )</code> returns \c true.
-// ---------------------------------------------------------------------------     
+// ---------------------------------------------------------------------------
 std::string         trim( std::string const & str, std::locale const & loc ) ;
 
 //      trim():
@@ -37,7 +37,7 @@ std::string         trim( std::string const & str, std::locale const & loc ) ;
 //!         A string obtained from \c str by removing all the leading
 //!         and all the trailing characters \c that are also contained
 //!         in \c to_remove.
-// ---------------------------------------------------------------------------     
+// ---------------------------------------------------------------------------
 std::string         trim( std::string const &  str,
                           set_of_chars const & to_remove ) ;
 
