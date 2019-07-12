@@ -15,9 +15,8 @@
 #include BREATH_DEPENDENT_CODE( system, system_time_for_uuid.cpp )
 
 #include "breath/uuid/uuid.hpp"
-#include "breath/counting/count.hpp"
 #include "breath/diagnostics/assert.hpp"
-#include "breath/meta/width.hpp"
+#include "breath/endianness/endian_codec.hpp"
 #include "breath/random/entropy_source.hpp"
 #include "breath/stream/format_saver.hpp"
 
@@ -71,11 +70,7 @@ adjusted_system_time()
 namespace breath {
 
 uuid::uuid() noexcept
-    :   m_time_low( 0 ),
-        m_time_mid( 0 ),
-        m_time_hi_and_version( 0 ),
-        m_clock_seq( 0 ),
-        m_node()
+    :   m_octets()
 {
 }
 
@@ -87,25 +82,34 @@ uuid::uuid( uuid::variant_type var, uuid::version_type ver )
 
     std::uint64_t const time_stamp = ::adjusted_system_time() ;
 
-    m_time_low = time_stamp & 0xFFFF'FFFF ;
-    m_time_mid = (time_stamp >> 32) & 0xFFFF ;
-    m_time_hi_and_version = static_cast< std::uint16_t >(
+    std::uint32_t const time_low = time_stamp & 0xFFFF'FFFF ;
+    std::uint16_t const time_mid = (time_stamp >> 32) & 0xFFFF ;
+    std::uint16_t const time_hi_and_version = static_cast< std::uint16_t >(
                             ( (time_stamp >> 48) & 0x0FFF ) | ( 1 << 12 ) ) ;
+
+    breath::endian_store< big_endian_policy >( time_low, &m_octets[ 0 ] ) ;
+    breath::endian_store< big_endian_policy >( time_mid, &m_octets[ 4 ] ) ;
+    breath::endian_store< big_endian_policy >( time_hi_and_version,
+                                                         &m_octets[ 6 ] ) ;
+
     entropy_source      es ;
-    std::uint32_t const rnd = ( es.next() << 24 ) | ( es.next() << 16 )
-                            | ( es.next() << 8 )  |   es.next() ;
-    m_clock_seq = static_cast< std::uint16_t >(
-                            ( ( rnd >> 4 ) & 0x3fff ) | 0x8000 ) ;
+    std::uint32_t const rnd = ( es.next() << 16 ) |
+                              ( es.next() << 8 )  |
+                                es.next() ;
+    std::uint16_t const clock_seq = static_cast< std::uint16_t >(
+                              ( ( rnd >> 4 ) & 0x3fff ) | 0x8000 ) ;
+
+    breath::endian_store< big_endian_policy >( clock_seq, &m_octets[ 8 ] ) ;
 
     //      A random MAC address (this is allowed by RFC 4122, and
     //      desirable). To distinguish it from a real MAC address, RFC
     //      4122 requires that the least significant bit of the first
     //      octet be set to 1.
     // -----------------------------------------------------------------------
-    for ( std::size_t i = 0 ; i < breath::count( m_node ) ; ++ i ) {
-        m_node[ i ] = static_cast< std::uint8_t >( es.next() ) ;
+    for ( std::size_t i = 10 ; i < 16 ; ++ i ) {
+        m_octets[ i ] = static_cast< std::uint8_t >( es.next() ) ;
     }
-    m_node[ 0 ] |= 1 ;
+    m_octets[ 10 ] |= 1 ;
 }
 
 uuid::variant_type
@@ -113,8 +117,7 @@ uuid::variant() const noexcept
 {
     //      Reference: RFC 4122
     // -----------------------------------------------------------------------
-    std::uint8_t const  octet8 = m_clock_seq >> 8 ;
-    std::uint8_t const  high3 = octet8 >> 5 ;
+    std::uint8_t const  high3 = m_octets[ 8 ] >> 5 ;
 
     if ( ( high3 & 0b100 ) == 0 ) {
         return ncs ;
@@ -134,7 +137,7 @@ uuid::version() const noexcept
 {
     //      Reference: RFC 4122
     // -----------------------------------------------------------------------
-    std::uint8_t const  version_number = m_time_hi_and_version >> 12 ;
+    std::uint8_t const  version_number = m_octets[ 6 ] >> 4 ;
 
     BREATH_ASSERT( 1 <= version_number && version_number <= 5 ) ;
     return static_cast< version_type >( version_number ) ;
@@ -146,24 +149,6 @@ uuid::nil() noexcept
     return uuid() ;
 }
 
-template< typename T >
-std::ostream &
-output_as_hex( std::ostream & os, T value )
-{
-    int const           bits_per_hex_digit = 4 ;
-    int const           hex_digits_per_value = meta::width< T >::value /
-                                               bits_per_hex_digit ;
-
-    os.setf( std::ios_base::hex, std::ios_base::basefield ) ;
-
-    //      About the static_cast: see the note near the declarations of
-    //      the class data members. Keep in sync.
-    // -----------------------------------------------------------------------
-    os << std::setw( hex_digits_per_value ) << static_cast< std::uint32_t >(
-                                                                       value ) ;
-    return os ;
-}
-
 std::ostream &
 operator <<( std::ostream & os, uuid const & uu )
 {
@@ -171,16 +156,18 @@ operator <<( std::ostream & os, uuid const & uu )
 
     os.fill( '0' ) ;
 
+    os.setf( std::ios_base::hex, std::ios_base::basefield ) ;
     os.setf( std::ios_base::right, std::ios_base::adjustfield ) ;
     os.unsetf( std::ios_base::showbase ) ;
     os.unsetf( std::ios_base::uppercase ) ;
 
-    output_as_hex( os, uu.m_time_low )            << '-' ;
-    output_as_hex( os, uu.m_time_mid )            << '-' ;
-    output_as_hex( os, uu.m_time_hi_and_version ) << '-' ;
-    output_as_hex( os, uu.m_clock_seq )           << '-' ;
-    for ( std::size_t i = 0 ; i < count( uu.m_node ) ; ++ i ) {
-        output_as_hex( os, uu.m_node[ i ] ) ;
+    for ( int i = 0 ; i < 16 ; ++ i ) {
+        os << std::setw( 2 ) <<
+              static_cast< unsigned int >( uu.m_octets[ i ] ) ;
+
+        if ( i == 3 || i == 5 || i == 7 || i == 9 ) {
+            os << '-' ;
+        }
     }
     return os ;
 }
