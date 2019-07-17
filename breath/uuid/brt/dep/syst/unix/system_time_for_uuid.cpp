@@ -18,7 +18,18 @@
 namespace breath {
 namespace uuid_private {
 
+int                 max_uuids_per_system_tick() ;
 std::uint64_t       system_time_for_uuid() ;
+
+//      I couldn't find any authoritative reference on the possible
+//      resolutions of gettimeofday(), used below (note: keep in sync!).
+//      So, let's be safe and only allow 1 UUID per tick.
+// ---------------------------------------------------------------------------
+int
+max_uuids_per_system_tick()
+{
+    return 1 ;
+}
 
 std::uint64_t
 system_time_for_uuid()
@@ -29,6 +40,8 @@ system_time_for_uuid()
     //      UUIDs use time in 100ns ticks since Oct 15, 1582.
     //
     //      TODO: verify the hex constant, which we took from RFC 4122.
+    //
+    //      Note: keep in sync with max_uuids_per_system_tick().
     // -----------------------------------------------------------------------
     timeval             tv ;
     gettimeofday( &tv, nullptr ) ;

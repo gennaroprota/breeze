@@ -18,8 +18,19 @@
 namespace breath {
 namespace uuid_private {
 
+int                 max_uuids_per_system_tick() ;
 std::uint64_t       to_uint64( FILETIME const & ft ) ;
 std::uint64_t       system_time_for_uuid() ;
+
+//      I couldn't find any authoritative reference on the possible
+//      resolutions of GetSystemTimeAsFileTime(), used below (note: keep
+//      in sync!). So, let's be safe and only allow 1 UUID per tick.
+// ---------------------------------------------------------------------------
+int
+max_uuids_per_system_tick()
+{
+    return 1 ;
+}
 
 std::uint64_t
 to_uint64( FILETIME const & ft )
@@ -29,6 +40,8 @@ to_uint64( FILETIME const & ft )
            ft.dwLowDateTime ;
 }
 
+//      Note: keep in sync with max_uuids_per_system_tick().
+// ---------------------------------------------------------------------------
 std::uint64_t
 system_time_for_uuid()
 {
