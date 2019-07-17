@@ -17,9 +17,11 @@
 #include "breath/uuid/uuid.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include "breath/endianness/endian_codec.hpp"
+#include "breath/iteration/begin_end.hpp"
 #include "breath/random/entropy_source.hpp"
 #include "breath/stream/format_saver.hpp"
 
+#include <algorithm>
 #include <cstddef>
 #include <cstdint>
 #include <iomanip>
@@ -155,6 +157,13 @@ uuid
 uuid::nil() noexcept
 {
     return uuid() ;
+}
+
+bool
+uuid::is_equal( uuid const & other ) const noexcept
+{
+    return std::equal( breath::cbegin( m_octets ), breath::cend( m_octets ),
+                       breath::cbegin( other.m_octets )) ;
 }
 
 std::ostream &

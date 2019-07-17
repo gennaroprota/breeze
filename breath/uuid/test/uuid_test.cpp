@@ -44,6 +44,18 @@ do_tests()
                       representation[ 18 ] == hyphen &&
                       representation[ 23 ] == hyphen    ) ;
     }
+
+    //      Test operator ==() and operator !=().
+    // -----------------------------------------------------------------------
+    {
+        breath::uuid const  nil ;
+        BREATH_CHECK( nil == breath::uuid::nil() ) ;
+
+        breath::uuid const  uu( breath::uuid::rfc_4122,
+                                breath::uuid::time_based ) ;
+
+        BREATH_CHECK( nil != uu ) ;
+    }
 }
 
 }

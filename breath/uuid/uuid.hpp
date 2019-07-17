@@ -13,6 +13,7 @@
 #ifndef BREATH_GUARD_jjJFg8dCizQ6ClSYgT8Zsg2zo7zFYgfG
 #define BREATH_GUARD_jjJFg8dCizQ6ClSYgT8Zsg2zo7zFYgfG
 
+#include "breath/operator/equality_comparison.hpp"
 #include <cstdint>
 #include <iosfwd>
 
@@ -24,6 +25,7 @@ namespace breath {
 //!     A universally unique identifier.
 // ---------------------------------------------------------------------------
 class uuid
+    :   private equality_comparison< uuid >
 {
 public:
     enum variant_type { ncs, rfc_4122, microsoft, future } ;
@@ -62,6 +64,13 @@ public:
     //!         uuid()
     // -----------------------------------------------------------------------
     static uuid         nil() noexcept ;
+
+    //!     \return
+    //!         Whether \c *this is equal to \c other. Used by a base
+    //!         class to provide <code>operator ==()</code> and <code>
+    //!         operator !=()</code>.
+    // -----------------------------------------------------------------------
+    bool                is_equal( uuid const & other ) const noexcept ;
 
 private:
     uint8_t             m_octets[ 16 ] ;
