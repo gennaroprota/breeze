@@ -31,8 +31,8 @@ namespace {
 //      =======================
 //
 //      Gets the system time and compensates for the fact that the
-//      system clock resolution is (or may be) less than 100ns, which is
-//      the resolution that would be required for UUIDs.
+//      system clock resolution is (or may be) higher than 100ns, which
+//      is the resolution that would be required for UUIDs.
 //
 //      Note: this function is the reason why the uuid class is not
 //      thread-safe.
