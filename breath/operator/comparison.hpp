@@ -24,7 +24,7 @@ namespace adl_shield {
 //
 //!     This is completely analogous to equality_comparison. See the
 //!     documentation of that facility for more information. The only
-//!     difference is that you class \c C must provide a \c compare()
+//!     difference is that your class \c C must provide a \c compare()
 //!     member function, which accepts a \c C argument \c rhs to compare
 //!     with \c *this, and returns a value \c < \c 0, \c == \c 0 or \c >
 //!     \c 0 if \c *this is respectively less than \c rhs, equal to \c
