@@ -17,7 +17,6 @@
 #include "breath/operator/equality_comparison.hpp"
 
 namespace breath {
-
 namespace adl_shield {
 
 //      comparison:
