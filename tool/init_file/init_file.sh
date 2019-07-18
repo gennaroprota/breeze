@@ -74,7 +74,8 @@ dump()
     prefix="$prefix"                        \
     width=` get_line_width `                \
     comment_pattern="$comment_pattern"      \
-    alignment="$2"      awk -f "$BREATH_ROOT/tool/dump_with_prefix.awk" "$1"
+    alignment="$2"                          \
+                  awk -f "$BREATH_ROOT/tool/init_file/dump_with_prefix.awk" "$1"
 }
 
 
