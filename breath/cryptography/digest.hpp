@@ -45,7 +45,7 @@ public:
     //!     operator and destructor.
     // -----------------------------------------------------------------------
 
-    //!
+
     //!     Equality comparison (both \c == and \c != are provided).
     // -----------------------------------------------------------------------
     bool                is_equal( digest< Hasher > const & ) const ;
