@@ -68,7 +68,7 @@ public:
     //!     Calls \c release() ignoring its return value, and destroys
     //!     the object.
     // -----------------------------------------------------------------------
-    virtual             ~entropy_source() noexcept ;
+                        ~entropy_source() noexcept ;
 
     //!     \return
     //!         A new random value, evenly distributed in [min(),
