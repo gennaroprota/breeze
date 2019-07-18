@@ -29,7 +29,7 @@ namespace adl_shield {
 //!     ------
 //!
 //!      - Provide an %is_equal() function for your class \c C, as a
-//!        \e public member function.
+//!        \e public and \e const member function.
 //!
 //!      - Add <code>equality_comparison< C ></code> as a private base
 //!        class of \c C.
