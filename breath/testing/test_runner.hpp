@@ -15,9 +15,9 @@
 
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/process/exit_code.hpp"
-#include "breath/testing/test_reporter.hpp"
 #include "breath/testing/test_descriptor.hpp"
 #include "breath/testing/test_exception.hpp"
+#include "breath/testing/test_reporter.hpp"
 #include <initializer_list>
 
 namespace breath {
