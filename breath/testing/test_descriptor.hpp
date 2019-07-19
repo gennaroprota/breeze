@@ -48,6 +48,7 @@ public:
 public:
     test_function       function() const noexcept ;
     std::string         name() const noexcept ;
+
 private:
     test_function       m_function ;
     std::string         m_name ;
