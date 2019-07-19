@@ -41,6 +41,7 @@ public:
     virtual void        on_test_failed( std::size_t test_number, test_exception const & ) override ;
     virtual void        on_unexpected_exception( std::size_t test_number ) override ;
     virtual void        on_unexpected_exception( std::size_t test_number, std::exception const & ) override ;
+
 private:
     std::ostream &      m_stream ;
     unsigned            m_passed ;
