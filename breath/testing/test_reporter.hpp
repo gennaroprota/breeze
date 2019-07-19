@@ -36,8 +36,6 @@ public:
 
 }
 
-
-
 #endif
 
 // Local Variables:

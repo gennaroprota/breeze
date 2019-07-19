@@ -22,7 +22,6 @@
 
 namespace breath {
 
-
 class test_runner
 {
 public:
