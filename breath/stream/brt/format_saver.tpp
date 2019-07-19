@@ -157,14 +157,9 @@ basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
     //      the "normal" members (fmtflags, fill, etc.) anyway, leaving
     //      only the extended info uncopied.
     //
-    //      An idea for C++0x --to be verified-- is using the new
-    //      swap(basic_ios&& rhs) member function:
+    //      An idea for C++0x --to be verified-- is using std::swap():
     //
-    //        temp.copyfmt( m_store ) ;
-    //        temp.swap( m_user_stream ) ;        // [FUTURE], [C++11]
-    //
-    //      This way, we could still guarantee a copy of the normal
-    //      members when copyfmt() fails.
+    //        std::swap( m_store, m_user_stream ) ;        // [FUTURE], [C++11]
     // -----------------------------------------------------------------------
     try {
         m_user_stream.copyfmt( m_store ) ;  // what about callbacks?
