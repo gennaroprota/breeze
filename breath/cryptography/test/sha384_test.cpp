@@ -21,6 +21,7 @@
 #include <string>
 
 //      These test vectors come from:
+//
 // [1]   <http://csrc.nist.gov/groups/ST/toolkit/documents/Examples/SHA384.pdf>
 //      and
 // [2]   <http://www.di-mgt.com.au/sha_testvectors.html>
