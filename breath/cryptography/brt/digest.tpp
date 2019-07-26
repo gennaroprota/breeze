@@ -1,5 +1,5 @@
 // ===========================================================================
-//                     Copyright 2006-2008 Gennaro Prota
+//                     Copyright 2006-2019 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -44,6 +44,14 @@ digest< Hasher >::end() const
     return breath::end( m_raw_digest ) ;
 }
 
+template< typename Hasher >
+bool
+digest< Hasher >::less::operator()( digest< Hasher > const & d1,
+                                    digest< Hasher > const & d2 ) const
+{
+    return std::lexicographical_compare( d1.begin(), d1.end(),
+                                         d2.begin(), d2.end() ) ;
+}
 
 //      Stream insertion
 //      ================

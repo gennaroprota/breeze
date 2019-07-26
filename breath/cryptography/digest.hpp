@@ -1,5 +1,5 @@
 // ===========================================================================
-//                     Copyright 2006-2007 Gennaro Prota
+//                     Copyright 2006-2019 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -56,6 +56,27 @@ public:
     const_iterator      begin() const ;
     const_iterator      end() const ;
     //!     \}
+
+    //      less:
+    //      =====
+    //
+    //!     Implements a strict weak ordering relation between digests
+    //!     (from the same Hasher type). Useful for ordered associative
+    //!     containers.
+    //!
+    //!     The function call operator is not \c noexcept, and the class
+    //!     is a \c friend, because I'd like this part of the library,
+    //!     which is the oldest, to be still compilable as C++03, if
+    //!     needed.
+    // -----------------------------------------------------------------------
+    class               less ;
+    friend class        less ;
+    class               less
+    {
+    public:
+        bool                operator()( digest< Hasher > const & d1,
+                                        digest< Hasher > const & d2 ) const ;
+    } ;
 
 private:
     typename Hasher::raw_digest_type
