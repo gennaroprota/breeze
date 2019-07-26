@@ -72,6 +72,19 @@ public:
     // -----------------------------------------------------------------------
     bool                is_equal( uuid const & other ) const noexcept ;
 
+    //      less:
+    //      =====
+    //
+    //!     Implements a strict weak ordering relation between uuid
+    //!     objects. Useful for ordered associative containers.
+    // -----------------------------------------------------------------------
+    class               less
+    {
+    public:
+        bool                operator()( uuid const & u1,
+                                        uuid const & u2 ) const noexcept ;
+    } ;
+
 private:
     uint8_t             m_octets[ 16 ] ;
 

@@ -15,6 +15,7 @@
 #include "breath/testing/testing.hpp"
 #include "breath/text/to_string.hpp"
 #include <iostream>
+#include <map>
 #include <ostream>
 #include <string>
 
@@ -55,6 +56,14 @@ do_tests()
                                 breath::uuid::time_based ) ;
 
         BREATH_CHECK( nil != uu ) ;
+    }
+
+    //      Test usability with std::map.
+    // -----------------------------------------------------------------------
+    {
+        std::map< breath::uuid, int, breath::uuid::less >
+                            m ;
+        m[ breath::uuid::nil() ] = 1 ;
     }
 }
 

@@ -166,6 +166,15 @@ uuid::is_equal( uuid const & other ) const noexcept
                        breath::cbegin( other.m_octets )) ;
 }
 
+bool
+uuid::less::operator()( uuid const & u1, uuid const & u2 ) const noexcept
+{
+    return std::lexicographical_compare( breath::cbegin( u1.m_octets ),
+                                         breath::cend(   u1.m_octets ),
+                                         breath::cbegin( u2.m_octets ),
+                                         breath::cend(   u2.m_octets ) ) ;
+}
+
 std::ostream &
 operator <<( std::ostream & os, uuid const & uu )
 {
