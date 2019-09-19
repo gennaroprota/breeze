@@ -109,7 +109,7 @@ operator <<( std::ostream & dest, printable_string const & ps )
                 dest << "\\x"
                      << std::setw( width )
                      << static_cast< unsigned int >(
-                         static_cast< unsigned char>( c ) ) ;
+                         static_cast< unsigned char >( c ) ) ;
             }
             break ;
         }
