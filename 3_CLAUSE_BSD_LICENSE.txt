@@ -9,7 +9,7 @@ Notes:
      <http://opensource.org/licenses/BSD-3-Clause>)
 
  - exceptionally, no line wrapping is used for the license text; use the
-   line-wrapping features in your editor, or open this file in a web browser
+   line-wrapping features of your editor, or open this file in a web browser
 
  - a copyright symbol has been added for the copyright notices; there is no
    comma after the years
