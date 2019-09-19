@@ -1,20 +1,18 @@
 The Breath library is made available subject to the terms of the 3-Clause BSD
 License, reproduced below.
 
-Note:
-    this license is also known as "New BSD License" (as documented at the site
-    of the Open Source Initiative:
+Notes:
 
-      <http://opensource.org/licenses/BSD-3-Clause>).
+ - this license is also known as "New BSD License" (as documented at the site of
+   the Open Source Initiative:
 
+     <http://opensource.org/licenses/BSD-3-Clause>)
 
-NOTES:
-     - exceptionally, no line wrapping is used for the license text; use the
-       line-wrapping features in your editor, or open this file in a web browser
+ - exceptionally, no line wrapping is used for the license text; use the
+   line-wrapping features in your editor, or open this file in a web browser
 
-     - a copyright symbol has been added for the copyright notices; there is no
-       comma after the years
-
+ - a copyright symbol has been added for the copyright notices; there is no
+   comma after the years
 --------------------------------------------------------------------------------
 
 
