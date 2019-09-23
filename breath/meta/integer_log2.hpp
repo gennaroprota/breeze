@@ -52,7 +52,7 @@ struct choose_initial_n
                                     argument_type(1) << n ) << n ) != 0
         ;
     static result_type const
-                value = !c*n + choose_initial_n< 2*c*n >::value
+                value = (!c)*n + choose_initial_n< 2*c*n >::value
         ;
 
 } ;
@@ -100,7 +100,7 @@ struct integer_log2_impl
     enum { c = (x >> n) > 0 } ; // x >= 2**n ?
     static result_type const
                     value = c*n
-                            + ( integer_log2_impl< ( x>>c*n ), n/2 >::value )
+                            + ( integer_log2_impl< ( x>>(c*n) ), n/2 >::value )
                     ;
 
 } ;
