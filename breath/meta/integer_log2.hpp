@@ -129,8 +129,8 @@ typedef integer_log2_private::result_type
                     integer_log2_result_type ;
 
 template< integer_log2_argument_type x >
-class [[ deprecated( "consider using the constexpr"
-                     " breath::integer_log2()" ) ]] integer_log2
+class [[ deprecated( "consider using the constexpr breath::integer_log2()" ) ]]
+                    integer_log2
 {
 public:
     static integer_log2_result_type const
