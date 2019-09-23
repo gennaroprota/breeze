@@ -43,7 +43,6 @@ typedef int             result_type ;
 template< result_type n >
 struct choose_initial_n
 {
-
     //      Note the repeated conversions to argument_type: we must
     //      convert at *each* shift, because the operands of << are
     //      promoted.
@@ -55,7 +54,6 @@ struct choose_initial_n
     static result_type const
                 value = ( ! c ) * n + choose_initial_n< 2 * c * n >::value
         ;
-
 } ;
 
 
@@ -98,7 +96,6 @@ const result_type initial_n = choose_initial_n< n_zero >::value ;
 template< argument_type x, result_type n = initial_n >
 struct integer_log2_impl
 {
-
     enum { c = ( x >> n ) > 0 } ; // x >= 2**n ?
     static result_type const
                     value = c * n
@@ -106,7 +103,6 @@ struct integer_log2_impl
                                                    n / 2
                                                   >::value )
                     ;
-
 } ;
 
 template<>
@@ -138,7 +134,6 @@ public:
     static integer_log2_result_type const
          value = integer_log2_private::
                     integer_log2_impl< x >::value ;
-
 } ;
 
 
