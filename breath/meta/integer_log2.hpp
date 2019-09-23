@@ -48,11 +48,11 @@ struct choose_initial_n
     //      promoted.
     // -----------------------------------------------------------------------
     static bool const
-                c = argument_type(argument_type(
-                                    argument_type(1) << n ) << n ) != 0
+                c = argument_type( argument_type(
+                                    argument_type( 1 ) << n ) << n ) != 0
         ;
     static result_type const
-                value = (!c)*n + choose_initial_n< 2*c*n >::value
+                value = ( ! c ) * n + choose_initial_n< 2 * c * n >::value
         ;
 
 } ;
@@ -77,7 +77,7 @@ struct choose_initial_n< 0 >
 //      Start computing from n_zero - must be a power of two.
 // ---------------------------------------------------------------------------
 const result_type n_zero = 4 ;
-const result_type initial_n = choose_initial_n<n_zero>::value ;
+const result_type initial_n = choose_initial_n< n_zero >::value ;
 
 //      integer_log2_impl<>
 //
@@ -97,10 +97,12 @@ template< argument_type x, result_type n = initial_n >
 struct integer_log2_impl
 {
 
-    enum { c = (x >> n) > 0 } ; // x >= 2**n ?
+    enum { c = ( x >> n ) > 0 } ; // x >= 2**n ?
     static result_type const
-                    value = c*n
-                            + ( integer_log2_impl< ( x>>(c*n) ), n/2 >::value )
+                    value = c * n
+                            + ( integer_log2_impl< ( x >> ( c * n ) ),
+                                                   n / 2
+                                                  >::value )
                     ;
 
 } ;
