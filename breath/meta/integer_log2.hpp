@@ -37,8 +37,8 @@ namespace  integer_log2_private {
 //      invariant).
 // ---------------------------------------------------------------------------
 typedef unsigned long long
-                        argument_type ;
-typedef int             result_type ;
+                    argument_type ;
+typedef int         result_type ;
 
 template< result_type n >
 struct choose_initial_n
@@ -47,12 +47,12 @@ struct choose_initial_n
     //      convert at *each* shift, because the operands of << are
     //      promoted.
     // -----------------------------------------------------------------------
-    static bool const
-                c = argument_type( argument_type(
+    static bool const   c = argument_type( argument_type(
                                     argument_type( 1 ) << n ) << n ) != 0
         ;
     static result_type const
-                value = ( ! c ) * n + choose_initial_n< 2 * c * n >::value
+                        value = ( ! c ) * n +
+                                choose_initial_n< 2 * c * n >::value
         ;
 } ;
 
@@ -68,7 +68,8 @@ choose_initial_n< n >::value ;
 template<>
 struct choose_initial_n< 0 >
 {
-    static result_type const value = 0 ;
+    static result_type const
+                        value = 0 ;
 } ;
 
 
@@ -98,10 +99,10 @@ struct integer_log2_impl
 {
     enum { c = ( x >> n ) > 0 } ; // x >= 2**n ?
     static result_type const
-                    value = c * n
-                            + ( integer_log2_impl< ( x >> ( c * n ) ),
-                                                   n / 2
-                                                  >::value )
+                        value = c * n
+                                + ( integer_log2_impl< ( x >> ( c * n ) ),
+                                                       n / 2
+                                                     >::value )
                     ;
 } ;
 
