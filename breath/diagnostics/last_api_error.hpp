@@ -44,7 +44,7 @@ class last_api_error
 public:
     explicit            last_api_error( char const * ) noexcept ;
                         last_api_error( last_api_error const & ) noexcept ;
-                        ~last_api_error() noexcept override ;
+    virtual             ~last_api_error() noexcept override ;
 
     //!     \return
     //!         The code of the last error. A long long, which is enough
