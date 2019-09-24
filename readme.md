@@ -60,11 +60,11 @@ The `clean` target is also supported (you still need to provide `compiler` and
 `system`: when you clean, only the files generated for a given compiler/system
 pair are removed).
 
-At the moment, compiler can be any of the following:
+At the moment, `compiler` can be any of the following:
 
  - gcc, clang, msvc
 
-while system can be:
+while `system` can be:
 
  - unix, windows
 
@@ -81,7 +81,7 @@ separate documents, please see the `read_me` in `doc/source/`.
 
 ## Editor support
 
-The source tree contains a .editorconfig (https://editorconfig.org/). This
+The source tree contains a `.editorconfig` (https://editorconfig.org/). This
 support was added just recently. Before that, only Emacs and Vim were supported.
 
 If you plan to contribute, please use `tool/init_file/init_file.sh` to
