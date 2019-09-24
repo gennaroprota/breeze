@@ -8,12 +8,12 @@
  _____________________________________________________________________________
 -->
 
-# Breath - The library
+# Overview
 
-Welcome. This library is my personal toolkit of C++ components. The components
-range from cryptography (MD5, SHA-1, SHA-2) to string utilities, operating
-system identification and much more. You'll get a precise idea by exploring the
-breath/ subdirectory of the source tree.
+Welcome to *Breath*, my personal toolkit of C++ components. The components range
+from cryptography (MD5, SHA-1, SHA-2) to string utilities, operating system
+identification and much more. You'll get a precise idea by exploring the breath/
+subdirectory of the source tree.
 
 The library has been developed, in my spare time, over a period of about 16
 years (as of June 2019) and I don't claim that all of it is of production
