@@ -74,7 +74,7 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
             num_bits += block_length ;
             if ( num_bits >= char_bit ) {
                 num_bits -= char_bit ;
-                *out ++ = static_cast< unsigned char>( block >> num_bits ) ;
+                *out ++ = static_cast< unsigned char >( block >> num_bits ) ;
                 block &= ( ( 1 << num_bits ) - 1 ) ;
             }
 
