@@ -48,12 +48,10 @@ struct choose_initial_n
     //      promoted.
     // -----------------------------------------------------------------------
     static bool const   c = argument_type( argument_type(
-                                    argument_type( 1 ) << n ) << n ) != 0
-        ;
+                                    argument_type( 1 ) << n ) << n ) != 0 ;
     static result_type const
                         value = ( ! c ) * n +
-                                choose_initial_n< 2 * c * n >::value
-        ;
+                                choose_initial_n< 2 * c * n >::value ;
 } ;
 
 
@@ -102,8 +100,7 @@ struct integer_log2_impl
                         value = c * n
                                 + ( integer_log2_impl< ( x >> ( c * n ) ),
                                                        n / 2
-                                                     >::value )
-                    ;
+                                                     >::value ) ;
 } ;
 
 template<>
