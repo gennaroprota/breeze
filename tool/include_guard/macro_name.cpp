@@ -21,7 +21,7 @@
 namespace {
 
 std::string
-make_random_alnum( std::size_t length, breath::entropy_source & source )
+make_random_alnum( int length, breath::entropy_source & source )
 {
     std::string const   alnum   = "0123456789"
                                   "abcdefghijklmnopqrstuvwxyz"
@@ -37,7 +37,7 @@ make_random_alnum( std::size_t length, breath::entropy_source & source )
         //
         result.reserve( length ) ;
 
-        std::size_t         count = length ;
+        int                 count = length ;
         auto const          m = static_cast< unsigned >( alnum.length() - 1 ) ;
         while ( count > 0 ) {
             result.push_back( alnum[ source( m ) ] ) ;
@@ -53,7 +53,7 @@ make_random_alnum( std::size_t length, breath::entropy_source & source )
 
 std::string
 make_macro_name( std::string const & prefix,
-                 std::size_t random_part_length,
+                 int random_part_length,
                  macro_name_creation::exit_status * exit_status )
 {
     std::size_t const   total_length = prefix.length() + random_part_length ;

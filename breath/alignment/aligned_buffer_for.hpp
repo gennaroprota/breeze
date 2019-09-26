@@ -69,7 +69,7 @@ template<> struct   pod_array< number_of_pod_types > {
 } ;
 
 
-template< typename T, std::size_t start_index >
+template< typename T, int start_index >
 class searcher
 {
     typedef         typename pod_array< start_index >::type
