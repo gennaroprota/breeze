@@ -51,7 +51,7 @@ template< typename T >
 std::size_t const       align_of< T >::value ;
 
 
-template< std::size_t index >
+template< int index >
 struct              pod_array ;
 
 static int const    number_of_pod_types = 7 ;
