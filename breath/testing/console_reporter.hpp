@@ -15,7 +15,6 @@
 #define BREATH_GUARD_XgKxFi9sRq7YDgySOH2206PWX2ZxQrtB
 
 #include "breath/testing/test_reporter.hpp"
-#include <cstddef>
 #include <iosfwd>
 
 namespace breath {
@@ -36,15 +35,14 @@ public:
 
     virtual void        on_all_tests_begin() override ;
     virtual void        on_all_tests_end() override ;
-    virtual void        on_test_begin( std::size_t test_number,
-                                       char const * name = "" ) override ;
-    virtual void        on_test_passed( std::size_t test_number ) override ;
-    virtual void        on_test_failed( std::size_t test_number,
+    virtual void        on_test_begin( int test_number,
+                                        char const * name = "" ) override ;
+    virtual void        on_test_passed( int test_number ) override ;
+    virtual void        on_test_failed( int test_number,
                                         test_exception const & ) override ;
-    virtual void        on_unexpected_exception( std::size_t test_number )
-                                                                      override ;
-    virtual void        on_unexpected_exception( std::size_t test_number,
-                                                 std::exception const & )
+    virtual void        on_unexpected_exception( int test_number ) override ;
+    virtual void        on_unexpected_exception( int test_number,
+                                                  std::exception const & )
                                                                       override ;
 
 private:
