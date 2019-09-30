@@ -19,21 +19,16 @@
 
 namespace breath {
 
-int
+set_of_chars::index_type
 set_of_chars::to_index( char c ) noexcept
 {
     return c - CHAR_MIN ;
 }
 
 char
-set_of_chars::to_char( std::size_t index ) noexcept
+set_of_chars::to_char( set_of_chars::index_type index ) noexcept
 {
-    //      Note that without the static_cast to int, CHAR_MIN would be
-    //      converted to an unsigned, and the result of converting the
-    //      sum to char would be implementation-defined (unless, of
-    //      course, CHAR_MIN == 0).
-    // -----------------------------------------------------------------------
-    return static_cast< char >( static_cast< int >( index ) + CHAR_MIN ) ;
+    return static_cast< char >( index + CHAR_MIN ) ;
 }
 
 
