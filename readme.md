@@ -45,7 +45,7 @@ The bin/ subdirectory of the Cygwin installation must be in the `PATH`.
 To build the library:
 
  - if you are on Windows and you want to use Visual Studio, run the Visual
-   Studio Command Prompt, `cd` to `%BREATH_ROOT%/tool/use_cygwin` and launch
+   Studio Command Prompt, `cd` to `%BREATH_ROOT%/tool/use_cygwin/` and launch
    `use_cygwin.bat`; then use the resulting Cygwin window
 
  - `cd` to `BREATH_ROOT`
@@ -88,7 +88,7 @@ If you plan to contribute, please use `tool/init_file/init_file.sh` to
 initialize your source files. You should define the environment variable
 `BREATH_CONTRIBUTOR` to the name you wish to appear in your copyright notices.
 Also, you should build the `include_guard` tool (which is automatically built
-with the library: see Getting started), and copy it to `$BREATH_ROOT/bin`.
+with the library: see Getting started), and copy it to `$BREATH_ROOT/bin/`.
 
 If you use Vim, just source `breath.vim` from your `.vimrc` and that will take
 care of running the initialization script on any file you create in
