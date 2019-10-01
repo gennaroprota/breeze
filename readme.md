@@ -86,9 +86,9 @@ support was added just recently. Before that, only Emacs and Vim were supported.
 
 If you plan to contribute, please use `tool/init_file/init_file.sh` to
 initialize your source files. You should define the environment variable
-`BREATH_CONTRIBUTOR` to the name you wish you wish to appear in your copyright
-notices. Also, you should build the `include_guard` tool (which is automatically
-built with the library: see Getting started), and copy it to `$BREATH_ROOT/bin`.
+`BREATH_CONTRIBUTOR` to the name you wish to appear in your copyright notices.
+Also, you should build the `include_guard` tool (which is automatically built
+with the library: see Getting started), and copy it to `$BREATH_ROOT/bin`.
 
 If you use Vim, just source `breath.vim` from your `.vimrc` and that will take
 care of running the initialization script on any file you create in
