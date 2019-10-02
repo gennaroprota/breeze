@@ -50,7 +50,8 @@ check()
     std::ifstream       is( breath_root
                             + "/breath/conversion/test/a006968.txt" ) ;
 
-    // skip the first lines
+    //      Skip the first lines.
+    // -----------------------------------------------------------------------
     int const           lines_to_skip = 14 ;
     for ( int i = 0 ; i < lines_to_skip ; ++ i ) {
         std::string         s ;
