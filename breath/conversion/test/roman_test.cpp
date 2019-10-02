@@ -54,8 +54,8 @@ check()
     // -----------------------------------------------------------------------
     int const           lines_to_skip = 14 ;
     for ( int i = 0 ; i < lines_to_skip ; ++ i ) {
-        std::string         s ;
-        std::getline( is, s ) ;
+        std::string         line ;
+        std::getline( is, line ) ;
     }
 
     int const           max_roman = 3999 ;
