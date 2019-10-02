@@ -35,19 +35,12 @@ public:
     explicit            roman( int n ) ;
 
 private:
-    //      The implementation here is different from usual: rather than
-    //      doing the conversion to Roman numerals in the stream
-    //      inserter, we do it in the constructor and store the
-    //      resulting representation in a std::string object. Consider
-    //      this implementation detail somewhat experimental.
-    // -----------------------------------------------------------------------
-    std::string         m_representation ;
+    int                 m_value ;
 
     //!     Stream output operator: outputs the number in Roman
-    //!     numerals. The case of the letters is unspecified (this
-    //!     allows us to support e.g. \c std::uppercase and
-    //!     \c std::nouppercase in the future). But it's guaranteed that
-    //!     all letters will have the same case.
+    //!     numerals. The uppercase flag (\c std::ios_base::uppercase)
+    //!     is supported, so the user can obtain all-uppercase or
+    //!     all-lowercase.
     // -----------------------------------------------------------------------
     friend std::ostream &
                     operator <<( std::ostream &, roman const & ) ;

@@ -14,14 +14,33 @@
 #include "breath/conversion/roman.hpp"
 #include "breath/environment/find_environment_string.hpp"
 #include "breath/testing/testing.hpp"
-#include "breath/text/to_string.hpp"
 
+#include <algorithm>
 #include <fstream>
+#include <ios>
+#include <iterator>
+#include <locale>
 #include <string>
 #include <sstream>
 #include <iostream>
 
 namespace {
+
+std::string
+classic_to_lower( std::string const & s )
+{
+    std::locale const   loc = std::locale::classic() ;
+
+    std::string         result ;
+    std::transform( s.cbegin(), s.cend(),
+                    std::back_inserter( result ),
+                    [ &loc ]( char c )
+                    {
+                        return std::tolower( c, loc ) ;
+                    } ) ;
+
+    return result ;
+}
 
 void
 check()
@@ -44,11 +63,21 @@ check()
         is >> n ;
         char                equal_sign ;
         is >> equal_sign ;
-        std::string         rep ;
-        is >> rep ;
+        std::string         upper_expected ;
+        is >> upper_expected ;
 
-        std::string const   s = breath::to_string( breath::roman( n ) ) ;
-        BREATH_CHECK( rep == s ) ;
+        std::ostringstream  strm ;
+        breath::roman const roman( n ) ;
+
+        strm << std::uppercase << roman ;
+        std::string const   upper_actual = strm.str() ;
+
+        strm.str( "" ) ;
+        strm << std::nouppercase << roman ;
+        std::string const   lower_actual = strm.str() ;
+
+        BREATH_CHECK( upper_actual == upper_expected ) ;
+        BREATH_CHECK( lower_actual == ::classic_to_lower( upper_expected ) ) ;
     } while ( n != max_roman ) ;
 }
 
