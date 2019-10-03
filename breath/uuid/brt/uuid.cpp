@@ -90,7 +90,7 @@ uuid::uuid( uuid::variant_type var, uuid::version_type ver )
     // -----------------------------------------------------------------------
     BREATH_ASSERT( var == rfc_4122 && ver == time_based ) ;
 
-    std::uint64_t const time_stamp = ::adjusted_system_time() ;
+    std::uint64_t const time_stamp = adjusted_system_time() ;
 
     std::uint32_t const time_low = time_stamp & 0xFFFF'FFFF ;
     std::uint16_t const time_mid = (time_stamp >> 32) & 0xFFFF ;

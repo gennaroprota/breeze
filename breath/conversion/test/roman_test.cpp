@@ -78,7 +78,7 @@ check()
         std::string const   lower_actual = strm.str() ;
 
         BREATH_CHECK( upper_actual == upper_expected ) ;
-        BREATH_CHECK( lower_actual == ::classic_to_lower( upper_expected ) ) ;
+        BREATH_CHECK( lower_actual == classic_to_lower( upper_expected ) ) ;
     } while ( n != max_roman ) ;
 }
 
