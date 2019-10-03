@@ -68,7 +68,7 @@ adjusted_system_time()
             break ;
         }
 
-        // Requesting too many UUIDs on the same tick; busy wait.
+        // Too many UUIDs are being requested on the same tick: busy wait...
     }
 
     return now + ( uuids_on_this_tick - 1 ) ;
