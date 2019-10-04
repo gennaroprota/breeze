@@ -52,7 +52,7 @@ namespace breath {
 //      Of course it may still happen that rdbuf() is null, and the
 //      fact is harmless (as already said, it just causes an
 //      ios_failure_type exception to be thrown and caught
-//      immediately)
+//      immediately).
 // ---------------------------------------------------------------------------
 template< typename Ch, typename Traits >
 basic_format_saver< Ch, Traits >::basic_format_saver(
