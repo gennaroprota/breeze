@@ -34,27 +34,6 @@
 
 namespace breath {
 
-//      note: the initialization m_store( user_stream.rdbuf() )
-//      ensures that our m_store will not have badbit set and thus
-//      that copyfmt() won't throw due to the copy of the exception mask
-//      [1] (we don't want to eat _any_ exception it might throw,
-//      differently from what we do in the destructor); for the rest
-//      it is really irrelevant, first because we don't do any
-//      input/output on m_store, then because rdbuf() isn't copied
-//      back by copyfmt(), whatever its value is.
-//
-//      [1] unless user_stream has both a null rdbuf() AND
-//      badbit set in the exception mask.
-//
-//      But in that case we'd have been called on to guard a stream
-//      with no buffer (thus badbit set) and corresponding exception
-//      enabled. It is of course a degenerate case in which failing to
-//      save (= throwing an exception from the constructor of
-//      format_saver) seems quite justified. --gps
-// ---------------------------------------------------------------------------
-//
-
-
 //      Implementation note (constructor):
 //      ----------------------------------
 //
