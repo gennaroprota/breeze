@@ -60,11 +60,11 @@ The `clean` target is also supported (you still need to provide `compiler` and
 `system`: when you clean, only the files generated for a given compiler/system
 pair are removed).
 
-At the moment, `compiler` can be any of the following:
+At the moment, `compiler` must be set to one of the following:
 
  - gcc, clang, msvc
 
-while `system` can be:
+while `system` must be set to one of:
 
  - unix, windows
 
