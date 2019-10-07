@@ -21,8 +21,8 @@
 #include "breath/random/subrange_max.hpp"
 
 #include <cstddef>
+#include <cstdio>
 #include <limits>
-#include <stdio.h>
 
 namespace breath {
 
@@ -47,7 +47,7 @@ private:
 } ;
 
 entropy_source::impl::impl()
-    : m_file( ::fopen( "/dev/random", "rb" ) )
+    : m_file( std::fopen( "/dev/random", "rb" ) )
 {
     if ( ! is_open() ) {
         entropy_source::exception::raise( "cannot open /dev/random" ) ;
@@ -60,7 +60,7 @@ entropy_source::impl::impl()
     //      information given by setvbuf()'s return value and add an
     //      is_buffered() member function.)
     // -----------------------------------------------------------------------
-    ::setvbuf( m_file, nullptr, _IONBF, 0 ) ;
+    std::setvbuf( m_file, nullptr, _IONBF, 0 ) ;
 }
 
 entropy_source::impl::~impl() noexcept
@@ -100,7 +100,7 @@ void
 entropy_source::impl::to_buffer( unsigned char /*gps*/ * buffer, std::size_t count ) noexcept
 {
     auto const          read =
-        ::fread( buffer, sizeof buffer[ 0 ], count, m_file ) ;
+        std::fread( buffer, sizeof buffer[ 0 ], count, m_file ) ;
 
     if ( read < count ) {
         exception::raise( "not enough bytes" ) ;
@@ -115,7 +115,7 @@ entropy_source::impl::release() noexcept
 
     bool            success = false ;
     if ( is_open() ) {
-        success = ::fclose( m_file ) == 0 ;
+        success = std::fclose( m_file ) == 0 ;
         m_file = nullptr ;
     }
     return success ;

@@ -14,7 +14,7 @@
 
 // gps temp
 #undef NDEBUG
-#include <assert.h>
+#include <cassert>
 #define DO_TEST( cond ) assert( (cond) )
 
 //----------------------

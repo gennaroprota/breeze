@@ -34,7 +34,7 @@
 //!     defined upper in the library/application logic.
 // ---------------------------------------------------------------------------
 
-#include <stdint.h>
+#include <cstdint>
 
 extern "C" {
 
@@ -42,10 +42,10 @@ extern "C" {
 // ---------------------------------------------------------------------------
 struct cpuid_result
 {
-    uint32_t        eax ;
-    uint32_t        ebx ;
-    uint32_t        ecx ;
-    uint32_t        edx ;
+    std::uint32_t   eax ;
+    std::uint32_t   ebx ;
+    std::uint32_t   ecx ;
+    std::uint32_t   edx ;
 } ;
 
 //      get_cpuid_info():
@@ -64,7 +64,7 @@ struct cpuid_result
 //!         a struct with the values of \c EAX, \c EBX, \c ECX, \c EDX
 //!         returned by the CPUID instruction itself.
 // ---------------------------------------------------------------------------
-cpuid_result        get_cpuid_info( uint32_t eax, uint32_t ecx ) ;
+cpuid_result        get_cpuid_info( std::uint32_t eax, std::uint32_t ecx ) ;
 
 }
 
