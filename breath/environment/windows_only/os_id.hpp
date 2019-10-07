@@ -53,39 +53,38 @@ class os_id
     :   private equality_comparison< os_id >
 {
 private:
-    typedef int     id_type ;
-    id_type         m_id ;
+    typedef int         id_type ;
+    id_type             m_id ;
 
-    explicit        os_id( id_type ) ;
+    explicit            os_id( id_type ) ;
 
     friend std::ostream &
-                    operator <<( std::ostream &, os_id const & ) ;
+                        operator <<( std::ostream &, os_id const & ) ;
 
 public:
     // compiler-generated copy and destructor
 
-    bool            is_equal( os_id const & ) const ;
+    bool                is_equal( os_id const & ) const ;
 
-    static const os_id
-        windows_unknown,
+    static const os_id  windows_unknown,
 
-        windows_2000,
-        windows_xp,
-        windows_server_2003,
-        windows_home_server,
-        windows_storage_server_2003,
-        windows_server_2003_r2,
-        windows_xp_professional_x64_edition,
-        windows_vista,
-        windows_server_2008,
-        windows_server_2008_r2,
-        windows_7,
-        windows_8,
-        windows_server_2012,
-        windows_8_1,
-        windows_server_2012_r2,
-        windows_10,
-        windows_server_2016
+                        windows_2000,
+                        windows_xp,
+                        windows_server_2003,
+                        windows_home_server,
+                        windows_storage_server_2003,
+                        windows_server_2003_r2,
+                        windows_xp_professional_x64_edition,
+                        windows_vista,
+                        windows_server_2008,
+                        windows_server_2008_r2,
+                        windows_7,
+                        windows_8,
+                        windows_server_2012,
+                        windows_8_1,
+                        windows_server_2012_r2,
+                        windows_10,
+                        windows_server_2016
     ;
 
 } ;

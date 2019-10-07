@@ -42,10 +42,10 @@ extern "C" {
 // ---------------------------------------------------------------------------
 struct cpuid_result
 {
-    std::uint32_t   eax ;
-    std::uint32_t   ebx ;
-    std::uint32_t   ecx ;
-    std::uint32_t   edx ;
+    std::uint32_t       eax ;
+    std::uint32_t       ebx ;
+    std::uint32_t       ecx ;
+    std::uint32_t       edx ;
 } ;
 
 //      get_cpuid_info():
