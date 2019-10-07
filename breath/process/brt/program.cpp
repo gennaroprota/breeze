@@ -81,7 +81,7 @@ program::exit_code()
         declare_error( program::error ) ;
     }
 
-    return ::exit_codes[ m_max_gravity ] ;
+    return exit_codes[ m_max_gravity ] ;
 }
 
 void
@@ -125,7 +125,7 @@ void
 program::declare_error( program::gravity g ) // gps nome OK?
 {
     BREATH_ASSERT( static_cast< unsigned int >( g ) <
-                     breath::count( ::exit_codes ) ) ;
+                     breath::count( exit_codes ) ) ;
 
     if ( g > m_max_gravity ) {
         m_max_gravity = g ;
