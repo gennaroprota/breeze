@@ -28,6 +28,12 @@
 //!
 //!     \warning
 //!         This class is experimental.
+//!
+//!     \warning
+//!         Only throw an exception of type \c last_api_error if the
+//!         return value of the last function you called in the current
+//!         thread indicates that \c GetLastError (if under Windows) or
+//!         \c errno (if under Unix) is meaningful.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_HC9mIXMvniKHLa6eFGhdRhDkxlSaZErK
