@@ -7,8 +7,9 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Base class template to provide inequality comparison
-//!            operators.
+//!     \brief Base class template to provide equality and relational
+//!            operators (\c ==, \c !=, \c <, \c <=, \c >, \c >=) for a
+//!            derived class.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_9eLHEHtKblEdQIGuXiqd2HmEUjrUscjf
@@ -22,13 +23,28 @@ namespace adl_shield {
 //      comparison:
 //      ===========
 //
-//!     This is completely analogous to equality_comparison. See the
-//!     documentation of that facility for more information. The only
-//!     difference is that your class \c C must provide a \c compare()
-//!     member function, which accepts a \c C argument \c rhs to compare
-//!     with \c *this, and returns a value \c < \c 0, \c == \c 0 or \c >
-//!     \c 0 if \c *this is respectively less than \c rhs, equal to \c
-//!     rhs or greater than rhs.
+//!     This is completely analogous to \c equality_comparison, but
+//!     provides all six comparison operators (\c ==, \c !=, \c <, \c
+//!     <=, \c >, \c >=).
+//!
+//!     In addition to %is_equal(), your class \C must provide a public
+//!     const member function named \c compare which accepts a \c C
+//!     argument \c other and returns:
+//!
+//!      - a value \c < \c 0 if \c *this is less than \c other
+//!
+//!      - a value \c == \c 0 if \c *this is equal to \c other
+//!
+//!      - a value \c > \c 0 if \c *this is greater than \c other
+//!
+//!     The return type doesn't need to be \c int: anything that is
+//!     comparable to zero will work. Note that this would allow
+//!     handling partial orderings, by returning, for incomparable
+//!     pairs, a value for which none of \c == \c 0, \c < \c 0 and \c >
+//!     \c 0 are true.
+//!
+//!     See the documentation of \c equality_comparison for more
+//!     information, including ADL protection.
 // ---------------------------------------------------------------------------
 template< typename T >
 class comparison
