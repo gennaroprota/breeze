@@ -82,11 +82,11 @@ entropy_source::impl::maximum() const
 bool
 entropy_source::impl::acquire( DWORD flags )
 {
-    return ::CryptAcquireContext( &m_provider_handle,
-                                  nullptr,
-                                  nullptr,
-                                  PROV_RSA_FULL,
-                                  flags | CRYPT_VERIFYCONTEXT ) != 0 ;
+    return CryptAcquireContext( &m_provider_handle,
+                                nullptr,
+                                nullptr,
+                                PROV_RSA_FULL,
+                                flags | CRYPT_VERIFYCONTEXT ) != 0 ;
 }
 
 bool
@@ -103,10 +103,10 @@ entropy_source::impl::release() noexcept
 {
     bool                success = false ;
     if ( ! is_released() ) {
-        success = ::CryptReleaseContext( m_provider_handle,
-                                         0 // this is reserved (future use) and
-                                           // must be zero
-                                       ) != 0 ;
+        success = CryptReleaseContext( m_provider_handle,
+                                       0 // this is reserved (future use) and
+                                         // must be zero
+                                     ) != 0 ;
         m_handle_is_valid = ! success ;
     }
     return success ;
@@ -115,8 +115,8 @@ entropy_source::impl::release() noexcept
 void
 entropy_source::impl::to_buffer( unsigned char * buffer, DWORD count )
 {
-    int const           r = ::CryptGenRandom( m_provider_handle, count,
-                                                buffer ) ;
+    int const           r = CryptGenRandom( m_provider_handle, count,
+                                              buffer ) ;
     if ( r == 0 ) {
         entropy_source::exception::raise( "cannot generate random number" ) ;
     }

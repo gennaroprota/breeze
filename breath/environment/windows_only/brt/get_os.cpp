@@ -85,7 +85,7 @@
 //      In effect, not even *all* the members of OSVERSIONINFOEX are
 //      (always) enough: we need, depending on the case, either
 //      wProductType, member of OSVERSIONINFOEX, or a call to
-//      ::GetSystemMetrics [sic] or a call to ::GetSystemInfo, as
+//      GetSystemMetrics [sic] or a call to GetSystemInfo, as
 //      sketched in pseudo-code below:
 //
 //         // not supported (yet)
@@ -101,9 +101,9 @@
 //
 //         // XP Professional x64 Edition / Server 2003 R2 / Server 2003
 //         if version == 5.2
-//             if ::GetSystemInfo() == x64 and wProductType == NT_WORKSTATION
+//             if GetSystemInfo() == x64 and wProductType == NT_WORKSTATION
 //                 "Windows XP Professional x64 Edition"
-//             else if ( ::GetSystemMetrics( SM_SERVERR2 ) ) != 0
+//             else if ( GetSystemMetrics( SM_SERVERR2 ) ) != 0
 //                 "Windows Server 2003 R2"
 //             else
 //                 "Windows Server 2003"
@@ -176,7 +176,7 @@ is_server_2003_r2()
     //      requiring the latest SDK headers. [FUTURE]
     // -----------------------------------------------------------------------
     int const           sm_serverr2( 89 ) ;
-    return 0 != ::GetSystemMetrics( sm_serverr2 ) ;
+    return 0 != GetSystemMetrics( sm_serverr2 ) ;
 }
 
 os_id

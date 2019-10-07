@@ -40,7 +40,7 @@ last_api_error::last_api_error( char const * p ) noexcept
                                     : std::strlen( m_message )
                                     ;
 
-    DWORD const         dw = ::FormatMessageA(
+    DWORD const         dw = FormatMessageA(
         FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
         nullptr,
         static_cast< DWORD >( m_last_error ),
