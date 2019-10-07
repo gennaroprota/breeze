@@ -7,8 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Base class template to provide equality comparison
-//!            operators.
+//!     \brief Base class template to provide equality operators (\c ==
+//             and \c !=) for a derived class.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI
@@ -57,7 +57,7 @@ namespace adl_shield {
 //!     The name of the class template indicates the kind of comparison
 //!     that its target will support. This leads to a noun-based name
 //!     (as opposed, for instance, to "equality_comparable"),
-//!     consistently with the general naming style of the Breath C++
+//!     consistently with the general naming style of the Breath
 //!     components.
 // ---------------------------------------------------------------------------
 template< typename T >
