@@ -42,7 +42,7 @@
 //!         The <code>#includes</code> are not part of the interface.
 //!
 //!     \note
-//!         Macros within the argument `expr' are expanded.
+//!         Macros within the argument 'expr' are expanded.
 // ---------------------------------------------------------------------------
 #define BREATH_DUMP_EXPRESSION( expr )                                        \
         do {                                                                  \

@@ -49,7 +49,7 @@ check()
                "1a8b605a43ff5bed8086072ba1e7cc2358baeca134c825a7" ) ;
     }
     {
-        //      16,777,216 repetitions of `piece' ( [2] )
+        //      16,777,216 repetitions of 'piece' ( [2] )
         //
         std::string const   piece =
             "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmno" ;

@@ -20,7 +20,7 @@ namespace breath {
 //
 //!     \return
 //!         The maximum value that can be kept (before taking the
-//!         remainder of the division by `x+1') for getting a random (or
+//!         remainder of the division by x+1) for getting a random (or
 //!         pseudorandom) integer in the range [0, x] from a source that
 //!         spans [0, m], x <= m.
 //!
