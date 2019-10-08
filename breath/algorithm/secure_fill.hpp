@@ -22,19 +22,19 @@ namespace breath {
 //      secure_fill():
 //      ==============
 //
-//!     This is completely analogous to the \c std::fill() algorithm, except
-//!     that, due to a \c volatile qualification, it guarantees that the
-//!     sequence is written to, even if it is never touched after the
-//!     \c secure_fill() call (in other words: it ensures that the compiler
-//!     will not optimize the function out); useful to zeroize passwords
-//!     and other sensitive data.
+//!     This is completely analogous to the \c std::fill() algorithm,
+//!     except that, due to a \c volatile qualification, it guarantees
+//!     that the sequence is written to, even if it is never touched
+//!     after the \c secure_fill() call (in other words: it ensures that
+//!     the compiler will not optimize the function out); useful to
+//!     zeroize passwords and other sensitive data.
 //!
 //!     Note that a convenience overload for built-in arrays is
 //!     provided. For technical reasons, this overload is guaranteed to
 //!     work for arrays of built-in types only.
 //!
-//!     Many thanks go to David R Tribble and Douglas A. Gwyn who clarified
-//!     my doubts on comp.std.c; see the thread starting with
+//!     Many thanks go to David R Tribble and Douglas A. Gwyn who
+//!     clarified my doubts on comp.std.c; see the thread starting with
 //!
 //!       message-id: <38i6r2d5uksv7eovk0os7506k9bbshgl2j@4ax.com>
 //!
