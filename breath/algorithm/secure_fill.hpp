@@ -41,7 +41,7 @@ namespace breath {
 // ---------------------------------------------------------------------------
 //      Note how this is intentionally implemented with a hand-coded
 //      loop. It's not crystal clear whether we could use std::fill()
-//      or std::fill_n() (which would bring the advantage of debugging
+//      or std::fill_n() (which would bring the advantage of debug
 //      mode and everything the underlying standard library
 //      implementation might provide). On a relaxed reading of the
 //      standard, it seems that, for instance
