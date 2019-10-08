@@ -73,7 +73,14 @@ class comparison
     }
 
 protected:
-                        ~comparison() noexcept = default ;
+    //!     Protected constructor, to enforce the usage as a base.
+    //!
+    //!     This used to be a protected destructor, but if a
+    //!     user-declared destructor---even a defaulted one--- exists,
+    //!     the generation of a copy constructor is deprecated. Thus, we
+    //!     switched to use a constructor, instead.
+    // -----------------------------------------------------------------------
+                        comparison() noexcept = default ;
 } ;
 
 }
