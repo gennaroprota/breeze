@@ -43,7 +43,7 @@ amount_of_physical_memory()
         if ( GlobalMemoryStatusEx( &status ) == 0 ) {
             throw last_api_error( "GlobalMemoryStatusEx() failed" ) ;
         }
-        return status.ullTotalPhys / 1024 ;
+        amount = status.ullTotalPhys / 1024 ;
     }
     return amount ;
 }
