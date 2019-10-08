@@ -18,7 +18,6 @@
 
 #include "breath/meta/select.hpp"
 #include <limits>
-#include <cstddef>
 
 namespace breath {
 //! \cond
@@ -39,7 +38,7 @@ template<> struct types< unsigned, 3 > { typedef unsigned long    type ; } ;
 template<> struct types< unsigned, 4 > { typedef unsigned long long type ; } ;
 
 
-template< std::size_t width,
+template< int width,
           typename IntType,
           int n >
 class selector
@@ -67,7 +66,7 @@ public:
 //!     \par Type requirements
 //!         \c T shall be either \c signed \c int or \c unsigned \c int.
 // ---------------------------------------------------------------------------
-template< std::size_t width, typename T /* gps temp = signed */ >
+template< int width, typename T /* gps temp = signed */ >
 class exact_width_integer
 {
 public:
@@ -78,7 +77,7 @@ public:
 //!
 //!     A synonym of <code>exact_width_integer< N, unsigned ></code>.
 // ---------------------------------------------------------------------------
-template< std::size_t width >
+template< int width >
 class exact_width_unsigned_integer
     :   public exact_width_integer< width, unsigned >
 {
