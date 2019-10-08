@@ -38,6 +38,9 @@ namespace breath {
 //!
 //!       message-id: <38i6r2d5uksv7eovk0os7506k9bbshgl2j@4ax.com>
 //!
+//!     Note that, finally (!), the C++17 standard talks about "accesses
+//!     through volatile glvalues" [intro.execution] instead of "access
+//!     to volatile objects".
 // ---------------------------------------------------------------------------
 //      Note how this is intentionally implemented with a hand-coded
 //      loop. It's not crystal clear whether we could use std::fill()
