@@ -41,7 +41,7 @@ public:
 //
 //!     \return
 //!         The current date and time formatted according to \c format,
-//!         interpreted as if passed to the \c strftime standard
+//!         interpreted as if passed to the \c strftime() standard
 //!         function. See also: time_string_zone.
 //!
 //!     This is a simple tool for simple and quick formatting needs.
