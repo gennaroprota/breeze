@@ -44,6 +44,7 @@ time_string( std::string const & format, time_string_zone::zone zone )
             }
         }
     }
+
     return result ;
 }
 
