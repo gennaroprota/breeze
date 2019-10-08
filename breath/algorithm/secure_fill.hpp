@@ -22,7 +22,7 @@ namespace breath {
 //      secure_fill():
 //      ==============
 //
-//!     This is completely analogous to the \c std::fill algorithm, except
+//!     This is completely analogous to the \c std::fill() algorithm, except
 //!     that, due to a \c volatile qualification, it guarantees that the
 //!     sequence is written to, even if it is never touched after the
 //!     \c secure_fill() call (in other words: it ensures that the compiler
@@ -40,8 +40,8 @@ namespace breath {
 //!
 // ---------------------------------------------------------------------------
 //      Note how this is intentionally implemented with a hand-coded
-//      loop. It's not crystal clear whether we could use std::fill
-//      or std::fill_n (which would bring the advantage of debugging
+//      loop. It's not crystal clear whether we could use std::fill()
+//      or std::fill_n() (which would bring the advantage of debugging
 //      mode and everything the underlying standard library
 //      implementation might provide). On a relaxed reading of the
 //      standard, it seems that, for instance
