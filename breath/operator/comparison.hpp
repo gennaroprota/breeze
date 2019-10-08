@@ -56,14 +56,17 @@ class comparison
     {
         return lhs.compare( rhs ) < 0 ;
     }
+
     friend bool         operator <=( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) <= 0 ;
     }
+
     friend bool         operator >( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) > 0 ;
     }
+
     friend bool         operator >=( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) >= 0 ;
