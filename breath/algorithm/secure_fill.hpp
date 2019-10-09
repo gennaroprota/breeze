@@ -46,6 +46,12 @@ namespace breath {
 //!     DR476:
 //!
 //!       <http://www.open-std.org/jtc1/sc22/wg14/www/docs/summary.htm#dr_476>.
+//!
+//!     \warning
+//!         Note that algorithm names are usually verb-based. However,
+//!         in the expression "secure fill", "fill" is actually a noun.
+//!         I don't like this inconsistency, but couldn't find a better,
+//!         verb-based name; if you have one, please send me a mail.
 // ---------------------------------------------------------------------------
 //      Note how this is intentionally implemented with a hand-coded
 //      loop. It's not crystal clear whether we could use std::fill()
