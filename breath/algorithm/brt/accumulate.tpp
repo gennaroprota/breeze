@@ -23,7 +23,8 @@ accumulate_traits< T >::compute( Iter begin,
                                  init_type & value )
 {
     while ( begin != end ) {
-        value += *begin ++ ;
+        value += *begin ;
+        ++ begin ;
     }
     return value ;
 }
