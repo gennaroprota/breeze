@@ -51,7 +51,7 @@ struct cpuid_result
 //      get_cpuid_info():
 //      =================
 //
-//!     Namespace: global (see above)
+//!     Namespace: global (see above).
 //!
 //!     Executes the CPUID instruction with the provided values in \c
 //!     EAX and \c ECX.
