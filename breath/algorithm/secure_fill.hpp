@@ -40,7 +40,11 @@ namespace breath {
 //!
 //!     Note that, finally (!), the C++17 standard talks about "accesses
 //!     through volatile glvalues" [intro.execution] instead of "access
-//!     to volatile objects".
+//!     to volatile objects". This stems from <wg21.link/P0612R0>, which
+//!     was adopted on March, 2017 (post-Kona mailing). For C, see
+//!     DR476:
+//!
+//!       <http://www.open-std.org/jtc1/sc22/wg14/www/docs/summary.htm#dr_476>.
 // ---------------------------------------------------------------------------
 //      Note how this is intentionally implemented with a hand-coded
 //      loop. It's not crystal clear whether we could use std::fill()
