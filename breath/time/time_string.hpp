@@ -49,7 +49,7 @@ public:
 //!     (but don't underestimate the good old strftime() ;-)).
 //!
 //!     NOTE:
-//!         document reentrancy issues (see C99, 7.23.3)
+//!         this function is thread-safe and reentrant.
 // ---------------------------------------------------------------------------
 breath::maybe< std::string >
                     time_string( std::string const & format,

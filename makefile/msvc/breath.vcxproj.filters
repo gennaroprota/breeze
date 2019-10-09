@@ -306,6 +306,9 @@
     <ClCompile Include="..\..\breath\text\brt\tail.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\time\private\brt\thread_safe_reentrant_time_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\algorithm\brt\accumulate.tpp" />

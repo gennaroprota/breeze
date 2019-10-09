@@ -27,69 +27,71 @@ vpath %.cpp     $(root)/breath/checksum/brt         \
                 $(root)/breath/testing/brt          \
                 $(root)/breath/text/brt             \
                 $(root)/breath/time/brt             \
+                $(root)/breath/time/private/brt     \
                 $(root)/breath/uuid/brt
 
 vpath %.asm     $(root)/breath/cpu/brt
 
-source_files := luhn.cpp                            \
-                                                    \
-                roman.cpp                           \
-                                                    \
-                hashing_count.cpp                   \
-                md5_hasher.cpp                      \
-                sha1_hasher.cpp                     \
-                sha224_hasher.cpp                   \
-                sha256_hasher.cpp                   \
-                sha384_hasher.cpp                   \
-                sha512_hasher.cpp                   \
-                                                    \
-                assert.cpp                          \
-                exception.cpp                       \
-                last_api_error.cpp                  \
-                                                    \
-                find_environment_string.cpp         \
-                get_environment_map.cpp             \
-                operating_system_name.cpp           \
-                                                    \
-                amount_of_physical_memory.cpp       \
-                                                    \
-                damerau_levenshtein_distance.cpp    \
-                levenshtein_distance.cpp            \
-                                                    \
-                base_file_name.cpp                  \
-                directory_separators.cpp            \
-                extension.cpp                       \
-                                                    \
-                command_line.cpp                    \
-                current_directory.cpp               \
-                exit_code.cpp                       \
-                program.cpp                         \
-                program_option.cpp                  \
-                set_current_directory.cpp           \
-                                                    \
-                entropy_source.cpp                  \
-                subrange_max.cpp                    \
-                                                    \
-                console_reporter.cpp                \
-                test_descriptor.cpp                 \
-                test_exception.cpp                  \
-                test_runner.cpp                     \
-                                                    \
-                begins_with.cpp                     \
-                ends_with.cpp                       \
-                printable_string.cpp                \
-                remove_from_end.cpp                 \
-                replace_all.cpp                     \
-                set_of_chars.cpp                    \
-                split.cpp                           \
-                tail.cpp                            \
-                trim.cpp                            \
-                trim_head.cpp                       \
-                trim_tail.cpp                       \
-                                                    \
-                c_clock_policy.cpp                  \
-                time_string.cpp                     \
-                                                    \
+source_files := luhn.cpp                                    \
+                                                            \
+                roman.cpp                                   \
+                                                            \
+                hashing_count.cpp                           \
+                md5_hasher.cpp                              \
+                sha1_hasher.cpp                             \
+                sha224_hasher.cpp                           \
+                sha256_hasher.cpp                           \
+                sha384_hasher.cpp                           \
+                sha512_hasher.cpp                           \
+                                                            \
+                assert.cpp                                  \
+                exception.cpp                               \
+                last_api_error.cpp                          \
+                                                            \
+                find_environment_string.cpp                 \
+                get_environment_map.cpp                     \
+                operating_system_name.cpp                   \
+                                                            \
+                amount_of_physical_memory.cpp               \
+                                                            \
+                damerau_levenshtein_distance.cpp            \
+                levenshtein_distance.cpp                    \
+                                                            \
+                base_file_name.cpp                          \
+                directory_separators.cpp                    \
+                extension.cpp                               \
+                                                            \
+                command_line.cpp                            \
+                current_directory.cpp                       \
+                exit_code.cpp                               \
+                program.cpp                                 \
+                program_option.cpp                          \
+                set_current_directory.cpp                   \
+                                                            \
+                entropy_source.cpp                          \
+                subrange_max.cpp                            \
+                                                            \
+                console_reporter.cpp                        \
+                test_descriptor.cpp                         \
+                test_exception.cpp                          \
+                test_runner.cpp                             \
+                                                            \
+                begins_with.cpp                             \
+                ends_with.cpp                               \
+                printable_string.cpp                        \
+                remove_from_end.cpp                         \
+                replace_all.cpp                             \
+                set_of_chars.cpp                            \
+                split.cpp                                   \
+                tail.cpp                                    \
+                trim.cpp                                    \
+                trim_head.cpp                               \
+                trim_tail.cpp                               \
+                                                            \
+                c_clock_policy.cpp                          \
+                time_string.cpp                             \
+                thread_safe_reentrant_time_functions.cpp    \
+                                                            \
                 uuid.cpp
 
 asm_source_files := get_cpuid_info.asm

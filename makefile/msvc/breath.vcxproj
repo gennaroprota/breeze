@@ -499,6 +499,7 @@
     </ClCompile>
     <ClCompile Include="..\..\breath\time\brt\c_clock_policy.cpp" />
     <ClCompile Include="..\..\breath\time\brt\time_string.cpp" />
+    <ClCompile Include="..\..\breath\time\private\brt\thread_safe_reentrant_time_functions.cpp" />
     <ClCompile Include="..\..\breath\time\windows_only\brt\performance_counter_policy.cpp" />
     <ClCompile Include="..\..\breath\type_identification\test\readable_type_name_test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>

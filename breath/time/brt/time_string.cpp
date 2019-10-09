@@ -12,8 +12,9 @@
 // ___________________________________________________________________________
 
 #include "breath/time/time_string.hpp"
+#include "breath/time/private/thread_safe_reentrant_time_functions.hpp"
 #include "breath/idiom/maybe.hpp"
-#include <ctime>
+#include <time.h>
 
 namespace breath {
 
@@ -27,18 +28,22 @@ namespace breath {
 maybe< std::string >
 time_string( std::string const & format, time_string_zone::zone zone )
 {
-    using namespace std ;
-    maybe< string >     result ;
+    using namespace time_private ;
+
+    maybe< std::string >
+                        result ;
 
     time_t const        time_stamp( time( nullptr ) ) ;
     if ( time_stamp != static_cast< time_t >( -1 ) ) { // gps
-        tm const * const    broken_down( zone == time_string_zone::utc
-                                            ? gmtime(    &time_stamp )
-                                            : localtime( &time_stamp ) ) ;
-        if ( broken_down != nullptr ) {
+        tm                  broken_down ;
+        tm const * const    p( zone == time_string_zone::utc
+                ? thread_safe_reentrant_gmtime(    &time_stamp, &broken_down )
+                : thread_safe_reentrant_localtime( &time_stamp, &broken_down ) )
+                        ;
+        if ( p != nullptr ) {
             int const           max_size = 256 ;
             char                buffer[ max_size ] = {} ;
-            if ( strftime( buffer, max_size, format.c_str(), broken_down )
+            if ( strftime( buffer, max_size, format.c_str(), &broken_down )
                     != 0 ) {
                 result = buffer ;
             }
