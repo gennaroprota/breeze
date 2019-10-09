@@ -18,7 +18,6 @@
 
 namespace breath {
 
-
 //      secure_fill():
 //      ==============
 //
