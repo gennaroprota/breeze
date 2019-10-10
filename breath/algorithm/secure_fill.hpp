@@ -8,19 +8,7 @@
 //
 //!     \file
 //!     \brief A security-aware fill algorithm.
-// ---------------------------------------------------------------------------
-
-#ifndef BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
-#define BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
-
-#include "breath/idiom/volatilize.hpp"
-#include <cstddef>
-
-namespace breath {
-
-//      secure_fill():
-//      ==============
-//
+//!
 //!     This is completely analogous to the \c std::fill() algorithm,
 //!     except that it guarantees that the container is written to, even
 //!     if it is never touched after the \c secure_fill() call (in other
@@ -40,7 +28,15 @@ namespace breath {
 //!         I don't like this inconsistency, but couldn't find a better,
 //!         verb-based name; if you have one, please send me a mail.
 // ---------------------------------------------------------------------------
-//
+
+#ifndef BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
+#define BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
+
+#include "breath/idiom/volatilize.hpp"
+#include <cstddef>
+
+namespace breath {
+
 //      Implementation notes:
 //
 //      We use volatile lvalues to write to objects that are not
