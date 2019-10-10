@@ -39,6 +39,10 @@
 # Stack dumps
 *.stackdump
 
+# Generated documentation files
+doc/*
+!doc/source/
+
 # Vim swap files (up to three levels; this seems a
 # reasonable compromise)
 *.swp
