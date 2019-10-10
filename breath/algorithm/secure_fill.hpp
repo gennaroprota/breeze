@@ -22,29 +22,17 @@ namespace breath {
 //      ==============
 //
 //!     This is completely analogous to the \c std::fill() algorithm,
-//!     except that, due to a \c volatile qualification, it guarantees
-//!     that the sequence is written to, even if it is never touched
-//!     after the \c secure_fill() call (in other words: it ensures that
-//!     the compiler will not optimize the function out); useful to
+//!     except that it guarantees that the container is written to, even
+//!     if it is never touched after the \c secure_fill() call (in other
+//!     words: it ensures that the compiler will not optimize away the
+//!     call); unless, of course, the provided range is empty. Useful to
 //!     zeroize passwords and other sensitive data.
 //!
 //!     Note that a convenience overload for built-in arrays is
-//!     provided. For technical reasons, this overload is guaranteed to
-//!     work for arrays of built-in types only.
+//!     provided.
 //!
-//!     Many thanks go to David R Tribble and Douglas A. Gwyn who
-//!     clarified my doubts on comp.std.c; see the thread starting from
-//!     the message with this message-id:
-//!
-//!       <38i6r2d5uksv7eovk0os7506k9bbshgl2j@4ax.com>.
-//!
-//!     Note that, finally (!), the C++17 standard talks about "accesses
-//!     through volatile glvalues" [intro.execution] instead of "access
-//!     to volatile objects". This stems from <wg21.link/P0612R0>, which
-//!     was adopted on March, 2017 (post-Kona mailing). For C, see
-//!     DR476:
-//!
-//!       <http://www.open-std.org/jtc1/sc22/wg14/www/docs/summary.htm#dr_476>.
+//!     For technical reasons, secure_fill() requires a container, or an
+//!     array, whose elements are of a \e built-in type.
 //!
 //!     \warning
 //!         Note that algorithm names are usually verb-based. However,
@@ -52,12 +40,33 @@ namespace breath {
 //!         I don't like this inconsistency, but couldn't find a better,
 //!         verb-based name; if you have one, please send me a mail.
 // ---------------------------------------------------------------------------
-//      Note how this is intentionally implemented with a hand-coded
-//      loop. It's not crystal clear whether we could use std::fill()
-//      or std::fill_n() (which would bring the advantage of debug
-//      mode and everything the underlying standard library
-//      implementation might provide). On a relaxed reading of the
-//      standard, it seems that, for instance
+//
+//      Implementation notes:
+//
+//      We use volatile lvalues to write to objects that are not
+//      necessarily declared as volatile. At the time I wrote these
+//      templates, it wasn't clear at all from the C and the C++
+//      standards that this was guaranteed to work. So, many thanks go
+//      to David R Tribble and Douglas A. Gwyn who clarified on
+//      comp.std.c that the intent was for it to work; see the thread
+//      starting from the message with this message-id:
+//
+//        <38i6r2d5uksv7eovk0os7506k9bbshgl2j@4ax.com>.
+//
+//      Note that, finally (!), the C++17 standard talks about "accesses
+//      through volatile glvalues" [intro.execution] instead of "access
+//      to volatile objects". This stems from <wg21.link/P0612R0>, which
+//      was adopted on March, 2017 (post-Kona mailing). For C, see
+//      DR476:
+//
+//        <http://www.open-std.org/jtc1/sc22/wg14/www/docs/summary.htm#dr_476>.
+//
+//      Note, too, how these are intentionally implemented with a
+//      hand-coded loop. It's not crystal clear, in fact, whether we
+//      could use std::fill() or std::fill_n() (which would bring the
+//      advantage of debug mode and everything the underlying standard
+//      library implementation might provide). On a relaxed reading of
+//      the standard, it seems that, for instance
 //
 //        std::fill( arr, arr + n, value ) ;
 //
@@ -69,6 +78,16 @@ namespace breath {
 //      [alg.fill], is to be interpreted. Does it allow anything
 //      different from the obvious *first = value, *first ++ = value
 //      and similar?
+// ---------------------------------------------------------------------------
+
+
+
+
+
+//      secure_fill():
+//      ==============
+//
+//!     Version for built-in arrays.
 // ---------------------------------------------------------------------------
 template< typename T, std::size_t n >
 void
@@ -82,7 +101,7 @@ secure_fill( T volatile ( &arr )[ n ], T const & value = T() )
 //      secure_fill():
 //      ==============
 //
-//!     Version for sequences.
+//!     Version for iterator ranges.
 // ---------------------------------------------------------------------------
 //
 //      [FUTURE], [C++11] [gps]:
