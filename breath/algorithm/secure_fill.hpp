@@ -13,8 +13,8 @@
 //!     except that it guarantees that the container is written to, even
 //!     if it is never touched after the \c secure_fill() call (in other
 //!     words: it ensures that the compiler will not optimize away the
-//!     call); unless, of course, the provided range is empty. Useful to
-//!     zeroize passwords and other sensitive data (see
+//!     call); unless, of course, the provided range is empty. Useful
+//!     for zeroing passwords and other sensitive data (see
 //!
 //!       <https://devblogs.microsoft.com/oldnewthing/20130529-00/?p=4223>
 //!
