@@ -17,6 +17,9 @@
 
 namespace breath {
 
+//      remove_from_end():
+//      ==================
+//
 //!     \return
 //!         If \c str ends with \c to_be_removed, \c str with the
 //!         \c to_be_removed part erased from its end; otherwise

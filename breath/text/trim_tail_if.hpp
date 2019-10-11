@@ -5,6 +5,11 @@
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
+//
+//!     \file
+//!     \brief A std::string trimmer accepting a predicate (tail of
+//!            string).
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_yzz6bpfxotq2rsaIMxKu1Q0eC1AELUNX
 #define BREATH_GUARD_yzz6bpfxotq2rsaIMxKu1Q0eC1AELUNX
@@ -13,8 +18,8 @@
 
 namespace breath {
 
-//      trim_tail_if:
-//      =============
+//      trim_tail_if():
+//      ===============
 //
 //!     \return
 //!         A string obtained from \c str by removing all the trailing

@@ -5,6 +5,11 @@
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
+//
+//!     \file
+//!     \brief A std::string trimmer accepting a predicate (head of
+//!            string).
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_h57CrFESUSfZFQj2EBQob5O94l5AybNU
 #define BREATH_GUARD_h57CrFESUSfZFQj2EBQob5O94l5AybNU
@@ -13,8 +18,8 @@
 
 namespace breath {
 
-//      trim_head_if:
-//      =============
+//      trim_head_if():
+//      ===============
 //
 //!     \return
 //!         A string obtained from \c str by removing all the leading

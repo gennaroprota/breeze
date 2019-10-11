@@ -5,6 +5,10 @@
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
+//
+//!     \file
+//!     \brief Returns the tail of a string.
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_48671WeJXu9JNdXpT04IlPYpPx1GCY0K
 #define BREATH_GUARD_48671WeJXu9JNdXpT04IlPYpPx1GCY0K
@@ -14,6 +18,9 @@
 
 namespace breath {
 
+//      tail():
+//      =======
+//
 //!     \return
 //!         If <code>count >= s.length()</code>, \c s; otherwise the
 //!         string composed of the last \c count characters of \c s (an

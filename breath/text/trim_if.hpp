@@ -5,6 +5,10 @@
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
+//
+//!     \file
+//!     \brief A std::string trimmer accepting a predicate.
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_12722kkPcCmt1PN91r0QOwrcsntBhbKr
 #define BREATH_GUARD_12722kkPcCmt1PN91r0QOwrcsntBhbKr
