@@ -141,8 +141,8 @@ exe_root="$BREATH_ROOT/bin"
 make_opening_line
 mark_section start
 
+width=` get_line_width `
 (
-    width=` get_line_width `
     row1=` make_string "$width" '=' `
     row2=` make_string "$width" '_' `
 
@@ -158,6 +158,16 @@ mark_section start
     cat "$tool_root/init_file/license_reference.txt"
     printf '%s\n' "$row2"
 )                                                       | dump - 'align_center'
+
+if [ "$name_extension" = 'hpp' ]
+then
+    length=`expr "$width" - 3`
+    row=` make_string "$length" '-' `
+    printf '%s\n' "//"
+    printf '%s\n' "//!     \file"
+    printf '%s\n' "//!     \brief"
+    printf '%s\n' "// $row"
+fi
 
 mark_section end
 
