@@ -28,6 +28,12 @@ void do_tests()
                                                               "nel mezzo del") ;
     BREATH_CHECK( breath::remove_from_end( "foo", "foo") == "" ) ;
     BREATH_CHECK( breath::remove_from_end( "foo", "xfoo") == "foo" ) ;
+
+    //      Ensure everything works if the two arguments are the same
+    //      string.
+    // -----------------------------------------------------------------------
+    std::string const   test( "test" ) ;
+    BREATH_CHECK( breath::remove_from_end( test, test ) == "" ) ;
 }
 
 }
