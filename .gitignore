@@ -39,6 +39,9 @@
 # Stack dumps
 *.stackdump
 
+# Executable directory
+/bin/
+
 # Generated documentation files
 doc/*
 !doc/source/
