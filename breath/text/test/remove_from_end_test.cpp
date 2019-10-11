@@ -13,8 +13,8 @@
 
 #include "breath/text/remove_from_end.hpp"
 #include "breath/testing/testing.hpp"
-#include <ostream>
 #include <iostream>
+#include <ostream>
 
 namespace {
 

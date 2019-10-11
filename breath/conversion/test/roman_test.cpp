@@ -18,11 +18,11 @@
 #include <algorithm>
 #include <fstream>
 #include <ios>
+#include <iostream>
 #include <iterator>
 #include <locale>
-#include <string>
 #include <sstream>
-#include <iostream>
+#include <string>
 
 namespace {
 

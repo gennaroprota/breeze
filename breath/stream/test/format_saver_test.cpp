@@ -14,10 +14,9 @@
 #include "breath/stream/format_saver.hpp"
 #include "breath/testing/testing.hpp"
 #include <iomanip>
-#include <sstream>
 #include <iostream>
 #include <ostream>
-
+#include <sstream>
 
 void
 check()

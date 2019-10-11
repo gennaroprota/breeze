@@ -14,9 +14,9 @@
 #include "breath/encoding/base64_to_binary.hpp"
 #include "breath/iteration/begin_end.hpp"
 #include "breath/testing/testing.hpp"
-#include <string>
-#include <iterator>
 #include <iostream>
+#include <iterator>
+#include <string>
 
 void
 check_valid()

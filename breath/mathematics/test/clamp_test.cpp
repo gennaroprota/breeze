@@ -13,13 +13,13 @@
 
 #include "breath/mathematics/clamp.hpp"
 #include "breath/testing/testing.hpp"
+#include <climits>
+#include <cstddef>
 #include <iostream>
 #include <ostream>
-#include <climits>
-#include <vector>
-#include <cstddef>
-#include <utility>
 #include <string>
+#include <utility>
+#include <vector>
 
 namespace {
 

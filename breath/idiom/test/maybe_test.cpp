@@ -13,8 +13,8 @@
 
 #include "breath/idiom/maybe.hpp"
 #include "breath/testing/testing.hpp"
-#include <string>
 #include <iostream>
+#include <string>
 #include <utility>
 
 void
