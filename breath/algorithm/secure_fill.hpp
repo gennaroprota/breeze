@@ -14,7 +14,11 @@
 //!     if it is never touched after the \c secure_fill() call (in other
 //!     words: it ensures that the compiler will not optimize away the
 //!     call); unless, of course, the provided range is empty. Useful to
-//!     zeroize passwords and other sensitive data.
+//!     zeroize passwords and other sensitive data (see
+//!
+//!       <https://devblogs.microsoft.com/oldnewthing/20130529-00/?p=4223>
+//!
+//!     for some insights on this).
 //!
 //!     Note that a convenience overload for built-in arrays is
 //!     provided.
