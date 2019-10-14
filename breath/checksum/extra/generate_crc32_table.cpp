@@ -67,7 +67,7 @@ main()
 
     os.setf( std::ios_base::hex, std::ios_base::basefield ) ;
     os.fill( '0' ) ;
-    os << "static std::uint_fast_32_t const\n" << indent <<
+    os << "static std::uint_fast32_t const\n" << indent <<
           "                    table[] =\n{\n" << indent ;
     for ( int i = 0 ; i < size ; ++ i ) {
         os << "0x" << std::setw( 8 ) << table[ i ] ;
