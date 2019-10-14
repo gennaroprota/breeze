@@ -15,9 +15,13 @@
 
 namespace breath {
 
-//!     Little helper to add \c volatile qualification to an lvalue
-//!     expression without using \c static_cast (which might be too
-//!     powerful) and without breaking the expression in two parts.
+//!     Adds a \c volatile qualification to an lvalue expression.
+//!
+//!     This allows avoding using a \c const_cast or a \c static_cast,
+//!     or introducing an additional variable.
+//!
+//!     \return
+//!         ref
 // ---------------------------------------------------------------------------
 template< typename T >
 T volatile &
