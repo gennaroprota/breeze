@@ -39,13 +39,6 @@ operator <<( std::ostream & os, roman const & r )
    { 9, "IX", "ix" },   { 5, "V", "v" },   { 4, "IV", "iv" },   { 1, "I", "i" }
     } ;
 
-    //  If using libstdc++ without -D_GLIBCXX_USE_CXX11_ABI, this
-    //  reserve() might be, on average, beneficial:
-    //
-    //    int const           max_roman_length = 15 ;
-    //    m_representation.reserve( max_roman_length ) ;
-    // -----------------------------------------------------------------------
-
     char const * entry::* const
                         repr = ( os.flags() & std::ios_base::uppercase ) != 0
                                    ? &entry::upper_repr
