@@ -22,7 +22,7 @@
 #       Special notes for some of the options:
 #       ======================================
 #
-#       -D_GLIBCXX_USE_CXX11_ABI=1:
+#       -D _GLIBCXX_USE_CXX11_ABI=1:
 #
 #           enables the new implementations of std::string and
 #           std::list, which conform to C++11; for more details see:
