@@ -47,9 +47,9 @@ public:
 
 private:
     std::ostream &      m_stream ;
-    unsigned            m_passed ;
-    unsigned            m_failed ;
-    unsigned            m_unexpected_exceptions ;
+    int                 m_passed ;
+    int                 m_failed ;
+    int                 m_unexpected_exceptions ;
 } ;
 
 }

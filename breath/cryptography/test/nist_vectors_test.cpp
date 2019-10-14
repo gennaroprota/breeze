@@ -161,7 +161,7 @@ read_compact_string( nist_file & messages, int z )
     byte_type const     initial_mask = 128 ;
     byte_type           mask = initial_mask ;
     for ( int i = 0 ; i < z ; ++ i ) {
-        unsigned            n ;
+        int                 n ;
         messages >> n ;
 
         while ( n > 0 ) {
