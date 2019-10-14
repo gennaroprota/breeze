@@ -55,12 +55,12 @@ main( int argc, char ** argv )
 
         std::cout << "#ifndef " << name   << std::endl
                   << "#define " << name   << std::endl    ;
-        if ( std::cin.peek() != EOF ){
+        if ( std::cin.peek() != EOF ) {
             std::cout << std::cin.rdbuf() << std::endl    ;
         }
         std::cout << "#endif"             << std::endl    ;
 
-    } catch (std::exception const & ex ) {
+    } catch ( std::exception const & ex ) {
         std::cerr << ex.what() << std::endl ;
         program::instance().declare_error( program::error ) ;
     } catch ( ... ) {
