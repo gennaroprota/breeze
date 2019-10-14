@@ -30,11 +30,11 @@ make_random_alnum( int length, breath::entropy_source & source )
     std::string         result ;
 
     if ( length > 0 ) {
-        // Reserve in advance, to avoid consuming entropy in the (admittedly
-        // unlikely) case that we can't append into the string after a part
-        // of the characters has been added and thus we have consumed some
-        // entropy
-        //
+        //      Reserve in advance, to avoid consuming entropy in the
+        //      (admittedly unlikely) case that we can't append into the
+        //      string after a part of the characters has been added and
+        //      thus we have consumed some entropy.
+        // -------------------------------------------------------------------
         result.reserve( length ) ;
 
         int                 count = length ;
