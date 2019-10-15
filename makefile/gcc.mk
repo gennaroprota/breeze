@@ -25,7 +25,7 @@
 #       -D _GLIBCXX_USE_CXX11_ABI=1:
 #
 #           enables the new implementations of std::string and
-#           std::list, which conform to C++11; for more details see:
+#           std::list, which conform to C++11; for more details, see:
 #
 #             <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html>
 #
