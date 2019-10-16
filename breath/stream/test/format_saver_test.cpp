@@ -15,6 +15,7 @@
 #include "breath/testing/testing.hpp"
 #include <iomanip>
 #include <iostream>
+#include <locale>
 #include <ostream>
 #include <sstream>
 
@@ -29,10 +30,19 @@ check()
         str.fill( '0' ) ;
         str << std::setw( 2 ) << 15 ;
         BREATH_CHECK( str.str() == "0f" ) ;
+
+        str.tie( &std::cout ) ;
+        str.imbue( std::locale::classic() ) ;
+        str.exceptions( std::ios_base::badbit ) ;
+
     }
     BREATH_CHECK( (str.flags() & std::ios::hex) == 0 ) ;
     BREATH_CHECK( str.fill() == ' ' ) ;
     BREATH_CHECK( str.width() == 0 ) ;
+
+    BREATH_CHECK( str.tie() == &std::cout ) ;
+    BREATH_CHECK( str.getloc() == std::locale::classic() ) ;
+    BREATH_CHECK( str.exceptions() == std::ios_base::badbit ) ;
 }
 
 int
