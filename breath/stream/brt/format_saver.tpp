@@ -50,8 +50,8 @@ namespace breath {
 //      isn't copied back by copyfmt(), whatever its value is).
 //
 //      Of course it may still happen that rdbuf() is null, and the
-//      fact is harmless (as already said, it just causes an
-//      ios_failure_type exception to be thrown and caught
+//      fact is harmless (as already said, it just causes a
+//      std::ios_base::failure exception to be thrown and caught
 //      immediately).
 // ---------------------------------------------------------------------------
 template< typename Ch, typename Traits >
@@ -66,7 +66,7 @@ basic_format_saver< Ch, Traits >::basic_format_saver(
     // -----------------------------------------------------------------------
     try {
         m_store.copyfmt( m_user_stream ) ;
-    } catch ( ios_failure_type & ) {
+    } catch ( std::ios_base::failure & ) {
     }
 }
 
@@ -118,7 +118,7 @@ basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
     // -----------------------------------------------------------------------
     try {
         m_store.exceptions( m_user_stream.exceptions() ) ; // ok?? and gps what can this throw?
-    } catch ( ios_failure_type & ) {
+    } catch ( std::ios_base::failure & ) {
     }
 
     //      The question arises here of what state the stream should be
@@ -142,7 +142,7 @@ basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
     // -----------------------------------------------------------------------
     try {
         m_user_stream.copyfmt( m_store ) ;  // what about callbacks?
-    } catch ( ios_failure_type & ) {
+    } catch ( std::ios_base::failure & ) {
         // OK
     } catch ( ... ) {
         //      NOT OK: an exception not due to setting the state so an

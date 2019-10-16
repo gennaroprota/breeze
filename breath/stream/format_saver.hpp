@@ -102,8 +102,6 @@ private:
     typedef Ch          char_type ;
     typedef std::basic_ios< Ch, Traits >
                         ios_type ;
-    typedef typename ios_type::failure
-                        ios_failure_type ;
 
     ios_type &          m_user_stream ;
     ios_type            m_store ;
