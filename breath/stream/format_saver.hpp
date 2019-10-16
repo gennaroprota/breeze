@@ -87,7 +87,7 @@ namespace breath {
 //!     James Kanze, named \c IOSave. And it was a comment in his code
 //!     to suggest using \c copyfmt(), in order to save the additional
 //!     stream info. James also gave, as usual, excellent feedback on
-//!     various design issues, in particular about locales and imbue.
+//!     various design issues, in particular about locales and imbue().
 // ---------------------------------------------------------------------------
 template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_format_saver
