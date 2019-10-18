@@ -10,6 +10,19 @@
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
+//
+//      line_up:
+//      ========
+//
+//      Aligns the backslashes in a multi-line macro definition. Works
+//      like a Unix filter. Terminates the last line with "/**/".
+//
+//      If the backslashes are not present in the input, it inserts
+//      them. Tab characters are always expanded.
+//
+//      Note that the tool aborts if there are less than two lines in
+//      the input.
+// ---------------------------------------------------------------------------
 
 #include "breath/diagnostics/assert.hpp"
 #include "breath/text/remove_from_end.hpp"
