@@ -11,6 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breath/diagnostics/assert.hpp"
 #include "breath/text/remove_from_end.hpp"
 #include "breath/text/trim_tail.hpp"
 
@@ -75,20 +76,34 @@ main()
         }
     }
 
-    max_length += std::max( last_line_terminator.length(),
-                            marker.length() ) ;
+    BREATH_ASSERT( lines.size() > 1 ) ;
+
+    size_type marker_column =
+      last_line_terminator.length() > marker.length()
+        ? max_length + ( last_line_terminator.length() - marker.length() ) + 2
+        : max_length + 2 ;
+
+    if ( use_indent_width && ( marker_column % indent_width ) != 1 ) {
+        if ( ( marker_column % indent_width ) == 0 ) {
+            marker_column += 1 ;
+        } else {
+            marker_column += ( indent_width - marker_column % indent_width
+                                                                         + 1 ) ;
+        }
+    }
+
     for ( auto it = lines.begin() ; it != lines.end() ; ++ it ) {
 
-        // gps perhaps do a calculation here
-        do {
-            *it += ' ' ;
-        } while ( it->length() <= max_length
-            || ( use_indent_width && ( it->length() % indent_width != 0 ) ) ) ;
+        size_type           space_count = it != ( lines.end() - 1 )
+                                              ? marker_column - 1 - it->length()
+                                              : marker_column - 1 - it->length()  - last_line_terminator.length() + marker.length() ;
 
 
-        std::cout << *it << ( it == ( lines.end() - 1 )
-                                ? last_line_terminator
-                                : marker ) << std::endl ;
+        std::string const   spaces( space_count, ' ' ) ;
+
+        std::cout << *it << spaces << ( it == ( lines.end() - 1 )
+                                          ? last_line_terminator
+                                          : marker ) << std::endl ;
 
     }
 }
