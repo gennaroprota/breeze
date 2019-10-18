@@ -31,7 +31,6 @@ bool const          use_indent_width = true ; // put the marker at 1 + k*w, wher
                                               // is the indentation width (at least
                                               // one space is added)
 int const           indent_width = 4 ;
-bool const          expand_tabs = true ;
 
 // This is made a string for generality, but we really only need a
 // character for now.
@@ -69,7 +68,7 @@ main()
                 max_length = line.length() ;
             }
             line.clear() ;
-        } else if ( ch== '\t' && expand_tabs ) {
+        } else if ( ch== '\t' ) {
             line += std::string( indent_width - line.length() % indent_width,
                                  ' ' ) ;
         } else {
