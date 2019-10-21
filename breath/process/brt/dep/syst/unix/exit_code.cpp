@@ -35,4 +35,3 @@ int const           exit_internal = 50 ;
 // c-basic-offset: 4
 // End:
 // vim: set ft=cpp et sts=4 sw=4:
-

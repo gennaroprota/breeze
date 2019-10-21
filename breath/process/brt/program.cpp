@@ -170,7 +170,6 @@ program::do_set_name( std::string const & name )
     m_program_name = breath::base_file_name( name ) ;
 }
 
-
 }
 
 // Local Variables:
