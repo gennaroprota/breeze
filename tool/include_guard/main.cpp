@@ -64,6 +64,7 @@ main( int argc, char ** argv )
         std::cerr << ex.what() << std::endl ;
         program::instance().declare_error( program::error ) ;
     } catch ( ... ) {
+        std::cerr << "An unknown exception occurred." << std::endl ;
         program::instance().declare_error( program::fatal ) ;
     }
     return program::instance().exit_code() ;
