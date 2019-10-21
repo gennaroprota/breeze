@@ -69,7 +69,7 @@ nist_file::nist_file( char const * file_name )
 
     if ( m_stream.fail() || m_stream.eof() ) {
         std::string const   what =
-          std::string ( "cannot construct nist_file object for " ) + file_name ;
+          std::string( "cannot construct nist_file object for " ) + file_name ;
 
         throw std::ios::failure( what ) ;
     }
