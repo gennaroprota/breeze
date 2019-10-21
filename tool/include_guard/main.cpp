@@ -49,7 +49,7 @@ main( int argc, char ** argv )
             ::make_macro_name( prefix, random_part_length, &status ) ;
 
         if ( status == macro_name_creation::could_not_release_entropy_source ) {
-            std::cerr << "Unable to release the entropy source." << std::endl ;
+            std::cerr << "Unable to release the entropy source" << std::endl ;
             program::instance().declare_error( program::comment ) ;
         }
 
@@ -64,7 +64,7 @@ main( int argc, char ** argv )
         std::cerr << ex.what() << std::endl ;
         program::instance().declare_error( program::error ) ;
     } catch ( ... ) {
-        std::cerr << "An unknown exception occurred." << std::endl ;
+        std::cerr << "An unknown exception occurred" << std::endl ;
         program::instance().declare_error( program::fatal ) ;
     }
     return program::instance().exit_code() ;
