@@ -29,7 +29,7 @@ main()
     {
         std::string const   s ;
         std::string const   delimiters = { '\0' } ;
-        std::vector< std::string >
+        std::vector< std::string > const
                             v = split( s, delimiters) ;
         DO_TEST( v.size() == 1 ) ;
         DO_TEST( v[ 0 ].empty() ) ;
@@ -57,7 +57,8 @@ main()
     {
         std::string const   s( "abcde" ) ;
         std::string const   delimiters = { '\0' } ;
-        std::vector< std::string > v = split( s, delimiters ) ;
+        std::vector< std::string > const
+                            v = split( s, delimiters ) ;
 
         DO_TEST( v.size() == 1 ) ;
         DO_TEST( v[ 0 ] == "abcde" ) ;
@@ -86,7 +87,8 @@ main()
         s += "string2" ;
         s.push_back( 'Y' ) ;
         s += "string3" ;
-        std::vector< std::string > v = split( s, "XY" ) ;
+        std::vector< std::string > const
+                            v = split( s, "XY" ) ;
 
         DO_TEST( v.size() == 3 ) ;
         DO_TEST( v[ 0 ] == "string1" ) ;
