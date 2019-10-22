@@ -25,6 +25,9 @@ main()
 {
     using breath::begins_with ;
 
+    std::string const   empty ;
+    DO_TEST( begins_with( empty, empty ) ) ;
+
     DO_TEST(   begins_with( "",  ""  ) ) ;
     DO_TEST(   begins_with( "a", ""  ) ) ;
     DO_TEST(   begins_with( "a", "a" ) ) ;
