@@ -20,7 +20,7 @@ namespace breath {
 //
 //!     \return
 //!         A vector of strings obtained by splitting \c s at each
-//!         delimiter character \c delim, in order.
+//!         character present in \c delimiters, in order.
 //!
 //!         Consecutive delimiters, or delimiters as first or last
 //!         character in \c s lead to an empty string in the resulting
