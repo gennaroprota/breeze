@@ -20,7 +20,7 @@ namespace breath {
 std::vector< std::string >
 split( std::string const & s, std::string const & delimiters )
 {
-    BREATH_ASSERT( s.size() < std::size_t( - 1 ) ) ;
+    BREATH_ASSERT( s.size() < std::size_t( -1 ) ) ;
 
     std::vector< std::string >
                         result ;
