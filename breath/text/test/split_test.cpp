@@ -36,6 +36,25 @@ main()
     }
 
     {
+        std::string const   s ;
+        std::string const   no_delimiters ;
+        std::vector< std::string > const
+                            v = split( s, no_delimiters ) ;
+        DO_TEST( v.size() == 1 ) ;
+        DO_TEST( v[ 0 ].empty() ) ;
+    }
+
+    {
+        std::string const   s( "abc" ) ;
+        std::string const   no_delimiters ;
+        std::vector< std::string > const
+                            v = split( s, no_delimiters ) ;
+
+        DO_TEST( v.size() == 1 ) ;
+        DO_TEST( v[ 0 ] == s ) ;
+    }
+
+    {
         std::string const   s( "abcde" ) ;
         std::string const   delimiters = { '\0' } ;
         std::vector< std::string > v = split( s, delimiters ) ;
