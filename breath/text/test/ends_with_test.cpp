@@ -25,6 +25,9 @@ main()
 {
     using breath::ends_with ;
 
+    std::string const   empty ;
+    DO_TEST( ends_with( empty, empty ) ) ;
+
     DO_TEST(   ends_with( "",  ""  ) ) ;
     DO_TEST(   ends_with( "a", ""  ) ) ;
     DO_TEST(   ends_with( "a", "a" ) ) ;
