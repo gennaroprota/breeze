@@ -136,9 +136,29 @@ basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
     //      the "normal" members (fmtflags, fill, etc.) anyway, leaving
     //      only the extended info uncopied.
     //
-    //      An idea for C++0x --to be verified-- is using std::swap():
+    //      Below, we have no other choice than setting badbit in the
+    //      stream, but this is far from satisfactory.
     //
-    //        std::swap( m_store, m_user_stream ) ;        // [FUTURE], [C++11]
+    //      An idea I had (for C++11 or later) was to use std::swap():
+    //
+    //        std::swap( m_store, m_user_stream ) ;
+    //
+    //      but it can't be applied at the basic_ios level.
+    //
+    //      So, I'd declare this template a failed attempt at solving
+    //      the problem.
+    //
+    //      In fact, all the complications derive from my desire to save
+    //      the iword()/pword() info, too. That might be a misplaced
+    //      desire.
+    //
+    //      However...
+    //
+    //      Peter Sommerlad suggested a different approach: using a
+    //      second stream attached to the same stream buffer as the
+    //      original, and freely modify the formatting flags of that :-)
+    //      I'll see if I can come up with a reusable facility using
+    //      that tecnique. So, I'm going to remove this one.
     // -----------------------------------------------------------------------
     try {
         m_user_stream.copyfmt( m_store ) ;  // what about callbacks?
