@@ -15,7 +15,7 @@ namespace breath {
 
 //      Note:
 //          this currently uses the same values as the Unix variant, as
-//          there's no reason to do otherwise and this might simplify
+//          there's no reason to do otherwise and that might simplify
 //          cross-platform scripts.
 // ---------------------------------------------------------------------------
 int const           exit_warning  = 10 ;
