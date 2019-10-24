@@ -78,7 +78,7 @@
 // ---------------------------------------------------------------------------
 //
 //      Note that, not only the pair (major, minor) isn't sufficient
-//      to determine what OS is running --which we already knew-- but,
+//      to determine what OS is running---which we already knew---but,
 //      even adding dwPlatformId, indecisions remain (5.2 and 6.0
 //      branches).
 //

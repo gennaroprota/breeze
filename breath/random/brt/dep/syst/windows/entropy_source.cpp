@@ -52,7 +52,7 @@ private:
 } ;
 
 entropy_source::impl::impl()
-    // note: m_handle_is_valid intentionally not initialized here --see below
+    // note: m_handle_is_valid intentionally not initialized here---see below
 {
     if ( ! acquire() ) {
         entropy_source::exception::raise( "cannot acquire the HCRYPTPROV handle"

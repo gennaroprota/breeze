@@ -50,7 +50,7 @@
 #          ) or to :[ \t]*<<word (redirection to colon), which
 #          reflects our most frequent usage.
 #
-#        - likewise, there's no parsing, so --for instance-- nesting
+#        - likewise, there's no parsing, so---for instance---nesting
 #          doesn't work: given
 #
 #            : <<eof1; : <<eof2

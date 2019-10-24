@@ -120,7 +120,7 @@
 //
 //      A simple way to ensure all of the above, trigraphs issues
 //      included, is to prohibit all of \, ', //, /* and ? (question
-//      mark --all trigraphs have two of them). Which, of course, is
+//      mark---all trigraphs have two of them). Which, of course, is
 //      nowhere near to being a real limitation :-)
 //
 //      Note, finally, that the above is a simplified variation of
