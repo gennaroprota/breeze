@@ -27,9 +27,9 @@ namespace adl_shield {
 //!     provides all six comparison operators (\c ==, \c !=, \c <, \c
 //!     <=, \c >, \c >=).
 //!
-//!     In addition to %is_equal(), your class \C must provide a public
-//!     const member function named \c compare which accepts a \c C
-//!     argument \c other and returns:
+//!     In addition to %is_equal(), your class \c C must provide a
+//!     public const member function named \c compare which accepts a \c
+//!     C argument \c other and returns:
 //!
 //!      - a value \c < \c 0 if \c *this is less than \c other
 //!
