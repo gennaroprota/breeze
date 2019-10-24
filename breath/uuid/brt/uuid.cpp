@@ -19,7 +19,7 @@
 #include "breath/endianness/endian_codec.hpp"
 #include "breath/iteration/begin_end.hpp"
 #include "breath/random/entropy_source.hpp"
-#include "breath/stream/format_saver.hpp"
+#include "breath/stream/stream_equivalent.hpp"
 
 #include <algorithm>
 #include <cstddef>
@@ -176,9 +176,11 @@ uuid::less::operator()( uuid const & u1, uuid const & u2 ) const noexcept
 }
 
 std::ostream &
-operator <<( std::ostream & os, uuid const & uu )
+operator <<( std::ostream & original_stream, uuid const & uu )
 {
-    format_saver const  saver( os ) ;
+    stream_equivalent< std::ostream >
+                        equiv( original_stream ) ;
+    std::ostream &      os = equiv.get() ;
 
     os.fill( '0' ) ;
 

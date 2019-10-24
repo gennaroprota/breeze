@@ -13,7 +13,7 @@
 // ___________________________________________________________________________
 
 #include "breath/text/printable_string.hpp"
-#include "breath/stream/format_saver.hpp"
+#include "breath/stream/stream_equivalent.hpp"
 #include "breath/workaround/as_non_constant.hpp"
 #include <climits>
 #include <iomanip>
@@ -35,13 +35,15 @@ printable_string::printable_string( std::string const & s )
 }
 
 std::ostream &
-operator <<( std::ostream & dest, printable_string const & ps )
+operator <<( std::ostream & original_stream, printable_string const & ps )
 {
     if ( ! ps.m_value.is_valid() ) {
-        return dest << "(null)" ;
+        return original_stream << "(null)" ;
     }
 
-    format_saver const  saver( dest ) ;
+    stream_equivalent< std::ostream >
+                        equiv( original_stream ) ;
+    std::ostream &      dest = equiv.get() ;
 
     dest.setf( std::ios_base::hex, std::ios_base::basefield ) ;
     dest.setf( std::ios_base::right, std::ios_base::adjustfield ) ;
