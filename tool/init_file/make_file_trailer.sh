@@ -52,6 +52,7 @@ sed 's/VimModeline/vim/g'
 #       ========
 #
 #        - keep the entries in alphabetical order (C locale)
+#
 #        - keep the following files in sync:
 #
 #           - .editorconfig

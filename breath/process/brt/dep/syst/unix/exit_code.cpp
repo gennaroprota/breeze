@@ -15,12 +15,12 @@ namespace breath {
 
 //      Note (if you add/remove/change values):
 //
-//          - on POSIX conforming systems "only the least significant 8
-//            bits (that is, status & 0377) shall be available to a
-//            waiting parent process", so stay below 256
+//       - on POSIX conforming systems "only the least significant 8
+//         bits (that is, status & 0377) shall be available to a waiting
+//         parent process", so stay below 256
 //
-//          - many de facto conventions exist and it is generally better
-//            to stay below 64 anyway
+//       - many de facto conventions exist and it is generally better to
+//         stay below 64 anyway
 // ---------------------------------------------------------------------------
 int const           exit_warning  = 10 ;
 int const           exit_error    = 20 ;

@@ -27,7 +27,9 @@
 #
 #        - only the "<<" redirection operator is recognized ("<<-" is
 #          not). Accordingly, leading <tab>s are not stripped.
+#
 #        - n, if present, is ignored
+#
 #        - no characters in 'word' must be quoted (thus 'delimiter' must
 #          be 'word' itself)
 #

@@ -38,7 +38,7 @@ class               digest ;
 //!     \c Engine, which is the algorithm-specific policy, must
 //!     provide the two static member functions described below:
 //!
-//!     - init_state( state_type & state )
+//!      - init_state( state_type & state )
 //!        \c state_type is either a built-in array or an
 //!        array-like type which provides const and non-const
 //!        operator [] functions; the machine guarantees that data
@@ -46,7 +46,7 @@ class               digest ;
 //!        when \c init_state() returns to the caller (for obvious
 //!        security reasons)
 //!
-//!     - process_block()
+//!      - process_block()
 //
 //
 //!     \warning

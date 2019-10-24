@@ -106,17 +106,17 @@
 //      well-defined and) the string-literal can be correctly seen as
 //      matching form (2).
 //      [NOTE:
-//      - in C++03, all of (a), (b) and (c) lead to UB in a
-//        #include ""
-//      - in the Final Committee Draft for C++0x, all of (a), (b) and
-//        (c) are specified as conditionally supported with
-//        implementation-defined semantics
+//       - in C++03, all of (a), (b) and (c) lead to UB in a
+//         #include ""
+//       - in the Final Committee Draft for C++0x, all of (a), (b) and
+//         (c) are specified as conditionally supported with
+//         implementation-defined semantics
 //
-//        (about the quote character there seems to be a defect in
-//        both documents (not present in C99), because a q-char cannot
-//        be a quote anyway... Fortunately this isn't going to affect
-//        any of us, really, and I'll ignore this quote character
-//        non-issue in all that follows)]
+//         (about the quote character there seems to be a defect in
+//         both documents (not present in C99), because a q-char cannot
+//         be a quote anyway... Fortunately this isn't going to affect
+//         any of us, really, and I'll ignore this quote character
+//         non-issue in all that follows)]
 //
 //      A simple way to ensure all of the above, trigraphs issues
 //      included, is to prohibit all of \, ', //, /* and ? (question
