@@ -39,7 +39,7 @@
 //!     std::endl.
 //!
 //!     \note
-//!         The <code>#includes</code> are not part of the interface.
+//!         The <code>#include</code>'s are not part of the interface.
 //!
 //!     \note
 //!         Macros within the argument 'expr' are expanded.
