@@ -9,7 +9,18 @@
 //!     \file
 //!     \brief The last error from the OS API.
 // ---------------------------------------------------------------------------
-//!
+
+#ifndef BREATH_GUARD_HC9mIXMvniKHLa6eFGhdRhDkxlSaZErK
+#define BREATH_GUARD_HC9mIXMvniKHLa6eFGhdRhDkxlSaZErK
+
+#include "breath/diagnostics/exception.hpp"
+#include <iosfwd>
+
+namespace breath {
+
+//      last_api_error:
+//      ===============
+//
 //!     An exception class representing the last error encountered
 //!     in an OS API call. It corresponds to \c GetLastError() under
 //!     Windows and \c errno under Unix.
@@ -35,15 +46,6 @@
 //!         thread indicates that \c GetLastError (if under Windows) or
 //!         \c errno (if under Unix) is meaningful.
 // ---------------------------------------------------------------------------
-
-#ifndef BREATH_GUARD_HC9mIXMvniKHLa6eFGhdRhDkxlSaZErK
-#define BREATH_GUARD_HC9mIXMvniKHLa6eFGhdRhDkxlSaZErK
-
-#include "breath/diagnostics/exception.hpp"
-#include <iosfwd>
-
-namespace breath {
-
 class last_api_error
     :   public exception
 {
