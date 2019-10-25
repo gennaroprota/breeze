@@ -24,7 +24,6 @@ digital_root( T n, T base ) noexcept
     return n == 0
              ? 0
              : 1 + ( n - 1 ) % ( base - 1 ) ;
-
 }
 
 }
