@@ -543,9 +543,6 @@
     <ClInclude Include="..\..\breath\process\exit_code.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\process\private\handle.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\breath\random\entropy_source.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>

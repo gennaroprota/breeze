@@ -646,7 +646,6 @@
     <ClInclude Include="..\..\breath\process\command_line.hpp" />
     <ClInclude Include="..\..\breath\process\current_directory.hpp" />
     <ClInclude Include="..\..\breath\process\exit_code.hpp" />
-    <ClInclude Include="..\..\breath\process\private\handle.hpp" />
     <ClInclude Include="..\..\breath\process\program.hpp" />
     <ClInclude Include="..\..\breath\process\program_option.hpp" />
     <ClInclude Include="..\..\breath\process\set_current_directory.hpp" />
