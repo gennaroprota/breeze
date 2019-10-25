@@ -93,8 +93,8 @@ struct pod_with_same_align
 }
 //! \endcond
 
-//      aligned_buffer_for
-//      ==================
+//      aligned_buffer_for:
+//      ===================
 //
 //!     An object that contains a byte buffer suitably sized and
 //!     aligned for the type \c T.
