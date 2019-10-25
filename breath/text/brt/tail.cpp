@@ -16,10 +16,11 @@
 namespace breath {
 
 std::string
-tail( std::string const & s, std::size_t count )
+tail( std::string const & s, std::ptrdiff_t count )
 {
 
-    std::size_t const   length = s.length() ;
+    std::ptrdiff_t const
+                        length = s.length() ;
 
     //      Note how the first argument to substr() *may* be equal to
     //      length (count == 0).

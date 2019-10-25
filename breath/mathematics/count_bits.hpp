@@ -26,8 +26,7 @@ namespace breath {
 //!         too).
 // ---------------------------------------------------------------------------
 template< typename T >
-constexpr std::size_t
-                    count_bits( T t ) noexcept ;
+constexpr int       count_bits( T t ) noexcept ;
 
 }
 

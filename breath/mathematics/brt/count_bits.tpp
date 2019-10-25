@@ -39,8 +39,7 @@ constexpr unsigned char
     4, 5, 5, 6, 5, 6, 6, 7, 5, 6, 6, 7, 6, 7, 7, 8
 } ;
 
-constexpr std::size_t
-                    table_width = 8 ;
+constexpr int       table_width = 8 ;
 
 static_assert( breath::count( count_table ) == ( 1u << table_width ), "" ) ;
 
@@ -52,14 +51,14 @@ static_assert( breath::count( count_table ) == ( UCHAR_MAX + 1 ), "" ) ;
 }
 
 template< typename T >
-constexpr std::size_t
+constexpr int
 count_bits( T t ) noexcept
 {
     using namespace count_bits_private ;
 
     static_assert( ! meta::has_sign< T >::value, "" ) ;
 
-    std::size_t         count = 0 ;
+    int                 count = 0 ;
     while ( t != 0 ) {
         count += count_table[ t & ( ( 1u << table_width ) - 1 ) ] ;
         t >>= table_width ;
@@ -67,7 +66,7 @@ count_bits( T t ) noexcept
     return count ;
 }
 
-constexpr std::size_t
+constexpr int
 count_bits( bool b ) noexcept
 {
     return b

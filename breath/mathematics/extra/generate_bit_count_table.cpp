@@ -27,10 +27,10 @@ main()
     class               bit_count
     {
     public:
-        std::size_t         operator()() noexcept
+        int                 operator()() noexcept
         {
             unsigned            value = m_n ;
-            std::size_t         count = 0 ;
+            int                 count = 0 ;
             while ( value != 0 ) {
                 ++ count ;
                 value &= ( value - 1 ) ;

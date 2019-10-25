@@ -137,8 +137,8 @@ private:
     void                reset() ;
     void                create_digest( raw_digest_type & ) ;
 
-    std::size_t         input_index() const ;
-    void                increase_count( std::size_t amount ) ;
+    int                 input_index() const ;
+    void                increase_count( ptrdiff_t amount ) ;
 
     template< typename It >
     merkle_damgard_machine &

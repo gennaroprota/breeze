@@ -35,19 +35,19 @@ class width_ratio
 
 public:
     // how many Bytes do we need to store a T?
-    static std::size_t const
+    static std::ptrdiff_t const
                         value = q > 1 ? q : 1 ;
 } ;
 
 template< typename T, typename Byte >
-std::size_t const
+std::ptrdiff_t const
 width_ratio< T, Byte >::value ;
 
-template< typename T, std::size_t n, typename Byte >
+template< typename T, std::ptrdiff_t n, typename Byte >
 class width_ratio< T[ n ], Byte >
 {
 public:
-    static std::size_t const
+    static std::ptrdiff_t const
                         value = n * width_ratio< T, Byte >::value ;
 } ;
 
@@ -57,7 +57,7 @@ template<
     typename Byte,
     //      Hiding this parameter from the user is the reason why we
     //      have endian_codec_private::endian_codec.
-    std::size_t n = endian_codec_private::width_ratio< T, Byte >::value
+    std::ptrdiff_t n = endian_codec_private::width_ratio< T, Byte >::value
 >
 class endian_codec
 {
@@ -145,14 +145,16 @@ class little_endian_policy
 public:
     // n == 0 for the most significant byte
     //
-    template< typename T, typename Byte, std::size_t n >
-    static std::size_t  index()
+    template< typename T, typename Byte, std::ptrdiff_t n >
+    static std::ptrdiff_t
+                        index()
     {
         return endian_codec_private::width_ratio< T, Byte >::value - 1 - n ;
     }
 
     template< typename T, typename Byte >
-    static std::size_t  index( std::size_t n )
+    static std::ptrdiff_t
+                        index( std::ptrdiff_t n )
     {
         return endian_codec_private::width_ratio< T, Byte >::value - 1 - n ;
     }
@@ -166,14 +168,16 @@ public:
 class big_endian_policy
 {
 public:
-    template< typename T, typename Byte, std::size_t n >
-    static std::size_t  index()
+    template< typename T, typename Byte, std::ptrdiff_t n >
+    static std::ptrdiff_t
+                        index()
     {
         return n ;
     }
 
     template< typename T, typename Byte >
-    static std::size_t  index( std::size_t n )
+    static std::ptrdiff_t
+                        index( std::ptrdiff_t n )
     {
         return n ;
     }
@@ -214,11 +218,11 @@ template<
 class endian_codec
 {
 private:
-    static std::size_t const
+    static std::ptrdiff_t const
                         n = endian_codec_private::
                               width_ratio< T, Byte >::value ;
 public:
-    static std::size_t const
+    static std::ptrdiff_t const
                         required_count = n ; // gps experimental
 
     //!     Writes (encodes) the value \c value as a sequence of \c
@@ -252,7 +256,7 @@ public:
 template< typename EndianPolicy,
           typename T,
           typename Byte >
-std::size_t const
+std::ptrdiff_t const
 endian_codec< EndianPolicy, T, Byte >::required_count ;
 
 

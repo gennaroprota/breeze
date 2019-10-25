@@ -116,7 +116,7 @@ uuid::uuid( uuid::variant_type var, uuid::version_type ver )
     //      4122 requires that the least significant bit of the first
     //      octet be set to 1.
     // -----------------------------------------------------------------------
-    for ( std::size_t i = 10 ; i < 16 ; ++ i ) {
+    for ( int i = 10 ; i < 16 ; ++ i ) {
         m_octets[ i ] = static_cast< std::uint8_t >( es.next() ) ;
     }
     m_octets[ 10 ] |= 1 ;

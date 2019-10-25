@@ -37,12 +37,15 @@ exception::exception( std::string const & what_msg ) noexcept
         std::strcpy( curr, sep ) ;
         curr += ( count( sep ) - 1 ) ;
 
-        std::size_t const   length_so_far = static_cast< std::size_t >(
-                                                curr - &m_what_message[ 0 ] ) ;
-        std::size_t const   remaining_length = what_message_buffer_size - 1 -
+        std::ptrdiff_t const
+                            length_so_far = curr - &m_what_message[ 0 ] ;
+        std::ptrdiff_t const
+                            remaining_length = what_message_buffer_size - 1 -
                                                 length_so_far ;
-        std::size_t const   length_to_copy = std::min( what_msg.length(),
-                                                remaining_length ) ;
+        std::ptrdiff_t const
+                            length_to_copy = std::min< std::ptrdiff_t >(
+                                                            what_msg.length(),
+                                                            remaining_length ) ;
 
         std::strncpy( curr, what_msg.c_str(), length_to_copy ) ;
         curr[ length_to_copy ]  = '\0' ;

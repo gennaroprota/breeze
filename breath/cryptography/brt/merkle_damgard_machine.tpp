@@ -7,6 +7,7 @@
 // ___________________________________________________________________________
 
 #include "breath/algorithm/secure_fill.hpp"
+#include "breath/diagnostics/assert.hpp"
 #include "breath/endianness/endian_codec.hpp"
 #include "breath/iteration/begin_end.hpp"
 
@@ -60,7 +61,7 @@ template< typename Engine >
 void
 merkle_damgard_machine< Engine>::push_back( byte_type b )
 {
-    std::size_t const   index( input_index() ) ;
+    int const           index( input_index() ) ;
     m_input_buffer[ index ] = b ;
     increase_count( byte_width ) ;
 
@@ -70,14 +71,13 @@ merkle_damgard_machine< Engine>::push_back( byte_type b )
 }
 
 template< typename Engine >
-std::size_t
+int
 merkle_damgard_machine< Engine >::input_index() const
 {
     static_assert( std::size_t( -1 ) >= block_length
                         , "hmm... is block_length really so big?" ) ;
 
-    return static_cast< std::size_t >
-        ( m_bit_count[ 0 ] / byte_width ) % block_length ;
+    return ( m_bit_count[ 0 ] / byte_width ) % block_length ;
 }
 
 template< typename Engine >
@@ -91,10 +91,10 @@ merkle_damgard_machine< Engine >::compress()
     //      We always clear potentially sensitive data (i.e.:
     //      m_input_buffer and m_input_in_words).
     // -----------------------------------------------------------------------
-    std::size_t const   sz = block_length / word_length ;
+    int const           sz = block_length / word_length ;
     word_type           input_in_words[ sz ] ;
 
-    for ( std::size_t i = 0 ; i < sz ; ++ i ) {
+    for ( int i = 0 ; i < sz ; ++ i ) {
         input_in_words[ i ] = Engine::decode_word(
                        breath::begin( m_input_buffer ) + i * word_length ) ;
     }
@@ -143,7 +143,7 @@ merkle_damgard_machine< Engine >::do_append( RandomIter begin,
                         difference_type ;
 
     // bufferize/compress as many times as possible
-    std::size_t         index( input_index() ) ;
+    int                 index( input_index() ) ;
     RandomIter          curr( begin ) ;
 
     for ( difference_type avail( block_length - index ) ;
@@ -203,8 +203,8 @@ merkle_damgard_machine< Engine >::finalize()
     Engine::encode_length( m_bit_count, breath::begin( message_len ) ) ;
 
     // append padding
-    std::size_t const   filled( input_index() ) ;
-    std::size_t const   pad_len(
+    int const           filled( input_index() ) ;
+    int const           pad_len(
             ( filled + r < block_length
               ? 1 : 2 ) * block_length - ( filled + r ) ) ;
 
@@ -231,11 +231,12 @@ merkle_damgard_machine< Engine >::create_digest( raw_digest_type & raw )
 
 template< typename Engine >
 void
-merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
+merkle_damgard_machine< Engine >::increase_count( std::ptrdiff_t amount )
 {
-    typedef std::size_t size_type ;
+    BREATH_ASSERT( amount >= 0 ) ;
+
     typedef endian_codec< little_endian_policy,
-                          size_type,
+                          std::size_t,
                           length_unit_type
                       > codec ;
 
@@ -249,7 +250,7 @@ merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
     codec::encode( amount, breath::begin( repr ) ) ;
 
     int                 carry( 0 ) ;
-    for ( std::size_t i = 0 ; i < length_count ; ++ i ) {
+    for ( int i = 0 ; i < length_count ; ++ i ) {
         length_unit_type const
                             w( m_bit_count[ i ] + repr[ i ] + carry ) ;
         carry = w < repr[ i ]

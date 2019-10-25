@@ -51,8 +51,8 @@ public:
     const_iterator      begin() const noexcept ;
     const_iterator      end()   const noexcept ;
 
-    reference           operator []( size_type index ) ;
-    const_reference     operator []( size_type index ) const ;
+    reference           operator []( std::ptrdiff_t index ) ;
+    const_reference     operator []( std::ptrdiff_t index ) const ;
 
 private:
     void                wipe() noexcept ;

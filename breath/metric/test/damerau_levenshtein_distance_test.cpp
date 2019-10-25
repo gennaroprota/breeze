@@ -24,7 +24,7 @@ namespace {
 
 void
 single_check( std::string const & first, std::string const & second,
-              std::size_t distance )
+              std::ptrdiff_t distance )
 {
     BREATH_CHECK( breath::damerau_levenshtein_distance( first, second )
                                                                 == distance ) ;

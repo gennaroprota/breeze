@@ -40,7 +40,7 @@ public:
 
 private:
     bool                is_open() const noexcept ;
-    void                to_buffer( unsigned char /*gps*/ * buffer, std::size_t count ) noexcept ;
+    void                to_buffer( unsigned char /*gps*/ * buffer, std::ptrdiff_t count ) noexcept ;
 
 private:
     FILE *              m_file ;
@@ -97,7 +97,7 @@ entropy_source::impl::is_open() const noexcept
 }
 
 void
-entropy_source::impl::to_buffer( unsigned char /*gps*/ * buffer, std::size_t count ) noexcept
+entropy_source::impl::to_buffer( unsigned char /*gps*/ * buffer, std::ptrdiff_t count ) noexcept
 {
     auto const          read =
         std::fread( buffer, sizeof buffer[ 0 ], count, m_file ) ;

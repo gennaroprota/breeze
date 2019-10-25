@@ -24,7 +24,7 @@ namespace {
 
 void
 single_check( std::string const & first, std::string const & second,
-              std::size_t distance )
+              std::ptrdiff_t distance )
 {
     using breath::levenshtein_distance ;
 

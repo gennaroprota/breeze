@@ -103,10 +103,10 @@ public:
         //             dest, and the order of the bytes within each
         //             word, follow EndianPolicy
         // -------------------------------------------------------------------
-        std::size_t const   step( word_width / byte_width ) ;
-        for ( std::size_t i = 0 ; i < max_words ; ++ i ) {
+        int const           step( word_width / byte_width ) ;
+        for ( int i = 0 ; i < max_words ; ++ i ) {
 
-            std::size_t const
+            std::ptrdiff_t const
                             index(
                 step * EndianPolicy::template index< len_type,
                                                      word_type >( i ) ) ;

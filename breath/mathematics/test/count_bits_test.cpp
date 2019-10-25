@@ -21,10 +21,10 @@
 namespace {
 
 template< typename T >
-std::size_t
+int
 trivially_count_bits( T t )
 {
-    std::size_t         count = 0 ;
+    int                 count = 0 ;
     while ( t != 0 ) {
         ++ count ;
         t &= ( t - 1 ) ;

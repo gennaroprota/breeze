@@ -18,21 +18,24 @@
 
 namespace breath {
 
-std::size_t
+std::ptrdiff_t
 levenshtein_distance( std::string const & first, std::string const & second )
 {
-    std::size_t const   len1 = first.length() ;
-    std::size_t const   len2 = second.length() ;
+    typedef std::ptrdiff_t
+                        length_type ;
 
-    std::vector< std::size_t > costs( len2 + 1 ) ;
+    length_type const   len1 = first.length() ;
+    length_type const   len2 = second.length() ;
+
+    std::vector< length_type > costs( len2 + 1 ) ;
     std::iota( costs.begin(), costs.end(), 0 ) ;
 
-    for ( std::size_t i = 0 ; i < len1 ; ++ i ) {
+    for ( length_type i = 0 ; i < len1 ; ++ i ) {
         costs[ 0 ] = i + 1 ;
-        size_t              corner = i ;
+        length_type         corner = i ;
 
-        for ( std::size_t j = 0 ; j < len2 ; ++ j ) {
-            size_t const        upper = costs[ j + 1 ] ;
+        for ( length_type j = 0 ; j < len2 ; ++ j ) {
+            length_type const   upper = costs[ j + 1 ] ;
             costs[ j + 1 ] = first[ i ] == second[ j ]
                                ? corner
                                : 1 + (std::min)( { upper, corner, costs[ j ] } )

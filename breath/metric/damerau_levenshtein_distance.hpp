@@ -25,7 +25,7 @@ namespace breath {
 //!         The Damerau-Levenshtein distance between \c first and
 //!         \c second.
 // ---------------------------------------------------------------------------
-std::size_t         damerau_levenshtein_distance( std::string const & first,
+std::ptrdiff_t      damerau_levenshtein_distance( std::string const & first,
                                                   std::string const & second ) ;
 
 }

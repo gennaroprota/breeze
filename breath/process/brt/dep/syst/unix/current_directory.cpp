@@ -24,7 +24,7 @@ namespace breath {
 std::string
 current_directory()
 {
-    std::size_t         sz = 512 ;
+    std::ptrdiff_t      sz = 512 ;
     auto_array< char >  aa ;
 
     char const *        p = nullptr ;

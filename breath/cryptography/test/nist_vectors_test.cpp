@@ -207,14 +207,15 @@ tests()
         { 2, true  }
     } ;
 
-    std::size_t const   sections = breath::count( section_types ) ;
+    int const           sections = static_cast< int >(
+                            breath::count( section_types ) ) ;
 
     std::string         calculated ;
     std::vector< breath::sha1_engine::byte_type >
                         msg ;
     montecarlo_test     montecarlo_harness ;
 
-    for ( std::size_t sn = 0 ; sn < sections && hashes.good() ; /*++sn*/ ) {
+    for ( int sn = 0 ; sn < sections && hashes.good() ; /*++sn*/ ) {
         bool const          montecarlo_section = section_types[
                                                              sn ].pseudorandom ;
         if ( /*!montecarlo_section ||*/ montecarlo_harness.get_count() == 0 ) {
