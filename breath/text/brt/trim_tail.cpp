@@ -20,7 +20,7 @@ namespace breath {
 std::string
 trim_tail( std::string const & str, std::locale const & loc )
 {
-    return breath::trim_tail_if( str, [ & ]( char c ) -> bool
+    return breath::trim_tail_if( str, [ &loc ]( char c ) -> bool
                                       {
                                           return std::isspace( c, loc ) ;
                                       } ) ;
@@ -31,7 +31,7 @@ std::string
 trim_tail( std::string const & str,
            set_of_chars const & to_remove )
 {
-    return breath::trim_tail_if( str, [ & ]( char c ) -> bool
+    return breath::trim_tail_if( str, [ &to_remove ]( char c ) -> bool
                                       {
                                           return to_remove.contains( c ) ;
                                       } ) ;

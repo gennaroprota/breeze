@@ -38,7 +38,7 @@ int
 luhn_sum( std::string const & str )
 {
     bool                from_table = false ;
-    auto checked_adder = [ & ]( int s, char c )
+    auto checked_adder = [ &from_table ]( int s, char c )
     {
         if ( ! portable_is_digit( c ) ) {
             throw exception( "non-digit char in Luhn string" ) ;

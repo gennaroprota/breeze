@@ -32,7 +32,7 @@ binary_to_base64( InputIter begin, InputIter end,
     int                 count = 0 ;
     int                 column = 0 ;
 
-    auto                do_output = [ & ]( char c )
+    auto                do_output = [ &out, &column, &wrap_column ]( char c )
     {
       *out = c ;
       ++ out ;
