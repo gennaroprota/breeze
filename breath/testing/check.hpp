@@ -16,21 +16,21 @@
 #include "breath/testing/test_exception.hpp"
 #include "breath/diagnostics/assert.hpp"
 
-#define BREATH_CHECK( condition )                                           \
-            do {                                                            \
-                if ( ! ( condition ) )                                      \
-                    throw breath::test_exception( __FILE__, __LINE__ ) ;    \
-            } while ( false )                                            /**/
+#define BREATH_CHECK( condition )                                             \
+            do {                                                              \
+                if ( ! ( condition ) )                                        \
+                    throw breath::test_exception( __FILE__, __LINE__ ) ;      \
+            } while ( false )                                              /**/
 
 
-#define BREATH_CHECK_THROW( expression )                                    \
-            do {                                                            \
-                try {                                                       \
-                    expression ;                                            \
-                    BREATH_ASSERT( false && "BREATH_CHECK_THROW failed" ) ; \
-                } catch ( ... ) {                                           \
-                }                                                           \
-            } while ( false )                                            /**/
+#define BREATH_CHECK_THROW( expression )                                      \
+            do {                                                              \
+                try {                                                         \
+                    expression ;                                              \
+                    BREATH_ASSERT( false && "BREATH_CHECK_THROW() failed" ) ; \
+                } catch ( ... ) {                                             \
+                }                                                             \
+            } while ( false )                                              /**/
 
 #endif
 
