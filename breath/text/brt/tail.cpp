@@ -12,12 +12,14 @@
 // ___________________________________________________________________________
 
 #include "breath/text/tail.hpp"
+#include "breath/diagnostics/assert.hpp"
 
 namespace breath {
 
 std::string
 tail( std::string const & s, std::ptrdiff_t count )
 {
+    BREATH_ASSERT( count >= 0 ) ;
 
     std::ptrdiff_t const
                         length = s.length() ;

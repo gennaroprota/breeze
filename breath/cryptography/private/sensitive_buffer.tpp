@@ -7,6 +7,7 @@
 // ___________________________________________________________________________
 
 #include "breath/algorithm/secure_fill.hpp"
+#include "breath/diagnostics/assert.hpp"
 #include <algorithm>
 
 namespace breath {
@@ -79,6 +80,7 @@ template< typename T, std::size_t n >
 typename sensitive_buffer< T[ n ] >::reference
 sensitive_buffer< T[ n ] >::operator []( std::ptrdiff_t index )
 {
+    BREATH_ASSERT( index >= 0 ) ;
     return m_data[ index ] ;
 }
 
@@ -86,6 +88,7 @@ template< typename T, std::size_t n >
 typename sensitive_buffer< T[ n ] >::const_reference
 sensitive_buffer< T[ n ] >::operator []( std::ptrdiff_t index ) const
 {
+    BREATH_ASSERT( index >= 0 ) ;
     return m_data[ index ] ;
 }
 

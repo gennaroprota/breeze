@@ -99,6 +99,8 @@ entropy_source::impl::is_open() const noexcept
 void
 entropy_source::impl::to_buffer( unsigned char /*gps*/ * buffer, std::ptrdiff_t count ) noexcept
 {
+    BREATH_ASSERT( count >= 0 ) ;
+
     auto const          read =
         std::fread( buffer, sizeof buffer[ 0 ], count, m_file ) ;
 
