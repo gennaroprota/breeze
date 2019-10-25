@@ -132,16 +132,6 @@ public:
     // -----------------------------------------------------------------------
                         aligned_buffer_for() noexcept {}
 
-private:
-//! \cond
-    union
-    {
-        unsigned char   m_raw_buffer[ sizeof( T ) ] ;
-        typename aligned_buffer_private::pod_with_same_align< T >::type
-                        dummy_for_alignment ;
-    } ;
-//! \endcond
-public:
     //!     \return
     //!         The address of the internal (aligned) buffer, as a
     //!         <code>void *</code>.
@@ -153,6 +143,16 @@ public:
     //!         <code>void const *</code>.
     // -----------------------------------------------------------------------
     void const *        address() const noexcept { return m_raw_buffer ; }
+
+private:
+//! \cond
+    union
+    {
+        unsigned char   m_raw_buffer[ sizeof( T ) ] ;
+        typename aligned_buffer_private::pod_with_same_align< T >::type
+                        dummy_for_alignment ;
+    } ;
+//! \endcond
 } ;
 
 }
