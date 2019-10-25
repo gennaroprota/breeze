@@ -74,9 +74,6 @@ template< typename Engine >
 int
 merkle_damgard_machine< Engine >::input_index() const
 {
-    static_assert( std::size_t( -1 ) >= block_length
-                        , "hmm... is block_length really so big?" ) ;
-
     return ( m_bit_count[ 0 ] / byte_width ) % block_length ;
 }
 
