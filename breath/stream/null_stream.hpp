@@ -63,7 +63,7 @@ class basic_null_stream
 {
 public:
                         basic_null_stream() ;
-    virtual             ~basic_null_stream() noexcept = default ;
+    virtual             ~basic_null_stream() noexcept override = default ;
 
     basic_null_stream_buffer< Ch, Traits > *
                         rdbuf() const ;
