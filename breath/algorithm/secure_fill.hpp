@@ -60,7 +60,7 @@ namespace breath {
 //        <http://wg21.link/p0612r0>,
 //
 //      which was adopted on March, 2017 (post-Kona mailing). For C, see
-//      DR476:
+//      DR 476:
 //
 //        <http://www.open-std.org/jtc1/sc22/wg14/www/docs/summary.htm#dr_476>.
 //
