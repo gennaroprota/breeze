@@ -10,11 +10,11 @@
 //!     \brief An implementation of the clamp() templates proposed for
 //!            C++17.
 // ---------------------------------------------------------------------------
-//  See:
-//    <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4536.html>,
-//    <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0025r1.html>
-//  and
-//    <http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-active.html#2688>.
+//      See:
+//        <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4536.html>,
+//        <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0025r1.html>
+//      and
+//        <http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-active.html#2688>.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_iVIpJl3Xhjhnj23ACP0NU6ffWo7q8kd4

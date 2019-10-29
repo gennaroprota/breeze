@@ -21,10 +21,10 @@
 #include <functional>
 
 
-//  NOTE:
-//      All references in the comments below are relative to
-//      FIPS 180-2 (with change notice), as indicated in the
-//      module documentation. [gps]
+//      NOTE:
+//          All references in the comments below are relative to
+//          FIPS 180-2 (with change notice), as indicated in the module
+//          documentation. [gps]
 // ---------------------------------------------------------------------------
 
 namespace breath {

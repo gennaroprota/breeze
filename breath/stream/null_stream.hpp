@@ -40,7 +40,7 @@ protected:
 private:
     void                set_buffer() ;
 
-    //  Having a buffer avoids some virtual function calls.
+    //      Having a buffer avoids some virtual function calls.
     // -----------------------------------------------------------------------
     Ch                  m_dummy_buffer[ 64 ] ;
 } ;

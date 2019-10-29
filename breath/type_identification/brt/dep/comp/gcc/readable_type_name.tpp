@@ -40,15 +40,15 @@ demangled_typeid_name()
 
     char const * const  name = typeid( T ).name() ;
 
-    //  The __cxa_demangle() specification can be found at:
+    //      The __cxa_demangle() specification can be found at:
     //
-    //    <https://itanium-cxx-abi.github.io/cxx-abi/abi.html>.
+    //        <https://itanium-cxx-abi.github.io/cxx-abi/abi.html>.
     //
-    //  Note that we pass nullptr for the last parameter, which *is*
-    //  supported by libstdc++; this was clarified by Jonathan Wakely
-    //  with this commit:
+    //      Note that we pass nullptr for the last parameter, which *is*
+    //      supported by libstdc++; this was clarified by Jonathan
+    //      Wakely with this commit:
     //
-    //    <https://gcc.gnu.org/r264127>.
+    //        <https://gcc.gnu.org/r264127>.
     // -----------------------------------------------------------------------
     char * const        p = abi::__cxa_demangle( name,
                                                  nullptr,
