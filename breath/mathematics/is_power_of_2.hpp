@@ -27,7 +27,7 @@ namespace breath {
 //!     \note
 //!         C++20 will likely have an ispow2() that can replace this one:
 //!
-//!           <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0556r3.html>
+//!           <http://wg21.link/p0556r3>
 //!           (current as of writing this);
 //!
 //!           <http://wg21.link/p0556> (latest).

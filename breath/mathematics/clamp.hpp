@@ -11,10 +11,10 @@
 //!            C++17.
 // ---------------------------------------------------------------------------
 //      See:
-//        <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4536.html>,
-//        <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0025r1.html>
+//        <http://wg21.link/n4536>,
+//        <http://wg21.link/p0025r1>
 //      and
-//        <http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-active.html#2688>.
+//        <http://wg21.link/lwg2688>.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_iVIpJl3Xhjhnj23ACP0NU6ffWo7q8kd4
