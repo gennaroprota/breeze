@@ -27,10 +27,9 @@ namespace breath {
 //!     \note
 //!         C++20 will likely have an ispow2() that can replace this one:
 //!
-//!           <http://wg21.link/p0556r3>
-//!           (current as of writing this);
+//!           <http://wg21.link/p0556r3> (current as of writing this);
 //!
-//!           <http://wg21.link/p0556> (latest).
+//!           <http://wg21.link/p0556>   (latest).
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr typename std::enable_if< std::numeric_limits< T >::is_integer &&
