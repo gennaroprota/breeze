@@ -19,7 +19,7 @@
 namespace breath {
 
 last_api_error::last_api_error( char const * p ) noexcept
-    : m_last_error( GetLastError() )
+    :   m_last_error( GetLastError() )
 {
     int const           max_incipit_size = 512 ;
     static_assert( max_incipit_size < (sizeof m_message / 10 ), "" ) ;

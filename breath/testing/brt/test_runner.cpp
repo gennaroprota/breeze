@@ -16,7 +16,7 @@
 namespace breath {
 
 test_runner::test_runner()
-    : m_reporter( nullptr )
+    :   m_reporter( nullptr )
 {
 }
 

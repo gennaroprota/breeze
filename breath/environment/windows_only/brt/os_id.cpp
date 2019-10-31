@@ -89,7 +89,7 @@ os_id const
 
 
 os_id::os_id( os_id::id_type n )
-    : m_id( n )
+    :   m_id( n )
 {
 }
 

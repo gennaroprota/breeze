@@ -22,7 +22,7 @@ maybe< T, Traits >::maybe( status_type status ) noexcept
 
 template< typename T, typename Traits >
 maybe< T, Traits >::maybe( T const & value, status_type status )
-    : m_status( Traits::default_invalid() )
+    :   m_status( Traits::default_invalid() )
 {
     construct( value ) ;
     m_status = status ;
@@ -40,7 +40,7 @@ maybe< T, Traits >::maybe( T && value, status_type status )
 
 template< typename T, typename Traits >
 maybe< T, Traits >::maybe( maybe const & other )
-    : m_status( Traits::default_invalid() )
+    :   m_status( Traits::default_invalid() )
 {
     if ( other.is_valid() ) {
         construct( other.value() ) ;

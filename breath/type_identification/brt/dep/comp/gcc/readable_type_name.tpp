@@ -27,7 +27,7 @@ demangled_typeid_name()
     {
     public:
         explicit deallocator( char * p )
-            : m_p( p )
+            :   m_p( p )
         {
         }
         ~deallocator()

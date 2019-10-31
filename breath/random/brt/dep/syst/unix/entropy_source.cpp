@@ -47,7 +47,7 @@ private:
 } ;
 
 entropy_source::impl::impl()
-    : m_file( std::fopen( "/dev/random", "rb" ) )
+    :   m_file( std::fopen( "/dev/random", "rb" ) )
 {
     if ( ! is_open() ) {
         entropy_source::exception::raise( "cannot open /dev/random" ) ;
