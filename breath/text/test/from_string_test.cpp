@@ -23,13 +23,13 @@ namespace {
 
 void do_tests()
 {
-    BREATH_CHECK_THROW( breath::from_string< int >( "   " ) ) ;
+    BREATH_CHECK_THROW( breath::exception, breath::from_string< int >( "   " ) ) ;
     BREATH_CHECK( breath::from_string< int >( "12" ) == 12 ) ;
     BREATH_CHECK( breath::from_string< int >( "12   \t" ) == 12 ) ;
-    BREATH_CHECK_THROW( breath::from_string< int >( "12 1" ) ) ;
+    BREATH_CHECK_THROW( breath::exception, breath::from_string< int >( "12 1" ) ) ;
     BREATH_CHECK( breath::from_string< char >( "a" ) == 'a' ) ;
     BREATH_CHECK( breath::from_string< char >( " a " ) == 'a' ) ;
-    BREATH_CHECK_THROW( breath::from_string< char >( "ab" ) ) ;
+    BREATH_CHECK_THROW( breath::exception, breath::from_string< char >( "ab" ) ) ;
     BREATH_CHECK( breath::from_string< double >( "1.2" ) == 1.2 ) ;
 
     BREATH_CHECK( breath::from_string< std::string >( " test " ) == " test " ) ;

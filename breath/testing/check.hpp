@@ -23,12 +23,16 @@
             } while ( false )                                              /**/
 
 
-#define BREATH_CHECK_THROW( expression )                                      \
+#define BREATH_CHECK_THROW( exception_type, expression )                      \
             do {                                                              \
                 try {                                                         \
                     expression ;                                              \
-                    BREATH_ASSERT( false && "BREATH_CHECK_THROW() failed" ) ; \
+                    BREATH_ASSERT( false &&                                   \
+                      "BREATH_CHECK_THROW() failed: no exception emitted" ) ; \
+                } catch ( exception_type const & ) {                          \
                 } catch ( ... ) {                                             \
+                    BREATH_ASSERT( false &&                                   \
+                      "BREATH_CHECK_THROW() failed: wrong exception type" ) ; \
                 }                                                             \
             } while ( false )                                              /**/
 
