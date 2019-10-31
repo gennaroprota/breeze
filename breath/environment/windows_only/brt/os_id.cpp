@@ -64,7 +64,7 @@ os_id const
         os_id::windows_unknown                    ( 0 ),
 
         //      The numbers 1 to 5 were used by Win32s, Win95, Win98,
-        //      Win Me and Win NT which are no longer supported. Do not
+        //      Win Me and Win NT, which are no longer supported. Do not
         //      eliminate the room here or the corresponding array of
         //      strings will not work.
         // -------------------------------------------------------------------
