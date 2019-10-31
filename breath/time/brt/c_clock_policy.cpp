@@ -22,7 +22,8 @@ c_clock_policy::retrieve()
     std::clock_t const  result( std::clock() ) ;
     return result != static_cast< std::clock_t >( -1 )
         ? result
-        : throw breath::exception( "could not retrieve std::clock()" ) ;
+        : throw breath::exception( "std::clock() failed (e.g. because too"
+                                   " much time elapsed for a std::clock_t)" ) ;
 }
 
 
