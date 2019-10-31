@@ -49,7 +49,7 @@ private:
 //!     basic_null_stream:
 //!     ------------------
 //!
-//!     An iostream that discards any output and provides no input. On
+//!     A stream that discards any output and provides no input. On
 //!     output, the stream never signals failbit. On input it is
 //!     always on EOF. The behavior is similar to a file stream
 //!     opened on /dev/null under Unix, but this is portable and
