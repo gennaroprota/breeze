@@ -22,6 +22,10 @@ namespace breath {
 //
 //!     Note that on some (non-conforming) implementations
 //!     std::clock() will actually measure wall-clock time.
+//!
+//!     One such implementation is the Microsoft one:
+//!
+//!    <https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/clock>.
 // ---------------------------------------------------------------------------
 class c_clock_policy
 {
