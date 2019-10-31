@@ -20,7 +20,7 @@ std::clock_t
 c_clock_policy::retrieve()
 {
     std::clock_t const  result( std::clock() ) ;
-    return result != ( static_cast< std::clock_t >( -1 ) )
+    return result != static_cast< std::clock_t >( -1 )
         ? result
         : throw breath::exception( "could not retrieve std::clock()" ) ;
 }
