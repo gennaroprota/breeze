@@ -164,7 +164,6 @@ public:
     // -----------------------------------------------------------------------
     void                set_terminate_handler( void (*user_function)( int ) ) ;
 
-
 private:
     void                do_set_name( std::string const & name ) ;
 

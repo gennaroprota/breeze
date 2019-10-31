@@ -31,7 +31,6 @@ set_of_chars::to_char( set_of_chars::index_type index ) noexcept
     return static_cast< char >( index + CHAR_MIN ) ;
 }
 
-
 set_of_chars::set_of_chars() noexcept
     :   m_bits()
 {
@@ -191,14 +190,12 @@ set_of_chars::iterator::iterator( set_of_chars const & sc ) noexcept
     }
 }
 
-
 set_of_chars::iterator::iterator( set_of_chars const & sc, end_tag ) noexcept
     :   m_owner( &sc.m_bits ),
         m_index( set_of_chars::size )
 
 {
 }
-
 
 set_of_chars::iterator
 set_of_chars::begin() const noexcept

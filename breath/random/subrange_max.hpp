@@ -56,7 +56,6 @@ unsigned long       subrange_max( unsigned long x, unsigned long m ) ;
 
 }
 
-
 #endif
 
 // Local Variables:

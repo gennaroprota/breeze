@@ -83,7 +83,6 @@ private:
                         m_raw_digest ;
 } ;
 
-
 //!     Outputs a hexadecimal representation of the digest. The case of
 //!     the letters A-F is unspecified (this allows us to support e.g.
 //!     \c std::uppercase and \c std::nouppercase in the future). But
@@ -106,7 +105,6 @@ template< typename Hasher >
 digest< Hasher >    make_digest( Hasher const & h ) ;
 
 }
-
 
 #include "brt/digest.tpp"
 #endif

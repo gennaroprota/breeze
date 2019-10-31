@@ -159,7 +159,6 @@ merkle_damgard_machine< Engine >::do_append( RandomIter begin,
     return *this ;
 }
 
-
 template< typename Engine >
 template< typename Iter >
 merkle_damgard_machine< Engine > &

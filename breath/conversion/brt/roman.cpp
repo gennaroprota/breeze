@@ -23,7 +23,6 @@ roman::roman( int n )
     BREATH_ASSERT( 1 <= n && n <= 3999 ) ;
 }
 
-
 std::ostream &
 operator <<( std::ostream & os, roman const & r )
 {

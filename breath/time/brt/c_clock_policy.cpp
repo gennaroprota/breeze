@@ -26,7 +26,6 @@ c_clock_policy::retrieve()
                                    " much time elapsed for a std::clock_t)" ) ;
 }
 
-
 c_clock_policy::c_clock_policy()
 
     //      This initialization is just to remove compiler warnings.
@@ -59,7 +58,6 @@ c_clock_policy::elapsed() const
 
     return 1000 * elapsed_seconds ;
 }
-
 
 c_clock_policy::duration_type
 c_clock_policy::resolution() const

@@ -38,7 +38,6 @@ main()
     return test_runner::instance().run( { check } ) ;
 }
 
-
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

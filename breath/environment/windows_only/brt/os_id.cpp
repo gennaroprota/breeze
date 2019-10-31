@@ -120,7 +120,6 @@ operator <<( std::ostream & dest, os_id const & id )
         dest << ", 64-bit" ;
     }
 
-
     return dest << " (" << info.major_version() << '.' << info.minor_version()
                 << ", build " << info.build_number() << ')' ;
 }

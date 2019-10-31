@@ -105,7 +105,6 @@ public:
     // -----------------------------------------------------------------------
     result_type         operator ()( result_type maximum ) ;
 
-
     //!     Releases the system resource(s) associated with this
     //!     object (usually a file or a handle).
     //!

@@ -107,7 +107,6 @@ define link_to_exec
     $(compiler_command) $(cpp_options) -o $@ $+
 endef
 
-
 # Local Variables:
 # mode: makefile
 # indent-tabs-mode: nil

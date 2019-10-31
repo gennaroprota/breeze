@@ -157,7 +157,6 @@
 #define BREATH_DEPENDENT_CODE_system( file_name )                             \
     BREATH_STRINGIZE_AFTER_EXPANSION( dep/syst/BREATH_SYSTEM/file_name )   /**/
 
-
 #endif
 
 // Local Variables:

@@ -62,7 +62,6 @@ function            s:InitPhaseOne()
     set nomodified
 endfunction
 
-
 function            s:InitPhaseTwo()
     if exists( "b:breath_initializing" )
         for x in [ "sh", "awk" ]

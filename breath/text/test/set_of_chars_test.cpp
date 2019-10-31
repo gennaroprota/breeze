@@ -107,7 +107,6 @@ main()
         DO_TEST( sc.as_string() == s_ordered ) ;
     }
 
-
     // count
     {
         set_of_chars        sc ;

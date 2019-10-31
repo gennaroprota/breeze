@@ -43,7 +43,6 @@ private:
     test_reporter * m_reporter ;
 } ;
 
-
 template< typename TestDescriptorIterator >
 int
 test_runner::run( TestDescriptorIterator begin, TestDescriptorIterator end )

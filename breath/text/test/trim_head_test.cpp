@@ -31,7 +31,6 @@ main()
     DO_TEST( trim_head( " \t" ) == "" ) ;
     DO_TEST( trim_head( "\t " ) == "" ) ;
 
-
     DO_TEST( trim_head( "  abc" ) == "abc" ) ;
     DO_TEST( trim_head( "\t abc" ) == "abc" ) ;
     DO_TEST( trim_head( "abc a" ) == "abc a" ) ;

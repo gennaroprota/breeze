@@ -26,7 +26,6 @@ trim_tail( std::string const & str, std::locale const & loc )
                                       } ) ;
 }
 
-
 std::string
 trim_tail( std::string const & str,
            set_of_chars const & to_remove )

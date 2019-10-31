@@ -92,7 +92,6 @@ using breath::adl_shield::
                         equality_comparison ;
 }
 
-
 #endif
 
 // Local Variables:

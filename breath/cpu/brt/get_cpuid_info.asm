@@ -6,7 +6,6 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 
-
 .intel_syntax noprefix
 
 .global             get_cpuid_info

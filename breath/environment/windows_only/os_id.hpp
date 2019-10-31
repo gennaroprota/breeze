@@ -86,7 +86,6 @@ public:
                         windows_10,
                         windows_server_2016
     ;
-
 } ;
 
 }

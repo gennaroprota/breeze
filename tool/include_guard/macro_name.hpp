@@ -21,7 +21,6 @@ std::string         make_macro_name( std::string const & prefix,
                                      int random_part_length,
                                      macro_name_creation::exit_status * ) ;
 
-
 #endif
 
 // Local Variables:

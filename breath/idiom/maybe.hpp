@@ -59,7 +59,6 @@ public:
 } ;
 
 
-
 //      maybe:
 //      ======
 //
@@ -181,7 +180,6 @@ public:
     typedef typename Traits::status
                         status_type ;
 
-
 public:
     //!     Constructs an invalid maybe.
     //!
@@ -231,7 +229,6 @@ public:
     explicit            maybe( T && value, status_type status =
                                                    Traits::default_valid() ) ;
 
-
     //!     \post
     //!         - status() == other.status()
     //!         - ! is_valid() || value() == other.value()
@@ -268,7 +265,6 @@ public:
     //!         - status == Traits::default_valid()
     // -----------------------------------------------------------------------
     maybe &             operator =( T const & value ) ;
-
 
     //!     \post
     //!         - is_valid()

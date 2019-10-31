@@ -20,7 +20,6 @@ ifeq ($(and $(compiler), $(system)),)
 endif
 
 
-
 #       Recurses on the same target. $(subdirs) must be defined before
 #       including this file for it to work.
 #
@@ -48,7 +47,6 @@ all:
 .PHONY: clean
 clean:
 	$(do_for_all_subdirs)
-
 
 
 include_dir     = $(root)
@@ -95,7 +93,6 @@ $(dependency_dir)/%.dep: ;
 
 include $(wildcard $(patsubst %,$(dependency_dir)/%.dep,    \
                      $(basename $(source_files))))
-
 
 # Local Variables:
 # mode: makefile

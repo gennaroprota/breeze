@@ -253,7 +253,6 @@ private:
     static index_type   to_index( char c ) noexcept ;
     static char         to_char( index_type index ) noexcept ;
 
-
 public:
     //      iterator:
     //      =========

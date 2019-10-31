@@ -10,7 +10,6 @@
 #include <algorithm>
 #include <ostream>
 
-
 //!     \todo Provide a way to extract from streams
 
 namespace breath {

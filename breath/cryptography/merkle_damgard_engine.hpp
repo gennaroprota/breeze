@@ -66,7 +66,6 @@ public:
     typedef word_type   state_type[ state_width / word_width ] ;
     typedef word_type   block_type[ block_width / word_width ] ;
 
-
 private:
     enum { max_words =   ( length_exp / bits_per_word )
                      + ( ( length_exp % bits_per_word ) ? 1 : 0 ) } ;

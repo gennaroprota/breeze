@@ -114,7 +114,6 @@ soon as possible.
 My most heartfelt *thank you* goes to James Kanze, without whom I wouldn't be
 the programmer I am.
 
-
 [//]: # (
  Local Variables:
  mode: markdown

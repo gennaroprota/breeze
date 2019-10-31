@@ -54,7 +54,6 @@ struct choose_initial_n
                                 choose_initial_n< 2 * c * n >::value ;
 } ;
 
-
 template< result_type n >
 bool const
 choose_initial_n< n >::c ;
@@ -69,7 +68,6 @@ struct choose_initial_n< 0 >
     static result_type const
                         value = 0 ;
 } ;
-
 
 
 //      Start computing from n_zero - must be a power of two.
@@ -133,7 +131,6 @@ public:
          value = integer_log2_private::
                     integer_log2_impl< x >::value ;
 } ;
-
 
 template<>
 class integer_log2< 0 >
