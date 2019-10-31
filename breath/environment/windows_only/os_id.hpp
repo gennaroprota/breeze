@@ -7,13 +7,11 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Operating system identifier.
+//!     \brief Operating system identifier for Windows.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_y14wSYOBPQ4ReQuQzkBRjijvOvqDhYc7
 #define BREATH_GUARD_y14wSYOBPQ4ReQuQzkBRjijvOvqDhYc7
-
-// for Windows OSes
 
 #include "breath/operator/equality_comparison.hpp"
 #include <iosfwd>
