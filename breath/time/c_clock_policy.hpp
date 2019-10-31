@@ -32,7 +32,9 @@ public:
 
     void                restart() ;
 
-    //!     The time, in milliseconds, elapsed from the last (re)start.
+    //!     \return
+    //!         The time, in milliseconds, elapsed from the last
+    //!         (re)start.
     //!
     //!     Will throw, if it detects wrap-around. (It only detects \e
     //!     some wrap-arounds.)
@@ -40,7 +42,7 @@ public:
     duration_type       elapsed() const ;
 
     //!     \return
-    //!         An estimate of the timer resolution, in ms.
+    //!         An estimate of the timer resolution, in milliseconds.
     //!         May return slightly different values from call to call.
     // -----------------------------------------------------------------------
     duration_type       resolution() const ;
