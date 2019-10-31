@@ -180,7 +180,6 @@ public:
     typedef typename Traits::status
                         status_type ;
 
-public:
     //!     Constructs an invalid maybe.
     //!
     //!     \pre
