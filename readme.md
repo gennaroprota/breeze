@@ -10,6 +10,9 @@
 
 # Overview
 
+
+[![Build Status](https://travis-ci.com/gennaroprota/breath.svg?branch=master)](https://travis-ci.com/gennaroprota/breath)
+
 Welcome to *Breath*, my personal toolkit of C++ components. The components range
 from cryptography (MD5, SHA-1, SHA-2) to string utilities, operating system
 identification and much more. You'll get a precise idea by exploring the breath/
