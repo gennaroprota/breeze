@@ -21,16 +21,13 @@ matrix:
           dist: xenial
           compiler: clang
 
-          env: compiler=clang
-          env: system=unix
+          env:
+            - compiler=clang system=unix
 
           name: "Clang 7 on Ubuntu 16.04 (Xenial)"
 
         - os: linux
           dist: xenial
-
-          env: compiler=gcc
-          env: system=unix
 
           addons:
             apt:
@@ -39,14 +36,12 @@ matrix:
                 packages:
                     - g++-7
           env:
-            - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+            - compiler=gcc system=unix MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+
           name: "GCC 7 on Ubuntu 16.04 (Xenial)"
 
         - os: linux
           dist: xenial
-
-          env: compiler=clang
-          env: system=unix
 
           addons:
             apt:
@@ -54,15 +49,14 @@ matrix:
                     - llvm-toolchain-xenial-8
                 packages:
                     - clang-8
+
           env:
-            - MATRIX_EVAL="CC=clang-8 && CXX=clang++-8"
+            - compiler=clang system=unix MATRIX_EVAL="CC=clang-8 && CXX=clang++-8"
+
           name: "Clang 8 on Ubuntu 16.04 (Xenial)"
 
         - os: linux
           dist: xenial
-
-          env: compiler=gcc
-          env: system=unix
 
           addons:
             apt:
@@ -71,14 +65,15 @@ matrix:
                 packages:
                     - g++-8
           env:
-            - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+            - compiler=gcc system=unix MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+
           name: "GCC 8 on Ubuntu 16.04 (Xenial)"
 
         - os: osx
           osx_image: xcode10.1
 
-          env: compiler=clang
-          env: system=unix
+          env:
+            - compiler=clang system=unix
 
           name: "Xcode 10.1 on Mac OS X"
 
