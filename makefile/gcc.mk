@@ -116,7 +116,6 @@ cpp_basic_options =  -std=c++14                      \
 
 cpp_basic_options += -flto-odr-type-merging          \
                      -pipe                           \
-                     -Wabi                           \
                      -Warray-bounds=2                \
                      -Wcast-align                    \
                      -Wconditionally-supported       \
