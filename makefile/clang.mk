@@ -90,9 +90,13 @@ include_switch = -I
 object_file_suffix = .o
 
 #       Note that this differs from the compiler name, which is in
-#       $(compiler).
+#       $(compiler). And that, for Travis CI, we often need to select a
+#       specific version (e.g. clang++-8), which we do externally to
+#       this makefile: hence the ifeq() test.
 # ----------------------------------------------------------------------------
-compiler_command = clang++
+ifeq ($(compiler_command),)
+    compiler_command = clang++
+endif
 
 define compile_to_object
     $(compiler_command) $(cpp_options) -c -o $@ $<

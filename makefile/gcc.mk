@@ -165,10 +165,12 @@ include_switch = -I
 object_file_suffix = .o
 
 #       Note that this differs from the compiler name, which is in
-#       $(compiler).
+#       $(compiler). See also the comment about the analogous statement
+#       in clang.mk.
 # ----------------------------------------------------------------------------
-compiler_command = g++
-
+ifeq ($(compiler_command),)
+    compiler_command = g++
+endif
 
 define compile_to_object
     $(compiler_command) $(cpp_options) -c -o $@ $<

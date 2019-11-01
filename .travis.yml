@@ -36,7 +36,7 @@ matrix:
                 packages:
                     - g++-7
           env:
-            - compiler=gcc system=unix MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+            - compiler=gcc system=unix compiler_command=g++-7
 
           name: "GCC 7 on Ubuntu 16.04 (Xenial)"
 
@@ -51,7 +51,7 @@ matrix:
                     - clang-8
 
           env:
-            - compiler=clang system=unix MATRIX_EVAL="CC=clang-8 && CXX=clang++-8"
+            - compiler=clang system=unix compiler_command=clang++-8"
 
           name: "Clang 8 on Ubuntu 16.04 (Xenial)"
 
@@ -65,7 +65,7 @@ matrix:
                 packages:
                     - g++-8
           env:
-            - compiler=gcc system=unix MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+            - compiler=gcc system=unix compiler_command=g++-8
 
           name: "GCC 8 on Ubuntu 16.04 (Xenial)"
 
@@ -76,9 +76,6 @@ matrix:
             - compiler=clang system=unix
 
           name: "Xcode 10.1 on Mac OS X"
-
-before_install:
-    - eval "${MATRIX_EVAL}"
 
 # Local Variables:
 # mode: yaml
