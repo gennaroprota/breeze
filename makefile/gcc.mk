@@ -74,6 +74,14 @@
 # ----------------------------------------------------------------------------
 minimum_gcc_version := 6.4.0
 
+#       Note that this differs from the compiler name, which is in
+#       $(compiler). See also the comment about the analogous statement
+#       in clang.mk.
+# ----------------------------------------------------------------------------
+ifeq ($(compiler_command),)
+    compiler_command = g++
+endif
+
 #       Note:
 #           starting from GCC 7 -dumpversion might print the major
 #           version only, and we need -dumpfullversion to print the
@@ -81,8 +89,8 @@ minimum_gcc_version := 6.4.0
 #           --with-gcc-major-version-only configure option). This
 #           insight is from Jonathan Wakely, as well.
 # ----------------------------------------------------------------------------
-actual_gcc_version := $(shell g++ -dumpfullversion 2>/dev/null \
-                           || g++ -dumpversion)
+actual_gcc_version := $(shell $(compiler_command) -dumpfullversion 2>/dev/null \
+                           || $(compiler_command) -dumpversion)
 
 lowest_version := $(shell                                            \
   printf '%s\n%s\n' $(minimum_gcc_version) $(actual_gcc_version)  |  \
@@ -163,14 +171,6 @@ cpp_debug_options += -ggdb3
 
 include_switch = -I
 object_file_suffix = .o
-
-#       Note that this differs from the compiler name, which is in
-#       $(compiler). See also the comment about the analogous statement
-#       in clang.mk.
-# ----------------------------------------------------------------------------
-ifeq ($(compiler_command),)
-    compiler_command = g++
-endif
 
 define compile_to_object
     $(compiler_command) $(cpp_options) -c -o $@ $<
