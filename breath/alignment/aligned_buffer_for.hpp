@@ -19,17 +19,6 @@
 
 namespace breath {
 
-template< typename T >
-class               aligned_buffer_for ;
-
-//!     "Empty" specialization to disable usage of the template for
-//!     arrays.
-// ---------------------------------------------------------------------------
-template< typename T, std::size_t n >
-class               aligned_buffer_for< T[ n ] >
-{
-} ;
-
 //! \cond
 namespace aligned_buffer_private {
 
@@ -120,6 +109,17 @@ struct pod_with_same_align
 //!     alternatives (this one, TR1's one and the library-based
 //!     C++11's one) will be made superfluous by C++11's core support.
 // ---------------------------------------------------------------------------
+template< typename T >
+class               aligned_buffer_for ;
+
+//!     "Empty" specialization to disable usage of the template for
+//!     arrays.
+// ---------------------------------------------------------------------------
+template< typename T, std::size_t n >
+class               aligned_buffer_for< T[ n ] >
+{
+} ;
+
 template< typename T >
 class aligned_buffer_for
 {
