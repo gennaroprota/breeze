@@ -52,7 +52,6 @@ last_api_error::last_api_error( char const * p ) noexcept
     if ( ret != 0 ) {
          strcpy( m_message + offset, strerror_r_failed ) ;
     }
-
 }
 
 last_api_error::last_api_error( last_api_error const & other ) noexcept

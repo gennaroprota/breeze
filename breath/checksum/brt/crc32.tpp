@@ -98,7 +98,6 @@ crc32( InputIterator begin, InputIterator end )
                 return        ( checksum / table_size ) ^
                        table[ ( checksum ^ value ) & ( table_size - 1 ) ] ;
             }
-
             ) ;
 }
 

@@ -139,7 +139,6 @@ uuid::variant() const noexcept
         BREATH_ASSERT( ( high3 & 0b111 ) == 0b111 ) ;
         return future ;
     }
-
 }
 
 uuid::version_type

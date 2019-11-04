@@ -78,7 +78,6 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
                 ++ out ;
                 block &= ( ( 1 << num_bits ) - 1 ) ;
             }
-
         }
     }
 }

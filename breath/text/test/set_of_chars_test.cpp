@@ -178,7 +178,6 @@ main()
         sc_max.remove( CHAR_MAX ) ;
         DO_TEST( sc_max.begin() == sc_max.end() ) ;
     }
-
 }
 
 // Local Variables:

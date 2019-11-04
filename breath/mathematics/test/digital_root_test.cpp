@@ -46,7 +46,6 @@ check()
                           trivial_digital_root( n, base ) ) ;
         }
     }
-
 }
 
 }

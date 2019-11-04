@@ -107,7 +107,6 @@ entropy_source::impl::to_buffer( unsigned char /*gps*/ * buffer, std::ptrdiff_t 
     if ( read < static_cast< std::size_t >( count ) ) {
         exception::raise( "entropy_source: not enough bytes" ) ;
     }
-
 }
 
 bool

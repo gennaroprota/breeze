@@ -42,9 +42,7 @@ do_check()
     for ( auto const & t : table ) {
         BREATH_CHECK( breath::gcd( t.a, t.b ) == t.gcd ) ;
         BREATH_CHECK( breath::gcd( t.b, t.a ) == t.gcd ) ;
-
     }
-
 }
 
 void
