@@ -101,10 +101,10 @@ entropy_source::impl::to_buffer( unsigned char /*gps*/ * buffer, std::ptrdiff_t 
 {
     BREATH_ASSERT( count >= 0 ) ;
 
-    auto const          read =
+    std::size_t const   read =
         std::fread( buffer, sizeof buffer[ 0 ], count, m_file ) ;
 
-    if ( read < count ) {
+    if ( read < static_cast< std::size_t >( count ) ) {
         exception::raise( "not enough bytes" ) ;
     }
 
