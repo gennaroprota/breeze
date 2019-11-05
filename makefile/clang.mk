@@ -56,7 +56,7 @@ cpp_basic_options =  -std=c++14                         \
                      -Wno-c++98-compat-pedantic         \
                      -Werror                            \
                      -fuse-cxa-atexit                   \
-                     -D _POSIX_C_SOURCE=200112L         \
+                     -D _POSIX_C_SOURCE=200809L         \
                      -D _GLIBCXX_USE_CXX11_ABI=1
 
 cpp_basic_options += -pipe                              \

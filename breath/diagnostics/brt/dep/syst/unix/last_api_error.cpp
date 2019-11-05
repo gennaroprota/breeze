@@ -13,15 +13,17 @@
 
 #include <cerrno>
 #include <ostream>
+#include <locale.h>
 #include <string.h>
 
 namespace breath {
 
-char const          strerror_r_failed[] = "strerror_r failed: see error code" ;
-
 last_api_error::last_api_error( char const * p ) noexcept
     :   m_last_error( errno )
 {
+    static char const   cant_obtain_description[] =
+                      "can't obtain the error description: see the error code" ;
+
     //! \todo
     //! Most of this code is duplicated with the Windows variant.
     //! How to put it in common? --gps
@@ -45,13 +47,47 @@ last_api_error::last_api_error( char const * p ) noexcept
                                     : strlen( m_message )
                                     ;
 
-    int  const                   ret = strerror_r( static_cast< int >(
-                                                       m_last_error ),
-                                                   m_message + offset,
-                                                   sizeof m_message - 1 ) ;
-    if ( ret != 0 ) {
-         strcpy( m_message + offset, strerror_r_failed ) ;
+    //      We use strerror_l(), here, although that was introduced only
+    //      with POSIX.1-2008.
+    //
+    //      Here's the reason:
+    //
+    //      the choice is between strerror(), strerror_r() and
+    //      strerror_l(). The first is not thread-safe, so is
+    //      immediately excluded. strerror_r() exists in two variants: a
+    //      POSIX one and a GNU one, and getting the POSIX version on
+    //      Ubuntu 16.04, or with Clang 5.0.1 on Cygwin64, requires
+    //      undefining _GNU_SOURCE; this undefine, though, breaks
+    //      libstdc++ on Ubuntu (again, this occurred on 16.04), so it
+    //      is a no-no.
+    //
+    //      Thus, we are left with GNU's _r() variant and the _l() one.
+    //      For portability, of course, we prefer the latter (which is
+    //      even recommended by POSIX itself:
+    //
+    //        <http://austingroupbugs.net/view.php?id=655>
+    //
+    //      ).
+    //
+    //      Note that this means we have to give up on Mac OS X, as that
+    //      doesn't support POSIX.1-2008 (nor, of course, it supports
+    //      the GNU strerror_r()). It might be supported in the future,
+    //      though (we hope).
+    // -----------------------------------------------------------------------
+    char const *        description = nullptr ;
+    locale_t const      locale = newlocale( LC_MESSAGES_MASK, "", locale_t() ) ;
+
+    if ( locale != locale_t() ) {
+        description = strerror_l( static_cast< int >( m_last_error ), locale ) ;
+        freelocale( locale ) ;
     }
+
+    char const * const  message = description != nullptr
+                                      ? description
+                                      : &cant_obtain_description[ 0 ]
+                                      ;
+    strncpy( m_message + offset, message, sizeof m_message - offset - 1 ) ;
+    m_message[ sizeof m_message - 1 ] = '\0' ;
 }
 
 last_api_error::last_api_error( last_api_error const & other ) noexcept
