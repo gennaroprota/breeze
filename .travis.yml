@@ -69,14 +69,6 @@ matrix:
 
           name: "GCC 8 on Ubuntu 16.04 (Xenial)"
 
-        - os: osx
-          osx_image: xcode10.1
-
-          env:
-            - compiler=clang system=unix
-
-          name: "Xcode 10.1 on Mac OS X"
-
 # Local Variables:
 # mode: yaml
 # indent-tabs-mode: nil
