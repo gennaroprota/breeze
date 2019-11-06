@@ -23,7 +23,7 @@
 //!
 //!     <code>
 //!         int const           m =
-//!         std::numeric_limits< int >::max BREATH_PREVENT_MACRO_EXPANSION () ;
+//!          std::numeric_limits< int >::max BREATH_PREVENT_MACRO_EXPANSION () ;
 //!     </code>
 //!
 //!     Note that you can prevent macro substitution by enclosing the

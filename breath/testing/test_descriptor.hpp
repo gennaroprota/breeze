@@ -37,9 +37,10 @@ public:
     //!     Constructs the descriptor for a test having a given \c
     //!     name and running the given function.
     //!     Intentionally not explicit to allow our typical usage:
+    //!
     //!     <code>
-    //!       test_runner::instance().run( { func1, func2... funcN } ) ;
-    //!     </code>.
+    //!         test_runner::instance().run( { func1, func2... funcN } ) ;
+    //!     </code>
     // -----------------------------------------------------------------------
                         test_descriptor( void( & )(),
                                          char const * name = "" ) noexcept ;

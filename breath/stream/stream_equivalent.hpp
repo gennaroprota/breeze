@@ -42,17 +42,15 @@ namespace breath {
 //!     This allows writing e.g.:
 //!
 //!     <code>
+//!         std::ostream &
+//!         operator <<( std::ostream & original_os, my_type const & m )
+//!         {
+//!             stream_equivalent< std::ostream > equiv( original_os ) ;
+//!             std::ostream & os = equiv.get() ;
 //!
-//!       std::ostream &
-//!       operator <<( std::ostream & original_os, my_type const & m )
-//!       {
-//!           stream_equivalent< std::ostream > equiv( original_os ) ;
-//!           std::ostream & os = equiv.get() ;
-//!
-//!           // OK, just use 'os' from now on.
+//!             // OK, just use 'os' from now on.
 //!           ...
-//!       }
-//!
+//!         }
 //!     </code>
 //!
 //!     and change formatting flags (including those allocated via

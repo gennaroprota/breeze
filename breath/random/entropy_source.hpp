@@ -49,7 +49,7 @@ public:
     //!     because we don't want things such as
     //!
     //!     <code>
-    //!         std::cout << rnd.next()
+    //!         std::cout << rnd.next() ;
     //!     </code>
     //!
     //!     to output a character instead of a number.

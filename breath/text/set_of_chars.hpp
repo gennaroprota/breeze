@@ -38,21 +38,21 @@ namespace breath {
 //!     pointer constant, which means that e.g. the call to add() in
 //!
 //!     <code>
-//!     set_of_chars sc ;
-//!     sc.add( CHAR_MIN ) ;
+//!         set_of_chars sc ;
+//!         sc.add( CHAR_MIN ) ;
 //!     </code>
 //!
 //!     may be ambiguous. To avoid the ambiguity, write:
 //!
 //!     <code>
-//!     sc.add( static_cast< char >( CHAR_MIN ) ) ;
+//!         sc.add( static_cast< char >( CHAR_MIN ) ) ;
 //!     </code>
 //!
 //!     or use
 //!
 //!     <code>
-//!     std::numeric_limits< char >::min()
-//!     </code>.
+//!         std::numeric_limits< char >::min()
+//!     </code>
 // ---------------------------------------------------------------------------
 class set_of_chars
 {

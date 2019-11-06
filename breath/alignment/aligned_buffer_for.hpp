@@ -102,14 +102,14 @@ struct pod_with_same_align
 //!     things, the C++11 scheme allows for storing arrays:
 //!
 //!     <code>
-//!       aligned_storage< n * sizeof( T ), alignof( T ) >
+//!         aligned_storage< n * sizeof( T ), alignof( T ) >
 //!     </code>
 //!
 //!     What's more, C++11 has support for declaring an aligned buffer
 //!     directly in core language:
 //!
 //!     <code>
-//!        alignas( T ) unsigned char arr[ sizeof( T ) ] ;
+//!         alignas( T ) unsigned char arr[ sizeof( T ) ] ;
 //!     </code>
 //!
 //!     So: this facility exists basically for C++03; and all of the
