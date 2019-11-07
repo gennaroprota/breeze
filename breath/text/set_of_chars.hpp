@@ -276,18 +276,13 @@ public:
         typedef char const &reference          ;
         //!\}
 
-        //!     A special value to construct an end() iterator.
+        //!     Constructs a one-past-the-end iterator.
         // -------------------------------------------------------------------
-        enum end_tag { end } ;
+                            iterator() noexcept ;
 
         //!     Constructs an iterator to the first character in \c sc.
         // -------------------------------------------------------------------
         explicit            iterator( set_of_chars const & sc ) noexcept ;
-
-        //!     Constructs a one-past-the-end iterator into \c sc.
-        // -------------------------------------------------------------------
-                            iterator( set_of_chars const & sc,
-                                      end_tag ) noexcept ;
 
         //!     Compiler-provided copy constructor.
         // -------------------------------------------------------------------
