@@ -132,12 +132,16 @@ main()
 
     // iterators
     {
+        set_of_chars::iterator
+                            default_constructed_iterator ;
         set_of_chars        sc ;
         DO_TEST( sc.begin() == sc.end() ) ;
+        DO_TEST( sc.end() == default_constructed_iterator ) ;
         DO_TEST( sc.cbegin() == sc.cend() ) ;
         sc.add( 'a' ) ;
         DO_TEST( *sc.begin() == 'a' ) ;
         DO_TEST( *sc.cbegin() == 'a' ) ;
+        DO_TEST( sc.end() == default_constructed_iterator ) ;
 
         set_of_chars::iterator
                             beg = sc.begin() ;
