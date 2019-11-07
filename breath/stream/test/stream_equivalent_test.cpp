@@ -78,7 +78,8 @@ check_non_good_streams()
 
         dest.setf( std::ios_base::hex, std::ios_base::basefield ) ;
         dest.fill( '*' ) ;
-        dest << std::setw( 256 ) << "this isn't actually output..." ;
+        int const           dummy_not_actually_output = 1 ;
+        dest << std::setw( 256 ) << dummy_not_actually_output ;
         BREATH_CHECK( dest.width() == 256 ) ;
     }
 
