@@ -169,6 +169,12 @@ main()
 
         DO_TEST( ++ it == sc.end() ) ;
 
+        int const           num = 2 ;
+        char const          to_be_found[ num ] = { 'a', 'b' } ;
+        it = std::search( sc.cbegin(), sc.cend(),
+                          to_be_found, to_be_found + num ) ;
+        DO_TEST( it == sc.cbegin() ) ;
+
         sc.remove( 'b' ) ;
         it = std::find( sc.begin(), sc.end(), 'a' ) ;
         DO_TEST( it == sc.begin() ) ;
