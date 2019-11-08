@@ -43,8 +43,8 @@ namespace breath {
 //!     \warning
 //!         Only throw an exception of type \c last_api_error if the
 //!         return value of the last function you called in the current
-//!         thread indicates that \c GetLastError (if under Windows) or
-//!         \c errno (if under Unix) is meaningful.
+//!         thread indicates that \c GetLastError() (if under Windows)
+//!         or \c errno (if under Unix) is meaningful.
 // ---------------------------------------------------------------------------
 class last_api_error
     :   public exception
