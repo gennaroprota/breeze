@@ -25,7 +25,8 @@ main()
 {
     using breath::set_of_chars ;
 
-    // ordinary constructors
+    //      Ordinary constructors.
+    // -----------------------------------------------------------------------
     {
         set_of_chars const  sc1 ;
         DO_TEST( sc1.is_empty() ) ;
@@ -54,7 +55,8 @@ main()
         }
     }
 
-    // copy constructor
+    //      Copy constructor.
+    // -----------------------------------------------------------------------
     {
         set_of_chars const s("abcdefghijklmnopqrstuvwxyz") ;
         set_of_chars const t( s ) ;
@@ -63,20 +65,23 @@ main()
         DO_TEST( t.as_string() == "abcdefghijklmnopqrstuvwxyz" ) ;
     }
 
-    // contains
+    //      contains()
+    // -----------------------------------------------------------------------
     {
         set_of_chars const  s( "wxyz") ;
         DO_TEST( s.contains( 'w' ) && s.contains( 'x' ) && s.contains( 'y' ) &&
             s.contains( 'z' ) && ! s.contains( 'a' ) && ! s.contains( '\0' ) ) ;
     }
 
-    // add
+    //      add() / remove()
+    // -----------------------------------------------------------------------
     {
         DO_TEST( set_of_chars( "abc").add( 'd' ) == set_of_chars( "abcd" ) ) ;
         DO_TEST( set_of_chars( "abc").add( "d" ) == set_of_chars( "abcd" ) ) ;
     }
     {
-        // check that we can add/remove a '\0'
+        //      Check that we can add/remove a '\0'.
+        // -------------------------------------------------------------------
         DO_TEST( set_of_chars( "" ).is_empty() ) ;
         std::string         s ;
         s.push_back( '\0' ) ;
@@ -87,7 +92,8 @@ main()
         DO_TEST( sc.count() == 0 && ! sc.contains( '\0' ) ) ;
     }
 
-    // complement
+    //      complement()
+    // -----------------------------------------------------------------------
     {
         std::string s( "ab" ) ;
         set_of_chars        sc( s.cbegin(), s.cend() ) ;
@@ -98,7 +104,8 @@ main()
         }
     }
 
-    // as_string
+    //      as_string()
+    // -----------------------------------------------------------------------
     {
         std::string const   s =         "cage" ;
         std::string const   s_ordered = "aceg" ;
@@ -107,7 +114,8 @@ main()
         DO_TEST( sc.as_string() == s_ordered ) ;
     }
 
-    // count
+    //      count()
+    // -----------------------------------------------------------------------
     {
         set_of_chars        sc ;
         DO_TEST( sc.count() == 0 ) ;
@@ -119,7 +127,8 @@ main()
         DO_TEST( sc.count() == 1 && sc.contains( '1' ) ) ;
 
     }
-    // is_empty
+    //      is_empty()
+    // -----------------------------------------------------------------------
     {
         set_of_chars        sc ;
         DO_TEST( sc.is_empty() ) ;
@@ -130,7 +139,8 @@ main()
 
     }
 
-    // iterators
+    //      Iterators.
+    // -----------------------------------------------------------------------
     {
         set_of_chars::iterator
                             default_constructed_iterator ;
