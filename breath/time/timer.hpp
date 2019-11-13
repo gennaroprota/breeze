@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A policy based timer class (class template).
+//!     \brief A policy-based timer class (class template).
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Jr0D8xlNtWxnToeomoet20V4lz0qIYDd
@@ -18,7 +18,7 @@ namespace breath {
 //      timer:
 //      ======
 //
-//!     A policy based timer which allows the user to retrieve the
+//!     A policy-based timer which allows the user to retrieve the
 //!     amount of time elapsed from its start (i.e. a "stopwatch").
 //!
 //!     \c Device is a policy modeling the "clock device" concept: this
