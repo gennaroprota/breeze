@@ -22,8 +22,7 @@ namespace {
 
 //      Attention: keep in sync with the declaration in [note 1].
 // ---------------------------------------------------------------------------
-static char const * const
-                    names[] =
+char const * const  names[] =
 {
     "Unknown Windows variant",
     "Win32s on Windows 3.1",

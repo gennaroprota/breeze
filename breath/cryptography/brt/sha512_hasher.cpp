@@ -26,8 +26,7 @@ typedef sha512_engine::word_type
                     word_type ;
 using sha_common_private::ror ;
 
-static word_type const
-                    k[] =
+word_type const     k[] =
 {
     // These words represent the first sixty-four bits of the
     // fractional parts of the cube roots of the first eighty
