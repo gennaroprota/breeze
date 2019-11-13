@@ -48,7 +48,8 @@ public:
 private:
     bool                acquire( DWORD flags = 0 ) ;
     bool                is_released() const noexcept ;
-    void                to_buffer( unsigned char * buffer, DWORD count ) ;
+    void                to_buffer( unsigned char * buffer,
+                                   std::ptrdiff_t count ) ;
 } ;
 
 entropy_source::impl::impl()
@@ -113,12 +114,19 @@ entropy_source::impl::release() noexcept
 }
 
 void
-entropy_source::impl::to_buffer( unsigned char * buffer, DWORD count )
+entropy_source::impl::to_buffer( unsigned char * buffer, std::ptrdiff_t count )
 {
-    int const           r = CryptGenRandom( m_provider_handle, count,
-                                              buffer ) ;
-    if ( r == 0 ) {
-        entropy_source::exception::raise( "cannot generate random number" ) ;
+    BREATH_ASSERT( count >= 0 ) ;
+
+    if ( count > 0 ) {
+
+        int const           r = CryptGenRandom( m_provider_handle,
+                                                static_cast< DWORD >( count ),
+                                                buffer ) ;
+        if ( r == 0 ) {
+            entropy_source::exception::raise(
+                                        "cannot generate random number" ) ;
+        }
     }
 }
 
