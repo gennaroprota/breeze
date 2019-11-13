@@ -34,8 +34,8 @@ typedef sha1_engine::word_type word_type ;
 
 //      Constants: section 4.2.1
 // ---------------------------------------------------------------------------
-word_type const k[] = { 0x5a827999, 0x6ed9eba1,
-                        0x8f1bbcdc, 0xca62c1d6 } ;
+word_type const     k[] = { 0x5a827999, 0x6ed9eba1,
+                            0x8f1bbcdc, 0xca62c1d6 } ;
 
 
 word_type
