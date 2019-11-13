@@ -138,7 +138,6 @@ void sha256_engine::process_block( state_type & state,
    std::transform( breath::cbegin( state ), breath::cend( state ),
                    breath::cbegin( working ), breath::begin( state ),
                    std::plus< word_type >() ) ;
-
 }
 
 }
