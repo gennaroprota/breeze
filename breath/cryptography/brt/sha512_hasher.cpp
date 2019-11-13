@@ -28,10 +28,10 @@ using sha_common_private::ror ;
 
 word_type const     k[] =
 {
-    // These words represent the first sixty-four bits of the
-    // fractional parts of the cube roots of the first eighty
-    // prime numbers.
-
+    //      These words represent the first sixty-four bits of the
+    //      fractional parts of the cube roots of the first eighty prime
+    //      numbers.
+    // -----------------------------------------------------------------------
     0x428a2f98d728ae22ULL, 0x7137449123ef65cdULL,
     0xb5c0fbcfec4d3b2fULL, 0xe9b5dba58189dbbcULL,
     0x3956c25bf348b538ULL, 0x59f111f1b605d019ULL,
@@ -103,10 +103,10 @@ sigma1( word_type x )
 void
 sha512_engine::init_state( state_type & state )
 {
-    // These words are obtained by taking the first sixty-four bits
-    // of the fractional parts of the square roots of the first eight
-    // prime numbers.
-
+    //      These words are obtained by taking the first sixty-four bits
+    //      of the fractional parts of the square roots of the first
+    //      eight prime numbers.
+    // -----------------------------------------------------------------------
     state[ 0 ] = 0x6a09e667f3bcc908ULL ;
     state[ 1 ] = 0xbb67ae8584caa73bULL ;
     state[ 2 ] = 0x3c6ef372fe94f82bULL ;
@@ -123,7 +123,8 @@ sha512_engine::process_block( state_type & state, block_type const & block )
     using sha_common_private::ch ;
     using sha_common_private::maj ;
 
-    // create an 80-word "schedule" from the message block
+    //      Create an 80-word "schedule" from the message block.
+    // -----------------------------------------------------------------------
     typedef word_type   schedule_type[ 80 ] ;
     sensitive_buffer< schedule_type >
                         sched(
@@ -134,9 +135,9 @@ sha512_engine::process_block( state_type & state, block_type const & block )
     }
     sensitive_buffer< word_type[ 8 ] > working( state ) ;
 
-    // 0 1 2 3 4 5 6 7
-    // a b c d e f g h
-    //
+    //      0 1 2 3 4 5 6 7
+    //      a b c d e f g h
+    // -----------------------------------------------------------------------
     {
         sensitive_buffer< word_type [ 2 ] >
                             t ;

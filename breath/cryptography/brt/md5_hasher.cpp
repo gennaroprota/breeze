@@ -19,11 +19,10 @@ namespace        {
 typedef md5_engine::word_type
                         word_type ;
 
-//
 //      Note:
 //          this is not a general rotate-left function: it assumes
 //          (which always happens with MD5) that 0 < amount < 32.
-//
+// ---------------------------------------------------------------------------
 template< int amount >
 word_type
 md5_rotate_left( word_type w )

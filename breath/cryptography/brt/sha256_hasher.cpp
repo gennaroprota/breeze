@@ -76,9 +76,10 @@ big_sigma1( word_type x )
 
 void sha256_engine::init_state( state_type & state )
 {
-    // These values are obtained by taking the first 32 bits of the
-    // fractional parts of the square roots of the first 8 prime numbers.
-
+    //      These values are obtained by taking the first 32 bits of the
+    //      fractional parts of the square roots of the first 8 prime
+    //      numbers.
+    // -----------------------------------------------------------------------
     state[ 0 ] = 0x6a09e667 ;
     state[ 1 ] = 0xbb67ae85 ;
     state[ 2 ] = 0x3c6ef372 ;
@@ -95,7 +96,8 @@ void sha256_engine::process_block( state_type & state,
     using sha_common_private::ch ;
     using sha_common_private::maj ;
 
-    // expand the message-block to a 64-word "schedule"
+    //      Expand the message-block to a 64-word "schedule".
+    // -----------------------------------------------------------------------
     int const           sz( 64 ) ;
     typedef word_type   schedule_type[ sz ] ;
     sensitive_buffer< schedule_type >
@@ -105,9 +107,9 @@ void sha256_engine::process_block( state_type & state,
         sched[ i ] = sigma1( sched[ i - 2  ] ) + sched[ i - 7  ]
                    + sigma0( sched[ i - 15 ] ) + sched[ i - 16 ] ;
     }
-   // 0 1 2 3 4 5 6 7
-   // a b c d e f g h
-   //
+   //       0 1 2 3 4 5 6 7
+   //       a b c d e f g h
+   // ------------------------------------------------------------------------
    int const            state_count( 8 ) ;
    sensitive_buffer< word_type[ state_count ] >
                         working( state ) ;

@@ -90,20 +90,20 @@ void sha1_engine::process_block( state_type & state
                             ^ sched[ i - 14 ] ^ sched[ i - 16 ] ) ;
     }
 
-    // letter mapping to ease review against the FIPS standard:
-    //         a b c d e
-    //     [   0 1 2 3 4   ]
-    //
+    //      Letter mapping to ease review against the FIPS standard:
+    //              a b c d e
+    //          [   0 1 2 3 4   ]
+    // -----------------------------------------------------------------------
     int const           state_count( 5 ) ;
     sensitive_buffer< word_type[ state_count ] >
                         working( state ) ;
-    //
-    // NOTE: analogously to the MD5 case, we repeat this code four times;
-    //       forming an array of pointers to ch, parity and maj prevents
-    //       their calls to be inlined, with most compilers; but perhaps
-    //       there are (non macro-based) other beneficial solutions
-    //       ([FUTURE] [gps])
-    //
+
+    //      NOTE: analogously to the MD5 case, we repeat this code four
+    //      times; forming an array of pointers to ch, parity and maj
+    //      prevents their calls to be inlined, with most compilers; but
+    //      perhaps there are (non macro-based) other beneficial
+    //      solutions. ([FUTURE] [gps])
+    // -----------------------------------------------------------------------
     word_type           t( 0 ) ;
     for ( int i = 0 ; i < 20 ; ++ i ) {
         t = rotate_left< 5 >( working[ 0 ] )
