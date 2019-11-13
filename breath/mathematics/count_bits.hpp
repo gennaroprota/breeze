@@ -21,7 +21,7 @@ namespace breath {
 //      =============
 //
 //!     \return
-//!         The number of on bits in the value \c t. \c T must be an
+//!         The number of on bits in the value \c t. \c T must be a
 //!         built-in integral type with no sign (\c bool is supported,
 //!         too).
 // ---------------------------------------------------------------------------
