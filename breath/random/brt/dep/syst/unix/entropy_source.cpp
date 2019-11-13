@@ -40,7 +40,8 @@ public:
 
 private:
     bool                is_open() const noexcept ;
-    void                to_buffer( unsigned char /*gps*/ * buffer, std::ptrdiff_t count ) noexcept ;
+    void                to_buffer( unsigned char /*gps*/ * buffer,
+                                   std::ptrdiff_t count ) noexcept ;
 
 private:
     FILE *              m_file ;
@@ -97,7 +98,8 @@ entropy_source::impl::is_open() const noexcept
 }
 
 void
-entropy_source::impl::to_buffer( unsigned char /*gps*/ * buffer, std::ptrdiff_t count ) noexcept
+entropy_source::impl::to_buffer( unsigned char /*gps*/ * buffer,
+                                 std::ptrdiff_t count ) noexcept
 {
     BREATH_ASSERT( count >= 0 ) ;
 
