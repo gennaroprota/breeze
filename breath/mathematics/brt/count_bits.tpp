@@ -10,7 +10,6 @@
 #include "breath/meta/has_sign.hpp"
 
 #include <climits>
-#include <cstddef>
 
 namespace breath {
 namespace count_bits_private {

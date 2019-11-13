@@ -13,8 +13,6 @@
 #ifndef BREATH_GUARD_D5dKoDqQ2v7QNXhW1F8zF0ZKijovEPgp
 #define BREATH_GUARD_D5dKoDqQ2v7QNXhW1F8zF0ZKijovEPgp
 
-#include <cstddef>
-
 namespace breath {
 
 //      count_bits():
