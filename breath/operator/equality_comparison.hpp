@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief Base class template to provide equality operators (\c ==
-//             and \c !=) for a derived class.
+//!            and \c !=) for a derived class.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI
