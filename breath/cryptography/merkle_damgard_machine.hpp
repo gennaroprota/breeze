@@ -45,8 +45,7 @@ class               digest ;
 //!        security reasons)
 //!
 //!      - process_block()
-//
-//
+//!
 //!     \warning
 //!         Hash algorithms depend on exact bit-patterns,
 //!         thus the byte/char representation (e.g. ASCII
