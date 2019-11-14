@@ -16,31 +16,6 @@
 
 namespace breath {
 
-//!     Support for \c breath::accumulate().
-// ---------------------------------------------------------------------------
-template< typename Engine >
-class accumulate_traits< merkle_damgard_machine< Engine > >
-{
-    typedef merkle_damgard_machine< Engine >
-                        machine_type ;
-
-public:
-    typedef machine_type
-                        init_type ;
-    typedef machine_type
-                        result_type ;
-
-    template< typename It >
-    static result_type  compute( It begin, It end, init_type & v )
-    {
-        return v.append( begin, end ) ;
-    }
-} ;
-
-// [FUTURE], [C++11]: template typedef (using) for
-//           accumulator< Hasher, merkle_damgard_accumulation_policy >
-// [gps]
-
 template< typename Engine >
 merkle_damgard_machine< Engine >::merkle_damgard_machine()
 {

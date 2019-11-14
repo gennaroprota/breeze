@@ -518,7 +518,6 @@
     <ClCompile Include="..\..\breath\uuid\brt\uuid.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\breath\algorithm\brt\accumulate.tpp" />
     <None Include="..\..\breath\checksum\brt\crc32.tpp" />
     <None Include="..\..\breath\counting\brt\counter.tpp" />
     <CustomBuild Include="..\..\breath\cpu\brt\get_cpuid_info.asm">
@@ -570,7 +569,6 @@
     <None Include="..\..\breath\workaround\brt\as_non_constant.tpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\breath\algorithm\accumulate.hpp" />
     <ClInclude Include="..\..\breath\algorithm\secure_fill.hpp" />
     <ClInclude Include="..\..\breath\alignment\aligned_buffer_for.hpp" />
     <ClInclude Include="..\..\breath\checksum\crc32.hpp" />

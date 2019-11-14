@@ -17,9 +17,6 @@
 
 namespace breath {
 
-template< typename T >
-class               accumulate_traits ;
-
 template< typename Hasher >
 class               digest ;
 
@@ -63,6 +60,36 @@ class               digest ;
 //          (Note that internally we already keep the *bit* count
 //          of the input, not the byte count, so extending it
 //          should be fairly straightforward - gps )
+//
+//!     \par A note about \c std::accumulate()
+//!
+//!         You can "accumulate" data into a %merkle_damgard_machine by
+//!         doing e.g.:
+//!
+//!         <code>
+//!             std::accumulate( begin, end, my_hasher, functor ) ;
+//!         </code>
+//!
+//!         with \c functor having the following function-call operator:
+//!
+//!         <code>
+//!             hasher &
+//!             operator()( hasher & h, hasher::byte_type c )
+//!             {
+//!                 h.push_back( c ) ;
+//!                 return h ;
+//!             }
+//!         </code>
+//!
+//!         That, however, might be slow, due to excessive copying of
+//!         the hasher.
+//!
+//!         If that occurs to you, please drop me a mail, in which case
+//!         I might add a copy assignment operator to
+//!         %merkle_damgard_machine which does nothing for
+//!         self-assignment. In the mean time, please use \c
+//!         std::for_each(), noting in a comment that you are using a
+//!         less specific algorithm for performance reasons.
 // ---------------------------------------------------------------------------
 template< typename Engine >
 class merkle_damgard_machine
