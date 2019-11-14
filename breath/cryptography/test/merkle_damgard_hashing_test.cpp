@@ -193,7 +193,6 @@ void check_known_digests()
 
         Hasher              hasher( src.cbegin(), src.cend() ) ;
 
-        // repetitions?
         for ( int r = 0 ; r < entry.repetitions; ++ r ) {
             hasher.append( src.cbegin(), src.cend() ) ;
         }
