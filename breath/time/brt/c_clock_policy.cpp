@@ -22,8 +22,10 @@ c_clock_policy::retrieve()
     std::clock_t const  result( std::clock() ) ;
     return result != static_cast< std::clock_t >( -1 )
         ? result
-        : throw breath::exception( "std::clock() failed (e.g. because too"
-                                   " much time elapsed for a std::clock_t)" ) ;
+        : throw breath::exception( "std::clock() failed (e.g. because the time"
+                                   " elapsed is not available or because it is"
+                                   " too long to be represented in a"
+                                   " std::clock_t)" ) ;
 }
 
 c_clock_policy::c_clock_policy()
