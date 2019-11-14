@@ -28,8 +28,8 @@ class               digest ;
 //!     Merkle-Damgard's construction of unkeyed hash functions.
 //!
 //!     Many popular hash functions (including MD5 and all the SHA
-//!     variants) follow this scheme and can thus be implemented
-//!     easily by means of this class template.
+//!     variants until SHA-3) follow this scheme and can thus be
+//!     implemented easily by means of this class template.
 //!
 //!
 //!     \c Engine, which is the algorithm-specific policy, must
