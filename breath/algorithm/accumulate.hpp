@@ -25,11 +25,12 @@ template< typename T >
 class accumulate_traits
 {
 public:
-    //!     Type of the default init value for \c breath::accumulate().
+    //!     The type of the default init value for \c
+    //!     breath::accumulate().
     // -----------------------------------------------------------------------
     typedef T           init_type ;
 
-    //!     Type of the result of \c breath::accumulate().
+    //!     The type of the result of \c breath::accumulate().
     // -----------------------------------------------------------------------
     typedef T           result_type ;
 
