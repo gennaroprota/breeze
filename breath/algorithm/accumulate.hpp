@@ -39,7 +39,7 @@ public:
     static init_type    first() ;
 
     //!     Performs a summation of the elements in the range <code>
-    //!     [begin, end)</code> via <code>operator +=</code> (which is
+    //!     [begin, end)</code> via <code>operator +=()</code> (which is
     //!     searched via ADL). Can have a different implementation in
     //!     a user specialization.
     // -----------------------------------------------------------------------
@@ -59,7 +59,7 @@ public:
 //!
 //!     The default traits template performs a summation of the
 //!     elements in the range <code>[begin, end)</code> via
-//!     <code>operator +=</code> (which is searched via ADL).
+//!     <code>operator +=()</code> (which is searched via ADL).
 //!
 //!     Any \c accumulate_traits shall provide the following
 //!     accessible members:
