@@ -58,9 +58,8 @@ public:
 //!     customization: you are allowed to specialize it, in namespace
 //!     \c breath, for your own types.
 //!
-//!     The default traits template performs a summation of the
-//!     elements in the range <code>[begin, end)</code> via
-//!     <code>operator +=()</code> (which is searched via ADL).
+//!     See \c accumulate_traits for the behavior of the unspecialized
+//!     traits template.
 //!
 //!     Any \c accumulate_traits shall provide the following
 //!     accessible members:
