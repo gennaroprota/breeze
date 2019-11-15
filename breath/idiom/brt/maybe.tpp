@@ -14,8 +14,7 @@ namespace breath {
 
 template< typename T, typename Traits >
 maybe< T, Traits >::maybe( status_type status ) noexcept
-    :   m_storage(),
-        m_status( status ) // gps use std::move()?
+    :   m_status( status ) // gps use std::move()?
 {
     BREATH_ASSERT( ! Traits::is_valid( status ) ) ;
 }
