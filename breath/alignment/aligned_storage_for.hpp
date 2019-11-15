@@ -40,7 +40,7 @@ private:
     //      want this file to be usable in C++98/03).
     // -----------------------------------------------------------------------
     char                is_power_of_2[ value > 0 &&
-                                     ( value & (value-1) ) == 0 ] ;
+                                     ( value & ( value-1 ) ) == 0 ] ;
 } ;
 
 template< typename T >
