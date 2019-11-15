@@ -17,6 +17,15 @@ namespace breath {
 //! \cond
 namespace assert_private {
 
+template< typename T >
+void                block_non_bools( T ) = delete ;
+
+inline bool
+block_non_bools( bool b )
+{
+    return b ;
+}
+
 [[ noreturn ]] void fire( char const * message,
                           char const * file_name,
                           unsigned long line_number ) noexcept ;
@@ -36,16 +45,20 @@ namespace assert_private {
 //!     NDEBUG).
 //!
 //!     The code <code>BREATH_ASSERT( expr )</code> expands to an
-//!     expression. When that expression is evaluated: first, if \c expr
-//!     is not convertible to \c bool the program is ill-formed;
-//!     otherwise, an assertion is triggered if the result of that
-//!     conversion is \c false. If the result is \c true, the evaluation
-//!     has no effects besides the conversion to \c bool itself.
+//!     expression. When that expression is evaluated: if \c expr is
+//!     \c false, an assertion is triggered; if it is \c true, the
+//!     evaluation has no effects.
 //!
 //!     In this context, "triggering an assertion" means writing
 //!     information related to the specific macro invocation (e.g. line
 //!     number and source file name) to \c std::cerr, then calling \c
 //!     std::abort().
+//!
+//!     \c expr must have type bool or cv-qualified bool (this is a
+//!     change from the past: we used to accept anything implicitly or
+//!     explicitly convertible to bool; which means that e.g. \c expr
+//!     could be the name of a \c std::optional---we think the new
+//!     specification is safer).
 //!
 //!     Rationale
 //!     ---------
@@ -68,7 +81,7 @@ namespace assert_private {
 // ---------------------------------------------------------------------------
 #define BREATH_ASSERT( expression )                                          \
     (                                                                        \
-        ( expression )                                                       \
+        breath::assert_private::block_non_bools( expression )                \
           ? static_cast< void >( 0 )                                         \
           : breath::assert_private::fire( # expression, __FILE__, __LINE__ ) \
     )                                                                     /**/

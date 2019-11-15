@@ -309,6 +309,9 @@
     <ClCompile Include="..\..\breath\stream\test\stream_equivalent_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\diagnostics\test\assert_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\checksum\brt\crc32.tpp" />
