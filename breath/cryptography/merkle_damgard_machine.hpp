@@ -24,27 +24,26 @@ class               digest ;
 //      merkle_damgard_machine:
 //      =======================
 //
-//!     This template models a simple state machine for
-//!     Merkle-Damgard's construction of unkeyed hash functions.
+//!     This template models a simple state machine for Merkle-Damgard's
+//!     construction of unkeyed hash functions.
 //!
 //!     Many popular hash functions (including MD5 and all the SHA
 //!     variants until SHA-3) follow this scheme and can thus be
 //!     implemented easily by means of this class template.
 //!
 //!
-//!     \c Engine, which is the algorithm-specific policy, must
-//!     provide the two static member functions described below:
+//!     \c Engine, which is the algorithm-specific policy, must provide
+//!     the two static member functions described below:
 //!
 //!      - <code>init_state( state_type & state )</code>
 //!
 //!        Initializes \c state with the initialization vector.
 //!
-//!        \c state_type is either a built-in array or an
-//!        array-like type which provides const and non-const
-//!        \c operator []() functions; the machine guarantees that data
-//!        stored in the \c state parameter are wiped automatically
-//!        when \c init_state() returns to the caller (for obvious
-//!        security reasons)
+//!        \c state_type is either a built-in array or an array-like
+//!        type which provides const and non-const \c operator []()
+//!        functions; the machine guarantees that data stored in the \c
+//!        state parameter are wiped automatically when \c init_state()
+//!        returns to the caller (for obvious security reasons)
 //!
 //!      - <code>process_block( state_type & state,
 //!                             block_type const & block )</code>
@@ -52,19 +51,19 @@ class               digest ;
 //!        Applies the specific compression function to an input block.
 //!
 //!     \warning
-//!         Hash algorithms depend on exact bit-patterns,
-//!         thus the byte/char representation (e.g. ASCII
-//!         vs. EBCDIC) of the input matters. You might need
-//!         a conversion to a common format before hashing.
+//!         Hash algorithms depend on exact bit-patterns, thus the
+//!         byte/char representation (e.g. ASCII vs. EBCDIC) of the
+//!         input matters. You might need a conversion to a common
+//!         format before hashing.
 //!
 //!     \warning
-//!         The current interface only supports hashing messages
-//!         whose length is a multiple of the \c byte_width.
-//!         In the future, bit iterators could be integrated here
-//!         if possible.
-//          (Note that internally we already keep the *bit* count
-//          of the input, not the byte count, so extending it
-//          should be fairly straightforward - gps )
+//!         The current interface only supports hashing messages whose
+//!         length is a multiple of the \c byte_width.
+//!         In the future, bit iterators could be integrated here if
+//!         possible.
+//          (Note that internally we already keep the *bit* count of the
+//          input, not the byte count, so extending it should be farily
+//          straightforward - gps )
 //
 //!     \par A note about \c std::accumulate()
 //!

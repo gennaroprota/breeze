@@ -23,13 +23,13 @@
 namespace breath {
 
 //      All parameters here have pretty much self-explanatory names.
-//      The only exception is perhaps length_exponent: it determines
-//      the maximum message length that the engine will keep track of:
+//      The only exception is perhaps length_exponent: it determines the
+//      maximum message length that the engine will keep track of:
 //      attempting to digest a message of 2**length_exponent bits or
 //      more either "wraps" or results in an exception, as established
-//      by the parameter count_type (in theory there's no guarantee
-//      that the maximum length, if any, is of the form 2**e - 1, but
-//      that's what all one-way hash functions I know of do).
+//      by the parameter count_type (in theory there's no guarantee that
+//      the maximum length, if any, is of the form 2**e - 1, but that's
+//      what all one-way hash functions I know of do).
 // ---------------------------------------------------------------------------
 template< int                 bits_per_digest,
           int                 bits_per_block,
@@ -85,11 +85,11 @@ public:
     }
 
     //      This function implements the most common way used in a
-    //      Merkle-Damgard construction to encode the message length
-    //      at the end of the input message. Note that the length,
-    //      in bits, is encoded into an array of *word_types*, even
-    //      though the general hasher templates could in theory use
-    //      a different type.
+    //      Merkle-Damgard construction to encode the message length at
+    //      the end of the input message. Note that the length, in bits,
+    //      is encoded into an array of *word_types*, even though the
+    //      general hasher templates could in theory use a different
+    //      type.
     // -----------------------------------------------------------------------
     static void encode_length( word_type( &len )[ max_words ],
                                byte_type * dest )
