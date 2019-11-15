@@ -13,7 +13,7 @@
 #ifndef BREATH_GUARD_93j8pelTutz7YloouImWg9M7REakYYSD
 #define BREATH_GUARD_93j8pelTutz7YloouImWg9M7REakYYSD
 
-#include "breath/alignment/aligned_buffer_for.hpp"
+#include "breath/alignment/aligned_storage_for.hpp"
 
 namespace breath {
 
@@ -312,7 +312,7 @@ private:
     //
     T &                 non_const_value() noexcept ;
 
-    aligned_buffer_for< T >
+    aligned_storage_for< T >
                         m_buffer ;
     status_type         m_status ;
 

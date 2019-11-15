@@ -20,7 +20,7 @@
 namespace breath {
 
 //! \cond
-namespace aligned_buffer_private {
+namespace aligned_storage_private {
 
 template< typename T >
 class align_of
@@ -89,8 +89,8 @@ struct pod_with_same_align
 }
 //! \endcond
 
-//      aligned_buffer_for:
-//      ===================
+//      aligned_storage_for:
+//      ====================
 //
 //!     An object that contains a byte buffer suitably sized and
 //!     aligned for the type \c T.
@@ -117,27 +117,27 @@ struct pod_with_same_align
 //!     C++11's one) will be made superfluous by C++11's core support.
 // ---------------------------------------------------------------------------
 template< typename T >
-class               aligned_buffer_for ;
+class               aligned_storage_for ;
 
 //!     "Empty" specialization to disable usage of the template for
 //!     arrays.
 // ---------------------------------------------------------------------------
 template< typename T, std::size_t n >
-class               aligned_buffer_for< T[ n ] >
+class               aligned_storage_for< T[ n ] >
 {
 } ;
 
 template< typename T >
-class aligned_buffer_for
+class aligned_storage_for
 {
 public:
     //!     Copy constructor and copy-assignment operator deleted.
     // -----------------------------------------------------------------------
-    BREATH_DECLARE_NON_COPYABLE( aligned_buffer_for )
+    BREATH_DECLARE_NON_COPYABLE( aligned_storage_for )
 
     //!     Constructs an uninitialized buffer.
     // -----------------------------------------------------------------------
-                        aligned_buffer_for() noexcept {}
+                        aligned_storage_for() noexcept {}
 
     //!     \return
     //!         The address of the internal (aligned) buffer, as a
@@ -156,7 +156,7 @@ private:
     union
     {
         unsigned char   m_raw_buffer[ sizeof( T ) ] ;
-        typename aligned_buffer_private::pod_with_same_align< T >::type
+        typename aligned_storage_private::pod_with_same_align< T >::type
                         dummy_for_alignment ;
     } ;
 //! \endcond
