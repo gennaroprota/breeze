@@ -313,7 +313,7 @@ private:
     T &                 non_const_value() noexcept ;
 
     aligned_storage_for< T >
-                        m_buffer ;
+                        m_storage ;
     status_type         m_status ;
 
 } ;

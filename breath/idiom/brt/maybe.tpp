@@ -14,7 +14,7 @@ namespace breath {
 
 template< typename T, typename Traits >
 maybe< T, Traits >::maybe( status_type status ) noexcept
-    :   m_buffer(),
+    :   m_storage(),
         m_status( status ) // gps use std::move()?
 {
     BREATH_ASSERT( ! Traits::is_valid( status ) ) ;
@@ -73,7 +73,7 @@ maybe< T, Traits >::operator =( maybe const & other )
 {
     if ( other.is_valid() ) {
         if ( is_valid() ) {
-            *static_cast< T * >( m_buffer.address() ) = other.value() ;
+            *static_cast< T * >( m_storage.address() ) = other.value() ;
         } else {
             construct( other.value() ) ;
         }
@@ -91,7 +91,7 @@ maybe< T, Traits >::operator =( maybe && other )
 {
     if ( other.is_valid() ) {
         if ( is_valid() ) {
-            *static_cast< T * >( m_buffer.address() )
+            *static_cast< T * >( m_storage.address() )
                                        = std::move( other.non_const_value() ) ;
         } else {
             construct( std::move( other.non_const_value() ) ) ;
@@ -114,7 +114,7 @@ maybe< T, Traits > &
 maybe< T, Traits >::operator =( T const & value )
 {
     if ( is_valid() ) {
-        *static_cast< T * >( m_buffer.address() ) = value ;
+        *static_cast< T * >( m_storage.address() ) = value ;
         // m_is_valid = true ;
     } else {
         construct( value ) ;
@@ -128,7 +128,7 @@ maybe< T, Traits > &
 maybe< T, Traits >::operator =( T && value )
 {
     if ( is_valid() ) {
-        *static_cast< T * >( m_buffer.address() ) = std::move( value ) ;
+        *static_cast< T * >( m_storage.address() ) = std::move( value ) ;
     } else {
         construct( std::move( value ) ) ;
     }
@@ -155,7 +155,7 @@ T const &
 maybe< T, Traits >::value() const noexcept
 {
     BREATH_ASSERT( is_valid() ) ;
-    return *static_cast< T const * >( m_buffer.address() ) ;
+    return *static_cast< T const * >( m_storage.address() ) ;
 }
 
 template< typename T, typename Traits >
@@ -172,7 +172,7 @@ void
 maybe< T, Traits >::construct( T const & value )
 {
     BREATH_ASSERT( ! is_valid() ) ;
-    new( m_buffer.address() ) T( value ) ; // may throw
+    new( m_storage.address() ) T( value ) ; // may throw
 }
 
 template< typename T, typename Traits >
@@ -180,7 +180,7 @@ void
 maybe< T, Traits >::construct( T && value )
 {
     BREATH_ASSERT( ! is_valid() ) ;
-    new( m_buffer.address() ) T( std::move( value ) ) ; // may throw
+    new( m_storage.address() ) T( std::move( value ) ) ; // may throw
 }
 
 template< typename T, typename Traits >
@@ -188,7 +188,7 @@ void
 maybe< T, Traits >::destroy() noexcept
 {
     BREATH_ASSERT( is_valid() ) ;
-    static_cast< T * >( m_buffer.address() )->T::~T() ;
+    static_cast< T * >( m_storage.address() )->T::~T() ;
 }
 
 template< typename T, typename Traits >
@@ -196,7 +196,7 @@ T &
 maybe< T, Traits >::non_const_value() noexcept
 {
     BREATH_ASSERT( is_valid() ) ;
-    return *static_cast< T * >( m_buffer.address() ) ;
+    return *static_cast< T * >( m_storage.address() ) ;
 }
 
 }
