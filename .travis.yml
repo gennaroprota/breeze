@@ -19,7 +19,6 @@ matrix:
     include:
         - os: linux
           dist: xenial
-          compiler: clang
 
           env:
             - compiler=clang system=unix
