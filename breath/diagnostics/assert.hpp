@@ -39,10 +39,9 @@ block_non_bools( bool b )
 //
 //!     \hideinitializer
 //!
-//!     %BREATH_ASSERT() is the simplest runtime assertion facility in
-//!     the Breath collection. Differently from the standard \c
-//!     assert(), it has always the same expansion (regardless of \c
-//!     NDEBUG).
+//!     %BREATH_ASSERT() is a simple runtime assertion facility.
+//!     Differently from the standard \c assert(), it has always the
+//!     same expansion (regardless of \c NDEBUG).
 //!
 //!     The code <code>BREATH_ASSERT( expr )</code> expands to an
 //!     expression. When that expression is evaluated: if \c expr is
