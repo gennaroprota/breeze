@@ -78,12 +78,12 @@ block_non_bools( bool b )
 //!     have assigned to it. Had they called it e.g. "NASSERT" all this
 //!     wouldn't probably have happened.)
 // ---------------------------------------------------------------------------
-#define BREATH_ASSERT( expression )                                          \
-    (                                                                        \
-        breath::assert_private::block_non_bools( expression )                \
-          ? static_cast< void >( 0 )                                         \
-          : breath::assert_private::fire( # expression, __FILE__, __LINE__ ) \
-    )                                                                     /**/
+#define BREATH_ASSERT( expression )                                            \
+    (                                                                          \
+        breath::assert_private::block_non_bools( expression )                  \
+            ? static_cast< void >( 0 )                                         \
+            : breath::assert_private::fire( # expression, __FILE__, __LINE__ ) \
+    )                                                                       /**/
 
 #endif
 
