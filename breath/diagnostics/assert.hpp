@@ -44,21 +44,24 @@ block_non_bools( bool b )
 //!     same expansion (regardless of \c NDEBUG).
 //!
 //!     The code <code>BREATH_ASSERT( expr )</code> expands to an
-//!     expression. When that expression is evaluated: if \c expr is
-//!     \c false, an assertion is triggered; if it is \c true, the
-//!     evaluation has no effects besides the evaluation of \c expr
-//!     itself.
-//!
-//!     In this context, "triggering an assertion" means writing
-//!     information related to the specific macro invocation (e.g. line
-//!     number and source file name) to \c std::cerr, then calling \c
-//!     std::abort().
+//!     expression, let's call it \c assert_expr, which contains \c expr
+//!     as a sub-expression.
 //!
 //!     \c expr must have type bool or cv-qualified bool (this is a
 //!     change from the past: we used to accept anything implicitly or
 //!     explicitly convertible to bool; which means that e.g. \c expr
 //!     could be the name of a \c std::optional---we think the new
 //!     specification is safer).
+//!
+//!     When \c assert_expr is evaluated: if \c expr is \c false, an
+//!     assertion is triggered; if it is \c true, the evaluation of \c
+//!     assert_expr has no effects besides the evaluation of the
+//!     sub-expression \c expr.
+//!
+//!     In this context, "triggering an assertion" means writing
+//!     information related to the specific macro invocation (e.g. line
+//!     number and source file name) to \c std::cerr, then calling \c
+//!     std::abort().
 //!
 //!     Rationale
 //!     ---------
