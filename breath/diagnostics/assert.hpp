@@ -46,7 +46,8 @@ block_non_bools( bool b )
 //!     The code <code>BREATH_ASSERT( expr )</code> expands to an
 //!     expression. When that expression is evaluated: if \c expr is
 //!     \c false, an assertion is triggered; if it is \c true, the
-//!     evaluation has no effects.
+//!     evaluation has no effects besides the evaluation of \c expr
+//!     itself.
 //!
 //!     In this context, "triggering an assertion" means writing
 //!     information related to the specific macro invocation (e.g. line
