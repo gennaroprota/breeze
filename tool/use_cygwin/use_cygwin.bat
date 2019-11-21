@@ -22,7 +22,8 @@ REM --------------------------------------------------------------------------
 setlocal
 
 set CYGWIN_ROOT=C:\cygwin64
-%CYGWIN_ROOT%\bin\mintty.exe -i /Cygwin-Terminal.ico --exec "./append_to_path.sh"
+%CYGWIN_ROOT%\bin\mintty.exe     -i /Cygwin-Terminal.ico    ^
+                             --exec "./append_to_path.sh"
 
 endlocal
 
