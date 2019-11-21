@@ -151,6 +151,7 @@ cpp_basic_options += -flto-odr-type-merging          \
                      -Wunreachable-code              \
                      -Wunused-const-variable         \
                      -Wunused-macros                 \
+                     -Wuseless-cast                  \
                      -Wzero-as-null-pointer-constant
 
 cpp_basic_options += -Wno-format-nonliteral
