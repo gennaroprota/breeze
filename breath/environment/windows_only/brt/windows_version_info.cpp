@@ -103,7 +103,7 @@ windows_version_info::windows_version_info()
         raise_api_exception( "VerQueryValue() failed" ) ;
     }
 
-    auto const * const  fixed = static_cast< VS_FIXEDFILEINFO const *>( p ) ;
+    auto const * const  fixed = static_cast< VS_FIXEDFILEINFO const * >( p ) ;
 
     m_major_version = static_cast< int >( HIWORD( fixed->dwFileVersionMS ) ) ;
     m_minor_version = static_cast< int >( LOWORD( fixed->dwFileVersionMS ) ) ;
