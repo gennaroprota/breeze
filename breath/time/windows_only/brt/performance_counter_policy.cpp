@@ -55,7 +55,7 @@ performance_counter_policy::duration_type
 performance_counter_policy::resolution() const
 {
     // resolution is in milliseconds
-    return 1000.0 / m_frequency ;
+    return 1000.0L / m_frequency ;
 }
 
 }
