@@ -39,16 +39,6 @@ define build_library
 endef
 
 
-#       Common targets
-# ----------------------------------------------------------------------------
-.PHONY: all
-all:
-	$(do_for_all_subdirs)
-.PHONY: clean
-clean:
-	$(do_for_all_subdirs)
-
-
 include_dir     = $(root)
 
 cpp_options = $(cpp_basic_options)                  \
@@ -70,7 +60,17 @@ exe_dir = $(bin_dir)
 include $(root)/makefile/$(compiler).mk
 include $(root)/makefile/$(system).mk
 
-$(shell mkdir -p $(bin_dir))
+#       Common targets
+# ----------------------------------------------------------------------------
+.PHONY: all
+all: $(bin_dir)
+	$(do_for_all_subdirs)
+.PHONY: clean
+clean:
+	$(do_for_all_subdirs)
+
+$(bin_dir):
+	mkdir -p $(bin_dir)
 
 #       Automatic dependency generation; the method use here is
 #       described in:
