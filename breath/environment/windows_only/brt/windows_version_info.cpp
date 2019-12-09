@@ -20,7 +20,7 @@
 #define UNICODE
 #include <Windows.h>
 #include <VersionHelpers.h> // must come after <Windows.h> to compile
-#include <Wow64apiset.h>
+#include <wow64apiset.h>
 
 #include <climits>
 #include <string>
