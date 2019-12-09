@@ -30,6 +30,11 @@ vpath %.cpp     $(root)/breath/checksum/brt         \
                 $(root)/breath/time/private/brt     \
                 $(root)/breath/uuid/brt
 
+ifeq ($(system),windows)
+    vpath %.cpp $(root)/breath/environment/windows_only/brt \
+                $(root)/breath/time/windows_only/brt
+endif
+
 vpath %.asm     $(root)/breath/cpu/brt
 
 source_files := luhn.cpp                                    \
@@ -93,6 +98,15 @@ source_files := luhn.cpp                                    \
                 thread_safe_reentrant_time_functions.cpp    \
                                                             \
                 uuid.cpp
+
+ifeq ($(system),windows)
+    source_files +=                                         \
+                get_os.cpp                                  \
+                os_id.cpp                                   \
+                windows_version_info.cpp                    \
+                                                            \
+                performance_counter_policy.cpp
+endif
 
 asm_source_files := get_cpuid_info.asm
 

@@ -253,8 +253,10 @@ windows_version_info::edition() const
             return "Professional" ;
         case PRODUCT_PROFESSIONAL_E:
             return "Professional E" ;
-        case PRODUCT_PROFESSIONAL_EMBEDDED:
-            return "undocumented [PRODUCT_PROFESSIONAL_EMBEDDED]" ; // gps
+        // Following enum excluded because absent under Cygwin:
+        //
+        // case PRODUCT_PROFESSIONAL_EMBEDDED:
+        //    return "undocumented [PRODUCT_PROFESSIONAL_EMBEDDED]" ; // gps
         case PRODUCT_PROFESSIONAL_N:
             return "Professional N" ;
         case PRODUCT_PROFESSIONAL_WMC:

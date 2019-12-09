@@ -12,6 +12,11 @@ library_name_suffix := .lib
 
 binary_name_suffix  := .exe
 
+#       This was introduced to get the declaration of GetProductInfo()
+#       with GCC under Cywgin.
+# ----------------------------------------------------------------------------
+cpp_preprocessing_defines += -D _WIN32_WINNT=0x600
+
 # Local Variables:
 # mode: makefile
 # indent-tabs-mode: nil
