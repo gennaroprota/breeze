@@ -17,7 +17,6 @@
 
 namespace breath {
 
-//! \brief
 //!     The default traits class for maybe. Logically corresponds to a
 //!     boolean (valid/invalid).
 // ---------------------------------------------------------------------------
