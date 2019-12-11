@@ -17,6 +17,9 @@
 
 namespace breath {
 
+//      boolean_maybe_traits:
+//      =====================
+//
 //!     The default traits class for maybe. Logically corresponds to a
 //!     boolean (valid/invalid).
 // ---------------------------------------------------------------------------
