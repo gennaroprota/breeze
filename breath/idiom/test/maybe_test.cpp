@@ -54,6 +54,7 @@ check_constructors()
         maybe< std::string > m( s ) ;
         maybe< std::string > m2 = std::move( m ) ;
         BREATH_CHECK( m2.is_valid() && m2.value() == "Hello" ) ;
+        BREATH_CHECK( m.is_valid() ) ;
     }
 
     // constructor from T &&
@@ -103,17 +104,21 @@ check_assignments()
         maybe< std::string > m3( "Ciao" ) ;
         m = std::move( m2 ) ; // invalid -> invalid
         BREATH_CHECK( ! m.is_valid() ) ;
+        BREATH_CHECK( ! m2.is_valid() ) ;
         m = std::move( m3 ) ; // valid -> invalid
         BREATH_CHECK( m.is_valid() && m.value() == "Ciao" ) ;
+        BREATH_CHECK( m3.is_valid() ) ;
         maybe< std::string > m4 ;
         m = std::move( m4 ) ; // invalid -> valid
         BREATH_CHECK( ! m.is_valid() ) ;
+        BREATH_CHECK( ! m4.is_valid() ) ;
         maybe< std::string > m5( "mondo" ) ;
         maybe< std::string > m6( "!" ) ;
         // The following double assignment is intentional
         m = m5 ;
         m = std::move( m6 ) ; // valid -> valid
         BREATH_CHECK( m.is_valid() && m.value() == "!" ) ;
+        BREATH_CHECK( m6.is_valid() ) ;
     }
 
     // operator =( T && )
