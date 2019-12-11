@@ -63,8 +63,7 @@ public:
 //      ======
 //
 //!     A class template to represent "possible" values. The idea was
-//!     signaled by James Kanze in some illo-tempore conversation, and
-//!     comes from
+//!     signaled by James Kanze, and comes from
 //!
 //!         John J. Barton, Lee R. Nackman (1994).
 //!         Scientific and Engineering C++: An Introduction with
