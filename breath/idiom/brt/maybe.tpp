@@ -54,8 +54,13 @@ maybe< T, Traits >::maybe( maybe && other )
     if ( other.is_valid() ) {
         construct( std::move( other.non_const_value() ) ) ;
     }
-    m_status = std::move( other.status() ) ;
-    other.m_status = Traits::default_invalid() ;
+
+    //      Caution: don't move other.status(), because this would leave
+    //      it in an unspecified state, possibly inconsistent with the
+    //      actual status of other (e.g. it could change other.status()
+    //      into an invalid status although other *has* a value).
+    // -----------------------------------------------------------------------
+    m_status = other.status() ;
 }
 
 template< typename T, typename Traits >
@@ -99,8 +104,10 @@ maybe< T, Traits >::operator =( maybe && other )
         destroy() ;
     }
 
-    m_status = std::move( other.m_status ) ;
-    other.m_status = Traits::default_invalid() ;
+    //      Caution: see the corresponding comment in the move
+    //      constructor.
+    // -----------------------------------------------------------------------
+    m_status = other.m_status ;
 
     return *this ;
 }

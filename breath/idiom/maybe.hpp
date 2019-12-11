@@ -238,7 +238,6 @@ public:
     //!     \post
     //!         - value() is moved from other.value()
     //!         - status() == other.status()
-    //!         - other.status() == Traits::default_invalid()
     // -----------------------------------------------------------------------
                         maybe( maybe && other ) ;
 
