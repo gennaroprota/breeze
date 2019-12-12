@@ -178,6 +178,7 @@ template< typename T, typename Traits = boolean_maybe_traits >
 class maybe
 {
 public:
+    typedef T           value_type ;
     typedef typename Traits::status
                         status_type ;
 
