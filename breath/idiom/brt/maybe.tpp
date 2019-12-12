@@ -23,6 +23,8 @@ template< typename T, typename Traits >
 maybe< T, Traits >::maybe( T const & value, status_type status )
     :   m_status( Traits::default_invalid() )
 {
+    BREATH_ASSERT( Traits::is_valid( status ) ) ;
+
     construct( value ) ;
     m_status = status ;
 }
