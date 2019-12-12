@@ -231,8 +231,8 @@ public:
                                                    Traits::default_valid() ) ;
 
     //!     \post
-    //!         - status() == other.status()
     //!         - ! is_valid() || value() refers to a copy of other.value()
+    //!         - status() == other.status()
     // -----------------------------------------------------------------------
                         maybe( maybe const & other ) ;
 
