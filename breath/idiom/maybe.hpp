@@ -206,7 +206,7 @@ public:
     //!
     //!     \post
     //!         - is_valid()
-    //!         - value() == value
+    //!         - value() refers to a copy of value
     //!         - status() == status
     // -----------------------------------------------------------------------
     explicit            maybe( T const & value, status_type status =
@@ -231,7 +231,7 @@ public:
 
     //!     \post
     //!         - status() == other.status()
-    //!         - ! is_valid() || value() == other.value()
+    //!         - ! is_valid() || value() refers to a copy of other.value()
     // -----------------------------------------------------------------------
                         maybe( maybe const & other ) ;
 
@@ -244,7 +244,8 @@ public:
                         ~maybe() noexcept ;
 
     //!     \post
-    //!         - ! is_valid() || value() == other.value()
+    //!         - ! is_valid() || value() refers to a copy of
+    //!           other.value()
     //!         - status() == other.status()
     // -----------------------------------------------------------------------
     maybe &             operator =( maybe const & other ) ;
@@ -260,7 +261,7 @@ public:
     //!
     //!     \post
     //!         - is_valid()
-    //!         - value() == value
+    //!         - value() refers to a copy of value
     //!         - status == Traits::default_valid()
     // -----------------------------------------------------------------------
     maybe &             operator =( T const & value ) ;
