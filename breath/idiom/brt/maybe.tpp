@@ -21,48 +21,44 @@ maybe< T, Traits >::maybe( status_type status ) noexcept
 
 template< typename T, typename Traits >
 maybe< T, Traits >::maybe( T const & value, status_type status )
-    :   m_status( Traits::default_invalid() )
+    :   m_status( status ) // gps use std::move()?
 {
     BREATH_ASSERT( Traits::is_valid( status ) ) ;
 
     construct( value ) ;
-    m_status = status ;
 }
 
 template< typename T, typename Traits >
 maybe< T, Traits >::maybe( T && value, status_type status )
-    :   m_status( Traits::default_invalid() )
+    :   m_status( status ) // gps use std::move()?
 {
     BREATH_ASSERT( Traits::is_valid( status ) ) ;
 
     construct( std::move( value ) ) ;
-    m_status = status ; // gps use std::move()?
 }
 
 template< typename T, typename Traits >
 maybe< T, Traits >::maybe( maybe const & other )
-    :   m_status( Traits::default_invalid() )
-{
-    if ( other.is_valid() ) {
-        construct( other.value() ) ;
-    }
-    m_status = other.status() ;
-}
-
-template< typename T, typename Traits >
-maybe< T, Traits >::maybe( maybe && other )
-    :   m_status( Traits::default_invalid() )
-{
-    if ( other.is_valid() ) {
-        construct( std::move( other.non_const_value() ) ) ;
-    }
-
     //      Caution: don't move other.status(), because this would leave
     //      it in an unspecified state, possibly inconsistent with the
     //      actual status of other (e.g. it could change other.status()
     //      into an invalid status although other *has* a value).
     // -----------------------------------------------------------------------
-    m_status = other.status() ;
+    :   m_status( other.status() )
+{
+    if ( other.is_valid() ) {
+        construct( other.value() ) ;
+    }
+}
+
+template< typename T, typename Traits >
+maybe< T, Traits >::maybe( maybe && other )
+    //      Caution: see the comment to the copy constructor
+    :   m_status( other.status() )
+{
+    if ( other.is_valid() ) {
+        construct( std::move( other.non_const_value() ) ) ;
+    }
 }
 
 template< typename T, typename Traits >
@@ -179,7 +175,6 @@ template< typename T, typename Traits >
 void
 maybe< T, Traits >::construct( T const & value )
 {
-    BREATH_ASSERT( ! is_valid() ) ;
     new( m_storage.address() ) T( value ) ; // may throw
 }
 
@@ -187,7 +182,6 @@ template< typename T, typename Traits >
 void
 maybe< T, Traits >::construct( T && value )
 {
-    BREATH_ASSERT( ! is_valid() ) ;
     new( m_storage.address() ) T( std::move( value ) ) ; // may throw
 }
 
