@@ -20,8 +20,8 @@ namespace breath {
 //      boolean_maybe_traits:
 //      =====================
 //
-//!     The default traits class for maybe. Logically corresponds to a
-//!     boolean (valid/invalid).
+//!     The default traits class for \c maybe. Logically corresponds to
+//!     a boolean (valid/invalid).
 // ---------------------------------------------------------------------------
 class boolean_maybe_traits
 {
@@ -29,7 +29,7 @@ public:
     //      status:
     //      =======
     //
-    //!     The type of the status to associate to the maybe value.
+    //!     The type of the status to associate to the \c maybe value.
     // -----------------------------------------------------------------------
     class status
     {
@@ -38,21 +38,21 @@ public:
         bool                m_status ;
     } ;
 
-    //!     See the maybe documentation.
+    //!     See the \c maybe documentation.
     // -----------------------------------------------------------------------
     static bool         is_valid( status s ) noexcept
     {
         return s.m_status ;
     }
 
-    //!     See the maybe documentation.
+    //!     See the \c maybe documentation.
     // -----------------------------------------------------------------------
     static status       default_invalid() noexcept
     {
         return status( false ) ;
     }
 
-    //!     See the maybe documentation.
+    //!     See the \c maybe documentation.
     // -----------------------------------------------------------------------
     static status       default_valid() noexcept
     {
@@ -130,15 +130,15 @@ public:
 //!
 //!      - \c T
 //!
-//!        The type of the value to store when the maybe is valid.
+//!        The type of the value to store when the \c maybe is valid.
 //!
 //!      - \c Traits
 //!
 //!        A traits class defining the valid and the invalid states of
-//!        the maybe object. It shall contain:
+//!        the \c maybe object. It shall contain:
 //!
 //!         - a nested type or typedef named "status" that can be used
-//!           to store the state of the maybe object
+//!           to store the state of the \c maybe object
 //!
 //!         - an \c %is_valid() static function, which returns whether a
 //!           given value of type status corresponds to a valid status
@@ -182,7 +182,7 @@ public:
     typedef typename Traits::status
                         status_type ;
 
-    //!     Constructs an invalid maybe.
+    //!     Constructs an invalid \c maybe.
     //!
     //!     \pre
     //!         ! Traits::is_valid( status )
@@ -194,7 +194,7 @@ public:
     explicit            maybe( status_type status =
                                           Traits::default_invalid() ) noexcept ;
 
-    //!     Constructs a valid maybe.
+    //!     Constructs a valid \c maybe.
     //!
     //!     \pre
     //!         Traits::is_valid( status )
