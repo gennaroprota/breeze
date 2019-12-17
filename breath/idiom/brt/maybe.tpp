@@ -122,7 +122,7 @@ maybe< T, Traits >::operator =( T const & value )
     } else {
         construct( value ) ;
     }
-    m_status = Traits::default_valid() ;
+    m_status = Traits::default_valid() ; // gps use std::move()?
     return *this ;
 }
 
