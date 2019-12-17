@@ -32,7 +32,7 @@ The test/ subdirectories can be a good place to look at if you need to see usage
 examples (but, please, let me know if you feel that the usage of a component
 should be documented better).
 
-## Getting started
+# Getting started
 
 The library requires a Unix toolkit, with GNU Make and the GNU Assembler. On
 Microsoft Windows, you'll need Cygwin. (If I had to redo it today, most things
@@ -72,7 +72,7 @@ while `system` must be set to one of:
 
  - unix, windows
 
-## A note about the documentation
+# A note about the documentation
 
 The documentation is contained in the source files, in the form of Doxygen
 comments. This keeps the code and the documentation together, and that's about
@@ -83,7 +83,7 @@ Given the quality of the Doxygen output, I unwillingly recommend to mostly read
 the documentation directly from the source files. In any case, to generate
 separate documents, please see the `read_me` in `doc/source/`.
 
-## Editor support
+# Editor support
 
 The source tree contains a `.editorconfig` (https://editorconfig.org/). This
 support was added just recently. Before that, only Emacs and Vim were supported.
@@ -101,19 +101,19 @@ care of running the initialization script on any file you create in
 If you use Emacs, please contribute something analogous to `breath.vim` for that
 editor.
 
-## License
+# License
 
 Breath is made available subject to the terms of the 3-Clause BSD License,
 reproduced in the file `3_CLAUSE_BSD_LICENSE.txt`, at the root of the source
 tree.
 
-## Issues
+# Issues
 
 I can't guarantee any kind of support, but if you have issues with the library,
 please send me a mail describing the problem and I will try to address it as
 soon as possible.
 
-## Acknowledgments
+# Acknowledgments
 
 My most heartfelt *thank you* goes to James Kanze, without whom I wouldn't be
 the programmer I am.
