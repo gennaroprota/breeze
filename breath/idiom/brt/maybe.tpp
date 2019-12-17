@@ -119,7 +119,6 @@ maybe< T, Traits >::operator =( T const & value )
 {
     if ( is_valid() ) {
         *static_cast< T * >( m_storage.address() ) = value ;
-        // m_is_valid = true ;
     } else {
         construct( value ) ;
     }
