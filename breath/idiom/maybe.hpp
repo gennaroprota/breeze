@@ -286,7 +286,7 @@ public:
     bool                is_valid() const noexcept ;
 
     //!     \return
-    //!         A reference to the T value.
+    //!         A reference to the \c T value.
     //!
     //!     \pre
     //!         is_valid()
