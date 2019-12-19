@@ -22,6 +22,8 @@
 # ----------------------------------------------------------------------------
 .DELETE_ON_ERROR:
 
+
+.SHELLFLAGS += -e -u
 MAKEFLAGS += --warn-undefined-variables
 
 ifeq ($(and $(compiler), $(system)),)
