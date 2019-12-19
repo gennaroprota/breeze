@@ -7,6 +7,8 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 
+set -eu
+
 .   "$BREATH_ROOT/tool/shell/here_document.shc"
 
 : <<eof1; : <<eof2

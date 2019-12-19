@@ -13,6 +13,8 @@
 #       are inserted. See the documentation for further details.
 # ----------------------------------------------------------------------------
 
+set -eu
+
 .   "$BREATH_ROOT/tool/shell/script.shc"
 .   "$BREATH_ROOT/tool/shell/file_name.shc"
 .   "$BREATH_ROOT/tool/shell/string.shc"
@@ -167,6 +169,12 @@ then
     printf '%s\n' "//!     \file"
     printf '%s\n' "//!     \brief"
     printf '%s\n' "// $row"
+fi
+
+if [ "$name_extension" = 'sh' ]
+then
+    printf '\n'
+    printf '%s\n' "set -eu"
 fi
 
 mark_section end

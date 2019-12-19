@@ -7,6 +7,8 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 
+set -eu
+
 .   "$BREATH_ROOT/tool/shell/here_document.shc"
 
 
@@ -25,8 +27,8 @@ tab_key_offset="$usual_offset"
 #       The final sed substitutions "unmask" them.
 # ----------------------------------------------------------------------------
 dump_here_document "$language"                  |
-sed 's/$sw/'"$indent_offset"'/g'                |
-sed 's/$sts/'"$tab_key_offset"'/g'              |
+sed 's/%sw/'"$indent_offset"'/g'                |
+sed 's/%sts/'"$tab_key_offset"'/g'              |
 sed 's/EmacsVariablesList/Local Variables/'     |
 sed 's/VimModeline/vim/g'
 
@@ -74,9 +76,9 @@ sed 's/VimModeline/vim/g'
 EmacsVariablesList:
 mode: awk
 indent-tabs-mode: nil
-c-basic-offset: $sw
+c-basic-offset: %sw
 End:
-VimModeline: set ft=awk et sts=$sts sw=$sw:
+VimModeline: set ft=awk et sts=%sts sw=%sw:
 AWK
 
 
@@ -84,16 +86,16 @@ AWK
 EmacsVariablesList:
 mode: c++
 indent-tabs-mode: nil
-c-basic-offset: $sw
+c-basic-offset: %sw
 End:
-VimModeline: set ft=cpp et sts=$sts sw=$sw:
+VimModeline: set ft=cpp et sts=%sts sw=%sw:
 C++
 
 :   <<Asm
 EmacsVariablesList:
 mode: asm
 End:
-VimModeline: set ft=asm et sts=$sts sw=$sw:
+VimModeline: set ft=asm et sts=%sts sw=%sw:
 Asm
 
 # A CSS mode is included in Emacs v.22.2.2 and later
@@ -102,10 +104,10 @@ Asm
 EmacsVariablesList:
 mode: css
 indent-tabs-mode: nil
-css-indent-offset: $sw
+css-indent-offset: %sw
 coding: utf-8
 End:
-VimModeline: set ft=css et sts=$sts sw=$sw:
+VimModeline: set ft=css et sts=%sts sw=%sw:
 VimModeline: set fenc=utf-8 nobomb:
 CSS
 
@@ -124,11 +126,11 @@ Emacs-Lisp
 EmacsVariablesList:
 mode: nxml
 indent-tabs-mode: nil
-nxml-child-indent: $sw
-nxml-attribute-indent: $sw
+nxml-child-indent: %sw
+nxml-attribute-indent: %sw
 coding: utf-8
 End:
-VimModeline: set ft=html et sts=$sts sw=$sw:
+VimModeline: set ft=html et sts=%sts sw=%sw:
 VimModeline: set fenc=utf-8 nobomb:
 HTML
 
@@ -147,11 +149,11 @@ HTML
 EmacsVariablesList:
 mode: nxml
 indent-tabs-mode: nil
-nxml-child-indent: $sw
-nxml-attribute-indent: $sw
+nxml-child-indent: %sw
+nxml-attribute-indent: %sw
 coding: utf-8
 End:
-VimModeline: set ft=xhtml et sts=$sts sw=$sw:
+VimModeline: set ft=xhtml et sts=%sts sw=%sw:
 VimModeline: set fenc=utf-8 nobomb:
 XHTML
 
@@ -163,7 +165,7 @@ EmacsVariablesList:
 mode: makefile
 indent-tabs-mode: nil
 End:
-VimModeline: set ft=make et sts=$sts sw=$sw:
+VimModeline: set ft=make et sts=%sts sw=%sw:
 Make
 
 
@@ -171,9 +173,9 @@ Make
 EmacsVariablesList:
 mode: shell-script
 indent-tabs-mode: nil
-sh-indentation: $sw
+sh-indentation: %sw
 End:
-VimModeline: set ft=sh et sts=$sts sw=$sw:
+VimModeline: set ft=sh et sts=%sts sw=%sw:
 Shell
 
 
@@ -182,7 +184,7 @@ EmacsVariablesList:
 mode: text
 indent-tabs-mode: nil
 End:
-VimModeline: set ft=txt et sts=$sts sw=$sw:
+VimModeline: set ft=txt et sts=%sts sw=%sw:
 Text
 
 
@@ -192,7 +194,7 @@ Text
 EmacsVariablesList:
 indent-tabs-mode: nil
 End:
-VimModeline: set ft=vim et sts=$sts sw=$sw:
+VimModeline: set ft=vim et sts=%sts sw=%sw:
 Vim
 
 
@@ -200,11 +202,11 @@ Vim
 EmacsVariablesList:
 mode: nxml
 indent-tabs-mode: nil
-nxml-child-indent: $sw
-nxml-attribute-indent: $sw
+nxml-child-indent: %sw
+nxml-attribute-indent: %sw
 coding: utf-8
 End:
-VimModeline: set ft=xslt et sts=$sts sw=$sw:
+VimModeline: set ft=xslt et sts=%sts sw=%sw:
 VimModeline: set fenc=utf-8 nobomb:
 XSLT
 
@@ -214,7 +216,7 @@ mode: bat
 indent-tabs-mode: nil
 batch-indent-level: 4
 End:
-VimModeline: set ft=dosbatch et sts=$sts sw=$sw:
+VimModeline: set ft=dosbatch et sts=%sts sw=%sw:
 Batch
 
 # Local Variables:

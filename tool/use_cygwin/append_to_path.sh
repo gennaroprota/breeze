@@ -12,6 +12,8 @@
 #           use_cygwin.bat, in this same directory.
 # ----------------------------------------------------------------------------
 
+set -eu
+
 export PATH=$PATH:/usr/local/bin:/usr/bin
 bash
 
