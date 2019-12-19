@@ -14,6 +14,8 @@
 #  - subdirs?? -gps
 
 
+MAKEFLAGS += --warn-undefined-variables
+
 ifeq ($(and $(compiler), $(system)),)
     $(error Please, define 'compiler' and 'system' on the command line; e.g. \
             run 'compiler=gcc system=unix make')

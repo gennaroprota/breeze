@@ -91,9 +91,9 @@ object_file_suffix = .o
 #       Note that this differs from the compiler name, which is in
 #       $(compiler). And that, for Travis CI, we often need to select a
 #       specific version (e.g. clang++-8), which we do externally to
-#       this makefile: hence the ifeq() test.
+#       this makefile: hence the ifndef test.
 # ----------------------------------------------------------------------------
-ifeq ($(compiler_command),)
+ifndef compiler_command
     compiler_command = clang++
 endif
 

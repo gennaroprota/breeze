@@ -78,7 +78,7 @@ minimum_gcc_version := 6.4.0
 #       $(compiler). See also the comment about the analogous statement
 #       in clang.mk.
 # ----------------------------------------------------------------------------
-ifeq ($(compiler_command),)
+ifndef compiler_command
     compiler_command = g++
 endif
 
