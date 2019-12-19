@@ -14,6 +14,14 @@
 #  - subdirs?? -gps
 
 
+#       Rationale:
+#
+#       this is almost always what one wants; see:
+#
+#         <https://www.gnu.org/software/make/manual/html_node/Errors.html>.
+# ----------------------------------------------------------------------------
+.DELETE_ON_ERROR:
+
 MAKEFLAGS += --warn-undefined-variables
 
 ifeq ($(and $(compiler), $(system)),)
