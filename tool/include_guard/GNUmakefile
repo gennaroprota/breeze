@@ -7,7 +7,6 @@
 # ____________________________________________________________________________
 
 root := ../..
-
 include $(root)/makefile/start.mk
 
 target = $(bin_dir)/include_guard$(binary_name_suffix)

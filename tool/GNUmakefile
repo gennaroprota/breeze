@@ -9,7 +9,6 @@
 subdirs := include_guard
 
 root := ..
-
 include $(root)/makefile/start.mk
 
 # Local Variables:
