@@ -79,7 +79,7 @@ minimum_gcc_version := 6.4.0
 #       in clang.mk.
 # ----------------------------------------------------------------------------
 ifndef compiler_command
-    compiler_command = g++
+    compiler_command := g++
 endif
 
 #       Note:
@@ -104,7 +104,7 @@ endif
 
 #       KEEP in sync! (See above.)
 # ----------------------------------------------------------------------------
-cpp_basic_options =  -std=c++14                      \
+cpp_basic_options := -std=c++14                      \
                      -Wall                           \
                      -Wextra                         \
                      -pedantic                       \
@@ -161,15 +161,15 @@ cpp_basic_options += -Wno-format-nonliteral
 #
 #       Keep in sync with clang.mk.
 # ----------------------------------------------------------------------------
-cpp_debug_options =  -D _GLIBCXX_ASSERTIONS=1        \
+cpp_debug_options := -D _GLIBCXX_ASSERTIONS=1        \
                      -D _GLIBCXX_CONCEPT_CHECKS      \
                      -D _GLIBCXX_DEBUG               \
                      -D _GLIBCXX_DEBUG_PEDANTIC
 
 cpp_debug_options += -ggdb3
 
-include_switch = -I
-object_file_suffix = .o
+include_switch := -I
+object_file_suffix := .o
 
 define compile_to_object
     $(compiler_command) $(cpp_options) -c -o $@ $<

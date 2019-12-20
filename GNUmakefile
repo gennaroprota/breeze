@@ -9,10 +9,10 @@
 #       Breath Library - Root makefile (GNU Make)
 # ----------------------------------------------------------------------------
 
-subdirs = breath    \
-          tool
+subdirs := breath   \
+           tool
 
-root = .
+root := .
 include $(root)/makefile/start.mk
 
 # Local Variables:

@@ -51,7 +51,7 @@ define build_library
 endef
 
 
-include_dir     = $(root)
+include_dir     := $(root)
 
 cpp_options = $(cpp_basic_options)                  \
               $(cpp_debug_options)                  \
@@ -59,14 +59,14 @@ cpp_options = $(cpp_basic_options)                  \
               $(include_switch)"$(include_dir)"     \
               $(cpp_preprocessing_defines)
 
-cpp_preprocessing_defines = -D BREATH_ARCHITECTURE=$(arch)  \
-                            -D BREATH_SYSTEM=$(system)      \
-                            -D BREATH_COMPILER=$(compiler)
+cpp_preprocessing_defines := -D BREATH_ARCHITECTURE=$(arch)  \
+                             -D BREATH_SYSTEM=$(system)      \
+                             -D BREATH_COMPILER=$(compiler)
 
-bin_root = $(root)/bin
-dependent_subdir = $(system)/$(compiler)
-bin_dir = $(bin_root)/$(dependent_subdir)
-exe_dir = $(bin_dir)
+bin_root := $(root)/bin
+dependent_subdir := $(system)/$(compiler)
+bin_dir := $(bin_root)/$(dependent_subdir)
+exe_dir := $(bin_dir)
          # ^^^^ variant debug/release?
 
 include $(root)/makefile/$(compiler).mk

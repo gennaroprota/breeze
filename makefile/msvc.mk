@@ -66,7 +66,7 @@
 
 #       Needed, otherwise we'll get Windows' sort, below.
 # ----------------------------------------------------------------------------
-cygwin_root = 'C:/cygwin64'
+cygwin_root := 'C:/cygwin64'
 
 minimum_msvc_version := 19.00.24215.1
 actual_msvc_version := $(shell cl 2>&1 | head -1 | grep -E -o \
@@ -85,20 +85,20 @@ endif
 
 #       KEEP in sync! (See above.)
 # ----------------------------------------------------------------------------
-cpp_basic_options = /std:c++14                 \
-                    /Zc:forScope               \
-                    /Zc:wchar_t                \
-                    /Zc:auto                   \
-                    /Zc:trigraphs              \
-                    /Zc:rvalueCast             \
-                    /Zc:strictStrings          \
-                    /Zc:inline                 \
-                                               \
-                    /EHs                       \
-                    /Wall                      \
-                    /WX                        \
-                    /D _CRT_SECURE_NO_WARNINGS \
-                    /D _SCL_SECURE_NO_WARNINGS
+cpp_basic_options := /std:c++14                 \
+                     /Zc:forScope               \
+                     /Zc:wchar_t                \
+                     /Zc:auto                   \
+                     /Zc:trigraphs              \
+                     /Zc:rvalueCast             \
+                     /Zc:strictStrings          \
+                     /Zc:inline                 \
+                                                \
+                     /EHs                       \
+                     /Wall                      \
+                     /WX                        \
+                     /D _CRT_SECURE_NO_WARNINGS \
+                     /D _SCL_SECURE_NO_WARNINGS
 
 #       Enable /Wall, except for a handful of warnings (some of which
 #       arise in the standard headers). For a synopsis, see:
@@ -118,13 +118,13 @@ ifeq "$(actual_msvc_version)" "19.15.26726"
 endif
 
 
-include_switch = /I
-object_file_suffix = .obj
-exe_suffix = .exe
+include_switch := /I
+object_file_suffix := .obj
+exe_suffix := .exe
 
-compiler_command = cl
+compiler_command := cl
 
-linker_options = /WX /LTCG
+linker_options := /WX /LTCG
 
 # gps per tutte le compile_to_object, notare che usiamo $<.
 #     Dobbiamo documentare che devono avere UN SOLO prerequisito?

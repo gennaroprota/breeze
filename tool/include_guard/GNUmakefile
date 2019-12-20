@@ -9,10 +9,10 @@
 root := ../..
 include $(root)/makefile/start.mk
 
-target = $(bin_dir)/include_guard$(binary_name_suffix)
+target := $(bin_dir)/include_guard$(binary_name_suffix)
 
-libraries = advapi32.lib
-            ##gps temp! (Windows only :-() --coupled with msvc.mk!!!
+libraries := advapi32.lib
+             ##gps temp! (Windows only :-() --coupled with msvc.mk!!!
 
 all: $(target)
 
@@ -23,7 +23,7 @@ vpath %$(library_name_suffix) $(root)/bin # Note: update this when we'll separat
 source_files := main.cpp                        \
                 macro_name.cpp                  \
 
-breath_library = $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
+breath_library := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
 
 $(target): $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), \
                $(source_files))                                 \

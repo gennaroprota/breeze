@@ -50,7 +50,7 @@
 
 #       KEEP in sync! (See above.)
 # ----------------------------------------------------------------------------
-cpp_basic_options =  -std=c++14                         \
+cpp_basic_options := -std=c++14                         \
                      -Weverything                       \
                      -Wno-c++98-compat                  \
                      -Wno-c++98-compat-pedantic         \
@@ -77,7 +77,7 @@ cpp_basic_options += -Wno-exit-time-destructors         \
 #
 #       Keep in sync with gcc.mk.
 # ----------------------------------------------------------------------------
-cpp_debug_options =  -D _GLIBCXX_ASSERTIONS=1           \
+cpp_debug_options := -D _GLIBCXX_ASSERTIONS=1           \
                      -D _GLIBCXX_CONCEPT_CHECKS         \
                      -D _GLIBCXX_DEBUG                  \
                      -D _GLIBCXX_DEBUG_PEDANTIC
@@ -85,8 +85,8 @@ cpp_debug_options =  -D _GLIBCXX_ASSERTIONS=1           \
 cpp_debug_options += -ggdb3
 
 
-include_switch = -I
-object_file_suffix = .o
+include_switch := -I
+object_file_suffix := .o
 
 #       Note that this differs from the compiler name, which is in
 #       $(compiler). And that, for Travis CI, we often need to select a
@@ -94,7 +94,7 @@ object_file_suffix = .o
 #       this makefile: hence the ifndef test.
 # ----------------------------------------------------------------------------
 ifndef compiler_command
-    compiler_command = clang++
+    compiler_command := clang++
 endif
 
 define compile_to_object

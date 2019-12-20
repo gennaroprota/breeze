@@ -112,7 +112,7 @@ endif
 asm_source_files := get_cpuid_info.asm
 
 
-target = $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
+target := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
 
 $(target): $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), $(source_files))  \
              $(patsubst %.asm, $(bin_dir)/%$(object_file_suffix), $(asm_source_files))
