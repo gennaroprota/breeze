@@ -7,7 +7,6 @@
 # ____________________________________________________________________________
 
 root := ..
-include $(root)/makefile/start.mk
 
 #       Using vpath is a temporary solution; it doesn't work in case
 #       there exist homonym files.
@@ -111,6 +110,7 @@ endif
 
 asm_source_files := get_cpuid_info.asm
 
+include $(root)/makefile/start.mk
 
 target := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
 

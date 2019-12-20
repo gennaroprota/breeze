@@ -7,6 +7,10 @@
 # ____________________________________________________________________________
 
 root := ../..
+
+source_files := main.cpp                        \
+                macro_name.cpp                  \
+
 include $(root)/makefile/start.mk
 
 target := $(bin_dir)/include_guard$(binary_name_suffix)
@@ -19,9 +23,6 @@ all: $(target)
 
 vpath %$(library_name_suffix) $(root)/bin # Note: update this when we'll separate
                                           #       the build directories -gps
-
-source_files := main.cpp                        \
-                macro_name.cpp                  \
 
 breath_library := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
 
