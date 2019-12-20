@@ -84,7 +84,7 @@ clean:
 $(bin_dir):
 	mkdir -p $(bin_dir)
 
-#       Automatic dependency generation; the method use here is
+#       Automatic dependency generation; the method used here is
 #       described in:
 #
 #         <http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/>.
