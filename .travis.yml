@@ -12,11 +12,26 @@ script: make
 matrix:
     #       TODO:
     #
-    #        - check the minimum supported versions of Clang and GCC
+    #        - check the minimum supported versions of Clang
     #
     #        - build with Visual C++ as well
     # ------------------------------------------------------------------------
     include:
+        - os: linux
+          dist: xenial
+
+          addons:
+            apt:
+                sources:
+                    - ubuntu-toolchain-r-test
+                packages:
+                    - g++-6.4
+
+          env:
+            - compiler=gcc system=unix compiler_command=g++-6
+
+          name: "GCC 6.4 on Ubuntu 16.04 (Xenial)"
+
         - os: linux
           dist: xenial
 
