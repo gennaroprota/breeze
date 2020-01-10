@@ -65,7 +65,7 @@ matrix:
                     - clang-8
 
           env:
-            - compiler=clang system=unix compiler_command=clang++-8"
+            - compiler=clang system=unix compiler_command=clang++-8
 
           name: "Clang 8 on Ubuntu 16.04 (Xenial)"
 
