@@ -59,8 +59,7 @@ cpp_options = $(cpp_basic_options)                  \
               $(include_switch)"$(include_dir)"     \
               $(cpp_preprocessing_defines)
 
-cpp_preprocessing_defines := -D BREATH_ARCHITECTURE=$(arch)  \
-                             -D BREATH_SYSTEM=$(system)      \
+cpp_preprocessing_defines := -D BREATH_SYSTEM=$(system)      \
                              -D BREATH_COMPILER=$(compiler)
 
 bin_root := $(root)/bin
