@@ -72,7 +72,7 @@
 #       ---
 #       note1 This will replace -Wcast-align
 # ----------------------------------------------------------------------------
-minimum_gcc_version := 6.4.0
+minimum_gcc_version := 6.1.0
 
 #       Note that this differs from the compiler name, which is in
 #       $(compiler). See also the comment about the analogous statement

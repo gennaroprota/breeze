@@ -25,12 +25,12 @@ matrix:
                 sources:
                     - ubuntu-toolchain-r-test
                 packages:
-                    - g++-6.4
+                    - g++-6
 
           env:
             - compiler=gcc system=unix compiler_command=g++-6
 
-          name: "GCC 6.4 on Ubuntu 16.04 (Xenial)"
+          name: "GCC 6 on Ubuntu 16.04 (Xenial)"
 
         - os: linux
           dist: xenial
