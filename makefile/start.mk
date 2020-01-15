@@ -73,7 +73,7 @@ cpp_preprocessing_defines := -D BREATH_SYSTEM=$(system)      \
                              -D BREATH_COMPILER=$(compiler)
 
 bin_root := $(root)/bin
-dependent_subdir := $(system)/$(compiler)
+dependent_subdir := $(architecture)/$(system)/$(compiler)
 bin_dir := $(bin_root)/$(dependent_subdir)
 exe_dir := $(bin_dir)
          # ^^^^ variant debug/release?
