@@ -47,23 +47,23 @@
 #           version 22.1 (!) What happens for unrecognized modes?
 
 
-# file name extension comment  comment   line
-#  (extended regexp)   start     end    comment    language
+# file name pattern   comment  comment   line
+# (extended regexp)    start     end    comment    language
 # --------------------------------------------------------------------
-asm                     /*       */       #          Asm
-awk                     no       no       #          AWK
-bat                     no       no       REM        Batch
-[cht]pp                 /*       */       //         C++
-css                     /*       */       no         CSS
-el                      no       no       ;;         Emacs-Lisp
-html                    <!--     -->      no         HTML
-mk                      no       no       #          Make
-(sh|shc)                no       no       #          Shell
-vim                     no       no       "          Vim
-xhtml                   <!--     -->      no         XHTML
-xslt                    <!--     -->      no         XSLT
+\.asm$                  /*       */       #          Asm
+\.awk$                  no       no       #          AWK
+\.bat$                  no       no       REM        Batch
+\.[cht]pp$              /*       */       //         C++
+\.css$                  /*       */       no         CSS
+\.el$                   no       no       ;;         Emacs-Lisp
+\.html$                 <!--     -->      no         HTML
+(^GNUmakefile|\.mk)$    no       no       #          Make
+\.(sh|shc)$             no       no       #          Shell
+\.vim$                  no       no       "          Vim
+\.xhtml$                <!--     -->      no         XHTML
+\.xslt$                 <!--     -->      no         XSLT
 # --------------------------------------------------------------------
-txt                     no       no       #          Text
+\.txt$                  no       no       #          Text
 
 # Local Variables:
 # mode: text

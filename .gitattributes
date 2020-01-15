@@ -15,21 +15,22 @@
 #            - language_traits.txt
 #            - make_file_trailer.sh
 # ----------------------------------------------------------------------------
-*.asm   text
-*.awk   text eol=lf
-*.bat   text eol=crlf
-*.cpp   text
-*.hpp   text
-*.tpp   text
-*.css   text
-*.el    text
-*.html  text
-*.mk    text
-*.sh    text eol=lf
-*.shc   text eol=lf
-*.vim   text
-*.xhtml text
-*.xslt  text
+*.asm       text
+*.awk       text eol=lf
+*.bat       text eol=crlf
+*.cpp       text
+GNUmakefile text
+*.hpp       text
+*.tpp       text
+*.css       text
+*.el        text
+*.html      text
+*.mk        text
+*.sh        text eol=lf
+*.shc       text eol=lf
+*.vim       text
+*.xhtml     text
+*.xslt      text
 
 *.txt   text
 

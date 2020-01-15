@@ -96,14 +96,11 @@ name_extension=` get_extension "$full_path" `
 if [ -z "$full_path" ]
 then
     quit_script 'no file name provided'
-elif [ -z "$name_extension" ]
-then
-    quit_script 'Breath file names must have an extension'
 fi
 
 
-#       Find the language corresponding to the name extension and
-#       extract the relevant data about it
+#       Find the language corresponding to the name pattern and extract
+#       the relevant data about it
 # ----------------------------------------------------------------------------
 language=""
 traits_file="$BREATH_ROOT/tool/init_file/language_traits.txt"
@@ -113,7 +110,7 @@ eval ` awk '
     /'"$comment_pattern"'/ {
         next
     }
-    NF > 4 && "'"$name_extension"'" ~ "^"$1"$"  {
+    NF > 4 && "'"$full_path"'" ~ $1 {
         printf( "block_comment_start='\''%s'\''\n", $2 )
         printf(   "block_comment_end='\''%s'\''\n", $3 )
         printf(  "line_comment_start='\''%s'\''\n", $4 )
@@ -125,7 +122,7 @@ eval ` awk '
 
 if [ -z "$language" ]
 then
-    quit_script "file name extension not found in $traits_file"
+    quit_script "file name pattern not found in $traits_file"
 fi
 
 absent='no'
