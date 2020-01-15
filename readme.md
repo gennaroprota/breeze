@@ -34,9 +34,9 @@ should be documented better).
 
 # Getting started
 
-The library requires a Unix toolkit, with GNU Make and the GNU Assembler. On
-Microsoft Windows, you'll need Cygwin. (If I had to redo it today, most things
-would probably use Python.)
+The library requires a Unix toolkit, with GNU Make and, for the x86_64 builds
+only, the GNU Assembler. On Microsoft Windows, you'll need Cygwin. (If I had to
+redo it today, most things would probably use Python.)
 
 Note that only Cygwin 64-bit is supported.
 
