@@ -11,7 +11,7 @@ root := ../..
 source_files := main.cpp                        \
                 macro_name.cpp                  \
 
-include $(root)/makefile/start.mk
+include $(root)/makefile/main.mk
 
 target := $(bin_dir)/include_guard$(binary_name_suffix)
 

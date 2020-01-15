@@ -109,7 +109,7 @@ ifeq ($(system),windows)
 endif
 
 
-include $(root)/makefile/start.mk
+include $(root)/makefile/main.mk
 
 asm_source_files :=
 
