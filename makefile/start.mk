@@ -1,5 +1,5 @@
 # ============================================================================
-#                      Copyright 2006-2019 Gennaro Prota
+#                      Copyright 2006-2020 Gennaro Prota
 #                         Copyright 2000 James Kanze
 #
 #                   Licensed under the 3-Clause BSD License.
@@ -31,6 +31,16 @@ ifeq ($(and $(compiler), $(system)),)
             run 'compiler=gcc system=unix make')
 endif
 
+
+default_architecture := x86_64
+
+ifndef architecture
+    architecture := $(default_architecture)
+endif
+
+ifeq ($(architecture),)
+    architecture := $(default_architecture)
+endif
 
 #       Recurses on the same target. $(subdirs) must be defined before
 #       including this file for it to work.

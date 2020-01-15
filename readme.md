@@ -1,6 +1,6 @@
 <!--
  =============================================================================
-                         Copyright 2019 Gennaro Prota
+                      Copyright 2019-2020 Gennaro Prota
 
                    Licensed under the 3-Clause BSD License.
               (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -57,12 +57,14 @@ To build the library:
  - issue a command like this:
 
    ```
-   compiler=gcc system=windows make
+   architecture=x86_64 compiler=gcc system=windows make
    ```
 
+The `architecture` part can be omitted for x86_64 (that's the default).
+
 The `clean` target is also supported (you still need to provide `compiler` and
-`system`: when you clean, only the files generated for a given compiler/system
-pair are removed).
+`system`: when you clean, only the files generated for a given
+architecture/compiler/system triplet are removed).
 
 At the moment, `compiler` must be set to one of the following:
 
@@ -71,6 +73,9 @@ At the moment, `compiler` must be set to one of the following:
 while `system` must be set to one of:
 
  - unix, windows
+
+Finally, `architecture` can be anything, because it is currently only used to
+include or exclude a component (get_cpuid_info()) which is x86_64-specific.
 
 # A note about the documentation
 

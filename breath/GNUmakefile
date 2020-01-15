@@ -1,5 +1,5 @@
 # ============================================================================
-#                         Copyright 2019 Gennaro Prota
+#                      Copyright 2019-2020 Gennaro Prota
 #
 #                   Licensed under the 3-Clause BSD License.
 #              (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -108,9 +108,15 @@ ifeq ($(system),windows)
                 performance_counter_policy.cpp
 endif
 
-asm_source_files := get_cpuid_info.asm
 
 include $(root)/makefile/start.mk
+
+asm_source_files :=
+
+ifeq ($(architecture),x86_64)
+    asm_source_files := get_cpuid_info.asm
+endif
+
 
 target := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
 
