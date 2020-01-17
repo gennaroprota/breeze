@@ -80,7 +80,7 @@ template< typename T, std::size_t n >
 typename sensitive_buffer< T[ n ] >::reference
 sensitive_buffer< T[ n ] >::operator []( std::ptrdiff_t index )
 {
-    BREATH_ASSERT( index >= 0 ) ;
+    BREATH_ASSERT( 0 <= index && static_cast< size_type >( index ) < n ) ;
     return m_data[ index ] ;
 }
 
@@ -88,7 +88,7 @@ template< typename T, std::size_t n >
 typename sensitive_buffer< T[ n ] >::const_reference
 sensitive_buffer< T[ n ] >::operator []( std::ptrdiff_t index ) const
 {
-    BREATH_ASSERT( index >= 0 ) ;
+    BREATH_ASSERT( 0 <= index && static_cast< size_type >( index ) < n ) ;
     return m_data[ index ] ;
 }
 
