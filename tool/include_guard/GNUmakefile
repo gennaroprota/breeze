@@ -22,9 +22,6 @@ libraries := advapi32.lib
 all: $(target)
 
 
-vpath %$(library_name_suffix) $(root)/bin # Note: update this when we'll separate
-                                          #       the build directories -gps
-
 breath_library := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
 
 $(target): $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), \
