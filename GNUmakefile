@@ -15,6 +15,19 @@ subdirs := breath   \
 root := .
 include $(root)/makefile/main.mk
 
+#       Common targets
+# ----------------------------------------------------------------------------
+.PHONY: all
+all: $(bin_dir)
+	$(do_for_all_subdirs)
+
+.PHONY: clean
+clean:
+	$(do_for_all_subdirs)
+
+$(bin_dir):
+	mkdir -p $(bin_dir)
+
 # Local Variables:
 # mode: makefile
 # indent-tabs-mode: nil

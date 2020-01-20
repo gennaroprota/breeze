@@ -11,6 +11,14 @@ subdirs := include_guard
 root := ..
 include $(root)/makefile/main.mk
 
+.PHONY: all
+all:
+	$(do_for_all_subdirs)
+
+.PHONY: clean
+clean:
+	$(do_for_all_subdirs)
+
 # Local Variables:
 # mode: makefile
 # indent-tabs-mode: nil
