@@ -18,6 +18,7 @@ target := $(bin_dir)/include_guard$(binary_name_suffix)
 libraries := advapi32.lib
              ##gps temp! (Windows only :-() --coupled with msvc.mk!!!
 
+.PHONY: all
 all: $(target)
 
 
@@ -31,6 +32,7 @@ $(target): $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), \
            $(breath_library)
 	$(link_to_exec)
 
+.PHONY: clean
 clean:
 	rm -fr $(dependency_dir)
 	rm -f $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix),  \

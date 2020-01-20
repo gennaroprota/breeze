@@ -131,9 +131,10 @@ endef
 $(bin_dir)/%$(object_file_suffix): %.asm
 	$(assemble_to_object)
 
-
+.PHONY: all
 all: $(target)
 
+.PHONY: clean
 clean:
 	rm -fr $(dependency_dir)
 	rm -f $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix),  \
