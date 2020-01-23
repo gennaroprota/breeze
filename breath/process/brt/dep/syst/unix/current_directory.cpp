@@ -17,6 +17,7 @@
 #include "breath/memory/auto_array.hpp"
 #include <unistd.h>
 #include <cerrno>
+#include <cstddef>
 #include <string>
 
 namespace breath {
