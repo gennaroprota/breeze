@@ -25,14 +25,14 @@ namespace breath {
 std::string
 current_directory()
 {
-    std::ptrdiff_t      sz = 512 ;
+    std::ptrdiff_t      sz = 1024 ;
     auto_array< char >  aa ;
 
     char const *        p = nullptr ;
     do {
-        sz *= 2 ;
         aa.reset( new char[ sz ] ) ;
         p = getcwd( aa.get(), sz ) ;
+        sz *= 2 ;
     } while ( p == nullptr && errno == ERANGE ) ;
 
     if ( p == nullptr ) {
