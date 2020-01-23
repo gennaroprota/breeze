@@ -13,7 +13,6 @@
 
 #include "breath/process/current_directory.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
-#include "breath/diagnostics/assert.hpp"
 #include <Windows.h>
 
 namespace breath {
