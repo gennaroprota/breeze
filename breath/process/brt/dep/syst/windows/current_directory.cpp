@@ -25,7 +25,8 @@ current_directory()
     if ( required == 0 ) {
         throw last_api_error( "GetCurrentDirectory( 0, nullptr ) failed" ) ;
     }
-    // assumes contiguity of std::string, as required by C++11
+    //      Assumes contiguity of std::string, as required by C++11.
+    // -----------------------------------------------------------------------
     std::string         s( required, '\0' ) ;
     if ( GetCurrentDirectoryA( required, &s[ 0 ] ) == 0 ) {
         throw last_api_error( "GetCurrentDirectory() failed" ) ;
