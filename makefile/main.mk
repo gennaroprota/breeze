@@ -25,6 +25,7 @@
 
 .SHELLFLAGS += -e -u
 MAKEFLAGS += --warn-undefined-variables
+.DEFAULT_GOAL := all
 
 ifeq ($(and $(compiler), $(system)),)
     $(error Please, define 'compiler' and 'system' on the command line; e.g. \
