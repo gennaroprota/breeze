@@ -21,8 +21,9 @@ namespace breath {
 //      ===========
 //!
 //!     A smart pointer that retains sole ownership of an array through
-//!     a pointer. This template is similar to <code>unique_ptr< T[],
-//!     Deleter ></code> but was written way before C++11.
+//!     a pointer. An <code>auto_array< T ></code> is similar to <code>
+//!     unique_ptr< T[], std::default_delete< T[] > ></code> but this
+//!     template was written way before C++11.
 //!
 //!     Like for \c unique_ptr, instances of this template satisfy the
 //!     requirements of \c MoveConstructible and \c MoveAssignable, but
