@@ -61,8 +61,6 @@ check_non_move_constructors()
 void
 check_reset()
 {
-    // We can''t check that buffers are destroyed properly. This can
-    // only be ascertain by code inspection on the reset() function.
     // The case reset( nullptr ) is an important one.
     //
     breath::auto_array< std::vector< int > >
