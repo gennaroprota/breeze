@@ -63,6 +63,9 @@ check_reset()
 {
     // The case reset( nullptr ) is an important one.
     //
+    // TODO: should we check if operator delete[]() is called with the
+    //       correct pointer value?
+    //
     breath::auto_array< std::vector< int > >
                         a( new std::vector< int >[ 100 ] ) ;
     a.reset( new std::vector< int >[ 5 ]) ;
