@@ -33,6 +33,7 @@ void check()
         BREATH_CHECK( breath::representation_in_base( 64, 16 ) == "40" ) ;
         BREATH_CHECK( breath::representation_in_base( 169, 16 ) == "a9" ) ;
         BREATH_CHECK( breath::representation_in_base( 254, 2 ) == "11111110" ) ;
+        BREATH_CHECK( breath::representation_in_base( 395, 36 ) == "az" ) ;
     }
 }
 
