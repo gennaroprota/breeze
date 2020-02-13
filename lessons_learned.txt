@@ -1,0 +1,29 @@
+# ============================================================================
+#                         Copyright 2020 Gennaro Prota
+#
+#                   Licensed under the 3-Clause BSD License.
+#              (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+#               <https://opensource.org/licenses/BSD-3-Clause>.)
+# ____________________________________________________________________________
+
+This file collects some wisdom I accumulated while working on Breath :-) The
+purpose is to list things I didn't find in any book or article. If you find
+similar (or contrary) advice elsewhere, please send me a mail to let me know:
+I'll be glad to compare my findings with those of the author.
+
+
+- Don't be afraid of writing a wrong rationale
+
+  That doesn't mean writing that the reason for doing something was Y, when it
+  was X, instead. Don't do that :-) It means writing that it was X even if you
+  are not sure that X is a good reason. Your feature self, or anyone else, might
+  know enough in the future to "see" that your reason was not good, and can thus
+  change the code confidently, instead of wondering whether there was any valid
+  reason it was written that way. IOWs: a "wrong" rationale is better than no
+  rationale.
+
+# Local Variables:
+# mode: text
+# indent-tabs-mode: nil
+# End:
+# vim: set ft=txt et sts=4 sw=4:
