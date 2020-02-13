@@ -442,6 +442,8 @@
     <ClCompile Include="..\..\breath\text\brt\set_of_chars.cpp" />
     <ClCompile Include="..\..\breath\text\brt\split.cpp" />
     <ClCompile Include="..\..\breath\text\brt\tail.cpp" />
+    <ClCompile Include="..\..\breath\text\brt\to_lowercase.cpp" />
+    <ClCompile Include="..\..\breath\text\brt\to_uppercase.cpp" />
     <ClCompile Include="..\..\breath\text\brt\trim.cpp" />
     <ClCompile Include="..\..\breath\text\brt\trim_head.cpp" />
     <ClCompile Include="..\..\breath\text\brt\trim_tail.cpp" />
@@ -493,7 +495,19 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\breath\text\test\to_lowercase_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\breath\text\test\to_string_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\breath\text\test\to_uppercase_test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -675,7 +689,9 @@
     <ClInclude Include="..\..\breath\text\set_of_chars.hpp" />
     <ClInclude Include="..\..\breath\text\split.hpp" />
     <ClInclude Include="..\..\breath\text\tail.hpp" />
+    <ClInclude Include="..\..\breath\text\to_lowercase.hpp" />
     <ClInclude Include="..\..\breath\text\to_string.hpp" />
+    <ClInclude Include="..\..\breath\text\to_uppercase.hpp" />
     <ClInclude Include="..\..\breath\text\trim.hpp" />
     <ClInclude Include="..\..\breath\text\trim_head.hpp" />
     <ClInclude Include="..\..\breath\text\trim_head_if.hpp" />

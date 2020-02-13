@@ -89,6 +89,8 @@ source_files := luhn.cpp                                    \
                 set_of_chars.cpp                            \
                 split.cpp                                   \
                 tail.cpp                                    \
+                to_lowercase.cpp                            \
+                to_uppercase.cpp                            \
                 trim.cpp                                    \
                 trim_head.cpp                               \
                 trim_tail.cpp                               \
