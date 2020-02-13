@@ -20,9 +20,10 @@ namespace meta {
 //      is_twos_complement():
 //      =====================
 //
-//!     If \c T is not an integral type, the program is ill-formed.
-//!     Otherwise \c is_twos_complement() returns true if and only if
-//!     the type \c T uses a two's complement representation.
+//!     If \c T is not an integral type or a cv-qualified version
+//!     thereof, the program is ill-formed. Otherwise \c
+//!     is_twos_complement() returns true if and only if the type \c T
+//!     uses a two's complement representation.
 //!
 //!     \note
 //!         Starting with C++20, two's complement is the only
