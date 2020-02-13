@@ -20,9 +20,20 @@ namespace {
 
 void check()
 {
-    BREATH_CHECK( breath::representation_in_base( 64, 16 ) == "40" ) ;
-    BREATH_CHECK( breath::representation_in_base( 169, 16 ) == "a9" ) ;
-    BREATH_CHECK( breath::representation_in_base( 254, 2 ) == "11111110" ) ;
+    {
+        int const           min_base = 2 ;
+        int const           max_base = 36 ;
+
+        for ( int b = min_base ; b <= max_base ; ++ b ) {
+            BREATH_CHECK( breath::representation_in_base( 0, b ) == "0" ) ;
+        }
+    }
+
+    {
+        BREATH_CHECK( breath::representation_in_base( 64, 16 ) == "40" ) ;
+        BREATH_CHECK( breath::representation_in_base( 169, 16 ) == "a9" ) ;
+        BREATH_CHECK( breath::representation_in_base( 254, 2 ) == "11111110" ) ;
+    }
 }
 
 }
