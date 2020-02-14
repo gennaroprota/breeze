@@ -66,7 +66,7 @@
 
 #       Needed, otherwise we'll get Windows' sort, below.
 # ----------------------------------------------------------------------------
-cygwin_root := 'C:/cygwin64'
+cygwin_sort := '/bin/sort'
 
 minimum_msvc_version := 19.00.24215.1
 actual_msvc_version := $(shell cl 2>&1 | head -1 | grep -E -o \
@@ -74,7 +74,7 @@ actual_msvc_version := $(shell cl 2>&1 | head -1 | grep -E -o \
 
 lowest_version := $(shell                                                \
   printf '%s\n%s\n' $(minimum_msvc_version) $(actual_msvc_version)  |    \
-  $(cygwin_root)/bin/sort -t . -k 1,1n -k 2,2n -k 3,3n -k 4,4n | head -1 \
+  $(cygwin_sort) -t . -k 1,1n -k 2,2n -k 3,3n -k 4,4n | head -1          \
   )
 
 ifneq "$(lowest_version)" "$(minimum_msvc_version)"
@@ -142,7 +142,7 @@ define compile_to_dependency
         sed -n 's|^\#line *[0-9][0-9]* *"\([^"]*\)".*|$@: \1|p'     |   \
         sed -e 's|\:\\|\\:\\|'                                          \
             -e 's|\([^:]\) |\1\\ |g'                                |   \
-        $(cygwin_root)/bin/sort -u > $(dependency_dir)/$*.temp_dep
+        $(cygwin_sort) -u > $(dependency_dir)/$*.temp_dep
 endef
 
 #       Note that the /link option (and its arguments) must appear last.
