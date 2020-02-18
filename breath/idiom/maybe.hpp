@@ -14,6 +14,7 @@
 #define BREATH_GUARD_93j8pelTutz7YloouImWg9M7REakYYSD
 
 #include "breath/alignment/aligned_storage_for.hpp"
+#include <type_traits>
 
 namespace breath {
 
@@ -187,6 +188,30 @@ public:
     typedef T           value_type ;
     typedef typename Traits::status
                         status_type ;
+
+    //      These static_asserts are ugly but... better having them.
+    //      They might be a bit less unpleasant in C++17, if we remove
+    //      the empty message. [FUTURE]
+    //
+    //      Note: the static_assert on the move assignment of value_type
+    //      might fail before C++17 for value_type == std::string,
+    //      because the move assignment operator of std::string isn't
+    //      required to have a noexcept specification before C++17.
+    //      So we leave it commented out (as a reminder to enable it
+    //      when we'll require at least C++17). [FUTURE]
+    // -----------------------------------------------------------------------
+    static_assert( std::is_nothrow_move_constructible< value_type >::value,
+                                                                          "" ) ;
+    // static_assert( std::is_nothrow_move_assignable< value_type >::value,
+    //                                                                    "" ) ;
+
+    static_assert( std::is_nothrow_copy_constructible< status_type >::value,
+                                                                          "" ) ;
+    static_assert( std::is_nothrow_copy_assignable< status_type >::value, "" ) ;
+    static_assert( std::is_nothrow_move_constructible< status_type >::value,
+                                                                          "" ) ;
+    static_assert( std::is_nothrow_move_assignable< status_type >::value, "" ) ;
+
 
     //!     Constructs an invalid \c maybe.
     //!
