@@ -144,8 +144,8 @@ public:
 //!           to store the state of the \c maybe object
 //!
 //!         - an \c %is_valid() static function, which returns whether a
-//!           given value of type status corresponds to a valid status
-//!           or not
+//!           given value of type \c status corresponds to a valid
+//!           status or not
 //!
 //!         - two static functions, named "default_invalid" and
 //!           "default_valid" which give the default invalid and valid
