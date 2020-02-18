@@ -130,7 +130,9 @@ public:
 //!
 //!      - \c T
 //!
-//!        The type of the value to store when the \c maybe is valid.
+//!        The type of the value to store when the \c maybe is valid. As
+//!        usual, its move constructor(s) and move assignment
+//!        operator(s), if any, must not emit exceptions.
 //!
 //!      - \c Traits
 //!
@@ -147,6 +149,10 @@ public:
 //!         - two static functions, named "default_invalid" and
 //!           "default_valid" which give the default invalid and valid
 //!           state, respectively
+//!
+//!        The copy and move operations of \c Traits::status must not
+//!        emit exceptions (note that this is a stronger requirement
+//!        than the one on \T, which concerns move only).
 //!
 //!     A final note about std::optional
 //!     --------------------------------
@@ -228,7 +234,7 @@ public:
     //!         - status() == status
     // -----------------------------------------------------------------------
     explicit            maybe( T && value, status_type status =
-                                                   Traits::default_valid() ) ;
+                                            Traits::default_valid() ) noexcept ;
 
     //!     \post
     //!         - ! is_valid() || value() refers to a copy of
@@ -241,7 +247,7 @@ public:
     //!         - value() is moved from other.value()
     //!         - status() == other.status()
     // -----------------------------------------------------------------------
-                        maybe( maybe && other ) ;
+                        maybe( maybe && other ) noexcept ;
 
                         ~maybe() noexcept ;
 
@@ -256,7 +262,7 @@ public:
     //!         - ! is_valid() || value() is moved from other.value()
     //!         - status() == other.status()
     // -----------------------------------------------------------------------
-    maybe &             operator =( maybe && other ) ;
+    maybe &             operator =( maybe && other ) noexcept ;
 
     //!     \param value
     //!         The value to copy.
@@ -273,7 +279,7 @@ public:
     //!         - value() is moved from value
     //!         - status() == Traits::default_valid()
     // -----------------------------------------------------------------------
-    maybe &             operator =( T && value ) ;
+    maybe &             operator =( T && value ) noexcept ;
 
     //!     \return
     //!         The validity status.
@@ -308,7 +314,7 @@ public:
 
 private:
     void                construct( T const & value ) ;
-    void                construct( T && value ) ;
+    void                construct( T && value ) noexcept ;
     void                destroy() noexcept ;
 
     //      used in moving functions only

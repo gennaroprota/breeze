@@ -29,7 +29,7 @@ maybe< T, Traits >::maybe( T const & value, status_type status )
 }
 
 template< typename T, typename Traits >
-maybe< T, Traits >::maybe( T && value, status_type status )
+maybe< T, Traits >::maybe( T && value, status_type status ) noexcept
     :   m_status( status ) // gps use std::move()?
 {
     BREATH_ASSERT( Traits::is_valid( status ) ) ;
@@ -52,7 +52,7 @@ maybe< T, Traits >::maybe( maybe const & other )
 }
 
 template< typename T, typename Traits >
-maybe< T, Traits >::maybe( maybe && other )
+maybe< T, Traits >::maybe( maybe && other ) noexcept
     //      Caution: see the comment to the copy constructor
     :   m_status( other.status() )
 {
@@ -89,7 +89,7 @@ maybe< T, Traits >::operator =( maybe const & other )
 
 template< typename T, typename Traits >
 maybe< T, Traits > &
-maybe< T, Traits >::operator =( maybe && other )
+maybe< T, Traits >::operator =( maybe && other ) noexcept
 {
     if ( other.is_valid() ) {
         if ( is_valid() ) {
@@ -128,7 +128,7 @@ maybe< T, Traits >::operator =( T const & value )
 
 template< typename T, typename Traits >
 maybe< T, Traits > &
-maybe< T, Traits >::operator =( T && value )
+maybe< T, Traits >::operator =( T && value ) noexcept
 {
     if ( is_valid() ) {
         *static_cast< T * >( m_storage.address() ) = std::move( value ) ;
@@ -179,9 +179,9 @@ maybe< T, Traits >::construct( T const & value )
 
 template< typename T, typename Traits >
 void
-maybe< T, Traits >::construct( T && value )
+maybe< T, Traits >::construct( T && value ) noexcept
 {
-    new( m_storage.address() ) T( std::move( value ) ) ; // may throw
+    new( m_storage.address() ) T( std::move( value ) ) ;
 }
 
 template< typename T, typename Traits >
