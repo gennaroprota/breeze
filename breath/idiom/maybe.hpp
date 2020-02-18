@@ -113,9 +113,9 @@ public:
 //!        invoke \c value().
 //!
 //!        Curiously enough, B&N's book introduces \c Fallible as an
-//!        example of using conversions "to add a binary state" --
-//!        valid or invalid-- and checking to objects. The conversion
-//!        itself, however, isn't part of the concept: it just makes the
+//!        example of using conversions "to add a binary state"---valid
+//!        or invalid---and checking to objects. The conversion itself,
+//!        however, isn't part of the concept: it just makes the
 //!        checking more "transparent" (at the well-known cost that
 //!        implicit conversions generally bring).
 //!
