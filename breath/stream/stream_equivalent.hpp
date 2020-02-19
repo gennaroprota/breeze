@@ -73,16 +73,16 @@ class stream_equivalent
 {
 public:
 
-    //      The type of the equivalent stream. Note that this is not the
-    //      same as \c Stream, because \c Stream might not allow to
-    //      replace the stream buffer (file streams, for instance, are
-    //      like that).
-    //
-    //      This means that, for instance, if you have a
-    //      std::stringstream, you will get an equivalent but you can't
-    //      call the str() member on that equivalent. This is not a
-    //      limitation in practice, because you can call str() on the
-    //      original stream, instead.
+    //!     The type of the equivalent stream. Note that this is not the
+    //!     same as \c Stream, because \c Stream might not allow to
+    //!     replace the stream buffer (file streams, for instance, are
+    //!     like that).
+    //!
+    //!     This means that, for instance, if you have a
+    //!     std::stringstream, you will get an equivalent but you can't
+    //!     call the str() member on that equivalent. This is not a
+    //!     limitation in practice, because you can call str() on the
+    //!     original stream, instead.
     // -----------------------------------------------------------------------
     typedef std::basic_iostream<
         typename Stream::char_type,
@@ -94,42 +94,42 @@ public:
     explicit            stream_equivalent( Stream & original ) ;
                         ~stream_equivalent() noexcept ;
 
-    //      \return
-    //          A reference to a stream equivalent to that passed to the
-    //          first constructor. This is the stream that must be used
-    //          to do the actual output.
-    //
-    //      \warning
-    //          Use the stream equivalent to do the actual output \e but
-    //          do not return a reference to it from the inserter!
-    //          Return a reference to the original stream, instead.
-    //
-    //          Example:
-    //
-    //          <code>
-    //              std::ostream &
-    //              operator <<( std::ostream & original_stream,
-    //                           my_type const & m )
-    //              {
-    //                  stream_equivalent< std::ostream >
-    //                                      equiv( original_stream ) ;
-    //                  std::ostream &      os = equiv.get() ;
-    //
-    //                  /* do output through 'os' */
-    //
-    //                  // Do not write: return os!
-    //                  //
-    //                  return original_stream ;
-    //              }
-    //          </code>
-    //
-    //          Note that this may occur if you "adapt" an existing
-    //          inserter which didn't use \c stream_equivalent, by
-    //          simply renaming the stream parameter from \c os to \c
-    //          original_stream and "reusing" the old parameter name for
-    //          the stream equivalent: this will also leave the return
-    //          statement intact, returning a reference to a sub-object
-    //          of the local variable \c equiv.
+    //!     \return
+    //!         A reference to a stream equivalent to that passed to the
+    //!         first constructor. This is the stream that must be used
+    //!         to do the actual output.
+    //!
+    //!     \warning
+    //!         Use the stream equivalent to do the actual output \e but
+    //!         do not return a reference to it from the inserter!
+    //!         Return a reference to the original stream, instead.
+    //!
+    //!         Example:
+    //!
+    //!         <code>
+    //!             std::ostream &
+    //!             operator <<( std::ostream & original_stream,
+    //!                          my_type const & m )
+    //!             {
+    //!                 stream_equivalent< std::ostream >
+    //!                                     equiv( original_stream ) ;
+    //!                 std::ostream &      os = equiv.get() ;
+    //!
+    //!                 /* do output through 'os' */
+    //!
+    //!                 // Do not write: return os!
+    //!                 //
+    //!                 return original_stream ;
+    //!             }
+    //!         </code>
+    //!
+    //!         Note that this may occur if you "adapt" an existing
+    //!         inserter which didn't use \c stream_equivalent, by
+    //!         simply renaming the stream parameter from \c os to \c
+    //!         original_stream and "reusing" the old parameter name for
+    //!         the stream equivalent: this will also leave the return
+    //!         statement intact, returning a reference to a sub-object
+    //!         of the local variable \c equiv.
     // -----------------------------------------------------------------------
     stream_type &       get() noexcept ;
 
