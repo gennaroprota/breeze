@@ -117,7 +117,7 @@ operator <<( std::ostream & original_stream, printable_string const & ps )
         }
     }
     dest << '\"' ;
-    return dest ;
+    return original_stream ;
 }
 
 }

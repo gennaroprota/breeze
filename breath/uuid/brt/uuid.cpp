@@ -196,7 +196,7 @@ operator <<( std::ostream & original_stream, uuid const & uu )
             os << '-' ;
         }
     }
-    return os ;
+    return original_stream ;
 }
 
 }
