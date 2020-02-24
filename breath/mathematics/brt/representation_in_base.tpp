@@ -16,7 +16,7 @@ namespace breath {
 
 template< typename T >
 std::string
-representation_in_base( T n, T base )
+representation_in_base( T n, int base )
 {
     static char const   digits[] = "0123456789"
                                    "abcdefghijklmnopqrstuvwxyz" ;

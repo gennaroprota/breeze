@@ -25,7 +25,7 @@ namespace breath {
 // ---------------------------------------------------------------------------
 template< typename T >
 std::string
-representation_in_base( T n, T base ) ;
+representation_in_base( T n, int base ) ;
 
 }
 
