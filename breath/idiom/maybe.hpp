@@ -194,11 +194,18 @@ public:
     //      the empty message. [FUTURE]
     //
     //      Note: the static_assert on the move assignment of value_type
-    //      might fail before C++17 for value_type == std::string,
-    //      because the move assignment operator of std::string isn't
-    //      required to have a noexcept specification before C++17.
-    //      So we leave it commented out (as a reminder to enable it
-    //      when we'll require at least C++17). [FUTURE]
+    //      has been excluded to cope with the case value_type ==
+    //      std::string. Because, in that case, the static_assert might
+    //      pass or not depending on the implementation (there was, in
+    //      fact, a DR on the noexcept specification of basic_string's
+    //      move assignment operator---LWG 2063---but it was only
+    //      resolved for C++17; formally, in C++11 and C++14, the
+    //      operator should have an unconditional noexcept, despite that
+    //      being known as incorrect in virtue of that DR, but
+    //      implementations vary).
+    //
+    //      We leave the static_assert commented out, as a reminder to
+    //      enable it when we'll require at least C++17. [FUTURE]
     // -----------------------------------------------------------------------
     static_assert( std::is_nothrow_move_constructible< value_type >::value,
                                                                           "" ) ;
