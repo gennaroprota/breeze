@@ -8,9 +8,12 @@
 
 #include "breath/diagnostics/assert.hpp"
 #include "breath/counting/count.hpp"
+#include "breath/meta/is_twos_complement.hpp"
 #include <algorithm>
 #include <cstddef>
+#include <limits>
 #include <string>
+#include <type_traits>
 
 namespace breath {
 
@@ -25,16 +28,31 @@ representation_in_base( T n, int base )
 
     static_assert( max_base == 36, "" ) ;
 
-    BREATH_ASSERT( n >= 0 ) ;
+    typedef typename std::make_unsigned< T >::type
+                        unsigned_type ;
+
+    unsigned_type       abs =
+        n < 0
+        ? breath::meta::is_twos_complement< T >() &&
+            n == ( std::numeric_limits< T >::min )()
+                ? unsigned_type( -1 ) / 2 + 1
+                : - n
+        : n
+        ;
+
     BREATH_ASSERT( 2 <= base &&
         static_cast< std::size_t >( base ) <= max_base ) ;
 
     std::string         result ;
 
     do {
-        result.push_back( digits[ n % base ] ) ;
-        n /= base ;
-    } while ( n != 0 ) ;
+        result.push_back( digits[ abs % base ] ) ;
+        abs /= base ;
+    } while ( abs != 0 ) ;
+
+    if ( n < 0 ) {
+        result.push_back( '-' ) ;
+    }
 
     std::reverse( result.begin(), result.end() ) ;
     return result ;

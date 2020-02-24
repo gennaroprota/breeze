@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief The representation of a non-negative integer, in base b.
+//!     \brief The representation of an integer, in base b.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_lqF1VhyaeQBA6t5SZLvv9rpFKK1iZVzu
@@ -18,10 +18,15 @@
 namespace breath {
 
 //!     \pre
-//!         n >= 0 && base >= 2 && base <= 36
+//!         base >= 2 && base <= 36
 //!
 //!     \return
-//!         The representation, in base \c base, of the integer \c n.
+//!         The representation, in base \c base, of the integer \c n. A
+//!         negative value is represented as the character '-' (minus)
+//!         immediately followed by the representation of its absolute
+//!         value (in the mathematical sense: \c the minimum value of \c
+//!         T is handled correctly, even on a two's complement
+//!         implementation).
 // ---------------------------------------------------------------------------
 template< typename T >
 std::string

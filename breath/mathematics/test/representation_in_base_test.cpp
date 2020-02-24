@@ -13,8 +13,11 @@
 
 #include "breath/mathematics/representation_in_base.hpp"
 #include "breath/testing/testing.hpp"
+#include <cstdint>
 #include <iostream>
+#include <limits>
 #include <ostream>
+#include <sstream>
 
 namespace {
 
@@ -25,15 +28,25 @@ void check()
         int const           max_base = 36 ;
 
         for ( int b = min_base ; b <= max_base ; ++ b ) {
-            BREATH_CHECK( breath::representation_in_base( 0, b ) == "0" ) ;
+            BREATH_CHECK( breath::representation_in_base(  0, b ) == "0" ) ;
+            BREATH_CHECK( breath::representation_in_base( -1, b ) == "-1" ) ;
         }
     }
 
     {
-        BREATH_CHECK( breath::representation_in_base( 64, 16 ) == "40" ) ;
-        BREATH_CHECK( breath::representation_in_base( 169, 16 ) == "a9" ) ;
+        BREATH_CHECK( breath::representation_in_base(   64, 16 ) ==  "40" ) ;
+        BREATH_CHECK( breath::representation_in_base(  -64, 16 ) == "-40" ) ;
+        BREATH_CHECK( breath::representation_in_base(  169, 16 ) ==  "a9" ) ;
+        BREATH_CHECK( breath::representation_in_base( -169, 16 ) == "-a9" ) ;
         BREATH_CHECK( breath::representation_in_base( 254, 2 ) == "11111110" ) ;
         BREATH_CHECK( breath::representation_in_base( 395, 36 ) == "az" ) ;
+    }
+
+    {
+        auto const          m = std::numeric_limits< std::intmax_t >::min() ;
+        std::ostringstream  ss ;
+        ss << m ;
+        BREATH_CHECK( breath::representation_in_base( m, 10 ) == ss.str() ) ;
     }
 }
 
