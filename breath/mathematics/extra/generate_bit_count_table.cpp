@@ -29,7 +29,7 @@ main()
     public:
         int                 operator()() noexcept
         {
-            unsigned            value = m_n ;
+            unsigned int        value = m_n ;
             int                 count = 0 ;
             while ( value != 0 ) {
                 ++ count ;
