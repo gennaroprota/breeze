@@ -35,6 +35,18 @@ check_common_gcd_lcm_preconditions( M a, N b )
 
 }
 
+//      We use this because std::abs() is not required to be constexpr.
+// ---------------------------------------------------------------------------
+template< typename T >
+constexpr T
+absolute_value( T x )
+{
+    return x < 0
+               ? -x
+               : x
+               ;
+}
+
 }
 }
 

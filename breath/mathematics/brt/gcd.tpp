@@ -6,8 +6,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "private/check_common_gcd_lcm_preconditions.hpp"
-#include <cstdlib>
+#include "private/gcd_lcm_common.hpp"
 
 namespace breath {
 
@@ -15,10 +14,13 @@ template< typename M, typename N >
 constexpr std::common_type_t< M, N >
 gcd( M a, N b ) noexcept
 {
-    gcd_lcm_private::check_common_gcd_lcm_preconditions( a, b ) ;
+    using gcd_lcm_private::check_common_gcd_lcm_preconditions ;
+    using gcd_lcm_private::absolute_value ;
 
-    a = std::abs( a ) ;
-    b = std::abs( b ) ;
+    check_common_gcd_lcm_preconditions( a, b ) ;
+
+    a = absolute_value( a ) ;
+    b = absolute_value( b ) ;
     while ( true ) {
 
         if ( a == 0 ) {
