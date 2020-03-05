@@ -13,6 +13,13 @@
 
 #include "breath/diagnostics/assert.hpp"
 
+constexpr int
+check_constexpr()
+{
+    BREATH_ASSERT( true ) ;
+    return 1 ;
+}
+
 int
 main()
 {
@@ -31,6 +38,9 @@ main()
     BREATH_ASSERT( b2 ) ;
     BREATH_ASSERT( b3 ) ;
     BREATH_ASSERT( b4 ) ;
+
+    constexpr int       n = check_constexpr() ;
+    static_cast< void >( n ) ;
 }
 
 // Local Variables:

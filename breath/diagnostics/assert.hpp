@@ -20,7 +20,7 @@ namespace assert_private {
 template< typename T >
 void                block_non_bools( T ) = delete ;
 
-inline bool
+inline constexpr bool
 block_non_bools( bool b )
 {
     return b ;
