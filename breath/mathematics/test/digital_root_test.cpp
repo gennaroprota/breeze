@@ -39,8 +39,14 @@ void
 check()
 {
     for ( int n = 0 ; n < ( 10 * 1000 ) ; ++ n ) {
+        //      Note that there's no hard maximum for the base as far as
+        //      digital_root() is concerned. But, in practice, you'll
+        //      run out of symbols if you want e.g. to represent a
+        //      number in base 5000 :-) So we choose 128, here, as the
+        //      maximum base to test.
+        // -------------------------------------------------------------------
         int                 min_base = 3 ;
-        int                 max_base = 36 ;
+        int                 max_base = 128 ;
         for ( int base = min_base ; base <= max_base ; ++ base ) {
             BREATH_CHECK( breath::digital_root( n, base ) ==
                           trivial_digital_root( n, base ) ) ;
