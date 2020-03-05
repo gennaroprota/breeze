@@ -25,7 +25,7 @@ clamp( T const & value,
        Compare comp )
 {
     //      NOTE:
-    //          no BREATH_ASSERT( !comp( high, low ) ) here to avoid
+    //          no BREATH_ASSERT( ! comp( high, low ) ) here to avoid
     //          altering the stated complexity of the function (at most
     //          two applications of comp).
     // -----------------------------------------------------------------------
