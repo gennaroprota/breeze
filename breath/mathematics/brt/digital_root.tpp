@@ -11,7 +11,7 @@
 namespace breath {
 
 template< typename T >
-constexpr T
+constexpr int
 digital_root( T n, int base ) noexcept
 {
     BREATH_ASSERT( n >= 0 && base >= 2 ) ;

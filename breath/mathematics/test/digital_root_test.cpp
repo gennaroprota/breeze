@@ -19,7 +19,7 @@
 namespace {
 
 template< typename T >
-T
+int
 trivial_digital_root( T n, int base )
 {
     T                   sum = 0 ;
