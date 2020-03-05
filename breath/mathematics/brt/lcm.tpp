@@ -19,6 +19,7 @@ lcm( M a, N b ) noexcept
     using gcd_lcm_private::absolute_value ;
 
     check_common_gcd_lcm_preconditions( a, b ) ;
+
     std::common_type_t< M, N > const
                         g = gcd( a, b ) ;
     return g == 0
