@@ -22,7 +22,7 @@ namespace breath {
 //!         The digital root of the number \c n in base \c base.
 //!
 //!     \pre
-//!         n >= 0 && base > 2
+//!         n >= 0 && base >= 2
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr T         digital_root( T n, int base = 10 ) noexcept ;

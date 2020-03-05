@@ -14,7 +14,7 @@ template< typename T >
 constexpr T
 digital_root( T n, int base ) noexcept
 {
-    BREATH_ASSERT( n >= 0 && base > 2 ) ;
+    BREATH_ASSERT( n >= 0 && base >= 2 ) ;
 
     //      You have to use at least C99 or at least C++11 for the
     //      remainder to be specified for n == 0; so we special case it

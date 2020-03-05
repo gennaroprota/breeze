@@ -45,7 +45,7 @@ check()
         //      number in base 5000 :-) So we choose 128, here, as the
         //      maximum base to test.
         // -------------------------------------------------------------------
-        int const           min_base = 3 ;
+        int const           min_base = 2 ;
         int const           max_base = 128 ;
         for ( int base = min_base ; base <= max_base ; ++ base ) {
             BREATH_CHECK( breath::digital_root( n, base ) ==
