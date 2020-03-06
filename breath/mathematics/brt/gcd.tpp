@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 
 #include "private/check_common_gcd_lcm_preconditions.hpp"
-#include <cmath>
+#include <cstdlib>
 
 namespace breath {
 

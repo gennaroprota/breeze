@@ -8,7 +8,7 @@
 
 #include "private/check_common_gcd_lcm_preconditions.hpp"
 #include "breath/mathematics/gcd.hpp"
-#include <cmath>
+#include <cstdlib>
 
 namespace breath {
 
