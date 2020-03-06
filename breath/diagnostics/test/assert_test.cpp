@@ -28,11 +28,10 @@ main()
     //      BREATH_ASSERT( false ) aborts the program. I'll provide them
     //      when we'll have the necessary infrastructure for such tests.
     // -----------------------------------------------------------------------
-    bool            b1 = true ;
-    bool const      b2 = true ;
-    bool volatile   b3 = true ;
-    bool const volatile
-                    b4 = true ;
+    bool                b1 = true ;
+    bool const          b2 = true ;
+    bool volatile       b3 = true ;
+    bool const volatile b4 = true ;
 
     BREATH_ASSERT( b1 ) ;
     BREATH_ASSERT( b2 ) ;
