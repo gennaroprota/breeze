@@ -20,7 +20,7 @@ namespace breath {
 //      lcm():
 //      ======
 //
-//!     This function follows the C++ Library Fundamental TS v2, as of
+//!     This template follows the C++ Library Fundamental TS v2, as of
 //!     May 14, 2016. (It adds, as allowed, a noexcept specification.)
 //!
 //!     If either \c M or \c N is not an integral type the program is
