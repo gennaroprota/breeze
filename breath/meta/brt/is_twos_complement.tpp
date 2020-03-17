@@ -20,9 +20,23 @@ is_twos_complement() noexcept
     static_assert( std::is_integral< T >::value,
                    "T must be an integral type" ) ;
 
+    //      Caution: arguably, the "natural" form to use here would be
+    //
+    //        ( min() + max() ) == -1 ;
+    //
+    //      but, for e.g. T = unsigned int, that would mean
+    //
+    //        ( min() + max() ) == T( -1 ) ;
+    //
+    //      i.e.
+    //
+    //        ( min() + max() ) == max() ;
+    //
+    //      which would yield a false positive.
+    // -----------------------------------------------------------------------
     return ( std::numeric_limits< T >::min BREATH_PREVENT_MACRO_EXPANSION ()
              + std::numeric_limits< T >::max BREATH_PREVENT_MACRO_EXPANSION() )
-        == -1 ;
+        < 0 ;
 }
 
 }

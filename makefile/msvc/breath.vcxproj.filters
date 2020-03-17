@@ -324,6 +324,9 @@
     <ClCompile Include="..\..\breath\text\test\to_uppercase_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\meta\test\is_twos_complement_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\checksum\brt\crc32.tpp" />
