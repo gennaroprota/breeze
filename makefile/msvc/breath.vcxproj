@@ -363,7 +363,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\breath\meta\test\is_twos_complement_test.cpp">
+    <ClCompile Include="..\..\breath\meta\test\is_2s_complement_test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -579,7 +579,7 @@
     <None Include="..\..\breath\mathematics\brt\lcm.tpp" />
     <None Include="..\..\breath\mathematics\brt\representation_in_base.tpp" />
     <None Include="..\..\breath\memory\brt\auto_array.tpp" />
-    <None Include="..\..\breath\meta\brt\is_twos_complement.tpp" />
+    <None Include="..\..\breath\meta\brt\is_2s_complement.tpp" />
     <None Include="..\..\breath\process\brt\command_line.tpp" />
     <None Include="..\..\breath\process\brt\program_option.tpp" />
     <None Include="..\..\breath\random\brt\subrange_adaptor.tpp" />
@@ -647,7 +647,7 @@
     <ClInclude Include="..\..\breath\meta\exact_width_integer.hpp" />
     <ClInclude Include="..\..\breath\meta\has_sign.hpp" />
     <ClInclude Include="..\..\breath\meta\integer_log2.hpp" />
-    <ClInclude Include="..\..\breath\meta\is_twos_complement.hpp" />
+    <ClInclude Include="..\..\breath\meta\is_2s_complement.hpp" />
     <ClInclude Include="..\..\breath\meta\precision.hpp" />
     <ClInclude Include="..\..\breath\meta\predecessor.hpp" />
     <ClInclude Include="..\..\breath\meta\select.hpp" />

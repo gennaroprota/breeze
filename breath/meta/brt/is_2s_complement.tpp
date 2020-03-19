@@ -15,7 +15,7 @@ namespace meta {
 
 template< typename T >
 constexpr bool
-is_twos_complement() noexcept
+is_2s_complement() noexcept
 {
     static_assert( std::is_integral< T >::value,
                    "T must be an integral type" ) ;

@@ -11,18 +11,18 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/meta/is_twos_complement.hpp"
+#include "breath/meta/is_2s_complement.hpp"
 
-using breath::meta::is_twos_complement ;
+using breath::meta::is_2s_complement ;
 
 //      TODO: use our test facilities anyway, to have a run-time report?
 //
-static_assert( ! is_twos_complement< bool >(),          "" ) ;
-static_assert(   is_twos_complement< signed char >(),   "" ) ;
-static_assert( ! is_twos_complement< unsigned char >(), "" ) ;
+static_assert( ! is_2s_complement< bool >(),          "" ) ;
+static_assert(   is_2s_complement< signed char >(),   "" ) ;
+static_assert( ! is_2s_complement< unsigned char >(), "" ) ;
 
-static_assert(   is_twos_complement< int >(),           "" ) ;
-static_assert( ! is_twos_complement< unsigned int >(),  "" ) ;
+static_assert(   is_2s_complement< int >(),           "" ) ;
+static_assert( ! is_2s_complement< unsigned int >(),  "" ) ;
 
 int
 main()

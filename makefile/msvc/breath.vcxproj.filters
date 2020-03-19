@@ -324,7 +324,7 @@
     <ClCompile Include="..\..\breath\text\test\to_uppercase_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\meta\test\is_twos_complement_test.cpp">
+    <ClCompile Include="..\..\breath\meta\test\is_2s_complement_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -341,7 +341,7 @@
     <None Include="..\..\breath\mathematics\brt\integer_log2.tpp" />
     <None Include="..\..\breath\mathematics\brt\lcm.tpp" />
     <None Include="..\..\breath\memory\brt\auto_array.tpp" />
-    <None Include="..\..\breath\meta\brt\is_twos_complement.tpp" />
+    <None Include="..\..\breath\meta\brt\is_2s_complement.tpp" />
     <None Include="..\..\breath\random\brt\subrange_adaptor.tpp" />
     <None Include="..\..\breath\text\brt\from_string.tpp" />
     <None Include="..\..\breath\text\brt\to_string.tpp" />
@@ -500,7 +500,7 @@
     <ClInclude Include="..\..\breath\meta\integer_log2.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\meta\is_twos_complement.hpp">
+    <ClInclude Include="..\..\breath\meta\is_2s_complement.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\meta\precision.hpp">

@@ -17,12 +17,12 @@
 namespace breath {
 namespace meta {
 
-//      is_twos_complement():
-//      =====================
+//      is_2s_complement():
+//      ===================
 //
 //!     If \c T is not an integral type or a cv-qualified version
 //!     thereof, the program is ill-formed. Otherwise \c
-//!     is_twos_complement() returns true if and only if the type \c T
+//!     is_2s_complement() returns true if and only if the type \c T
 //!     uses a two's complement representation.
 //!
 //!     \note
@@ -30,12 +30,12 @@ namespace meta {
 //!         representation allowed by the standard.
 // ---------------------------------------------------------------------------
 template< typename T >
-constexpr bool      is_twos_complement() noexcept ;
+constexpr bool      is_2s_complement() noexcept ;
 
 }
 }
 
-#include "brt/is_twos_complement.tpp"
+#include "brt/is_2s_complement.tpp"
 #endif
 
 // Local Variables:

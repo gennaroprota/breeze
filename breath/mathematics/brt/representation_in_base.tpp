@@ -8,7 +8,7 @@
 
 #include "breath/diagnostics/assert.hpp"
 #include "breath/counting/count.hpp"
-#include "breath/meta/is_twos_complement.hpp"
+#include "breath/meta/is_2s_complement.hpp"
 #include <algorithm>
 #include <cstddef>
 #include <limits>
@@ -33,7 +33,7 @@ representation_in_base( T n, int base )
 
     unsigned_type       abs =
         n < 0
-        ? breath::meta::is_twos_complement< T >() &&
+        ? breath::meta::is_2s_complement< T >() &&
             n == ( std::numeric_limits< T >::min )()
                 ? unsigned_type( -1 ) / 2 + 1
                 : - n
