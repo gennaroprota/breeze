@@ -18,7 +18,7 @@
 namespace {
 
 void
-do_check()
+check_int()
 {
     struct
     {
@@ -44,6 +44,18 @@ do_check()
 }
 
 void
+check_mixed_types()
+{
+    {
+        signed char const   a = -80 ;
+        unsigned int const  b = 32768 ;
+
+        BREATH_CHECK( breath::lcm( a, b ) == 163840 ) ;
+        BREATH_CHECK( breath::lcm( b, a ) == 163840 ) ;
+    }
+}
+
+void
 check_constexpr()
 {
     constexpr int       n = breath::lcm( 10, 14 ) ;
@@ -61,7 +73,9 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { do_check, check_constexpr } ) ;
+    return test_runner::instance().run( { check_int,
+                                          check_mixed_types,
+                                          check_constexpr } ) ;
 }
 
 // Local Variables:
