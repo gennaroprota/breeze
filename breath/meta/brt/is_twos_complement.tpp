@@ -35,7 +35,7 @@ is_twos_complement() noexcept
     //      which would yield a false positive.
     // -----------------------------------------------------------------------
     return ( std::numeric_limits< T >::min BREATH_PREVENT_MACRO_EXPANSION ()
-             + std::numeric_limits< T >::max BREATH_PREVENT_MACRO_EXPANSION() )
+             + std::numeric_limits< T >::max BREATH_PREVENT_MACRO_EXPANSION () )
         < 0 ;
 }
 
