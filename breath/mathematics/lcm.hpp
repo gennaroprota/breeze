@@ -27,8 +27,8 @@ namespace breath {
 //!     ill-formed. If \c |m| is not representable as a value of type \c
 //!     M or \c |n| is not representable as a value of type \c N or the
 //!     least common multiple of \c |m| and \c |n| is not representable
-//!     as a value of type \c common_type_t< M, N >, the behavior is
-//!     undefined.
+//!     as a value of type <code>common_type_t< M, N ></code>, the
+//!     behavior is undefined.
 //!
 //!     \return
 //!         If either \c m or \c n is zero, returns zero. Otherwise it
