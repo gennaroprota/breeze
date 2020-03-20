@@ -33,6 +33,9 @@ namespace breath {
 //!     \return
 //!         If either \c m or \c n is zero, returns zero. Otherwise it
 //!         returns the least common multiple of \c |m| and \c |n|.
+//!
+//!     \see
+//!         gcd()
 // ---------------------------------------------------------------------------
 template< typename M, typename N >
 constexpr std::common_type_t< M, N >

@@ -31,6 +31,9 @@ namespace breath {
 //!     \return
 //!         If both \c m and \c n are zero, returns zero. Otherwise it
 //!         returns the greatest common divisor of \c |m| and \c |n|.
+//!
+//!     \see
+//!         lcm()
 // ---------------------------------------------------------------------------
 template< typename M, typename N >
 constexpr std::common_type_t< M, N >
