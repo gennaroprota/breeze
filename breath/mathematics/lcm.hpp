@@ -24,14 +24,15 @@ namespace breath {
 //!     May 14, 2016. (It adds, as allowed, a noexcept specification.)
 //!
 //!     If either \c M or \c N is not an integral type the program is
-//!     ill-formed. If |m| is not representable as a value of type M
-//!     or |n| is not representable as a value of type N or the least
-//!     common multiple of |m| and |n| is not representable as a value
-//!     of type \c common_type_t< M, N>, the behavior is undefined.
+//!     ill-formed. If \c |m| is not representable as a value of type \c
+//!     M or \c |n| is not representable as a value of type \c N or the
+//!     least common multiple of \c |m| and \c |n| is not representable
+//!     as a value of type \c common_type_t< M, N>, the behavior is
+//!     undefined.
 //!
 //!     \return
 //!         If either \c m or \c n is zero, returns zero. Otherwise it
-//!         returns the least common multiple of |m| and |n|.
+//!         returns the least common multiple of \c |m| and \c |n|.
 // ---------------------------------------------------------------------------
 template< typename M, typename N >
 constexpr std::common_type_t< M, N >

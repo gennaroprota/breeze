@@ -24,13 +24,13 @@ namespace breath {
 //!     May 14, 2016. (It adds, as allowed, a noexcept specification.)
 //!
 //!     If either \c M or \c N is not an integral type the program is
-//!     ill-formed. If |m| is not representable as a value of type M
-//!     or |n| is not representable as a value of type N, the behavior
-//!     is undefined.
+//!     ill-formed. If \c |m| is not representable as a value of type \c
+//!     M or \c |n| is not representable as a value of type \c N, the
+//!     behavior is undefined.
 //!
 //!     \return
 //!         If both \c m and \c n are zero, returns zero. Otherwise it
-//!         returns the greatest common divisor of |m| and |n|.
+//!         returns the greatest common divisor of \c |m| and \c |n|.
 // ---------------------------------------------------------------------------
 template< typename M, typename N >
 constexpr std::common_type_t< M, N >
