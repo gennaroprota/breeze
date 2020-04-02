@@ -50,6 +50,8 @@ check()
     std::ifstream       is( breath_root
                             + "/breath/conversion/test/a006968.txt" ) ;
 
+    BREATH_CHECK( is.good() ) ;
+
     //      Skip the first lines.
     // -----------------------------------------------------------------------
     int const           lines_to_skip = 14 ;
@@ -66,6 +68,8 @@ check()
         is >> equal_sign ;
         std::string         upper_expected ;
         is >> upper_expected ;
+
+        BREATH_CHECK( is.good() ) ;
 
         std::ostringstream  strm ;
         breath::roman const roman( n ) ;
