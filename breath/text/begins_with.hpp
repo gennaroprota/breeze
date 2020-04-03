@@ -26,6 +26,9 @@ namespace breath {
 //!           <code>std::basic_string::starts_with()</code> and
 //!           <code>std::basic_string_view::starts_with()</code>
 //!         for this.
+//!
+//!     \see
+//!         ends_with()
 // ---------------------------------------------------------------------------
 bool                begins_with( std::string const & str,
                                  std::string const & with ) noexcept ;

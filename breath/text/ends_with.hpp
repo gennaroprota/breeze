@@ -23,6 +23,9 @@ namespace breath {
 //!
 //!     [FUTURE] C++20 will have std::basic_string::ends_with() and
 //!              std::basic_string_view::ends_with() for this.
+//!
+//!     \see
+//!         begins_with()
 //  --------------------------------------------------------------------------
 bool                ends_with( std::string const & str,
                                std::string const & with ) noexcept ;
