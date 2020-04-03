@@ -28,27 +28,27 @@ main()
 
     {
         std::string const   s ;
-        std::string const   delimiters = { '\0' } ;
+        std::string const   separators = { '\0' } ;
         std::vector< std::string > const
-                            v = split( s, delimiters) ;
+                            v = split( s, separators) ;
         DO_TEST( v.size() == 1 ) ;
         DO_TEST( v[ 0 ].empty() ) ;
     }
 
     {
         std::string const   s ;
-        std::string const   no_delimiters ;
+        std::string const   no_separators ;
         std::vector< std::string > const
-                            v = split( s, no_delimiters ) ;
+                            v = split( s, no_separators ) ;
         DO_TEST( v.size() == 1 ) ;
         DO_TEST( v[ 0 ].empty() ) ;
     }
 
     {
         std::string const   s( "abc" ) ;
-        std::string const   no_delimiters ;
+        std::string const   no_separators ;
         std::vector< std::string > const
-                            v = split( s, no_delimiters ) ;
+                            v = split( s, no_separators ) ;
 
         DO_TEST( v.size() == 1 ) ;
         DO_TEST( v[ 0 ] == s ) ;
@@ -56,9 +56,9 @@ main()
 
     {
         std::string const   s( "abcde" ) ;
-        std::string const   delimiters = { '\0' } ;
+        std::string const   separators = { '\0' } ;
         std::vector< std::string > const
-                            v = split( s, delimiters ) ;
+                            v = split( s, separators ) ;
 
         DO_TEST( v.size() == 1 ) ;
         DO_TEST( v[ 0 ] == "abcde" ) ;
@@ -118,9 +118,9 @@ main()
         s.push_back( '\0' ) ;
         s.push_back( '\0' ) ;
         s += "string3" ;
-        std::string const   delimiters = { '\0' } ;
+        std::string const   separators = { '\0' } ;
         std::vector< std::string > const
-                            v = split( s, delimiters ) ;
+                            v = split( s, separators ) ;
         DO_TEST( v.size() == 3 ) ;
         DO_TEST( v[ 0 ] == "string1" ) ;
         DO_TEST( v[ 1 ].size() == 0 ) ;
@@ -128,10 +128,10 @@ main()
     }
 
     {
-        std::string const   only_delimiters( "x" ) ;
-        std::string const   delimiters = only_delimiters ;
+        std::string const   only_separators( "x" ) ;
+        std::string const   separators = only_separators ;
         std::vector< std::string > const
-                            v = split( only_delimiters, delimiters ) ;
+                            v = split( only_separators, separators ) ;
         DO_TEST( v.size() == 2 ) ;
         DO_TEST( v[ 0 ].empty() ) ;
         DO_TEST( v[ 1 ].empty() ) ;

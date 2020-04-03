@@ -20,19 +20,19 @@ namespace breath {
 //
 //!     \return
 //!         A vector of strings obtained by splitting \c s at each
-//!         character present in \c delimiters, in order.
+//!         character present in \c separators, in order.
 //!
-//!         Consecutive delimiters, or delimiters as first or last
+//!         Consecutive separators, or separators as first or last
 //!         character in \c s, lead to an empty string in the resulting
 //!         vector. The size of the vector is always 1 plus the number
-//!         of delimiters in \c s.
+//!         of separators in \c s.
 //!
 //!     \note
 //!         This should probably use \c set_of_chars.
 // ---------------------------------------------------------------------------
 std::vector< std::string >
                     split( std::string const & s,
-                           std::string const & delimiters ) ;
+                           std::string const & separators ) ;
 
 }
 

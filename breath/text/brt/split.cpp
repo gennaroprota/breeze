@@ -18,7 +18,7 @@
 namespace breath {
 
 std::vector< std::string >
-split( std::string const & s, std::string const & delimiters )
+split( std::string const & s, std::string const & separators )
 {
     BREATH_ASSERT( s.size() < std::size_t( -1 ) ) ;
 
@@ -36,7 +36,7 @@ split( std::string const & s, std::string const & delimiters )
     // -----------------------------------------------------------------------
     for ( std::size_t i = 0 ; i <= s.size() ; ++ i ) {
         auto const          start = i ;
-        i = s.find_first_of( delimiters, i );
+        i = s.find_first_of( separators, i );
         if ( i == s.npos ) {
             i = s.size() ;
         }
