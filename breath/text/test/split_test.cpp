@@ -123,7 +123,7 @@ main()
                             v = split( s, separators ) ;
         DO_TEST( v.size() == 3 ) ;
         DO_TEST( v[ 0 ] == "string1" ) ;
-        DO_TEST( v[ 1 ].size() == 0 ) ;
+        DO_TEST( v[ 1 ].empty() ) ;
         DO_TEST( v[ 2 ] == "string3" ) ;
     }
 
