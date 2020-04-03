@@ -62,7 +62,7 @@ define build_library
 endef
 
 
-include_dir     := $(root)
+include_dir := $(root)
 
 cpp_options = $(cpp_basic_options)                  \
               $(cpp_debug_options)                  \
