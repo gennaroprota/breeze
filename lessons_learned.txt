@@ -16,11 +16,10 @@ I'll be glad to compare my findings with those of the author.
 
   That doesn't mean writing that the reason for doing something was Y, when it
   was X, instead. Don't do that :-) It means writing that it was X even if you
-  are not sure that X is a good reason. Your feature self, or anyone else, might
-  know enough in the future to "see" that your reason was not good, and can thus
-  change the code confidently, instead of wondering whether there was any valid
-  reason it was written that way. IOWs: a "wrong" rationale is better than no
-  rationale.
+  are not sure that X is a good reason. Your future self, or anyone else, might
+  know enough to "see" that your reason was not good, and can thus change the
+  code confidently, instead of wondering whether there was any valid reason it
+  was written that way. IOWs: a "wrong" rationale is better than no rationale.
 
 # Local Variables:
 # mode: text
