@@ -76,7 +76,7 @@ public:
     duration_type       resolution() const ;
 
 private:
-    Device m_device ;
+    Device              m_device ;
 } ;
 
 }
