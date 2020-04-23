@@ -69,6 +69,7 @@
 
 # PVS-Studio files
 *.PVS-Studio.*
+*.plog
 
 # =========================
 # Operating system files
