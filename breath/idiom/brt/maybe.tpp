@@ -75,7 +75,7 @@ maybe< T, Traits >::operator =( maybe const & other )
 {
     if ( other.is_valid() ) {
         if ( is_valid() ) {
-            *static_cast< T * >( m_storage.address() ) = other.value() ;
+            non_const_value() = other.value() ;
         } else {
             construct( other.value() ) ;
         }
@@ -93,8 +93,7 @@ maybe< T, Traits >::operator =( maybe && other ) noexcept
 {
     if ( other.is_valid() ) {
         if ( is_valid() ) {
-            *static_cast< T * >( m_storage.address() )
-                                       = std::move( other.non_const_value() ) ;
+            non_const_value() = std::move( other.non_const_value() ) ;
         } else {
             construct( std::move( other.non_const_value() ) ) ;
         }
@@ -118,7 +117,7 @@ maybe< T, Traits > &
 maybe< T, Traits >::operator =( T const & value )
 {
     if ( is_valid() ) {
-        *static_cast< T * >( m_storage.address() ) = value ;
+        non_const_value() = value ;
     } else {
         construct( value ) ;
     }
@@ -131,7 +130,7 @@ maybe< T, Traits > &
 maybe< T, Traits >::operator =( T && value ) noexcept
 {
     if ( is_valid() ) {
-        *static_cast< T * >( m_storage.address() ) = std::move( value ) ;
+        non_const_value() = std::move( value ) ;
     } else {
         construct( std::move( value ) ) ;
     }
@@ -188,8 +187,7 @@ template< typename T, typename Traits >
 void
 maybe< T, Traits >::destroy() noexcept
 {
-    BREATH_ASSERT( is_valid() ) ;
-    static_cast< T * >( m_storage.address() )->T::~T() ;
+    non_const_value().T::~T() ;
 }
 
 template< typename T, typename Traits >

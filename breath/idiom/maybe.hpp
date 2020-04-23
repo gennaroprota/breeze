@@ -349,8 +349,6 @@ private:
     void                construct( T && value ) noexcept ;
     void                destroy() noexcept ;
 
-    //      used in moving functions only
-    //
     T &                 non_const_value() noexcept ;
 
     aligned_storage_for< T >
