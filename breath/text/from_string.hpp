@@ -36,7 +36,7 @@ T                   from_string( std::string const & s ) ;
 //!         that e.g. " test " converts to " test " and not "test".
 // ---------------------------------------------------------------------------
 template<>
-inline std::string  from_string< std::string >( std::string const & s ) ;
+std::string  from_string< std::string >( std::string const & s ) ;
 
 }
 
