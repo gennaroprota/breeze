@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief  Base template class to ease the definition of policies
+//!     \brief  Base class template to ease the definition of policies
 //!             for the \c merkle_damgard_machine template..
 // ---------------------------------------------------------------------------
 
