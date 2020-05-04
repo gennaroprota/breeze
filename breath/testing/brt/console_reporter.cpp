@@ -56,7 +56,7 @@ console_reporter::on_test_passed( int )
 void
 console_reporter::on_test_failed(int, test_exception const & ex )
 {
-    m_stream << "F (" << ex.file_name() << ": " << ex.line() << ")]" ;
+    m_stream << "F (" << ex.file_name() << ": " << ex.line_number() << ")]" ;
     ++ m_failed ;
 }
 

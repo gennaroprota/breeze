@@ -28,7 +28,7 @@ public:
                                         char const * file_name,
                                         unsigned long line ) noexcept ;
     char const *        file_name() const noexcept ;
-    unsigned long       line()     const noexcept ;
+    unsigned long       line_number() const noexcept ;
 
 private:
     char const *        m_file_name ;

@@ -39,7 +39,7 @@ test_exception::file_name() const noexcept
 }
 
 unsigned long
-test_exception::line() const noexcept
+test_exception::line_number() const noexcept
 {
     return m_line ;
 }
@@ -47,7 +47,8 @@ test_exception::line() const noexcept
 std::ostream &
 operator <<(std::ostream & os, test_exception const & ex )
 {
-    return os << ex.what() << ": " << ex.file_name() << ", " << ex.line() ;
+    return os << ex.what() << ": " <<
+               ex.file_name() << ", " << ex.line_number() ;
 }
 
 }
