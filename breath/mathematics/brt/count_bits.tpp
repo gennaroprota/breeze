@@ -60,7 +60,16 @@ count_bits( T t ) noexcept
     int                 count = 0 ;
     while ( t != 0 ) {
         count += count_table[ t & ( ( 1u << table_width ) - 1 ) ] ;
-        t >>= table_width ;
+
+        //      The usage of the form 't = t >> w' in lieu of 't >>= w'
+        //      is to workaround a Clang bug: the compiler yields a
+        //      -Wshift-count-overflow warning when the latter form is
+        //      used and T is unsigned char, apparently ignoring the
+        //      fact that t is promoted.
+        //
+        //      (Problem encountered with Clang 5.0.1.)
+        // -------------------------------------------------------------------
+        t = t >> table_width ;
     }
     return count ;
 }
