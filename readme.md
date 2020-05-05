@@ -90,7 +90,7 @@ Given the quality of the Doxygen output, I unwillingly recommend to mostly read
 the documentation directly from the source files. In any case, to generate
 separate documents, please see the `read_me` in `doc/source/`.
 
-# Editor support
+# Editor support and Git commit message template
 
 The source tree contains a `.editorconfig` (https://editorconfig.org/). This
 support was added just recently. Before that, only Emacs and Vim were supported.
@@ -107,6 +107,17 @@ care of running the initialization script on any file you create in
 
 If you use Emacs, please contribute something analogous to `breath.vim` for that
 editor.
+
+To enable the Git commit message template provided with the library:
+
+ - `cd` to `BREATH_ROOT`
+
+ - run: `git config --local commit.template ./.git_commit_message_template.txt`
+
+For better or for worse, the library uses the Git commit message guidelines
+outlined at https://chris.beams.io/posts/git-commit/, except that the subject
+line can reach 72 characters, just like the body (50 is really too little).
+Please, have a look if you are not familiar with them.
 
 # License
 

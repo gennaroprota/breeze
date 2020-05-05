@@ -60,3 +60,8 @@ GNUmakefile text
 /tool/init_file/language_traits.txt   eol=lf
 /tool/init_file/license_reference.txt eol=lf
 /tool/init_file/pvs_studio_text.txt   eol=lf
+
+#       This also needs Unix line-endings, even under the Windows
+#       command line.
+# ----------------------------------------------------------------------------
+/.git_commit_message_template.txt    eol=lf
