@@ -21,6 +21,10 @@ namespace breath {
 //!     \return
 //!         The number of on bits in the value \c t. \c T must be an
 //!         unsigned integral type.
+//!
+//!     \warning
+//!         [FUTURE] This function template will be removed in favor of
+//!         \c std::popcount() when Breath will require C++20.
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr int       count_bits( T t ) noexcept ;
