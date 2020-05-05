@@ -19,9 +19,8 @@ namespace breath {
 //      =============
 //
 //!     \return
-//!         The number of on bits in the value \c t. \c T must be a
-//!         built-in integral type with no sign (\c bool is supported,
-//!         too).
+//!         The number of on bits in the value \c t. \c T must be an
+//!         unsigned integral type.
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr int       count_bits( T t ) noexcept ;

@@ -74,15 +74,6 @@ count_bits( T t ) noexcept
     return count ;
 }
 
-constexpr int
-count_bits( bool b ) noexcept
-{
-    return b
-        ? 1
-        : 0
-        ;
-}
-
 }
 
 // Local Variables:
