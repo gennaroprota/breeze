@@ -22,7 +22,8 @@ namespace breath {
 //      ==========================
 //
 //!     Searches an implementation-defined list, as if by calling
-//!     \c std::getenv(), for a string that matches \c name.
+//!     \c std::getenv(), for a string that matches \c name and returns
+//!     the associated value, if any.
 //!
 //!     We emphasize that the 'as if' above is part of this function's
 //!     contract.
@@ -40,6 +41,10 @@ namespace breath {
 //!        null pointer; that can easily lead to undefined behavior,
 //!        if that value is passed to one of the constructors of
 //!        \c std::string which take a <code>char const *</code>
+//!
+//!     \return
+//!         The value associated to the given \c name, or an invalid \c
+//!         maybe if there is none.
 //!
 //!     \note
 //!         The behavior on passing an empty string for the \c name
