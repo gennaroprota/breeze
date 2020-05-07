@@ -30,7 +30,7 @@ find_environment_string( std::string const & name )
         ? maybe_type()
         : maybe_type( std::string( p ) )
         ;
-    }
+}
 }
 
 // Local Variables:
