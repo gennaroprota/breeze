@@ -122,7 +122,7 @@ program::name() const
 }
 
 void
-program::declare_error( program::gravity g ) // gps nome OK?
+program::declare_error( program::gravity g ) noexcept // gps nome OK?
 {
     BREATH_ASSERT( static_cast< unsigned int >( g ) <
                      breath::count( exit_codes ) ) ;
