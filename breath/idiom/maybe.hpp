@@ -153,7 +153,7 @@ public:
 //!
 //!        The copy and move operations of \c Traits::status must not
 //!        emit exceptions (note that this is a stronger requirement
-//!        than the one on \T, which concerns move only).
+//!        than the one on \c T, which concerns move only).
 //!
 //!     A final note about std::optional
 //!     --------------------------------
