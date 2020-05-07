@@ -125,8 +125,9 @@ public:
     //!         \c exit_code().
     //!
     //!     If the gravity is \c fatal or higher, this will also
-    //!     terminate the program by calling \c terminate() (gravity
-    //!     == \c fatal) or \c std::abort() (gravity == \c internal).
+    //!     terminate the program by calling \c program::terminate()
+    //!     (when gravity == \c fatal) or \c std::abort() (when gravity
+    //!     == \c internal).
     // -----------------------------------------------------------------------
     void                declare_error( gravity g ) noexcept ;
 
@@ -141,10 +142,10 @@ public:
     //!     Sets \c *user_function as the "terminate handler", i.e. as
     //!     the function which is called, with the exit code as an
     //!     argument, if there is a fatal error or if the user calls
-    //!     terminate(). This makes it possible for the user to avoid
-    //!     calling the default terminate handler, which is \c std::exit
-    //!     (and thus to avoid \e not calling destructors of local
-    //!     objects), for example, by raising an exception with the
+    //!     \c program::terminate(). This makes it possible for the user
+    //!     to avoid calling the default terminate handler, which is \c
+    //!     std::exit() (and thus to avoid \e not calling destructors of
+    //!     local objects), for example, by raising an exception with the
     //!     argument, having taken the precaution to encapsulate the
     //!     entire contents of \c main() with:
     //!
