@@ -31,7 +31,7 @@ public:
                         {
                         }
 
-    T *                 operator[]( std::ptrdiff_t i ) noexcept
+    T *                 operator []( std::ptrdiff_t i ) noexcept
     {
         return m_data + i * m_columns ;
     }
