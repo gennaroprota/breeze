@@ -128,8 +128,8 @@ tree.
 # Issues
 
 I can't guarantee any kind of support, but if you have issues with the library,
-please send me a mail describing the problem and I will try to address it as
-soon as possible.
+please send me a mail describing the problem (*name.surname*@gmail.com) and I
+will try to address it as soon as possible.
 
 # Acknowledgments
 
