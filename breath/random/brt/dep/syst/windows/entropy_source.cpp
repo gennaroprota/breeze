@@ -125,7 +125,7 @@ entropy_source::impl::to_buffer( unsigned char * buffer, int count )
                                                 buffer ) ;
         if ( r == 0 ) {
             entropy_source::exception::raise(
-                                        "cannot generate random number" ) ;
+                                        "cannot generate random numbers" ) ;
         }
     }
 }
