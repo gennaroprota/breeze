@@ -49,7 +49,7 @@ private:
     bool                acquire( DWORD flags = 0 ) ;
     bool                is_released() const noexcept ;
     void                to_buffer( unsigned char * buffer,
-                                   std::ptrdiff_t count ) ;
+                                   int count ) ;
 } ;
 
 entropy_source::impl::impl()
@@ -114,7 +114,7 @@ entropy_source::impl::release() noexcept
 }
 
 void
-entropy_source::impl::to_buffer( unsigned char * buffer, std::ptrdiff_t count )
+entropy_source::impl::to_buffer( unsigned char * buffer, int count )
 {
     BREATH_ASSERT( count >= 0 ) ;
 
