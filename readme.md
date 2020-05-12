@@ -116,8 +116,15 @@ To enable the Git commit message template provided with the library:
 
 For better or for worse, the library uses the Git commit message guidelines
 outlined at https://chris.beams.io/posts/git-commit/, except that the subject
-line can reach 72 characters, just like the body (50 is really too little).
-Please, have a look if you are not familiar with them.
+line:
+
+ - can reach 72 characters, just like the body (50 is really too little)
+
+ - is worded in the imperative mood, but doesn't necessarily complete the
+   sentence "this commit will...", e.g. it may begin with "Don't" (I believe
+   that, in fact, this is the intent of the guidelines)
+
+Please, have a look at the guidelines if you are not familiar with them.
 
 # License
 
