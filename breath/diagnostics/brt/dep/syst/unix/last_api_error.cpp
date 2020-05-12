@@ -22,7 +22,8 @@ last_api_error::last_api_error( char const * p ) noexcept
     :   m_last_error( errno )
 {
     static char const   cant_obtain_description[] =
-                      "can't obtain the error description: see the error code" ;
+                            "can't obtain the error description"
+                            ": see the error code, instead" ;
 
     //! \todo
     //! Most of this code is duplicated with the Windows variant.
