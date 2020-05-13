@@ -112,7 +112,8 @@ public:
     //!         \c true if and only if the resource(s) were successfully
     //!         released.
     //!
-    //!     Throws: nothing (reports via its return value)
+    //!     \throw
+    //!         none (reports via its return value)
     //!
     //!     \warning
     //!         You cannot reattempt a release if it already succeeded.
