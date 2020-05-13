@@ -77,7 +77,8 @@ while `system` must be set to one of:
  - unix, windows
 
 Finally, `architecture` can be anything, because it is currently only used to
-include or exclude a component (get_cpuid_info()) which is x86_64-specific.
+include or exclude a component (get_cpuid_info()) which is only implemented for
+x86_64.
 
 # A note about the documentation
 
