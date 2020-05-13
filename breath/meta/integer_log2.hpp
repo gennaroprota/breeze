@@ -15,7 +15,7 @@
 #define BREATH_GUARD_4uQJExogJdntOgg4rVCN5jmuqREdR7xS
 
 namespace breath {
-//! \cond
+//! \cond implementation
 namespace  integer_log2_private {
 
 //      choose_initial_n:

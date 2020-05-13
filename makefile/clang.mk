@@ -65,12 +65,16 @@ cpp_basic_options += -pipe                              \
                      -Wno-weak-vtables                  \
                      -Wno-zero-as-null-pointer-constant
 
-#       The following three options are temporary (the -Wno-documentation...
-#       is because Clang doesn't seem to recognize the \cond command)- gps
+#       The following three options are temporary
+#       (-fcomment-block-commands=cond is a hack for Clang, which
+#       doesn't seem to recognize the \cond command, although it
+#       recognizes \endcond; this is better than using
+#       -Wno-documentation-unknown-command, as that could hide real
+#       errors). - gps
 # ----------------------------------------------------------------------------
 cpp_basic_options += -Wno-exit-time-destructors         \
                      -Wno-global-constructors           \
-                     -Wno-documentation-unknown-command
+                     -fcomment-block-commands=cond
 
 #       See:
 #       <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html>.

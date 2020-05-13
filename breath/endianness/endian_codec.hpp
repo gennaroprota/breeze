@@ -22,7 +22,7 @@
 #include <iterator>
 
 namespace breath {
-//! \cond
+//! \cond implementation
 namespace endian_codec_private {
 
 template< typename T, typename Byte >

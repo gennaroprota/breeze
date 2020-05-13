@@ -20,7 +20,7 @@
 #include <limits>
 
 namespace breath {
-//! \cond
+//! \cond implementation
 namespace exact_width_integer_private {
 
 //      This might be elegantly implemented via type lists or maps, but

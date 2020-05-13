@@ -41,7 +41,7 @@ public:
     typedef T type ;
 } ;
 
-//! \cond
+//! \cond implementation
 template< typename T >
 class unqualify< T const >
 {

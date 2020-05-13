@@ -14,7 +14,7 @@
 #define BREATH_GUARD_k8gjtzbloTDgF7FRM6AWORSGsE1IHkXq
 
 namespace breath {
-//! \cond
+//! \cond implementation
 namespace assert_private {
 
 template< typename T >

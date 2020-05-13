@@ -13,7 +13,7 @@
 
 namespace breath {
 
-//! \cond
+//! \cond implementation
 namespace time_private {
 
 //      TODO: decide where to put these declarations.

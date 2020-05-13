@@ -19,7 +19,7 @@
 
 namespace breath {
 
-//! \cond
+//! \cond implementation
 namespace aligned_storage_private {
 
 template< typename T >
@@ -152,7 +152,7 @@ public:
     void const *        address() const noexcept { return m_raw_buffer ; }
 
 private:
-//! \cond
+//! \cond implementation
     union
     {
         unsigned char   m_raw_buffer[ sizeof( T ) ] ;

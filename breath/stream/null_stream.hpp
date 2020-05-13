@@ -20,7 +20,7 @@
 
 namespace breath {
 
-//! \cond
+//! \cond implementation
 template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_null_stream_buffer
     :   public std::basic_streambuf< Ch, Traits >

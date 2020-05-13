@@ -132,7 +132,7 @@ class entropy_source::exception
     :   public virtual breath::exception
 {
 public:
-    //! \cond
+    //! \cond implementation
     [[ noreturn ]] static void
                         raise( std::string const & message ) ;
     //! \endcond
