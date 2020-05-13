@@ -118,7 +118,7 @@ For better or for worse, the library uses the Git commit message guidelines
 outlined at https://chris.beams.io/posts/git-commit/, except that the subject
 line:
 
- - can reach 72 characters, just like the body (50 is really too little)
+ - can reach 72 characters, just like the body lines (50 is really too little)
 
  - is worded in the imperative mood, but doesn't necessarily complete the
    sentence "this commit will...", e.g. it may begin with "Don't" (I believe
