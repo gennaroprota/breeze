@@ -152,14 +152,12 @@ public:
     void const *        address() const noexcept { return m_raw_buffer ; }
 
 private:
-//! \cond implementation
     union
     {
         unsigned char   m_raw_buffer[ sizeof( T ) ] ;
         typename aligned_storage_private::pod_with_same_align< T >::type
                         dummy_for_alignment ;
     } ;
-//! \endcond
 } ;
 
 }
