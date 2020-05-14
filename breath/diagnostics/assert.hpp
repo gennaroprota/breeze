@@ -60,8 +60,8 @@ block_non_bools( bool b )
 //!
 //!     In this context, "triggering an assertion" means writing
 //!     information related to the specific macro invocation (e.g. line
-//!     number and source file name) to \c std::cerr, then calling \c
-//!     std::abort().
+//!     number and source file name) to \c std::cerr, then flushing \c
+//!     std::cerr, then calling \c std::abort().
 //!
 //!     Rationale
 //!     ---------
