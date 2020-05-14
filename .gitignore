@@ -1,11 +1,26 @@
+# ======================================
+# Breath-specific patterns
+# ======================================
+
+# Executable directory
+/bin/
+
+# Generated documentation files
+/doc/*
+!/doc/source/
+
+# Directories of Make dependency files
+.dependency/
+
+# ======================================
+# Non-Breath-specific patterns
+# ======================================
+
 # Generic backup files
 *.bak
 
 # Generic log files (includes those of Visual C++)
 *.log
-
-# Directories of Make dependency files
-.dependency/
 
 # Compiled object files
 *.slo
@@ -36,13 +51,6 @@
 # Stack dumps
 *.stackdump
 
-# Executable directory
-/bin/
-
-# Generated documentation files
-/doc/*
-!/doc/source/
-
 # Vim swap files (up to three levels; this seems a
 # reasonable compromise)
 *.swp
@@ -71,7 +79,6 @@
 *.PVS-Studio.*
 *.plog
 
-# ======================================
 # Operating system files and directories
 # ======================================
 
