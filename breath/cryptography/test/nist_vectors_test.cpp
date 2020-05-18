@@ -266,9 +266,9 @@ tests()
 
         if ( calculated != expected ) {
             ++ failed ;
-            std::clog << "Failure on test vector # " << total << std::endl ;
-            std::clog << "\tCalculated: " << calculated << std::endl ;
-            std::clog << "\tExpected:   " << expected   << std::endl ;
+            std::cerr << "Failure on test vector # " << total << std::endl ;
+            std::cerr << "\tCalculated: " << calculated << std::endl ;
+            std::cerr << "\tExpected:   " << expected   << std::endl ;
         }
     }
 
