@@ -21,11 +21,11 @@ namespace breath {
 namespace assert_private {
 
 [[ noreturn ]] void
-fire( char const * message,
+fire( char const * expression_text,
       char const * file_name, unsigned long line_number ) noexcept
 {
     std::cerr << "Assertion failed: "
-              << message
+              << expression_text
               << ", file " << file_name
               << ", line " << line_number
               << std::endl ;

@@ -26,7 +26,7 @@ block_non_bools( bool b )
     return b ;
 }
 
-[[ noreturn ]] void fire( char const * message,
+[[ noreturn ]] void fire( char const * expression_text,
                           char const * file_name,
                           unsigned long line_number ) noexcept ;
 
