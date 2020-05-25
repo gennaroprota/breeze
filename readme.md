@@ -93,7 +93,7 @@ separate documents, please see the `read_me` in `doc/source/`.
 
 # Editor support and Git commit message template
 
-The source tree contains a `.editorconfig` (https://editorconfig.org/). This
+The source tree contains a `.editorconfig` (https://editorconfig.org). This
 support was added just recently. Before that, only Emacs and Vim were supported.
 
 If you plan to contribute, please use `tool/init_file/init_file.sh` to
