@@ -82,6 +82,8 @@ ifndef compiler_command
     compiler_command := g++
 endif
 
+compiler_display_name := GCC
+
 #       Note:
 #           starting from GCC 7 -dumpversion might print the major
 #           version only, and we need -dumpfullversion to print the
@@ -89,16 +91,16 @@ endif
 #           --with-gcc-major-version-only configure option). This
 #           insight is from Jonathan Wakely, as well.
 # ----------------------------------------------------------------------------
-actual_gcc_version := $(shell $(compiler_command) -dumpfullversion 2>/dev/null \
-                           || $(compiler_command) -dumpversion)
+compiler_version := $(shell $(compiler_command) -dumpfullversion 2>/dev/null \
+                        || $(compiler_command) -dumpversion)
 
 lowest_version := $(shell                                            \
-  printf '%s\n%s\n' $(minimum_gcc_version) $(actual_gcc_version)  |  \
+  printf '%s\n%s\n' $(minimum_gcc_version) $(compiler_version)  |    \
   sort -t . -k 1,1n -k 2,2n -k 3,3n | head -1                        \
   )
 
 ifneq "$(lowest_version)" "$(minimum_gcc_version)"
-    $(error You are using GCC $(actual_gcc_version) but the minimum \
+    $(error You are using GCC $(compiler_version) but the minimum \
             supported version is $(minimum_gcc_version))
 endif
 

@@ -101,6 +101,9 @@ ifndef compiler_command
     compiler_command := clang++
 endif
 
+compiler_display_name := Clang
+compiler_version := $(shell $(compiler_command) -dumpversion)
+
 define compile_to_object
     $(compiler_command) $(cpp_options) -c -o $@ $<
 endef

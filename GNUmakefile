@@ -15,10 +15,15 @@ subdirs := breath   \
 root := .
 include $(root)/makefile/main.mk
 
+ruler := \
+------------------------------------------------------------------------------
+
 #       Common targets
 # ----------------------------------------------------------------------------
 .PHONY: all
 all: $(bin_dir)
+	$(info $(ruler))
+	$(info Using $(compiler_display_name) $(compiler_version))
 	$(do_for_all_subdirs)
 
 .PHONY: clean

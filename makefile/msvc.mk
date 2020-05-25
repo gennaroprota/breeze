@@ -69,16 +69,19 @@
 cygwin_sort := '/bin/sort'
 
 minimum_msvc_version := 19.00.24215.1
-actual_msvc_version := $(shell cl 2>&1 | head -1 | grep -E -o \
-                               "[1-9][0-9]*\.[0-9]+\.[0-9]+\.?[0-9]*")
+
+compiler_display_name := MSVC
+
+compiler_version := $(shell cl 2>&1 | head -1 | grep -E -o \
+                                "[1-9][0-9]*\.[0-9]+\.[0-9]+\.?[0-9]*")
 
 lowest_version := $(shell                                                \
-  printf '%s\n%s\n' $(minimum_msvc_version) $(actual_msvc_version)  |    \
+  printf '%s\n%s\n' $(minimum_msvc_version) $(compiler_version)  |       \
   $(cygwin_sort) -t . -k 1,1n -k 2,2n -k 3,3n -k 4,4n | head -1          \
   )
 
 ifneq "$(lowest_version)" "$(minimum_msvc_version)"
-    $(error You are using Visual C++ $(actual_msvc_version) but the minimum \
+    $(error You are using Visual C++ $(compiler_version) but the minimum \
             supported version is $(minimum_msvc_version))
 endif
 
@@ -100,6 +103,8 @@ cpp_basic_options := /std:c++14                 \
                      /D _CRT_SECURE_NO_WARNINGS \
                      /D _SCL_SECURE_NO_WARNINGS
 
+cpp_basic_options += /nologo
+
 #       Enable /Wall, except for a handful of warnings (some of which
 #       arise in the standard headers). For a synopsis, see:
 #
@@ -112,7 +117,7 @@ cpp_basic_options += /wd4191 /wd4365 /wd4514 /wd4571    \
 #      standard headers. But enable /permissive- (TODO: about the
 #      latter, keep the comment above up-to-date).
 # ----------------------------------------------------------------------------
-ifeq "$(actual_msvc_version)" "19.15.26726"
+ifeq "$(compiler_version)" "19.15.26726"
     cpp_basic_options += /wd4625 /wd4626 /wd4774        \
                          /wd5026 /wd5027 /wd5045 /permissive-
 endif
