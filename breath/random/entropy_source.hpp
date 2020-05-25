@@ -29,6 +29,10 @@ namespace breath {
 //!     It satisfies the requirements of a "uniform random number
 //!     generator".
 //!
+//!     Differently from \c std::random_device, this class does not have
+//!     an \c entropy() member, as that would be of dubious usefulness
+//!     (see e.g. <https://codingnest.com/generating-random-numbers-using-c-standard-library-the-problems/>).
+//!
 //!     What about the complexity of g()? [gps]
 //!
 // ---------------------------------------------------------------------------
@@ -87,12 +91,6 @@ public:
     //!         The maximum random number that can be emitted.
     // -----------------------------------------------------------------------
     result_type         max BREATH_PREVENT_MACRO_EXPANSION () const noexcept ;
-
-    //!     \todo:
-    //!         define entropy()??? It should be 8 for /dev/random...
-    //!         what about the CryptoAPI?
-    // -----------------------------------------------------------------------
-
 
     //!     \return
     //!         A new random value: the same as \c next().
