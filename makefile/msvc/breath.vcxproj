@@ -93,7 +93,7 @@
       <DiagnosticsFormat>Caret</DiagnosticsFormat>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
-      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /wd4191 /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4711 /wd4820 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4711 /wd4820 %(AdditionalOptions)</AdditionalOptions>
       <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
@@ -116,7 +116,7 @@
       <DiagnosticsFormat>Caret</DiagnosticsFormat>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
-      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /wd4191 /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4711 /wd4820 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4711 /wd4820 %(AdditionalOptions)</AdditionalOptions>
       <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
@@ -152,7 +152,7 @@
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /wd4191 /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4711 /wd4820 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4711 /wd4820 %(AdditionalOptions)</AdditionalOptions>
       <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
@@ -180,7 +180,7 @@
       <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;</PreprocessorDefinitions>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
-      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /wd4191 /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4711 /wd4820 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4711 /wd4820 %(AdditionalOptions)</AdditionalOptions>
       <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>

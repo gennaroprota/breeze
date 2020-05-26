@@ -48,6 +48,12 @@
 #           higher and we don't admit warnings (and mutate them into
 #           errors).
 #
+#       /volatile:iso
+#
+#           it seems (but I've not verified) that this is not implied by
+#           /std:xx, so I add it explicitly, to avoid accidentally
+#           relying on behavior not guaranteed by the C++ standard.
+#
 #       /analyze [not used]:
 #
 #           I'd love to use it, but it's giving the following apparently
@@ -96,6 +102,7 @@ cpp_basic_options := /std:c++14                 \
                      /Zc:rvalueCast             \
                      /Zc:strictStrings          \
                      /Zc:inline                 \
+                     /volatile:iso              \
                                                 \
                      /EHs                       \
                      /Wall                      \
