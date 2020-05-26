@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/diagnostics/exception.hpp"
-#include "breath/counting/count.hpp"
+#include "breath/counting/signed_count.hpp"
 #include <algorithm>
 #include <cstddef>
 #include <cstring>
@@ -32,10 +32,10 @@ exception::exception( std::string const & what_msg ) noexcept
 
     if ( ! what_msg.empty() ) {
         char *              curr = &m_what_message[ 0 ] +
-                                     ( count( incipit ) - 1 ) ;
+                                     ( signed_count( incipit ) - 1 ) ;
         char const          sep[] = ": " ;
         std::strcpy( curr, sep ) ;
-        curr += ( count( sep ) - 1 ) ;
+        curr += ( signed_count( sep ) - 1 ) ;
 
         std::ptrdiff_t const
                             length_so_far = curr - &m_what_message[ 0 ] ;

@@ -6,7 +6,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/counting/count.hpp"
+#include "breath/counting/signed_count.hpp"
 #include <numeric>
 
 namespace breath {
@@ -86,7 +86,7 @@ crc32( InputIterator begin, InputIterator end )
     auto const          all_ones =      static_cast< std::uint_fast32_t >(
                                                                0xFFFF'FFFFul ) ;
     auto const          table_size = static_cast< int >(
-                                                      breath::count( table ) ) ;
+                                               breath::signed_count( table ) ) ;
 
     static_assert( table_size == 256, "wrong table size" ) ;
 

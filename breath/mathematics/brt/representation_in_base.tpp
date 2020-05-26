@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 
 #include "breath/diagnostics/assert.hpp"
-#include "breath/counting/count.hpp"
+#include "breath/counting/signed_count.hpp"
 #include "breath/meta/is_2s_complement.hpp"
 #include <algorithm>
 #include <cstddef>
@@ -24,7 +24,7 @@ representation_in_base( T n, int base )
     static char const   digits[] = "0123456789"
                                    "abcdefghijklmnopqrstuvwxyz" ;
 
-    std::size_t const   max_base = breath::count( digits ) - 1 ;
+    auto const          max_base = breath::signed_count( digits ) - 1 ;
 
     static_assert( max_base == 36, "" ) ;
 

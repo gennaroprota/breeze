@@ -19,7 +19,7 @@
 //      is the read_me in the nist_vectors/ subdirectory.
 // ---------------------------------------------------------------------------
 
-#include "breath/counting/count.hpp"
+#include "breath/counting/signed_count.hpp"
 #include "breath/cryptography/digest.hpp"
 #include "breath/cryptography/sha1_hasher.hpp"
 #include "breath/diagnostics/assert.hpp"
@@ -208,7 +208,7 @@ tests()
     } ;
 
     int const           sections = static_cast< int >(
-                            breath::count( section_types ) ) ;
+                            breath::signed_count( section_types ) ) ;
 
     std::string         calculated ;
     std::vector< breath::sha1_engine::byte_type >

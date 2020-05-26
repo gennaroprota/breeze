@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/counting/count.hpp"
+#include "breath/counting/signed_count.hpp"
 #include "breath/cryptography/digest.hpp"
 #include "breath/cryptography/md5_hasher.hpp"
 #include "breath/cryptography/sha1_hasher.hpp"
@@ -183,7 +183,8 @@ void check_known_digests()
     typedef test_vectors< Hasher >
                         known ;
 
-    for ( std::size_t i = 0 ; i < breath::count( known::entries ) ; ++ i ) {
+    for ( std::ptrdiff_t i = 0 ; i < breath::signed_count( known::entries ) ;
+                                                                        ++ i ) {
 
         using breath::digest ;
 

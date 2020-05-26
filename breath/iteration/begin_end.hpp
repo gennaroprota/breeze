@@ -22,7 +22,7 @@
 //!     </code>
 //!
 //!     regardless of whether \c a refers to a standard container or
-//!     to a built-in array. See also count.hpp.
+//!     to a built-in array. See also signed_count.hpp.
 //!
 //!     NOTE: C++11 introduced templates like these and C++17 makes
 //!     them almost equivalent to ours. New code should use the

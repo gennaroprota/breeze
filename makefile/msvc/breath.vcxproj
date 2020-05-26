@@ -600,8 +600,8 @@
     <ClInclude Include="..\..\breath\checksum\crc32.hpp" />
     <ClInclude Include="..\..\breath\checksum\luhn.hpp" />
     <ClInclude Include="..\..\breath\conversion\roman.hpp" />
-    <ClInclude Include="..\..\breath\counting\count.hpp" />
     <ClInclude Include="..\..\breath\counting\counter.hpp" />
+    <ClInclude Include="..\..\breath\counting\signed_count.hpp" />
     <ClInclude Include="..\..\breath\cpu\get_cpuid_info.hpp" />
     <ClInclude Include="..\..\breath\cryptography\digest.hpp" />
     <ClInclude Include="..\..\breath\cryptography\hashing_count.hpp" />

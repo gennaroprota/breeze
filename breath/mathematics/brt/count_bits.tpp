@@ -6,7 +6,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/counting/count.hpp"
+#include "breath/counting/signed_count.hpp"
 #include "breath/meta/has_sign.hpp"
 
 #include <climits>
@@ -40,12 +40,13 @@ constexpr unsigned char
 
 constexpr int       table_width = 8 ;
 
-static_assert( breath::count( count_table ) == ( 1u << table_width ), "" ) ;
+static_assert( breath::signed_count( count_table ) == ( 1u << table_width ),
+               "" ) ;
 
 //      This equality isn't necessary for the code to work; but, if you
 //      have e.g. UCHAR_MAX == 511 you might want to enlarge the table.
 // ---------------------------------------------------------------------------
-static_assert( breath::count( count_table ) == ( UCHAR_MAX + 1 ), "" ) ;
+static_assert( breath::signed_count( count_table ) == ( UCHAR_MAX + 1 ), "" ) ;
 
 }
 

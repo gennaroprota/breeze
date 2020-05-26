@@ -15,8 +15,11 @@
 //!     The syntax is, uniformly, \c breath::count( a ) regardless of
 //!     the actual type of \c a. See also begin_end.hpp.
 //!
-//!     These functions are made obsolete in C++17 by the namespace
-//!     scope std::size()'s. However our version uses, for containers,
+//!     Following C++ best practices, these templates return a \e signed
+//!     integer.
+//!
+//!     These functions are made obsolete in C++20 by the namespace
+//!     scope std::ssize()'s. However our version uses, for containers,
 //!     a conditional noexcept that the standard version is not
 //!     required to have.
 // ---------------------------------------------------------------------------
@@ -25,32 +28,35 @@
 #define BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
 
 #include <cstddef>
+#include <type_traits>
 
 namespace breath {
 
-//      count():
-//      ========
+//      signed_count():
+//      ===============
 //
 //!     \return
 //!         The number of elements of the array argument
 //!         (obviously, \c n). See also the file-level documentation.
 // ---------------------------------------------------------------------------
-template< typename T, std::size_t n >
-constexpr std::size_t
-count( T const ( & )[ n ] ) noexcept
+template< typename T, std::ptrdiff_t n >
+constexpr std::ptrdiff_t
+signed_count( T const ( & )[ n ] ) noexcept
 {
     return n ;
 }
 
-//      count():
-//      ========
+//      signed_count():
+//      ===============
 //
-//!     The same as \c t.size(), for any standard container. See also
-//!     the file-level documentation.
+//!     \return
+//!         The value of \c t.size() converted to the corresponding
+//!         signed type. See also the file-level documentation.
 // ---------------------------------------------------------------------------
 template< typename T >
-constexpr typename T::size_type
-count( T const & t ) noexcept( noexcept( t.size() ) )
+constexpr auto
+signed_count( T const & t ) noexcept( noexcept( t.size() ) ) ->
+                                    std::make_signed_t< decltype( t.size() ) >
 {
     return t.size() ;
 }

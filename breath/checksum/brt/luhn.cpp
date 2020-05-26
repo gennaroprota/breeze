@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/checksum/luhn.hpp"
-#include "breath/counting/count.hpp"
+#include "breath/counting/signed_count.hpp"
 #include "breath/diagnostics/exception.hpp"
 #include <numeric>
 
@@ -20,7 +20,7 @@ namespace breath {
 namespace        {
 
 int const           table[] = { 0, 2, 4, 6, 8, 1, 3, 5, 7, 9 } ;
-int const           base = static_cast< int >( breath::count( table ) ) ;
+int const           base = static_cast< int >( breath::signed_count( table ) ) ;
 
 //      Use this in lieu of std::isdigit(), because, under Microsoft
 //      with codepage 1252, std::isdigit() also returns true for some

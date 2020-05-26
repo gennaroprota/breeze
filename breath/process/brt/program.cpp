@@ -13,7 +13,7 @@
 // ___________________________________________________________________________
 
 #include "breath/process/program.hpp"
-#include "breath/counting/count.hpp"
+#include "breath/counting/signed_count.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include "breath/path/base_file_name.hpp"
 #include "breath/process/exit_code.hpp"
@@ -125,7 +125,7 @@ void
 program::declare_error( program::gravity g ) noexcept // gps nome OK?
 {
     BREATH_ASSERT( static_cast< unsigned int >( g ) <
-                     breath::count( exit_codes ) ) ;
+                     breath::signed_count( exit_codes ) ) ;
 
     if ( g > m_max_gravity ) {
         m_max_gravity = g ;

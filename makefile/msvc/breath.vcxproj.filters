@@ -380,10 +380,10 @@
     <ClInclude Include="..\..\breath\conversion\roman.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\counting\count.hpp">
+    <ClInclude Include="..\..\breath\counting\counter.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\counting\counter.hpp">
+    <ClInclude Include="..\..\breath\counting\signed_count.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\cryptography\digest.hpp">

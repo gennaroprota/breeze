@@ -13,7 +13,7 @@
 // ___________________________________________________________________________
 
 #include "breath/process/command_line.hpp"
-#include "breath/counting/count.hpp"
+#include "breath/counting/signed_count.hpp"
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
 #include "breath/process/program.hpp"
 #include "breath/process/program_option.hpp"
@@ -93,13 +93,13 @@ command_line::parse( int argc,  char const * const * argv )
         char const          dashdash[] = "--" ;
         if ( begins_with( argv[i], dashdash ) ) {
             char const * const  p = std::strchr( argv[ i ] +
-                                            ( breath::count( dashdash ) - 1 ), '=' ) ;
+                                            ( breath::signed_count( dashdash ) - 1 ), '=' ) ;
             if ( p != nullptr ) {
-                std::string const   name( argv[ i ] + ( breath::count(dashdash) - 1 ), p ) ;
+                std::string const   name( argv[ i ] + ( breath::signed_count(dashdash) - 1 ), p ) ;
                 std::string const   value( p + 1 ) ;
                 set_option( name, value ) ;
             } else {
-                std::string name( argv[ i ] + ( breath::count( dashdash ) - 1 ) ) ;
+                std::string name( argv[ i ] + ( breath::signed_count( dashdash ) - 1 ) ) ;
                 if ( m_options.count( name ) == 0 ) {
                     m_errors.push_back( "undefined option: --" + name ) ;
                     continue ;

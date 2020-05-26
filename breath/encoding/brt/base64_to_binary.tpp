@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 
 #include "breath/diagnostics/exception.hpp"
-#include "breath/counting/count.hpp"
+#include "breath/counting/signed_count.hpp"
 #include <climits>
 #include <cstddef>
 #include <type_traits>
@@ -41,7 +41,7 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
     } ;
 
-    static_assert( ( UCHAR_MAX == count( table ) - 1 ) &&
+    static_assert( ( UCHAR_MAX == signed_count( table ) - 1 ) &&
        ( std::is_same< typename InputIter::value_type, char >::value
       || std::is_same< typename InputIter::value_type, unsigned char >::value ),
                    "" ) ;
