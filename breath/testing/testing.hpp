@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Cumulative header for the unit testing facilities.
+//!     \brief Cumulative include file for the unit testing facilities.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ntjESDWS7R0VczgCNAyZQonfItWUZ2As
