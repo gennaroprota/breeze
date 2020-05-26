@@ -102,7 +102,12 @@ ifndef compiler_command
 endif
 
 compiler_display_name := Clang
-compiler_version := $(shell $(compiler_command) -dumpversion)
+
+#       Get the version number from --version, because Clang's
+#       -dumpversion lies, for GCC compatibility.
+# ----------------------------------------------------------------------------
+compiler_version := $(shell $(compiler_command) --version 2>&1 |    \
+                 sed -n 's/.*version \([1-9]\+[0-9]*\.[0-9]*\.[0-9]*\).*/\1/p' )
 
 define compile_to_object
     $(compiler_command) $(cpp_options) -c -o $@ $<
