@@ -32,6 +32,11 @@ namespace breath {
 //!     non-deterministic source (but, as of writing this, there's no
 //!     such a system among those supported by Breath).
 //!
+//!     Also differently from \c std::random_device, this class does not
+//!     have an \c entropy() member, as that would be of dubious
+//!     usefulness (see e.g.
+//!     <https://codingnest.com/generating-random-numbers-using-c-standard-library-the-problems/>).
+//!
 //!     \note
 //!         This class is designed to be usable with random_shuffle
 //!         and shuffle. (This is, BTW, why it has members with the
@@ -40,10 +45,6 @@ namespace breath {
 //!
 //!     It satisfies the requirements of a "uniform random number
 //!     generator".
-//!
-//!     Differently from \c std::random_device, this class does not have
-//!     an \c entropy() member, as that would be of dubious usefulness
-//!     (see e.g. <https://codingnest.com/generating-random-numbers-using-c-standard-library-the-problems/>).
 //!
 //!     What about the complexity of g()? [gps]
 //!
