@@ -64,6 +64,13 @@ endef
 
 include_dir := $(root)
 
+ifndef cpp_extra_options
+    #       Silences warnings. (It's normal for this variable to be
+    #       undefined.)
+    # ------------------------------------------------------------------------
+    cpp_extra_options :=
+endif
+
 cpp_options = $(cpp_basic_options)                  \
               $(cpp_debug_options)                  \
               $(cpp_extra_options)                  \
