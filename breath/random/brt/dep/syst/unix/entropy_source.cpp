@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 //
-//      Implementation for systems that have /dev/random (Unix)
+//      Implementation for systems that have /dev/random (Unix).
 // ---------------------------------------------------------------------------
 
 #include "breath/random/entropy_source.hpp"
