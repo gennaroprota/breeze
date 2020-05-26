@@ -34,8 +34,8 @@ namespace breath {
 //      ===============
 //
 //!     \return
-//!         The number of elements of the array argument
-//!         (obviously, \c n). See also the file-level documentation.
+//!         The number of elements of the array argument (obviously, \c
+//!         n). See also the file-level documentation.
 // ---------------------------------------------------------------------------
 template< typename T, std::ptrdiff_t n >
 constexpr std::ptrdiff_t
