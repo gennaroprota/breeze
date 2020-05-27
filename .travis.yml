@@ -83,6 +83,14 @@ matrix:
 
           name: "GCC 8 on Ubuntu 16.04 (Xenial)"
 
+        - os: linux
+          dist: xenial
+
+          env:
+            - compiler=clang system=unix cpp_extra_options=-stdlib=libc++
+
+          name: "Clang 7 with libc++ on Ubuntu 16.04 (Xenial)"
+
 # Local Variables:
 # mode: yaml
 # indent-tabs-mode: nil
