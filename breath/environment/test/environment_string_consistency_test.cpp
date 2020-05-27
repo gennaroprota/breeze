@@ -29,10 +29,10 @@ check_consistency()
 
     for ( auto const & from_map : map )
     {
-        auto const &        from_function = breath::find_environment_string(
-                                                from_map.first ) ;
+        auto const &        from_direct_find = breath::find_environment_string(
+                                                   from_map.first ) ;
 
-        BREATH_CHECK( from_function.is_valid() ) ;
+        BREATH_CHECK( from_direct_find.is_valid() ) ;
 
         //      Give up on testing PATH, because, under Cygwin, the
         //      paths may be Windows-style or Unix-style according to
@@ -41,7 +41,7 @@ check_consistency()
         // -------------------------------------------------------------------
         if ( from_map.first != "PATH" )
         {
-            BREATH_CHECK( from_function.value() == from_map.second ) ;
+            BREATH_CHECK( from_direct_find.value() == from_map.second ) ;
         }
     }
 }
