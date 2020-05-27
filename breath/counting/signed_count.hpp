@@ -18,8 +18,9 @@
 //!     Following C++ best practices, these templates return a \e signed
 //!     integer. They are made obsolete in C++20 by the namespace scope
 //!     \c std::ssize()'s. However our version uses, for containers, a
-//!     conditional noexcept that the standard version is not required
-//!     to have.
+//!     simpler logic to determine the return type (it doesn't use \c
+//!     std::common_type); and, for containers again, has a conditional
+//!     noexcept that the standard version is not required to have.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
