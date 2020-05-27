@@ -327,6 +327,9 @@
     <ClCompile Include="..\..\breath\meta\test\is_2s_complement_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\environment\test\environment_string_consistency_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\checksum\brt\crc32.tpp" />
