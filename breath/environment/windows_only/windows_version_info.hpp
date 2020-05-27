@@ -10,6 +10,9 @@
 //!     \brief Microsoft Windows version information.
 // ---------------------------------------------------------------------------
 
+#ifndef BREATH_GUARD_XHTe6eJtKcY8TQSy4joG13QO3Eu5NfRF
+#define BREATH_GUARD_XHTe6eJtKcY8TQSy4joG13QO3Eu5NfRF
+
 #include "breath/idiom/declare_non_copyable.hpp"
 #include <string>
 
@@ -83,6 +86,8 @@ private:
 } ;
 
 }
+
+#endif
 
 // Local Variables:
 // mode: c++
