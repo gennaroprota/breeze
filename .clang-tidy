@@ -1,0 +1,90 @@
+---
+#       Notes for some of the disabled checks:
+#       --------------------------------------
+#
+#       bugprone-macro-parentheses:
+#
+#           Suggests parentheses around the parameters of
+#           BREATH_DEPENDENT_CODE() and similar (FWIW, PVS-Studio does
+#           the same). Since I don't use macros when functions or
+#           function templates do, let's just silence this.
+#
+#       clang-diagnostic-documentation-unknown-command:
+#
+#           Triggers on '\cond', as does -Wdocumentation on a "normal"
+#           Clang compilation; we have a workaround for that on normal
+#           compilation, and we don't want to repeat it here (I'm not
+#           sure that's even possible).
+#
+#       cppcoreguidelines-avoid-c-arrays:
+#
+#           Arrays are used in the library for lookup tables, for
+#           instance; and, using std::array, we could not deduce the
+#           number of elements unless we used C++17 or later. Also, the
+#           cryptographic facilities use arrays. And this check even
+#           warns on our signed_count() template. Frankly, it's not
+#           worth it.
+#
+#       cppcoreguidelines-avoid-magic-numbers:
+#
+#           It's not like I use magic numbers, but this check triggers
+#           even on things like:
+#
+#           class md5_engine
+#               :   public merkle_damgard_engine< 128, 512, little_endian_policy,
+#                                                 32, 128, hashing_count::wraps >
+#
+#       cppcoreguidelines-macro-usage:
+#
+#           Seems to trigger for *every* macro usage, including
+#           BREATH_ASSERT() and BREATH_DEPENDENT_CODE(). And suggests
+#           the possibility to use a constexpr template function :-s
+#
+#       fuchsia-default-arguments-calls:
+#
+#           Triggers on calling standard library functions, such as
+#           string::find_last_of().
+#
+#       fuchsia-default-arguments-declarations:
+#
+#           Should we use overloading, instead?
+#
+#       fuchsia-overloaded-operator:
+#
+#           This is just stupid.
+#
+#       google-runtime-int:
+#
+#           Doesn't seem particularly useful, and gives too many false
+#           positives in our code base, anyway.
+#
+#       google-runtime-references:
+#
+#           Triggers on function parameters that are references to
+#           non-const, and the cryptography parts make use of them (e.g.
+#           init_state() and process_block()).
+#
+#       hicpp-avoid-c-arrays:
+#
+#           See cppcoreguidelines-avoid-c-arrays.
+#
+#       hicpp-no-array-decay:
+#
+#           Triggers even on things like std::cout << arr, so, unless
+#           you avoid arrays altogether, it's a no-no.
+#
+#       modernize-avoid-c-arrays:
+#
+#           See cppcoreguidelines-avoid-c-arrays.
+#
+#       modernize-use-nullptr:
+#
+#           Triggers on usage of 'NULL' for Windows handles: see
+#           clang.mk.
+#
+#       TODO: how to split this over multiple lines?
+# ----------------------------------------------------------------------------
+Checks:                '*,-bugprone-macro-parentheses,-clang-diagnostic-documentation-unknown-command,-cppcoreguidelines-avoid-c-arrays,-cppcoreguidelines-avoid-magic-numbers,-cppcoreguidelines-macro-usage,-fuchsia-default-arguments-calls,-fuchsia-default-arguments-declarations,-fuchsia-overloaded-operator,-fuchsia-trailing-return,-google-readability-namespace-comments,-google-runtime-int,-google-runtime-references,-hicpp-avoid-c-arrays,-hicpp-no-array-decay,-llvm-header-guard,-llvm-namespace-comment,-modernize-avoid-c-arrays,-modernize-use-nullptr,-modernize-use-trailing-return-type,-modernize-use-using,-readability-magic-numbers,-readability-named-parameter'
+
+WarningsAsErrors:      '-Werror'
+AnalyzeTemporaryDtors: true
