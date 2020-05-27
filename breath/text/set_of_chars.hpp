@@ -316,6 +316,7 @@ public:
         index_type          m_index ;
 
         void                increment() noexcept ;
+        void                assert_refers_to_a_char() const noexcept ;
     } ;
 } ;
 

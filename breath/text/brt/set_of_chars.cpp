@@ -223,8 +223,7 @@ set_of_chars::cend() const noexcept
 char
 set_of_chars::iterator::operator *() const noexcept
 {
-    BREATH_ASSERT( m_index < set_of_chars::size ) ;
-    BREATH_ASSERT( ( ( *m_owner )[ m_index ] ) ) ;
+    assert_refers_to_a_char() ;
 
     return to_char( m_index ) ;
 }
@@ -232,8 +231,7 @@ set_of_chars::iterator::operator *() const noexcept
 set_of_chars::iterator &
 set_of_chars::iterator::operator ++() & noexcept
 {
-    BREATH_ASSERT( m_index < set_of_chars::size ) ;
-    BREATH_ASSERT( ( ( *m_owner )[ m_index ] ) ) ;
+    assert_refers_to_a_char() ;
 
     increment() ;
     return *this ;
@@ -271,6 +269,17 @@ set_of_chars::iterator::increment() noexcept
     do {
         ++ m_index ;
     } while ( m_index < set_of_chars::size && ! ( *m_owner )[ m_index ] ) ;
+}
+
+void
+set_of_chars::iterator::assert_refers_to_a_char() const noexcept
+{
+    BREATH_ASSERT( m_index < set_of_chars::size ) ;
+
+    //      '== true' is used to workaround libc++, which returns a
+    //      proxy from operator []() even in the const case.
+    // -----------------------------------------------------------------------
+    BREATH_ASSERT( ( ( *m_owner )[ m_index ] ) == true ) ;
 }
 
 }
