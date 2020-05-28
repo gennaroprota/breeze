@@ -12,6 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/environment/windows_only/windows_version_info.hpp"
+#include "breath/conversion/bit_cast.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/text/to_string.hpp"
@@ -357,7 +358,7 @@ windows_version_info::is_wow64_process()
     BOOL                is_wow64 = 0 ;
 
     fn_ptr_type const   is_wow64_process =
-                reinterpret_cast< fn_ptr_type >(
+                breath::bit_cast< fn_ptr_type >(
                         GetProcAddress( module, "IsWow64Process" ) ) ;
 
     if ( is_wow64_process == nullptr ) {

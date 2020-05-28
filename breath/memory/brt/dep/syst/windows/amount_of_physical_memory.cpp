@@ -12,6 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/memory/amount_of_physical_memory.hpp"
+#include "breath/conversion/bit_cast.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
 
 #define UNICODE
@@ -33,7 +34,7 @@ amount_of_physical_memory()
 
     fn_ptr_type const   get_physical_memory = module == NULL
                                 ? nullptr
-                                : reinterpret_cast< fn_ptr_type >(
+                                : breath::bit_cast< fn_ptr_type >(
              GetProcAddress( module, "GetPhysicallyInstalledSystemMemory" ) ) ;
     ULONGLONG           amount ;
     if ( get_physical_memory == nullptr
