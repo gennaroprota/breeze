@@ -7,7 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A thin wrapper around \c std::strftime().
+//!     \brief A thin wrapper around \c std::strftime(), plus some
+//!            predefined format strings.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_wR9yYhDtICLHOJ6c2LmBkhMWoYoaeVkS
@@ -17,6 +18,41 @@
 #include <string>
 
 namespace breath {
+
+//      Predefined format strings:
+//      ==========================
+//
+//!     These variables allow using meaningful names in combination with
+//!     \c time_string(); e.g. you can write
+//!
+//!     \code
+//!         time_string( iso8601_extended_date ) ;
+//!     \endcode
+//!
+//!     Only a small number of format strings are provided.
+//!
+//!     \note
+//!         These are not <code>std::string</code>s, to avoid any order
+//!         of initialization issues. But this means that e.g.
+//!         concatening their values may be a bit less straightforward.
+// ---------------------------------------------------------------------------
+
+//!     Gives a calendar date in the format \c YYYYMMDD.
+// ---------------------------------------------------------------------------
+extern char const   iso8601_basic_date[] ;
+
+//!     Gives a calendar date in the format \c YYYY-MM-DD.
+// ---------------------------------------------------------------------------
+extern char const   iso8601_extended_date[] ;
+
+//!     Gives a time of the day in the format \c hhmmss.
+// ---------------------------------------------------------------------------
+extern char const   iso8601_basic_time[] ;
+
+//!     Gives a time of the day in the format \c hh:mm:ss.
+// ---------------------------------------------------------------------------
+extern char const   iso8601_extended_time[] ;
+
 
 //      time_string_zone:
 //      =================

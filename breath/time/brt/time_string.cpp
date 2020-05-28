@@ -18,6 +18,18 @@
 
 namespace breath {
 
+//      The extended date and time could be obtained (since C99 and
+//      C++11) with %F and %T, respectively. But I'm not sure how many
+//      libraries have updated their implementation of strftime() to
+//      support these specifiers.
+// ---------------------------------------------------------------------------
+char const          iso8601_basic_date[]    = "%Y%m%d" ;
+char const          iso8601_extended_date[] = "%Y-%m-%d" ;
+
+char const          iso8601_basic_time[]    = "%H%M%S" ;
+char const          iso8601_extended_time[] = "%H:%M:%S" ;
+
+
 //      IMPLEMENTATION NOTE:
 //      --------------------
 //      Intentionally I used a fixed size buffer here: the size is
