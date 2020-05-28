@@ -330,6 +330,9 @@
     <ClCompile Include="..\..\breath\environment\test\environment_string_consistency_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\conversion\test\bit_cast_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\checksum\brt\crc32.tpp" />
@@ -366,6 +369,7 @@
     <None Include="..\..\breath\text\brt\trim_if.tpp" />
     <None Include="..\..\breath\workaround\brt\as_non_constant.tpp" />
     <None Include="..\..\breath\stream\brt\stream_equivalent.tpp" />
+    <None Include="..\..\breath\conversion\brt\bit_cast.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\secure_fill.hpp">
@@ -717,6 +721,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\text\to_uppercase.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\conversion\bit_cast.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

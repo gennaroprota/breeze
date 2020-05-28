@@ -208,6 +208,12 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\breath\conversion\brt\roman.cpp" />
+    <ClCompile Include="..\..\breath\conversion\test\bit_cast_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\breath\conversion\test\roman_test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -551,6 +557,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\checksum\brt\crc32.tpp" />
+    <None Include="..\..\breath\conversion\brt\bit_cast.tpp" />
     <None Include="..\..\breath\counting\brt\counter.tpp" />
     <CustomBuild Include="..\..\breath\cpu\brt\get_cpuid_info.asm">
       <FileType>Document</FileType>
@@ -605,6 +612,7 @@
     <ClInclude Include="..\..\breath\alignment\aligned_storage_for.hpp" />
     <ClInclude Include="..\..\breath\checksum\crc32.hpp" />
     <ClInclude Include="..\..\breath\checksum\luhn.hpp" />
+    <ClInclude Include="..\..\breath\conversion\bit_cast.hpp" />
     <ClInclude Include="..\..\breath\conversion\roman.hpp" />
     <ClInclude Include="..\..\breath\counting\counter.hpp" />
     <ClInclude Include="..\..\breath\counting\signed_count.hpp" />
