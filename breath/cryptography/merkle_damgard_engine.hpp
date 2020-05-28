@@ -15,8 +15,8 @@
 #define BREATH_GUARD_fYqwSU8p6zoTOMzKlvSB4iz96M3PyUF5
 
 #include "breath/cryptography/hashing_count.hpp"
-#include "breath/meta/exact_width_integer.hpp"
 #include "breath/endianness/endian_codec.hpp"
+#include "breath/meta/exact_width_integer.hpp"
 
 #include <cstddef>
 
