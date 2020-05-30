@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/conversion/roman.hpp"
-#include "breath/environment/find_environment_string.hpp"
+#include "breath/environment/get_environment_variable.hpp"
 #include "breath/testing/testing.hpp"
 
 #include <algorithm>
@@ -45,7 +45,7 @@ classic_to_lower( std::string const & s )
 void
 check()
 {
-    std::string const   breath_root = breath::find_environment_string(
+    std::string const   breath_root = breath::get_environment_variable(
                                                     "BREATH_ROOT" ).value() ;
     std::ifstream       is( breath_root
                             + "/breath/conversion/test/a006968.txt" ) ;

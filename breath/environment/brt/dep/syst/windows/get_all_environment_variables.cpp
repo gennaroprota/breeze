@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/environment/get_environment_map.hpp"
+#include "breath/environment/get_all_environment_variables.hpp"
 #include "breath/diagnostics/exception.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
 #include "breath/process/program.hpp"
@@ -36,7 +36,7 @@ do_free( char * p ) noexcept
 namespace breath {
 
 std::map< std::string, std::string >
-get_environment_map()
+get_all_environment_variables()
 {
     typedef std::map< std::string, std::string >
                         result_type ;
@@ -57,7 +57,7 @@ get_environment_map()
             //      On my system the string pointed to by start begins
             //      with "=::=::\", hence the test on empty(). Note that
             //      this makes things consistent, because
-            //      find_environment_string( "" ) fails (at least in my
+            //      get_environment_variable( "" ) fails (at least in my
             //      tests).
             // ---------------------------------------------------------------
             if ( ! name.empty() ) {

@@ -53,8 +53,8 @@ source_files := luhn.cpp                                    \
                 exception.cpp                               \
                 last_api_error.cpp                          \
                                                             \
-                find_environment_string.cpp                 \
-                get_environment_map.cpp                     \
+                get_all_environment_variables.cpp           \
+                get_environment_variable.cpp                \
                 operating_system_name.cpp                   \
                                                             \
                 amount_of_physical_memory.cpp               \

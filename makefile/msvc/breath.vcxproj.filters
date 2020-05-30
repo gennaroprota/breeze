@@ -90,16 +90,7 @@
     <ClCompile Include="..\..\breath\encoding\test\binary_to_base64_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\environment\brt\find_environment_string.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\breath\environment\brt\get_environment_map.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\breath\environment\brt\operating_system_name.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\breath\environment\test\find_environment_string_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breath\environment\windows_only\brt\get_os.cpp">
@@ -327,13 +318,22 @@
     <ClCompile Include="..\..\breath\meta\test\is_2s_complement_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\environment\test\environment_string_consistency_test.cpp">
+    <ClCompile Include="..\..\breath\environment\brt\get_environment_variable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breath\conversion\test\bit_cast_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breath\testing\brt\test_reporter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\breath\environment\brt\get_all_environment_variables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\breath\environment\test\environment_variable_consistency_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\breath\environment\test\get_environment_variable_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -451,12 +451,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\endianness\endian_codec.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breath\environment\find_environment_string.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breath\environment\get_environment_map.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\environment\operating_system_name.hpp">
@@ -727,6 +721,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\conversion\bit_cast.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\environment\get_environment_variable.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\environment\get_all_environment_variables.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

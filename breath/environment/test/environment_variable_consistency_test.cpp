@@ -11,8 +11,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/environment/find_environment_string.hpp"
-#include "breath/environment/get_environment_map.hpp"
+#include "breath/environment/get_environment_variable.hpp"
+#include "breath/environment/get_all_environment_variables.hpp"
 #include "breath/testing/testing.hpp"
 #include <iostream>
 
@@ -25,23 +25,23 @@ namespace {
 void
 check_consistency()
 {
-    auto const &        map = breath::get_environment_map() ;
+    auto const &        map = breath::get_all_environment_variables() ;
 
     for ( auto const & from_map : map )
     {
-        auto const &        from_direct_find = breath::find_environment_string(
-                                                   from_map.first ) ;
+        auto const &        from_get_single = breath::get_environment_variable(
+                                                  from_map.first ) ;
 
-        BREATH_CHECK( from_direct_find.is_valid() ) ;
+        BREATH_CHECK( from_get_single.is_valid() ) ;
 
         //      Give up on testing PATH, because, under Cygwin, the
         //      paths may be Windows-style or Unix-style according to
         //      whether we use get_enviroment_map() or
-        //      find_environment_string().
+        //      get_environment_variable().
         // -------------------------------------------------------------------
         if ( from_map.first != "PATH" )
         {
-            BREATH_CHECK( from_direct_find.value() == from_map.second ) ;
+            BREATH_CHECK( from_get_single.value() == from_map.second ) ;
         }
     }
 }

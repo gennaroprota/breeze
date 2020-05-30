@@ -11,14 +11,14 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/environment/get_environment_map.hpp"
+#include "breath/environment/get_all_environment_variables.hpp"
 #include "breath/diagnostics/exception.hpp"
 #include <unistd.h>
 
 namespace breath {
 
 std::map< std::string, std::string >
-get_environment_map()
+get_all_environment_variables()
 {
     typedef std::map< std::string, std::string >
                         result_type ;

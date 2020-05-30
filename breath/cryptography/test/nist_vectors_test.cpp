@@ -23,7 +23,7 @@
 #include "breath/cryptography/digest.hpp"
 #include "breath/cryptography/sha1_hasher.hpp"
 #include "breath/diagnostics/assert.hpp"
-#include "breath/environment/find_environment_string.hpp"
+#include "breath/environment/get_environment_variable.hpp"
 #include "breath/text/from_string.hpp"
 #include "breath/text/to_string.hpp"
 
@@ -56,7 +56,7 @@ public:
 
 nist_file::nist_file( char const * file_name )
 {
-    std::string const   breath_root( breath::find_environment_string(
+    std::string const   breath_root( breath::get_environment_variable(
                                                     "BREATH_ROOT" ).value() ) ;
     std::string const   subdir( breath_root +
                                    "/breath/cryptography/test/nist_vectors/" ) ;

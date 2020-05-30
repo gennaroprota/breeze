@@ -11,32 +11,23 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/environment/find_environment_string.hpp"
+#include "breath/environment/get_environment_variable.hpp"
 #include "breath/idiom/maybe.hpp"
+#include <string>
 
-#include <cstdlib>
+/////////
+#include "breath/diagnostics/assert.hpp"
+#define DO_TEST( x ) BREATH_ASSERT( x )
+//////
 
-namespace breath {
-
-maybe< std::string >
-find_environment_string( std::string const & name )
+int
+main()
 {
-    typedef maybe< std::string >
-                        maybe_type ;
+    using namespace breath ;
 
-    char const * const  p( std::getenv( name.c_str() ) ) ;
+    maybe< std::string > const
+                        e = get_environment_variable( "BREATH_ROOT" ) ;
 
-    return p == nullptr
-        ? maybe_type()
-        : maybe_type( std::string( p ) )
-        ;
+    DO_TEST( e.is_valid() ) ;
+    DO_TEST( ! e.value().empty() ) ;
 }
-
-}
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

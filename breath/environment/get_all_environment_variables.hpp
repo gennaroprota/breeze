@@ -24,7 +24,7 @@ namespace breath {
 //!         environment variables.
 // ---------------------------------------------------------------------------
 std::map< std::string, std::string >
-                    get_environment_map() ;
+                    get_all_environment_variables() ;
 
 }
 
