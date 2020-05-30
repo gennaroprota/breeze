@@ -79,6 +79,7 @@ source_files := luhn.cpp                                    \
                 console_reporter.cpp                        \
                 test_descriptor.cpp                         \
                 test_exception.cpp                          \
+                test_reporter.cpp                           \
                 test_runner.cpp                             \
                                                             \
                 begins_with.cpp                             \

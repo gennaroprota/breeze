@@ -22,18 +22,31 @@ class test_exception ;
 class test_reporter
 {
 public:
-    virtual void        on_all_tests_begin() = 0 ;
-    virtual void        on_all_tests_end()   = 0 ;
-    virtual void        on_test_begin( int test_number,
-                                        char const * name = "" ) = 0 ;
-    virtual void        on_test_passed( int test_number ) = 0 ;
-    virtual void        on_test_failed( int test_number,
-                                         test_exception const & ) = 0 ;
-    virtual void        on_unexpected_exception( int test_number ) = 0 ;
-    virtual void        on_unexpected_exception( int test_number,
-                                                  std::exception const & ) = 0 ;
+    void                on_all_tests_begin() ;
+    void                on_all_tests_end() ;
+    void                on_test_begin( int test_number,
+                                       char const * name = "" ) ;
+    void                on_test_passed( int test_number ) ;
+    void                on_test_failed( int test_number,
+                                        test_exception const & ) ;
+    void                on_unexpected_exception( int test_number ) ;
+    void                on_unexpected_exception( int test_number,
+                                                 std::exception const & ) ;
 
     virtual             ~test_reporter() noexcept {}
+
+private:
+    virtual void        do_on_all_tests_begin() = 0 ;
+    virtual void        do_on_all_tests_end()   = 0 ;
+    virtual void        do_on_test_begin( int test_number,
+                                          char const * name ) = 0 ;
+    virtual void        do_on_test_passed( int test_number ) = 0 ;
+    virtual void        do_on_test_failed( int test_number,
+                                           test_exception const & ) = 0 ;
+    virtual void        do_on_unexpected_exception( int test_number ) = 0 ;
+    virtual void        do_on_unexpected_exception( int test_number,
+                                                 std::exception const & ) = 0 ;
+
 } ;
 
 }

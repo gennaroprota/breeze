@@ -33,19 +33,19 @@ public:
 
     explicit            console_reporter( std::ostream & os ) ;
 
-    virtual void        on_all_tests_begin() override ;
-    virtual void        on_all_tests_end() override ;
-    virtual void        on_test_begin( int test_number,
-                                        char const * name = "" ) override ;
-    virtual void        on_test_passed( int test_number ) override ;
-    virtual void        on_test_failed( int test_number,
-                                        test_exception const & ) override ;
-    virtual void        on_unexpected_exception( int test_number ) override ;
-    virtual void        on_unexpected_exception( int test_number,
-                                                  std::exception const & )
+private:
+    virtual void        do_on_all_tests_begin() override ;
+    virtual void        do_on_all_tests_end() override ;
+    virtual void        do_on_test_begin( int test_number,
+                                           char const * name ) override ;
+    virtual void        do_on_test_passed( int test_number ) override ;
+    virtual void        do_on_test_failed( int test_number,
+                                           test_exception const & ) override ;
+    virtual void        do_on_unexpected_exception( int test_number ) override ;
+    virtual void        do_on_unexpected_exception( int test_number,
+                                                     std::exception const & )
                                                                       override ;
 
-private:
     std::ostream &      m_stream ;
     int                 m_passed ;
     int                 m_failed ;

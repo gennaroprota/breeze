@@ -27,13 +27,13 @@ console_reporter::console_reporter( std::ostream & os )
 }
 
 void
-console_reporter::on_all_tests_begin()
+console_reporter::do_on_all_tests_begin()
 {
     m_stream << "Unit tests:" << std::endl ;
 }
 
 void
-console_reporter::on_all_tests_end()
+console_reporter::do_on_all_tests_end()
 {
     m_stream << std::endl << "Passed: " << m_passed << ", failed: " << m_failed
                           << ", unexp. exceptions: " << m_unexpected_exceptions
@@ -41,34 +41,34 @@ console_reporter::on_all_tests_end()
 }
 
 void
-console_reporter::on_test_begin( int test_number, char const * )
+console_reporter::do_on_test_begin( int test_number, char const * )
 {
     m_stream << '[' << test_number << '=' ;
 }
 
 void
-console_reporter::on_test_passed( int )
+console_reporter::do_on_test_passed( int )
 {
     m_stream << "P]" ;
     ++ m_passed ;
 }
 
 void
-console_reporter::on_test_failed(int, test_exception const & ex )
+console_reporter::do_on_test_failed(int, test_exception const & ex )
 {
     m_stream << "F (" << ex.file_name() << ": " << ex.line_number() << ")]" ;
     ++ m_failed ;
 }
 
 void
-console_reporter::on_unexpected_exception( int )
+console_reporter::do_on_unexpected_exception( int )
 {
     m_stream << "X]" ;
     ++ m_unexpected_exceptions ;
 }
 
 void
-console_reporter::on_unexpected_exception( int,
+console_reporter::do_on_unexpected_exception( int,
                                            std::exception const & ex )
 {
     m_stream << "X (" << typeid( ex ).name() << ": " << ex.what() << ")]" ;

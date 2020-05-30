@@ -451,6 +451,7 @@
     <ClCompile Include="..\..\breath\testing\brt\console_reporter.cpp" />
     <ClCompile Include="..\..\breath\testing\brt\test_descriptor.cpp" />
     <ClCompile Include="..\..\breath\testing\brt\test_exception.cpp" />
+    <ClCompile Include="..\..\breath\testing\brt\test_reporter.cpp" />
     <ClCompile Include="..\..\breath\testing\brt\test_runner.cpp" />
     <ClCompile Include="..\..\breath\text\brt\begins_with.cpp" />
     <ClCompile Include="..\..\breath\text\brt\ends_with.cpp" />
