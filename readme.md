@@ -127,6 +127,12 @@ line:
 
 Please, have a look at the guidelines if you are not familiar with them.
 
+# Future directions
+
+The facilities for command line options will be removed and replaced with
+something better. They came from another library, and seemed good at the time,
+but, on closer analysis, show their limitations.
+
 # License
 
 Breath is made available subject to the terms of the 3-Clause BSD License,
