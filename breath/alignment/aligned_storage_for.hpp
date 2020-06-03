@@ -36,11 +36,13 @@ public:
                         value = sizeof( hack ) - sizeof( T ) ;
 
 private:
-    //      Surrogate of a static_assert (which we don't use because we
+    //      Surrogates of static_asserts (which we don't use because we
     //      want this file to be usable in C++98/03).
     // -----------------------------------------------------------------------
     char                is_power_of_2[ value > 0 &&
                                      ( value & ( value-1 ) ) == 0 ] ;
+
+    char                is_submultiple[ sizeof( T ) % value == 0 ] ;
 } ;
 
 template< typename T >
