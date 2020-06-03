@@ -336,6 +336,9 @@
     <ClCompile Include="..\..\breath\environment\test\get_environment_variable_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\mathematics\test\rounded_up_quotient_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\checksum\brt\crc32.tpp" />
@@ -373,6 +376,7 @@
     <None Include="..\..\breath\workaround\brt\as_non_constant.tpp" />
     <None Include="..\..\breath\stream\brt\stream_equivalent.tpp" />
     <None Include="..\..\breath\conversion\brt\bit_cast.tpp" />
+    <None Include="..\..\breath\mathematics\brt\rounded_up_quotient.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\secure_fill.hpp">
@@ -727,6 +731,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\environment\get_all_environment_variables.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\mathematics\rounded_up_quotient.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

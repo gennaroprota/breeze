@@ -362,6 +362,12 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\breath\mathematics\test\rounded_up_quotient_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\breath\memory\brt\amount_of_physical_memory.cpp" />
     <ClCompile Include="..\..\breath\memory\test\auto_array_test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -592,6 +598,7 @@
     <None Include="..\..\breath\mathematics\brt\is_power_of_2.tpp" />
     <None Include="..\..\breath\mathematics\brt\lcm.tpp" />
     <None Include="..\..\breath\mathematics\brt\representation_in_base.tpp" />
+    <None Include="..\..\breath\mathematics\brt\rounded_up_quotient.tpp" />
     <None Include="..\..\breath\memory\brt\auto_array.tpp" />
     <None Include="..\..\breath\meta\brt\is_2s_complement.tpp" />
     <None Include="..\..\breath\process\brt\command_line.tpp" />
@@ -657,6 +664,7 @@
     <ClInclude Include="..\..\breath\mathematics\is_power_of_2.hpp" />
     <ClInclude Include="..\..\breath\mathematics\lcm.hpp" />
     <ClInclude Include="..\..\breath\mathematics\representation_in_base.hpp" />
+    <ClInclude Include="..\..\breath\mathematics\rounded_up_quotient.hpp" />
     <ClInclude Include="..\..\breath\memory\auto_array.hpp" />
     <ClInclude Include="..\..\breath\meta\constant.hpp" />
     <ClInclude Include="..\..\breath\meta\exact_width_integer.hpp" />
