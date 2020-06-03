@@ -20,3 +20,16 @@ trim_trailing_whitespace = true
 
 [*.el]
 indent_size = 2
+
+#       Normally, these files are edited by Visual Studio. But I may
+#       edit them in Vim or TortoiseGitMerge if e.g. there are
+#       conflicts. So better specifying these settings.
+# ----------------------------------------------------------------------------
+[*.sln]
+indent_style=tab
+
+#       Ditto.
+# ----------------------------------------------------------------------------
+[*.{vcxproj,vcxproj.filters}]
+indent_size = 2
+insert_final_newline = false
