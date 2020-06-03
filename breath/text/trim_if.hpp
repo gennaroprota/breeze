@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A std::string trimmer accepting a predicate.
+//!     \brief A \c std::string trimmer accepting a predicate.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_12722kkPcCmt1PN91r0QOwrcsntBhbKr

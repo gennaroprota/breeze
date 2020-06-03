@@ -7,7 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Removes a \c std::string from the end of a std::string.
+//!     \brief Removes a \c std::string from the end of a \c
+//!            std::string.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_vf6LuqjTQ9wAJWXZsNnALWlVf4PYtieN

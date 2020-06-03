@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief The representation of an integer, in base b.
+//!     \brief The representation of an integer in base \c b.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_lqF1VhyaeQBA6t5SZLvv9rpFKK1iZVzu

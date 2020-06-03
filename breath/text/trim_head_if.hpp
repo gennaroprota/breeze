@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A std::string trimmer accepting a predicate (head of
+//!     \brief A \c std::string trimmer accepting a predicate (head of
 //!            string).
 // ---------------------------------------------------------------------------
 
