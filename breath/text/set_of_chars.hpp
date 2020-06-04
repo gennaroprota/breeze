@@ -222,7 +222,7 @@ public:
     //!     \return
     //!         The cardinality of the set.
     // -----------------------------------------------------------------------
-    std::size_t         count() const noexcept ;
+    std::ptrdiff_t      count() const noexcept ;
 
     //!     \return
     //!         Whether the set contains no characters.

@@ -166,10 +166,10 @@ set_of_chars::as_string() const
     return std::string( cbegin(), cend() ) ;
 }
 
-std::size_t
+std::ptrdiff_t
 set_of_chars::count() const noexcept
 {
-    return m_bits.count() ;
+    return static_cast< std::ptrdiff_t >( m_bits.count() ) ;
 }
 
 bool
