@@ -12,10 +12,9 @@
 // ___________________________________________________________________________
 
 #include <array>
-#include <cstddef>
+#include <cstring>
 #include <iomanip>
 #include <iostream>
-#include <iterator>
 #include <ostream>
 
 int
@@ -31,7 +30,8 @@ main()
     std::array< int, size >
                         table ;
     table.fill( invalid ) ;
-    for ( std::size_t i = 0 ; i < std::size( alphabet ) - 1 ; ++ i ) {
+    auto const          length = static_cast< int >( std::strlen( alphabet ) ) ;
+    for ( int i = 0 ; i < length ; ++ i ) {
         table[ alphabet[ i ] ] = static_cast< int >( i ) ;
     }
 
