@@ -118,6 +118,11 @@ define compile_to_dependency
                         -MF $(dependency_dir)/$*.temp_dep $<
 endef
 
+define build_library
+    rm -f $@
+    ar -rc $@ $^
+endef
+
 define link_to_exec
     $(compiler_command) $(cpp_options) -o $@ $+
 endef

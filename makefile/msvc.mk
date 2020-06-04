@@ -157,6 +157,11 @@ define compile_to_dependency
         $(cygwin_sort) -u > $(dependency_dir)/$*.temp_dep
 endef
 
+define build_library
+    rm -f $@
+    lib /OUT:$@ /WX $^
+endef
+
 #       Note that the /link option (and its arguments) must appear last.
 #
 #       We need to invoke the linker, not the compiler; but using cl.exe

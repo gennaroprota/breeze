@@ -56,11 +56,6 @@ define do_for_all_subdirs
     done
 endef
 
-define build_library
-    rm -f $@
-    ar -rc $@ $^
-endef
-
 
 include_dir := $(root)
 
