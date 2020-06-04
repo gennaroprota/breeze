@@ -30,7 +30,7 @@ main()
     int const           invalid = -1 ;
     std::array< int, size >
                         table ;
-    table.assign( invalid ) ;
+    table.fill( invalid ) ;
     for ( std::size_t i = 0 ; i < std::size( alphabet ) - 1 ; ++ i ) {
         table[ alphabet[ i ] ] = static_cast< int >( i ) ;
     }
