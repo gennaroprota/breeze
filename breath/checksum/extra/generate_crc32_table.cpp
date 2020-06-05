@@ -58,7 +58,7 @@ main()
     private:
         fast32_type     m_n = 0 ;
     } ;
-    std::generate( table.begin(), table.end(), byte_checksum{} ) ;
+    std::generate( table.begin(), table.end(), byte_checksum() ) ;
     int const           numbers_per_line = 6 ;
     int const           indent_size = 4 ;
     std::string const   indent( indent_size, ' ' ) ;

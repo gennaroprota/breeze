@@ -42,7 +42,7 @@ main()
         unsigned int        m_n = 0 ;
     } ;
 
-    std::generate( table.begin(), table.end(), bit_count{} ) ;
+    std::generate( table.begin(), table.end(), bit_count() ) ;
     int const           numbers_per_line = 16 ;
     int const           indent_size = 4 ;
     std::string const   indent( indent_size, ' ' ) ;
