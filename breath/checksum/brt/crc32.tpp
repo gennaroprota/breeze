@@ -93,7 +93,7 @@ crc32( InputIterator begin, InputIterator end )
     return all_ones ^
            std::accumulate( begin, end,
                               initial_value,
-            []( std::uint_fast32_t checksum, std::uint_fast8_t value )
+            [=]( std::uint_fast32_t checksum, std::uint_fast8_t value )
             {
                 return        ( checksum / table_size ) ^
                        table[ ( checksum ^ value ) & ( table_size - 1 ) ] ;
