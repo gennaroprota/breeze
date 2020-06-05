@@ -28,10 +28,12 @@ namespace endian_codec_private {
 template< typename T, typename Byte >
 class width_ratio
 {
-    static_assert( meta::width< T >::value % meta::width< Byte >::value == 0,
-                   "a T must be wide exactly n Bytes" ) ;
-
     enum { q = meta::width< T >::value / meta::width< Byte >::value } ;
+
+    static_assert( q == 0 ||
+                     meta::width< T >::value % meta::width< Byte >::value == 0,
+                   "a T must fit in one Byte or be wide exactly n Bytes" ) ;
+
 
 public:
     // how many Bytes do we need to store a T?
@@ -198,10 +200,10 @@ public:
 //!     It is only designed for reads and writes in memory.
 //!
 //!     \par Type requirements
-//!         \c T and \c Byte shall be unsigned integral types.
-//!         There's no requirement that \c Byte have a smaller em width
-//!         than \c T, but the width of \c Byte must evenly divide the
-//!         width of \c T.
+//!         \c T and \c Byte shall be integral types with no sign.
+//!         The width of \c T must be smaller than the width of \c Byte
+//!         (e.g. you can store a 32-bit integer into a 64-bit one) or
+//!         an exact multiple of it.
 //!
 //!     \warning
 //!         Given its generality it might be a good idea to rename
