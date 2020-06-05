@@ -30,7 +30,8 @@ namespace breath {
 //!         available, and need to calculate the CRC-32 in multiple
 //!         steps. If so, I might add a third parameter, with a default
 //!         to zero, for passing the CRC calculated in the previous
-//!         step (thus "updating" it).
+//!         step (thus "updating" it). Or I might transform this into a
+//!         stateful functor.
 // ---------------------------------------------------------------------------
 template< typename InputIterator >
 std::uint_fast32_t  crc32( InputIterator begin, InputIterator end ) ;
