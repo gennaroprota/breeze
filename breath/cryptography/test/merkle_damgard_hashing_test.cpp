@@ -39,9 +39,14 @@ class test_vectors
 public:
     struct test_entry
     {
+        test_entry( std::string const & s, std::string const & e, int r = 0 )
+            :   source( s ), expected( e ), repetitions( r )
+        {
+        } 
+
         std::string         source ;
         std::string         expected ;
-        int                 repetitions = 0 ;
+        int                 repetitions ;
     } ;
 
     static test_entry const
