@@ -16,7 +16,7 @@
 #include <iostream>
 #include <ostream>
 
-namespace breath {
+namespace {
 
 void
 do_tests()
