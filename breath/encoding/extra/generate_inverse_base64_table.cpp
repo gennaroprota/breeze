@@ -37,17 +37,21 @@ main()
 
     std::ostream &      os = std::cout ;
 
-    os << "static int const    table[] = \n{\n    " ;
+    os << "static int const    table[] =\n{\n    " ;
     for ( int i = 0 ; i < size ; ++ i ) {
         os << std::setw( 2 ) << table[ i ] ;
-        if ( i != ( size - 1 ) ) {
-            os << ", " ;
-        }
-        if ( ( i + 1 ) % entries_per_row == 0 ) {
-            os << "\n    " ;
+        if ( i == ( size - 1 ) ) {
+            os << '\n' ;
+        } else {
+            os << ',' ;
+            if ( ( i + 1 ) % entries_per_row != 0 ) {
+                os << ' ' ;
+            } else {
+                os << "\n    " ;
+            }
         }
     }
-    os << "\n} ;" << std::endl ;
+    os << "} ;" << std::endl ;
 }
 
 // Local Variables:
