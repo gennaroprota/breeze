@@ -28,7 +28,7 @@ test_throwability()
 {
     try {
         throw breath::exception( "test" ) ;
-    } catch ( std::exception const & ) {
+    } catch ( std::exception const & ) { // -V565 (for PVS-Studio)
     }
 }
 

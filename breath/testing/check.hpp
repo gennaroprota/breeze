@@ -24,6 +24,9 @@
             } while ( false )                                              /**/
 
 
+// For PVS-Studio:
+// -V:BREATH_CHECK_THROW:565
+// ---------------------------------------------------------------------------
 #define BREATH_CHECK_THROW( exception_type, expression )                      \
             do {                                                              \
                 try {                                                         \
