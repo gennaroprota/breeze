@@ -18,6 +18,10 @@
 #include <iterator>
 #include <string>
 
+int                 test_base64_to_binary() ;
+
+namespace {
+
 void
 check_valid()
 {
@@ -102,8 +106,10 @@ check_invalid()
 
 }
 
+}
+
 int
-main()
+test_base64_to_binary()
 {
     using namespace breath ;
 

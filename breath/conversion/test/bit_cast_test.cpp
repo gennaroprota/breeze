@@ -16,6 +16,8 @@
 #include <cstring>
 #include <iostream>
 
+int                 test_bit_cast() ;
+
 namespace {
 
 void
@@ -85,7 +87,7 @@ bit_cast_is_noexcept_if_and_only_if_dest_default_ctor_is()
 }
 
 int
-main()
+test_bit_cast()
 {
     using namespace breath ;
 

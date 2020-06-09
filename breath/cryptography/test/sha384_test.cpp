@@ -20,6 +20,10 @@
 #include <ostream>
 #include <string>
 
+int                 test_sha384() ;
+
+namespace {
+
 //      These test vectors come from:
 //
 // [1]   <http://csrc.nist.gov/groups/ST/toolkit/documents/Examples/SHA384.pdf>
@@ -87,8 +91,10 @@ check()
     }
 }
 
+}
+
 int
-main()
+test_sha384()
 {
     using namespace breath ;
 

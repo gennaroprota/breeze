@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/text/begins_with.hpp"
-
+#include <cstddef>
 #include <string>
 
 // gps temp
@@ -20,8 +20,10 @@
 #define DO_TEST( x ) BREATH_ASSERT( x )
 ////////////////
 
+int                 test_begins_with() ;
+
 int
-main()
+test_begins_with()
 {
     using breath::begins_with ;
 
@@ -60,6 +62,8 @@ main()
     DO_TEST( begins_with( s, t ) ) ;
     DO_TEST( begins_with( s, s ) ) ;
     DO_TEST( begins_with( t, t ) ) ;
+
+    return EXIT_SUCCESS ;
 }
 
 // Local Variables:

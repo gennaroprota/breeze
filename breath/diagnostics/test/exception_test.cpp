@@ -19,6 +19,8 @@
 #include <iostream>
 #include <string>
 
+int                 test_exception() ;
+
 namespace {
 
 void
@@ -69,7 +71,7 @@ test_copy()
 }
 
 int
-main()
+test_exception()
 {
     using namespace breath ;
 

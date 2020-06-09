@@ -12,14 +12,17 @@
 // ___________________________________________________________________________
 
 #include "breath/path/extension.hpp"
+#include <cstdlib>
 
 ///////// gps
 #include "breath/diagnostics/assert.hpp"
 #define DO_TEST( x ) BREATH_ASSERT( x )
 //////
 
+int                 test_extension() ;
+
 int
-main()
+test_extension()
 {
     using               breath::extension ;
 
@@ -49,6 +52,8 @@ main()
 
     DO_TEST( extension( "C:/Documents and Settings/Genny/Desktop/my_file.bat" )
                                                             == ".bat" ) ;
+
+    return EXIT_SUCCESS ;
 }
 
 // Local Variables:

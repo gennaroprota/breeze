@@ -16,6 +16,8 @@
 #include <iostream>
 #include <ostream>
 
+int                 test_remove_from_end() ;
+
 namespace {
 
 void do_tests()
@@ -39,7 +41,7 @@ void do_tests()
 }
 
 int
-main()
+test_remove_from_end()
 {
     using namespace breath ;
 

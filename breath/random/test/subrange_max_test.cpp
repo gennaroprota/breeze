@@ -11,18 +11,16 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-
-// gps temp
-#undef NDEBUG
-#include <cassert>
-#define DO_TEST( cond ) assert( (cond) )
-
-//----------------------
-
 #include "breath/random/subrange_max.hpp"
+#include "breath/testing/testing.hpp"
+#include <iostream>
 
-int
-main()
+int                 test_subrange_max() ;
+
+namespace {
+
+void
+do_test()
 {
     static struct {
         int m ;
@@ -36,9 +34,24 @@ main()
 
     };
     for ( auto elem : values ) {
-        DO_TEST( breath::subrange_max( elem.m, elem.x ) == elem.result ) ;
+        BREATH_CHECK( breath::subrange_max( elem.m, elem.x ) == elem.result ) ;
     }
 }
+
+}
+
+int
+test_subrange_max()
+{
+    using namespace breath ;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run( { do_test } ) ;
+
+}
+
 
 // Local Variables:
 // mode: c++

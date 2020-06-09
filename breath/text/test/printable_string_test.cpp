@@ -12,14 +12,17 @@
 // ___________________________________________________________________________
 
 #include "breath/text/printable_string.hpp"
+#include <cstdlib>
 #include <sstream>
 ///
 #include "breath/diagnostics/assert.hpp"
 #define DO_TEST( x )  BREATH_ASSERT( x )
 //////
 
+int                 test_printable_string() ;
+
 int
-main()
+test_printable_string()
 {
     using breath::printable_string ;
 
@@ -53,6 +56,8 @@ main()
         DO_TEST( ! ss.fail() ) ;
         DO_TEST( ss.str() == "\"\\?\\?!\"" ) ;
     }
+
+    return EXIT_SUCCESS ;
 }
 
 // Local Variables:

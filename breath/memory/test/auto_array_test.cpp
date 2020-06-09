@@ -16,6 +16,8 @@
 #include <iostream>
 #include <vector>
 
+int                 test_auto_array() ;
+
 namespace {
 
 breath::auto_array< int >
@@ -75,7 +77,7 @@ check_reset()
 }
 
 int
-main()
+test_auto_array()
 {
     using namespace breath ;
 

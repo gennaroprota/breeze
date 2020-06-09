@@ -20,6 +20,10 @@
 #include <ostream>
 #include <string>
 
+int                 test_crc32() ;
+
+namespace {
+
 void
 check_known()
 {
@@ -50,8 +54,10 @@ check_known()
     }
 }
 
+}
+
 int
-main()
+test_crc32()
 {
     using namespace breath ;
 

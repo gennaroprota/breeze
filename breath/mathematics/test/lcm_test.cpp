@@ -15,6 +15,8 @@
 #include "breath/testing/testing.hpp"
 #include <iostream>
 
+int                 test_lcm() ;
+
 namespace {
 
 void
@@ -66,7 +68,7 @@ check_constexpr()
 }
 
 int
-main()
+test_lcm()
 {
     using namespace breath ;
 

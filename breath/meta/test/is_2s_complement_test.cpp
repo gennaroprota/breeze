@@ -12,6 +12,9 @@
 // ___________________________________________________________________________
 
 #include "breath/meta/is_2s_complement.hpp"
+#include <cstdlib>
+
+int                 test_is_2s_complement() ;
 
 using breath::meta::is_2s_complement ;
 
@@ -25,8 +28,9 @@ static_assert(   is_2s_complement< int >(),           "" ) ;
 static_assert( ! is_2s_complement< unsigned int >(),  "" ) ;
 
 int
-main()
+test_is_2s_complement()
 {
+    return EXIT_SUCCESS ;
 }
 
 // Local Variables:

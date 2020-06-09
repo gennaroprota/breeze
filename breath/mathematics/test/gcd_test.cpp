@@ -16,6 +16,8 @@
 #include <climits>
 #include <iostream>
 
+int                 test_gcd() ;
+
 namespace {
 
 void
@@ -103,7 +105,7 @@ check_constexpr()
 }
 
 int
-main()
+test_gcd()
 {
     using namespace breath ;
 

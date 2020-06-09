@@ -16,6 +16,8 @@
 #include "breath/testing/testing.hpp"
 #include <iostream>
 
+int                 test_environment_variable_consistency() ;
+
 namespace {
 
 //      This isn't really a conclusive test: we can't know what
@@ -49,7 +51,7 @@ check_consistency()
 }
 
 int
-main()
+test_environment_variable_consistency()
 {
     using namespace breath ;
 

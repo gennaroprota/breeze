@@ -19,6 +19,8 @@
 #include <ostream>
 #include <string>
 
+int                 test_uuid() ;
+
 namespace {
 
 void

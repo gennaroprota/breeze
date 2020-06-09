@@ -13,14 +13,17 @@
 
 #include "breath/text/set_of_chars.hpp"
 #include "breath/text/trim_head.hpp"
+#include <cstdlib>
 
 // gps temp
 #include "breath/diagnostics/assert.hpp"
 #define DO_TEST( x ) BREATH_ASSERT( x )
 ////////////////
 
+int                 test_trim_head() ;
+
 int
-main()
+test_trim_head()
 {
     using breath::trim_head ;
     using breath::set_of_chars ;
@@ -39,6 +42,8 @@ main()
     DO_TEST( trim_head( "abcde", set_of_chars( "badc" ) ) == "e" ) ;
     DO_TEST( trim_head( "a", set_of_chars( "bcde" ) ) == "a" ) ;
     DO_TEST( trim_head( "abcd", set_of_chars( "bce" ) ) == "abcd" ) ;
+
+    return EXIT_SUCCESS ;
 }
 
 // Local Variables:

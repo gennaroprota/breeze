@@ -17,6 +17,8 @@
 #include <ostream>
 #include <string>
 
+int                 test_replace_all() ;
+
 namespace {
 
 void do_tests()
@@ -78,7 +80,7 @@ void do_tests()
 }
 
 int
-main()
+test_replace_all()
 {
     using namespace breath ;
 

@@ -18,10 +18,13 @@
 // ^^^^^^^^ ---------------
 
 #include "breath/debugging/dump_expression.hpp"
+#include <cstdlib>
 #include <iostream>
 #include <ostream> // not necessary in C++11
 #include <sstream>
 #include <streambuf>
+
+int                 test_breath_dump_expression() ;
 
 namespace {
 
@@ -56,7 +59,7 @@ clear_stringstream( std::ostringstream & ss )
 }
 
 int
-main()
+test_breath_dump_expression()
 {
     std::ostringstream  oss ;
     stream_guard const  guard( std::cout, oss.rdbuf() ) ;
@@ -96,6 +99,7 @@ main()
     DO_TEST( oss.str() == "BREATH_dummy = 1\n" ) ;
     clear_stringstream( oss ) ;
 
+    return EXIT_SUCCESS ;
 }
 
 // Local Variables:

@@ -20,6 +20,10 @@
 #include <ostream>
 #include <string>
 
+int                 test_luhn() ;
+
+namespace {
+
 void
 check_known_sums()
 {
@@ -51,8 +55,10 @@ check_known_sums()
     }
 }
 
+}
+
 int
-main()
+test_luhn()
 {
     using namespace breath ;
 

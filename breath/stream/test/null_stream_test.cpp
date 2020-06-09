@@ -17,6 +17,10 @@
 #include <ostream>
 #include <sstream>
 
+int                 test_null_stream() ;
+
+namespace {
+
 void
 check()
 {
@@ -40,8 +44,10 @@ check()
     }
 }
 
+}
+
 int
-main()
+test_null_stream()
 {
     using namespace breath ;
 

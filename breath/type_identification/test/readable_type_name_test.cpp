@@ -18,6 +18,8 @@
 #include <ostream>
 #include <string>
 
+int                 test_readable_type_name() ;
+
 namespace {
 
 class incomplete_type ;
@@ -49,7 +51,7 @@ void do_tests()
 }
 
 int
-main()
+test_readable_type_name()
 {
     using namespace breath ;
 

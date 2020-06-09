@@ -15,6 +15,8 @@
 #include "breath/testing/testing.hpp"
 #include <iostream>
 
+int                 test_rounded_up_quotient() ;
+
 namespace {
 
 void
@@ -77,7 +79,7 @@ rounded_up_quotient_arguments_can_be_cv_qualified()
 }
 
 int
-main()
+test_rounded_up_quotient()
 {
     using namespace breath ;
 

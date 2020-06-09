@@ -19,6 +19,8 @@
 #include <ostream>
 #include <string>
 
+int                 test_from_string() ;
+
 namespace {
 
 void do_tests()
@@ -70,7 +72,7 @@ test_move_only()
 }
 
 int
-main()
+test_from_string()
 {
     using namespace breath ;
 

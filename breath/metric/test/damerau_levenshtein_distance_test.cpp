@@ -20,6 +20,8 @@
 #include <ostream>
 #include <string>
 
+int                 test_damerau_levenshtein_distance() ;
+
 namespace {
 
 void
@@ -52,7 +54,7 @@ check()
 }
 
 int
-main()
+test_damerau_levenshtein_distance()
 {
     using namespace breath ;
 

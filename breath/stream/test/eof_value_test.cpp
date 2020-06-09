@@ -17,6 +17,10 @@
 #include <ostream>
 #include <sstream>
 
+int                 test_eof_value() ;
+
+namespace {
+
 void
 check()
 {
@@ -27,8 +31,10 @@ check()
     }
 }
 
+}
+
 int
-main()
+test_eof_value()
 {
     using namespace breath ;
 

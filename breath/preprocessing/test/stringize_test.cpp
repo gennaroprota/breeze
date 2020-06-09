@@ -20,6 +20,8 @@
 #define FOO 1
 #define FOO2 FOO
 
+int                 test_breath_stringize() ;
+
 namespace {
 
 void
@@ -35,7 +37,7 @@ do_tests()
 }
 
 int
-main()
+test_breath_stringize()
 {
     using namespace breath ;
 

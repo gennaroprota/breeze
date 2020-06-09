@@ -39,6 +39,8 @@
 #include <string>
 #include <vector>
 
+int                 test_nist_vectors() ;
+
 namespace {
 
 class nist_file
@@ -298,7 +300,7 @@ tests()
 }
 
 int
-main()
+test_nist_vectors()
 try {
     return tests()
                ? EXIT_SUCCESS

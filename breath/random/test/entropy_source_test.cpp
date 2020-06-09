@@ -11,27 +11,28 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-
-// gps temp
-#undef NDEBUG
-#include <cassert>
-#define DO_TEST( cond ) assert( (cond) )
-
-//----------------------
-
 #include "breath/random/entropy_source.hpp"
+#include <cstdlib>
+
+int                 test_entropy_source() ;
 
 int
-main()
+test_entropy_source()
 {
     breath::entropy_source
                         source ;
 
-    source.release() ;
+    int                 result = EXIT_FAILURE ;
 
-    // check that a second release doesn't yield "success"
-    //
-    DO_TEST( source.release() == false ) ;
+    if (source.release()) {
+        // check that a second release doesn't yield "success"
+        //
+        if ( ! source.release() ) {
+            result = EXIT_SUCCESS ;
+        }
+    }
+
+    return result ;
 }
 
 // Local Variables:

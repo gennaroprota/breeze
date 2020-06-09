@@ -13,6 +13,7 @@
 
 #include "breath/environment/get_environment_variable.hpp"
 #include "breath/idiom/maybe.hpp"
+#include <cstdlib>
 #include <string>
 
 /////////
@@ -20,8 +21,10 @@
 #define DO_TEST( x ) BREATH_ASSERT( x )
 //////
 
+int                 test_get_environment_variable() ;
+
 int
-main()
+test_get_environment_variable()
 {
     using namespace breath ;
 
@@ -30,4 +33,6 @@ main()
 
     DO_TEST( e.is_valid() ) ;
     DO_TEST( ! e.value().empty() ) ;
+
+    return EXIT_SUCCESS ;
 }

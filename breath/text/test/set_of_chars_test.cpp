@@ -14,14 +14,16 @@
 #include "breath/text/set_of_chars.hpp"
 #include <algorithm>
 #include <climits>
+#include <cstdlib>
 ////// gps
 #include "breath/diagnostics/assert.hpp"
 #define DO_TEST( x ) BREATH_ASSERT( x )
 /////////////
 
+int                 test_set_of_chars() ;
 
 int
-main()
+test_set_of_chars()
 {
     using breath::set_of_chars ;
 
@@ -199,6 +201,8 @@ main()
         sc_max.remove( CHAR_MAX ) ;
         DO_TEST( sc_max.begin() == sc_max.end() ) ;
     }
+
+    return EXIT_SUCCESS ;
 }
 
 // Local Variables:

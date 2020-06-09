@@ -16,6 +16,8 @@
 #include <iostream>
 #include <ostream>
 
+int                 test_tail() ;
+
 namespace {
 
 void
@@ -35,7 +37,7 @@ do_tests()
 }
 
 int
-main()
+test_tail()
 {
     using namespace breath ;
 

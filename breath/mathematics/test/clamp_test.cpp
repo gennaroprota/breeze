@@ -21,6 +21,8 @@
 #include <utility>
 #include <vector>
 
+int                 test_clamp() ;
+
 namespace {
 
 void
@@ -94,7 +96,7 @@ check3()
 }
 
 int
-main()
+test_clamp()
 {
     using namespace breath ;
 

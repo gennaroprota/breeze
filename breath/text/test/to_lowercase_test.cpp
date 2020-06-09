@@ -16,6 +16,8 @@
 #include <iostream>
 #include <ostream>
 
+int                 test_to_lowercase() ;
+
 namespace {
 
 void
@@ -33,7 +35,7 @@ do_tests()
 }
 
 int
-main()
+test_to_lowercase()
 {
     using namespace breath ;
 

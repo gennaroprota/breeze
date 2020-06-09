@@ -19,6 +19,8 @@
 #include <ostream>
 #include <sstream>
 
+int                 test_representation_in_base() ;
+
 namespace {
 
 void check()
@@ -53,7 +55,7 @@ void check()
 }
 
 int
-main()
+test_representation_in_base()
 {
     using namespace breath ;
 

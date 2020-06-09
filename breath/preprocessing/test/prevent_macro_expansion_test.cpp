@@ -12,18 +12,27 @@
 // ___________________________________________________________________________
 
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
+#include <cstdlib>
 
 #define foo( a )    unexisting_function
+
+int                 test_breath_prevent_macro_expansion() ;
+
+namespace {
 
 void
 (foo)( int )
 {
 }
 
+}
+
 int
-main()
+test_breath_prevent_macro_expansion()
 {
     foo BREATH_PREVENT_MACRO_EXPANSION ( 1 ) ;
+
+    return EXIT_SUCCESS ;
 }
 
 // Local Variables:

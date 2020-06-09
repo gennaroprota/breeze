@@ -16,6 +16,8 @@
 #include <iostream>
 #include <ostream>
 
+int                 test_digital_root() ;
+
 namespace {
 
 template< typename T >
@@ -57,7 +59,7 @@ check()
 }
 
 int
-main()
+test_digital_root()
 {
     using namespace breath ;
 

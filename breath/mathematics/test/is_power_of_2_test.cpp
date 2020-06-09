@@ -16,6 +16,8 @@
 #include <cstdint>
 #include <iostream>
 
+int                 test_is_power_of_2() ;
+
 namespace {
 
 void
@@ -35,7 +37,7 @@ do_check()
 }
 
 int
-main()
+test_is_power_of_2()
 {
     using namespace breath ;
 

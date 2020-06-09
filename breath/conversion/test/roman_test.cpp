@@ -24,6 +24,8 @@
 #include <sstream>
 #include <string>
 
+int                 test_roman() ;
+
 namespace {
 
 std::string
@@ -89,7 +91,7 @@ check()
 }
 
 int
-main()
+test_roman()
 {
     using namespace breath ;
 

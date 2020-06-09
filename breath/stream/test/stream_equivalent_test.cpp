@@ -21,6 +21,8 @@
 #include <ostream>
 #include <sstream>
 
+int                 test_stream_equivalent() ;
+
 namespace {
 
 void
@@ -120,7 +122,7 @@ check_input_or_output_only_streams()
 }
 
 int
-main()
+test_stream_equivalent()
 {
     using namespace breath ;
 

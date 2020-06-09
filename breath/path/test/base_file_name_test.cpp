@@ -12,14 +12,17 @@
 // ___________________________________________________________________________
 
 #include "breath/path/base_file_name.hpp"
+#include <cstdlib>
 
 ///////// gps
 #include "breath/diagnostics/assert.hpp"
 #define DO_TEST( x ) BREATH_ASSERT( x )
 //////
 
+int                 test_base_file_name() ;
+
 int
-main()
+test_base_file_name()
 {
     using               breath::base_file_name ;
 
@@ -31,6 +34,8 @@ main()
     DO_TEST( base_file_name( "/usr/lib/my_lib") == "my_lib" ) ;
     DO_TEST( base_file_name( "C:\\Documents and Settings\\Genny\\Desktop\\my_file" )
                                                             == "my_file" ) ;
+
+    return EXIT_SUCCESS ;
 }
 
 // Local Variables:

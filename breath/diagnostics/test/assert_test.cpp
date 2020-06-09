@@ -12,6 +12,11 @@
 // ___________________________________________________________________________
 
 #include "breath/diagnostics/assert.hpp"
+#include <cstdlib>
+
+int                 test_breath_assert() ;
+
+namespace {
 
 constexpr int
 check_constexpr()
@@ -20,8 +25,10 @@ check_constexpr()
     return 1 ;
 }
 
+}
+
 int
-main()
+test_breath_assert()
 {
     //      TODO: we'd need tests to verify that types other than bool
     //      or cv-qualified bool don't compile. And that
@@ -40,6 +47,8 @@ main()
 
     constexpr int       n = check_constexpr() ;
     static_cast< void >( n ) ;
+
+    return EXIT_SUCCESS ;
 }
 
 // Local Variables:

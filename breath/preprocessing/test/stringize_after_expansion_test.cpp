@@ -25,6 +25,8 @@
 
 #define FIRST_TOKEN multiple
 
+int                 test_breath_stringize_after_expansion() ;
+
 namespace {
 
 void
@@ -43,7 +45,7 @@ do_tests()
 }
 
 int
-main()
+test_breath_stringize_after_expansion()
 {
     using namespace breath ;
 

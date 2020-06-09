@@ -19,6 +19,8 @@
 #include <map>
 #include <string>
 
+int                 test_digest_ordering() ;
+
 namespace {
 
 void
@@ -37,7 +39,7 @@ check_usability_with_map()
 }
 
 int
-main()
+test_digest_ordering()
 {
     using namespace breath ;
 

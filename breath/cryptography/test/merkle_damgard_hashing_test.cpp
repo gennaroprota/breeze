@@ -27,6 +27,8 @@
 #include <ostream>
 #include <string>
 
+int                 test_merkle_damgard_hashing() ;
+
 namespace {
 
 std::string::size_type const
@@ -211,7 +213,7 @@ void check_known_digests()
 }
 
 int
-main()
+test_merkle_damgard_hashing()
 {
     using namespace breath ;
 

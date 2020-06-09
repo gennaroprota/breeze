@@ -18,6 +18,10 @@
 #include <iostream>
 #include <iterator>
 
+int                 test_binary_to_base64() ;
+
+namespace {
+
 void
 check()
 {
@@ -132,8 +136,10 @@ check_line_wrap()
     "IHBpZXRhLg==" ) ;
 }
 
+}
+
 int
-main()
+test_binary_to_base64()
 {
     using namespace breath ;
 

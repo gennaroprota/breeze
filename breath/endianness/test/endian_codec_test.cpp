@@ -20,6 +20,8 @@
 #include <iterator>
 #include <ostream>
 
+int                 test_endian_codec() ;
+
 namespace {
 
 void check()
@@ -73,7 +75,7 @@ check2()
 }
 
 int
-main()
+test_endian_codec()
 {
     using namespace breath ;
 

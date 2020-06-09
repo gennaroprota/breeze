@@ -18,6 +18,8 @@
 #include <iostream>
 #include <ostream>
 
+int                 test_count_bits() ;
+
 namespace {
 
 template< typename T >
@@ -53,7 +55,7 @@ void check2()
 }
 
 int
-main()
+test_count_bits()
 {
     using namespace breath ;
 

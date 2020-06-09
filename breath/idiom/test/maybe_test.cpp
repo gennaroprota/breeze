@@ -17,6 +17,10 @@
 #include <string>
 #include <utility>
 
+int                 test_maybe() ;
+
+namespace {
+
 void
 check_constructors()
 {
@@ -131,8 +135,10 @@ check_assignments()
     }
 }
 
+}
+
 int
-main()
+test_maybe()
 {
     using namespace breath ;
 

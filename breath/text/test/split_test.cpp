@@ -13,6 +13,7 @@
 
 #include "breath/text/split.hpp"
 
+#include <cstdlib>
 #include <string>
 #include <vector>
 
@@ -21,8 +22,10 @@
 #define DO_TEST( x ) BREATH_ASSERT( x )
 ////////////////
 
+int                 test_split() ;
+
 int
-main()
+test_split()
 {
     using               breath::split ;
 
@@ -136,6 +139,8 @@ main()
         DO_TEST( v[ 0 ].empty() ) ;
         DO_TEST( v[ 1 ].empty() ) ;
     }
+
+    return EXIT_SUCCESS ;
 }
 
 // Local Variables:

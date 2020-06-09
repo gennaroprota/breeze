@@ -16,6 +16,8 @@
 #include <iostream>
 #include <ostream>
 
+int                 test_to_string() ;
+
 namespace {
 
 void do_tests()
@@ -38,7 +40,7 @@ void do_tests()
 }
 
 int
-main()
+test_to_string()
 {
     using namespace breath ;
 

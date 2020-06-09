@@ -13,6 +13,7 @@
 
 #include "breath/text/ends_with.hpp"
 
+#include <cstdlib>
 #include <string>
 
 // gps temp
@@ -20,8 +21,10 @@
 #define DO_TEST( x ) BREATH_ASSERT( x )
 ////////////////
 
+int                 test_ends_with() ;
+
 int
-main()
+test_ends_with()
 {
     using breath::ends_with ;
 
@@ -59,6 +62,7 @@ main()
     DO_TEST( ends_with( s, s ) ) ;
     DO_TEST( ends_with( s, t ) ) ;
 
+    return EXIT_SUCCESS ;
 }
 
 // Local Variables:
