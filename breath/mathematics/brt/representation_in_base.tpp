@@ -40,8 +40,7 @@ representation_in_base( T n, int base )
         : n
         ;
 
-    BREATH_ASSERT( 2 <= base &&
-        static_cast< std::size_t >( base ) <= max_base ) ;
+    BREATH_ASSERT( 2 <= base && base <= max_base ) ;
 
     std::string         result ;
 
