@@ -13,8 +13,8 @@
 #ifndef BREATH_GUARD_EFlfreUFA16SG5tXxNJpWtUHWTCfIjaD
 #define BREATH_GUARD_EFlfreUFA16SG5tXxNJpWtUHWTCfIjaD
 
-#include "breath/testing/test_exception.hpp"
 #include "breath/diagnostics/assert.hpp"
+#include "breath/testing/test_exception.hpp"
 
 #define BREATH_CHECK( condition )                                             \
             do {                                                              \
