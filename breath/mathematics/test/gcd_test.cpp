@@ -112,9 +112,9 @@ test_gcd()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check_int,
-                                          check_mixed_types,
-                                          check_constexpr } ) ;
+    return test_runner::instance().run( "gcd()", { check_int,
+                                                   check_mixed_types,
+                                                   check_constexpr } ) ;
 }
 
 // Local Variables:

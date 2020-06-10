@@ -46,7 +46,9 @@ test_digest_ordering()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check_usability_with_map } ) ;
+    return test_runner::instance().run(
+             "Digest ordering",
+             { check_usability_with_map } ) ;
 }
 
 // Local Variables:

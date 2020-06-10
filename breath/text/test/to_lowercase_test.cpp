@@ -42,7 +42,7 @@ test_to_lowercase()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { do_tests } ) ;
+    return test_runner::instance().run( "to_lowercase()", { do_tests } ) ;
 }
 
 // Local Variables:

@@ -48,7 +48,8 @@ test_remove_from_end()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { do_tests } ) ;
+    return test_runner::instance().run( "remove_from_end()",
+                                        { do_tests } ) ;
 }
 
 // Local Variables:

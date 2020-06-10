@@ -22,7 +22,7 @@ class test_exception ;
 class test_reporter
 {
 public:
-    void                on_all_tests_begin() ;
+    void                on_all_tests_begin( char const * group_description ) ;
     void                on_all_tests_end() ;
     void                on_test_begin( int test_number,
                                        char const * name = "" ) ;
@@ -36,7 +36,8 @@ public:
     virtual             ~test_reporter() noexcept {}
 
 private:
-    virtual void        do_on_all_tests_begin() = 0 ;
+    virtual void        do_on_all_tests_begin( char const * group_description )
+                                                                          = 0 ;
     virtual void        do_on_all_tests_end()   = 0 ;
     virtual void        do_on_test_begin( int test_number,
                                           char const * name ) = 0 ;

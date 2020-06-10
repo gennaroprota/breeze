@@ -103,7 +103,8 @@ test_clamp()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check, check2, check3 } ) ;
+    return test_runner::instance().run( "clamp()",
+                                        { check, check2, check3 } ) ;
 }
 
 // Local Variables:

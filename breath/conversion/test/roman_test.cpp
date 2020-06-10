@@ -98,7 +98,7 @@ test_roman()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check } ) ;
+    return test_runner::instance().run( "roman", { check } ) ;
 }
 
 // Local Variables:

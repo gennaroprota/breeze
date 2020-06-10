@@ -78,7 +78,8 @@ test_exception()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { test_throwability,
+    return test_runner::instance().run( "exception",
+                                        { test_throwability,
                                           test_what_message_handling,
                                           test_copy } ) ;
 }

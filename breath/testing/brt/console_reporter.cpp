@@ -27,9 +27,9 @@ console_reporter::console_reporter( std::ostream & os )
 }
 
 void
-console_reporter::do_on_all_tests_begin()
+console_reporter::do_on_all_tests_begin( char const * group_description )
 {
-    m_stream << "Unit tests:" << std::endl ;
+    m_stream << group_description << std::endl ;
 }
 
 void

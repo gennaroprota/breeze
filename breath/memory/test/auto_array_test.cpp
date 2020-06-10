@@ -84,7 +84,8 @@ test_auto_array()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check_move_semantics,
+    return test_runner::instance().run( "auto_array",
+                                        { check_move_semantics,
                                           check_non_move_constructors,
                                           check_reset                 } ) ;
 }

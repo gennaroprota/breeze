@@ -230,7 +230,8 @@ test_merkle_damgard_hashing()
         check_known_digests< breath::sha512_hasher >
     } ;
 
-    return test_runner::instance().run( cbegin( desc ), cend( desc) ) ;
+    return test_runner::instance().run( "Merkle-Damgard hashing",
+                                        cbegin( desc ), cend( desc) ) ;
 }
 
 // Local Variables:

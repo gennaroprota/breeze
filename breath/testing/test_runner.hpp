@@ -35,9 +35,11 @@ public:
                     instance() ;
     void            attach_reporter( test_reporter & ) ;
     template< typename TestDescriptorIterator >
-    int             run( TestDescriptorIterator begin, TestDescriptorIterator
-                                                                        end ) ;
-    int             run( std::initializer_list< test_descriptor > list ) ;
+    int             run( char const * group_description,
+                         TestDescriptorIterator begin,
+                         TestDescriptorIterator end ) ;
+    int             run( char const * group_description,
+                         std::initializer_list< test_descriptor > list ) ;
 
 private:
     test_reporter * m_reporter ;
@@ -45,11 +47,13 @@ private:
 
 template< typename TestDescriptorIterator >
 int
-test_runner::run( TestDescriptorIterator begin, TestDescriptorIterator end )
+test_runner::run( char const * group_description,
+                  TestDescriptorIterator begin,
+                  TestDescriptorIterator end )
 {
     int                 exit_code = breath::exit_failure ;
     int                 test_number = 1 ;
-    m_reporter->on_all_tests_begin() ;
+    m_reporter->on_all_tests_begin( group_description ) ;
     for ( ; begin != end ; ++ begin, ++ test_number ) {
         try {
             m_reporter->on_test_begin( test_number ) ;

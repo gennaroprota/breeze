@@ -58,7 +58,8 @@ test_environment_variable_consistency()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check_consistency } ) ;
+    return test_runner::instance().run(
+        "Environment variable consistency", { check_consistency } ) ;
 }
 
 // Local Variables:

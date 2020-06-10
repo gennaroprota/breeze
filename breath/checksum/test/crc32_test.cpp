@@ -64,7 +64,7 @@ test_crc32()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check_known } ) ;
+    return test_runner::instance().run( "crc32()", { check_known } ) ;
 }
 
 // Local Variables:

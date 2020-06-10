@@ -129,7 +129,8 @@ test_stream_equivalent()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check_good_streams,
+    return test_runner::instance().run( "stream_equivalent",
+                                        { check_good_streams,
                                           check_non_good_streams,
                                           check_input_or_output_only_streams }
                                       ) ;

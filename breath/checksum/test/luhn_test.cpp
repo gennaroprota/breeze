@@ -65,7 +65,8 @@ test_luhn()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check_known_sums } ) ;
+    return test_runner::instance().run( "Luhn routines",
+                                        { check_known_sums } ) ;
 }
 
 // Local Variables:

@@ -82,7 +82,8 @@ test_endian_codec()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check, check2 } ) ;
+    return test_runner::instance().run( "endian_codec",
+                                        { check, check2 } ) ;
 }
 
 // Local Variables:

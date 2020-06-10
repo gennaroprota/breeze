@@ -94,11 +94,12 @@ test_bit_cast()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( {
-                struct_casts_to_struct,
-                pointer_to_object_casts_to_pointer_to_object,
-                pointer_to_void_casts_to_pointer_to_function,
-                bit_cast_is_noexcept_if_and_only_if_dest_default_ctor_is } ) ;
+    return test_runner::instance().run(
+             "bit_cast()",
+             { struct_casts_to_struct,
+               pointer_to_object_casts_to_pointer_to_object,
+               pointer_to_void_casts_to_pointer_to_function,
+               bit_cast_is_noexcept_if_and_only_if_dest_default_ctor_is } ) ;
 }
 
 // Local Variables:

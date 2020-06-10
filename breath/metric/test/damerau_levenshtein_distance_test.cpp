@@ -61,7 +61,8 @@ test_damerau_levenshtein_distance()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check } ) ;
+    return test_runner::instance().run( "damerau_levenshtein_distance()",
+                                        { check } ) ;
 }
 
 // Local Variables:

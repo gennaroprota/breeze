@@ -34,9 +34,10 @@ test_runner::attach_reporter( test_reporter & rep )
 }
 
 int
-test_runner::run( std::initializer_list< test_descriptor > list )
+test_runner::run( char const * group_description,
+                  std::initializer_list< test_descriptor > list )
 {
-    return run( list.begin(), list.end() ) ;
+    return run( group_description, list.begin(), list.end() ) ;
 }
 
 }

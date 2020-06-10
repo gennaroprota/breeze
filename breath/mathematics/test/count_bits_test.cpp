@@ -62,7 +62,7 @@ test_count_bits()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check, check2 } ) ;
+    return test_runner::instance().run( "count_bits()", { check, check2 } ) ;
 }
 
 // Local Variables:

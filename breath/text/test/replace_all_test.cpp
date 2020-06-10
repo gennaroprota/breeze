@@ -87,7 +87,7 @@ test_replace_all()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { do_tests } ) ;
+    return test_runner::instance().run( "replace_all()", { do_tests } ) ;
 }
 
 // Local Variables:

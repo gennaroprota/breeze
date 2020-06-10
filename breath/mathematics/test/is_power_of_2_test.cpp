@@ -44,7 +44,7 @@ test_is_power_of_2()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { do_check } ) ;
+    return test_runner::instance().run( "is_power_of_2()", { do_check } ) ;
 }
 
 // Local Variables:

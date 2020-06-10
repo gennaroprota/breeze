@@ -75,9 +75,9 @@ test_lcm()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check_int,
-                                          check_mixed_types,
-                                          check_constexpr } ) ;
+    return test_runner::instance().run( "lcm()", { check_int,
+                                                   check_mixed_types,
+                                                   check_constexpr } ) ;
 }
 
 // Local Variables:

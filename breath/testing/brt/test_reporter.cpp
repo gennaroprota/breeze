@@ -16,9 +16,9 @@
 namespace breath {
 
 void
-test_reporter::on_all_tests_begin()
+test_reporter::on_all_tests_begin( char const * group_description )
 {
-    return do_on_all_tests_begin() ;
+    return do_on_all_tests_begin( group_description ) ;
 }
 
 void

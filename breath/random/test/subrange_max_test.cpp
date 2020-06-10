@@ -48,7 +48,7 @@ test_subrange_max()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { do_test } ) ;
+    return test_runner::instance().run( "subrange_max()", { do_test } ) ;
 
 }
 

@@ -146,7 +146,8 @@ test_binary_to_base64()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check,
+    return test_runner::instance().run( "binary_to_base64()",
+                                        { check,
                                           check_string_of_nuls,
                                           check_line_wrap } ) ;
 }

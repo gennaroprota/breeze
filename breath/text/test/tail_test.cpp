@@ -44,7 +44,7 @@ test_tail()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { do_tests } ) ;
+    return test_runner::instance().run( "tail()", { do_tests } ) ;
 }
 
 // Local Variables:

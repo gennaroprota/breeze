@@ -34,7 +34,7 @@ public:
     explicit            console_reporter( std::ostream & os ) ;
 
 private:
-    virtual void        do_on_all_tests_begin() override ;
+    virtual void        do_on_all_tests_begin( char const * group_description ) override ;
     virtual void        do_on_all_tests_end() override ;
     virtual void        do_on_test_begin( int test_number,
                                            char const * name ) override ;

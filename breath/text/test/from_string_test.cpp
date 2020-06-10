@@ -79,7 +79,8 @@ test_from_string()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { do_tests, test_move_only } ) ;
+    return test_runner::instance().run( "from_string()",
+                                        { do_tests, test_move_only } ) ;
 }
 
 // Local Variables:

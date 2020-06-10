@@ -39,7 +39,8 @@ public:
     //!     Intentionally not explicit to allow our typical usage:
     //!
     //!     <code>
-    //!         test_runner::instance().run( { func1, func2... funcN } ) ;
+    //!         test_runner::instance().run( "description...",
+    //!                                      { func1, func2... funcN } ) ;
     //!     </code>
     // -----------------------------------------------------------------------
                         test_descriptor( void( & )(),

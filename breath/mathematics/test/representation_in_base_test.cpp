@@ -62,7 +62,8 @@ test_representation_in_base()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check } ) ;
+    return test_runner::instance().run( "representation_in_base()",
+                                        { check } ) ;
 }
 
 // Local Variables:

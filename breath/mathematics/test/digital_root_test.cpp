@@ -66,7 +66,7 @@ test_digital_root()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check } ) ;
+    return test_runner::instance().run( "digital_root()", { check } ) ;
 }
 
 // Local Variables:
