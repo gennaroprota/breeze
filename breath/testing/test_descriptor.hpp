@@ -48,7 +48,6 @@ public:
     // -----------------------------------------------------------------------
     void                operator=( test_descriptor const & ) = delete ;
 
-public:
     test_function       function() const noexcept ;
     std::string         name() const noexcept ;
 
