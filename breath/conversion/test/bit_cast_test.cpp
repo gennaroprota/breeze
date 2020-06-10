@@ -49,7 +49,13 @@ pointer_to_object_casts_to_pointer_to_object()
     char const * const  pc = breath::bit_cast< char * const >( pv ) ;
 
     BREATH_CHECK( pc == pv ) ;
-    BREATH_CHECK( std::strcmp( pc, "test" ) == 0 ) ;
+
+    //      The comparison with nullptr is redundant if the previous
+    //      test succeeds; but it deals with Microsoft Code Analysis
+    //      warning C6387: 'pc' could be '0':  this does not adhere to
+    //      the specification for the function 'strcmp'. 
+    // -----------------------------------------------------------------------
+    BREATH_CHECK( pc != nullptr && std::strcmp( pc, "test" ) == 0 ) ;
 }
 
 void
