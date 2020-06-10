@@ -200,13 +200,12 @@ tests()
 
     static struct
     {
-        int                 section ;
         bool                pseudorandom ;
     } const             section_types[]
     = {
-        { 0, false },
-        { 1, false },
-        { 2, true  }
+        { false },
+        { false },
+        { true  }
     } ;
 
     int const           sections = static_cast< int >(
