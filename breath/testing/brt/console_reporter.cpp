@@ -14,6 +14,7 @@
 #include "breath/testing/console_reporter.hpp"
 #include "breath/testing/test_exception.hpp"
 #include <ostream>
+#include <string>
 #include <typeinfo>
 
 namespace breath {
@@ -29,7 +30,11 @@ console_reporter::console_reporter( std::ostream & os )
 void
 console_reporter::do_on_all_tests_begin( char const * group_description )
 {
-    m_stream << group_description << std::endl ;
+    std::string const   extra_text = ":" ;
+    std::string const   description = group_description + extra_text ;
+    std::string const   ruler( description.length(), '-' ) ;
+    m_stream << description << '\n' <<
+                ruler << std::endl ;
 }
 
 void
@@ -37,7 +42,7 @@ console_reporter::do_on_all_tests_end()
 {
     m_stream << std::endl << "Passed: " << m_passed << ", failed: " << m_failed
                           << ", unexp. exceptions: " << m_unexpected_exceptions
-                          << std::endl ;
+                          << '\n' << std::endl ;
 }
 
 void
