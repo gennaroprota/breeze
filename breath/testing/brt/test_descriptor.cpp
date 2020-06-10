@@ -15,7 +15,7 @@
 
 namespace breath {
 
-test_descriptor::test_descriptor( void( &f )(), char const * name ) noexcept
+test_descriptor::test_descriptor( test_function f, char const * name ) noexcept
     :   m_function( f ),
         m_name( name )
 {

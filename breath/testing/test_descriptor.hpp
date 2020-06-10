@@ -34,7 +34,7 @@ public:
     //!                                      { func1, func2... funcN } ) ;
     //!     </code>
     // -----------------------------------------------------------------------
-                        test_descriptor( void( & )(),
+                        test_descriptor( test_function,
                                          char const * name = "" ) noexcept ;
 
     //      Declare this explicitly, since, due to the user-declared
