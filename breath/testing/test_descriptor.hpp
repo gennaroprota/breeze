@@ -23,16 +23,7 @@ namespace breath {
 class test_descriptor
 {
 public:
-    //      Declare this explicitly to avoid Visual C++ C4626 (and
-    //      C5027).
-    // -----------------------------------------------------------------------
-    void                operator=( test_descriptor const & ) = delete ;
-
-    //      Declare this explicitly, since, due to the user-declared
-    //      copy-assignment above, the implicit definition of the copy
-    //      constructor as defaulted is deprecated.
-    // -----------------------------------------------------------------------
-                        test_descriptor( test_descriptor const & ) = default ;
+    typedef      void( &test_function )() ;
 
     //!     Constructs the descriptor for a test having a given \c
     //!     name and running the given function.
@@ -45,7 +36,17 @@ public:
     // -----------------------------------------------------------------------
                         test_descriptor( void( & )(),
                                          char const * name = "" ) noexcept ;
-    typedef      void( &test_function )() ;
+
+    //      Declare this explicitly, since, due to the user-declared
+    //      copy-assignment below, the implicit definition of the copy
+    //      constructor as defaulted is deprecated.
+    // -----------------------------------------------------------------------
+                        test_descriptor( test_descriptor const & ) = default ;
+
+    //      Declare this explicitly to avoid Visual C++ C4626 (and
+    //      C5027).
+    // -----------------------------------------------------------------------
+    void                operator=( test_descriptor const & ) = delete ;
 
 public:
     test_function       function() const noexcept ;
