@@ -11,21 +11,19 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breath/testing/testing.hpp"
 #include "breath/text/split.hpp"
 
-#include <cstdlib>
+#include <iostream>
 #include <string>
 #include <vector>
 
-// gps temp
-#include "breath/diagnostics/assert.hpp"
-#define DO_TEST( x ) BREATH_ASSERT( x )
-////////////////
-
 int                 test_split() ;
 
-int
-test_split()
+namespace {
+
+void
+do_test()
 {
     using               breath::split ;
 
@@ -34,8 +32,8 @@ test_split()
         std::string const   separators = { '\0' } ;
         std::vector< std::string > const
                             v = split( s, separators) ;
-        DO_TEST( v.size() == 1 ) ;
-        DO_TEST( v[ 0 ].empty() ) ;
+        BREATH_CHECK( v.size() == 1 ) ;
+        BREATH_CHECK( v[ 0 ].empty() ) ;
     }
 
     {
@@ -43,8 +41,8 @@ test_split()
         std::string const   no_separators ;
         std::vector< std::string > const
                             v = split( s, no_separators ) ;
-        DO_TEST( v.size() == 1 ) ;
-        DO_TEST( v[ 0 ].empty() ) ;
+        BREATH_CHECK( v.size() == 1 ) ;
+        BREATH_CHECK( v[ 0 ].empty() ) ;
     }
 
     {
@@ -53,8 +51,8 @@ test_split()
         std::vector< std::string > const
                             v = split( s, no_separators ) ;
 
-        DO_TEST( v.size() == 1 ) ;
-        DO_TEST( v[ 0 ] == s ) ;
+        BREATH_CHECK( v.size() == 1 ) ;
+        BREATH_CHECK( v[ 0 ] == s ) ;
     }
 
     {
@@ -63,25 +61,25 @@ test_split()
         std::vector< std::string > const
                             v = split( s, separators ) ;
 
-        DO_TEST( v.size() == 1 ) ;
-        DO_TEST( v[ 0 ] == "abcde" ) ;
+        BREATH_CHECK( v.size() == 1 ) ;
+        BREATH_CHECK( v[ 0 ] == "abcde" ) ;
     }
 
     {
         std::vector< std::string > const
                             v = split( "*", "*" ) ;
-        DO_TEST( v.size() == 2 ) ;
-        DO_TEST( v[ 0 ].empty() ) ;
-        DO_TEST( v[ 1 ].empty() ) ;
+        BREATH_CHECK( v.size() == 2 ) ;
+        BREATH_CHECK( v[ 0 ].empty() ) ;
+        BREATH_CHECK( v[ 1 ].empty() ) ;
     }
 
     {
         std::vector< std::string > const
                             v = split( "**", "*" ) ;
-        DO_TEST( v.size() == 3 ) ;
-        DO_TEST( v[ 0 ].empty() ) ;
-        DO_TEST( v[ 1 ].empty() ) ;
-        DO_TEST( v[ 2 ].empty() ) ;
+        BREATH_CHECK( v.size() == 3 ) ;
+        BREATH_CHECK( v[ 0 ].empty() ) ;
+        BREATH_CHECK( v[ 1 ].empty() ) ;
+        BREATH_CHECK( v[ 2 ].empty() ) ;
     }
 
     {
@@ -93,10 +91,10 @@ test_split()
         std::vector< std::string > const
                             v = split( s, "XY" ) ;
 
-        DO_TEST( v.size() == 3 ) ;
-        DO_TEST( v[ 0 ] == "string1" ) ;
-        DO_TEST( v[ 1 ] == "string2" ) ;
-        DO_TEST( v[ 2 ] == "string3" ) ;
+        BREATH_CHECK( v.size() == 3 ) ;
+        BREATH_CHECK( v[ 0 ] == "string1" ) ;
+        BREATH_CHECK( v[ 1 ] == "string2" ) ;
+        BREATH_CHECK( v[ 2 ] == "string3" ) ;
     }
 
     {
@@ -109,11 +107,11 @@ test_split()
         std::vector< std::string > const
                             v = split( s, "ABC" ) ;
 
-        DO_TEST( v.size() == 4 ) ;
-        DO_TEST( v[ 0 ] == "string1" ) ;
-        DO_TEST( v[ 1 ] == "string2" ) ;
-        DO_TEST( v[ 2 ] == "string3" ) ;
-        DO_TEST( v[ 3 ].empty() ) ;
+        BREATH_CHECK( v.size() == 4 ) ;
+        BREATH_CHECK( v[ 0 ] == "string1" ) ;
+        BREATH_CHECK( v[ 1 ] == "string2" ) ;
+        BREATH_CHECK( v[ 2 ] == "string3" ) ;
+        BREATH_CHECK( v[ 3 ].empty() ) ;
     }
 
     {
@@ -124,10 +122,10 @@ test_split()
         std::string const   separators = { '\0' } ;
         std::vector< std::string > const
                             v = split( s, separators ) ;
-        DO_TEST( v.size() == 3 ) ;
-        DO_TEST( v[ 0 ] == "string1" ) ;
-        DO_TEST( v[ 1 ].empty() ) ;
-        DO_TEST( v[ 2 ] == "string3" ) ;
+        BREATH_CHECK( v.size() == 3 ) ;
+        BREATH_CHECK( v[ 0 ] == "string1" ) ;
+        BREATH_CHECK( v[ 1 ].empty() ) ;
+        BREATH_CHECK( v[ 2 ] == "string3" ) ;
     }
 
     {
@@ -135,12 +133,25 @@ test_split()
         std::string const   separators = only_separators ;
         std::vector< std::string > const
                             v = split( only_separators, separators ) ;
-        DO_TEST( v.size() == 2 ) ;
-        DO_TEST( v[ 0 ].empty() ) ;
-        DO_TEST( v[ 1 ].empty() ) ;
+        BREATH_CHECK( v.size() == 2 ) ;
+        BREATH_CHECK( v[ 0 ].empty() ) ;
+        BREATH_CHECK( v[ 1 ].empty() ) ;
     }
+}
 
-    return EXIT_SUCCESS ;
+}
+
+int
+test_split()
+{
+    using namespace breath ;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run(
+             "split()",
+             { do_test } ) ;
 }
 
 // Local Variables:

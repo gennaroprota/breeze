@@ -12,30 +12,41 @@
 // ___________________________________________________________________________
 
 #include "breath/path/base_file_name.hpp"
-#include <cstdlib>
-
-///////// gps
-#include "breath/diagnostics/assert.hpp"
-#define DO_TEST( x ) BREATH_ASSERT( x )
-//////
+#include "breath/testing/testing.hpp"
+#include <iostream>
 
 int                 test_base_file_name() ;
+
+namespace {
+
+void
+do_test()
+{
+    using               breath::base_file_name ;
+
+    BREATH_CHECK( base_file_name( "" )      == "" ) ;
+    BREATH_CHECK( base_file_name( "my_file" )      == "my_file" ) ;
+    BREATH_CHECK( base_file_name( "/my_file" )     == "my_file" ) ;
+
+    BREATH_CHECK( base_file_name( "/usr/")           == "" ) ;
+    BREATH_CHECK( base_file_name( "/usr/lib/my_lib") == "my_lib" ) ;
+    BREATH_CHECK( base_file_name(
+        "C:\\Documents and Settings\\Genny\\Desktop\\my_file" ) == "my_file" ) ;
+}
+
+}
 
 int
 test_base_file_name()
 {
-    using               breath::base_file_name ;
+    using namespace breath ;
 
-    DO_TEST( base_file_name( "" )      == "" ) ;
-    DO_TEST( base_file_name( "my_file" )      == "my_file" ) ;
-    DO_TEST( base_file_name( "/my_file" )     == "my_file" ) ;
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
 
-    DO_TEST( base_file_name( "/usr/")           == "" ) ;
-    DO_TEST( base_file_name( "/usr/lib/my_lib") == "my_lib" ) ;
-    DO_TEST( base_file_name( "C:\\Documents and Settings\\Genny\\Desktop\\my_file" )
-                                                            == "my_file" ) ;
-
-    return EXIT_SUCCESS ;
+    return test_runner::instance().run(
+             "base_file_name()",
+             { do_test } ) ;
 }
 
 // Local Variables:

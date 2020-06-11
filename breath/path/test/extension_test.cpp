@@ -12,48 +12,59 @@
 // ___________________________________________________________________________
 
 #include "breath/path/extension.hpp"
-#include <cstdlib>
-
-///////// gps
-#include "breath/diagnostics/assert.hpp"
-#define DO_TEST( x ) BREATH_ASSERT( x )
-//////
+#include "breath/testing/testing.hpp"
+#include <iostream>
 
 int                 test_extension() ;
+
+namespace {
+
+void
+do_test()
+{
+    using               breath::extension ;
+
+    BREATH_CHECK( extension( "" )                == "" ) ;
+    BREATH_CHECK( extension( "." )               == "" ) ;
+    BREATH_CHECK( extension( ".." )              == "" ) ;
+
+    BREATH_CHECK( extension( ".dotfile" )        == "" ) ;
+    BREATH_CHECK( extension( ".dotfile.txt" )    == ".txt" ) ;
+    BREATH_CHECK( extension( ".dotfile.tar.gz" ) == ".gz" ) ;
+
+    BREATH_CHECK( extension( "my_file" )        == "" ) ;
+    BREATH_CHECK( extension( "my_file." )       == "." ) ;
+    BREATH_CHECK( extension( "my_file.txt.exe") == ".exe" ) ;
+
+    BREATH_CHECK( extension( "C:/a.b/" )      == "" ) ;
+    BREATH_CHECK( extension( "C:/a.b/file" )  == "" ) ;
+    BREATH_CHECK( extension( "C:/a.b/file." ) == "." ) ;
+    BREATH_CHECK( extension( "/my_file.exe" ) == ".exe" ) ;
+
+    BREATH_CHECK( extension( "/dir/." )       == "" ) ;
+    BREATH_CHECK( extension( "/dir/.." )      == "" ) ;
+
+    BREATH_CHECK( extension( "/dir/.dotfile" )        == "" ) ;
+    BREATH_CHECK( extension( "/dir/.dotfile.txt" )    == ".txt" ) ;
+    BREATH_CHECK( extension( "/dir/.dotfile.tar.gz" ) == ".gz" ) ;
+
+    BREATH_CHECK( extension(
+        "C:/Documents and Settings/Genny/Desktop/my_file.bat" ) == ".bat" ) ;
+}
+
+}
 
 int
 test_extension()
 {
-    using               breath::extension ;
+    using namespace breath ;
 
-    DO_TEST( extension( "" )                == "" ) ;
-    DO_TEST( extension( "." )               == "" ) ;
-    DO_TEST( extension( ".." )              == "" ) ;
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
 
-    DO_TEST( extension( ".dotfile" )        == "" ) ;
-    DO_TEST( extension( ".dotfile.txt" )    == ".txt" ) ;
-    DO_TEST( extension( ".dotfile.tar.gz" ) == ".gz" ) ;
-
-    DO_TEST( extension( "my_file" )        == "" ) ;
-    DO_TEST( extension( "my_file." )       == "." ) ;
-    DO_TEST( extension( "my_file.txt.exe") == ".exe" ) ;
-
-    DO_TEST( extension( "C:/a.b/" )      == "" ) ;
-    DO_TEST( extension( "C:/a.b/file" )  == "" ) ;
-    DO_TEST( extension( "C:/a.b/file." ) == "." ) ;
-    DO_TEST( extension( "/my_file.exe" ) == ".exe" ) ;
-
-    DO_TEST( extension( "/dir/." )       == "" ) ;
-    DO_TEST( extension( "/dir/.." )      == "" ) ;
-
-    DO_TEST( extension( "/dir/.dotfile" )        == "" ) ;
-    DO_TEST( extension( "/dir/.dotfile.txt" )    == ".txt" ) ;
-    DO_TEST( extension( "/dir/.dotfile.tar.gz" ) == ".gz" ) ;
-
-    DO_TEST( extension( "C:/Documents and Settings/Genny/Desktop/my_file.bat" )
-                                                            == ".bat" ) ;
-
-    return EXIT_SUCCESS ;
+    return test_runner::instance().run(
+             "extension()",
+             { do_test } ) ;
 }
 
 // Local Variables:

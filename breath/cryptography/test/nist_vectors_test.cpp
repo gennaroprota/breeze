@@ -22,14 +22,13 @@
 #include "breath/counting/signed_count.hpp"
 #include "breath/cryptography/digest.hpp"
 #include "breath/cryptography/sha1_hasher.hpp"
-#include "breath/diagnostics/assert.hpp"
 #include "breath/environment/get_environment_variable.hpp"
+#include "breath/testing/testing.hpp"
 #include "breath/text/from_string.hpp"
 #include "breath/text/to_string.hpp"
 
 #include <algorithm>
 #include <cstddef>
-#include <cstdlib>
 #include <exception>
 #include <fstream>
 #include <iostream>
@@ -185,10 +184,8 @@ read_compact_string( nist_file & messages, int z )
     return msg ;
 }
 
-}
-
-bool
-tests()
+void
+do_test()
 {
     using namespace breath ;
 
@@ -235,7 +232,7 @@ tests()
 
             if ( montecarlo_section ) {
                 msg = read_compact_string( messages, z ) ;
-                BREATH_ASSERT( 8 * msg.size() == 416 ) ;
+                BREATH_CHECK( 8 * msg.size() == 416 ) ;
 
                 montecarlo_harness.init( msg ) ;
             } else {
@@ -270,6 +267,8 @@ tests()
             std::cerr << "Failure on test vector # " << total << std::endl ;
             std::cerr << "\tCalculated: " << calculated << std::endl ;
             std::cerr << "\tExpected:   " << expected   << std::endl ;
+
+            BREATH_CHECK( false ) ;
         }
     }
 
@@ -294,20 +293,21 @@ tests()
                      ? "Test passed"
                      : "*** TEST FAILED ***" )
               << std::endl ;
+}
 
-    return test_passed ;
 }
 
 int
 test_nist_vectors()
-try {
-    return tests()
-               ? EXIT_SUCCESS
-               : EXIT_FAILURE
-               ;
-} catch ( std::exception const & ex ) {
-    std::cerr << "Error: '" << ex.what() << '\'' << std::endl ;
-    return EXIT_FAILURE ;
+{
+    using namespace breath ;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run(
+             "NIST vectors",
+             { do_test } ) ;
 }
 
 // Local Variables:

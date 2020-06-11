@@ -12,27 +12,39 @@
 // ___________________________________________________________________________
 
 #include "breath/random/entropy_source.hpp"
-#include <cstdlib>
+#include "breath/testing/testing.hpp"
+#include <iostream>
 
 int                 test_entropy_source() ;
 
-int
-test_entropy_source()
+namespace {
+
+void
+do_test()
 {
     breath::entropy_source
                         source ;
 
-    int                 result = EXIT_FAILURE ;
-
     if (source.release()) {
         // check that a second release doesn't yield "success"
         //
-        if ( ! source.release() ) {
-            result = EXIT_SUCCESS ;
-        }
+        BREATH_CHECK( ! source.release() ) ;
     }
+}
 
-    return result ;
+}
+
+int
+test_entropy_source()
+{
+    using namespace breath ;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run(
+             "entropy_source",
+             { do_test } ) ;
 }
 
 // Local Variables:

@@ -11,14 +11,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-// gps temp
-#undef NDEBUG
-#include <cassert>
-#define DO_TEST(x)  assert(x)
-// ^^^^^^^^ ---------------
-
 #include "breath/debugging/dump_expression.hpp"
-#include <cstdlib>
+#include "breath/testing/testing.hpp"
 #include <iostream>
 #include <ostream> // not necessary in C++11
 #include <sstream>
@@ -56,10 +50,8 @@ clear_stringstream( std::ostringstream & ss )
     ss.str( "" ) ;
 }
 
-}
-
-int
-test_breath_dump_expression()
+void
+do_test()
 {
     std::ostringstream  oss ;
     stream_guard const  guard( std::cout, oss.rdbuf() ) ;
@@ -68,7 +60,7 @@ test_breath_dump_expression()
     //      directly as "8"
     // -----------------------------------------------------------------------
     BREATH_DUMP_EXPRESSION( 1 << 3 ) ;
-    DO_TEST( oss.str() == "1 << 3 = 8\n" ) ;
+    BREATH_CHECK( oss.str() == "1 << 3 = 8\n" ) ;
     clear_stringstream( oss ) ;
 
     //      Check that macros are expanded (the replacement lists here
@@ -79,11 +71,11 @@ test_breath_dump_expression()
 #   define FUNCTION_LIKE_DUMMY()    1 << 3 * 4
 
     BREATH_DUMP_EXPRESSION( OBJECT_LIKE_DUMMY ) ;
-    DO_TEST( oss.str() == "1 << 3 * 2 = 64 [from: OBJECT_LIKE_DUMMY]\n" ) ;
+    BREATH_CHECK( oss.str() == "1 << 3 * 2 = 64 [from: OBJECT_LIKE_DUMMY]\n" ) ;
     clear_stringstream( oss ) ;
 
     BREATH_DUMP_EXPRESSION( FUNCTION_LIKE_DUMMY() ) ;
-    DO_TEST( oss.str() ==
+    BREATH_CHECK( oss.str() ==
              "1 << 3 * 4 = 4096 [from: FUNCTION_LIKE_DUMMY()]\n" ) ;
     clear_stringstream( oss ) ;
 
@@ -96,10 +88,23 @@ test_breath_dump_expression()
 #   define BREATH_dummy             BREATH_dummy
 
     BREATH_DUMP_EXPRESSION( BREATH_dummy ) ;
-    DO_TEST( oss.str() == "BREATH_dummy = 1\n" ) ;
+    BREATH_CHECK( oss.str() == "BREATH_dummy = 1\n" ) ;
     clear_stringstream( oss ) ;
+}
 
-    return EXIT_SUCCESS ;
+}
+
+int
+test_breath_dump_expression()
+{
+    using namespace breath ;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run(
+             "BREATH_DUMP_EXPRESSION()",
+             { do_test } ) ;
 }
 
 // Local Variables:

@@ -13,26 +13,37 @@
 
 #include "breath/environment/get_environment_variable.hpp"
 #include "breath/idiom/maybe.hpp"
-#include <cstdlib>
+#include "breath/testing/testing.hpp"
+#include <iostream>
 #include <string>
-
-/////////
-#include "breath/diagnostics/assert.hpp"
-#define DO_TEST( x ) BREATH_ASSERT( x )
-//////
 
 int                 test_get_environment_variable() ;
 
-int
-test_get_environment_variable()
+namespace {
+
+void
+do_test()
 {
     using namespace breath ;
 
     maybe< std::string > const
                         e = get_environment_variable( "BREATH_ROOT" ) ;
 
-    DO_TEST( e.is_valid() ) ;
-    DO_TEST( ! e.value().empty() ) ;
+    BREATH_CHECK( e.is_valid() ) ;
+    BREATH_CHECK( ! e.value().empty() ) ;
+}
 
-    return EXIT_SUCCESS ;
+}
+
+int
+test_get_environment_variable()
+{
+    using namespace breath ;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run(
+             "get_environment_variable()",
+             { do_test } ) ;
 }
