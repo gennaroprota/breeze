@@ -11,18 +11,17 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breath/testing/testing.hpp"
 #include "breath/text/printable_string.hpp"
-#include <cstdlib>
+#include <iostream>
 #include <sstream>
-///
-#include "breath/diagnostics/assert.hpp"
-#define DO_TEST( x )  BREATH_ASSERT( x )
-//////
 
 int                 test_printable_string() ;
 
-int
-test_printable_string()
+namespace {
+
+void
+do_test()
 {
     using breath::printable_string ;
 
@@ -31,8 +30,8 @@ test_printable_string()
                             p( nullptr ) ;
         std::ostringstream  ss ;
         ss << p ;
-        DO_TEST( ! ss.fail() ) ;
-        DO_TEST( ss.str() == "(null)" ) ;
+        BREATH_CHECK( ! ss.fail() ) ;
+        BREATH_CHECK( ss.str() == "(null)" ) ;
     }
 
     {
@@ -43,9 +42,9 @@ test_printable_string()
         ss.setf( std::ios_base::left, std::ios_base::adjustfield ) ;
         ss.setf( std::ios_base::showbase ) ;
         ss << p ;
-        DO_TEST( ! ss.fail() ) ;
-        DO_TEST( ss.str() == "\"'\\\"\\?\\\\\\a\\b\\f\\n\\r\\t\\v\\x01\\x02"
-                             "\\x03\\x1f ~\\x7f\\xa0\\xff\"") ;
+        BREATH_CHECK( ! ss.fail() ) ;
+        BREATH_CHECK( ss.str() == "\"'\\\"\\?\\\\\\a\\b\\f\\n\\r\\t\\v\\x01"
+                             "\\x02\\x03\\x1f ~\\x7f\\xa0\\xff\"") ;
     }
 
     {
@@ -53,11 +52,24 @@ test_printable_string()
                             no_trigraph( "\?\?!" ) ;
         std::ostringstream  ss ;
         ss << no_trigraph ;
-        DO_TEST( ! ss.fail() ) ;
-        DO_TEST( ss.str() == "\"\\?\\?!\"" ) ;
+        BREATH_CHECK( ! ss.fail() ) ;
+        BREATH_CHECK( ss.str() == "\"\\?\\?!\"" ) ;
     }
+}
 
-    return EXIT_SUCCESS ;
+}
+
+int
+test_printable_string()
+{
+    using namespace breath ;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run(
+             "printable_string",
+             { do_test } ) ;
 }
 
 // Local Variables:

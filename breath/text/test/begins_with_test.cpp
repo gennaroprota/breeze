@@ -11,42 +11,41 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breath/testing/testing.hpp"
 #include "breath/text/begins_with.hpp"
 #include <cstddef>
+#include <iostream>
 #include <string>
-
-// gps temp
-#include "breath/diagnostics/assert.hpp"
-#define DO_TEST( x ) BREATH_ASSERT( x )
-////////////////
 
 int                 test_begins_with() ;
 
-int
-test_begins_with()
+namespace {
+
+void
+do_test()
 {
     using breath::begins_with ;
 
     std::string const   empty ;
-    DO_TEST( begins_with( empty, empty ) ) ;
+    BREATH_CHECK( begins_with( empty, empty ) ) ;
 
-    DO_TEST(   begins_with( "",  ""  ) ) ;
-    DO_TEST(   begins_with( "a", ""  ) ) ;
-    DO_TEST(   begins_with( "a", "a" ) ) ;
-    DO_TEST( ! begins_with( "",  "a" ) ) ;
-    DO_TEST( ! begins_with( "a", "ab" ) ) ;
+    BREATH_CHECK(   begins_with( "",  ""  ) ) ;
+    BREATH_CHECK(   begins_with( "a", ""  ) ) ;
+    BREATH_CHECK(   begins_with( "a", "a" ) ) ;
+    BREATH_CHECK( ! begins_with( "",  "a" ) ) ;
+    BREATH_CHECK( ! begins_with( "a", "ab" ) ) ;
 
     // some space tests
-    DO_TEST(   begins_with( " a",  " "   ) ) ;
-    DO_TEST(   begins_with( " a  ", " "   ) ) ;
-    DO_TEST(   begins_with( "  a", "  "  ) ) ;
-    DO_TEST( ! begins_with( " a",  "  "  ) ) ;
-    DO_TEST( ! begins_with( " a",  "a"   ) ) ;
-    DO_TEST( ! begins_with( "          ", "\t" ) ) ;
+    BREATH_CHECK(   begins_with( " a",  " "   ) ) ;
+    BREATH_CHECK(   begins_with( " a  ", " "   ) ) ;
+    BREATH_CHECK(   begins_with( "  a", "  "  ) ) ;
+    BREATH_CHECK( ! begins_with( " a",  "  "  ) ) ;
+    BREATH_CHECK( ! begins_with( " a",  "a"   ) ) ;
+    BREATH_CHECK( ! begins_with( "          ", "\t" ) ) ;
 
-    DO_TEST(   begins_with( "abc", "ab"   ) ) ;
-    DO_TEST( ! begins_with( "ab", "abc"   ) ) ;
-    DO_TEST( ! begins_with( "bcd", "abcd" ) ) ;
+    BREATH_CHECK(   begins_with( "abc", "ab"   ) ) ;
+    BREATH_CHECK( ! begins_with( "ab", "abc"   ) ) ;
+    BREATH_CHECK( ! begins_with( "bcd", "abcd" ) ) ;
 
     // check that embedded NULs are handled correctly
     std::string         s ;
@@ -56,14 +55,27 @@ test_begins_with()
 
     std::string         t ;
     t.push_back( '\0' ) ;
-    DO_TEST( ! begins_with( s, t) ) ;
+    BREATH_CHECK( ! begins_with( s, t) ) ;
     t = "a" ;
     t.push_back( '\0' ) ;
-    DO_TEST( begins_with( s, t ) ) ;
-    DO_TEST( begins_with( s, s ) ) ;
-    DO_TEST( begins_with( t, t ) ) ;
+    BREATH_CHECK( begins_with( s, t ) ) ;
+    BREATH_CHECK( begins_with( s, s ) ) ;
+    BREATH_CHECK( begins_with( t, t ) ) ;
+}
 
-    return EXIT_SUCCESS ;
+}
+
+int
+test_begins_with()
+{
+    using namespace breath ;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run(
+             "begins_with()",
+             { do_test } ) ;
 }
 
 // Local Variables:

@@ -11,42 +11,40 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breath/testing/testing.hpp"
 #include "breath/text/ends_with.hpp"
 
-#include <cstdlib>
+#include <iostream>
 #include <string>
-
-// gps temp
-#include "breath/diagnostics/assert.hpp"
-#define DO_TEST( x ) BREATH_ASSERT( x )
-////////////////
 
 int                 test_ends_with() ;
 
-int
-test_ends_with()
+namespace {
+
+void
+do_test()
 {
     using breath::ends_with ;
 
     std::string const   empty ;
-    DO_TEST( ends_with( empty, empty ) ) ;
+    BREATH_CHECK( ends_with( empty, empty ) ) ;
 
-    DO_TEST(   ends_with( "",  ""  ) ) ;
-    DO_TEST(   ends_with( "a", ""  ) ) ;
-    DO_TEST(   ends_with( "a", "a" ) ) ;
-    DO_TEST( ! ends_with( "",  "a" ) ) ;
-    DO_TEST( ! ends_with( "a", "ab" ) ) ;
+    BREATH_CHECK(   ends_with( "",  ""  ) ) ;
+    BREATH_CHECK(   ends_with( "a", ""  ) ) ;
+    BREATH_CHECK(   ends_with( "a", "a" ) ) ;
+    BREATH_CHECK( ! ends_with( "",  "a" ) ) ;
+    BREATH_CHECK( ! ends_with( "a", "ab" ) ) ;
 
     // some space tests
-    DO_TEST(   ends_with( "a ",  " "   ) ) ;
-    DO_TEST(   ends_with( "a  ", " "   ) ) ;
-    DO_TEST(   ends_with( "a  ", "  "  ) ) ;
-    DO_TEST( ! ends_with( "a ",  "  "  ) ) ;
-    DO_TEST( ! ends_with( "a ",  "a"   ) ) ;
-    DO_TEST( ! ends_with( "          ", "\t" ) ) ;
+    BREATH_CHECK(   ends_with( "a ",  " "   ) ) ;
+    BREATH_CHECK(   ends_with( "a  ", " "   ) ) ;
+    BREATH_CHECK(   ends_with( "a  ", "  "  ) ) ;
+    BREATH_CHECK( ! ends_with( "a ",  "  "  ) ) ;
+    BREATH_CHECK( ! ends_with( "a ",  "a"   ) ) ;
+    BREATH_CHECK( ! ends_with( "          ", "\t" ) ) ;
 
-    DO_TEST(   ends_with( "abc", "bc"   ) ) ;
-    DO_TEST( ! ends_with( "bcd", "abcd" ) ) ;
+    BREATH_CHECK(   ends_with( "abc", "bc"   ) ) ;
+    BREATH_CHECK( ! ends_with( "bcd", "abcd" ) ) ;
 
     // check that embedded NULs are handled correctly
     std::string         s ;
@@ -56,13 +54,26 @@ test_ends_with()
 
     std::string         t ;
     t.push_back( '\0' ) ;
-    DO_TEST( ! ends_with( s, t) ) ;
+    BREATH_CHECK( ! ends_with( s, t) ) ;
     t.push_back( 'b' ) ;
-    DO_TEST( ends_with( s, t ) ) ;
-    DO_TEST( ends_with( s, s ) ) ;
-    DO_TEST( ends_with( s, t ) ) ;
+    BREATH_CHECK( ends_with( s, t ) ) ;
+    BREATH_CHECK( ends_with( s, s ) ) ;
+    BREATH_CHECK( ends_with( s, t ) ) ;
+}
 
-    return EXIT_SUCCESS ;
+}
+
+int
+test_ends_with()
+{
+    using namespace breath ;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run(
+             "ends_with()",
+             { do_test } ) ;
 }
 
 // Local Variables:

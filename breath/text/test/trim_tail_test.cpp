@@ -11,39 +11,50 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breath/testing/testing.hpp"
 #include "breath/text/set_of_chars.hpp"
 #include "breath/text/trim_tail.hpp"
-#include <cstdlib>
-
-// gps temp
-#include "breath/diagnostics/assert.hpp"
-#define DO_TEST( x ) BREATH_ASSERT( x )
-////////////////
+#include <iostream>
 
 int                 test_trim_tail() ;
 
-int
-test_trim_tail()
+namespace {
+
+void
+do_test()
 {
     using breath::trim_tail ;
     using breath::set_of_chars ;
 
-    DO_TEST( trim_tail( "" ) == "" ) ;
-    DO_TEST( trim_tail( " " ) == "" ) ;
-    DO_TEST( trim_tail( "\t" ) == "" ) ;
-    DO_TEST( trim_tail( " \t" ) == "" ) ;
-    DO_TEST( trim_tail( "\t " ) == "" ) ;
+    BREATH_CHECK( trim_tail( "" ) == "" ) ;
+    BREATH_CHECK( trim_tail( " " ) == "" ) ;
+    BREATH_CHECK( trim_tail( "\t" ) == "" ) ;
+    BREATH_CHECK( trim_tail( " \t" ) == "" ) ;
+    BREATH_CHECK( trim_tail( "\t " ) == "" ) ;
 
-    DO_TEST( trim_tail( "abc  " ) == "abc" ) ;
-    DO_TEST( trim_tail( "abc \t" ) == "abc" ) ;
-    DO_TEST( trim_tail( "abc a" ) == "abc a" ) ;
+    BREATH_CHECK( trim_tail( "abc  " ) == "abc" ) ;
+    BREATH_CHECK( trim_tail( "abc \t" ) == "abc" ) ;
+    BREATH_CHECK( trim_tail( "abc a" ) == "abc a" ) ;
 
-    DO_TEST( trim_tail( "abcd", set_of_chars( "db" ) ) == "abc" ) ;
-    DO_TEST( trim_tail( "abcd", set_of_chars( "badc" ) ) == "" ) ;
-    DO_TEST( trim_tail( "a", set_of_chars( "bcde" ) ) == "a" ) ;
-    DO_TEST( trim_tail( "abcd", set_of_chars( "bce" ) ) == "abcd" ) ;
+    BREATH_CHECK( trim_tail( "abcd", set_of_chars( "db" ) ) == "abc" ) ;
+    BREATH_CHECK( trim_tail( "abcd", set_of_chars( "badc" ) ) == "" ) ;
+    BREATH_CHECK( trim_tail( "a", set_of_chars( "bcde" ) ) == "a" ) ;
+    BREATH_CHECK( trim_tail( "abcd", set_of_chars( "bce" ) ) == "abcd" ) ;
+}
 
-    return EXIT_SUCCESS;
+}
+
+int
+test_trim_tail()
+{
+    using namespace breath ;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run(
+             "trim_tail()",
+             { do_test } ) ;
 }
 
 // Local Variables:

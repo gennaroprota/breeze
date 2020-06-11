@@ -12,7 +12,8 @@
 // ___________________________________________________________________________
 
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
-#include <cstdlib>
+#include "breath/testing/testing.hpp"
+#include <iostream>
 
 #define foo( a )    unexisting_function
 
@@ -25,14 +26,29 @@ void
 {
 }
 
+//      This is actually a compile-time test: if the file compiles, then
+//      everything is OK. But we turn it into a runtime test, at least
+//      for now, so that we get a report.
+// ---------------------------------------------------------------------------
+void
+do_test()
+{
+    foo BREATH_PREVENT_MACRO_EXPANSION ( 1 ) ;
+}
+
 }
 
 int
 test_breath_prevent_macro_expansion()
 {
-    foo BREATH_PREVENT_MACRO_EXPANSION ( 1 ) ;
+    using namespace breath ;
 
-    return EXIT_SUCCESS ;
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run(
+             "BREATH_PREVENT_MACRO_EXPANSION",
+             { do_test } ) ;
 }
 
 // Local Variables:

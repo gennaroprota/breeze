@@ -12,25 +12,44 @@
 // ___________________________________________________________________________
 
 #include "breath/meta/is_2s_complement.hpp"
-#include <cstdlib>
+#include "breath/testing/testing.hpp"
+#include <iostream>
 
 int                 test_is_2s_complement() ;
 
 using breath::meta::is_2s_complement ;
 
-//      TODO: use our test facilities anyway, to have a run-time report?
-//
-static_assert( ! is_2s_complement< bool >(),          "" ) ;
-static_assert(   is_2s_complement< signed char >(),   "" ) ;
-static_assert( ! is_2s_complement< unsigned char >(), "" ) ;
+namespace {
 
-static_assert(   is_2s_complement< int >(),           "" ) ;
-static_assert( ! is_2s_complement< unsigned int >(),  "" ) ;
+//      This is actually a compile-time test. But we turn it into a
+//      runtime test, at least for now, so that we get a report.
+// ---------------------------------------------------------------------------
+void
+do_test()
+{
+    using breath::meta::is_2s_complement ;
+
+    static_assert( ! is_2s_complement< bool >(),          "" ) ;
+    static_assert(   is_2s_complement< signed char >(),   "" ) ;
+    static_assert( ! is_2s_complement< unsigned char >(), "" ) ;
+
+    static_assert(   is_2s_complement< int >(),           "" ) ;
+    static_assert( ! is_2s_complement< unsigned int >(),  "" ) ;
+}
+
+}
 
 int
 test_is_2s_complement()
 {
-    return EXIT_SUCCESS ;
+    using namespace breath ;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run(
+             "is_2s_complement()",
+             { do_test } ) ;
 }
 
 // Local Variables:

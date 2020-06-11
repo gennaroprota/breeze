@@ -11,39 +11,50 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breath/testing/testing.hpp"
 #include "breath/text/set_of_chars.hpp"
 #include "breath/text/trim_head.hpp"
-#include <cstdlib>
-
-// gps temp
-#include "breath/diagnostics/assert.hpp"
-#define DO_TEST( x ) BREATH_ASSERT( x )
-////////////////
+#include <iostream>
 
 int                 test_trim_head() ;
 
-int
-test_trim_head()
+namespace {
+
+void
+do_test()
 {
     using breath::trim_head ;
     using breath::set_of_chars ;
 
-    DO_TEST( trim_head( "" ) == "" ) ;
-    DO_TEST( trim_head( " " ) == "" ) ;
-    DO_TEST( trim_head( "\t" ) == "" ) ;
-    DO_TEST( trim_head( " \t" ) == "" ) ;
-    DO_TEST( trim_head( "\t " ) == "" ) ;
+    BREATH_CHECK( trim_head( "" ) == "" ) ;
+    BREATH_CHECK( trim_head( " " ) == "" ) ;
+    BREATH_CHECK( trim_head( "\t" ) == "" ) ;
+    BREATH_CHECK( trim_head( " \t" ) == "" ) ;
+    BREATH_CHECK( trim_head( "\t " ) == "" ) ;
 
-    DO_TEST( trim_head( "  abc" ) == "abc" ) ;
-    DO_TEST( trim_head( "\t abc" ) == "abc" ) ;
-    DO_TEST( trim_head( "abc a" ) == "abc a" ) ;
+    BREATH_CHECK( trim_head( "  abc" ) == "abc" ) ;
+    BREATH_CHECK( trim_head( "\t abc" ) == "abc" ) ;
+    BREATH_CHECK( trim_head( "abc a" ) == "abc a" ) ;
 
-    DO_TEST( trim_head( "abcd", set_of_chars( "ab" ) ) == "cd" ) ;
-    DO_TEST( trim_head( "abcde", set_of_chars( "badc" ) ) == "e" ) ;
-    DO_TEST( trim_head( "a", set_of_chars( "bcde" ) ) == "a" ) ;
-    DO_TEST( trim_head( "abcd", set_of_chars( "bce" ) ) == "abcd" ) ;
+    BREATH_CHECK( trim_head( "abcd", set_of_chars( "ab" ) ) == "cd" ) ;
+    BREATH_CHECK( trim_head( "abcde", set_of_chars( "badc" ) ) == "e" ) ;
+    BREATH_CHECK( trim_head( "a", set_of_chars( "bcde" ) ) == "a" ) ;
+    BREATH_CHECK( trim_head( "abcd", set_of_chars( "bce" ) ) == "abcd" ) ;
+}
 
-    return EXIT_SUCCESS ;
+}
+
+int
+test_trim_head()
+{
+    using namespace breath ;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run(
+             "trim_head()",
+             { do_test } ) ;
 }
 
 // Local Variables:
