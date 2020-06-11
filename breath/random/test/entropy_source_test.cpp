@@ -25,11 +25,20 @@ do_test()
     breath::entropy_source
                         source ;
 
-    if (source.release()) {
-        // check that a second release doesn't yield "success"
-        //
-        BREATH_CHECK( ! source.release() ) ;
-    }
+    auto const          value = source.next() ;
+    BREATH_CHECK( source.min() <= value &&
+                    value <= source.max() ) ;
+
+    int const           maximum = 15 ;
+    auto const          capped_value = source( maximum ) ;
+    BREATH_CHECK( source.min() <= capped_value &&
+                    capped_value <= maximum ) ;
+
+    BREATH_CHECK( source.release() ) ;
+
+    //      Check that a second release doesn't yield "success".
+    // -----------------------------------------------------------------------
+    BREATH_CHECK( ! source.release() ) ;
 }
 
 }
