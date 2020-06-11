@@ -15,8 +15,9 @@
         appear correctly on <github.com>.
      -------------------------------------------------------------------------
 -->
-[![Build Status](https://travis-ci.com/gennaroprota/breath.svg?branch=master)
-](https://travis-ci.com/gennaroprota/breath)
+[![Build Status](
+https://travis-ci.com/gennaroprota/breath.svg?branch=master)](
+https://travis-ci.com/gennaroprota/breath)
 [![Lines of Code](
 https://tokei.rs/b1/github/gennaroprota/breath?category=code)](
 https://github.com/gennaroprota/breath)
