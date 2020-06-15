@@ -12,6 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/debugging/dump_expression.hpp"
+#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/testing/testing.hpp"
 #include <iostream>
 #include <ostream> // not necessary in C++11
@@ -29,6 +30,8 @@ namespace {
 class stream_guard
 {
 public:
+    BREATH_DECLARE_NON_COPYABLE( stream_guard ) ;
+
     explicit            stream_guard( std::ostream & os, std::streambuf * buf )
                             :   m_os( os ), m_oldbuf( os.rdbuf( buf ) )
                         {
