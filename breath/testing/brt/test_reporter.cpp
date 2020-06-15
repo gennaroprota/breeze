@@ -15,6 +15,8 @@
 
 namespace breath {
 
+test_reporter::test_reporter() = default ;
+
 void
 test_reporter::on_all_tests_begin( char const * group_description )
 {

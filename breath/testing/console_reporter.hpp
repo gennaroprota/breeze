@@ -26,6 +26,10 @@ class console_reporter
     :   public test_reporter
 {
 public:
+    //      Declare this explicitly to avoid Visual C++ C4625.
+    // -----------------------------------------------------------------------
+                        console_reporter( console_reporter const & ) = delete ;
+
     //      Declare this explicitly to avoid Visual C++ C4626 (and
     //      C5027).
     // -----------------------------------------------------------------------
