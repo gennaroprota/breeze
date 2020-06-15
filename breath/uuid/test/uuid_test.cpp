@@ -73,14 +73,16 @@ do_tests()
 
 
 int
-main()
+test_uuid()
 {
     using namespace breath ;
 
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { do_tests } ) ;
+    return test_runner::instance().run(
+             "uuid",
+             { do_tests } ) ;
 }
 
 // Local Variables:

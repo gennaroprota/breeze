@@ -191,6 +191,9 @@
     <ClCompile Include="..\..\..\breath\random\test\subrange_max_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\breath\uuid\test\uuid_test.cpp">
+      <Filter>Component Tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\test\unit_test_main.hpp">
