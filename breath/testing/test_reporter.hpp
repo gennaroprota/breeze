@@ -21,7 +21,20 @@ class test_exception ;
 
 class test_reporter
 {
+protected:
+                        test_reporter() ;
+
 public:
+    //      Polymorphic classes other than exception classes should be
+    //      non-copyable. (We don't use BREATH_DECLARE_NON_COPYABLE()
+    //      here, because we don't want the testing facilities to be
+    //      dependent on other parts of the library, although the
+    //      dependency on something as simple and self-contained as
+    //      BREATH_DECLARE_NON_COPYABLE() would be acceptable.)
+    // -----------------------------------------------------------------------
+                        test_reporter( test_reporter const & ) = delete ;
+    void                operator =( test_reporter const & ) = delete ;
+
     void                on_all_tests_begin( char const * group_description ) ;
     void                on_all_tests_end() ;
     void                on_test_begin( int test_number,
