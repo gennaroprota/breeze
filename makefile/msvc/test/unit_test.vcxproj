@@ -120,7 +120,7 @@
     <ClCompile Include="..\..\..\test\unit_test_main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="unit_test_main.hpp" />
+    <ClInclude Include="..\..\..\test\unit_test_main.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A3F790C1-08D4-4D58-AA93-DAB57469BB9E}</ProjectGuid>
