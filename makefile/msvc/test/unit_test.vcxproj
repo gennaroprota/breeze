@@ -117,6 +117,7 @@
     <ClCompile Include="..\..\..\breath\text\test\trim_head_test.cpp" />
     <ClCompile Include="..\..\..\breath\text\test\trim_tail_test.cpp" />
     <ClCompile Include="..\..\..\breath\type_identification\test\readable_type_name_test.cpp" />
+    <ClCompile Include="..\..\..\breath\uuid\test\uuid_test.cpp" />
     <ClCompile Include="..\..\..\test\unit_test_main.cpp" />
   </ItemGroup>
   <ItemGroup>
