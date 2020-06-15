@@ -16,7 +16,7 @@
 #include "breath/diagnostics/last_api_error.hpp"
 #include "breath/process/program.hpp"
 #undef UNICODE          // it seems impossible to directly call
-                        // GetEnvironmentStringsA, so undefine UNICODE
+                        // GetEnvironmentStringsA(), so undefine UNICODE
 #include <Windows.h>    // and use the normal name
 #include <utility>
 
