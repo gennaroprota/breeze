@@ -8,7 +8,8 @@
 //
 //!     \file
 //!     \brief A stream that discards any output to it and never has
-//!            characters in input.
+//!            characters in input, plus its corresponding stream
+//!            buffer.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_CnvhAthmCrzPoNDMrZPUfBrAGrgy3Xe0
@@ -20,7 +21,11 @@
 
 namespace breath {
 
-//! \cond implementation
+//      basic_null_stream_buffer:
+//      -------------------------
+//
+//!     The stream buffer used by \c basic_null_stream.
+// ---------------------------------------------------------------------------
 template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_null_stream_buffer
     :   public std::basic_streambuf< Ch, Traits >
@@ -34,7 +39,16 @@ public:
                         basic_null_stream_buffer() ;
 
 protected:
+    //!     \return
+    //!         A value which doesn't compare equal to \c Traits::eof()
+    //!         (this signals that the output succeeded).
+    // -----------------------------------------------------------------------
     virtual int_type    overflow( int_type c ) override ;
+
+    //!     \return
+    //!         \c Traits::eof() (this signals that the input reached
+    //!         end of file).
+    // -----------------------------------------------------------------------
     virtual int_type    underflow() override ;
 
 private:
@@ -44,7 +58,6 @@ private:
     // -----------------------------------------------------------------------
     Ch                  m_dummy_buffer[ 64 ] ;
 } ;
-//! \endcond
 
 //!     basic_null_stream:
 //!     ------------------
