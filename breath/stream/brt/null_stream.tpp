@@ -22,7 +22,7 @@ basic_null_stream_buffer< Ch, Traits >::overflow( int_type c )
 {
     set_buffer() ;
     return Traits::eq_int_type( c, Traits::eof() )
-                ? '\0'
+                ? Ch()
                 : c
                 ;
 }
