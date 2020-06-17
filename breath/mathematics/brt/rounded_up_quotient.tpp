@@ -15,7 +15,7 @@ constexpr Integer
 rounded_up_quotient( Integer a, Integer b ) noexcept
 {
     BREATH_ASSERT( b != 0 ) ;
-    
+
     //      We avoid introducing intermediate variables here, to make
     //      make this compilable with VC++ 2015. (TODO)
     // -----------------------------------------------------------------------
