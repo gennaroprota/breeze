@@ -15,7 +15,7 @@
 #include "breath/testing/testing.hpp"
 #include <iostream>
 
-#define foo( a )    unexisting_function
+#define foo( a )    unexisting_function( a )
 
 int                 test_breath_prevent_macro_expansion() ;
 
