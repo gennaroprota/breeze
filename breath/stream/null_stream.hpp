@@ -59,9 +59,9 @@ private:
     Ch                  m_dummy_buffer[ 64 ] ;
 } ;
 
-//!     basic_null_stream:
-//!     ------------------
-//!
+//      basic_null_stream:
+//      ------------------
+//
 //!     A stream that discards any output and provides no input. On
 //!     output, the stream never signals failbit. On input it is
 //!     always on EOF. The behavior is similar to a file stream
