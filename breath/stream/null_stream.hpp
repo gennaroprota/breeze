@@ -52,7 +52,7 @@ protected:
     virtual int_type    underflow() override ;
 
 private:
-    void                set_buffer() ;
+    void                set_put_area_pointers() ;
 
     //      Having a buffer avoids some virtual function calls.
     // -----------------------------------------------------------------------
