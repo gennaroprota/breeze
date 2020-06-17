@@ -4,4 +4,6 @@ Reason: <...>.
 
 <Possible details on what, not how>.
 
+<Possible issue reference, e.g. "This closes issue #n">.
+
 Other keywords: <...>, <...>.
