@@ -21,6 +21,9 @@ typename basic_null_stream_buffer< Ch, Traits >::int_type
 basic_null_stream_buffer< Ch, Traits >::overflow( int_type c )
 {
     set_put_area_pointers() ;
+
+    //      Would it be worthwhile to use not_eof( c )?
+    // -----------------------------------------------------------------------
     return Traits::eq_int_type( c, Traits::eof() )
                 ? Ch()
                 : c
