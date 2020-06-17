@@ -41,6 +41,8 @@ check()
         int i ;
         s >> i ;
         BREATH_CHECK( s.eof() ) ;
+        BREATH_CHECK( s.fail() ) ;
+        BREATH_CHECK( ! s.bad() ) ;
     }
 }
 
