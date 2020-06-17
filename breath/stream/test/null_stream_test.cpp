@@ -38,7 +38,7 @@ check()
     }
     {
         breath::null_stream s ;
-        int i ;
+        int i = 0 ;
         s >> i ;
         BREATH_CHECK( s.eof() ) ;
         BREATH_CHECK( s.fail() ) ;
