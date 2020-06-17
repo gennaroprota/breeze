@@ -63,10 +63,10 @@ private:
 //      ------------------
 //
 //!     A stream that discards any output and provides no input. On
-//!     output, the stream never signals failbit. On input it is
-//!     always on EOF. The behavior is similar to a file stream
-//!     opened on /dev/null under Unix, but this is portable and
-//!     doesn't make system calls.
+//!     output, the stream never signals failbit. On input it always
+//!     signals EOF. The behavior is similar to a file stream opened on
+//!     /dev/null under Unix, but this is portable and doesn't make
+//!     system calls.
 // ---------------------------------------------------------------------------
 template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_null_stream
