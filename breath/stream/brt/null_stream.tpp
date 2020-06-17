@@ -13,14 +13,14 @@ namespace breath {
 template< typename Ch, typename Traits >
 basic_null_stream_buffer< Ch, Traits >::basic_null_stream_buffer()
 {
-    set_buffer() ;
+    set_put_area_pointers() ;
 }
 
 template< typename Ch, typename Traits >
 typename basic_null_stream_buffer< Ch, Traits >::int_type
 basic_null_stream_buffer< Ch, Traits >::overflow( int_type c )
 {
-    set_buffer() ;
+    set_put_area_pointers() ;
     return Traits::eq_int_type( c, Traits::eof() )
                 ? Ch()
                 : c
@@ -36,7 +36,7 @@ basic_null_stream_buffer< Ch, Traits >::underflow()
 
 template< typename Ch, typename Traits >
 void
-basic_null_stream_buffer< Ch, Traits >::set_buffer()
+basic_null_stream_buffer< Ch, Traits >::set_put_area_pointers()
 {
     this->setp( breath::begin( m_dummy_buffer ),
                 breath::end(   m_dummy_buffer ) ) ;
