@@ -83,11 +83,11 @@ entropy_source::impl::maximum() const
 bool
 entropy_source::impl::acquire( DWORD flags )
 {
-    return CryptAcquireContext( &m_provider_handle,
-                                nullptr,
-                                nullptr,
-                                PROV_RSA_FULL,
-                                flags | CRYPT_VERIFYCONTEXT ) != 0 ;
+    return CryptAcquireContextA( &m_provider_handle,
+                                 nullptr,
+                                 nullptr,
+                                 PROV_RSA_FULL,
+                                 flags | CRYPT_VERIFYCONTEXT ) != 0 ;
 }
 
 bool
