@@ -26,7 +26,7 @@ namespace breath {
 //!         b != 0
 //!
 //!     \return
-//!         The ceiling of <code>a / b</code>.
+//!         The ceiling of the quotient between \c a and \c b.
 //!
 //!     Useful to answer questions such as: "How many octets do I need
 //!     to store 20 bits?". Answer: <code>rounded_up_quotient( 20, 8 )
