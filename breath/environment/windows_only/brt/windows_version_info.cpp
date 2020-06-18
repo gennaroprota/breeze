@@ -108,7 +108,6 @@ windows_version_info::windows_version_info()
     m_major_version = static_cast< int >( HIWORD( fixed->dwFileVersionMS ) ) ;
     m_minor_version = static_cast< int >( LOWORD( fixed->dwFileVersionMS ) ) ;
     m_build_number  = static_cast< int >( HIWORD( fixed->dwFileVersionLS ) ) ;
-
 }
 
 windows_version_info::~windows_version_info() noexcept = default ;
