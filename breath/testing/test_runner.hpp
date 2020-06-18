@@ -51,7 +51,7 @@ test_runner::run( char const * group_description,
                   TestDescriptorIterator begin,
                   TestDescriptorIterator end )
 {
-    int                 exit_code = breath::exit_failure ;
+    int                 exit_code = breath::exit_success ;
     int                 test_number = 1 ;
     m_reporter->on_all_tests_begin( group_description ) ;
     for ( ; begin != end ; ++ begin, ++ test_number ) {
@@ -59,12 +59,14 @@ test_runner::run( char const * group_description,
             m_reporter->on_test_begin( test_number ) ;
             (begin->function())() ;
             m_reporter->on_test_passed( test_number ) ;
-            exit_code = breath::exit_success ;
         } catch ( test_exception const & ex ) {
+            exit_code = breath::exit_failure ;
             m_reporter->on_test_failed( test_number, ex ) ;
         } catch ( std::exception const & ex ) {
+            exit_code = breath::exit_failure ;
             m_reporter->on_unexpected_exception( test_number, ex ) ;
         } catch ( ... ) {
+            exit_code = breath::exit_failure ;
             m_reporter->on_unexpected_exception( test_number ) ;
         }
     }
