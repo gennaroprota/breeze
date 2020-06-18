@@ -15,7 +15,6 @@
 #include "breath/conversion/bit_cast.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
 
-#define UNICODE
 #include <Windows.h>
 
 namespace breath {
@@ -28,7 +27,7 @@ amount_of_physical_memory()
     //      The fallback is to make the function work pre Vista SP1.
     //      However, only the first API gives an accurate value.
     // -----------------------------------------------------------------------
-    HMODULE const       module = GetModuleHandle( L"kernel32" ) ;
+    HMODULE const       module = GetModuleHandleA( "kernel32" ) ;
 
     typedef BOOL ( WINAPI * fn_ptr_type )( ULONGLONG * ) ;
 
