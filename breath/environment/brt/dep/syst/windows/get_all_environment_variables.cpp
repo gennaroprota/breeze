@@ -41,7 +41,7 @@ get_all_environment_variables()
     typedef std::map< std::string, std::string >
                         result_type ;
 
-    char *              start = GetEnvironmentStrings() ;
+    char * const        start = GetEnvironmentStrings() ;
     if ( start == nullptr ) {
         throw last_api_error( "GetEnvironmentStrings() failed" ) ;
     }
