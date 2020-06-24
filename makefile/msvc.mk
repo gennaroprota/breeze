@@ -132,7 +132,6 @@ endif
 
 include_switch := /I
 object_file_suffix := .obj
-exe_suffix := .exe
 
 compiler_command := cl
 
