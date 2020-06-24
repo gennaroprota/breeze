@@ -175,7 +175,7 @@ is_server_2003_r2()
     //      requiring the latest SDK headers. [FUTURE]
     // -----------------------------------------------------------------------
     int const           sm_serverr2( 89 ) ;
-    return 0 != GetSystemMetrics( sm_serverr2 ) ;
+    return GetSystemMetrics( sm_serverr2 ) != 0 ;
 }
 
 os_id
