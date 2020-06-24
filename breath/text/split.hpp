@@ -10,6 +10,9 @@
 //!     \brief Splits a \c std::string into a \c std::vector of strings.
 // ---------------------------------------------------------------------------
 
+#ifndef BREATH_GUARD_V50EdenEkFY3WA0JCnjok8aia0tACes8
+#define BREATH_GUARD_V50EdenEkFY3WA0JCnjok8aia0tACes8
+
 #include <string>
 #include <vector>
 
@@ -35,6 +38,8 @@ std::vector< std::string >
                            std::string const & separators ) ;
 
 }
+
+#endif
 
 // Local Variables:
 // mode: c++
