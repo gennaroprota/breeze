@@ -217,6 +217,7 @@
     <None Include="..\..\breath\stream\brt\stream_equivalent.tpp" />
     <None Include="..\..\breath\conversion\brt\bit_cast.tpp" />
     <None Include="..\..\breath\mathematics\brt\rounded_up_quotient.tpp" />
+    <None Include="..\..\breath\stream\brt\stream_buffer_wrapper.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\secure_fill.hpp">
@@ -574,6 +575,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\mathematics\rounded_up_quotient.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\stream\stream_buffer_wrapper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
