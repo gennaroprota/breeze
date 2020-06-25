@@ -22,22 +22,16 @@
 
 namespace breath {
 
-//      basic_null_stream_buffer:
-//      -------------------------
+//      null_stream_buffer:
+//      -------------------
 //
-//!     The stream buffer used by \c basic_null_stream.
+//!     The stream buffer used by \c null_stream.
 // ---------------------------------------------------------------------------
-template< typename Ch, typename Traits = std::char_traits< Ch > >
-class basic_null_stream_buffer
-    :   public std::basic_streambuf< Ch, Traits >
+class null_stream_buffer
+    :   public std::streambuf
 {
 public:
-    typedef std::basic_streambuf< Ch, Traits >
-                        base_type ;
-    typedef typename base_type::int_type
-                        int_type ;
-
-                        basic_null_stream_buffer() ;
+                        null_stream_buffer() ;
 
 protected:
     //!     \return
@@ -57,11 +51,11 @@ private:
 
     //      Having a buffer avoids some virtual function calls.
     // -----------------------------------------------------------------------
-    Ch                  m_dummy_buffer[ 64 ] ;
+    char_type           m_dummy_buffer[ 64 ] ;
 } ;
 
-//      basic_null_stream:
-//      ------------------
+//      null_stream:
+//      ------------
 //
 //!     A stream that discards any output and provides no input. On
 //!     output, the stream never signals failbit. On input it always
@@ -69,34 +63,27 @@ private:
 //!     /dev/null under Unix, but this is portable and doesn't make
 //!     system calls.
 // ---------------------------------------------------------------------------
-template< typename Ch, typename Traits = std::char_traits< Ch > >
-class basic_null_stream
-    :   private stream_buffer_wrapper< basic_null_stream_buffer< Ch, Traits > >,
-        public  std::basic_ostream< Ch, Traits >,
-        public  std::basic_istream< Ch, Traits >
+class null_stream
+    :   private stream_buffer_wrapper< null_stream_buffer >,
+        public  std::ostream,
+        public  std::istream
 {
 private:
-    typedef basic_null_stream_buffer< Ch, Traits >
+    typedef null_stream_buffer
                         buffer_type ;
     typedef stream_buffer_wrapper< buffer_type >
                         buffer_wrapper_type ;
 
 public:
-                        basic_null_stream() ;
-    virtual             ~basic_null_stream() noexcept override = default ;
+                        null_stream() ;
+    virtual             ~null_stream() noexcept override = default ;
 
-    basic_null_stream_buffer< Ch, Traits > *
+    null_stream_buffer *
                         rdbuf() const ;
 } ;
 
-typedef basic_null_stream< char >
-                    null_stream ;
-typedef basic_null_stream< wchar_t >
-                    wide_null_stream ;
-
 }
 
-#include "brt/null_stream.tpp"
 #endif
 
 // Local Variables:
