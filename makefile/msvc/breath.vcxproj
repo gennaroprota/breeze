@@ -301,6 +301,7 @@
     <None Include="..\..\breath\process\brt\program_option.tpp" />
     <None Include="..\..\breath\random\brt\subrange_adaptor.tpp" />
     <None Include="..\..\breath\stream\brt\null_stream.tpp" />
+    <None Include="..\..\breath\stream\brt\stream_buffer_wrapper.tpp" />
     <None Include="..\..\breath\stream\brt\stream_equivalent.tpp" />
     <None Include="..\..\breath\text\brt\from_string.tpp" />
     <None Include="..\..\breath\text\brt\to_string.tpp" />
@@ -397,6 +398,7 @@
     <ClInclude Include="..\..\breath\random\subrange_max.hpp" />
     <ClInclude Include="..\..\breath\stream\eof_value.hpp" />
     <ClInclude Include="..\..\breath\stream\null_stream.hpp" />
+    <ClInclude Include="..\..\breath\stream\stream_buffer_wrapper.hpp" />
     <ClInclude Include="..\..\breath\stream\stream_equivalent.hpp" />
     <ClInclude Include="..\..\breath\testing\check.hpp" />
     <ClInclude Include="..\..\breath\testing\console_reporter.hpp" />
