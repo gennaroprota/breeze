@@ -47,8 +47,10 @@ basic_null_stream_buffer< Ch, Traits >::set_put_area_pointers()
 
 template< typename Ch, typename Traits >
 basic_null_stream< Ch, Traits >::basic_null_stream()
-    :   std::basic_ostream< Ch, Traits >( this ),
-        std::basic_istream< Ch, Traits >( this )
+    :   std::basic_ostream< Ch, Traits >(
+            buffer_wrapper_type::stream_buffer() ),
+        std::basic_istream< Ch, Traits >(
+            buffer_wrapper_type::stream_buffer() )
 {
 }
 
@@ -56,9 +58,8 @@ template< typename Ch, typename Traits >
 basic_null_stream_buffer< Ch, Traits > *
 basic_null_stream< Ch, Traits >::rdbuf() const
 {
-    basic_null_stream_buffer< Ch, Traits > const *
-                        p = this ;
-    return const_cast< basic_null_stream_buffer< Ch, Traits > * >( p ) ;
+    auto * const p = const_cast< basic_null_stream< Ch, Traits > * >( this ) ;
+    return p->stream_buffer() ;
 }
 
 }

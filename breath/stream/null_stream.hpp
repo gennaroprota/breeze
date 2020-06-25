@@ -15,6 +15,7 @@
 #ifndef BREATH_GUARD_CnvhAthmCrzPoNDMrZPUfBrAGrgy3Xe0
 #define BREATH_GUARD_CnvhAthmCrzPoNDMrZPUfBrAGrgy3Xe0
 
+#include "breath/stream/stream_buffer_wrapper.hpp"
 #include <istream>
 #include <ostream>
 #include <streambuf>
@@ -70,10 +71,16 @@ private:
 // ---------------------------------------------------------------------------
 template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_null_stream
-    :   private basic_null_stream_buffer< Ch, Traits >,
+    :   private stream_buffer_wrapper< basic_null_stream_buffer< Ch, Traits > >,
         public  std::basic_ostream< Ch, Traits >,
         public  std::basic_istream< Ch, Traits >
 {
+private:
+    typedef basic_null_stream_buffer< Ch, Traits >
+                        buffer_type ;
+    typedef stream_buffer_wrapper< buffer_type >
+                        buffer_wrapper_type ;
+
 public:
                         basic_null_stream() ;
     virtual             ~basic_null_stream() noexcept override = default ;
