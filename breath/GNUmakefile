@@ -24,6 +24,7 @@ vpath %.cpp     $(root)/breath/checksum/brt         \
                 $(root)/breath/path/brt             \
                 $(root)/breath/process/brt          \
                 $(root)/breath/random/brt           \
+                $(root)/breath/stream/brt           \
                 $(root)/breath/testing/brt          \
                 $(root)/breath/text/brt             \
                 $(root)/breath/time/brt             \
@@ -75,6 +76,8 @@ source_files := luhn.cpp                                    \
                                                             \
                 entropy_source.cpp                          \
                 subrange_max.cpp                            \
+                                                            \
+                null_stream.cpp                             \
                                                             \
                 console_reporter.cpp                        \
                 test_descriptor.cpp                         \

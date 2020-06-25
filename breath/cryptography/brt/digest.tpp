@@ -69,9 +69,9 @@ digest< Hasher >::less::operator()( digest< Hasher > const & d1,
 //      it is an entity on its own and has its own mechanism of
 //      construction.
 // ---------------------------------------------------------------------------
-template< typename Ch, typename Tr, typename Hasher >
-std::basic_ostream< Ch, Tr > &
-operator <<( std::basic_ostream< Ch, Tr >   & os,
+template< typename Hasher >
+std::ostream &
+operator <<( std::ostream           & os,
              digest< Hasher > const & d )
 {
     enum

@@ -88,9 +88,8 @@ private:
 //!     \c std::uppercase and \c std::nouppercase in the future). But
 //!     it's guaranteed that all letters will have the same case.
 // ---------------------------------------------------------------------------
-template< typename Ch, typename Tr, typename Hasher >
-std::basic_ostream< Ch, Tr > &
-                    operator <<( std::basic_ostream< Ch, Tr >   & os,
+template< typename Hasher >
+std::ostream &      operator <<( std::ostream           & os,
                                  digest< Hasher > const & d ) ;
 
 //      make_digest():

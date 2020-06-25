@@ -234,6 +234,7 @@
     <ClCompile Include="..\..\breath\process\brt\set_current_directory.cpp" />
     <ClCompile Include="..\..\breath\random\brt\entropy_source.cpp" />
     <ClCompile Include="..\..\breath\random\brt\subrange_max.cpp" />
+    <ClCompile Include="..\..\breath\stream\brt\null_stream.cpp" />
     <ClCompile Include="..\..\breath\testing\brt\console_reporter.cpp" />
     <ClCompile Include="..\..\breath\testing\brt\test_descriptor.cpp" />
     <ClCompile Include="..\..\breath\testing\brt\test_exception.cpp" />
@@ -300,7 +301,6 @@
     <None Include="..\..\breath\process\brt\command_line.tpp" />
     <None Include="..\..\breath\process\brt\program_option.tpp" />
     <None Include="..\..\breath\random\brt\subrange_adaptor.tpp" />
-    <None Include="..\..\breath\stream\brt\null_stream.tpp" />
     <None Include="..\..\breath\stream\brt\stream_buffer_wrapper.tpp" />
     <None Include="..\..\breath\stream\brt\stream_equivalent.tpp" />
     <None Include="..\..\breath\text\brt\from_string.tpp" />
