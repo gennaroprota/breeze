@@ -82,9 +82,9 @@ crc32( InputIterator begin, InputIterator end )
 
 
     auto const          initial_value = static_cast< std::uint_fast32_t >(
-                                                               0xFFFF'FFFFul ) ;
+                                                               0xFFFF'FFFF ) ;
     auto const          all_ones =      static_cast< std::uint_fast32_t >(
-                                                               0xFFFF'FFFFul ) ;
+                                                               0xFFFF'FFFF ) ;
     auto const          table_size = static_cast< int >(
                                                breath::signed_count( table ) ) ;
 
