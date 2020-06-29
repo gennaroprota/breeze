@@ -27,7 +27,8 @@ amount_of_physical_memory()
     //      The fallback is to make the function work pre Vista SP1.
     //      However, only the first API gives an accurate value.
     // -----------------------------------------------------------------------
-    HMODULE const       module = GetModuleHandleA( "kernel32" ) ;
+    HMODULE const       module = GetModuleHandleA( "kernel32" ) ; //-V2001
+                                                             // (for PVS-Studio)
 
     typedef BOOL ( WINAPI * fn_ptr_type )( ULONGLONG * ) ;
 
