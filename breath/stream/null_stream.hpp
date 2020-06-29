@@ -66,8 +66,8 @@ private:
 // ---------------------------------------------------------------------------
 class null_stream
     :   private stream_buffer_wrapper< null_stream_buffer >,
-        public  std::ostream,
-        public  std::istream
+        public  std::istream,
+        public  std::ostream
 {
 private:
     typedef null_stream_buffer
