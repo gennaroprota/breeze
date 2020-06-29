@@ -30,11 +30,9 @@ trivial_digital_root( T n, int base )
         n /= base ;
     }
 
-    if ( sum >= base ) {
-        return trivial_digital_root( sum, base ) ;
-    }
-
-    return sum ;
+    return sum < base
+               ? sum
+               : trivial_digital_root( sum, base ) ;
 }
 
 void
