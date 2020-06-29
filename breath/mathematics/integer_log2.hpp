@@ -22,13 +22,14 @@ namespace breath {
 //      ===============
 //
 //      \return
-//!         The behavior is undefined if x == 0 (and might result in an
-//!         assertion failure). Otherwise the function returns the
-//!         integer part of the logarithm, base 2, of its argument.
+//!         The behavior is undefined if <code>x == 0</code> (and might
+//!         result in an assertion failure). Otherwise the function
+//!         returns the integer part of the logarithm, base 2, of its
+//!         argument.
 //!
 //!     \note
-//!         This constexpr function supersedes meta::integer_log2, which
-//!         is declared deprecated.
+//!         This \c constexpr function supersedes \c meta::integer_log2,
+//!         which is declared deprecated.
 //!     \note
 //!         This function does not compile with Visual C++ 2015 because
 //!         the compiler does not yet implement \c constexpr functions
