@@ -34,10 +34,9 @@ The library has been developed, in my spare time, over a period of about 16
 years (as of June 2019) and I don't claim that all of it is of production
 quality.
 
-Some components don't take full advantage of the latest standards (e.g. they
-don't use `noexcept`) and some are or will be superseded by standard components
-or features (e.g. those in the path/ subdirectory). But, generally, the library
-is up-to-date to C++14.
+Some components don't take full advantage of the latest standards and some are
+or will be superseded by standard components or features (e.g. those in the
+path/ subdirectory). But, generally, the library is up-to-date to C++14.
 
 The test/ subdirectories can be a good place to look at if you need to see usage
 examples (but, please, let me know if you feel that the usage of a component
