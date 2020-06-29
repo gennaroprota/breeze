@@ -53,9 +53,13 @@ pointer_to_object_casts_to_pointer_to_object()
     //      The comparison with nullptr is redundant if the previous
     //      test succeeds; but it deals with Microsoft Code Analysis
     //      warning C6387: 'pc' could be '0':  this does not adhere to
-    //      the specification for the function 'strcmp'. 
+    //      the specification for the function 'strcmp'. Note that
+    //      PVS-Studio detects that the comparison is redundant, so we
+    //      suppress the corresponding diagnostic (together with the one
+    //      emitted for the use of std::strcmp()).
     // -----------------------------------------------------------------------
-    BREATH_CHECK( pc != nullptr && std::strcmp( pc, "test" ) == 0 ) ;
+    BREATH_CHECK( pc != nullptr &&         //-V560 // -V2513 (for PVS-Studio)
+        std::strcmp( pc, "test" ) == 0 ) ;
 }
 
 void
