@@ -25,10 +25,10 @@ int
 trivial_digital_root( T n, int base )
 {
     T                   sum = 0 ;
-    do {
+    while ( n != 0 ) {
         sum += ( n % base ) ;
         n /= base ;
-    } while ( n != 0 ) ;
+    }
 
     if ( sum >= base ) {
         return trivial_digital_root( sum, base ) ;
