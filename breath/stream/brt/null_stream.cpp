@@ -48,8 +48,8 @@ null_stream_buffer::set_put_area_pointers()
 }
 
 null_stream::null_stream()
-    :   std::ostream( buffer_wrapper_type::stream_buffer() ),
-        std::istream( buffer_wrapper_type::stream_buffer() )
+    :   std::istream( buffer_wrapper_type::stream_buffer() ),
+        std::ostream( buffer_wrapper_type::stream_buffer() )
 {
 }
 
