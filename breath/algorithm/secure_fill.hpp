@@ -90,20 +90,6 @@ namespace breath {
 //      secure_fill():
 //      ==============
 //
-//!     Version for built-in arrays.
-// ---------------------------------------------------------------------------
-template< typename T, std::size_t n >
-void
-secure_fill( T ( &arr )[ n ], T const & value = T() )
-{
-    for ( std::size_t i = 0 ; i < n ; ++ i ) {
-        breath::volatilize( arr[ i ] ) = value ;
-    }
-}
-
-//      secure_fill():
-//      ==============
-//
 //!     Version for iterator ranges.
 // ---------------------------------------------------------------------------
 //
@@ -125,6 +111,21 @@ secure_fill( ForwardIterator begin, ForwardIterator end, T const & value )
     for ( ; begin != end ; ++ begin ) {
         breath::volatilize( *begin ) = value ;
     }
+}
+
+//      secure_fill():
+//      ==============
+//
+//!     Version for built-in arrays.
+// ---------------------------------------------------------------------------
+template< typename T, std::size_t n >
+void
+secure_fill( T ( &arr )[ n ], T const & value = T() )
+{
+    //      Intentionally renouncing to using our begin()/end(), to
+    //      reduce dependencies.
+    // -----------------------------------------------------------------------
+    breath::secure_fill( arr, arr + n , value ) ;
 }
 
 }
