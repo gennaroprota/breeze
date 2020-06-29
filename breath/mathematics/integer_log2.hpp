@@ -22,7 +22,7 @@ namespace breath {
 //      ===============
 //
 //      \return
-//!         The behavior is undefined if <code>x == 0</code> (and might
+//!         The behavior is undefined if <code>x <= 0</code> (and might
 //!         result in an assertion failure). Otherwise the function
 //!         returns the integer part of the logarithm, base 2, of its
 //!         argument.
@@ -35,7 +35,7 @@ namespace breath {
 //!         the compiler does not yet implement \c constexpr functions
 //!         as generalized in C++14.
 // ---------------------------------------------------------------------------
-constexpr int       integer_log2( std::uintmax_t x ) noexcept ;
+constexpr int       integer_log2( std::intmax_t x ) noexcept ;
 
 }
 

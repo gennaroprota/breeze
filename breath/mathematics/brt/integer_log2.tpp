@@ -33,11 +33,11 @@ max_power_of_2_less_than_p( int p, int n = start_at ) noexcept
 }
 
 constexpr int
-integer_log2_implementation( std::uintmax_t x, int n ) noexcept
+integer_log2_implementation( std::intmax_t x, int n ) noexcept
 {
     int                 result = 0 ;
     while ( x !=  1 ) {
-        std::uintmax_t const
+        std::intmax_t const
                             t = x >> n ;
         if ( t != 0 ) {
             result += n ;
@@ -51,14 +51,14 @@ integer_log2_implementation( std::uintmax_t x, int n ) noexcept
 }
 
 constexpr int
-integer_log2( std::uintmax_t x ) noexcept
+integer_log2( std::intmax_t x ) noexcept
 {
     BREATH_ASSERT( x > 0 ) ;
 
     using namespace integer_log2_private ;
 
     constexpr int       n = max_power_of_2_less_than_p(
-            std::numeric_limits< std::uintmax_t >::digits
+            std::numeric_limits< std::intmax_t >::digits
         ) ;
     return integer_log2_implementation( x, n ) ;
 }
