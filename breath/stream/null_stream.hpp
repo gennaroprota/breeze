@@ -15,13 +15,14 @@
 #ifndef BREATH_GUARD_CnvhAthmCrzPoNDMrZPUfBrAGrgy3Xe0
 #define BREATH_GUARD_CnvhAthmCrzPoNDMrZPUfBrAGrgy3Xe0
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/stream/stream_buffer_wrapper.hpp"
 #include <istream>
 #include <ostream>
 #include <streambuf>
 
-namespace breath {
+namespace breath_ns {
 
 //      null_stream_buffer:
 //      -------------------

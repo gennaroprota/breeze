@@ -13,7 +13,7 @@
 
 #include "breath/text/to_uppercase.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 std::string
 to_uppercase( std::string const & source, std::locale const & loc )

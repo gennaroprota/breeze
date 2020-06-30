@@ -10,7 +10,7 @@
 #include "breath/mathematics/is_power_of_2.hpp"
 #include <limits>
 
-namespace breath {
+namespace breath_ns {
 namespace integer_log2_private {
 
 //      This constant is 4 because it must be a power of two less than

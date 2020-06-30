@@ -13,13 +13,14 @@
 #ifndef BREATH_GUARD_Gq4RCdDZQAIMmQBL7I3lbPfT3oHjV7of
 #define BREATH_GUARD_Gq4RCdDZQAIMmQBL7I3lbPfT3oHjV7of
 
+#include "breath/top_level_namespace.hpp"
 #include <bitset>
 #include <climits> // avoid the verbosity of numeric_limits
 #include <cstddef>
 #include <iterator>
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      set_of_chars:
 //      =============

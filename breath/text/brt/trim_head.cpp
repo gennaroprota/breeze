@@ -15,7 +15,7 @@
 #include "breath/text/trim_head_if.hpp"
 #include <locale>
 
-namespace breath {
+namespace breath_ns {
 
 std::string
 trim_head( std::string const & str, std::locale const & loc )

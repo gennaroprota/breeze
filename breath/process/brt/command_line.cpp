@@ -26,7 +26,7 @@
 #include <iostream>
 #include <sstream>
 
-namespace breath {
+namespace breath_ns {
 
 command_line *
 command_line::s_instance = &command_line::instance() ;

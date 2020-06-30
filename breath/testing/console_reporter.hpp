@@ -14,10 +14,11 @@
 #ifndef BREATH_GUARD_XgKxFi9sRq7YDgySOH2206PWX2ZxQrtB
 #define BREATH_GUARD_XgKxFi9sRq7YDgySOH2206PWX2ZxQrtB
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/testing/test_reporter.hpp"
 #include <iosfwd>
 
-namespace breath {
+namespace breath_ns {
 
 //      console_reporter:
 //      =================

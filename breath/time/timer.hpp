@@ -13,7 +13,9 @@
 #ifndef BREATH_GUARD_Jr0D8xlNtWxnToeomoet20V4lz0qIYDd
 #define BREATH_GUARD_Jr0D8xlNtWxnToeomoet20V4lz0qIYDd
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      timer:
 //      ======

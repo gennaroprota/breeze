@@ -27,8 +27,8 @@
 #include <iomanip>
 #include <ostream>
 
-namespace breath {
-namespace        {
+namespace breath_ns {
+namespace           {
 
 //      adjusted_system_time():
 //      =======================

@@ -14,10 +14,11 @@
 #ifndef BREATH_GUARD_wR9yYhDtICLHOJ6c2LmBkhMWoYoaeVkS
 #define BREATH_GUARD_wR9yYhDtICLHOJ6c2LmBkhMWoYoaeVkS
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/idiom/maybe.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      Predefined format strings:
 //      ==========================

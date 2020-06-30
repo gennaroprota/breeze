@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_lc9dZp5eUrNd9dbNZHDcvW36RGyTlJ77
 #define BREATH_GUARD_lc9dZp5eUrNd9dbNZHDcvW36RGyTlJ77
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/environment/windows_only/os_id.hpp"
 
-namespace breath {
+namespace breath_ns {
 
     //!     This "determines" the running OS based on information
     //!     returned by Windows itself: initially the implementation

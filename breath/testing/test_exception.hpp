@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_8msuVkqs5IBc3s7j1mDOtGC97uqTUGg0
 #define BREATH_GUARD_8msuVkqs5IBc3s7j1mDOtGC97uqTUGg0
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/diagnostics/exception.hpp"
 #include <ostream>
 
-namespace breath {
+namespace breath_ns {
 
 class test_exception
     :   public virtual breath::exception

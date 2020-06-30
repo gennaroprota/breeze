@@ -8,7 +8,7 @@
 
 #include "breath/diagnostics/assert.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 template< typename T >
 constexpr int

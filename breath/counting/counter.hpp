@@ -14,9 +14,10 @@
 #ifndef BREATH_GUARD_igDqQSfWTOavMKrliVx0QKSbOMZ1k4kD
 #define BREATH_GUARD_igDqQSfWTOavMKrliVx0QKSbOMZ1k4kD
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/operator/comparison.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 //      counter:
 //      ========

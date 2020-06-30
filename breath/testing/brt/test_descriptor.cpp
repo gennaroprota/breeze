@@ -13,7 +13,7 @@
 
 #include "breath/testing/test_descriptor.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 test_descriptor::test_descriptor( test_function f, char const * name ) noexcept
     :   m_function( f ),

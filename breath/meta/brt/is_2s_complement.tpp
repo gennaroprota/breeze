@@ -10,7 +10,7 @@
 #include <type_traits>
 #include <limits>
 
-namespace breath {
+namespace breath_ns {
 namespace meta {
 
 template< typename T >

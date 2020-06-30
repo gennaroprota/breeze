@@ -14,9 +14,10 @@
 #ifndef BREATH_GUARD_t29jfKYZ9OI7vFPLyiSoFtL9Jw9Lntnr
 #define BREATH_GUARD_t29jfKYZ9OI7vFPLyiSoFtL9Jw9Lntnr
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/meta/width.hpp"
 
-namespace breath {
+namespace breath_ns {
 namespace meta {
 
 //      padding:

@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_93j8pelTutz7YloouImWg9M7REakYYSD
 #define BREATH_GUARD_93j8pelTutz7YloouImWg9M7REakYYSD
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/alignment/aligned_storage_for.hpp"
 #include <type_traits>
 
-namespace breath {
+namespace breath_ns {
 
 //      boolean_maybe_traits:
 //      =====================

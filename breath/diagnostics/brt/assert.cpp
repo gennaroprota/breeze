@@ -17,7 +17,7 @@
 #include <iostream>
 #include <ostream>
 
-namespace breath {
+namespace breath_ns {
 namespace assert_private {
 
 [[ noreturn ]] void

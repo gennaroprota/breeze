@@ -13,7 +13,9 @@
 #ifndef BREATH_GUARD_je0uCwloDoKUCxUfOy7GHayNkITaDT0U
 #define BREATH_GUARD_je0uCwloDoKUCxUfOy7GHayNkITaDT0U
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      rounded_up_quotient():
 //      ======================

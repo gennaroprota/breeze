@@ -17,14 +17,16 @@
 #define BREATH_GUARD_y2qhOILUvLqZ79ED32KSdlOabmhuefgQ
 
 // NOTE:
-//      No #includes here.
+//      No #includes here, except the one to define the namespace name.
 //
 //      This is a very basic facility, used by many other components
 //      of the meta subsystem; do not introduce dependencies (they are
 //      not logically necessary: the C++ template system has all that
 //      is needed to implement the functionality).
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 namespace meta {
 
 //      unqualify:

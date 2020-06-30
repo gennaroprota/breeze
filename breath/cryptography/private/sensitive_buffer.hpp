@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_cYIOKCI73iMumaonvDavBYvSD0UPrlq4
 #define BREATH_GUARD_cYIOKCI73iMumaonvDavBYvSD0UPrlq4
 
+#include "breath/top_level_namespace.hpp"
 #include <cstddef>
 
-namespace breath {
+namespace breath_ns {
 
 //      This template is a quick hack to be replaced with a more
 //      complete solution.

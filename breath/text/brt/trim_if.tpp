@@ -9,7 +9,7 @@
 #include "breath/text/trim_head_if.hpp"
 #include "breath/text/trim_tail_if.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 template< typename Predicate >
 std::string

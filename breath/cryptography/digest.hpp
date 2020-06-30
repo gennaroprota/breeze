@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_HJb5zsPZzS9ztbt5GdVJMPv00mZUAnQI
 #define BREATH_GUARD_HJb5zsPZzS9ztbt5GdVJMPv00mZUAnQI
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/operator/equality_comparison.hpp"
 #include <iosfwd>
 
-namespace breath {
+namespace breath_ns {
 
 //      digest:
 //      =======

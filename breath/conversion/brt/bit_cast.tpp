@@ -9,7 +9,7 @@
 #include <cstring>
 #include <memory>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename To, typename From >
 std::enable_if_t< sizeof( To ) == sizeof( From ) &&

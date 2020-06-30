@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_rws4wbvfhp1gTSnTPzZEhVe9JHM0Cwgk
 #define BREATH_GUARD_rws4wbvfhp1gTSnTPzZEhVe9JHM0Cwgk
 
+#include "breath/top_level_namespace.hpp"
 #include <locale>
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 class               set_of_chars ;
 

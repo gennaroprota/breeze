@@ -13,7 +13,9 @@
 #ifndef BREATH_GUARD_Z7sZqZ1T5DzTJ6V6zdst2zbGcymbnLM7
 #define BREATH_GUARD_Z7sZqZ1T5DzTJ6V6zdst2zbGcymbnLM7
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      subrange_max():
 //      ===============

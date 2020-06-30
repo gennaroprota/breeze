@@ -13,7 +13,9 @@
 #ifndef BREATH_GUARD_jUGeAMeGfcMWbQ12OyJckoIpy0CYCBq0
 #define BREATH_GUARD_jUGeAMeGfcMWbQ12OyJckoIpy0CYCBq0
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 extern int const    exit_success ;
 extern int const    exit_failure ;

@@ -20,7 +20,7 @@
 #include <cstddef>
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 std::string
 current_directory()

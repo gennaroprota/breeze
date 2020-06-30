@@ -14,7 +14,9 @@
 #ifndef BREATH_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI
 #define BREATH_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 namespace adl_shield {
 
 //      equality_comparison:

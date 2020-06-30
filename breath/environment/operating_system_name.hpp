@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_vUmfBUe7uRgM2lw3OI5BLE0BSMMDnzDS
 #define BREATH_GUARD_vUmfBUe7uRgM2lw3OI5BLE0BSMMDnzDS
 
+#include "breath/top_level_namespace.hpp"
 #include <iosfwd>
 
-namespace breath {
+namespace breath_ns {
 
 //      operating_system_name:
 //      ======================

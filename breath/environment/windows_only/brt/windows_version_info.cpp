@@ -26,8 +26,8 @@
 #include <string>
 #include <vector>
 
-namespace breath {
-namespace        {
+namespace breath_ns {
+namespace           {
 
 //      RAII class to automatically close a registry key handle.
 // ---------------------------------------------------------------------------

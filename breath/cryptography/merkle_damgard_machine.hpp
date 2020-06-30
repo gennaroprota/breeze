@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_fZUJ99c94EAQyLGNzV2BUxw0nzawpWpw
 #define BREATH_GUARD_fZUJ99c94EAQyLGNzV2BUxw0nzawpWpw
 
+#include "breath/top_level_namespace.hpp"
 #include <cstddef>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename Hasher >
 class               digest ;

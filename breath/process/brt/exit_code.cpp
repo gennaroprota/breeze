@@ -16,7 +16,7 @@
 #include BREATH_DEPENDENT_CODE( system, exit_code.cpp )
 #include <cstdlib>
 
-namespace breath {
+namespace breath_ns {
 
 //      These two can be specified portably, so we define them outside
 //      of the system-dependent exit_code.cpp's.

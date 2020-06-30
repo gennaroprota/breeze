@@ -14,7 +14,7 @@
 #include "breath/text/remove_from_end.hpp"
 #include "breath/text/ends_with.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 std::string
 remove_from_end( std::string const & str, std::string const & to_be_removed )

@@ -16,8 +16,8 @@
 #include <algorithm>
 #include <cstddef>
 
-namespace breath {
-namespace        {
+namespace breath_ns {
+namespace           {
 
 class matrix
 {

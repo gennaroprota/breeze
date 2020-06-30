@@ -13,7 +13,9 @@
 #ifndef BREATH_GUARD_XtTcG5ymuoVaWgnKITP3OQP7ggHKE44e
 #define BREATH_GUARD_XtTcG5ymuoVaWgnKITP3OQP7ggHKE44e
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      digital_root():
 //      ===============

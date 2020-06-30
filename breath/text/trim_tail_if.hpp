@@ -14,9 +14,10 @@
 #ifndef BREATH_GUARD_yzz6bpfxotq2rsaIMxKu1Q0eC1AELUNX
 #define BREATH_GUARD_yzz6bpfxotq2rsaIMxKu1Q0eC1AELUNX
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      trim_tail_if():
 //      ===============

@@ -13,12 +13,13 @@
 #ifndef BREATH_GUARD_zRk6qVzrOdWWtkjYcUpuIkpnrRj8cg0q
 #define BREATH_GUARD_zRk6qVzrOdWWtkjYcUpuIkpnrRj8cg0q
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/diagnostics/exception.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      entropy_source:
 //      ===============

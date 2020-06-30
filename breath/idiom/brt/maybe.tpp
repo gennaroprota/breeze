@@ -10,7 +10,7 @@
 #include <new>
 #include <utility>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename T, typename Traits >
 maybe< T, Traits >::maybe( status_type status ) noexcept

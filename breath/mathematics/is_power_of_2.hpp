@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_33316YlRoQ2LToi0iu44YByR2XFvlCOy
 #define BREATH_GUARD_33316YlRoQ2LToi0iu44YByR2XFvlCOy
 
+#include "breath/top_level_namespace.hpp"
 #include <limits>
 #include <type_traits>
 
-namespace breath {
+namespace breath_ns {
 
 //      is_power_of_2():
 //      ================

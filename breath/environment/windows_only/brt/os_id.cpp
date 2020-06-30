@@ -16,8 +16,8 @@
 
 #include <ostream>
 
-namespace breath {
-namespace        {
+namespace breath_ns {
+namespace           {
 
 //      Attention: keep in sync with the declaration in [note 1].
 // ---------------------------------------------------------------------------

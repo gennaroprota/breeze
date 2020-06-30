@@ -24,7 +24,7 @@
 #include <string>
 #include <vector>
 
-namespace breath {
+namespace breath_ns {
 
 class entropy_source::impl
 {

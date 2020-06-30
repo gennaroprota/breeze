@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_hMt6bmZCT9RIwijJe5QSttMMotHJsr1N
 #define BREATH_GUARD_hMt6bmZCT9RIwijJe5QSttMMotHJsr1N
 
+#include "breath/top_level_namespace.hpp"
 #include <iosfwd>
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      roman:
 //      ======

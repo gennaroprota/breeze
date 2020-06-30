@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_dA64mnuy6S9Vw8QrcECul6ideTiRj7wi
 #define BREATH_GUARD_dA64mnuy6S9Vw8QrcECul6ideTiRj7wi
 
+#include "breath/top_level_namespace.hpp"
 #include <locale>
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      to_lowercase():
 //      ----------------

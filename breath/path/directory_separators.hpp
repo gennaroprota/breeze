@@ -14,7 +14,9 @@
 #ifndef BREATH_GUARD_bvA1h6sHG51DDAzrkOaJBHIxlZBpgVnA
 #define BREATH_GUARD_bvA1h6sHG51DDAzrkOaJBHIxlZBpgVnA
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      directory_separators():
 //      =======================

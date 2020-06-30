@@ -16,7 +16,7 @@
 #include <unistd.h>
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 void
 set_current_directory( std::string const & dir )

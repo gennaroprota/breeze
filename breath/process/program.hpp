@@ -15,12 +15,13 @@
 #ifndef BREATH_GUARD_1kA1ToNG1qsz9KwlXD9MfVvhaHxMym5b
 #define BREATH_GUARD_1kA1ToNG1qsz9KwlXD9MfVvhaHxMym5b
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/idiom/maybe.hpp"
 #include "breath/process/exit_code.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      program:
 //      ========

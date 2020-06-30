@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_FXhivw6tI6cV0C3govXyzZBmNCWa1e2o
 #define BREATH_GUARD_FXhivw6tI6cV0C3govXyzZBmNCWa1e2o
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //!     \return
 //!         Whether \c str ends with \c with. If \c with is empty, the

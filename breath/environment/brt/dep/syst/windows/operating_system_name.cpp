@@ -14,7 +14,7 @@
 #include "breath/environment/windows_only/get_os.hpp"
 #include <ostream>
 
-namespace breath {
+namespace breath_ns {
 
 std::ostream &
 operator <<( std::ostream & dest, operating_system_name const & )

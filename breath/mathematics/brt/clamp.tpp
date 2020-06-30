@@ -8,7 +8,7 @@
 
 #include <functional>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename T >
 constexpr T const &

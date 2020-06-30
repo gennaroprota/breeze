@@ -34,9 +34,10 @@
 #ifndef BREATH_GUARD_Ve2uzZNiUDgCTZXgV1iB3bUD5U0n1kKD
 #define BREATH_GUARD_Ve2uzZNiUDgCTZXgV1iB3bUD5U0n1kKD
 
+#include "breath/top_level_namespace.hpp"
 #include <cstddef>
 
-namespace breath {
+namespace breath_ns {
 
 //      begin():
 //      ========

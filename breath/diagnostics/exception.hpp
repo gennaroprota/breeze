@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_11RKjChIvO8xKP1XEZcLxvq7vDyKvcUr
 #define BREATH_GUARD_11RKjChIvO8xKP1XEZcLxvq7vDyKvcUr
 
+#include "breath/top_level_namespace.hpp"
 #include <exception>
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      exception:
 //      ==========

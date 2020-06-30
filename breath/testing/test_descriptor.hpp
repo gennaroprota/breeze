@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_R3D9wTLwfq8uQKxez4dTpXq0jrHzBXkC
 #define BREATH_GUARD_R3D9wTLwfq8uQKxez4dTpXq0jrHzBXkC
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      test_descriptor:
 //      ================

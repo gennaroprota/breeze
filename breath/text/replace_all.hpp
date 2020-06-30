@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_oNNLAbfLiNCB1qfs0q2QLDtlsFTosyBu
 #define BREATH_GUARD_oNNLAbfLiNCB1qfs0q2QLDtlsFTosyBu
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      replace_all():
 //      ==============

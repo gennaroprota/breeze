@@ -13,7 +13,9 @@
 #ifndef BREATH_GUARD_D5dKoDqQ2v7QNXhW1F8zF0ZKijovEPgp
 #define BREATH_GUARD_D5dKoDqQ2v7QNXhW1F8zF0ZKijovEPgp
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      count_bits():
 //      =============

@@ -13,7 +13,7 @@
 
 #include "breath/testing/test_runner.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 test_runner::test_runner()
     :   m_reporter( nullptr )

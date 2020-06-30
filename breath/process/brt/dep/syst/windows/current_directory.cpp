@@ -15,7 +15,7 @@
 #include "breath/diagnostics/last_api_error.hpp"
 #include <Windows.h>
 
-namespace breath {
+namespace breath_ns {
 
 std::string
 current_directory()

@@ -15,7 +15,7 @@
 
 #include <unistd.h>
 
-namespace breath {
+namespace breath_ns {
 
 unsigned long long
 amount_of_physical_memory()

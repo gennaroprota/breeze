@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_th2bAe1w4u2MisZE4yyhiRJdCIC2yncU
 #define BREATH_GUARD_th2bAe1w4u2MisZE4yyhiRJdCIC2yncU
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 #include <istream>
 
-namespace breath {
+namespace breath_ns {
 
 //      stream_equivalent:
 //      ==================

@@ -12,7 +12,7 @@
 #include <istream>
 #include <sstream>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename T >
 T

@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_t4h0OWeS8sua5gWE50YSmGUx15Kw2wrR
 #define BREATH_GUARD_t4h0OWeS8sua5gWE50YSmGUx15Kw2wrR
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      base_file_name():
 //      =================

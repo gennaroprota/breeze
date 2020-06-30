@@ -10,7 +10,7 @@
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
 #include "breath/random/subrange_max.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 template< typename Engine >
 subrange_adaptor< Engine >::subrange_adaptor( Engine & e, result_type new_max)

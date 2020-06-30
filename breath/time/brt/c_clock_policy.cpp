@@ -14,7 +14,7 @@
 #include "breath/time/c_clock_policy.hpp"
 #include "breath/diagnostics/exception.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 std::clock_t
 c_clock_policy::retrieve()

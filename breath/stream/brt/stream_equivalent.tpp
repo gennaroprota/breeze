@@ -8,7 +8,7 @@
 
 #include <ios>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename Stream >
 stream_equivalent< Stream >::stream_equivalent( Stream & original )

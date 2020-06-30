@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-namespace breath {
+namespace breath_ns {
 
 //      Note:
 //          this currently uses the same values as the Unix variant, as

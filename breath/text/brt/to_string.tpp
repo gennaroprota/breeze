@@ -10,7 +10,7 @@
 #include "breath/type_identification/readable_type_name.hpp"
 #include <sstream>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename OutputStreamable >
 std::string

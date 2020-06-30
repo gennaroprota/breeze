@@ -13,7 +13,9 @@
 #ifndef BREATH_GUARD_X1oIFdvnzv4TfQy0Ool638J3eUJJRKJ3
 #define BREATH_GUARD_X1oIFdvnzv4TfQy0Ool638J3eUJJRKJ3
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      as_non_constant():
 //      ==================

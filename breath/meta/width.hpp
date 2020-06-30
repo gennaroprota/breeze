@@ -13,12 +13,13 @@
 #ifndef BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
 #define BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/meta/has_sign.hpp"
 #include "breath/meta/precision.hpp"
 #include "breath/meta/select.hpp"
 #include "breath/meta/successor.hpp"
 
-namespace breath {
+namespace breath_ns {
 namespace meta {
 
 //      width:

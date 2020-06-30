@@ -20,7 +20,9 @@
 #ifndef BREATH_GUARD_iVIpJl3Xhjhnj23ACP0NU6ffWo7q8kd4
 #define BREATH_GUARD_iVIpJl3Xhjhnj23ACP0NU6ffWo7q8kd4
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      clamp():
 //      ========

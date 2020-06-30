@@ -15,7 +15,7 @@
 #include "breath/diagnostics/assert.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 void replace_all(
     std::string & s,

@@ -1,5 +1,5 @@
 // ===========================================================================
-//                        Copyright 2006 Gennaro Prota
+//                        Copyright 2020 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -7,22 +7,13 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A timer based on \c std::clock().
+//!     \brief This file is for internal use only.
 // ---------------------------------------------------------------------------
 
-#ifndef BREATH_GUARD_u43dOQ8kSA0wS32RQRLI7UM66PBoXLSA
-#define BREATH_GUARD_u43dOQ8kSA0wS32RQRLI7UM66PBoXLSA
+#ifndef BREATH_GUARD_sZXoVMYfnu4lYBLek0d4NyHwR7iZQbeW
+#define BREATH_GUARD_sZXoVMYfnu4lYBLek0d4NyHwR7iZQbeW
 
-#include "breath/top_level_namespace.hpp"
-#include "breath/time/timer.hpp"
-#include "breath/time/c_clock_policy.hpp"
-
-namespace breath_ns {
-
-typedef timer< c_clock_policy >
-                    c_clock_timer ;
-
-}
+#define BREATH_VERSION 2020v01
 
 #endif
 

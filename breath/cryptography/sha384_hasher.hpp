@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_K9MoyAqzzHMnugSwsAjPtZppm3h4NXaI
 #define BREATH_GUARD_K9MoyAqzzHMnugSwsAjPtZppm3h4NXaI
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/cryptography/merkle_damgard_engine.hpp"
 #include "breath/cryptography/merkle_damgard_machine.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 class               sha384_engine ;
 

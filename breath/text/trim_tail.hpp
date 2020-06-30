@@ -13,11 +13,12 @@
 #ifndef BREATH_GUARD_rAf6FomrfEupsrKlsZvh9xwbNaeg8pxp
 #define BREATH_GUARD_rAf6FomrfEupsrKlsZvh9xwbNaeg8pxp
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/text/set_of_chars.hpp"
 #include <locale>
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 std::string         trim_tail( std::string const & str,
                                std::locale const & loc = std::locale() ) ;

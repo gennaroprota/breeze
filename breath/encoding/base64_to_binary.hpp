@@ -13,7 +13,9 @@
 #ifndef BREATH_GUARD_ubEInhYBWjgftwkYlSFbSOFcFUILqJgK
 #define BREATH_GUARD_ubEInhYBWjgftwkYlSFbSOFcFUILqJgK
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      base64_to_binary():
 //      ===================

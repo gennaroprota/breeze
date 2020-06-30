@@ -14,7 +14,9 @@
 #ifndef BREATH_GUARD_zosglTB4b62CILKxpxWmmQwQ28EfOH6T
 #define BREATH_GUARD_zosglTB4b62CILKxpxWmmQwQ28EfOH6T
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      check_type_completeness():
 //      ==========================

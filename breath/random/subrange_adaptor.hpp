@@ -13,7 +13,9 @@
 #ifndef BREATH_GUARD_fuCxVYYJ2LdcmZesVYlZ9PyrSKmKj97I
 #define BREATH_GUARD_fuCxVYYJ2LdcmZesVYlZ9PyrSKmKj97I
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      subrange_adaptor:
 //      =================

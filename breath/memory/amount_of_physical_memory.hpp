@@ -14,7 +14,9 @@
 #ifndef BREATH_GUARD_MGUaDhlpQlBVyyLZNOhIfvYsz5BgazUe
 #define BREATH_GUARD_MGUaDhlpQlBVyyLZNOhIfvYsz5BgazUe
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      amount_of_physical_memory():
 //      ============================

@@ -9,6 +9,7 @@
 #ifndef BREATH_GUARD_4FikLg5aHTVI1mWG6jpHTJWskJUVVUMy
 #define BREATH_GUARD_4FikLg5aHTVI1mWG6jpHTJWskJUVVUMy
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/process/command_line.hpp"
 #include "breath/text/from_string.hpp"
 #include "breath/text/to_string.hpp"
@@ -18,7 +19,7 @@
 #include <string>
 #include <vector>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename T >
 class option_reader

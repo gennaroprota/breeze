@@ -14,7 +14,9 @@
 #ifndef BREATH_GUARD_xQJo3uSTt7ypxnH7y1CyRR3fJM5i3dsb
 #define BREATH_GUARD_xQJo3uSTt7ypxnH7y1CyRR3fJM5i3dsb
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      performance_counter_policy:
 //      ===========================

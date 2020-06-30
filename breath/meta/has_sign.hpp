@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_hGv2WKy8LgUcETfMmcRpTRLRUQlhUJSH
 #define BREATH_GUARD_hGv2WKy8LgUcETfMmcRpTRLRUQlhUJSH
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/meta/constant.hpp"
 
-namespace breath {
+namespace breath_ns {
 namespace meta {
 
 //      has_sign:

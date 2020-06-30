@@ -36,10 +36,11 @@
 #ifndef BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
 #define BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/idiom/volatilize.hpp"
 #include <cstddef>
 
-namespace breath {
+namespace breath_ns {
 
 //      Implementation notes:
 //

@@ -16,7 +16,7 @@
 #include <string>
 #include <typeinfo>
 
-namespace breath {
+namespace breath_ns {
 namespace readable_type_name_private {
 
 template< typename T >

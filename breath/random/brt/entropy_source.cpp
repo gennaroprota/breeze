@@ -17,7 +17,7 @@
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
 #include "breath/random/subrange_adaptor.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 entropy_source::entropy_source()
     :   m_impl( new impl )

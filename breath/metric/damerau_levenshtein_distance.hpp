@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_DdgXuNwmaHGONiwKca8ikqBoDHQThmMu
 #define BREATH_GUARD_DdgXuNwmaHGONiwKca8ikqBoDHQThmMu
 
+#include "breath/top_level_namespace.hpp"
 #include <cstddef>
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      damerau_levenshtein_distance():
 //      ===============================

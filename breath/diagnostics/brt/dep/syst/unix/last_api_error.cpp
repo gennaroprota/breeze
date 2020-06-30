@@ -16,7 +16,7 @@
 #include <locale.h>
 #include <string.h>
 
-namespace breath {
+namespace breath_ns {
 
 last_api_error::last_api_error( char const * p ) noexcept
     :   m_last_error( errno )

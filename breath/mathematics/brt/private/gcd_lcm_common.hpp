@@ -9,12 +9,13 @@
 #ifndef BREATH_GUARD_ywAsFEinN5XbOP8UpDuYwWj4b3LAnVX2
 #define BREATH_GUARD_ywAsFEinN5XbOP8UpDuYwWj4b3LAnVX2
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include "breath/meta/is_2s_complement.hpp"
 #include <type_traits>
 #include <limits>
 
-namespace breath {
+namespace breath_ns {
 namespace gcd_lcm_private {
 
 //      Renouncing to have a separate .tpp file, since this is a

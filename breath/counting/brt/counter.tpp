@@ -10,7 +10,7 @@
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
 #include <limits>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename Int >
 counter< Int >::counter()
