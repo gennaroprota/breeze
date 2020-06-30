@@ -14,9 +14,10 @@
 #ifndef BREATH_GUARD_K46CqplQJyZFGjsXe5vROIAJbKonAZ10
 #define BREATH_GUARD_K46CqplQJyZFGjsXe5vROIAJbKonAZ10
 
+#include "breath/top_level_namespace.hpp"
 #include <cstdint>
 
-namespace breath {
+namespace breath_ns {
 
 //      crc32():
 //      ========

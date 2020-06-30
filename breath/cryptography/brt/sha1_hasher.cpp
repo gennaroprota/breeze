@@ -27,8 +27,8 @@
 //          documentation. [gps]
 // ---------------------------------------------------------------------------
 
-namespace breath {
-namespace        {
+namespace breath_ns {
+namespace           {
 
 typedef sha1_engine::word_type word_type ;
 

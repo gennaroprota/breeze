@@ -14,7 +14,7 @@
 #include "breath/process/program_option.hpp"
 #include "breath/process/command_line.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 program_option_without_value
                     help_option( "help", '?', "prints this message" ) ;

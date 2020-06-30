@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_TFkXJUZ0hYDDlcmPKYMI9GfC5n42i9kF
 #define BREATH_GUARD_TFkXJUZ0hYDDlcmPKYMI9GfC5n42i9kF
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/diagnostics/exception.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 class hashing_count
 {

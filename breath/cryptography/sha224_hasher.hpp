@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_OKBGme15I2KXAgAlHJL4gxgCmNkNyA1w
 #define BREATH_GUARD_OKBGme15I2KXAgAlHJL4gxgCmNkNyA1w
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/cryptography/merkle_damgard_engine.hpp"
 #include "breath/cryptography/merkle_damgard_machine.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 class               sha224_engine ;
 

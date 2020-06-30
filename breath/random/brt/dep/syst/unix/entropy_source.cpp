@@ -24,7 +24,7 @@
 #include <cstdio>
 #include <limits>
 
-namespace breath {
+namespace breath_ns {
 
 class entropy_source::impl
 {

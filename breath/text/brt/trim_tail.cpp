@@ -15,7 +15,7 @@
 #include "breath/text/trim_tail_if.hpp"
 #include <locale>
 
-namespace breath {
+namespace breath_ns {
 
 std::string
 trim_tail( std::string const & str, std::locale const & loc )

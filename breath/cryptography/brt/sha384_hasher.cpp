@@ -14,7 +14,7 @@
 #include "breath/cryptography/sha384_hasher.hpp"
 #include "breath/cryptography/sha512_hasher.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 void
 sha384_engine::init_state( state_type & state )

@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_E6f26R6Om6D3dxAUPssS2yROHiV0L8sv
 #define BREATH_GUARD_E6f26R6Om6D3dxAUPssS2yROHiV0L8sv
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //!     Sets the current directory of the current process to \c dir; \c
 //!     dir must be a valid directory path.

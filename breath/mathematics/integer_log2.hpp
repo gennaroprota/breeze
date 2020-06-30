@@ -14,9 +14,10 @@
 #ifndef BREATH_GUARD_Kym3FA1ex9fw5x3d1rVgY686BX4YRKvw
 #define BREATH_GUARD_Kym3FA1ex9fw5x3d1rVgY686BX4YRKvw
 
+#include "breath/top_level_namespace.hpp"
 #include <cstdint>
 
-namespace breath {
+namespace breath_ns {
 
 //      integer_log2():
 //      ===============

@@ -12,7 +12,7 @@
 
 //!     \todo Provide a way to extract from streams
 
-namespace breath {
+namespace breath_ns {
 
 template< typename Hasher >
 digest< Hasher >::digest( Hasher hasher_copy )

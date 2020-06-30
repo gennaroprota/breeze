@@ -20,7 +20,7 @@
 #include <ios>
 #include <ostream>
 
-namespace breath {
+namespace breath_ns {
 
 printable_string::printable_string( char const * p )
 {

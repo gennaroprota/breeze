@@ -14,9 +14,10 @@
 #ifndef BREATH_GUARD_vf6LuqjTQ9wAJWXZsNnALWlVf4PYtieN
 #define BREATH_GUARD_vf6LuqjTQ9wAJWXZsNnALWlVf4PYtieN
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      remove_from_end():
 //      ==================

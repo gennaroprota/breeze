@@ -11,12 +11,13 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breath/top_level_namespace.hpp"
 #include <Windows.h>
 #include <cstddef>
 #include <cstring>
 #include <ostream>
 
-namespace breath {
+namespace breath_ns {
 
 last_api_error::last_api_error( char const * p ) noexcept
     :   m_last_error( GetLastError() )

@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_I2oO3QRDodQiGPSBaYNHr4wsSe5AloUX
 #define BREATH_GUARD_I2oO3QRDodQiGPSBaYNHr4wsSe5AloUX
 
+#include "breath/top_level_namespace.hpp"
 #include <exception>
 
-namespace breath {
+namespace breath_ns {
 
 class test_exception ;
 

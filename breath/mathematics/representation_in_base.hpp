@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_lqF1VhyaeQBA6t5SZLvv9rpFKK1iZVzu
 #define BREATH_GUARD_lqF1VhyaeQBA6t5SZLvv9rpFKK1iZVzu
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //!     \pre
 //!         base >= 2 && base <= 36

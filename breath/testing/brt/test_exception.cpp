@@ -13,7 +13,7 @@
 
 #include "breath/testing/test_exception.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 test_exception::test_exception( char const * file_name,
                                 unsigned long line ) noexcept

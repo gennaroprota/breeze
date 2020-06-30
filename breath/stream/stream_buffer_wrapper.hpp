@@ -13,7 +13,9 @@
 #ifndef BREATH_GUARD_HAiCpytMRiUMKQy3v1ioI7B2LEWtzcvv
 #define BREATH_GUARD_HAiCpytMRiUMKQy3v1ioI7B2LEWtzcvv
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //      stream_buffer_wrapper:
 //      ======================

@@ -13,8 +13,8 @@
 
 #include "breath/cryptography/md5_hasher.hpp"
 
-namespace breath {
-namespace        {
+namespace breath_ns {
+namespace           {
 
 typedef md5_engine::word_type
                         word_type ;

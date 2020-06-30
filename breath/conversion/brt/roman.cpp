@@ -15,7 +15,7 @@
 #include "breath/diagnostics/assert.hpp"
 #include <ostream>
 
-namespace breath {
+namespace breath_ns {
 
 roman::roman( int n )
     :   m_value( n )

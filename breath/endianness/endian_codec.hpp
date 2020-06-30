@@ -16,12 +16,13 @@
 #ifndef BREATH_GUARD_KF72jjCHTZHZqOBTMYHp95Fij2ZyYgaS
 #define BREATH_GUARD_KF72jjCHTZHZqOBTMYHp95Fij2ZyYgaS
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/meta/has_sign.hpp"
 #include "breath/meta/width.hpp"
 #include <cstddef>
 #include <iterator>
 
-namespace breath {
+namespace breath_ns {
 //! \cond implementation
 namespace endian_codec_private {
 

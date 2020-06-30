@@ -15,7 +15,7 @@
 #include <string>
 #include <type_traits>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename T >
 std::string

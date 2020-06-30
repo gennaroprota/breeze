@@ -15,9 +15,10 @@
 #ifndef BREATH_GUARD_DjUmH0WQBIis1gQMNQWYhB7KQHMzHYQQ
 #define BREATH_GUARD_DjUmH0WQBIis1gQMNQWYhB7KQHMzHYQQ
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/meta/constant.hpp"
 
-namespace breath {
+namespace breath_ns {
 namespace meta {
 
 template< typename T >

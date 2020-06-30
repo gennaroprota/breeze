@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_YZVt6T2boY9RlFkqeiYohH0bEc6w6tsM
 #define BREATH_GUARD_YZVt6T2boY9RlFkqeiYohH0bEc6w6tsM
 
+#include "breath/top_level_namespace.hpp"
 #include <limits>
 
-namespace breath {
+namespace breath_ns {
 namespace sha_common_private {
 
 //      The "choice" function - for each bit position p it acts as a

@@ -13,7 +13,9 @@
 #ifndef BREATH_GUARD_UdGvvEgZV1WGbMzbsiKOg7UnnY910Qsa
 #define BREATH_GUARD_UdGvvEgZV1WGbMzbsiKOg7UnnY910Qsa
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 namespace meta {
 
 //!     A meta::constant with the same \c value_type as \c T and \c

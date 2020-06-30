@@ -16,7 +16,7 @@
 #include <numeric>
 #include <vector>
 
-namespace breath {
+namespace breath_ns {
 
 std::ptrdiff_t
 levenshtein_distance( std::string const & first, std::string const & second )

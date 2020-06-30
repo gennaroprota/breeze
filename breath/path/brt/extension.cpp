@@ -14,7 +14,7 @@
 #include "breath/path/extension.hpp"
 #include "breath/path/directory_separators.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 std::string
 extension( std::string const & path )

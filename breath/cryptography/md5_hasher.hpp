@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_vePXQ5mxXBYih5DCVW1zUWqL52bOdtiX
 #define BREATH_GUARD_vePXQ5mxXBYih5DCVW1zUWqL52bOdtiX
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/cryptography/merkle_damgard_engine.hpp"
 #include "breath/cryptography/merkle_damgard_machine.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 class md5_engine ;
 

@@ -10,6 +10,7 @@
 #ifndef BREATH_GUARD_wv85pwyBmJzlhg6z02PPsgOP4CY3kdBn
 #define BREATH_GUARD_wv85pwyBmJzlhg6z02PPsgOP4CY3kdBn
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/diagnostics/exception.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 
@@ -17,7 +18,7 @@
 #include <string>
 #include <vector>
 
-namespace breath {
+namespace breath_ns {
 
 class               program_option_without_value ;
 

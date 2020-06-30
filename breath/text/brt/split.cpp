@@ -15,7 +15,7 @@
 #include "breath/diagnostics/assert.hpp"
 #include <cstddef>
 
-namespace breath {
+namespace breath_ns {
 
 std::vector< std::string >
 split( std::string const & s, std::string const & separators )

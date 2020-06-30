@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
 #define BREATH_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
 
+#include "breath/top_level_namespace.hpp"
 #include <ctime>
 
-namespace breath {
+namespace breath_ns {
 
 //      c_clock_policy:
 //      ===============

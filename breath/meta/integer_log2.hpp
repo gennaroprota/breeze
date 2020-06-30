@@ -14,7 +14,9 @@
 #ifndef BREATH_GUARD_4uQJExogJdntOgg4rVCN5jmuqREdR7xS
 #define BREATH_GUARD_4uQJExogJdntOgg4rVCN5jmuqREdR7xS
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 //! \cond implementation
 namespace  integer_log2_private {
 

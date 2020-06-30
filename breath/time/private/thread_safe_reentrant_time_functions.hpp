@@ -9,9 +9,10 @@
 #ifndef BREATH_GUARD_krhKqbhdeRKtskiukvWAb1Ax6cnwgQ77
 #define BREATH_GUARD_krhKqbhdeRKtskiukvWAb1Ax6cnwgQ77
 
+#include "breath/top_level_namespace.hpp"
 #include <time.h>
 
-namespace breath {
+namespace breath_ns {
 
 //! \cond implementation
 namespace time_private {

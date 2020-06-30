@@ -16,7 +16,9 @@
 #ifndef BREATH_GUARD_Mcff5zkaJE9eTbXnwJQWQ2WlCXIXfcmc
 #define BREATH_GUARD_Mcff5zkaJE9eTbXnwJQWQ2WlCXIXfcmc
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 namespace meta {
 
 template< bool condition, typename T, typename U >

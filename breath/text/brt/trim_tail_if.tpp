@@ -8,7 +8,7 @@
 
 #include <algorithm>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename Predicate >
 std::string

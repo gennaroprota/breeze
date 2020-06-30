@@ -13,7 +13,9 @@
 #ifndef BREATH_GUARD_4VpDkPMRFQlDZhFnubC67vt6hSC6EvrJ
 #define BREATH_GUARD_4VpDkPMRFQlDZhFnubC67vt6hSC6EvrJ
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 
 //!     Adds a \c volatile qualification to an lvalue expression.
 //!

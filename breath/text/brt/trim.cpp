@@ -15,7 +15,7 @@
 #include "breath/text/trim_head.hpp"
 #include "breath/text/trim_tail.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 std::string
 trim( std::string const & str, std::locale const & loc )

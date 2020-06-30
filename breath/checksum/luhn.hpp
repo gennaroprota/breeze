@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_tIQHBNytA88Bkj4QJcjMo5Tyy8QmG29Y
 #define BREATH_GUARD_tIQHBNytA88Bkj4QJcjMo5Tyy8QmG29Y
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      luhn_sum():
 //      ===========

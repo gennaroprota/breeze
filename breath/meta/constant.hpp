@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_agSZ9lxbOGpOtPA3Qy3JqLm28BJW8oRr
 #define BREATH_GUARD_agSZ9lxbOGpOtPA3Qy3JqLm28BJW8oRr
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/meta/unqualify.hpp"
 
-namespace breath {
+namespace breath_ns {
 namespace meta {
 
 //      constant:

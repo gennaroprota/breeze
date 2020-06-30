@@ -13,7 +13,7 @@
 
 #include "breath/text/to_lowercase.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 std::string
 to_lowercase( std::string const & source, std::locale const & loc )

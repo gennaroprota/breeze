@@ -16,7 +16,7 @@
 #include "breath/idiom/maybe.hpp"
 #include <time.h>
 
-namespace breath {
+namespace breath_ns {
 
 //      The extended date and time could be obtained (since C99 and
 //      C++11) with %F and %T, respectively. But I'm not sure how many

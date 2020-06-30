@@ -6,7 +6,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-namespace breath {
+namespace breath_ns {
 
 template< typename T >
 constexpr typename std::enable_if< std::numeric_limits< T >::is_integer &&

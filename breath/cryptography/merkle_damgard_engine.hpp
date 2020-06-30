@@ -14,13 +14,14 @@
 #ifndef BREATH_GUARD_fYqwSU8p6zoTOMzKlvSB4iz96M3PyUF5
 #define BREATH_GUARD_fYqwSU8p6zoTOMzKlvSB4iz96M3PyUF5
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/cryptography/hashing_count.hpp"
 #include "breath/endianness/endian_codec.hpp"
 #include "breath/meta/exact_width_integer.hpp"
 
 #include <cstddef>
 
-namespace breath {
+namespace breath_ns {
 
 //      All parameters here have pretty much self-explanatory names.
 //      The only exception is perhaps length_exponent: it determines the

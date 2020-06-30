@@ -13,7 +13,9 @@
 #ifndef BREATH_GUARD_k8gjtzbloTDgF7FRM6AWORSGsE1IHkXq
 #define BREATH_GUARD_k8gjtzbloTDgF7FRM6AWORSGsE1IHkXq
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 //! \cond implementation
 namespace assert_private {
 

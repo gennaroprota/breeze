@@ -13,7 +13,7 @@
 
 #include "breath/testing/test_reporter.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 test_reporter::test_reporter() = default ;
 

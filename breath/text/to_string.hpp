@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_JRFfcCLm3oqVulEWGOycMApryPN2pq33
 #define BREATH_GUARD_JRFfcCLm3oqVulEWGOycMApryPN2pq33
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      to_string():
 //      ============

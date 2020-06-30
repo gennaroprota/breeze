@@ -9,7 +9,7 @@
 #include "breath/diagnostics/check_type_completeness.hpp"
 #include <utility>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename T >
 auto_array< T >::auto_array() noexcept

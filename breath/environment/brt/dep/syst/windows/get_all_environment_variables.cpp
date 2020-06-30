@@ -20,8 +20,8 @@
 #include <Windows.h>    // and use the normal name
 #include <utility>
 
-namespace breath {
-namespace        {
+namespace breath_ns {
+namespace           {
 
 void
 do_free( char * p ) noexcept

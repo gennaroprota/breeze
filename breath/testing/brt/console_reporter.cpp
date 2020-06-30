@@ -17,7 +17,7 @@
 #include <string>
 #include <typeinfo>
 
-namespace breath {
+namespace breath_ns {
 
 console_reporter::console_reporter( std::ostream & os )
     :   m_stream( os ),

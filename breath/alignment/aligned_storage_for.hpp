@@ -13,11 +13,12 @@
 #ifndef BREATH_GUARD_ilYRG2ibsfCoQd4vz7X5Cik5Q8E0z1pO
 #define BREATH_GUARD_ilYRG2ibsfCoQd4vz7X5Cik5Q8E0z1pO
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/meta/select.hpp"
 #include <cstddef>
 
-namespace breath {
+namespace breath_ns {
 
 //! \cond implementation
 namespace aligned_storage_private {

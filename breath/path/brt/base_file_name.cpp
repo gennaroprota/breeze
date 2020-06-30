@@ -15,7 +15,7 @@
 #include "breath/path/directory_separators.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 std::string
 base_file_name( std:: string const & full_path)

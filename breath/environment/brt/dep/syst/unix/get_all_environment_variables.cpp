@@ -15,7 +15,7 @@
 #include "breath/diagnostics/exception.hpp"
 #include <unistd.h>
 
-namespace breath {
+namespace breath_ns {
 
 std::map< std::string, std::string >
 get_all_environment_variables()

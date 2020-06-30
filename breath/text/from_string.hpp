@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_Q6sxk1RUMey9fbjLvtacucg61F39I6ob
 #define BREATH_GUARD_Q6sxk1RUMey9fbjLvtacucg61F39I6ob
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //!     \par Type requirements
 //!         \c T shall be \c DefaultConstructible and either

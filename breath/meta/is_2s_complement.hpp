@@ -14,7 +14,9 @@
 #ifndef BREATH_GUARD_tWPolV5CdSeUDR2dhiin3jIbwnOhvgwW
 #define BREATH_GUARD_tWPolV5CdSeUDR2dhiin3jIbwnOhvgwW
 
-namespace breath {
+#include "breath/top_level_namespace.hpp"
+
+namespace breath_ns {
 namespace meta {
 
 //      is_2s_complement():

@@ -9,7 +9,7 @@
 #include "breath/counting/signed_count.hpp"
 #include <numeric>
 
-namespace breath {
+namespace breath_ns {
 
 //      Is there any freely available specification of CRC-32?
 //

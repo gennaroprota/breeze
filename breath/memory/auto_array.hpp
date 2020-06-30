@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_FvaoTt7c3pTltKsed1Av5CAvE3SvnVIn
 #define BREATH_GUARD_FvaoTt7c3pTltKsed1Av5CAvE3SvnVIn
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 //      auto_array:
 //      ===========

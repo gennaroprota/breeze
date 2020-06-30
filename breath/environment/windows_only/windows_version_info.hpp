@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_XHTe6eJtKcY8TQSy4joG13QO3Eu5NfRF
 #define BREATH_GUARD_XHTe6eJtKcY8TQSy4joG13QO3Eu5NfRF
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      windows_version_info:
 //      =====================

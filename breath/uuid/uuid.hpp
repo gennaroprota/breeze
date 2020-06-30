@@ -13,11 +13,12 @@
 #ifndef BREATH_GUARD_jjJFg8dCizQ6ClSYgT8Zsg2zo7zFYgfG
 #define BREATH_GUARD_jjJFg8dCizQ6ClSYgT8Zsg2zo7zFYgfG
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/operator/equality_comparison.hpp"
 #include <cstdint>
 #include <iosfwd>
 
-namespace breath {
+namespace breath_ns {
 
 //      uuid:
 //      =====

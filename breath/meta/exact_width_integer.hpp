@@ -16,10 +16,11 @@
 #ifndef BREATH_GUARD_HdHZPdx1OyaeosOjcrni6ByNfUBalEG4
 #define BREATH_GUARD_HdHZPdx1OyaeosOjcrni6ByNfUBalEG4
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/meta/select.hpp"
 #include <limits>
 
-namespace breath {
+namespace breath_ns {
 //! \cond implementation
 namespace exact_width_integer_private {
 

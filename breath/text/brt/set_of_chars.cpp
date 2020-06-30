@@ -17,7 +17,7 @@
 #include <climits> // avoid the verbosity of numeric_limits
 #include <cstddef>
 
-namespace breath {
+namespace breath_ns {
 
 set_of_chars::index_type
 set_of_chars::to_index( char c ) noexcept

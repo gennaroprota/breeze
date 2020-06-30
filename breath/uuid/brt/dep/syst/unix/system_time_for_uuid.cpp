@@ -11,11 +11,13 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breath/top_level_namespace.hpp"
+
 #include <sys/time.h>
 
 #include <cstdint>
 
-namespace breath {
+namespace breath_ns {
 namespace uuid_private {
 
 int                 max_uuids_per_system_tick() ;

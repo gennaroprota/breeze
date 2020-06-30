@@ -159,8 +159,8 @@
 
 #include <Windows.h>
 
-namespace breath {
-namespace        {
+namespace breath_ns {
+namespace           {
 
 constexpr int
 win_version( int major, int minor )

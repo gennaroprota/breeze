@@ -8,7 +8,7 @@
 
 #include "private/gcd_lcm_common.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 template< typename M, typename N >
 constexpr std::common_type_t< M, N >

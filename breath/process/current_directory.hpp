@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_KrwlefOEgShOBz9iqPeAc0R8iN3Lfl9g
 #define BREATH_GUARD_KrwlefOEgShOBz9iqPeAc0R8iN3Lfl9g
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      current_directory():
 //      ====================

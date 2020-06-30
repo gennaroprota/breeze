@@ -19,8 +19,8 @@
 #include <algorithm>
 #include <functional>
 
-namespace breath {
-namespace        {
+namespace breath_ns {
+namespace           {
 
 typedef sha512_engine::word_type
                     word_type ;

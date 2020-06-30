@@ -13,7 +13,7 @@
 
 #include <time.h>
 
-namespace breath {
+namespace breath_ns {
 namespace time_private {
 
 //!     Microsoft's library doesn't provide gmtime_r(). Their gmtime(),

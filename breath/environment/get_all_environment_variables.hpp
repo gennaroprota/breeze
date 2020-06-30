@@ -14,10 +14,11 @@
 #ifndef BREATH_GUARD_U4BCWO9huCRrS51C9yYWQld0Ixzmwe5L
 #define BREATH_GUARD_U4BCWO9huCRrS51C9yYWQld0Ixzmwe5L
 
+#include "breath/top_level_namespace.hpp"
 #include <map>
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //!     \return
 //!         A map with all name-value pairs corresponding to the defined

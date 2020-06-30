@@ -14,7 +14,7 @@
 #include "breath/stream/null_stream.hpp"
 #include "breath/iteration/begin_end.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 null_stream_buffer::null_stream_buffer()
 {

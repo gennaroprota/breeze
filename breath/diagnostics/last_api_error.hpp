@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_HC9mIXMvniKHLa6eFGhdRhDkxlSaZErK
 #define BREATH_GUARD_HC9mIXMvniKHLa6eFGhdRhDkxlSaZErK
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/diagnostics/exception.hpp"
 #include <iosfwd>
 
-namespace breath {
+namespace breath_ns {
 
 //      last_api_error:
 //      ===============

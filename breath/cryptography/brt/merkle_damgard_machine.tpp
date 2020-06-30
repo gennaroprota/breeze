@@ -14,7 +14,7 @@
 #include <algorithm>
 #include <iterator>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename Engine >
 merkle_damgard_machine< Engine >::merkle_damgard_machine()

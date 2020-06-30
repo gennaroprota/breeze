@@ -26,10 +26,11 @@
 #ifndef BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
 #define BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
 
+#include "breath/top_level_namespace.hpp"
 #include <cstddef>
 #include <type_traits>
 
-namespace breath {
+namespace breath_ns {
 
 //      signed_count():
 //      ===============

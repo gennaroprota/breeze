@@ -15,7 +15,7 @@
 #include <algorithm>
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      ends_with():
 //      ============

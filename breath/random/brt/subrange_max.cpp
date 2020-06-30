@@ -14,7 +14,7 @@
 #include "breath/random/subrange_max.hpp"
 #include "breath/diagnostics/assert.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 //      Implementation:
 //      ===============

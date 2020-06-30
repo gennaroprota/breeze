@@ -186,14 +186,15 @@ then
         if [ -x "$exe_root/include_guard" ]
         then
             new_line 1
-            (printf '\nnamespace breath {'; new_line "$blank_lines"; printf '}\n') |
+            (printf '\n#include "breath/top_level_namespace.hpp"\n';
+             printf '\nnamespace breath_ns {'; new_line "$blank_lines"; printf '}\n') |
                 "$exe_root/include_guard"
             new_line 1
         else
             printf '%s\n' "Cannot find or execute the include_guard tool. Did you build it?"
         fi
     else
-        printf '\nnamespace breath {\n\n}\n\n'
+        printf '\nnamespace breath_ns {\n\n}\n\n'
     fi
 else
     new_line "$blank_lines"

@@ -16,7 +16,7 @@
 #include "breath/diagnostics/assert.hpp"
 #include <Windows.h>
 
-namespace breath {
+namespace breath_ns {
 
 void
 set_current_directory( std::string const & dir )

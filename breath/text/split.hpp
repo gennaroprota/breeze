@@ -13,10 +13,11 @@
 #ifndef BREATH_GUARD_V50EdenEkFY3WA0JCnjok8aia0tACes8
 #define BREATH_GUARD_V50EdenEkFY3WA0JCnjok8aia0tACes8
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 #include <vector>
 
-namespace breath {
+namespace breath_ns {
 
 //      split():
 //      ========

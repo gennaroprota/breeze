@@ -23,8 +23,8 @@
 #include <ostream>
 #include <string>
 
-namespace breath {
-namespace        {
+namespace breath_ns {
+namespace           {
 
 //      NOTE:
 //          keep in sync with enum gravity in the class definition and

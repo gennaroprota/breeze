@@ -13,7 +13,7 @@
 
 #include "breath/path/directory_separators.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 char const *
 directory_separators() noexcept

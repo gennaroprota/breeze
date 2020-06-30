@@ -10,7 +10,7 @@
 #include <climits>
 #include <type_traits>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename InputIter, typename OutputIter >
 void

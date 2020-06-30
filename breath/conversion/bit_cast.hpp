@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_zEfMFJHYQ9I08K6Rq2gIVv3NRdCzUKoU
 #define BREATH_GUARD_zEfMFJHYQ9I08K6Rq2gIVv3NRdCzUKoU
 
+#include "breath/top_level_namespace.hpp"
 #include <type_traits>
 
-namespace breath {
+namespace breath_ns {
 
 //      bit_cast():
 //      ===========

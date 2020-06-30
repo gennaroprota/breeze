@@ -17,7 +17,7 @@
 #include <cstddef>
 #include <cstring>
 
-namespace breath {
+namespace breath_ns {
 
 exception::exception() noexcept
     :   exception( "" )

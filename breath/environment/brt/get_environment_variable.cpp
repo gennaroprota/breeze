@@ -16,7 +16,7 @@
 
 #include <cstdlib>
 
-namespace breath {
+namespace breath_ns {
 
 maybe< std::string >
 get_environment_variable( std::string const & name )

@@ -14,7 +14,7 @@
 #include "breath/text/tail.hpp"
 #include "breath/diagnostics/assert.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 std::string
 tail( std::string const & s, std::ptrdiff_t count )

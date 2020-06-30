@@ -38,9 +38,10 @@
 #ifndef BREATH_GUARD_9qsz7UnvkOIvyedOe6ND5qSGfNeCMIU0
 #define BREATH_GUARD_9qsz7UnvkOIvyedOe6ND5qSGfNeCMIU0
 
+#include "breath/top_level_namespace.hpp"
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 //      eof_value():
 //      ============

@@ -14,7 +14,7 @@
 #include "breath/cryptography/sha224_hasher.hpp"
 #include "breath/cryptography/sha256_hasher.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 void
 sha224_engine::init_state( state_type & state )

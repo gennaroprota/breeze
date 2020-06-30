@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_OFEP2tStNzXnzGYEV6JdW1XUXcS6lA7p
 #define BREATH_GUARD_OFEP2tStNzXnzGYEV6JdW1XUXcS6lA7p
 
+#include "breath/top_level_namespace.hpp"
 #include <type_traits>
 
-namespace breath {
+namespace breath_ns {
 
 //      lcm():
 //      ======

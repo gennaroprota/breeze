@@ -10,7 +10,7 @@
 #include "breath/diagnostics/assert.hpp"
 #include <algorithm>
 
-namespace breath {
+namespace breath_ns {
 
 template< typename T, std::size_t n >
 void

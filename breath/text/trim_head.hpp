@@ -13,11 +13,12 @@
 #ifndef BREATH_GUARD_VJhjD7vyKemLfcukUGXm4RzXGSsdvmrL
 #define BREATH_GUARD_VJhjD7vyKemLfcukUGXm4RzXGSsdvmrL
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/text/set_of_chars.hpp"
 #include <locale>
 #include <string>
 
-namespace breath {
+namespace breath_ns {
 
 std::string         trim_head( std::string const & str,
                                std::locale const & loc = std::locale() ) ;

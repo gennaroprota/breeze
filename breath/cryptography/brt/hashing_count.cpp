@@ -13,7 +13,7 @@
 
 #include "breath/cryptography/hashing_count.hpp"
 
-namespace breath {
+namespace breath_ns {
 
 hashing_count::exception::exception( char const * message )
     : breath::exception( message )

@@ -13,11 +13,12 @@
 #ifndef BREATH_GUARD_crv8sfpsGwWru7Bdt9WKSehiAw6f4zgz
 #define BREATH_GUARD_crv8sfpsGwWru7Bdt9WKSehiAw6f4zgz
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/meta/constant.hpp"
 
 #include <limits>
 
-namespace breath {
+namespace breath_ns {
 namespace meta {
 
 //      precision:

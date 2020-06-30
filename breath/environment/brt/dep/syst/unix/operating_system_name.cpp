@@ -17,7 +17,7 @@
 #include <cstring>
 #include <sys/utsname.h>
 
-namespace breath {
+namespace breath_ns {
 
 std::ostream &
 operator <<( std::ostream & dest, operating_system_name const & )

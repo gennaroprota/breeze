@@ -13,9 +13,10 @@
 #ifndef BREATH_GUARD_7TolwuFfch2xrqOdKkP8IrjIejdJYQxs
 #define BREATH_GUARD_7TolwuFfch2xrqOdKkP8IrjIejdJYQxs
 
+#include "breath/top_level_namespace.hpp"
 #include <type_traits>
 
-namespace breath {
+namespace breath_ns {
 
 //      gcd():
 //      ======

@@ -13,6 +13,7 @@
 #ifndef BREATH_GUARD_ljsq7ok4MwSNNxMyfe6xf8RevjbF8jrE
 #define BREATH_GUARD_ljsq7ok4MwSNNxMyfe6xf8RevjbF8jrE
 
+#include "breath/top_level_namespace.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/process/exit_code.hpp"
 #include "breath/testing/test_descriptor.hpp"
@@ -20,7 +21,7 @@
 #include "breath/testing/test_reporter.hpp"
 #include <initializer_list>
 
-namespace breath {
+namespace breath_ns {
 
 class test_runner
 {
