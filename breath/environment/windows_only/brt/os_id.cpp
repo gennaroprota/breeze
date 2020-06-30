@@ -17,8 +17,7 @@
 #include <ostream>
 
 namespace breath {
-
-namespace {
+namespace        {
 
 //      Attention: keep in sync with the declaration in [note 1].
 // ---------------------------------------------------------------------------
