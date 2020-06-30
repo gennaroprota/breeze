@@ -20,7 +20,8 @@
 #include <Windows.h>    // and use the normal name
 #include <utility>
 
-namespace {
+namespace breath {
+namespace        {
 
 void
 do_free( char * p ) noexcept
@@ -32,8 +33,6 @@ do_free( char * p ) noexcept
 }
 
 }
-
-namespace breath {
 
 std::map< std::string, std::string >
 get_all_environment_variables()

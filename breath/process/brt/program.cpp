@@ -23,7 +23,8 @@
 #include <ostream>
 #include <string>
 
-namespace {
+namespace breath {
+namespace        {
 
 //      NOTE:
 //          keep in sync with enum gravity in the class definition and
@@ -55,8 +56,6 @@ has_program_name( int argc, char const * const * argv )
 
 }
 
-
-namespace breath {
 
 program::program() noexcept
     :   m_max_gravity( comment ),

@@ -27,7 +27,8 @@
 #include <iomanip>
 #include <ostream>
 
-namespace {
+namespace breath {
+namespace        {
 
 //      adjusted_system_time():
 //      =======================
@@ -76,8 +77,6 @@ adjusted_system_time()
 
 }
 
-
-namespace breath {
 
 uuid::uuid() noexcept
     :   m_octets()
