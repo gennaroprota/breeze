@@ -99,7 +99,9 @@ tools available, but I don't have time to migrate to something else.
 
 Given the quality of the Doxygen output, I unwillingly recommend to mostly read
 the documentation directly from the source files. In any case, to generate
-separate documents, please see the `read_me` in `doc/source/`.
+separate documents, a `documentation` target is provided in the makefiles
+(please, remember to `cd` to `BREATH_ROOT`; the documentation will appear in
+`BREATH_ROOT/doc`).
 
 # Editor support and Git commit message template
 

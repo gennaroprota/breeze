@@ -106,6 +106,19 @@ $(dependency_dir)/%.dep: ;
 include $(wildcard $(patsubst %,$(dependency_dir)/%.dep,    \
                      $(basename $(source_files))))
 
+#       Documentation generation.
+#
+#       For convenience, we provide two target names: 'documentation'
+#       and 'doc' (names meant for user consumption are almost never
+#       abbreviated in Breath, but the documentation folder name is; so,
+#       some user will expect the full name, others will expect the same
+#       name as the folder).
+# ----------------------------------------------------------------------------
+.PHONY: doc documentation
+doc: documentation
+documentation:
+	$(root)/tool/build_docs/build_docs.sh ` pwd `
+
 # Local Variables:
 # mode: makefile
 # indent-tabs-mode: nil
