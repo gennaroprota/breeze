@@ -22,7 +22,7 @@ script_name()
 #       ==============
 #
 #       Exits the running script with a failure code (non-zero). If
-#       the first argument, seen as a string, has a non null length,
+#       the first argument, seen as a string, has a non-null length,
 #       then a message is output to standard error including that
 #       string. Any further arguments are ignored.
 # ----------------------------------------------------------------------------
