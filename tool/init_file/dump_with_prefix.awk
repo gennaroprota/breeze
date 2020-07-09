@@ -26,11 +26,6 @@
 #           considered "comments": they yield no corresponding output
 # ----------------------------------------------------------------------------
 
-function max( a, b )
-{
-    return a < b ? b : a
-}
-
 function centered( text, room )
 {
     len =               length( text )
