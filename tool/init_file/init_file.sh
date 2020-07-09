@@ -163,8 +163,8 @@ then
     length=`expr "$width" - 3`
     row=` make_string "$length" '-' `
     printf '%s\n' "//"
-    printf '%s\n' "//!     \file"
-    printf '%s\n' "//!     \brief"
+    printf '%s\n' "//!     \\file"
+    printf '%s\n' "//!     \\brief"
     printf '%s\n' "// $row"
 fi
 
