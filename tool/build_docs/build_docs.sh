@@ -82,6 +82,17 @@ fix_namespace_name()
         mv "$temp_file" "$source_file"
 }
 
+clean_up()
+{
+    rm -fr "$temp_dir"
+
+    #       These files are created by Doxygen, not by this script. But
+    #       sometimes they are not deleted by Doxygen, so let's do that
+    #       ourselves.
+    # ------------------------------------------------------------------------
+    rm -f "$root_dir"/doc/source/doxygen_objdb_*.tmp
+}
+
 
 if [ $# -ne 1 ]
 then
@@ -96,7 +107,7 @@ fi
 
 
 temp_dir=/tmp/` script_name `_$$
-trap 'rm -fr "$temp_dir"' 0 1 2 15
+trap 'clean_up' 0 1 2 15
 mkdir -p "$temp_dir"
 
 root_dir=$1
