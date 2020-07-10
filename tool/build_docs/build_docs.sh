@@ -12,7 +12,7 @@
 #       Syntax:
 #           build_docs breath_root
 #
-#       where:
+#       Arguments:
 #
 #           breath_root
 #
