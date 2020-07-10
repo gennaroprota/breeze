@@ -114,9 +114,7 @@ root_dir=$1
 output_dir="$root_dir/doc"
 
 cd "$root_dir/doc/source"
-doxygen doxygen.cfg
-exit_code=$?
-if [ $exit_code != 0 ]
+if ! doxygen doxygen.cfg
 then
     quit_script 'an error occurred.'
 else
