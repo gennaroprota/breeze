@@ -99,7 +99,7 @@ then
     quit_script 'wrong number of arguments.'
 fi
 
-if ! doxygen --version 2>/dev/null
+if ! doxygen --version >/dev/null
 then
     quit_script \
         'could not run Doxygen; is the directory of the exe in your PATH?'
