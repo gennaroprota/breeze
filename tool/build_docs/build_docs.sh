@@ -90,7 +90,7 @@ clean_up()
     #       sometimes they are not deleted by Doxygen, so let's do that
     #       ourselves.
     # ------------------------------------------------------------------------
-    rm -f "$root_dir"/doc/source/doxygen_objdb_*.tmp
+    rm -f "$root_dir"/doc/source/doxygen_*db_*.tmp
 }
 
 
