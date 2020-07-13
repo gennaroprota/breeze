@@ -34,7 +34,7 @@ make_string()
 #
 #       Returns the length in characters of the first argument
 #       (followed by a newline). Note that there is, intentionally, no
-#       backslash interpretation: the length of '\n', for instance, is
+#       backslash interpretation: the length of '\t', for instance, is
 #       two.
 #
 #       If you are thinking of changing the implementation, please
