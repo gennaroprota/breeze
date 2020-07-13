@@ -51,14 +51,16 @@ make_string()
 #                                       perhaps null string as well
 #
 #           expr "$1" : '.*'            obvious problems with some
-#                                       strings, e.g. '+' or '('
-#                                       (easily fixed, as in our
-#                                       version)
+#                                       strings, e.g. '+' or '(';
+#                                       these are easily fixed by
+#                                       using e.g.
 #
-#           printf '%s' "$1" | wc -m    fine, but the -m option to wc
-#                                       wasn't available on all my
-#                                       environments (though it is
-#                                       POSIX)
+#                                         expr "z$1" : '.*' - 1
+#
+#                                       but this expr-based solution
+#                                       doesn't seem to handle
+#                                       multibyte characters correctly
+#                                       under Cygwin
 #
 #           s="$1" awk '                fine, too; the only reason I
 #               BEGIN {                 preferred the expr-based
@@ -71,7 +73,7 @@ make_string()
 # ----------------------------------------------------------------------------
 string_length()
 {
-    expr "z$1" : '.*' - 1
+    printf '%s' "$1" | wc -m
 }
 
 # Local Variables:
