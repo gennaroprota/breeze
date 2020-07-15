@@ -58,11 +58,10 @@ The bin/ subdirectory of the Cygwin installation must be in the `PATH`.
 
 To build the library:
 
- - if you are on Windows and you want to use Visual Studio, run the Visual
-   Studio Command Prompt, issue the command `cd /D
-   "%BREATH_ROOT%/tool/use_cygwin/"` (the `/D` option is for the case in which
-   `%BREATH_ROOT%` is on a different drive) and launch `use_cygwin.bat`; then
-   use the resulting Cygwin window
+ - if you are on Windows and you want to use Visual Studio, run a Visual Studio
+   Command Prompt, issue the command `cd /D "%BREATH_ROOT%/tool/use_cygwin/"`
+   (the `/D` option is for the case in which `%BREATH_ROOT%` is on a different
+   drive) and launch `use_cygwin.bat`; then use the resulting Cygwin window
 
  - `cd` to `$BREATH_ROOT`
 
