@@ -9,8 +9,8 @@
 #
 #       This script must be used to initialize all text files intended
 #       for Breath. It ensures, among other things, that our copyright
-#       notice and license reference (plus, guards for C++ includes)
-#       are inserted. See the documentation for further details.
+#       notice and license reference (plus, guards for C++ includes) are
+#       inserted. See the documentation for further details.
 # ----------------------------------------------------------------------------
 
 set -eu
@@ -70,9 +70,8 @@ get_line_width()
 
 dump()
 {
-    # the variables are passed in the environment to awk only
-    #
-    #
+    #       The variables are passed in the environment to awk only.
+    # ------------------------------------------------------------------------
     prefix="$prefix"                        \
     width=` get_line_width `                \
     comment_pattern="$comment_pattern"      \
@@ -100,7 +99,7 @@ fi
 
 
 #       Find the language corresponding to the name pattern and extract
-#       the relevant data about it
+#       the relevant data about it.
 # ----------------------------------------------------------------------------
 language=""
 traits_file="$BREATH_ROOT/tool/init_file/language_traits.txt"

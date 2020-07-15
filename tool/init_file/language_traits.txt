@@ -16,14 +16,14 @@
 #       The important thing is that it allows adding support for new
 #       types of files without changing the script themselves.
 #
-#       Any line beginning with '#' in this file is treated as a
-#       comment (not because this file is written in any particular
-#       language: just because, conventionally, we chose to do so, and
-#       filter out any such lines).
+#       Any line beginning with '#' in this file is treated as a comment
+#       (not because this file is written in any particular language:
+#       just because, conventionally, we chose to do so, and filter out
+#       any such lines).
 #
 #       We also added an entry for .txt files. An abuse, but handy.
-#       Given the above, it seemed natural to choose '#' for
-#       "comments" in .txt files.
+#       Given the above, it seemed natural to choose '#' for "comments"
+#       in .txt files.
 #
 #       NOTE:
 #           since, of course, we don't want to retrofit all existing
@@ -43,8 +43,9 @@
 
 
 #       Note:
-#           The css mode for Emacs seems to have been introduced starting from
-#           version 22.1 (!) What happens for unrecognized modes?
+#           The css mode for Emacs seems to have been introduced
+#           starting from version 22.1 (!) What happens for unrecognized
+#           modes?
 
 
 # file name pattern   comment  comment   line
