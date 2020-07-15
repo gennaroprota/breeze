@@ -35,9 +35,9 @@
 #       symbol in them without invoking undefined behavior. I asked
 #       Arnoud Engelfriet about this, who pointed out that:
 #
-#           Yes, in a UCC member you cannot use the word or the
+#           "Yes, in a UCC member you cannot use the word or the
 #           abbreviation *but* I'm not aware of any country that's
-#           member of the UCC but not the Berne Convention
+#           member of the UCC but not the Berne Convention"
 #
 #
 #       What is not clear to me is what "country" is a work first
@@ -45,19 +45,20 @@
 #       Internet. To this Arnoud Engelfriet replied:
 #
 #           "I don't think I've ever seen that addressed in court.
-#       Most of the time it makes no difference, because under Berne
-#       countries must give an alien the same rights as their own
-#       citizens. If a US citizen infringes my copyright, it doesn't
-#       matter where I first published the work.
+#           Most of the time it makes no difference, because under
+#           Berne countries must give an alien the same rights as
+#           their own citizens. If a US citizen infringes my
+#           copyright, it doesn't matter where I first published the
+#           work.
 #
-#       It could be relevant when the country of first publication is
-#       not a Berne convention country. [...]
+#           It could be relevant when the country of first
+#           publication is not a Berne convention country. [...]
 #
-#       My guess is that courts would look at the site's registration
-#       and ownership. Sourceforge is operated by a US company, so that
-#       would probably count as a first publication in the USA. But this
-#       is really speculative as I've never seen this issue in a court
-#       anywhere."
+#           My guess is that courts would look at the site's
+#           registration and ownership. Sourceforge is operated by a
+#           US company, so that would probably count as a first
+#           publication in the USA. But this is really speculative
+#           as I've never seen this issue in a court anywhere."
 # ----------------------------------------------------------------------------
 #
 #       Arguments:
