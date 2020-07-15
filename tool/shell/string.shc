@@ -32,43 +32,40 @@ make_string()
 #       string_length():
 #       ================
 #
-#       Returns the length in characters of the first argument
-#       (followed by a newline). Note that there is, intentionally, no
-#       backslash interpretation: the length of '\t', for instance, is
-#       two.
+#       Returns the length in characters of the first argument (followed
+#       by a newline). Note that there is, intentionally, no backslash
+#       interpretation: the length of '\t', for instance, is two.
 #
-#       If you are thinking of changing the implementation, please
-#       read the following; I considered at least the following
-#       alternatives:
+#       If you are thinking of changing the implementation, please read
+#       the following; I considered at least the following alternatives:
 #
 #                                           Reason for rejection
 #       --------------------------------------------------------------
 #           ${#par}                     I'm not sure how much it is
 #                                       portable in practice. In any
-#                                       case we'd need to filter out
-#                                       the cases of par being '*' or
-#                                       '@' (unspecified result), and
+#                                       case we'd need to filter out the
+#                                       cases of par being '*' or '@'
+#                                       (unspecified result), and
 #                                       perhaps null string as well
 #
 #           expr "$1" : '.*'            obvious problems with some
-#                                       strings, e.g. '+' or '(';
-#                                       these are easily fixed by
-#                                       using e.g.
+#                                       strings, e.g. '+' or '('; these
+#                                       are easily fixed by using e.g.
 #
 #                                         expr "z$1" : '.*' - 1
 #
 #                                       but this expr-based solution
-#                                       doesn't seem to handle
-#                                       multibyte characters correctly
-#                                       under Cygwin
+#                                       doesn't seem to handle multibyte
+#                                       characters correctly under
+#                                       Cygwin
 #
 #           s="$1" awk '                fine, too; the only reason I
 #               BEGIN {                 preferred the expr-based
 #                   print length(  \    implementation is that ENVIRON
 #                     ENVIRON[ "s" ] )  isn't in old awk: we do use it
-#                   exit                when we use awk, but given
-#               }                       that in this case we had a
-#           '                           reasonable alternative...
+#                   exit                when we use awk, but given that
+#               }                       in this case we had a reasonable
+#           '                           alternative...
 #
 # ----------------------------------------------------------------------------
 string_length()

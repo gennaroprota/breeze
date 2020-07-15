@@ -10,10 +10,10 @@
 #       make_copyright_notice():
 #       ========================
 #
-#       With the disclaimer that I'm not a lawyer and you shouldn't
-#       rely on anything I'm going to say: this function returns a
-#       copyright notice valid for all countries that are members of
-#       the Berne Convention (1988).
+#       With the disclaimer that I'm not a lawyer and you shouldn't rely
+#       on anything I'm going to say: this function returns a copyright
+#       notice valid for all countries that are members of the Berne
+#       Convention (1988).
 #
 #       For more information, see
 #
@@ -28,12 +28,12 @@
 #
 #       Note, too, that---from Circular 3 linked to above---under the
 #       "Universal Copyright Convention" (the UCC) only the copyright
-#       symbol is acceptable in a copyright notice: the word
-#       "Copyright" or the abbreviation are not acceptable. This would
-#       pose a problem e.g. for C++ source files, because, regardless
-#       of font and encoding issues, it may not be possible to use the
-#       copyright symbol in them without invoking undefined behavior.
-#       I asked Arnoud Engelfriet about this, who pointed out that:
+#       symbol is acceptable in a copyright notice: the word "Copyright"
+#       or the abbreviation are not acceptable. This would pose a
+#       problem e.g. for C++ source files, because, regardless of font
+#       and encoding issues, it may not be possible to use the copyright
+#       symbol in them without invoking undefined behavior. I asked
+#       Arnoud Engelfriet about this, who pointed out that:
 #
 #           Yes, in a UCC member you cannot use the word or the
 #           abbreviation *but* I'm not aware of any country that's
@@ -54,16 +54,16 @@
 #       not a Berne convention country. [...]
 #
 #       My guess is that courts would look at the site's registration
-#       and ownership. Sourceforge is operated by a US company, so
-#       that would probably count as a first publication in the USA.
-#       But this is really speculative as I've never seen this issue
-#       in a court anywhere."
+#       and ownership. Sourceforge is operated by a US company, so that
+#       would probably count as a first publication in the USA. But this
+#       is really speculative as I've never seen this issue in a court
+#       anywhere."
 # ----------------------------------------------------------------------------
 #
 #       Arguments:
 #
-#       The first argument is a string to be used as the designation
-#       of the copyright owner.
+#       The first argument is a string to be used as the designation of
+#       the copyright owner.
 # ----------------------------------------------------------------------------
 make_copyright_notice()
 {

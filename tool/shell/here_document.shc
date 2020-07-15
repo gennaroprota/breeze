@@ -16,8 +16,7 @@
 #
 #       Limitations:
 #
-#       Currently, the function recognizes a subset of the POSIX
-#       format
+#       Currently, the function recognizes a subset of the POSIX format
 #
 #         [n]<<[-]word
 #             here-document
@@ -47,8 +46,8 @@
 #            cat << "#" <<word
 #            ...
 #
-#          ) or to :[ \t]*<<word (redirection to colon), which
-#          reflects our most frequent usage.
+#          ) or to :[ \t]*<<word (redirection to colon), which reflects
+#          our most frequent usage.
 #
 #        - likewise, there's no parsing, so---for instance---nesting
 #          doesn't work: given
@@ -74,14 +73,13 @@
 #          too.
 #
 #          (Thus, with regards to the example therein,
-#          dump_here_document 'eof1' won't output anything. The
-#          intent is to intercept similar uses early, rather than
-#          "waiting" for the user to actually call us with argument
-#          'eof2')
+#          dump_here_document 'eof1' won't output anything. The intent
+#          is to intercept similar uses early, rather than "waiting" for
+#          the user to actually call us with argument 'eof2')
 #
-#        - the here-document is output verbatim: there is no
-#          parameter expansion, no command substitution, and no
-#          arithmetic expansion.
+#        - the here-document is output verbatim: there is no parameter
+#          expansion, no command substitution, and no arithmetic
+#          expansion.
 # ----------------------------------------------------------------------------
 dump_here_document()
 {

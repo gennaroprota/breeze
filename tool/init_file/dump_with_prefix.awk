@@ -13,15 +13,15 @@
 #       All arguments must be passed via awk's ENVIRON (for the
 #       rationale, see our Scripting Guidelines). They are:
 #
-#       * alignment
+#        - alignment
 #           One of 'align_right', 'align_center', 'align_left'  [gps]
-#       * prefix
+#        - prefix
 #           A string to be prefixed to every line of the input; can be
 #           empty
-#       * width
+#        - width
 #           An integer > length( prefix ), giving the maximum length in
 #           characters of the whole output line (including prefix)
-#       * comment_pattern
+#        - comment_pattern
 #           An ERE. Input lines matching this regular expression are
 #           considered "comments": they yield no corresponding output
 # ----------------------------------------------------------------------------

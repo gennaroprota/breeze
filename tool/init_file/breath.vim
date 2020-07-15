@@ -20,11 +20,11 @@
 "       ----------
 "
 "       For some file types we set Unix line endings, even under
-"       Windows, which makes Cygwin and other toolsets work smoothly
-"       in their most common (recommended) configuration. We don't do
-"       so directly in response to BufNewFile because at that time the
-"       modelines we have inserted haven't been applied yet (it may
-"       just seem that they are, sometimes, because of the file name
+"       Windows, which makes Cygwin and other toolsets work smoothly in
+"       their most common (recommended) configuration. We don't do so
+"       directly in response to BufNewFile because at that time the
+"       modelines we have inserted haven't been applied yet (it may just
+"       seem that they are, sometimes, because of the file name
 "       extension used :-)) and I couldn't find a function akin to
 "       Emacs' hack-local-variables(). We use BufWinEnter, instead,
 "       taking care to not modify anything if it isn't the first enter
@@ -33,16 +33,16 @@
 "       must have had a good reason to do so).
 "
 "       Note, too, the usage of an explicit 'sh -c' to invoke our
-"       script: Vim uses the value of the 'shell' option as name of
-"       the shell (command language interpreter) to use for ! and :!
+"       script: Vim uses the value of the 'shell' option as name of the
+"       shell (command language interpreter) to use for ! and :!
 "       commands, and that is an important setting we don't want to
 "       interfere with. An idea would be to set it to 'sh' and restore
 "       it when we are done, but I couldn't find any synchronization
 "       mechanism in the Vim docs (nor a guarantee that it would work
-"       without locking). So, we simply use whatever shell is
-"       configured in the editor to launch our 'sh'; for this we rely
-"       on 'sh' to be on the PATH (which must be set anyway, even
-"       under Windows, to have sed, awk and the other utilities work).
+"       without locking). So, we simply use whatever shell is configured
+"       in the editor to launch our 'sh'; for this we rely on 'sh' to be
+"       on the PATH (which must be set anyway, even under Windows, to
+"       have sed, awk and the other utilities work).
 " ----------------------------------------------------------------------------
 augroup             breath
     autocmd!
@@ -52,8 +52,9 @@ augroup end
 
 
 function            s:InitPhaseOne()
-    " intentionally renouncing to full-proof escaping of <afile>
-    " (unnecessary, given the Breath file naming guidelines)
+    "       Intentionally renouncing to full-proof escaping of <afile>
+    "       (unnecessary, given the Breath file naming guidelines).
+    " ------------------------------------------------------------------------
     :1,$!   sh -c --
                 \ "\"$BREATH_ROOT/tool/init_file/init_file.sh\" \"<afile>\""
     if v:shell_error == 0
