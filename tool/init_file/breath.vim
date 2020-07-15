@@ -9,8 +9,7 @@
 "
 "       Support for (g)Vim.
 "
-"       See "Editor Support" in the Breath documentation for more
-"       details.
+"       See "Editor support" in the top-level read_me for more details.
 "
 "       Maintainance:
 "           keep in sync with the corresponding Emacs facilities
