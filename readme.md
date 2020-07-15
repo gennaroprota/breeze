@@ -102,7 +102,7 @@ separate documents, a `documentation` target is provided in the makefiles
 (please, remember to `cd` to `BREATH_ROOT`; the documentation will appear in
 `BREATH_ROOT/doc`).
 
-# Editor support and Git commit message template
+# Editor support
 
 The source tree contains a `.editorconfig` (https://editorconfig.org). This
 support was added just recently. Before that, only Emacs and Vim were supported.
@@ -119,6 +119,8 @@ care of running the initialization script on any file you create in
 
 If you use Emacs, please contribute something analogous to `breath.vim` for that
 editor.
+
+# Git commit message template
 
 To enable the Git commit message template provided with the library:
 
