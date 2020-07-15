@@ -59,6 +59,9 @@ mark_section()
         end)
             printf '%s\n' "$block_comment_end"
             ;;
+        *)
+            quit_script 'internal error (wrong argument to mark_section())'
+            ;;
         esac
     fi
 }
