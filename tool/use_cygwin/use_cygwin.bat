@@ -13,10 +13,7 @@ REM     The only important thing that this does is putting /usr/bin at
 REM     the *end* of %PATH%, so that Cygwin's `link' isn't found before
 REM     the homonym Microsoft linker.
 REM
-REM     Usage:
-REM         1. invoke the Visual Studio Command Prompt of your choice
-REM            (x86, x64, etc.)
-REM         2. run this batch file
+REM     Usage: see the top-level read_me.
 REM --------------------------------------------------------------------------
 
 setlocal
