@@ -63,7 +63,8 @@ To build the library:
    (the `/D` option is for the case in which `%BREATH_ROOT%` is on a different
    drive) and launch `use_cygwin.bat`; then use the resulting Cygwin window
 
- - `cd` to `$BREATH_ROOT`
+ - `cd` to `$BREATH_ROOT` (add quotes if the value of `$BREATH_ROOT` contains
+   spaces)
 
  - issue a command like this:
 

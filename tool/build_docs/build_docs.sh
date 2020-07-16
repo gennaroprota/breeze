@@ -34,6 +34,9 @@ set -eu
 
 post_process_html_files()
 {
+    OLD_IFS="$IFS"
+    IFS=
+
     for file in $1
     do
         base_name=` get_base_name "$file" `
@@ -46,15 +49,22 @@ post_process_html_files()
             printf '%s\n' "- $file"
         fi
     done
+
+    IFS="$OLD_IFS"
 }
 
 post_process_javascript_files()
 {
+    OLD_IFS="$IFS"
+    IFS=
+
     for file in $1
     do
         printf '%s\n' "+ $file"
         fix_namespace_name "$file"
     done
+
+    IFS="$OLD_IFS"
 }
 
 fix_namespace_name()
