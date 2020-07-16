@@ -117,7 +117,7 @@ include $(wildcard $(patsubst %,$(dependency_dir)/%.dep,    \
 .PHONY: doc documentation
 doc: documentation
 documentation:
-	$(root)/tool/build_docs/build_docs.sh ` pwd `
+	$(root)/tool/build_docs/build_docs.sh "` pwd `"
 
 # Local Variables:
 # mode: makefile
