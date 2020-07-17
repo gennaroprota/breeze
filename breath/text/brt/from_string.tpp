@@ -14,10 +14,11 @@ namespace breath_ns {
 
 template< typename T >
 maybe< T >
-from_string( std::string const & s )
+from_string( std::string const & s, std::locale loc )
 {
     T                   t ;
     std::istringstream  ss( s ) ;
+    ss.imbue( loc ) ;
 
     return ( ss >> t ) && ( ss >> std::ws ).eof()
         ? maybe< T >( std::move( t ) )
@@ -27,7 +28,7 @@ from_string( std::string const & s )
 
 template<>
 inline maybe< std::string >
-from_string< std::string >( std::string const & s )
+from_string< std::string >( std::string const & s, std::locale )
 {
     return maybe< std::string >( s ) ;
 }

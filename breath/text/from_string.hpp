@@ -15,6 +15,7 @@
 
 #include "breath/top_level_namespace.hpp"
 #include "breath/idiom/maybe.hpp"
+#include <locale>
 #include <string>
 
 namespace breath_ns {
@@ -28,7 +29,8 @@ namespace breath_ns {
 //!         instance of \c T as second argument.
 // ---------------------------------------------------------------------------
 template< typename T >
-maybe< T >          from_string( std::string const & s ) ;
+maybe< T >          from_string( std::string const & s,
+                                 std::locale loc = std::locale() ) ;
 
 //!     \return
 //!         An (always valid) \c maybe object containing a string which
@@ -39,7 +41,8 @@ maybe< T >          from_string( std::string const & s ) ;
 //!         that e.g. " test " converts to " test " and not "test".
 // ---------------------------------------------------------------------------
 template<>
-maybe< std::string> from_string< std::string >( std::string const & s ) ;
+maybe< std::string> from_string< std::string >( std::string const & s,
+                                                std::locale ) ;
 
 }
 
