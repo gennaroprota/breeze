@@ -6,33 +6,30 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/diagnostics/exception.hpp"
-#include "breath/type_identification/readable_type_name.hpp"
-
 #include <istream>
 #include <sstream>
+#include <utility>
 
 namespace breath_ns {
 
 template< typename T >
-T
+maybe< T >
 from_string( std::string const & s )
 {
     T                   t ;
     std::istringstream  ss( s ) ;
-    if ( ! ( ss >> t ) || ! ( ss >> std::ws ).eof() ) {
-        throw breath::exception( "error in from_string(), trying to"
-                                 " convert \"" + s + "\" to the type " +
-                                 readable_type_name< T >() ) ;
-    }
-    return t ;
+
+    return ( ss >> t ) && ( ss >> std::ws ).eof()
+        ? maybe< T >( std::move( t ) )
+        : maybe< T >()
+        ;
 }
 
 template<>
-inline std::string
+inline maybe< std::string >
 from_string< std::string >( std::string const & s )
 {
-    return s ;
+    return maybe< std::string >( s ) ;
 }
 
 }
