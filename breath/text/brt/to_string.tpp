@@ -14,9 +14,10 @@ namespace breath_ns {
 
 template< typename OutputStreamable >
 std::string
-to_string( OutputStreamable const & object )
+to_string( OutputStreamable const & object, std::locale loc )
 {
     std::ostringstream  ss ;
+    ss.imbue( loc ) ;
     ss << object ;
     if ( ss.fail() ) {
         throw breath::exception( "error in to_string(), trying to convert"

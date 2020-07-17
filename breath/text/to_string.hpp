@@ -14,6 +14,7 @@
 #define BREATH_GUARD_JRFfcCLm3oqVulEWGOycMApryPN2pq33
 
 #include "breath/top_level_namespace.hpp"
+#include <locale>
 #include <string>
 
 namespace breath_ns {
@@ -25,7 +26,8 @@ namespace breath_ns {
 //!         The textual representation of its argument.
 // ---------------------------------------------------------------------------
 template< typename OutputStreamable >
-std::string         to_string( OutputStreamable const & ) ;
+std::string         to_string( OutputStreamable const &,
+                               std::locale loc = std::locale() ) ;
 
 }
 
