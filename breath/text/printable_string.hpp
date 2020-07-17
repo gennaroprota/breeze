@@ -32,8 +32,8 @@ namespace breath_ns {
 //!     simple-escape-sequence or an escape sequence of the form
 //!     <tt>\\x...</tt>. The goal is, for instance, to send the output
 //!     to a log and then read it from another machine. The number of
-//!     digits in the hexadecimal escape sequence is
-//!     <code>std::ceil( CHAR_ BIT / 4.0 )</code> (they are left-padded
+//!     digits in the hexadecimal escape sequence is the ceiling of
+//!     the quotient between \c CHAR_ BIT and \c 4 (they are left-padded
 //!     with zeroes); note that this is different from character and
 //!     string literals, where there's no limit to the number of
 //!     hexadecimal digits. Thus, to read a \c %printable_string
