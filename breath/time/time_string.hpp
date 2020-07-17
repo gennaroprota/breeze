@@ -88,7 +88,7 @@ public:
 //!     NOTE:
 //!         this function is thread-safe and reentrant.
 // ---------------------------------------------------------------------------
-breath::maybe< std::string >
+maybe< std::string >
                     time_string( std::string const & format,
                                  time_string_zone::zone =
                                                     time_string_zone::utc ) ;
