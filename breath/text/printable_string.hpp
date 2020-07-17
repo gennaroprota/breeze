@@ -45,7 +45,7 @@ namespace breath_ns {
 //!     In this special case, only, the \c %printable_string outputs
 //!     without quotes. Otherwise, it is always enclosed in double
 //!     quotes and a double quote character in the string is escaped,
-////    as is usual in C++.
+//!     as is usual in C++.
 //!
 //!     Instances of this class maintain a copy of the string, so the
 //!     user does not have to worry about the lifetime of the object
