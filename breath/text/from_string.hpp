@@ -14,30 +14,32 @@
 #define BREATH_GUARD_Q6sxk1RUMey9fbjLvtacucg61F39I6ob
 
 #include "breath/top_level_namespace.hpp"
+#include "breath/idiom/maybe.hpp"
 #include <string>
 
 namespace breath_ns {
 
 //!     \par Type requirements
-//!         \c T shall be \c DefaultConstructible and either
-//!         \c MoveConstructible or \c CopyConstructible. Furthermore it
-//!         shall be \c input \c streamable from a \c std::istream,
-//!         meaning that an <code>operator &gt;&gt;()</code> function
-//!         may be called that takes an instance of \c std::istream as
-//!         first argument and an instance of \c T as second argument.
+//!         \c T shall be \c DefaultConstructible and \c
+//!         MoveConstructible. Furthermore it shall be \c input \c
+//!         streamable from a \c std::istream, meaning that an <code>
+//!         operator &gt;&gt;()</code> function may be called that takes
+//!         an instance of \c std::istream as first argument and an
+//!         instance of \c T as second argument.
 // ---------------------------------------------------------------------------
 template< typename T >
-T                   from_string( std::string const & s ) ;
+maybe< T >          from_string( std::string const & s ) ;
 
 //!     \return
-//!         s
+//!         An (always valid) \c maybe object containing a string which
+//!         compares equal to \c s.
 //!
 //!     \note
 //!         This specialization is not just an optimization: it ensures
 //!         that e.g. " test " converts to " test " and not "test".
 // ---------------------------------------------------------------------------
 template<>
-std::string  from_string< std::string >( std::string const & s ) ;
+maybe< std::string> from_string< std::string >( std::string const & s ) ;
 
 }
 

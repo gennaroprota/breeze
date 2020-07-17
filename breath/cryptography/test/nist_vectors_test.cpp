@@ -231,7 +231,7 @@ do_test()
                 continue ;
             }
 
-            int const           z( from_string< int >( s ) ) ;
+            int const           z( from_string< int >( s ).value() ) ;
 
             if ( montecarlo_section ) {
                 msg = read_compact_string( messages, z ) ;

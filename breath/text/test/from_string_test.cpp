@@ -23,21 +23,29 @@ int                 test_from_string() ;
 
 namespace {
 
+template< typename T >
+bool
+is_expected( std::string const & s, T expected )
+{
+    auto const          m = breath::from_string< T >( s ) ;
+    return m.is_valid() && m.value() == expected ;
+}
+
 void do_tests()
 {
-    BREATH_CHECK_THROW( breath::exception, breath::from_string< int >( "   " ) ) ;
-    BREATH_CHECK( breath::from_string< int >( "12" ) == 12 ) ;
-    BREATH_CHECK( breath::from_string< int >( "12   \t" ) == 12 ) ;
-    BREATH_CHECK_THROW( breath::exception, breath::from_string< int >( "12 1" ) ) ;
-    BREATH_CHECK( breath::from_string< char >( "a" ) == 'a' ) ;
-    BREATH_CHECK( breath::from_string< char >( " a " ) == 'a' ) ;
-    BREATH_CHECK_THROW( breath::exception, breath::from_string< char >( "ab" ) ) ;
-    BREATH_CHECK( breath::from_string< double >( "1.2" ) == 1.2 ) ;
+    BREATH_CHECK( ! breath::from_string< int >( "   " ).is_valid() ) ;
+    BREATH_CHECK( is_expected< int >( "12", 12 ) ) ;
+    BREATH_CHECK( is_expected< int >( "12   \t", 12 ) ) ;
+    BREATH_CHECK( ! breath::from_string< int >( "12 1" ).is_valid() ) ;
+    BREATH_CHECK( is_expected< char >( "a", 'a' ) ) ;
+    BREATH_CHECK( is_expected< char >( " a ", 'a' ) ) ;
+    BREATH_CHECK( ! breath::from_string< char >( "ab" ).is_valid() ) ;
+    BREATH_CHECK( is_expected< double >( "1.2", 1.2 ) ) ;
 
-    BREATH_CHECK( breath::from_string< std::string >( " test " ) == " test " ) ;
-    BREATH_CHECK( breath::from_string< std::string >( " multiple words " ) ==
-                                                      " multiple words ") ;
-    BREATH_CHECK( breath::from_string< std::string >( "" ) == "" ) ;
+    BREATH_CHECK( is_expected< std::string >( " test ", " test " ) ) ;
+    BREATH_CHECK( is_expected< std::string >( " multiple words ",
+                                                      " multiple words ") ) ;
+    BREATH_CHECK( is_expected< std::string >( "", "" ) ) ;
 }
 
 class move_only final
@@ -66,7 +74,8 @@ operator >>( std::istream & is, move_only & m )
 void
 test_move_only()
 {
-    BREATH_CHECK( breath::from_string< move_only >( "test" ).get() == "test" ) ;
+    auto const &        m = breath::from_string< move_only >( "test" ) ;
+    BREATH_CHECK( m.is_valid() && m.value().get() == "test" ) ;
 }
 
 }
