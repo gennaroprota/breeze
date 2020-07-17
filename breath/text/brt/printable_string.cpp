@@ -13,8 +13,8 @@
 // ___________________________________________________________________________
 
 #include "breath/text/printable_string.hpp"
+#include "breath/mathematics/rounded_up_quotient.hpp"
 #include "breath/stream/stream_equivalent.hpp"
-#include "breath/workaround/as_non_constant.hpp"
 #include <climits>
 #include <iomanip>
 #include <ios>
@@ -104,10 +104,8 @@ operator <<( std::ostream & original_stream, printable_string const & ps )
                 dest << c ;
             }  else {
                 int const       bits_per_hex_digit = 4 ;
-                int const       width = CHAR_BIT / bits_per_hex_digit +
-                 ( breath::as_non_constant( CHAR_BIT % bits_per_hex_digit ) != 0
-                                                ? 1
-                                                : 0 ) ;
+                int const       width = breath::rounded_up_quotient(
+                                            CHAR_BIT, bits_per_hex_digit ) ;
                 dest << "\\x"
                      << std::setw( width )
                      << static_cast< unsigned int >(
