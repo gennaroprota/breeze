@@ -27,8 +27,8 @@ namespace breath_ns {
 //!     Represents a string that prints to an \c ostream without
 //!     non-printable characters.
 //!
-//!     Any character outside the range [0x20, 0x7e] is considered
-//!     non-printable and is displayed either using a
+//!     Any character outside the range <code>[0x20, 0x7e]</code> is
+//!     considered non-printable and is displayed either using a
 //!     simple-escape-sequence or an escape sequence of the form
 //!     <tt>\\x...</tt>. The goal is, for instance, to send the output
 //!     to a log and then read it from another machine. The number of
