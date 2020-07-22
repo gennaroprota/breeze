@@ -73,6 +73,15 @@ make_macro_name( std::string const & prefix,
     return prefix + str ;
 }
 
+bool
+is_reserved( std::string const & identifier )
+{
+    BREATH_ASSERT( ! identifier.empty() ) ;
+
+    return identifier[ 0 ] == '_' ||
+               identifier.find( "__" ) != identifier.npos ;
+}
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

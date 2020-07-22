@@ -41,6 +41,13 @@ main( int argc, char ** argv )
     try {
         command_line::instance().parse_check( argc, argv ) ;
         std::string const   prefix = prefix_option.get() ;
+
+        if ( ::is_reserved( prefix ) ) {
+            std::cerr << "Can't use a reserved name; please, change your prefix"
+                         " (see [lex.name] in the C++ standard)" ;
+            program::instance().declare_error( program::fatal ) ;
+        }
+
         int const           random_part_length = 32 ;
 
         macro_name_creation::exit_status
