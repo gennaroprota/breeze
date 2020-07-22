@@ -21,6 +21,8 @@ std::string         make_macro_name( std::string const & prefix,
                                      int random_part_length,
                                      macro_name_creation::exit_status * ) ;
 
+bool                is_reserved( std::string const & identifier ) ;
+
 #endif
 
 // Local Variables:
