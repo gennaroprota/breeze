@@ -36,7 +36,7 @@ class default_reader
 public:
     virtual T           operator()( std::string const & str ) const override
     {
-        auto const &    m = breath::from_string< T >( str ) ;
+        auto const &        m = breath::from_string< T >( str ) ;
         if ( ! m.is_valid() ) {
             throw breath::command_line_error( "invalid string" ) ;
         }
