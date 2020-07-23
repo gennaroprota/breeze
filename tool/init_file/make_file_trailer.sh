@@ -90,12 +90,14 @@ End:
 VimModeline: set ft=cpp et sts=%sts sw=%sw:
 C++
 
+
 :   <<Asm
 EmacsVariablesList:
 mode: asm
 End:
 VimModeline: set ft=asm et sts=%sts sw=%sw:
 Asm
+
 
 #       A CSS mode is included in Emacs v.22.2.2 and later.
 # ----------------------------------------------------------------------------
@@ -208,6 +210,7 @@ End:
 VimModeline: set ft=xslt et sts=%sts sw=%sw:
 VimModeline: set fenc=utf-8 nobomb:
 XSLT
+
 
 :   <<Batch
 EmacsVariablesList:
