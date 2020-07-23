@@ -124,6 +124,7 @@ root_dir=$1
 output_dir="$root_dir/doc"
 
 cd "$root_dir/doc/source"
+printf '%s\n' "Using Doxygen ` doxygen --version `"
 if ! doxygen doxygen.cfg
 then
     quit_script 'an error occurred.'
