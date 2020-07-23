@@ -67,8 +67,8 @@ sed 's/VimModeline/vim/g'
 
 
 #       About "mode: xx", is Emacs case-sensitive on "xx"??
-#       Aesthetically I prefer lower-case, and it seems to work, but the
-#       manuals seem to use always upper-case. --gps
+#       Aesthetically I prefer lowercase, and it seems to work, but the
+#       manuals seem to use always uppercase. --gps
 
 
 :   <<AWK
