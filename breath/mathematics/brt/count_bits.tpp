@@ -69,8 +69,14 @@ count_bits( T t ) noexcept
         //      fact that t is promoted.
         //
         //      (Problem encountered with Clang 5.0.1.)
+        //
+        //      After that, though, it's GCC's turn, which yields a
+        //      -Wconversion warning when T is unsigned char, because
+        //      the right hand side is an int. Hence the static_cast.
+        //
+        //      (Problem encountered with GCC 7.4.0.)
         // -------------------------------------------------------------------
-        t = t >> table_width ;
+        t = static_cast< T >( t >> table_width ) ;
     }
     return count ;
 }
