@@ -10,7 +10,7 @@
 library_name_prefix :=
 library_name_suffix := .lib
 
-binary_name_suffix  := .exe
+exe_name_suffix  := .exe
 
 #       This was introduced to get the declaration of GetProductInfo()
 #       with GCC under Cywgin.
