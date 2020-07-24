@@ -43,6 +43,7 @@ check()
         BREATH_CHECK( s.eof() ) ;
         BREATH_CHECK( s.fail() ) ;
         BREATH_CHECK( ! s.bad() ) ;
+        BREATH_CHECK( i == 0 ) ;
     }
 }
 
