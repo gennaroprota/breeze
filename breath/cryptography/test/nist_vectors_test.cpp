@@ -175,7 +175,9 @@ read_compact_string( nist_file & messages, int z )
 
             mask /= 2 ;
             if ( mask == 0 ) {
-                msg.push_back( curr ) , curr = 0, mask = initial_mask ;
+                msg.push_back( curr ) ;
+                curr = 0 ;
+                mask = initial_mask ;
             }
 
             -- n ;
