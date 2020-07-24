@@ -175,12 +175,12 @@ private:
     template< typename It >
     merkle_damgard_machine &
                         do_append( It begin, It end,
-                            std::input_iterator_tag const * ) ;
+                            std::input_iterator_tag ) ;
 
     template< typename It >
     merkle_damgard_machine &
                         do_append( It begin, It end,
-                            std::random_access_iterator_tag const * ) ;
+                            std::random_access_iterator_tag ) ;
 } ;
 
 }
