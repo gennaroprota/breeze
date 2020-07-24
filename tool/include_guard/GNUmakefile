@@ -13,7 +13,7 @@ source_files := main.cpp                        \
 
 include $(root)/makefile/main.mk
 
-target := $(bin_dir)/include_guard$(binary_name_suffix)
+target := $(bin_dir)/include_guard$(exe_name_suffix)
 
 libraries := advapi32.lib
              ##gps temp! (Windows only :-() --coupled with msvc.mk!!!
