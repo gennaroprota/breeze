@@ -17,6 +17,19 @@
 //!     invoked in a public section of the class definition (because
 //!     this improves the error messages emitted if a copy is
 //!     attempted).
+//!
+//!     \warning
+//!         Beware of extra semicolons after the macro invocation:
+//!
+//!         <code>
+//!             class my_class
+//!             {
+//!                 // Wrong: extra semicolon.
+//!                 //
+//!                 BREATH_DECLARE_NON_COPYABLE( my_class ) ;
+//!                 ...
+//!             } ;
+//!         </code>
 // ---------------------------------------------------------------------------
 #define BREATH_DECLARE_NON_COPYABLE( class_name )                       \
                                                                         \
