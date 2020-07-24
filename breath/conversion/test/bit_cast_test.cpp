@@ -83,7 +83,8 @@ pointer_to_void_casts_to_pointer_to_function()
 void
 bit_cast_is_noexcept_if_and_only_if_dest_default_ctor_is()
 {
-    struct not_noexcept_dest { not_noexcept_dest() {} } ;
+    struct not_noexcept_dest
+          { [[ noreturn ]] not_noexcept_dest() { throw 1 ; } } ;
     struct     noexcept_dest { noexcept_dest() noexcept {} } ;
 
     struct source { };
