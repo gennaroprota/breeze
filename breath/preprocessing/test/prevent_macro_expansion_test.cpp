@@ -12,6 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
+#include "breath/preprocessing/stringize_after_expansion.hpp"
 #include "breath/testing/testing.hpp"
 #include <iostream>
 
@@ -24,6 +25,11 @@ namespace {
 void
 (foo)( int )
 {
+    //      Make a dummy use of the foo() macro, to avoid a
+    //      -Wunused-macros warning with Clang.
+    // -----------------------------------------------------------------------
+    char const *        dummy = BREATH_STRINGIZE_AFTER_EXPANSION( foo( 1 ) ) ;
+    static_cast< void >( dummy ) ;
 }
 
 //      This is actually a compile-time test: if the file compiles, then
