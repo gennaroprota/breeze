@@ -30,7 +30,7 @@ namespace {
 class stream_guard
 {
 public:
-    BREATH_DECLARE_NON_COPYABLE( stream_guard ) ;
+    BREATH_DECLARE_NON_COPYABLE( stream_guard )
 
     explicit            stream_guard( std::ostream & os, std::streambuf * buf )
                             :   m_os( os ), m_oldbuf( os.rdbuf( buf ) )
