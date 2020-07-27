@@ -17,6 +17,7 @@
 #include <iostream>
 #include <istream>
 #include <ostream>
+#include <sstream>
 #include <string>
 
 int                 test_from_string() ;
@@ -40,7 +41,19 @@ void do_tests()
     BREATH_CHECK( is_expected< char >( "a", 'a' ) ) ;
     BREATH_CHECK( is_expected< char >( " a ", 'a' ) ) ;
     BREATH_CHECK( ! breath::from_string< char >( "ab" ).is_valid() ) ;
-    BREATH_CHECK( is_expected< double >( "1.2", 1.2 ) ) ;
+
+    //      Note: don't just do
+    //
+    //        BREATH_CHECK( is_expected< double >( "1.2", 1.2 ) ) ;
+    //
+    //      because that would compare two floating points, giving a
+    //      -Wfloat-equal warning with GCC (and Clang?).
+    // -----------------------------------------------------------------------
+    std::ostringstream  oss ;
+    auto const &        m = breath::from_string< double >( "1.2" ) ;
+    BREATH_CHECK( m.is_valid() ) ;
+    oss << m.value() ;
+    BREATH_CHECK( oss.str() == "1.2" ) ;
 
     BREATH_CHECK( is_expected< std::string >( " test ", " test " ) ) ;
     BREATH_CHECK( is_expected< std::string >( " multiple words ",
