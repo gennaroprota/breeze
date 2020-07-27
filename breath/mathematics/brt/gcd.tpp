@@ -26,12 +26,12 @@ gcd( M a, N b ) noexcept
         if ( a == 0 ) {
             return b ;
         }
-        b %= a ;
+        b = static_cast< N >( b % a ) ;
 
         if ( b == 0 ) {
             return a ;
         }
-        a %= b ;
+        a = static_cast< M >( a % b ) ;
     }
 }
 

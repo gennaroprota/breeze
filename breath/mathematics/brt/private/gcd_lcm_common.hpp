@@ -43,7 +43,7 @@ constexpr T
 absolute_value( T x )
 {
     return x < 0
-               ? -x
+               ? static_cast< T >( -x )
                : x
                ;
 }
