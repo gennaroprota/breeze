@@ -70,7 +70,6 @@ public:
 
                         move_only()                     = default ;
                         move_only( move_only && other ) = default ;
-    move_only &         operator =( move_only && rhs )  = default ;
 
     std::string         get() const { return m_s; }
 
