@@ -32,6 +32,12 @@ do_tests()
 
     BREATH_CHECK( std::strcmp( BREATH_STRINGIZE( multiple tokens ),
                                                 "multiple tokens") == 0 ) ;
+                                                
+    //      Make a dummy use of the FOO2 macro, to avoid a
+    //      -Wunused-macros warning from GCC.
+    // -----------------------------------------------------------------------
+    int const           dummy = FOO2 ;
+    static_cast< void >( dummy ) ;
 }
 
 }
