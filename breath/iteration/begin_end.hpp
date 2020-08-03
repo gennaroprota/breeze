@@ -120,7 +120,7 @@ cend( C const & c ) noexcept( noexcept( c.end() ) )
 //      begin():
 //      ========
 //
-//!     Like container::begin, but for a built-in array.
+//!     Like container::begin(), but for a built-in array.
 //!
 //!     (Note that there's no need for a "T const overload".)
 // ---------------------------------------------------------------------------
@@ -134,7 +134,7 @@ begin( T ( &a )[ n ] ) noexcept
 //      cbegin():
 //      =========
 //
-//!     Like container::begin, but for a built-in array.
+//!     Like container::begin(), but for a built-in array.
 // ---------------------------------------------------------------------------
 template< typename T, std::size_t n >
 constexpr T const *
@@ -146,7 +146,7 @@ cbegin( T const ( &a )[ n ] ) noexcept
 //      end():
 //      ======
 //
-//!     Like container::end, but for a built-in array.
+//!     Like container::end(), but for a built-in array.
 //
 //!     (The remark about begin() and overloading on const applies
 //!     here as well.)
@@ -161,7 +161,7 @@ end( T ( &a )[ n ] ) noexcept
 //      cend():
 //      =======
 //
-//!     Like container::end, but for a built-in array.
+//!     Like container::end(), but for a built-in array.
 // ---------------------------------------------------------------------------
 template< typename T, std::size_t n >
 constexpr T const *
