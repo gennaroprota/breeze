@@ -83,7 +83,7 @@ check3()
     //        <https://github.com/sean-parent/sean-parent.github.io/wiki/presentations/2016-05-16-better-code/2016-05-16-better-code.pdf#page=27>
     // -----------------------------------------------------------------------
     using               pair = std::pair< int, std::string > ;
-    pair                a = { 1, "OK" } ;
+    pair                a  = { 1, "OK" } ;
     pair                lo = { 1, "FAIL: LO" } ;
     pair                hi = { 2, "FAIL: HI" } ;
     a = breath::clamp( a, lo, hi, []( auto const & x, auto const & y ) {
