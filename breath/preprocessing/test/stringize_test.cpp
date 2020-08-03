@@ -15,7 +15,6 @@
 #include "breath/testing/testing.hpp"
 #include <cstring>
 #include <iostream>
-#include <ostream>
 
 #define FOO 1
 #define FOO2 FOO

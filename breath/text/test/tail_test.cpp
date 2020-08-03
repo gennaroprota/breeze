@@ -14,7 +14,6 @@
 #include "breath/text/tail.hpp"
 #include "breath/testing/testing.hpp"
 #include <iostream>
-#include <ostream>
 
 int                 test_tail() ;
 

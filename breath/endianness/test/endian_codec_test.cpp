@@ -18,7 +18,6 @@
 #include <cstdint>
 #include <iostream>
 #include <iterator>
-#include <ostream>
 
 int                 test_endian_codec() ;
 

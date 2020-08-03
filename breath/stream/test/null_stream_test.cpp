@@ -14,7 +14,6 @@
 #include "breath/stream/null_stream.hpp"
 #include "breath/testing/testing.hpp"
 #include <iostream>
-#include <ostream>
 #include <sstream>
 
 int                 test_null_stream() ;

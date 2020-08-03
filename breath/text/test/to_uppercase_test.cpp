@@ -14,7 +14,6 @@
 #include "breath/text/to_uppercase.hpp"
 #include "breath/testing/testing.hpp"
 #include <iostream>
-#include <ostream>
 
 int                 test_to_uppercase() ;
 

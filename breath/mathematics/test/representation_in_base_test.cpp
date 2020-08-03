@@ -16,7 +16,6 @@
 #include <cstdint>
 #include <iostream>
 #include <limits>
-#include <ostream>
 #include <sstream>
 
 int                 test_representation_in_base() ;

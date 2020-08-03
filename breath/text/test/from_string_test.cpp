@@ -16,7 +16,6 @@
 #include "breath/text/from_string.hpp"
 #include <iostream>
 #include <istream>
-#include <ostream>
 #include <sstream>
 #include <string>
 
