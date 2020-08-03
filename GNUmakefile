@@ -10,6 +10,7 @@
 # ----------------------------------------------------------------------------
 
 subdirs := breath   \
+           test     \
            tool
 
 root := .
@@ -32,6 +33,10 @@ clean:
 
 $(bin_dir):
 	mkdir -p $(bin_dir)
+
+.PHONY: test-run
+test-run:
+	$(do_for_all_subdirs)
 
 # Local Variables:
 # mode: makefile
