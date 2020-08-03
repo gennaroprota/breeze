@@ -95,7 +95,7 @@ operator <<( std::ostream           & os,
         for ( int t = bits_per_byte - bits_per_hex_digit ;
                 t >= 0 ;
                 t -= bits_per_hex_digit ) {
-            os.put( os.widen( digits[ *it >> t & mask ] ) ) ;
+            os.put( os.widen( digits[ ( *it >> t ) & mask ] ) ) ;
         }
     }
 
