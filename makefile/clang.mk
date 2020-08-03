@@ -23,6 +23,11 @@
 #
 #       (See gcc.mk for further notes on some options.)
 #
+#       -Wno-unneeded-member-function:
+#
+#           Silences warnings in the bit_cast() noexcept-ness tests
+#           which are difficult to avoid by changing the code.
+#
 #       -Wno-weak-vtables:
 #
 #           The -Wweak-vtables warning tries to point out possible
@@ -62,6 +67,7 @@ cpp_basic_options := -std=c++14                         \
 cpp_basic_options += -pipe                              \
                      -Wno-padded                        \
                      -Wno-sign-conversion               \
+                     -Wno-unneeded-member-function      \
                      -Wno-weak-vtables                  \
                      -Wno-zero-as-null-pointer-constant
 
