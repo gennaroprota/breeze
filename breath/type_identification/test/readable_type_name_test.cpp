@@ -15,7 +15,6 @@
 #include "breath/testing/testing.hpp"
 
 #include <iostream>
-#include <ostream>
 #include <string>
 
 int                 test_readable_type_name() ;

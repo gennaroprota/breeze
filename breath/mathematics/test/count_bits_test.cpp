@@ -16,7 +16,6 @@
 #include <climits>
 #include <cstddef>
 #include <iostream>
-#include <ostream>
 
 int                 test_count_bits() ;
 

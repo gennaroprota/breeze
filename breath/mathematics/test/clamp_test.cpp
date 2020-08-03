@@ -16,7 +16,6 @@
 #include <climits>
 #include <cstddef>
 #include <iostream>
-#include <ostream>
 #include <string>
 #include <utility>
 #include <vector>

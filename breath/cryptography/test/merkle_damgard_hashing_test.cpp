@@ -24,7 +24,6 @@
 
 #include <cstddef>
 #include <iostream>
-#include <ostream>
 #include <string>
 
 int                 test_merkle_damgard_hashing() ;

@@ -14,7 +14,6 @@
 #include "breath/text/replace_all.hpp"
 #include "breath/testing/testing.hpp"
 #include <iostream>
-#include <ostream>
 #include <string>
 
 int                 test_replace_all() ;
