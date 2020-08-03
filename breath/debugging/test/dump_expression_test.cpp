@@ -81,18 +81,6 @@ do_test()
     BREATH_CHECK( oss.str() ==
              "1 << 3 * 4 = 4096 [from: FUNCTION_LIKE_DUMMY()]\n" ) ;
     clear_stringstream( oss ) ;
-
-    //      The one case that the macro doesn't detect: a macro that is
-    //      object-like and expands to its own name (of course it's not
-    //      important, but it's good to have a test here, in case I
-    //      manage to detect it).
-    // -----------------------------------------------------------------------
-    int                             BREATH_dummy = 1 ;
-#   define BREATH_dummy             BREATH_dummy
-
-    BREATH_DUMP_EXPRESSION( BREATH_dummy ) ;
-    BREATH_CHECK( oss.str() == "BREATH_dummy = 1\n" ) ;
-    clear_stringstream( oss ) ;
 }
 
 }
