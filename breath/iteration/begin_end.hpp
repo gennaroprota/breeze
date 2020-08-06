@@ -24,8 +24,8 @@
 //!     regardless of whether \c a refers to a standard container or
 //!     to a built-in array. See also signed_count.hpp.
 //!
-//!     NOTE: C++11 introduced templates like these and C++17 makes
-//!     them almost equivalent to ours. New code should use the
+//!     NOTE: C++11 and C++14 introduced templates like these and C++17
+//!     makes them almost equivalent to ours. New code should use the
 //!     standard versions and ours should just go with time. The only
 //!     reason these are still around is that I haven't had time
 //!     to update the code that uses them.
