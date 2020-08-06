@@ -148,7 +148,7 @@ cbegin( T const ( &a )[ n ] ) noexcept
 //
 //!     Like container::end(), but for a built-in array.
 //
-//!     (The remark about begin() and overloading on const applies here
+//!     (The remark about begin() and overloading on const applies here,
 //!     as well.)
 // ---------------------------------------------------------------------------
 template< typename T, std::size_t n >
