@@ -10,25 +10,25 @@
 //!     \brief Namespace-scope \c begin()/end() and \c cbegin()/cend().
 //!
 //!     Syntax adaptors to extend the usage of begin() and end() to
-//!     C-style arrays. Also defines cbegin() and cend(), with the
-//!     same extent.
+//!     C-style arrays. Also defines cbegin() and cend(), with the same
+//!     extent.
 //!
-//!     All of the function templates are non-members, and the
-//!     syntax is, uniformly
+//!     All of the function templates are non-members, and the syntax
+//!     is, uniformly
 //!
 //!     <code>
 //!         breath::begin( a ) ;
 //!         breath::end( a ) ;
 //!     </code>
 //!
-//!     regardless of whether \c a refers to a standard container or
-//!     to a built-in array. See also signed_count.hpp.
+//!     regardless of whether \c a refers to a standard container or to
+//!     a built-in array. See also signed_count.hpp.
 //!
 //!     NOTE: C++11 and C++14 introduced templates like these and C++17
 //!     makes them almost equivalent to ours. New code should use the
 //!     standard versions and ours should just go with time. The only
-//!     reason these are still around is that I haven't had time
-//!     to update the code that uses them.
+//!     reason these are still around is that I haven't had time to
+//!     update the code that uses them.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Ve2uzZNiUDgCTZXgV1iB3bUD5U0n1kKD
@@ -148,8 +148,8 @@ cbegin( T const ( &a )[ n ] ) noexcept
 //
 //!     Like container::end(), but for a built-in array.
 //
-//!     (The remark about begin() and overloading on const applies
-//!     here as well.)
+//!     (The remark about begin() and overloading on const applies here
+//!     as well.)
 // ---------------------------------------------------------------------------
 template< typename T, std::size_t n >
 constexpr T *
