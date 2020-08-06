@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Namespace-scope \c begin() and \c end().
+//!     \brief Namespace-scope \c begin()/end() and \c cbegin()/cend().
 //!
 //!     Syntax adaptors to extend the usage of begin() and end() to
 //!     C-style arrays. Also defines cbegin() and cend(), with the
