@@ -20,44 +20,49 @@
 #include <ostream>
 #include <string>
 
+namespace {
+
+//      Note:
+//          if you change this type, change it in the output below, too.
+// -----------------------------------------------------------------------
+typedef std::uint_fast32_t
+                    fast32_type ;
+
 //      Implementation:
 //          see crc32.tpp for a (pseudo-)reference on the calculations.
 // ---------------------------------------------------------------------------
+class               byte_checksum
+{
+public:
+    fast32_type operator()() noexcept
+    {
+        fast32_type const   reversed_polynomial = 0xEDB88320uL ;
+        int const           char_bit = 8 ;
+        auto                checksum = m_n ;
+        ++ m_n ;
+
+        for ( int i = 0 ; i < char_bit ; ++ i ) {
+            checksum = ( checksum >> 1 ) ^ ( checksum % 2 == 0
+                                                ? 0
+                                                : reversed_polynomial ) ;
+        }
+        return checksum ;
+    }
+
+private:
+    fast32_type     m_n = 0 ;
+} ;
+
+}
+
+
 int
 main()
 {
-    //      Note:
-    //          if you change this type, change it in the output below,
-    //          too.
-    // -----------------------------------------------------------------------
-    typedef std::uint_fast32_t
-                        fast32_type ;
-
     int const           size = 256 ;
     std::array< fast32_type, size >
                         table ;
 
-    class               byte_checksum
-    {
-    public:
-        fast32_type operator()() noexcept
-        {
-            fast32_type const   reversed_polynomial = 0xEDB88320uL ;
-            int const           char_bit = 8 ;
-            auto                checksum = m_n ;
-            ++ m_n ;
-
-            for ( int i = 0 ; i < char_bit ; ++ i ) {
-                checksum = ( checksum >> 1 ) ^ ( checksum % 2 == 0
-                                                    ? 0
-                                                    : reversed_polynomial ) ;
-            }
-            return checksum ;
-        }
-
-    private:
-        fast32_type     m_n = 0 ;
-    } ;
     std::generate( table.begin(), table.end(), byte_checksum() ) ;
     int const           numbers_per_line = 6 ;
     int const           indent_size = 4 ;
