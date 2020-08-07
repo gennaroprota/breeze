@@ -35,6 +35,9 @@
 //!     Also, the names "TOKEN_PASTE" and "PASTE_TOKENS" were rejected
 //!     as, respectively, not verb-based and using plural (which would
 //!     have been inconsistent in our library).
+//!
+//!     \see
+//!         BREATH_PASTE_AFTER_EXPANSION()
 // ---------------------------------------------------------------------------
 #define BREATH_PASTE( x, y )  x ## y
 
