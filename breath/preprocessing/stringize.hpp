@@ -17,6 +17,9 @@
 //      ===================
 //
 //!     Expands to a string literal obtained with <code># x</code>.
+//!
+//!     \see
+//!         BREATH_STRINGIZE_AFTER_EXPANSION()
 // ---------------------------------------------------------------------------
 #define BREATH_STRINGIZE( x )   # x
 
