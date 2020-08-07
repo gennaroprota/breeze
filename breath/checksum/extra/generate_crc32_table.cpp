@@ -34,7 +34,7 @@ typedef std::uint_fast32_t
 class               byte_checksum
 {
 public:
-    fast32_type operator()() noexcept
+    fast32_type         operator()() noexcept
     {
         fast32_type const   reversed_polynomial = 0xEDB88320uL ;
         int const           char_bit = 8 ;
