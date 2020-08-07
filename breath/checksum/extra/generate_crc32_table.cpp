@@ -42,9 +42,10 @@ public:
         ++ m_n ;
 
         for ( int i = 0 ; i < char_bit ; ++ i ) {
-            checksum = ( checksum >> 1 ) ^ ( checksum % 2 == 0
-                                                ? 0
-                                                : reversed_polynomial ) ;
+            checksum = checksum % 2 == 0
+                            ? ( checksum >> 1 )
+                            : ( checksum >> 1 ) ^ reversed_polynomial
+                            ;
         }
         return checksum ;
     }
