@@ -16,11 +16,9 @@
 //      BREATH_PASTE():
 //      ===============
 //
-//!     A facility for concatenation of preprocessing tokens.
-//!
 //!     Concatenates the two preprocessing tokens which end the
-//!     argument \c x and start the argument \c y, respectively. The
-//!     \c ## operator is used for that.
+//!     argument \c x and start the argument \c y, respectively, by
+//!     using the \c ## operator.
 //!
 //!     \par Naming rationale
 //!
