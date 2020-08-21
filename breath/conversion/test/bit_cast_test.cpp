@@ -29,11 +29,23 @@ set_to_true( bool & b )
 void
 struct_casts_to_struct()
 {
-    struct dest   { int a =  50 ; void operator &() = delete ; } ;
-    struct source { int b = 100 ; void operator &() = delete ; } ;
+    //      Note the removal of the initializer of dest::a, and the use
+    //      of a later assignment, instead. This is to avoid a
+    //      -Wclass-memaccess warning from GCC >= 8.1. This is the same
+    //      situation reported at:
+    //
+    //        <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=87427>
+    //
+    //      and it is a "won't fix".
+    // -----------------------------------------------------------------------
+    struct dest   { int a /* = 50 */ ; void operator &() = delete ; } ;
+    struct source { int b    = 100   ; void operator &() = delete ; } ;
 
     source const        s ;
-    auto const &        d = breath::bit_cast< dest >( s ) ;
+    dest                d ;
+    d.a = 50 ;
+
+    d = breath::bit_cast< dest >( s ) ;
 
     BREATH_CHECK( d.a == 100 ) ;
 }
