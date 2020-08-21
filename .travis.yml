@@ -7,7 +7,7 @@
 # ____________________________________________________________________________
 
 language: cpp
-script: make
+script: BREATH_ROOT=` pwd ` && export BREATH_ROOT && make
 
 matrix:
     #       TODO:
