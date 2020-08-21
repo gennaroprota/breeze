@@ -12,12 +12,21 @@
 // ___________________________________________________________________________
 
 #include "breath/path/base_file_name.hpp"
+#include "breath/preprocessing/stringize_after_expansion.hpp"
 #include "breath/testing/testing.hpp"
+#include <cstring>
 #include <iostream>
 
 int                 test_base_file_name() ;
 
 namespace {
+
+bool
+is_windows()
+{
+    return std::strcmp( BREATH_STRINGIZE_AFTER_EXPANSION( BREATH_SYSTEM ),
+                        "windows" ) == 0 ;
+}
 
 void
 do_test()
@@ -30,8 +39,12 @@ do_test()
 
     BREATH_CHECK( base_file_name( "/usr/")           == "" ) ;
     BREATH_CHECK( base_file_name( "/usr/lib/my_lib") == "my_lib" ) ;
-    BREATH_CHECK( base_file_name(
-        "C:\\Documents and Settings\\Genny\\Desktop\\my_file" ) == "my_file" ) ;
+
+    if ( is_windows() ) {
+        BREATH_CHECK( base_file_name(
+            "C:\\Documents and Settings\\Genny\\Desktop\\my_file" )
+            == "my_file" ) ;
+    }
 }
 
 }
