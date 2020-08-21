@@ -91,7 +91,6 @@ main()
     std::cout << ( result == EXIT_SUCCESS
         ? "All tests passed."
         : "At least one test FAILED." ) << std::endl ;
-        ;
 
     return result ;
 }
