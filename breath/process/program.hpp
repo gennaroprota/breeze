@@ -17,8 +17,8 @@
 
 #include "breath/top_level_namespace.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
-#include "breath/idiom/maybe.hpp"
 #include "breath/process/exit_code.hpp"
+#include "breath/vocabulary/maybe.hpp"
 #include <string>
 
 namespace breath_ns {

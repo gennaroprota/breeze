@@ -190,7 +190,6 @@
     <None Include="..\..\breath\cryptography\private\sensitive_buffer.tpp" />
     <None Include="..\..\breath\encoding\brt\base64_to_binary.tpp" />
     <None Include="..\..\breath\encoding\brt\binary_to_base64.tpp" />
-    <None Include="..\..\breath\idiom\brt\maybe.tpp" />
     <None Include="..\..\breath\mathematics\brt\clamp.tpp" />
     <None Include="..\..\breath\mathematics\brt\gcd.tpp" />
     <None Include="..\..\breath\mathematics\brt\integer_log2.tpp" />
@@ -220,6 +219,7 @@
     <None Include="..\..\breath\conversion\brt\bit_cast.tpp" />
     <None Include="..\..\breath\mathematics\brt\rounded_up_quotient.tpp" />
     <None Include="..\..\breath\stream\brt\stream_buffer_wrapper.tpp" />
+    <None Include="..\..\breath\vocabulary\brt\maybe.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\secure_fill.hpp">
@@ -313,9 +313,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\idiom\declare_non_copyable.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breath\idiom\maybe.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\idiom\volatilize.hpp">
@@ -580,6 +577,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\stream\stream_buffer_wrapper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\vocabulary\maybe.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

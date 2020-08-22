@@ -14,7 +14,7 @@
 #define BREATH_GUARD_DJJ43p6UR3Ib7dPq3Qi3OoGCOlpQ0iRV
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/maybe.hpp"
+#include "breath/vocabulary/maybe.hpp"
 #include <string>
 
 namespace breath_ns {

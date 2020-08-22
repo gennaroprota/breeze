@@ -15,7 +15,7 @@
 #define BREATH_GUARD_03plpMI2VjgMEb2QhWRYStxFLQ2UshCk
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/maybe.hpp"
+#include "breath/vocabulary/maybe.hpp"
 #include <iosfwd>
 #include <string>
 

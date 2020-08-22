@@ -52,7 +52,6 @@
     <ClCompile Include="..\..\..\breath\endianness\test\endian_codec_test.cpp" />
     <ClCompile Include="..\..\..\breath\environment\test\environment_variable_consistency_test.cpp" />
     <ClCompile Include="..\..\..\breath\environment\test\get_environment_variable_test.cpp" />
-    <ClCompile Include="..\..\..\breath\idiom\test\maybe_test.cpp" />
     <ClCompile Include="..\..\..\breath\mathematics\extra\generate_bit_count_table.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -118,6 +117,7 @@
     <ClCompile Include="..\..\..\breath\text\test\trim_tail_test.cpp" />
     <ClCompile Include="..\..\..\breath\type_identification\test\readable_type_name_test.cpp" />
     <ClCompile Include="..\..\..\breath\uuid\test\uuid_test.cpp" />
+    <ClCompile Include="..\..\..\breath\vocabulary\test\maybe_test.cpp" />
     <ClCompile Include="..\..\..\test\unit_test_main.cpp" />
   </ItemGroup>
   <ItemGroup>

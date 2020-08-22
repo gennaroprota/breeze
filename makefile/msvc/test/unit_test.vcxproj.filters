@@ -107,9 +107,6 @@
     <ClCompile Include="..\..\..\breath\checksum\test\luhn_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\idiom\test\maybe_test.cpp">
-      <Filter>Component Tests</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\breath\cryptography\test\merkle_damgard_hashing_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
@@ -192,6 +189,9 @@
       <Filter>Component Tests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breath\uuid\test\uuid_test.cpp">
+      <Filter>Component Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\breath\vocabulary\test\maybe_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
   </ItemGroup>

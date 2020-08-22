@@ -13,7 +13,7 @@
 
 #include "breath/time/time_string.hpp"
 #include "breath/time/private/thread_safe_reentrant_time_functions.hpp"
-#include "breath/idiom/maybe.hpp"
+#include "breath/vocabulary/maybe.hpp"
 #include <time.h>
 
 namespace breath_ns {
