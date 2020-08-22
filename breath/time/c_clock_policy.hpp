@@ -35,7 +35,7 @@ public:
 
                         c_clock_policy() ;
 
-    void                restart() ;
+    void                start() ;
 
     //!     \return
     //!         The time, in milliseconds, elapsed from the last

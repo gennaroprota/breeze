@@ -13,15 +13,15 @@ timer< Device >::timer( start_mode mode )
     :   m_device()
 {
     if ( mode == auto_start) {
-        restart() ;
+        start() ;
     }
 }
 
 template< typename Device >
 void
-timer< Device >::restart()
+timer< Device >::start()
 {
-    return m_device.restart() ;
+    return m_device.start() ;
 }
 
 template< typename Device >

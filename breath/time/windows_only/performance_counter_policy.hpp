@@ -29,7 +29,7 @@ public:
     typedef long double duration_type ;
                         performance_counter_policy() ;
 
-    void                restart() ;
+    void                start() ;
     duration_type       elapsed() const ;
     duration_type       resolution() const ;
 
