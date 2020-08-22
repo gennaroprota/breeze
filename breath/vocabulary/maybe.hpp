@@ -85,6 +85,9 @@ public:
 //!     Note that the original Barton and Nackman solution threw an
 //!     exception, instead.
 //!
+//!     The library guarantees that the \c T object, if any, is stored
+//!     as a part of its \c maybe object: no additional storage is used.
+//!
 //!     There are other important differences compared to the version
 //!     provided by Barton and Nackman.
 //!
