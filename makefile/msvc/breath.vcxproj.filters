@@ -225,9 +225,6 @@
     <ClInclude Include="..\..\breath\algorithm\secure_fill.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\alignment\aligned_storage_for.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\breath\checksum\crc32.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
