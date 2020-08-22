@@ -286,7 +286,6 @@
     <None Include="..\..\breath\cryptography\private\sha_common.tpp" />
     <None Include="..\..\breath\encoding\brt\base64_to_binary.tpp" />
     <None Include="..\..\breath\encoding\brt\binary_to_base64.tpp" />
-    <None Include="..\..\breath\idiom\brt\maybe.tpp" />
     <None Include="..\..\breath\mathematics\brt\clamp.tpp" />
     <None Include="..\..\breath\mathematics\brt\count_bits.tpp" />
     <None Include="..\..\breath\mathematics\brt\digital_root.tpp" />
@@ -310,6 +309,7 @@
     <None Include="..\..\breath\text\brt\trim_tail_if.tpp" />
     <None Include="..\..\breath\time\brt\timer.tpp" />
     <None Include="..\..\breath\type_identification\brt\readable_type_name.tpp" />
+    <None Include="..\..\breath\vocabulary\brt\maybe.tpp" />
     <None Include="..\..\breath\workaround\brt\as_non_constant.tpp" />
   </ItemGroup>
   <ItemGroup>
@@ -349,7 +349,6 @@
     <ClInclude Include="..\..\breath\environment\windows_only\os_id.hpp" />
     <ClInclude Include="..\..\breath\environment\windows_only\windows_version_info.hpp" />
     <ClInclude Include="..\..\breath\idiom\declare_non_copyable.hpp" />
-    <ClInclude Include="..\..\breath\idiom\maybe.hpp" />
     <ClInclude Include="..\..\breath\idiom\volatilize.hpp" />
     <ClInclude Include="..\..\breath\iteration\begin_end.hpp" />
     <ClInclude Include="..\..\breath\mathematics\brt\private\check_common_gcd_lcm_preconditions.hpp" />
@@ -432,6 +431,7 @@
     <ClInclude Include="..\..\breath\time\windows_only\performance_counter_policy.hpp" />
     <ClInclude Include="..\..\breath\type_identification\readable_type_name.hpp" />
     <ClInclude Include="..\..\breath\uuid\uuid.hpp" />
+    <ClInclude Include="..\..\breath\vocabulary\maybe.hpp" />
     <ClInclude Include="..\..\breath\workaround\as_non_constant.hpp" />
   </ItemGroup>
   <ItemGroup>

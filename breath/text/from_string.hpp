@@ -14,7 +14,7 @@
 #define BREATH_GUARD_Q6sxk1RUMey9fbjLvtacucg61F39I6ob
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/maybe.hpp"
+#include "breath/vocabulary/maybe.hpp"
 #include <locale>
 #include <string>
 

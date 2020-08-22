@@ -39,6 +39,7 @@ vpath %.cpp     $(root)/breath/algorithm/test               \
                 $(root)/breath/time/test                    \
                 $(root)/breath/type_identification/test     \
                 $(root)/breath/uuid/test                    \
+                $(root)/breath/vocabulary/test              \
                 $(root)/breath/workaround/test
 
 
@@ -67,8 +68,6 @@ source_files := unit_test_main.cpp                          \
                                                             \
                 environment_variable_consistency_test.cpp   \
                 get_environment_variable_test.cpp           \
-                                                            \
-                maybe_test.cpp                              \
                                                             \
                 clamp_test.cpp                              \
                 count_bits_test.cpp                         \
@@ -117,7 +116,8 @@ source_files := unit_test_main.cpp                          \
                                                             \
                 readable_type_name_test.cpp                 \
                                                             \
-                uuid_test.cpp
+                uuid_test.cpp                               \
+                maybe_test.cpp
 
 
 include $(root)/makefile/main.mk

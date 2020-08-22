@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/environment/get_environment_variable.hpp"
-#include "breath/idiom/maybe.hpp"
+#include "breath/vocabulary/maybe.hpp"
 
 #include <cstdlib>
 
