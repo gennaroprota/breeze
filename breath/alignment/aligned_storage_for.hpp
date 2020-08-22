@@ -110,7 +110,7 @@ struct pod_with_same_align
 //!         alignas( T ) unsigned char arr[ sizeof( T ) ] ;
 //!     </code>
 //!
-//!     So: this facility exists basically for C++03; and all of the
+//!     So: this facility exists basically for C++98/03; and all of the
 //!     alternatives (this one, TR1's one and the library-based
 //!     C++11's one) will be made superfluous by C++11's core support.
 // ---------------------------------------------------------------------------
