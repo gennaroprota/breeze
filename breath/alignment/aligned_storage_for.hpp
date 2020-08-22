@@ -101,15 +101,10 @@ struct pod_with_same_align
 //!     Note that this has a different interface from TR1's or C++11's
 //!     analogous: both of the latter take one or two numeric
 //!     arguments (size and alignment); this one takes just a type
-//!     (the type that we want the same alignment of). Among other
-//!     things, the C++11 scheme allows for storing arrays:
+//!     (the type that we want the same alignment of).
 //!
-//!     <code>
-//!         aligned_storage< n * sizeof( T ), alignof( T ) >
-//!     </code>
-//!
-//!     What's more, C++11 has support for declaring an aligned buffer
-//!     directly in core language:
+//!     C++11 has support for declaring an aligned buffer directly in
+//!     core language:
 //!
 //!     <code>
 //!         alignas( T ) unsigned char arr[ sizeof( T ) ] ;
