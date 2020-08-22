@@ -28,12 +28,12 @@ namespace breath_ns {
 //!     or pretty much anything else. It must be \c DefaultConstructible
 //!     and provide the member functions:
 //!
-//!      - \c %restart(),
+//!      - \c %start(),
 //!            which must start or restart the \c Device
 //!
 //!      - \c %elapsed(),
 //!            which must return the amount of time elapsed from the
-//!            last call to \c %restart()
+//!            last call to \c %start()
 //!
 //!      - \c %resolution(),
 //!            which must return the resolution of the \c Device, i.e.
@@ -56,13 +56,13 @@ public:
 
     //!     Initializes the underlying device by calling the default
     //!     constructor and, if <code>mode == auto_start</code> calls
-    //!     restart().
+    //!     start().
     // -----------------------------------------------------------------------
     explicit            timer( start_mode mode = auto_start ) ;
 
-    //!     Calls Device::restart().
+    //!     Calls Device::start().
     // -----------------------------------------------------------------------
-    void                restart() ;
+    void                start() ;
 
     //!     \return
     //!         The result of calling %elapsed() on the underlying \c

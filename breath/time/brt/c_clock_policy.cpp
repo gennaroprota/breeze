@@ -34,11 +34,11 @@ c_clock_policy::c_clock_policy()
     // -----------------------------------------------------------------------
     :   m_start_tick()
 {
-    restart() ;
+    start() ;
 }
 
 void
-c_clock_policy::restart()
+c_clock_policy::start()
 {
     //      Synchronize our start.
     // -----------------------------------------------------------------------

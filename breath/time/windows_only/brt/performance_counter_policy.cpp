@@ -19,7 +19,7 @@ namespace breath_ns {
 
 performance_counter_policy::performance_counter_policy()
 {
-    //      Note that restart() is not called here. It will be called by
+    //      Note that start() is not called here. It will be called by
     //      the timer template, if needed. Note that this causes the
     //      member m_start to be left uninitialized.
     // -----------------------------------------------------------------------
@@ -31,7 +31,7 @@ performance_counter_policy::performance_counter_policy()
 }
 
 void
-performance_counter_policy::restart()
+performance_counter_policy::start()
 {
     LARGE_INTEGER       li ;
     if ( QueryPerformanceCounter( &li ) == 0 ) {
