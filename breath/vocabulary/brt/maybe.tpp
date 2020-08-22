@@ -157,7 +157,8 @@ T const &
 maybe< T, Traits >::value() const noexcept
 {
     BREATH_ASSERT( is_valid() ) ;
-    return *static_cast< T const * >( m_storage.address() ) ;
+    return *static_cast< T const * >(
+               static_cast< void const * >( &m_storage[ 0 ] ) ) ;
 }
 
 template< typename T, typename Traits >
@@ -173,14 +174,14 @@ template< typename T, typename Traits >
 void
 maybe< T, Traits >::construct( T const & value )
 {
-    new( m_storage.address() ) T( value ) ; // may throw
+    new( &m_storage[ 0 ] ) T( value ) ; // may throw
 }
 
 template< typename T, typename Traits >
 void
 maybe< T, Traits >::construct( T && value ) noexcept
 {
-    new( m_storage.address() ) T( std::move( value ) ) ;
+    new( &m_storage[ 0 ] ) T( std::move( value ) ) ;
 }
 
 template< typename T, typename Traits >
@@ -195,7 +196,7 @@ T &
 maybe< T, Traits >::non_const_value() noexcept
 {
     BREATH_ASSERT( is_valid() ) ;
-    return *static_cast< T * >( m_storage.address() ) ;
+    return *static_cast< T * >( static_cast< void * >( &m_storage[ 0 ] ) ) ;
 }
 
 }

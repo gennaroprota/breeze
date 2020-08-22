@@ -14,7 +14,6 @@
 #define BREATH_GUARD_93j8pelTutz7YloouImWg9M7REakYYSD
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/alignment/aligned_storage_for.hpp"
 #include <type_traits>
 
 namespace breath_ns {
@@ -355,8 +354,8 @@ private:
 
     T &                 non_const_value() noexcept ;
 
-    aligned_storage_for< T >
-                        m_storage ;
+    alignas( T ) unsigned char
+                        m_storage[ sizeof( T ) ] ;
     status_type         m_status ;
 
 } ;
