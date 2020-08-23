@@ -141,6 +141,18 @@ line:
 
 Please, have a look at the guidelines if you are not familiar with them.
 
+# Supported compilers
+
+Note that, as of August 24, 2020, if you need to use the library with MSVC 2015,
+that's quite easy as long as you are willing to give up on `constexpr` for some
+components (`BREATH_ASSERT()`, `count_bits()`, `gcd()`, `lcm()`).
+
+Compiler | Minimum supported version
+---------|----------------------------
+Clang    | 5.0.1
+GCC      | 6.1.0
+MSVC     | 2017
+
 # Future directions
 
 The facilities for command line options will be removed and replaced with
