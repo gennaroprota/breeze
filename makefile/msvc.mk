@@ -125,7 +125,7 @@ cpp_basic_options += /wd4191 /wd4365 /wd4514 /wd4571    \
 #      latter, keep the comment above up-to-date).
 # ----------------------------------------------------------------------------
 ifeq "$(compiler_version)" "19.15.26726"
-    cpp_basic_options += /wd4625 /wd4626 /wd4774        \
+    cpp_basic_options += /wd4623 /wd4625 /wd4626 /wd4774        \
                          /wd5026 /wd5027 /wd5045 /permissive-
 endif
 
