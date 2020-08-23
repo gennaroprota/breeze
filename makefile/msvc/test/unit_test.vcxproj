@@ -82,12 +82,7 @@
     <ClCompile Include="..\..\..\breath\mathematics\test\representation_in_base_test.cpp" />
     <ClCompile Include="..\..\..\breath\mathematics\test\rounded_up_quotient_test.cpp" />
     <ClCompile Include="..\..\..\breath\memory\test\auto_array_test.cpp" />
-    <ClCompile Include="..\..\..\breath\meta\test\integer_log2_compile_time_test.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="..\..\..\breath\meta\test\integer_log2_compile_time_test.cpp" />
     <ClCompile Include="..\..\..\breath\meta\test\is_2s_complement_test.cpp" />
     <ClCompile Include="..\..\..\breath\metric\test\damerau_levenshtein_distance_test.cpp" />
     <ClCompile Include="..\..\..\breath\metric\test\levenshtein_distance_test.cpp" />

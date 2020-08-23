@@ -12,7 +12,13 @@
 // ___________________________________________________________________________
 
 #include "breath/meta/integer_log2.hpp"
+#include "breath/testing/testing.hpp"
+#include <iostream>
 #include <limits>
+
+int                 test_meta_integer_log2() ;
+
+namespace {
 
 //      The argument x must be a power of two. This then makes a
 //      recursive check up to x==2 (included), where each step
@@ -44,9 +50,8 @@ struct log2_checker< 1, 0 >
     static int const dummy = 0 ;
 } ;
 
-
-int
-main()
+void
+do_test()
 {
     typedef breath::meta::integer_log2_argument_type
                         arg_type ;
@@ -74,6 +79,21 @@ main()
                                               width - 1 >:: dummy ;
 
     static_cast< void >( dummy ) ;
+}
+
+}
+
+int
+test_meta_integer_log2()
+{
+    using namespace breath ;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    return test_runner::instance().run(
+             "meta::integer_log2",
+             { do_test } ) ;
 }
 
 // Local Variables:
