@@ -46,6 +46,7 @@ main()
             test_from_string,
             // test_gcd, // TODO
             test_get_environment_variable,
+            test_meta_integer_log2,
             test_is_2s_complement,
             test_is_power_of_2,
             // test_lcm, // TODO
