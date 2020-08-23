@@ -11,6 +11,7 @@
 
 #include "breath/top_level_namespace.hpp"
 #include "breath/diagnostics/assert.hpp"
+#include "breath/meta/has_sign.hpp"
 #include "breath/meta/is_2s_complement.hpp"
 #include <type_traits>
 #include <limits>
@@ -37,15 +38,30 @@ check_common_gcd_lcm_preconditions( M a, N b )
 }
 
 //      We use this because std::abs() is not required to be constexpr.
+//
+//      Note that the obvious implementation yields a C4146 from MSVC
+//      2017 when T is unsigned (unary minus applied to unsigned), so we
+//      take action and split the two cases...
 // ---------------------------------------------------------------------------
 template< typename T >
-constexpr T
+constexpr std::enable_if_t<
+    meta::has_sign< T >::value,
+    T >
 absolute_value( T x )
 {
     return x < 0
                ? static_cast< T >( -x )
                : x
                ;
+}
+
+template< typename T >
+constexpr std::enable_if_t<
+    ! meta::has_sign< T >::value,
+    T >
+absolute_value( T x )
+{
+    return x ;
 }
 
 }
