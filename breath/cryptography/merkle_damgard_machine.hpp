@@ -139,7 +139,8 @@ public:
     //!     Constructs from an input range.
     // -----------------------------------------------------------------------
     template< typename InputIter >
-                        merkle_damgard_machine( InputIter begin, InputIter end ) ;
+                        merkle_damgard_machine( InputIter begin,
+                                                InputIter end ) ;
     //!     \}
 
     //!     \name Operations: "appending" one or more bytes
