@@ -41,7 +41,6 @@ public:
     static void         init_state( state_type & state ) ;
     static void         process_block( state_type & state,
                                        block_type const & block ) ;
-
 } ;
 
 }
