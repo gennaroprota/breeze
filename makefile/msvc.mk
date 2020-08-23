@@ -33,20 +33,18 @@
 #           we can be sure. Thus I give up using /Za, for any source
 #           file.
 #
-#           Visual C++ 2017 has a more useful conformance switch:
-#           /permissive-, which is usable with the Microsoft headers,
-#           too, so can be enabled globally. We are using it for 2017
-#           only, and we'll enable it unconditionally when it will be
-#           reasonable to require Visual Studio 2017. Note that it
-#           implies /Zc:strictStrings and /Zc:rvalueCast, so those two
-#           will be removed.
-#
 #       /Zc:referenceBinding [not used]:
 #
 #           this disables binding rvalues to references to non-const.
 #           It's not really necessary: VC++ emits a warning at /W4 and
 #           higher and we don't admit warnings (and mutate them into
 #           errors).
+#
+#       /Zc:rvalueCast and /Zc:strictStrings:
+#
+#           these were used with MSVC 2015; now that we require at least
+#           MSVC 2017, they are implied by permissive-, but we left them
+#           in case someone wants to backport the library to MSVC 2015.
 #
 #       /volatile:iso
 #
@@ -120,14 +118,11 @@ cpp_basic_options += /nologo
 cpp_basic_options += /wd4191 /wd4365 /wd4514 /wd4571    \
                      /wd4668 /wd4710 /wd4820
 
-#      For Visual C++ 2017, disable these, most of which arise in
-#      standard headers. But enable /permissive- (TODO: about the
-#      latter, keep the comment above up-to-date).
+#       Starting with Visual C++ 2017, disable these, most of which
+#       arise in standard headers. But enable /permissive-.
 # ----------------------------------------------------------------------------
-ifeq "$(compiler_version)" "19.15.26726"
-    cpp_basic_options += /wd4623 /wd4625 /wd4626 /wd4774        \
-                         /wd5026 /wd5027 /wd5045 /permissive-
-endif
+cpp_basic_options += /wd4623 /wd4625 /wd4626 /wd4774        \
+                     /wd5026 /wd5027 /wd5045 /permissive-
 
 
 include_switch := /I
