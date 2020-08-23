@@ -22,7 +22,7 @@ main()
 
     test_function_type * const
                         tests[] = {
-            // test_breath_assert, // TODO
+            test_breath_assert,
             test_auto_array,
             test_base_file_name,
             test_base64_to_binary,
@@ -30,7 +30,7 @@ main()
             test_binary_to_base64,
             test_bit_cast,
             test_clamp,
-            // test_count_bits, // TODO
+            test_count_bits,
             test_crc32,
             test_damerau_levenshtein_distance,
             test_digest_ordering,
@@ -44,11 +44,11 @@ main()
             test_exception,
             test_extension,
             test_from_string,
-            // test_gcd, // TODO
+            test_gcd,
             test_get_environment_variable,
             test_is_2s_complement,
             test_is_power_of_2,
-            // test_lcm, // TODO
+            test_lcm,
             test_levenshtein_distance,
             test_luhn,
             test_maybe,

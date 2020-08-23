@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -34,12 +34,7 @@
     <ClCompile Include="..\..\..\breath\cryptography\test\nist_vectors_test.cpp" />
     <ClCompile Include="..\..\..\breath\cryptography\test\sha384_test.cpp" />
     <ClCompile Include="..\..\..\breath\debugging\test\dump_expression_test.cpp" />
-    <ClCompile Include="..\..\..\breath\diagnostics\test\assert_test.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="..\..\..\breath\diagnostics\test\assert_test.cpp" />
     <ClCompile Include="..\..\..\breath\diagnostics\test\exception_test.cpp" />
     <ClCompile Include="..\..\..\breath\encoding\extra\generate_inverse_base64_table.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -59,26 +54,11 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\breath\mathematics\test\clamp_test.cpp" />
-    <ClCompile Include="..\..\..\breath\mathematics\test\count_bits_test.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="..\..\..\breath\mathematics\test\count_bits_test.cpp" />
     <ClCompile Include="..\..\..\breath\mathematics\test\digital_root_test.cpp" />
-    <ClCompile Include="..\..\..\breath\mathematics\test\gcd_test.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="..\..\..\breath\mathematics\test\gcd_test.cpp" />
     <ClCompile Include="..\..\..\breath\mathematics\test\is_power_of_2_test.cpp" />
-    <ClCompile Include="..\..\..\breath\mathematics\test\lcm_test.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="..\..\..\breath\mathematics\test\lcm_test.cpp" />
     <ClCompile Include="..\..\..\breath\mathematics\test\representation_in_base_test.cpp" />
     <ClCompile Include="..\..\..\breath\mathematics\test\rounded_up_quotient_test.cpp" />
     <ClCompile Include="..\..\..\breath\memory\test\auto_array_test.cpp" />
@@ -127,26 +107,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -196,7 +176,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREATH_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4711 /wd4820 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREATH_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <EnablePREfast>true</EnablePREfast>
     </ClCompile>
@@ -215,7 +195,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREATH_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4711 /wd4820 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREATH_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <EnablePREfast>true</EnablePREfast>
     </ClCompile>
@@ -236,7 +216,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREATH_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4711 /wd4820 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREATH_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <EnablePREfast>true</EnablePREfast>
     </ClCompile>
@@ -259,7 +239,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREATH_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4711 /wd4820 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREATH_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <EnablePREfast>true</EnablePREfast>
     </ClCompile>

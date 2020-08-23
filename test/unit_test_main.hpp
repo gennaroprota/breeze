@@ -17,7 +17,7 @@ int                 test_begins_with() ;
 int                 test_binary_to_base64() ;
 int                 test_bit_cast() ;
 int                 test_clamp() ;
-// int              test_count_bits() ; // TODO
+int                 test_count_bits() ;
 int                 test_crc32() ;
 int                 test_damerau_levenshtein_distance() ;
 int                 test_digest_ordering() ;
@@ -31,11 +31,11 @@ int                 test_eof_value() ;
 int                 test_exception() ;
 int                 test_extension() ;
 int                 test_from_string() ;
-// int              test_gcd() ; // TODO
+int                 test_gcd() ;
 int                 test_get_environment_variable() ;
 int                 test_is_2s_complement() ;
 int                 test_is_power_of_2() ;
-// int              test_lcm() ; // TODO
+int                 test_lcm() ;
 int                 test_levenshtein_distance() ;
 int                 test_luhn() ;
 int                 test_maybe() ;
