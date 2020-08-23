@@ -364,7 +364,6 @@
     <ClInclude Include="..\..\breath\meta\constant.hpp" />
     <ClInclude Include="..\..\breath\meta\exact_width_integer.hpp" />
     <ClInclude Include="..\..\breath\meta\has_sign.hpp" />
-    <ClInclude Include="..\..\breath\meta\integer_log2.hpp" />
     <ClInclude Include="..\..\breath\meta\is_2s_complement.hpp" />
     <ClInclude Include="..\..\breath\meta\precision.hpp" />
     <ClInclude Include="..\..\breath\meta\predecessor.hpp" />

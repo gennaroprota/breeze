@@ -29,9 +29,6 @@ namespace breath_ns {
 //!         argument.
 //!
 //!     \note
-//!         This \c constexpr function supersedes \c meta::integer_log2,
-//!         which is declared deprecated.
-//!     \note
 //!         This function does not compile with Visual C++ 2015 because
 //!         the compiler does not yet implement \c constexpr functions
 //!         as generalized in C++14.

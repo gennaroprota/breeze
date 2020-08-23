@@ -11,8 +11,7 @@ root := ..
 #       Using vpath is a temporary solution; it doesn't work in case
 #       there exist homonym files.
 #
-#       But, for now, the only homonyms are the two integer_log2.hpp's,
-#       which don't need to be built.
+#       But, for now, we have no homonyms.
 # ----------------------------------------------------------------------------
 vpath %.cpp     $(root)/breath/checksum/brt         \
                 $(root)/breath/conversion/brt       \
