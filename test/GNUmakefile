@@ -123,6 +123,7 @@ source_files := unit_test_main.cpp                          \
 include $(root)/makefile/main.mk
 
 target := $(bin_dir)/breath_test$(exe_name_suffix)
+libraries := advapi32.lib
 breath_library := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
 
 $(target): $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), \
