@@ -92,9 +92,6 @@
     <ClCompile Include="..\..\..\breath\environment\test\get_environment_variable_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\meta\test\integer_log2_compile_time_test.cpp">
-      <Filter>Component Tests</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\breath\meta\test\is_2s_complement_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>

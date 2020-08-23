@@ -342,9 +342,6 @@
     <ClInclude Include="..\..\breath\meta\has_sign.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\meta\integer_log2.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\breath\meta\is_2s_complement.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>

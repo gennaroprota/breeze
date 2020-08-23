@@ -30,7 +30,7 @@ from cryptography (MD5, SHA-1, SHA-2) to string utilities, operating system
 identification and much more. You'll get a precise idea by exploring the breath/
 subdirectory of the source tree or the full documentation (see below).
 
-The library has been developed, in my spare time, over a period of about 16
+The library has been developed, in my spare time, over a period of about 13
 years (as of June 2019) and I don't claim that all of it is of production
 quality.
 
