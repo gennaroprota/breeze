@@ -80,7 +80,7 @@ void sha1_engine::process_block( state_type & state,
 
     //      Expand the message-block to an 80-word "schedule"
     // -----------------------------------------------------------------------
-    int const           sz( 80 ) ;
+    int const           sz = 80 ;
     typedef word_type   schedule_type[ sz ] ;
     sensitive_buffer< schedule_type > sched(
         breath::cbegin( block ), breath::cend( block ) ) ;
@@ -94,7 +94,7 @@ void sha1_engine::process_block( state_type & state,
     //              a b c d e
     //          [   0 1 2 3 4   ]
     // -----------------------------------------------------------------------
-    int const           state_count( 5 ) ;
+    int const           state_count = 5 ;
     sensitive_buffer< word_type[ state_count ] >
                         working( state ) ;
 
@@ -104,7 +104,7 @@ void sha1_engine::process_block( state_type & state,
     //      perhaps there are (non macro-based) other beneficial
     //      solutions. ([FUTURE] [gps])
     // -----------------------------------------------------------------------
-    word_type           t( 0 ) ;
+    word_type           t = 0 ;
     for ( int i = 0 ; i < 20 ; ++ i ) {
         t = rotate_left< 5 >( working[ 0 ] )
           + ch( working[ 1 ], working[ 2 ], working[ 3 ] )

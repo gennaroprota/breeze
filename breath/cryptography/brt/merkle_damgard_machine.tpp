@@ -220,7 +220,7 @@ merkle_damgard_machine< Engine >::increase_count( std::ptrdiff_t amount )
     length_unit_type    repr[ length_count ] = {} ;
     codec::encode( amount, breath::begin( repr ) ) ;
 
-    int                 carry( 0 ) ;
+    int                 carry = 0 ;
     for ( int i = 0 ; i < length_count ; ++ i ) {
         length_unit_type const
                             w( m_bit_count[ i ] + repr[ i ] + carry ) ;

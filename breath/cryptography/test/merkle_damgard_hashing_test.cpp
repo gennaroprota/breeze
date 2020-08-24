@@ -31,7 +31,7 @@ int                 test_merkle_damgard_hashing() ;
 namespace {
 
 std::string::size_type const
-                    million( 1000 * 1000 );
+                    million = 1000 * 1000 ;
 std::string const   one_million_a( million, 'a' );
 
 template< typename Hasher >

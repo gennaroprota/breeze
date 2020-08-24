@@ -98,7 +98,7 @@ void sha256_engine::process_block( state_type & state,
 
     //      Expand the message-block to a 64-word "schedule".
     // -----------------------------------------------------------------------
-    int const           sz( 64 ) ;
+    int const           sz = 64 ;
     typedef word_type   schedule_type[ sz ] ;
     sensitive_buffer< schedule_type >
                         sched(
@@ -110,7 +110,7 @@ void sha256_engine::process_block( state_type & state,
    //       0 1 2 3 4 5 6 7
    //       a b c d e f g h
    // ------------------------------------------------------------------------
-   int const            state_count( 8 ) ;
+   int const            state_count = 8 ;
    sensitive_buffer< word_type[ state_count ] >
                         working( state ) ;
    {
