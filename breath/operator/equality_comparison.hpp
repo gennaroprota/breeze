@@ -91,7 +91,7 @@ protected:
 }
 
 using breath::adl_shield::
-                        equality_comparison ;
+                    equality_comparison ;
 }
 
 #endif
