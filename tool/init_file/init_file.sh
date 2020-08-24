@@ -15,11 +15,11 @@
 
 set -eu
 
-.   "$BREATH_ROOT/tool/shell/script.shc"
-.   "$BREATH_ROOT/tool/shell/file_name.shc"
-.   "$BREATH_ROOT/tool/shell/string.shc"
-.   "$BREATH_ROOT/tool/shell/new_line.shc"
 .   "$BREATH_ROOT/tool/shell/copyright.shc"
+.   "$BREATH_ROOT/tool/shell/file_name.shc"
+.   "$BREATH_ROOT/tool/shell/new_line.shc"
+.   "$BREATH_ROOT/tool/shell/script.shc"
+.   "$BREATH_ROOT/tool/shell/string.shc"
 
 make_opening_line()
 {
