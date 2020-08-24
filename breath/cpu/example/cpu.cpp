@@ -13,6 +13,7 @@
 
 #include "breath/cpu/get_cpuid_info.hpp"
 
+#include <cstdint>
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
@@ -24,7 +25,7 @@ namespace {
 bool
 has_processor_brand_string()
 {
-    unsigned const      mask = 0x8000'0000 ;
+    std::uint32_t const mask = 0x8000'0000 ;
     cpuid_result const  r = get_cpuid_info( mask, 0 ) ;
 
     return (r.eax & mask) != 0 &&
@@ -36,12 +37,12 @@ processor_brand_string()
 {
     // Reference: Intel Manual, 3-176, Vol. 2A
     //
-    unsigned long const from = 0x8000'0002 ;
-    unsigned long const to   = 0x8000'0004 ;
+    std::uint32_t const from = 0x8000'0002 ;
+    std::uint32_t const to   = 0x8000'0004 ;
 
     std::size_t const   len = 16 * ( to - from + 1 ) ;
     char                s[ len ] ;
-    for ( unsigned long i = from ; i <= to ; ++ i ) {
+    for ( std::uint32_t i = from ; i <= to ; ++ i ) {
         cpuid_result const  info = get_cpuid_info( i, 0 ) ;
         char * const        p = s + 16 * ( i - from ) ;
         std::memcpy( p,      &info.eax, sizeof( info.eax ) ) ;
