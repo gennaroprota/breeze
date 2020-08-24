@@ -57,11 +57,11 @@ struct cpuid_result
 //!     EAX and \c ECX.
 //!
 //!     \pre
-//!         the CPUID instruction is supported (this is always true on
+//!         The CPUID instruction is supported (this is always true on
 //!         x64 CPUs).
 //!
 //!     \return
-//!         a struct with the values of \c EAX, \c EBX, \c ECX, \c EDX
+//!         A struct with the values of \c EAX, \c EBX, \c ECX, \c EDX
 //!         returned by the CPUID instruction itself.
 // ---------------------------------------------------------------------------
 cpuid_result        get_cpuid_info( std::uint32_t eax, std::uint32_t ecx ) ;
