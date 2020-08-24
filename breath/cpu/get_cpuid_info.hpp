@@ -10,8 +10,8 @@
 //!     \brief Interface to the CPUID instruction.
 // ---------------------------------------------------------------------------
 //
-//!     Interface to the CPUID instruction available on x86 and Intel
-//!     64 architectures.
+//!     Interface to the CPUID instruction available on x86 and x86_64
+//!     architectures.
 //!
 //!     NOTE: unusually for our code base, this file uses extern "C";
 //!     that's because the actual routines are written in assembly and
@@ -58,7 +58,7 @@ struct cpuid_result
 //!
 //!     \pre
 //!         The CPUID instruction is supported (this is always true on
-//!         x64 CPUs).
+//!         x86_64 CPUs).
 //!
 //!     \return
 //!         A struct with the values of \c EAX, \c EBX, \c ECX, \c EDX
