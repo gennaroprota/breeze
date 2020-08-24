@@ -14,7 +14,7 @@
 #       to inizialize the content of newly created files.
 #
 #       The important thing is that it allows adding support for new
-#       types of files without changing the script themselves.
+#       types of files without changing the scripts themselves.
 #
 #       Any line beginning with '#' in this file is treated as a comment
 #       (not because this file is written in any particular language:
