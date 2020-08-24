@@ -42,12 +42,6 @@
 # ----------------------------------------------------------------------------
 
 
-#       Note:
-#           The css mode for Emacs seems to have been introduced
-#           starting from version 22.1 (!) What happens for unrecognized
-#           modes?
-
-
 # file name pattern   comment  comment   line
 # (extended regexp)    start     end    comment    language
 # --------------------------------------------------------------------
