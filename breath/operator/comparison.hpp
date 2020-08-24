@@ -86,7 +86,8 @@ protected:
 
 }
 
-using adl_shield::comparison ;
+using breath::adl_shield::
+                    comparison ;
 
 }
 
