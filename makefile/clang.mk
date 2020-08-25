@@ -23,6 +23,16 @@
 #
 #       (See gcc.mk for further notes on some options.)
 #
+#       -Wno-anon-enum-enum-conversion:
+#
+#           Silences warnings in the cryptography facilities, where we
+#           use unnamed enums to define constants (so that we don't need
+#           to provide a separate definition) and do arithmetic on them.
+#
+#           Since this warning option doesn't exist on all the Clang
+#           versions we support, we also use
+#           -Wno-unknown-warning-option.
+#
 #       -Wno-unneeded-member-function:
 #
 #           Silences warnings in the bit_cast() noexcept-ness tests
@@ -65,6 +75,10 @@ cpp_basic_options := -std=c++14                         \
                      -D _GLIBCXX_USE_CXX11_ABI=1
 
 cpp_basic_options += -pipe                              \
+                                                        \
+                     -Wno-unknown-warning-option        \
+                                                        \
+                     -Wno-anon-enum-enum-conversion     \
                      -Wno-padded                        \
                      -Wno-sign-conversion               \
                      -Wno-unneeded-member-function      \
