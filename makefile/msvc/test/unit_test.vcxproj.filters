@@ -68,9 +68,6 @@
     <ClCompile Include="..\..\..\breath\stream\test\eof_value_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\diagnostics\test\exception_test.cpp">
-      <Filter>Component Tests</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\breath\path\test\extension_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>

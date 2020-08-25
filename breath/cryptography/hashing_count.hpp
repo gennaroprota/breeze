@@ -14,7 +14,7 @@
 #define BREATH_GUARD_TFkXJUZ0hYDDlcmPKYMI9GfC5n42i9kF
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/diagnostics/exception.hpp"
+#include <stdexcept>
 
 namespace breath_ns {
 
@@ -33,7 +33,7 @@ public:
 } ;
 
 class hashing_count::exception
-    :   public virtual breath::exception
+    :   public std::length_error
 {
 public:
     explicit            exception( char const * what_message ) ;

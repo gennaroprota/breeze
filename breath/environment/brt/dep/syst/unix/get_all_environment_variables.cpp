@@ -12,8 +12,8 @@
 // ___________________________________________________________________________
 
 #include "breath/environment/get_all_environment_variables.hpp"
-#include "breath/diagnostics/exception.hpp"
 #include <unistd.h>
+#include <stdexcept>
 
 namespace breath_ns {
 
@@ -25,7 +25,7 @@ get_all_environment_variables()
 
     if ( environ == nullptr ) {
         // Can this really happen?
-        throw exception( "environ is a null pointer" ) ;
+        throw std::runtime_error( "environ is a null pointer" ) ;
     }
 
     result_type         result ;

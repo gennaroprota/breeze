@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/time/c_clock_policy.hpp"
-#include "breath/diagnostics/exception.hpp"
+#include <stdexcept>
 
 namespace breath_ns {
 
@@ -22,10 +22,10 @@ c_clock_policy::retrieve()
     std::clock_t const  result( std::clock() ) ;
     return result != static_cast< std::clock_t >( -1 )
         ? result
-        : throw breath::exception( "std::clock() failed (e.g. because the time"
-                                   " elapsed is not available or because it is"
-                                   " too long to be represented in a"
-                                   " std::clock_t)" ) ;
+        : throw std::runtime_error( "std::clock() failed (e.g. because the time"
+                                    " elapsed is not available or because it is"
+                                    " too long to be represented in a"
+                                    " std::clock_t)" ) ;
 }
 
 c_clock_policy::c_clock_policy()
@@ -51,7 +51,7 @@ c_clock_policy::elapsed() const
     std::clock_t const  now( retrieve() ) ;
 
     if ( now < m_start_tick ) {
-        throw breath::exception( "std::clock() wrapped around" ) ;
+        throw std::runtime_error( "std::clock() wrapped around" ) ;
     }
 
     duration_type const elapsed_ticks( now - m_start_tick ) ;

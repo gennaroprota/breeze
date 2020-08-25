@@ -35,7 +35,6 @@
     <ClCompile Include="..\..\..\breath\cryptography\test\sha384_test.cpp" />
     <ClCompile Include="..\..\..\breath\debugging\test\dump_expression_test.cpp" />
     <ClCompile Include="..\..\..\breath\diagnostics\test\assert_test.cpp" />
-    <ClCompile Include="..\..\..\breath\diagnostics\test\exception_test.cpp" />
     <ClCompile Include="..\..\..\breath\encoding\extra\generate_inverse_base64_table.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>

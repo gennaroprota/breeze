@@ -9,10 +9,9 @@
 //      Implementation helper for readable_type_name() for GCC.
 // ---------------------------------------------------------------------------
 
-#include "breath/diagnostics/exception.hpp"
-
 #include <cstdlib>
 #include <cxxabi.h>
+#include <stdexcept>
 #include <string>
 #include <typeinfo>
 
@@ -55,8 +54,8 @@ demangled_typeid_name()
                                                  nullptr,
                                                  nullptr ) ;
     if ( p == nullptr ) {
-        throw breath::exception( "__cxa_demangle() failed to demangle \"" +
-                                 std::string( name ) + "\"" ) ;
+        throw std::runtime_error( "__cxa_demangle() failed to demangle \"" +
+                                  std::string( name ) + "\"" ) ;
     }
 
     deallocator const   dlc( p ) ;

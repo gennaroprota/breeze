@@ -16,7 +16,7 @@
 namespace breath_ns {
 
 hashing_count::exception::exception( char const * message )
-    : breath::exception( message )
+    : std::length_error( message )
 {
 }
 

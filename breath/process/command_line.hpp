@@ -11,10 +11,10 @@
 #define BREATH_GUARD_wv85pwyBmJzlhg6z02PPsgOP4CY3kdBn
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/diagnostics/exception.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 
 #include <map>
+#include <stdexcept>
 #include <string>
 #include <vector>
 
@@ -83,7 +83,7 @@ private:
 } ;
 
 class command_line_error
-    :   public virtual breath::exception
+    :   public std::runtime_error
 {
 public:
     explicit            command_line_error( std::string const & msg ) ;
