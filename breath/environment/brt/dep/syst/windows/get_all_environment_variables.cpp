@@ -12,7 +12,6 @@
 // ___________________________________________________________________________
 
 #include "breath/environment/get_all_environment_variables.hpp"
-#include "breath/diagnostics/exception.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
 #include "breath/process/program.hpp"
 #undef UNICODE          // it seems impossible to directly call

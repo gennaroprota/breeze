@@ -14,9 +14,9 @@
 #define BREATH_GUARD_zRk6qVzrOdWWtkjYcUpuIkpnrRj8cg0q
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/diagnostics/exception.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
+#include <stdexcept>
 #include <string>
 
 namespace breath_ns {
@@ -141,7 +141,7 @@ private:
 //!             members.
 // ---------------------------------------------------------------------------
 class entropy_source::exception
-    :   public virtual breath::exception
+    :   public std::runtime_error
 {
 public:
     //! \cond implementation
@@ -150,8 +150,7 @@ public:
     //! \endcond
 
     //!     Constructs an entropy_source::exception with the given
-    //!     string as \c what() message. The string returned by \c
-    //!     what() could be truncated.
+    //!     string as \c what() message.
     // -----------------------------------------------------------------------
     explicit            exception( std::string const & msg ) noexcept ;
 } ;

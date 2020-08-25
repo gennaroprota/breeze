@@ -14,8 +14,8 @@
 #define BREATH_GUARD_HC9mIXMvniKHLa6eFGhdRhDkxlSaZErK
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/diagnostics/exception.hpp"
 #include <iosfwd>
+#include <stdexcept>
 
 namespace breath_ns {
 
@@ -48,10 +48,10 @@ namespace breath_ns {
 //!         or \c errno (if under Unix) is meaningful.
 // ---------------------------------------------------------------------------
 class last_api_error
-    :   public exception
+    :   public std::runtime_error
 {
 public:
-    explicit            last_api_error( char const * ) noexcept ;
+    explicit            last_api_error( char const * ) ;
                         last_api_error( last_api_error const & ) noexcept ;
     virtual             ~last_api_error() noexcept override ;
 
@@ -67,6 +67,10 @@ public:
     void                operator =( last_api_error const & ) = delete ;
 
 private:
+
+    typedef std::runtime_error
+                        base_type ;
+
     friend std::ostream &
                         operator <<( std::ostream &, last_api_error const & ) ;
 

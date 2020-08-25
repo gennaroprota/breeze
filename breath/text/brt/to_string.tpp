@@ -6,9 +6,9 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/diagnostics/exception.hpp"
 #include "breath/type_identification/readable_type_name.hpp"
 #include <sstream>
+#include <stdexcept>
 
 namespace breath_ns {
 
@@ -20,9 +20,9 @@ to_string( OutputStreamable const & object, std::locale loc )
     ss.imbue( loc ) ;
     ss << object ;
     if ( ss.fail() ) {
-        throw breath::exception( "error in to_string(), trying to convert"
-                                 " an instance of " +
-                                 readable_type_name< OutputStreamable >() ) ;
+        throw std::runtime_error( "error in to_string(), trying to convert"
+                                  " an instance of " +
+                                  readable_type_name< OutputStreamable >() ) ;
     }
     return ss.str() ;
 }

@@ -281,7 +281,7 @@ command_line::rest() const
 }
 
 command_line_error::command_line_error( std::string const & msg )
-    : exception( msg )
+    : std::runtime_error( msg )
 {
 }
 

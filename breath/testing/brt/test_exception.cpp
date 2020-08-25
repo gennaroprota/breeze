@@ -16,8 +16,8 @@
 namespace breath_ns {
 
 test_exception::test_exception( char const * file_name,
-                                unsigned long line ) noexcept
-    :   exception(),
+                                unsigned long line )
+    :   logic_error( "" ),
         m_file_name( file_name ),
         m_line( line )
 {
@@ -25,8 +25,8 @@ test_exception::test_exception( char const * file_name,
 
 test_exception::test_exception( std::string const & message,
                                 char const * file_name,
-                                unsigned long line ) noexcept
-    :   exception( message ),
+                                unsigned long line )
+    :   logic_error( message ),
         m_file_name( file_name ),
         m_line( line )
 {

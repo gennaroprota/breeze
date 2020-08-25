@@ -50,7 +50,6 @@ source_files := luhn.cpp                                    \
                 sha512_hasher.cpp                           \
                                                             \
                 assert.cpp                                  \
-                exception.cpp                               \
                 last_api_error.cpp                          \
                                                             \
                 get_all_environment_variables.cpp           \

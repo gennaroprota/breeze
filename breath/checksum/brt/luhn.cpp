@@ -13,8 +13,8 @@
 
 #include "breath/checksum/luhn.hpp"
 #include "breath/counting/signed_count.hpp"
-#include "breath/diagnostics/exception.hpp"
 #include <numeric>
+#include <stdexcept>
 
 namespace breath_ns {
 namespace           {
@@ -41,7 +41,7 @@ luhn_sum( std::string const & str )
     auto checked_adder = [ &from_table ]( int s, char c )
     {
         if ( ! portable_is_digit( c ) ) {
-            throw exception( "non-digit char in Luhn string" ) ;
+            throw std::invalid_argument( "non-digit char in Luhn string" ) ;
         }
         int const           value = c - '0' ;
         int const           sum = s + ( from_table

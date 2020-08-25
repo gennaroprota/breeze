@@ -18,8 +18,9 @@
 
 namespace breath_ns {
 
-last_api_error::last_api_error( char const * p ) noexcept
-    :   m_last_error( errno )
+last_api_error::last_api_error( char const * p )
+    :   base_type( "<you shouldn't see this message>" ),
+        m_last_error( errno )
 {
     static char const   cant_obtain_description[] =
                             "can't obtain the error description"
@@ -92,7 +93,7 @@ last_api_error::last_api_error( char const * p ) noexcept
 }
 
 last_api_error::last_api_error( last_api_error const & other ) noexcept
-    :   exception( other ),
+    :   base_type( other ),
         m_last_error( other.m_last_error )
 {
     strcpy( &m_message[ 0 ], &other.m_message[ 0 ] ) ;

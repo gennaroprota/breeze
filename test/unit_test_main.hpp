@@ -28,7 +28,6 @@ int                 test_ends_with() ;
 int                 test_entropy_source() ;
 int                 test_environment_variable_consistency() ;
 int                 test_eof_value() ;
-int                 test_exception() ;
 int                 test_extension() ;
 int                 test_from_string() ;
 int                 test_gcd() ;

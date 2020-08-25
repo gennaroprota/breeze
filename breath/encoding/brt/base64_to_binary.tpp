@@ -6,10 +6,10 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/diagnostics/exception.hpp"
 #include "breath/counting/signed_count.hpp"
 #include <climits>
 #include <cstddef>
+#include <stdexcept>
 #include <type_traits>
 
 namespace breath_ns {
@@ -63,11 +63,11 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
             equals_seen = true ;
         }
         if ( x != '=' && x != '\n' && equals_seen ) {
-            throw exception( error_message ) ;
+            throw std::runtime_error( error_message ) ;
         }
         if ( value == not_to_be_translated ) {
             if ( x != '\n' && x != '=' ) {
-                throw exception( error_message ) ;
+                throw std::runtime_error( error_message ) ;
             }
         } else {
             block = ( block << block_length ) | value ;

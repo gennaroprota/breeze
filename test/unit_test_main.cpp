@@ -41,7 +41,6 @@ main()
             test_entropy_source,
             test_environment_variable_consistency,
             test_eof_value,
-            test_exception,
             test_extension,
             test_from_string,
             test_gcd,

@@ -14,20 +14,20 @@
 #define BREATH_GUARD_8msuVkqs5IBc3s7j1mDOtGC97uqTUGg0
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/diagnostics/exception.hpp"
 #include <ostream>
+#include <stdexcept>
 
 namespace breath_ns {
 
 class test_exception
-    :   public virtual breath::exception
+    :   public std::logic_error
 {
 public:
                         test_exception( char const * file_name,
-                                        unsigned long line ) noexcept ;
+                                        unsigned long line ) ;
                         test_exception( std::string const & message,
                                         char const * file_name,
-                                        unsigned long line ) noexcept ;
+                                        unsigned long line ) ;
     char const *        file_name() const noexcept ;
     unsigned long       line_number() const noexcept ;
 

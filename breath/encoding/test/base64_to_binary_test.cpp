@@ -16,6 +16,7 @@
 #include "breath/testing/testing.hpp"
 #include <iostream>
 #include <iterator>
+#include <stdexcept>
 #include <string>
 
 int                 test_base64_to_binary() ;
@@ -83,7 +84,7 @@ check_invalid()
     // -----------------------------------------------------------------------
     std::string const   invalid = "#AB"  ;
     std::string         out ;
-    BREATH_CHECK_THROW( breath::exception,
+    BREATH_CHECK_THROW( std::runtime_error,
                         breath::base64_to_binary( invalid.cbegin(),
                                                   invalid.cend(),
                                                  std::back_inserter( out ) ) ) ;
@@ -91,7 +92,7 @@ check_invalid()
     //      This has equal signs followed by non-equal-signs.
     // -----------------------------------------------------------------------
     std::string const   invalid2 = "Zm9=x" ;
-    BREATH_CHECK_THROW( breath::exception,
+    BREATH_CHECK_THROW( std::runtime_error,
                         breath::base64_to_binary( invalid2.cbegin(),
                                                   invalid2.cend(),
                                                  std::back_inserter( out ) ) ) ;
@@ -99,7 +100,7 @@ check_invalid()
     //      This is composed of NULs.
     // -----------------------------------------------------------------------
     std::string const   invalid3 = { '\0', '\0' } ;
-    BREATH_CHECK_THROW( breath::exception,
+    BREATH_CHECK_THROW( std::runtime_error,
                         breath::base64_to_binary( invalid3.cbegin(),
                                                   invalid3.cend(),
                                                  std::back_inserter( out ) ) ) ;
