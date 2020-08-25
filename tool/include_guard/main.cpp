@@ -12,12 +12,12 @@
 // ___________________________________________________________________________
 
 #include "tool/include_guard/macro_name.hpp"
-#include "breath/diagnostics/exception.hpp"
 #include "breath/process/command_line.hpp"
 #include "breath/process/program.hpp"
 #include "breath/process/program_option.hpp"
 
 #include <cstdio> // for EOF
+#include <exception>
 #include <iostream>
 #include <istream>
 #include <ostream>
