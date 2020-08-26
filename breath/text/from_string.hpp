@@ -27,6 +27,10 @@ namespace breath_ns {
 //!         operator &gt;&gt;()</code> function may be called that takes
 //!         an instance of \c std::istream as first argument and an
 //!         instance of \c T as second argument.
+//!
+//!     \note
+//!         \c s and \c T being equal, the result of this function will,
+//!         in general, also depend on the \c locale argument.
 // ---------------------------------------------------------------------------
 template< typename T >
 maybe< T >          from_string( std::string const & s,
@@ -39,6 +43,9 @@ maybe< T >          from_string( std::string const & s,
 //!     \note
 //!         This specialization is not just an optimization: it ensures
 //!         that e.g. " test " converts to " test " and not "test".
+//!
+//!         Also, the \c locale argument isn't actually used for this
+//!         specialization.
 // ---------------------------------------------------------------------------
 template<>
 maybe< std::string> from_string< std::string >( std::string const & s,
