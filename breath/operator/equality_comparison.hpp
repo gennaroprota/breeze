@@ -23,9 +23,9 @@ namespace adl_shield {
 //      ====================
 //
 //!     The class template \c equality_comparison provides <code>
-//!     operator ==()</code> and <code>operator !=()</code> as namespace
-//!     scope functions whose name is associated "on demand" (i.e. at
-//!     instantiation) to class \c T, via ADL.
+//!     operator ==()</code> and <code>operator !=()</code> as
+//!     namespace-scope functions whose name is associated "on demand"
+//!     (i.e. at instantiation) to class \c T, via ADL.
 //!
 //!     Usage:
 //!     ------
