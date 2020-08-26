@@ -16,7 +16,7 @@
 //!     the actual type of \c a. See also begin_end.hpp.
 //!
 //!     Following C++ best practices, these templates return a \e signed
-//!     integer. They are made obsolete in C++20 by the namespace scope
+//!     integer. They are made obsolete in C++20 by the namespace-scope
 //!     \c std::ssize()'s. However our version uses, for containers, a
 //!     simpler logic to determine the return type (it doesn't use \c
 //!     std::common_type); and, for containers again, has a conditional
