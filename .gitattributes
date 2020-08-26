@@ -36,7 +36,6 @@ GNUmakefile text
 
 #       Custom for Visual Studio.
 # ----------------------------------------------------------------------------
-*.cs     diff=csharp
 *.sln             text eol=crlf
 *.vcxproj         text eol=crlf
 *.vcxproj.filters text eol=crlf
