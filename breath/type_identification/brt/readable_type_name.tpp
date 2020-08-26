@@ -9,7 +9,7 @@
 #include "breath/porting/dependent_code.hpp"
 #include BREATH_DEPENDENT_CODE( compiler, readable_type_name.tpp )
 
-#include <stdexcept>
+#include "breath/diagnostics/assert.hpp"
 
 namespace breath_ns {
 namespace readable_type_name_private {
@@ -46,9 +46,8 @@ readable_type_name()
     auto const          begin_pos = wrapped_name.find(  '<' ) ;
     auto const          end_pos   = wrapped_name.rfind( '>' ) ;
 
-    if ( begin_pos == wrapped_name.npos || end_pos == wrapped_name.npos ) {
-        throw std::runtime_error( "internal error in readable_type_name()" ) ;
-    }
+    BREATH_ASSERT( begin_pos != wrapped_name.npos &&
+                     end_pos != wrapped_name.npos ) ;
 
     return wrapped_name.substr( begin_pos + 1, end_pos - begin_pos - 1 ) ;
 }
