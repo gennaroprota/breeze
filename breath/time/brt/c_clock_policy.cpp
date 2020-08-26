@@ -36,6 +36,12 @@ retrieve()
                                     " std::clock_t)" ) ;
 }
 
+void
+throw_because_of_wrap_around()
+{
+    throw std::runtime_error( "std::clock() wrapped around" ) ;
+}
+
 }
 
 c_clock_policy::c_clock_policy()
@@ -61,7 +67,7 @@ c_clock_policy::elapsed() const
     std::clock_t const  now( retrieve() ) ;
 
     if ( now < m_start_tick ) {
-        throw std::runtime_error( "std::clock() wrapped around" ) ;
+        throw_because_of_wrap_around() ;
     }
 
     return to_milliseconds( now - m_start_tick ) ;
@@ -76,6 +82,10 @@ c_clock_policy::resolution() const
     std::clock_t const  s( retrieve() ) ;
     while ( s     == ( start = retrieve() ) ) { }
     while ( start == (   end = retrieve() ) ) { }
+
+    if ( end < start ) {
+        throw_because_of_wrap_around() ;
+    }
 
     return to_milliseconds( end - start ) ;
 }
