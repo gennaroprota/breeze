@@ -25,6 +25,9 @@ namespace breath_ns {
 //!     \return
 //!         The textual representation of its argument. The
 //!         representation depends, in general, on \c loc.
+//!
+//!     \throw
+//!         A \c std::runtime_error if the conversion fails.
 // ---------------------------------------------------------------------------
 template< typename OutputStreamable >
 std::string         to_string( OutputStreamable const &,
