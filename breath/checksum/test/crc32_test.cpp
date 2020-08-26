@@ -32,7 +32,7 @@ check_known()
         unsigned long       crc32 ;
     } const             known[] =
     {
-        { "",                                            0x0        },
+        { "",                                            0          },
 
         // Following test vectors verified with:
         //   <https://www.lammertbies.nl/comm/info/crc-calculation.html>
