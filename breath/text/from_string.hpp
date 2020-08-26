@@ -20,6 +20,9 @@
 
 namespace breath_ns {
 
+//      from_string():
+//      ==============
+//
 //!     \par Type requirements
 //!         \c T shall be \c DefaultConstructible and \c
 //!         MoveConstructible. Furthermore it shall be \c input \c
@@ -36,6 +39,9 @@ template< typename T >
 maybe< T >          from_string( std::string const & s,
                                  std::locale loc = std::locale() ) ;
 
+//      from_string():
+//      ==============
+//
 //!     \return
 //!         An (always valid) \c maybe object containing a string which
 //!         compares equal to \c s.
