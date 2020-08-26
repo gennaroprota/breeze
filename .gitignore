@@ -71,6 +71,7 @@
 *.nativecodeanalysis.xml
 *.nativecodeanalysis.all.xml
 *.lastcodeanalysis*
+*.vcxproj.user
 .vs/
 
 # Visual Studio Code files
