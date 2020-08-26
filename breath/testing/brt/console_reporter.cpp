@@ -49,12 +49,14 @@ void
 console_reporter::do_on_test_begin( int test_number, char const * )
 {
     m_stream << '[' << test_number << '=' ;
+    m_stream.flush() ;
 }
 
 void
 console_reporter::do_on_test_passed( int )
 {
     m_stream << "P]" ;
+    m_stream.flush() ;
     ++ m_passed ;
 }
 
@@ -62,6 +64,7 @@ void
 console_reporter::do_on_test_failed(int, test_exception const & ex )
 {
     m_stream << "F (" << ex.file_name() << ": " << ex.line_number() << ")]" ;
+    m_stream.flush() ;
     ++ m_failed ;
 }
 
@@ -69,6 +72,7 @@ void
 console_reporter::do_on_unexpected_exception( int )
 {
     m_stream << "X]" ;
+    m_stream.flush() ;
     ++ m_unexpected_exceptions ;
 }
 
@@ -77,6 +81,7 @@ console_reporter::do_on_unexpected_exception( int,
                                            std::exception const & ex )
 {
     m_stream << "X (" << typeid( ex ).name() << ": " << ex.what() << ")]" ;
+    m_stream.flush() ;
     ++ m_unexpected_exceptions ;
 }
 
