@@ -56,7 +56,7 @@ template<>
 word_type
 aux_f< 0 >::f( word_type x, word_type y, word_type z )
 {
-    return (x & y ) + (~x & z) ;
+    return ( x & y ) + ( ~x & z ) ;
 }
 
 template<>
