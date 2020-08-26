@@ -15,6 +15,16 @@
 #include <stdexcept>
 
 namespace breath_ns {
+namespace           {
+
+breath::c_clock_policy::duration_type
+to_milliseconds( std::clock_t elapsed )
+{
+    return static_cast< breath::c_clock_policy::duration_type >( elapsed ) /
+        CLOCKS_PER_SEC * 1000 ;
+}
+
+}
 
 std::clock_t
 c_clock_policy::retrieve()
@@ -54,10 +64,7 @@ c_clock_policy::elapsed() const
         throw std::runtime_error( "std::clock() wrapped around" ) ;
     }
 
-    duration_type const elapsed_ticks( now - m_start_tick ) ;
-    duration_type const elapsed_seconds( elapsed_ticks / CLOCKS_PER_SEC ) ;
-
-    return 1000 * elapsed_seconds ;
+    return to_milliseconds( now - m_start_tick ) ;
 }
 
 c_clock_policy::duration_type
@@ -70,8 +77,7 @@ c_clock_policy::resolution() const
     while ( s     == ( start = retrieve() ) ) { }
     while ( start == (   end = retrieve() ) ) { }
 
-    return static_cast< duration_type >( 1000.0 ) * ( end - start )
-                       / CLOCKS_PER_SEC ;
+    return to_milliseconds( end - start ) ;
 }
 
 }
