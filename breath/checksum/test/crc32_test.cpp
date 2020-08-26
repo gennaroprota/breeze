@@ -28,8 +28,8 @@ check_known()
 {
     struct
     {
-        std::string text ;
-        unsigned long crc32 ;
+        std::string         text ;
+        unsigned long       crc32 ;
     } const             known[] =
     {
         { "",                                            0x0        },
