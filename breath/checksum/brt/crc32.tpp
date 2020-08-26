@@ -90,17 +90,15 @@ crc32( InputIterator begin, InputIterator end )
 
     static_assert( table_size == 256, "wrong table size" ) ;
 
-    auto                result = all_ones ^
-           std::accumulate( begin, end,
-                              initial_value,
+    auto const          operation =
             [=]( std::uint_fast32_t checksum, std::uint_fast8_t value )
             {
                 return        ( checksum / table_size ) ^
                        table[ ( checksum ^ value ) & ( table_size - 1 ) ] ;
-            }
-            ) ;
+            } ;
 
-    return static_cast< std::uint32_t >( result ) ;
+    return static_cast< std::uint32_t >(
+        all_ones ^ std::accumulate( begin, end, initial_value, operation ) ) ;
 }
 
 }
