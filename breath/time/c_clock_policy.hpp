@@ -35,20 +35,30 @@ public:
 
                         c_clock_policy() ;
 
+    //!     \throw
+    //!         A \c std::runtime_error if \c std::clock() fails.
+    // -----------------------------------------------------------------------
     void                start() ;
 
     //!     \return
     //!         The time, in milliseconds, elapsed from the last
     //!         (re)start.
     //!
-    //!     Will throw if it detects wrap-around. (It only detects \e
-    //!     some wrap-arounds.)
+    //!     \throw
+    //!         A \c std::runtime_error if it detects wrap-around (it
+    //!         only detects \e some wrap-arounds), or if \c
+    //!         std::clock() fails.
     // -----------------------------------------------------------------------
     duration_type       elapsed() const ;
 
     //!     \return
     //!         An estimate of the timer resolution, in milliseconds.
     //!         May return slightly different values from call to call.
+    //!
+    //!     \throw
+    //!         A \c std::runtime_error if it detects wrap-around (it
+    //!         only detects \e some wrap-arounds), or if \c
+    //!         std::clock() fails.
     // -----------------------------------------------------------------------
     duration_type       resolution() const ;
 
