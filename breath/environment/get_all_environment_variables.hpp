@@ -20,6 +20,9 @@
 
 namespace breath_ns {
 
+//      get_all_environment_variables():
+//      ================================
+//
 //!     \return
 //!         A map with all name-value pairs corresponding to the defined
 //!         environment variables.
