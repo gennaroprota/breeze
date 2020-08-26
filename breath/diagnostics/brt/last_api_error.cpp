@@ -15,6 +15,18 @@
 #include "breath/porting/dependent_code.hpp"
 #include BREATH_DEPENDENT_CODE( system, last_api_error.cpp )
 
+#include <ostream>
+
+namespace breath_ns {
+
+std::ostream &
+    operator <<(std::ostream & dest, last_api_error const & last)
+{
+    return dest << last.m_message << " [code: " << last.code() << ']';
+}
+
+}
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

@@ -12,7 +12,6 @@
 // ___________________________________________________________________________
 
 #include <cerrno>
-#include <ostream>
 #include <locale.h>
 #include <string.h>
 
@@ -113,12 +112,6 @@ char const *
 last_api_error::what() const noexcept
 {
     return m_message ;
-}
-
-std::ostream &
-operator <<( std::ostream & dest, last_api_error const & last )
-{
-    return dest << last.m_message << " [code: " << last.code() << ']' ;
 }
 
 }
