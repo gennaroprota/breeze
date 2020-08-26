@@ -30,7 +30,6 @@
 
 #include <algorithm>
 #include <cstddef>
-#include <exception>
 #include <fstream>
 #include <iostream>
 #include <istream>
