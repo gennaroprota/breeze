@@ -35,7 +35,7 @@ namespace breath_ns {
 //!         stateful functor.
 // ---------------------------------------------------------------------------
 template< typename InputIterator >
-std::uint_fast32_t  crc32( InputIterator begin, InputIterator end ) ;
+std::uint32_t       crc32( InputIterator begin, InputIterator end ) ;
 
 }
 
