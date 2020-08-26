@@ -24,10 +24,8 @@ to_milliseconds( std::clock_t elapsed )
         CLOCKS_PER_SEC * 1000 ;
 }
 
-}
-
 std::clock_t
-c_clock_policy::retrieve()
+retrieve()
 {
     std::clock_t const  result( std::clock() ) ;
     return result != static_cast< std::clock_t >( -1 )
@@ -36,6 +34,8 @@ c_clock_policy::retrieve()
                                     " elapsed is not available or because it is"
                                     " too long to be represented in a"
                                     " std::clock_t)" ) ;
+}
+
 }
 
 c_clock_policy::c_clock_policy()

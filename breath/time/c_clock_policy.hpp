@@ -53,9 +53,6 @@ public:
     duration_type       resolution() const ;
 
 private:
-    static std::clock_t retrieve() ;
-
-private:
     std::clock_t        m_start_tick ;
 } ;
 
