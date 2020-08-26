@@ -279,9 +279,6 @@
     <ClInclude Include="..\..\breath\diagnostics\last_api_error.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\diagnostics\private\last_api_error.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\breath\encoding\base64_to_binary.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
