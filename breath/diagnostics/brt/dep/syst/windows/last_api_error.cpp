@@ -15,7 +15,6 @@
 #include <Windows.h>
 #include <cstddef>
 #include <cstring>
-#include <ostream>
 
 namespace breath_ns {
 
@@ -82,12 +81,6 @@ char const *
 last_api_error::what() const noexcept
 {
     return m_message ;
-}
-
-std::ostream &
-operator <<( std::ostream & dest, last_api_error const & last )
-{
-    return dest << last.m_message << " [code: " << last.code() << ']' ;
 }
 
 }
