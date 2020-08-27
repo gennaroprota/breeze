@@ -33,6 +33,10 @@ class c_clock_policy
 public:
     typedef long double duration_type ;
 
+    //!     Leaves this object in an undefined state. The only action
+    //!     that can be performed on a just constructed object is to
+    //!     call start().
+    // -----------------------------------------------------------------------
                         c_clock_policy() ;
 
     //!     \throw
