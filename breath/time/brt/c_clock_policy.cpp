@@ -39,7 +39,7 @@ retrieve()
                                     " std::clock_t)" ) ;
 }
 
-void
+[[ noreturn ]] void
 throw_because_of_wrap_around()
 {
     throw std::runtime_error( "std::clock() wrapped around" ) ;
