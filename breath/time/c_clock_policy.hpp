@@ -48,6 +48,9 @@ public:
     //!         The time, in milliseconds, elapsed from the last
     //!         (re)start.
     //!
+    //!     \pre
+    //!         The function start() has been called at least once.
+    //!
     //!     \throw
     //!         A \c std::runtime_error if it detects wrap-around (it
     //!         only detects \e some wrap-arounds), or if \c
