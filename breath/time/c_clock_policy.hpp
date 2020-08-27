@@ -21,16 +21,23 @@ namespace breath_ns {
 //      c_clock_policy:
 //      ===============
 //
-//!     Note that on some (non-conforming) implementations
-//!     std::clock() will actually measure wall-clock time.
+//!     \brief
+//!         A policy for our \c timer template using the C function
+//!         <code>clock()</code>.
 //!
-//!     One such implementation is the Microsoft one:
-//!
+//!     \warning
+//!         Note that on some (non-conforming) implementations \c
+//!         clock() will actually measure wall-clock time. One such
+//!         implementation is the Microsoft one:<br />
+//!         <br />&nbsp;&nbsp;
 //!    <https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/clock>.
 // ---------------------------------------------------------------------------
 class c_clock_policy
 {
 public:
+
+    //!     The type used to represent a duration.
+    // -----------------------------------------------------------------------
     typedef long double duration_type ;
 
     //!     Leaves this object in an undefined state. The only action
@@ -39,6 +46,8 @@ public:
     // -----------------------------------------------------------------------
                         c_clock_policy() ;
 
+    //!     Starts or restarts measurement (see elapsed()).
+    //!
     //!     \throw
     //!         A \c std::runtime_error if \c std::clock() fails.
     // -----------------------------------------------------------------------
