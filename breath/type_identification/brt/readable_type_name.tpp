@@ -46,7 +46,7 @@ readable_type_name()
     auto const          begin_pos = wrapped_name.find(  '<' ) ;
     auto const          end_pos   = wrapped_name.rfind( '>' ) ;
 
-    BREATH_ASSERT( begin_pos != wrapped_name.npos &&
+    BREATH_ASSERT( begin_pos < end_pos &&
                      end_pos != wrapped_name.npos ) ;
 
     return wrapped_name.substr( begin_pos + 1, end_pos - begin_pos - 1 ) ;
