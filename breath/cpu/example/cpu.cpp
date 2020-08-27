@@ -10,6 +10,10 @@
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
+//
+//      Reference:
+//          Intel(R) 64 and IA-32 Architectures Developer's Manual: Vol. 2A.
+// ---------------------------------------------------------------------------
 
 #include "breath/cpu/get_cpuid_info.hpp"
 
@@ -35,8 +39,6 @@ has_processor_brand_string()
 std::string
 processor_brand_string()
 {
-    // Reference: Intel Manual, 3-176, Vol. 2A
-    //
     std::uint32_t const from = 0x8000'0002 ;
     std::uint32_t const to   = 0x8000'0004 ;
 
