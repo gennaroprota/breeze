@@ -12,10 +12,13 @@
 // ___________________________________________________________________________
 
 #include "breath/time/c_clock_policy.hpp"
+#include "breath/diagnostics/assert.hpp"
 #include <stdexcept>
 
 namespace breath_ns {
 namespace           {
+
+auto const          invalid_tick = static_cast< std::clock_t >( -1 ) ;
 
 breath::c_clock_policy::duration_type
 to_milliseconds( std::clock_t elapsed )
@@ -45,10 +48,7 @@ throw_because_of_wrap_around()
 }
 
 c_clock_policy::c_clock_policy()
-
-    //      This initialization is just to remove compiler warnings.
-    // -----------------------------------------------------------------------
-    :   m_start_tick()
+    :   m_start_tick( invalid_tick )
 {
 }
 
@@ -64,6 +64,8 @@ c_clock_policy::start()
 c_clock_policy::duration_type
 c_clock_policy::elapsed() const
 {
+    BREATH_ASSERT( m_start_tick != invalid_tick ) ;
+
     std::clock_t const  now( retrieve() ) ;
 
     if ( now < m_start_tick ) {
