@@ -15,13 +15,13 @@
         appear correctly on <github.com>.
      -------------------------------------------------------------------------
 -->
-[![Build Status](
+[![Build status](
 https://travis-ci.com/gennaroprota/breath.svg?branch=master)](
 https://travis-ci.com/gennaroprota/breath)
-[![Lines of Code](
+[![Lines of code counter](
 https://tokei.rs/b1/github/gennaroprota/breath?category=code)](
 https://github.com/gennaroprota/breath)
-[![Comment Lines](
+[![Lines of comment counter](
 https://tokei.rs/b1/github/gennaroprota/breath?category=comments)](
 https://github.com/gennaroprota/breath)
 
