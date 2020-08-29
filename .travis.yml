@@ -96,7 +96,7 @@ matrix:
           env:
             - compiler=clang system=unix
 
-          name: "Clang on FreeBSD"
+          name: "Clang 8.0.1 on FreeBSD 12.1"
 
 # Local Variables:
 # mode: yaml
