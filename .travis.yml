@@ -12,7 +12,7 @@ script: BREATH_ROOT=` pwd ` && export BREATH_ROOT && make
 matrix:
     #       TODO:
     #
-    #        - check the minimum supported versions of Clang
+    #        - check the minimum supported version of Clang
     #
     #        - build with Visual C++ as well
     # ------------------------------------------------------------------------
