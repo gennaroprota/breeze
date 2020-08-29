@@ -19,7 +19,7 @@
 
 namespace breath_ns {
 
-unsigned long long
+long long
 amount_of_physical_memory()
 {
     //      This implementation uses GetPhysicallyInstalledSystemMemory(),
@@ -46,7 +46,7 @@ amount_of_physical_memory()
         }
         amount = status.ullTotalPhys / 1024 ;
     }
-    return amount ;
+    return static_cast< long long >( amount ) ;
 }
 
 }
