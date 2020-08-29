@@ -28,9 +28,9 @@ namespace breath_ns {
 
 class entropy_source::impl
 {
+public:
     BREATH_DECLARE_NON_COPYABLE( impl )
 
-public:
                         impl() ;
                         ~impl() noexcept ;
     bool                release() noexcept ;
