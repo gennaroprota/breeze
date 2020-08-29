@@ -17,14 +17,14 @@
 
 namespace breath_ns {
 
-unsigned long long
+long long
 amount_of_physical_memory()
 {
     long const          pages = sysconf( _SC_PHYS_PAGES ) ;
     long const          page_size = sysconf( _SC_PAGE_SIZE ) ;
 
-    return static_cast< unsigned long long >( pages ) *
-           static_cast< unsigned long long >( page_size ) / 1024 ;
+    return static_cast< long long >( pages ) *
+           static_cast< long long >( page_size ) / 1024 ;
 }
 
 }
