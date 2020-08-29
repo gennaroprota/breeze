@@ -98,6 +98,9 @@ matrix:
 
           name: "Clang 8.0.1 on FreeBSD 12.1"
 
+    allow_failures:
+        os: freebsd
+
 # Local Variables:
 # mode: yaml
 # indent-tabs-mode: nil
