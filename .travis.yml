@@ -91,6 +91,13 @@ matrix:
 
           name: "Clang 7 with libc++ on Ubuntu 16.04 (Xenial)"
 
+        - os: freebsd
+
+          env:
+            - compiler=clang system=unix
+
+          name: "Clang on FreeBSD"
+
 # Local Variables:
 # mode: yaml
 # indent-tabs-mode: nil
