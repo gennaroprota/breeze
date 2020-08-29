@@ -14,6 +14,7 @@
 #define BREATH_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
 
 #include "breath/top_level_namespace.hpp"
+#include "breath/idiom/declare_non_copyable.hpp"
 #include <ctime>
 
 namespace breath_ns {
@@ -35,6 +36,7 @@ namespace breath_ns {
 class c_clock_policy
 {
 public:
+    BREATH_DECLARE_NON_COPYABLE( c_clock_policy )
 
     //!     The type used to represent a duration.
     // -----------------------------------------------------------------------

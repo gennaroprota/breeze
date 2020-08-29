@@ -15,6 +15,7 @@
 #define BREATH_GUARD_xQJo3uSTt7ypxnH7y1CyRR3fJM5i3dsb
 
 #include "breath/top_level_namespace.hpp"
+#include "breath/idiom/declare_non_copyable.hpp"
 
 namespace breath_ns {
 
@@ -26,6 +27,8 @@ namespace breath_ns {
 class performance_counter_policy
 {
 public:
+    BREATH_DECLARE_NON_COPYABLE( performance_counter_policy )
+
     typedef long double duration_type ;
                         performance_counter_policy() ;
 
