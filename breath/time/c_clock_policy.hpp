@@ -15,6 +15,7 @@
 
 #include "breath/top_level_namespace.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
+#include <chrono>
 #include <ctime>
 
 namespace breath_ns {
@@ -40,7 +41,8 @@ public:
 
     //!     The type used to represent a duration.
     // -----------------------------------------------------------------------
-    typedef long double duration_type ;
+    typedef std::chrono::duration< double, std::milli >
+                        duration_type ;
 
     //!     Leaves this object in an undefined state. The only action
     //!     that can be performed on a just constructed object is to

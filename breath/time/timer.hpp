@@ -44,7 +44,7 @@ namespace breath_ns {
 //!
 //!      - \c duration_type,
 //!            which is the return type of \c %elapsed() and
-//!            \c %resolution()
+//!            \c %resolution(); it must be a \c std::chrono::duration
 // ---------------------------------------------------------------------------
 template< class Device >
 class timer
