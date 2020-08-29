@@ -16,6 +16,7 @@
 
 #include "breath/top_level_namespace.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
+#include <chrono>
 
 namespace breath_ns {
 
@@ -29,7 +30,8 @@ class performance_counter_policy
 public:
     BREATH_DECLARE_NON_COPYABLE( performance_counter_policy )
 
-    typedef long double duration_type ;
+    typedef std::chrono::duration< double, std::micro >
+                        duration_type ;
                         performance_counter_policy() ;
 
     void                start() ;
@@ -37,8 +39,8 @@ public:
     duration_type       resolution() const ;
 
 private:
-    duration_type       m_start ;
-    duration_type       m_frequency ;
+    long long           m_start ;
+    long long           m_frequency ;
 } ;
 
 }

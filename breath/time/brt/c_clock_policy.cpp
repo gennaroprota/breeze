@@ -21,10 +21,13 @@ namespace           {
 auto const          invalid_tick = static_cast< std::clock_t >( -1 ) ;
 
 breath::c_clock_policy::duration_type
-to_milliseconds( std::clock_t elapsed )
+to_duration_type( std::clock_t elapsed )
 {
-    return static_cast< breath::c_clock_policy::duration_type >( elapsed ) /
-        CLOCKS_PER_SEC * 1000 ;
+    return breath::c_clock_policy::duration_type(
+            static_cast< long double >( elapsed ) / CLOCKS_PER_SEC *
+                breath::c_clock_policy::duration_type::period::den /
+                breath::c_clock_policy::duration_type::period::num
+        ) ;
 }
 
 std::clock_t
@@ -72,7 +75,7 @@ c_clock_policy::elapsed() const
         throw_because_of_wrap_around() ;
     }
 
-    return to_milliseconds( now - m_start_tick ) ;
+    return to_duration_type( now - m_start_tick ) ;
 }
 
 c_clock_policy::duration_type
@@ -89,7 +92,7 @@ c_clock_policy::resolution() const
         throw_because_of_wrap_around() ;
     }
 
-    return to_milliseconds( end - start ) ;
+    return to_duration_type( end - start ) ;
 }
 
 }
