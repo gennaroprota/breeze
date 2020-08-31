@@ -86,6 +86,11 @@ matrix:
         - os: linux
           dist: xenial
 
+          addons:
+            apt:
+                packages:
+                    - libc++-dev
+
           env:
             - compiler=clang system=unix cpp_extra_options=-stdlib=libc++
 
