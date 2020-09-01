@@ -92,7 +92,7 @@ public:
     //      general hasher templates could in theory use a different
     //      type.
     // -----------------------------------------------------------------------
-    static void encode_length( word_type( &len )[ max_words ],
+    static void encode_length( word_type const ( &len )[ max_words ],
                                byte_type * dest )
     {
         typedef word_type   len_type[ max_words ] ; // gps typeof( len )

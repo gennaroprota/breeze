@@ -106,7 +106,7 @@ check_input_or_output_only_streams()
     {
         stream_equivalent< std::istream >
                             equiv( is ) ;
-        auto &              dest = equiv.get() ;
+        auto const &        dest = equiv.get() ;
         static_cast< void >( dest ) ;
     }
 
@@ -114,7 +114,7 @@ check_input_or_output_only_streams()
     {
         stream_equivalent< std::ostream >
                             equiv( os ) ;
-        auto &              dest = equiv.get() ;
+        auto const &        dest = equiv.get() ;
         static_cast< void >( dest ) ;
     }
 }

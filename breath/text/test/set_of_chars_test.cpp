@@ -147,7 +147,7 @@ do_test()
     //      Iterators.
     // -----------------------------------------------------------------------
     {
-        set_of_chars::iterator
+        set_of_chars::iterator const
                             default_constructed_iterator ;
         set_of_chars        sc ;
         BREATH_CHECK( sc.begin() == sc.end() ) ;

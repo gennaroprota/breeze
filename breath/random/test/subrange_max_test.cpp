@@ -33,7 +33,7 @@ do_test()
         { 0,   255,   255 }
 
     };
-    for ( auto elem : values ) {
+    for ( auto const elem : values ) {
         BREATH_CHECK( breath::subrange_max( elem.m, elem.x ) == elem.result ) ;
     }
 }
