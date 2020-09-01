@@ -9,7 +9,7 @@
 root := ../..
 
 source_files := main.cpp                        \
-                macro_name.cpp                  \
+                macro_name.cpp
 
 include $(root)/makefile/main.mk
 
