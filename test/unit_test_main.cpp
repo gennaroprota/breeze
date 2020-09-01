@@ -81,7 +81,7 @@ main()
     int                 result = EXIT_SUCCESS ;
     for ( auto const & f : tests )
     {
-        int                 exit_code = f() ;
+        int const           exit_code = f() ;
         if ( exit_code != EXIT_SUCCESS ) {
             result = EXIT_FAILURE ;
         }

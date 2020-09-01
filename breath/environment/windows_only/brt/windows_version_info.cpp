@@ -90,7 +90,7 @@ windows_version_info::windows_version_info()
 
     std::vector< unsigned char >
                         all_info( all_info_size ) ;
-    DWORD               ignored = 0 ;
+    DWORD const         ignored = 0 ;
     if ( GetFileVersionInfoA( dll_name, ignored, all_info_size,
                                                &all_info[ 0 ] ) == 0 ) {
         raise_api_exception( "cannot retrieve Windows version info" ) ;
@@ -414,7 +414,7 @@ windows_version_info::service_pack_level()
                         manager( key ) ;
     DWORD               value ;
     DWORD               dw_size = sizeof value ;
-    int                 ret2 = RegGetValueA( key, "", "CSDVersion",
+    int const           ret2 = RegGetValueA( key, "", "CSDVersion",
                                  RRF_RT_ANY, nullptr,
                                  &value, &dw_size ) ;
     if ( ret2 != ERROR_SUCCESS ) {

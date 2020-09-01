@@ -26,7 +26,7 @@ void
 do_tests()
 {
     {
-        breath::uuid        nil ;
+        breath::uuid const  nil ;
         BREATH_CHECK( breath::to_string( nil ) ==
                       "00000000-0000-0000-0000-000000000000" ) ;
     }
