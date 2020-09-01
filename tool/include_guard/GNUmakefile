@@ -13,6 +13,8 @@ source_files := main.cpp                        \
 
 include $(root)/makefile/main.mk
 
+object_files := $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix),    \
+                    $(source_files))
 target := $(bin_dir)/include_guard$(exe_name_suffix)
 
 libraries := advapi32.lib
@@ -24,16 +26,13 @@ all: $(target)
 
 breath_library := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
 
-$(target): $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), \
-               $(source_files))                                 \
-           $(breath_library)
+$(target): $(object_files) $(breath_library)
 	$(link_to_exec)
 
 .PHONY: clean
 clean:
 	rm -fr $(dependency_dir)
-	rm -f $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix),  \
-                                                               $(source_files))
+	rm -f $(object_files)
 	rm -f $(target)
 
 # Local Variables:
