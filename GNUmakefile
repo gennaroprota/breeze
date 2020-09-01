@@ -6,7 +6,7 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 #
-#       Breath Library - Root makefile (GNU Make)
+#       Breath Library - Root makefile (for GNU Make)
 # ----------------------------------------------------------------------------
 
 subdirs := breath   \
