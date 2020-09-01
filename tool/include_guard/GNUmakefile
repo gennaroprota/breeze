@@ -6,7 +6,7 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 
-root := ../..
+root         := ../..
 
 source_files := main.cpp                        \
                 macro_name.cpp
@@ -15,9 +15,9 @@ include $(root)/makefile/main.mk
 
 object_files := $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix),    \
                     $(source_files))
-target := $(bin_dir)/include_guard$(exe_name_suffix)
+target       := $(bin_dir)/include_guard$(exe_name_suffix)
 
-libraries := advapi32.lib
+libraries    := advapi32.lib
              ##gps temp! (Windows only :-() --coupled with msvc.mk!!!
 
 .PHONY: all
@@ -32,8 +32,8 @@ $(target): $(object_files) $(breath_library)
 .PHONY: clean
 clean:
 	rm -fr $(dependency_dir)
-	rm -f $(object_files)
-	rm -f $(target)
+	rm -f  $(object_files)
+	rm -f  $(target)
 
 # Local Variables:
 # mode: makefile
