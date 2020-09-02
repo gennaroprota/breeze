@@ -78,12 +78,19 @@ namespace breath_ns {
 //
 //      should work as expected, since we pass regular pointers as
 //      iterators and std::iterator_traits< T * >::value_type is
-//      required to be T, which in our case is volatile qualified. It
-//      all depends, however, on how the expression "assigns 'value'
-//      through all the iterators in the range [first, last)", in
-//      [alg.fill], is to be interpreted. Does it allow anything
-//      different from the obvious *first = value, *first ++ = value and
-//      similar?
+//      required to be T, which in our case is volatile qualified (until
+//      C++ 20---see below). It all depends, however, on how the
+//      expression "assigns 'value' through all the iterators in the
+//      range [first, last)", in [alg.fill], is to be interpreted. Does
+//      it allow anything different from the obvious *first = value,
+//      *first ++ = value and similar?
+//
+//      Update:
+//      -------
+//
+//          since C++20, std::iterator_traits< T * >::value_type is
+//          required to be std::remove_cv_t< T >! This definitely rules
+//          out the possibility to use std::fill() or std::fill_n().
 // ---------------------------------------------------------------------------
 
 
