@@ -27,7 +27,10 @@
 #define BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
 
 #include "breath/top_level_namespace.hpp"
+#include "breath/diagnostics/assert.hpp"
+#include "breath/preprocessing/prevent_macro_expansion.hpp"
 #include <cstddef>
+#include <limits>
 
 namespace breath_ns {
 
@@ -56,7 +59,14 @@ template< typename T >
 constexpr std::ptrdiff_t
 signed_count( T const & t ) noexcept( noexcept( t.size() ) )
 {
-    return static_cast< std::ptrdiff_t >( t.size() ) ;
+    typedef std::ptrdiff_t
+                        return_type ;
+
+    BREATH_ASSERT(
+        t.size() <= std::numeric_limits< return_type >::max
+                                        BREATH_PREVENT_MACRO_EXPANSION ()
+        ) ;
+    return static_cast< return_type >( t.size() ) ;
 }
 
 }
