@@ -77,13 +77,12 @@ namespace breath_ns {
 //        std::fill( arr, arr + n, value ) ;
 //
 //      should work as expected, since we pass regular pointers as
-//      iterators and std::iterator_traits< T * >::value is required
-//      to be T, which in our case is volatile qualified. It all
-//      depends, however, on how the expression "assigns 'value'
-//      through all the iterators in the range [first, last)", in
-//      [alg.fill], is to be interpreted. Does it allow anything
-//      different from the obvious *first = value, *first ++ = value
-//      and similar?
+//      iterators and std::iterator_traits< T * >::value is required to
+//      be T, which in our case is volatile qualified. It all depends,
+//      however, on how the expression "assigns 'value' through all the
+//      iterators in the range [first, last)", in [alg.fill], is to be
+//      interpreted. Does it allow anything different from the obvious
+//      *first = value, *first ++ = value and similar?
 // ---------------------------------------------------------------------------
 
 
@@ -97,9 +96,9 @@ namespace breath_ns {
 // ---------------------------------------------------------------------------
 //
 //      [FUTURE], [C++11] [gps]:
-//      As a result of core issue 226, C++11 is likely to allow
-//      default template arguments for function templates; so one day
-//      we can change this to
+//      As a result of core issue 226, C++11 is likely to allow default
+//      template arguments for function templates; so one day we can
+//      change this to
 //
 //        template< typename ForwardIterator, typename T
 //             = std::iterator_traits< ForwardIterator >::value_type
