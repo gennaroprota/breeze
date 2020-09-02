@@ -16,7 +16,7 @@
 #include "breath/top_level_namespace.hpp"
 
 namespace breath_ns {
-//! \cond implementation
+//!\cond implementation
 namespace assert_private {
 
 template< typename T >
@@ -33,7 +33,7 @@ block_non_bools( bool b )
                           long line_number ) noexcept ;
 
 }
-//! \endcond
+//!\endcond
 }
 
 //      BREATH_ASSERT():

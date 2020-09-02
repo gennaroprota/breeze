@@ -23,7 +23,7 @@
 #include <iterator>
 
 namespace breath_ns {
-//! \cond implementation
+//!\cond implementation
 namespace endian_codec_private {
 
 template< typename T, typename Byte >
@@ -123,7 +123,7 @@ public:
 } ;
 
 }
-//! \endcond
+//!\endcond
 
 //      little_endian_policy:
 //      =====================

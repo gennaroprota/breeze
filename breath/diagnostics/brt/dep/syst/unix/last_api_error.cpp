@@ -25,7 +25,7 @@ last_api_error::last_api_error( char const * p )
                             "can't obtain the error description"
                             ": see the error code, instead" ;
 
-    //! \todo
+    //!\todo
     //! Most of this code is duplicated with the Windows variant.
     //! How to put it in common? --gps
     //

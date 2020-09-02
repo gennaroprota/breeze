@@ -14,7 +14,7 @@
 
 namespace breath_ns {
 
-//! \cond implementation
+//!\cond implementation
 namespace time_private {
 
 //      TODO: decide where to put these declarations.
@@ -25,7 +25,7 @@ tm const *          thread_safe_reentrant_localtime( time_t const * time,
                                                      tm * result ) ;
 
 }
-//! \endcond
+//!\endcond
 
 }
 

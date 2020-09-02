@@ -21,7 +21,7 @@
 #include <limits>
 
 namespace breath_ns {
-//! \cond implementation
+//!\cond implementation
 namespace exact_width_integer_private {
 
 //      This might be elegantly implemented via type lists or maps, but
@@ -58,7 +58,7 @@ public:
 } ;
 
 }
-//! \endcond
+//!\endcond
 
 //!     Provides an integer type with width \c width. Differently from
 //!     \c intN_t in C99, it can have padding and can use a
