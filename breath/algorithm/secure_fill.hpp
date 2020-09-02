@@ -10,11 +10,11 @@
 //!     \brief A security-aware fill algorithm.
 //!
 //!     This is completely analogous to the \c std::fill() algorithm,
-//!     except that it guarantees that the container is written to, even
-//!     if it is never touched after the \c secure_fill() call (in other
-//!     words: it ensures that the compiler will not optimize away the
-//!     call); unless, of course, the provided range is empty. Useful
-//!     for zeroing passwords and other sensitive data (see
+//!     except that it guarantees that the range is written to, even if
+//!     its elements are never touched after the \c secure_fill() call
+//!     (in other words: it ensures that the compiler will not optimize
+//!     away the call); unless, of course, the provided range is empty.
+//!     Useful for zeroing passwords and other sensitive data (see
 //!
 //!       <https://devblogs.microsoft.com/oldnewthing/20130529-00/?p=4223>
 //!
@@ -23,7 +23,7 @@
 //!     Note that a convenience overload for built-in arrays is
 //!     provided.
 //!
-//!     For technical reasons, secure_fill() requires a container, or an
+//!     For technical reasons, secure_fill() requires a range, or an
 //!     array, whose elements are of a \e built-in type.
 //!
 //!     \warning
