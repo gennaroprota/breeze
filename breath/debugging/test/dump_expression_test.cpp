@@ -26,18 +26,19 @@ namespace {
 //      'buf'. Restores 'os' in the destructor. Used to "capture" the
 //      output to std::cout into a stringstream.
 // ---------------------------------------------------------------------------
-class stream_guard
+class stream_capturer
 {
 public:
-                        stream_guard( stream_guard const & ) = delete ;
-    stream_guard &      operator =(   stream_guard const & ) = delete ;
+                        stream_capturer( stream_capturer const & ) = delete ;
+    stream_capturer &   operator =(      stream_capturer const & ) = delete ;
 
-    explicit            stream_guard( std::ostream & os, std::streambuf * buf )
+    explicit            stream_capturer( std::ostream & os,
+                                         std::streambuf * buf )
                             :   m_os( os ), m_oldbuf( os.rdbuf( buf ) )
                         {
                         }
 
-                        ~stream_guard() noexcept
+                        ~stream_capturer() noexcept
                         {
                             m_os.rdbuf( m_oldbuf ) ;
                         }
@@ -57,7 +58,8 @@ void
 do_test()
 {
     std::ostringstream  oss ;
-    stream_guard const  guard( std::cout, oss.rdbuf() ) ;
+    stream_capturer const
+                        capturer( std::cout, oss.rdbuf() ) ;
 
     //      Check that 1 << 3 is output as "1 << 3", first, and not
     //      directly as "8"
