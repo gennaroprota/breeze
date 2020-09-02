@@ -28,7 +28,9 @@ namespace {
 typedef std::uint_fast32_t
                     fast32_type ;
 
-//      Implementation:
+//      Implementation notes:
+//      ---------------------
+//
 //          see crc32.tpp for a (pseudo-)reference on the calculations.
 // ---------------------------------------------------------------------------
 class               byte_checksum

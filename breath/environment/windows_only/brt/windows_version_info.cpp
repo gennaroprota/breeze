@@ -61,8 +61,8 @@ raise_api_exception( char const * msg )
 
 }
 
-//      Implementation
-//      --------------
+//      Implementation notes:
+//      ---------------------
 //
 //      After GetVersionEx() changed semantics, this went through at
 //      least two iterations. For a while, it used the NetWkstaGetInfo()
