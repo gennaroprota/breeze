@@ -24,9 +24,9 @@ namespace breath_ns {
 //!     To be used to check that \c T is a complete type at the point
 //!     of instantiation. If \c T is incomplete then the expression
 //!
-//!     \code
+//!     <code>
 //!         check_type_completeness< T >()
-//!     \endcode
+//!     </code>
 //!
 //!     renders the program \e ill-formed.
 // ---------------------------------------------------------------------------
