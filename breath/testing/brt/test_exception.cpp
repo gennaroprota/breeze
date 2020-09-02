@@ -45,7 +45,7 @@ test_exception::line_number() const noexcept
 }
 
 std::ostream &
-operator <<(std::ostream & os, test_exception const & ex )
+operator <<( std::ostream & os, test_exception const & ex )
 {
     return os << ex.what() << ": " <<
                ex.file_name() << ", " << ex.line_number() ;
