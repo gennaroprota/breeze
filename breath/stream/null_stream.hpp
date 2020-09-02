@@ -16,7 +16,6 @@
 #define BREATH_GUARD_CnvhAthmCrzPoNDMrZPUfBrAGrgy3Xe0
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/stream/stream_buffer_wrapper.hpp"
 #include <istream>
 #include <ostream>
@@ -77,7 +76,12 @@ private:
                         buffer_wrapper_type ;
 
 public:
-    BREATH_DECLARE_NON_COPYABLE( null_stream )
+    //!\{
+    //!     Copy members are deleted.
+    // -----------------------------------------------------------------------
+                        null_stream( null_stream const & ) = delete ;
+    null_stream &       operator =(  null_stream const & ) = delete ;
+    //!\}
 
                         null_stream() ;
     virtual             ~null_stream() noexcept override = default ;

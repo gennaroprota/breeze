@@ -14,7 +14,6 @@
 #include "breath/environment/windows_only/windows_version_info.hpp"
 #include "breath/conversion/bit_cast.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/text/to_string.hpp"
 #include "breath/workaround/as_non_constant.hpp"
 
@@ -34,7 +33,9 @@ namespace           {
 class key_handle_manager
 {
 public:
-    BREATH_DECLARE_NON_COPYABLE( key_handle_manager )
+                        key_handle_manager( key_handle_manager const & )
+                                                                 = delete ;
+    key_handle_manager &operator =( key_handle_manager const & ) = delete ;
 
     explicit key_handle_manager( HKEY key ) noexcept
         :   m_key( key )

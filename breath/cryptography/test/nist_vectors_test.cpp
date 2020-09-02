@@ -23,7 +23,6 @@
 #include "breath/cryptography/digest.hpp"
 #include "breath/cryptography/sha1_hasher.hpp"
 #include "breath/environment/get_environment_variable.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/testing/testing.hpp"
 #include "breath/text/from_string.hpp"
 #include "breath/text/to_string.hpp"
@@ -50,7 +49,8 @@ class nist_file
     friend nist_file &  operator >>( nist_file &, T & t ) ;
 
 public:
-    BREATH_DECLARE_NON_COPYABLE( nist_file )
+                        nist_file(  nist_file const & ) = delete ;
+    nist_file &         operator =( nist_file const & ) = delete ;
 
     explicit            nist_file( char const * file_name ) ;
     bool                good() const ;

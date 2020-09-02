@@ -348,7 +348,6 @@
     <ClInclude Include="..\..\breath\environment\windows_only\get_os.hpp" />
     <ClInclude Include="..\..\breath\environment\windows_only\os_id.hpp" />
     <ClInclude Include="..\..\breath\environment\windows_only\windows_version_info.hpp" />
-    <ClInclude Include="..\..\breath\idiom\declare_non_copyable.hpp" />
     <ClInclude Include="..\..\breath\idiom\volatilize.hpp" />
     <ClInclude Include="..\..\breath\iteration\begin_end.hpp" />
     <ClInclude Include="..\..\breath\mathematics\brt\private\check_common_gcd_lcm_preconditions.hpp" />

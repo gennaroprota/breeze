@@ -15,7 +15,6 @@
 #define BREATH_GUARD_xQJo3uSTt7ypxnH7y1CyRR3fJM5i3dsb
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 #include <chrono>
 
 namespace breath_ns {
@@ -28,7 +27,13 @@ namespace breath_ns {
 class performance_counter_policy
 {
 public:
-    BREATH_DECLARE_NON_COPYABLE( performance_counter_policy )
+    //!\{
+    //!     Copy members are deleted.
+    // -----------------------------------------------------------------------
+    performance_counter_policy( performance_counter_policy const & ) = delete ;
+    performance_counter_policy &
+                    operator =( performance_counter_policy const & ) = delete ;
+    //!\}
 
     typedef std::chrono::duration< double, std::micro >
                         duration_type ;

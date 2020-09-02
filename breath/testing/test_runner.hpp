@@ -14,7 +14,6 @@
 #define BREATH_GUARD_ljsq7ok4MwSNNxMyfe6xf8RevjbF8jrE
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/process/exit_code.hpp"
 #include "breath/testing/test_descriptor.hpp"
 #include "breath/testing/test_exception.hpp"
@@ -26,7 +25,12 @@ namespace breath_ns {
 class test_runner
 {
 public:
-    BREATH_DECLARE_NON_COPYABLE( test_runner )
+    //!\{
+    //!     Copy members are deleted (this class is a singleton).
+    // -----------------------------------------------------------------------
+                    test_runner( test_runner const & ) = delete ;
+    test_runner &   operator =(  test_runner const & ) = delete ;
+    //!\}
 
 private:
                     test_runner() ;

@@ -14,7 +14,6 @@
 #define BREATH_GUARD_th2bAe1w4u2MisZE4yyhiRJdCIC2yncU
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 #include <istream>
 
 namespace breath_ns {
@@ -90,7 +89,13 @@ public:
         typename Stream::traits_type >
                         stream_type ;
 
-    BREATH_DECLARE_NON_COPYABLE( stream_equivalent )
+    //!\{
+    //!     Copy members are deleted.
+    // -----------------------------------------------------------------------
+                        stream_equivalent( stream_equivalent const & )
+                                                                = delete ;
+    stream_equivalent & operator =( stream_equivalent const & ) = delete ;
+    //!\}
 
     explicit            stream_equivalent( Stream & original ) ;
                         ~stream_equivalent() noexcept ;

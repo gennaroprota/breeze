@@ -14,7 +14,6 @@
 #include "breath/random/entropy_source.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
 
 #include <Windows.h>
@@ -29,7 +28,8 @@ namespace breath_ns {
 class entropy_source::impl
 {
 public:
-    BREATH_DECLARE_NON_COPYABLE( impl )
+                        impl(       impl const & ) = delete ;
+    impl &              operator =( impl const & ) = delete ;
 
 private:
     HCRYPTPROV          m_provider_handle ;

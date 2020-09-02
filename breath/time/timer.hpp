@@ -14,7 +14,6 @@
 #define BREATH_GUARD_Jr0D8xlNtWxnToeomoet20V4lz0qIYDd
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 
 namespace breath_ns {
 
@@ -50,13 +49,17 @@ template< class Device >
 class timer
 {
 public:
-
+    //!\{
+    //!     Copy members are deleted.
+    //!
     //!     Specifying copy semantics for a timer is a bit difficult
     //!     and, although it can probably be done, is not worth it, as
     //!     who would copy a timer or a timer policy, anyway? (A timer
     //!     will, in practice, always be used like a Python context.)
     // -----------------------------------------------------------------------
-    BREATH_DECLARE_NON_COPYABLE( timer )
+                        timer(      timer const & ) = delete ;
+    timer &             operator =( timer const & ) = delete ;
+    //!\}
 
     typedef typename Device::duration_type
                         duration_type ;

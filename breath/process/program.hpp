@@ -16,7 +16,6 @@
 #define BREATH_GUARD_1kA1ToNG1qsz9KwlXD9MfVvhaHxMym5b
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/process/exit_code.hpp"
 #include "breath/vocabulary/maybe.hpp"
 #include <string>
@@ -31,7 +30,12 @@ namespace breath_ns {
 class program
 {
 public:
-    BREATH_DECLARE_NON_COPYABLE( program )
+    //!\{
+    //!     Copy members are deleted (this class is a singleton).
+    // -----------------------------------------------------------------------
+                        program(    program const & ) = delete ;
+    program &           operator =( program const & ) = delete ;
+    //!\}
 
 private:
                         program() noexcept ;

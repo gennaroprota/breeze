@@ -14,7 +14,6 @@
 #define BREATH_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 #include <chrono>
 #include <ctime>
 
@@ -37,7 +36,12 @@ namespace breath_ns {
 class c_clock_policy
 {
 public:
-    BREATH_DECLARE_NON_COPYABLE( c_clock_policy )
+    //!\{
+    //!     Copy members are deleted.
+    // -----------------------------------------------------------------------
+                        c_clock_policy( c_clock_policy const & ) = delete ;
+    c_clock_policy &    operator =(     c_clock_policy const & ) = delete ;
+    //!\}
 
     //!     The type used to represent a duration.
     // -----------------------------------------------------------------------
