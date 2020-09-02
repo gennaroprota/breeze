@@ -42,7 +42,7 @@ int const           exit_codes[] = {
 //      Because it is implementation-defined whether exit() has C
 //      linkage or C++ linkage.
 // ---------------------------------------------------------------------------
-[[noreturn]] void
+[[ noreturn ]] void
 cpp_exit( int exit_code )
 {
     std::exit( exit_code ) ;
@@ -147,7 +147,7 @@ program::declare_error( program::gravity g ) noexcept // gps nome OK?
     }
 }
 
-[[noreturn]] void
+[[ noreturn ]] void
 program::terminate()
 {
     ( m_terminate_handler != nullptr

@@ -142,7 +142,7 @@ public:
     //!     set_terminate_handler(), if set_terminate_handler() has
     //!     been called; otherwise, it calls \c std::exit().
     // -----------------------------------------------------------------------
-    [[noreturn]] void   terminate() ;
+    [[ noreturn ]] void terminate() ;
 
     //!     Sets \c *user_function as the "terminate handler", i.e. as
     //!     the function which is called, with the exit code as an
