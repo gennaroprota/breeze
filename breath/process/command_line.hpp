@@ -48,7 +48,7 @@ private:
     friend class        program_option_with_value;
 
 public:
-    //!     The library arranges for calling this before main starts().
+    //!     The library arranges for calling this before main() starts.
     // -----------------------------------------------------------------------
     static command_line &
                         instance() ;
