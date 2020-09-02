@@ -45,6 +45,7 @@
 namespace breath_ns {
 
 //      Implementation notes:
+//      ---------------------
 //
 //      We use volatile lvalues to write to objects that are not
 //      necessarily declared as volatile. At the time I wrote these

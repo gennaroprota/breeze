@@ -30,8 +30,9 @@ char const          iso8601_basic_time[]    = "%H%M%S" ;
 char const          iso8601_extended_time[] = "%H:%M:%S" ;
 
 
-//      IMPLEMENTATION NOTE:
-//      --------------------
+//      Implementation notes:
+//      ---------------------
+//
 //      Intentionally I used a fixed size buffer here: the size is
 //      plentiful for any date formatting need I could imagine, and
 //      anything which involved dynamic allocation looked definitely
