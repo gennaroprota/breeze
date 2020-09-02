@@ -148,10 +148,10 @@ class entropy_source::exception
     :   public std::runtime_error
 {
 public:
-    //! \cond implementation
+    //!\cond implementation
     [[ noreturn ]] static void
                         raise( std::string const & message ) ;
-    //! \endcond
+    //!\endcond
 
     //!     Constructs an entropy_source::exception with the given
     //!     string as \c what() message.
