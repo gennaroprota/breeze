@@ -30,7 +30,7 @@ public:
     //      non-copyable.
     // -----------------------------------------------------------------------
                         test_reporter( test_reporter const & ) = delete ;
-    void                operator =( test_reporter const & ) = delete ;
+    test_reporter &     operator =( test_reporter const & ) = delete ;
 
     void                on_all_tests_begin( char const * group_description ) ;
     void                on_all_tests_end() ;
