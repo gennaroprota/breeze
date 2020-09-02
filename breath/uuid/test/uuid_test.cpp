@@ -56,7 +56,7 @@ do_tests()
         breath::uuid const  uu( breath::uuid::rfc_4122,
                                 breath::uuid::time_based ) ;
 
-        BREATH_CHECK( nil != uu ) ;
+        BREATH_CHECK( uu != nil ) ;
     }
 
     //      Test usability with std::map.
