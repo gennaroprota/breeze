@@ -17,10 +17,10 @@
 //!
 //!     Following C++ best practices, these templates return a \e signed
 //!     integer. They are made obsolete in C++20 by the namespace-scope
-//!     \c std::ssize()'s. However our version uses, for containers, a
-//!     simpler logic to determine the return type (it doesn't use \c
-//!     std::common_type); and, for containers again, has a conditional
-//!     noexcept that the standard version is not required to have.
+//!     \c std::ssize()'s. However our version avoids any fancy
+//!     derivation of the return type, even for containers; and, for
+//!     containers again, has a conditional noexcept that the standard
+//!     version is not required to have.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
@@ -28,7 +28,6 @@
 
 #include "breath/top_level_namespace.hpp"
 #include <cstddef>
-#include <type_traits>
 
 namespace breath_ns {
 
@@ -50,15 +49,14 @@ signed_count( T const ( & )[ n ] ) noexcept
 //      ===============
 //
 //!     \return
-//!         The value of \c t.size() converted to the corresponding
-//!         signed type. See also the file-level documentation.
+//!         The value of \c t.size() converted to \c std::ptrdiff_t. See
+//!         also the file-level documentation.
 // ---------------------------------------------------------------------------
 template< typename T >
-constexpr auto
-signed_count( T const & t ) noexcept( noexcept( t.size() ) ) ->
-                                    std::make_signed_t< decltype( t.size() ) >
+constexpr std::ptrdiff_t
+signed_count( T const & t ) noexcept( noexcept( t.size() ) )
 {
-    return t.size() ;
+    return static_cast< std::ptrdiff_t >( t.size() ) ;
 }
 
 }
