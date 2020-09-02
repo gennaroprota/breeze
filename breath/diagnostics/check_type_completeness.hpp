@@ -21,7 +21,6 @@ namespace breath_ns {
 //      check_type_completeness():
 //      ==========================
 //
-//
 //!     To be used to check that \c T is a complete type at the point
 //!     of instantiation. If \c T is incomplete then the expression
 //!
