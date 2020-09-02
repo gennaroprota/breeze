@@ -30,7 +30,7 @@ block_non_bools( bool b )
 
 [[ noreturn ]] void fire( char const * expression_text,
                           char const * file_name,
-                          unsigned long line_number ) noexcept ;
+                          long line_number ) noexcept ;
 
 }
 //! \endcond

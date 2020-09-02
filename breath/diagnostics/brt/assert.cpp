@@ -22,7 +22,7 @@ namespace assert_private {
 
 [[ noreturn ]] void
 fire( char const * expression_text,
-      char const * file_name, unsigned long line_number ) noexcept
+      char const * file_name, long line_number ) noexcept
 {
     std::cerr << "Assertion failed: "
               << expression_text
