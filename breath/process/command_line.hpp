@@ -11,7 +11,6 @@
 #define BREATH_GUARD_wv85pwyBmJzlhg6z02PPsgOP4CY3kdBn
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 
 #include <map>
 #include <stdexcept>
@@ -30,7 +29,12 @@ class               option_base ;
 class command_line
 {
 public:
-    BREATH_DECLARE_NON_COPYABLE( command_line )
+    //!\{
+    //!     Copy members are deleted (this class is a singleton).
+    // -----------------------------------------------------------------------
+                        command_line( command_line const & ) = delete ;
+    command_line &      operator =(   command_line const & ) = delete ;
+    //!\}
 
 private:
                         command_line() = default ;

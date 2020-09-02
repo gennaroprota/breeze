@@ -17,7 +17,6 @@
 #include "breath/random/entropy_source.hpp"
 #include "breath/counting/signed_count.hpp"
 #include "breath/diagnostics/assert.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/random/subrange_max.hpp"
 
 #include <cstddef>
@@ -29,7 +28,8 @@ namespace breath_ns {
 class entropy_source::impl
 {
 public:
-    BREATH_DECLARE_NON_COPYABLE( impl )
+                        impl(       impl const & ) = delete ;
+    impl &              operator =( impl const & ) = delete ;
 
                         impl() ;
                         ~impl() noexcept ;

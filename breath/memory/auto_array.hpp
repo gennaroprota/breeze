@@ -14,7 +14,6 @@
 #define BREATH_GUARD_FvaoTt7c3pTltKsed1Av5CAvE3SvnVIn
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 
 namespace breath_ns {
 
@@ -35,7 +34,12 @@ template< typename T >
 class auto_array
 {
 public:
-    BREATH_DECLARE_NON_COPYABLE( auto_array )
+    //!\{
+    //!     Copy members are deleted.
+    // -----------------------------------------------------------------------
+                        auto_array( auto_array const & ) = delete ;
+    auto_array &        operator =( auto_array const & ) = delete ;
+    //!\}
 
                         auto_array() noexcept ;
     explicit            auto_array( T * ) noexcept ;

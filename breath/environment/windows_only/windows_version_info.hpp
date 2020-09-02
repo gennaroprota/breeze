@@ -14,7 +14,6 @@
 #define BREATH_GUARD_XHTe6eJtKcY8TQSy4joG13QO3Eu5NfRF
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 #include <string>
 
 namespace breath_ns {
@@ -35,9 +34,14 @@ public:
     // -----------------------------------------------------------------------
                         ~windows_version_info() noexcept ;
 
-    //!     Deleted copy members.
+    //!\{
+    //!     Copy members are deleted.
     // -----------------------------------------------------------------------
-    BREATH_DECLARE_NON_COPYABLE( windows_version_info )
+                        windows_version_info( windows_version_info const & )
+                                                                   = delete ;
+    windows_version_info &
+                        operator =( windows_version_info const & ) = delete ;
+    //!\}
 
     //!     \return
     //!         The major version number of the operating system.

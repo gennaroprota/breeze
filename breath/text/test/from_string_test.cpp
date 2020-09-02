@@ -11,7 +11,6 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/testing/testing.hpp"
 #include "breath/text/from_string.hpp"
 #include <iostream>
@@ -65,7 +64,8 @@ class move_only final
     std::string         m_s ;
 
 public:
-    BREATH_DECLARE_NON_COPYABLE( move_only )
+                        move_only(  move_only const & ) = delete ;
+    move_only &         operator =( move_only const & ) = delete ;
 
                         move_only()                     = default ;
                         move_only( move_only && other ) = default ;

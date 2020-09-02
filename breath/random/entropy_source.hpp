@@ -14,7 +14,6 @@
 #define BREATH_GUARD_zRk6qVzrOdWWtkjYcUpuIkpnrRj8cg0q
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
 #include <stdexcept>
 #include <string>
@@ -53,7 +52,12 @@ namespace breath_ns {
 class entropy_source
 {
 public:
-    BREATH_DECLARE_NON_COPYABLE( entropy_source )
+    //!\{
+    //!     Copy members are deleted.
+    // -----------------------------------------------------------------------
+                        entropy_source( entropy_source const & ) = delete ;
+    entropy_source &    operator =(     entropy_source const & ) = delete ;
+    //!\}
 
     //!     The type of the random numbers returned (\c next()
     //!     function).
