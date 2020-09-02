@@ -10,6 +10,60 @@
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
+//
+//      Generates an include guard (for a new source file or for an
+//      existing one---but see below).
+//
+//      Synopsis:
+//      ---------
+//
+//          include_guard [-p macro_prefix]
+//
+//      Limitations:
+//      ------------
+//
+//      To use an existing file as input, or to generate a new source
+//      file, it is intended that you employ redirection or a pipe: the
+//      tool always reads from the standard input; and outputs what it
+//      reads (if anything) to the standard output, enclosed in the
+//      classical #ifndef/#endif.
+//
+//      It cannot be properly interrupted by a signal: in particular, if
+//      this happens while reading from standard input it will usually
+//      just skip further reading, as if EOF was encountered.
+//
+//      Options:
+//      --------
+//
+//        -p or --prefix
+//
+//          The prefix to use for the generated macro name. Default =
+//          BREATH_.
+//
+//          Prefixes which would make the macro name reserved are
+//          rejected.
+//
+//      Example:
+//      --------
+//
+//      Assuming the executable is called "include_guard" and is
+//      invoked with
+//
+//        include_guard --prefix MY_PREFIX_
+//
+//      a possible output is:
+//
+//                                       random part
+//                          |------------------------------|
+//        #ifndef MY_PREFIX_XcocANDF5GeFUffA3GTta5eUcluqZwhM
+//        #define MY_PREFIX_XcocANDF5GeFUffA3GTta5eUcluqZwhM
+//        <newline1><contents from standard input...><newline2>
+//        #endif
+//
+//      Note:
+//          newline2 is omitted if no characters are available from
+//          standard input.
+// ---------------------------------------------------------------------------
 
 #include "tool/include_guard/macro_name.hpp"
 #include "breath/process/command_line.hpp"
