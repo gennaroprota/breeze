@@ -238,7 +238,7 @@
     <ClCompile Include="..\..\breath\random\brt\entropy_source.cpp" />
     <ClCompile Include="..\..\breath\random\brt\subrange_max.cpp" />
     <ClCompile Include="..\..\breath\stream\brt\null_stream.cpp" />
-    <ClCompile Include="..\..\breath\testing\brt\console_reporter.cpp" />
+    <ClCompile Include="..\..\breath\testing\brt\stream_reporter.cpp" />
     <ClCompile Include="..\..\breath\testing\brt\test_descriptor.cpp" />
     <ClCompile Include="..\..\breath\testing\brt\test_exception.cpp" />
     <ClCompile Include="..\..\breath\testing\brt\test_reporter.cpp" />
@@ -398,7 +398,7 @@
     <ClInclude Include="..\..\breath\stream\stream_buffer_wrapper.hpp" />
     <ClInclude Include="..\..\breath\stream\stream_equivalent.hpp" />
     <ClInclude Include="..\..\breath\testing\check.hpp" />
-    <ClInclude Include="..\..\breath\testing\console_reporter.hpp" />
+    <ClInclude Include="..\..\breath\testing\stream_reporter.hpp" />
     <ClInclude Include="..\..\breath\testing\testing.hpp" />
     <ClInclude Include="..\..\breath\testing\test_descriptor.hpp" />
     <ClInclude Include="..\..\breath\testing\test_exception.hpp" />

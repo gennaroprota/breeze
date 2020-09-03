@@ -20,23 +20,46 @@
 
 namespace breath_ns {
 
-//      console_reporter:
-//      =================
+//      stream_reporter:
+//      ================
 //
-class console_reporter
+//!     A test_reporter that reports to a \c std::ostream.
+//!
+//!     \par Naming rationale
+//!
+//!     Not named \c output_stream_reporter because that made difficult
+//!     to use our declaration style: with that name, declaring an
+//!     object of type output_stream_reporter required to but the type
+//!     name on one line and the variable name on the next line, which
+//!     is ugly. Example:
+//!
+//!     <code>
+//!                  1         2
+//!         1234567890123456789012345
+//!         {
+//!             output_stream_reporter
+//!                                 r ;
+//!             ...
+//!         }
+//!     </code>
+//!
+//!     An alternative would have been \c ostream_reporter, but that's
+//!     inconsistent with the rest of the library.
+// ---------------------------------------------------------------------------
+class stream_reporter
     :   public test_reporter
 {
 public:
     //      Declare this explicitly to avoid Visual C++ C4625.
     // -----------------------------------------------------------------------
-                        console_reporter( console_reporter const & ) = delete ;
+                        stream_reporter( stream_reporter const & ) = delete ;
 
     //      Declare this explicitly to avoid Visual C++ C4626 (and
     //      C5027).
     // -----------------------------------------------------------------------
-    console_reporter &  operator =( console_reporter const & ) = delete ;
+    stream_reporter &   operator =( stream_reporter const & ) = delete ;
 
-    explicit            console_reporter( std::ostream & os ) ;
+    explicit            stream_reporter( std::ostream & os ) ;
 
 private:
     virtual void        do_on_all_tests_begin( char const * group_description ) override ;

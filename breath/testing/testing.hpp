@@ -14,7 +14,7 @@
 #define BREATH_GUARD_ntjESDWS7R0VczgCNAyZQonfItWUZ2As
 
 #include "breath/testing/check.hpp"
-#include "breath/testing/console_reporter.hpp"
+#include "breath/testing/stream_reporter.hpp"
 #include "breath/testing/test_descriptor.hpp"
 #include "breath/testing/test_runner.hpp"
 

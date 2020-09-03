@@ -77,7 +77,7 @@
     <ClCompile Include="..\..\breath\random\brt\subrange_max.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\testing\brt\console_reporter.cpp">
+    <ClCompile Include="..\..\breath\testing\brt\stream_reporter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breath\testing\brt\test_descriptor.cpp">
@@ -402,7 +402,7 @@
     <ClInclude Include="..\..\breath\testing\check.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\testing\console_reporter.hpp">
+    <ClInclude Include="..\..\breath\testing\stream_reporter.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\testing\testing.hpp">
