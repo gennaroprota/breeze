@@ -13,7 +13,6 @@
 
 #include "breath/metric/levenshtein_distance.hpp"
 #include "breath/testing/check.hpp"
-#include "breath/testing/console_reporter.hpp"
 #include "breath/testing/test_runner.hpp"
 #include <cstddef>
 #include <iostream>
@@ -64,9 +63,6 @@ int
 test_levenshtein_distance()
 {
     using namespace breath ;
-
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
 
     return test_runner::instance().run( "levenshtein_distance()",
                                         { check } ) ;

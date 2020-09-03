@@ -92,9 +92,6 @@ test_breath_dump_expression()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run(
              "BREATH_DUMP_EXPRESSION()",
              { do_test } ) ;

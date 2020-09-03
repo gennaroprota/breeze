@@ -12,11 +12,24 @@
 // ___________________________________________________________________________
 
 #include "breath/testing/test_runner.hpp"
+#include "breath/testing/console_reporter.hpp"
+#include <iostream>
 
 namespace breath_ns {
+namespace           {
+
+test_reporter &
+get_default_test_reporter()
+{
+    static console_reporter
+                        r( std::cout ) ;
+    return r ;
+}
+
+}
 
 test_runner::test_runner()
-    :   m_reporter( nullptr )
+    :   m_reporter( &get_default_test_reporter() )
 {
 }
 

@@ -44,9 +44,6 @@ test_is_2s_complement()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run(
              "is_2s_complement()",
              { do_test } ) ;

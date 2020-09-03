@@ -49,9 +49,6 @@ test_breath_prevent_macro_expansion()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run(
              "BREATH_PREVENT_MACRO_EXPANSION",
              { do_test } ) ;

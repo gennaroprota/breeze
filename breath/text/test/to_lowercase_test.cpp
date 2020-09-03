@@ -38,9 +38,6 @@ test_to_lowercase()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run( "to_lowercase()", { do_tests } ) ;
 }
 

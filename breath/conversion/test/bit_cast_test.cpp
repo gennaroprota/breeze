@@ -114,9 +114,6 @@ test_bit_cast()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run(
              "bit_cast()",
              { struct_casts_to_struct,

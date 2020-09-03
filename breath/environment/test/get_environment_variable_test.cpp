@@ -40,9 +40,6 @@ test_get_environment_variable()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run(
              "get_environment_variable()",
              { do_test } ) ;

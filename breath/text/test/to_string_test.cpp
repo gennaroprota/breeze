@@ -43,9 +43,6 @@ test_to_string()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run( "to_string()", { do_tests } ) ;
 }
 

@@ -216,9 +216,6 @@ test_merkle_damgard_hashing()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     test_descriptor const
                         desc[] =
     {

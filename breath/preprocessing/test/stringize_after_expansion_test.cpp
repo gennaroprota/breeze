@@ -48,9 +48,6 @@ test_breath_stringize_after_expansion()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run(
              "BREATH_STRINGIZE_AFTER_EXPANSION()",
              { do_tests } ) ;

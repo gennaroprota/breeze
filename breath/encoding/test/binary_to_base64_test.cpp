@@ -143,9 +143,6 @@ test_binary_to_base64()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run( "binary_to_base64()",
                                         { check,
                                           check_string_of_nuls,
