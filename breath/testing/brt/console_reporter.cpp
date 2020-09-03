@@ -43,6 +43,10 @@ console_reporter::do_on_all_tests_end()
     m_stream << std::endl << "Passed: " << m_passed << ", failed: " << m_failed
                           << ", unexp. exceptions: " << m_unexpected_exceptions
                           << '\n' << std::endl ;
+
+    m_passed = 0 ;
+    m_failed = 0 ;
+    m_unexpected_exceptions = 0 ;
 }
 
 void

@@ -126,9 +126,6 @@ test_stream_equivalent()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run( "stream_equivalent",
                                         { check_good_streams,
                                           check_non_good_streams,

@@ -58,9 +58,6 @@ test_representation_in_base()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run( "representation_in_base()",
                                         { check } ) ;
 }

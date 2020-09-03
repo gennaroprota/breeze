@@ -46,9 +46,6 @@ test_breath_stringize()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run( "BREATH_STRINGIZE()", { do_tests } ) ;
 }
 

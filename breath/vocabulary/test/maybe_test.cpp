@@ -142,9 +142,6 @@ test_maybe()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run( "maybe",
                                    { check_constructors, check_assignments } ) ;
 }

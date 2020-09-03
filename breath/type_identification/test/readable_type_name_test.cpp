@@ -57,9 +57,6 @@ test_readable_type_name()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run( "readable_type_name()",
                                         { do_tests } ) ;
 }

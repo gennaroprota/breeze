@@ -83,9 +83,6 @@ test_rounded_up_quotient()
 {
     using namespace breath ;
 
-    console_reporter    cr( std::cout ) ;
-    test_runner::instance().attach_reporter( cr ) ;
-
     return test_runner::instance().run( "rounded_up_quotient()",
                      { rounded_up_quotient_is_usable_in_constexpr_contexts,
                        rounded_up_quotient_handles_several_cases_correctly,
