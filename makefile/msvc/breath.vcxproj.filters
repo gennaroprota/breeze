@@ -203,9 +203,6 @@
     <None Include="..\..\breath\process\brt\program_option.tpp" />
     <None Include="..\..\breath\mathematics\brt\is_power_of_2.tpp" />
     <None Include="..\..\breath\mathematics\brt\digital_root.tpp" />
-    <None Include="..\..\breath\cryptography\private\sha_common.tpp">
-      <Filter>Source Files</Filter>
-    </None>
     <None Include="..\..\breath\mathematics\brt\representation_in_base.tpp" />
     <None Include="..\..\breath\cryptography\brt\merkle_damgard_machine.tpp" />
     <None Include="..\..\breath\text\brt\trim_tail_if.tpp" />
@@ -217,6 +214,7 @@
     <None Include="..\..\breath\mathematics\brt\rounded_up_quotient.tpp" />
     <None Include="..\..\breath\stream\brt\stream_buffer_wrapper.tpp" />
     <None Include="..\..\breath\vocabulary\brt\maybe.tpp" />
+    <None Include="..\..\breath\cryptography\private\sha_common.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\secure_fill.hpp">
