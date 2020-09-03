@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/testing/console_reporter.hpp"
+#include "breath/testing/stream_reporter.hpp"
 #include "breath/testing/test_exception.hpp"
 #include <ostream>
 #include <string>
@@ -19,7 +19,7 @@
 
 namespace breath_ns {
 
-console_reporter::console_reporter( std::ostream & os )
+stream_reporter::stream_reporter( std::ostream & os )
     :   m_stream( os ),
         m_passed( 0 ),
         m_failed( 0 ),
@@ -28,7 +28,7 @@ console_reporter::console_reporter( std::ostream & os )
 }
 
 void
-console_reporter::do_on_all_tests_begin( char const * group_description )
+stream_reporter::do_on_all_tests_begin( char const * group_description )
 {
     std::string const   extra_text = ":" ;
     std::string const   description = group_description + extra_text ;
@@ -38,7 +38,7 @@ console_reporter::do_on_all_tests_begin( char const * group_description )
 }
 
 void
-console_reporter::do_on_all_tests_end()
+stream_reporter::do_on_all_tests_end()
 {
     m_stream << std::endl << "Passed: " << m_passed << ", failed: " << m_failed
                           << ", unexp. exceptions: " << m_unexpected_exceptions
@@ -50,14 +50,14 @@ console_reporter::do_on_all_tests_end()
 }
 
 void
-console_reporter::do_on_test_begin( int test_number, char const * )
+stream_reporter::do_on_test_begin( int test_number, char const * )
 {
     m_stream << '[' << test_number << '=' ;
     m_stream.flush() ;
 }
 
 void
-console_reporter::do_on_test_passed( int )
+stream_reporter::do_on_test_passed( int )
 {
     m_stream << "P]" ;
     m_stream.flush() ;
@@ -65,7 +65,7 @@ console_reporter::do_on_test_passed( int )
 }
 
 void
-console_reporter::do_on_test_failed( int, test_exception const & ex )
+stream_reporter::do_on_test_failed( int, test_exception const & ex )
 {
     m_stream << "F (" << ex.file_name() << ": " << ex.line_number() << ")]" ;
     m_stream.flush() ;
@@ -73,7 +73,7 @@ console_reporter::do_on_test_failed( int, test_exception const & ex )
 }
 
 void
-console_reporter::do_on_unexpected_exception( int )
+stream_reporter::do_on_unexpected_exception( int )
 {
     m_stream << "X]" ;
     m_stream.flush() ;
@@ -81,7 +81,7 @@ console_reporter::do_on_unexpected_exception( int )
 }
 
 void
-console_reporter::do_on_unexpected_exception( int,
+stream_reporter::do_on_unexpected_exception( int,
                                            std::exception const & ex )
 {
     m_stream << "X (" << typeid( ex ).name() << ": " << ex.what() << ")]" ;

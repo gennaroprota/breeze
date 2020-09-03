@@ -77,7 +77,7 @@ source_files := luhn.cpp                                    \
                                                             \
                 null_stream.cpp                             \
                                                             \
-                console_reporter.cpp                        \
+                stream_reporter.cpp                         \
                 test_descriptor.cpp                         \
                 test_exception.cpp                          \
                 test_reporter.cpp                           \
