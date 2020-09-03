@@ -64,7 +64,7 @@ public:
     virtual char const *
                         what() const noexcept override ;
 
-    void                operator =( last_api_error const & ) = delete ;
+    last_api_error &    operator =( last_api_error const & ) = delete ;
 
 private:
 
