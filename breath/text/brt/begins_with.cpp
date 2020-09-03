@@ -22,8 +22,9 @@ namespace breath_ns {
 //
 //      Note:
 //          if 'with' is empty this always returns true. (Two empty
-//          ranges always compare equal with std::equal(). This wasn't
-//          clear to me, but the committee said otherwise; see:
+//          ranges always compare equal with std::equal(). To me, this
+//          wasn't clear in the standard, but the committee said
+//          otherwise; see:
 //
 //            <https://wg21.link/lwg2967>.
 //
