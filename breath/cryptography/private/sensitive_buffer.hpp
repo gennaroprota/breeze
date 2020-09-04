@@ -27,7 +27,7 @@ class sensitive_buffer ;
 template< typename T, std::size_t n >
 class sensitive_buffer< T[ n ] >
 {
-    T m_data[ n ] ;
+    T                   m_data[ n ] ;
 
 public:
     typedef std::size_t size_type ;
