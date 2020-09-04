@@ -38,7 +38,7 @@ md5_rotate_left( word_type w )
 //
 //        inline word aux_f( word x, word y, word z )
 //        {
-//            return x & y | ~x & z ;
+//            return ( x & y ) | ( ~x & z ) ;
 //        }
 //        inline word aux_g() ...
 //        inline word aux_h() ...
