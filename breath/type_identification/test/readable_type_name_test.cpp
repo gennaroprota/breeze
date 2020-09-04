@@ -19,6 +19,11 @@
 
 int                 test_readable_type_name() ;
 
+template< typename T >
+class my_template
+{
+} ;
+
 namespace {
 
 class incomplete_type ;
@@ -48,6 +53,11 @@ void do_tests()
     std::string const   s5 = breath::readable_type_name< double ( * )( long )
                                                        >() ;
     BREATH_CHECK( s5 == "double (*)(long)" || s5 == "double (__cdecl*)(long)") ;
+
+    std::string const   s6 = breath::readable_type_name< my_template< int >
+                                                       >() ;
+
+    BREATH_CHECK( s6 == "my_template<int>" || s6 == "class my_template<int>") ;
 }
 
 }

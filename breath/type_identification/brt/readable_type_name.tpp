@@ -10,6 +10,7 @@
 #include BREATH_DEPENDENT_CODE( compiler, readable_type_name.tpp )
 
 #include "breath/diagnostics/assert.hpp"
+#include "breath/text/trim_tail.hpp"
 
 namespace breath_ns {
 namespace readable_type_name_private {
@@ -49,7 +50,20 @@ readable_type_name()
     BREATH_ASSERT( begin_pos < end_pos &&
                      end_pos != wrapped_name.npos ) ;
 
-    return wrapped_name.substr( begin_pos + 1, end_pos - begin_pos - 1 ) ;
+    //      Trim the tail of the string, in case T is itself a template
+    //      instantiation. Something like e.g.
+    //
+    //        wrapper< my_template< int > >
+    //
+    //      yields:
+    //
+    //        "wrapper<my_template<int> >"
+    //
+    //      on all of Clang, GCC and MSVC.
+    // -----------------------------------------------------------------------
+    return breath::trim_tail(
+        wrapped_name.substr( begin_pos + 1, end_pos - begin_pos - 1 )
+    ) ;
 }
 
 }
