@@ -23,7 +23,7 @@ template< typename T, std::size_t n >
 sensitive_buffer< T[ n ] >::sensitive_buffer()
 {
     // Calling secure_fill() might cause too much performance loss; and
-    // then we are not supposed to cleanup data left over by others.
+    // then we are not supposed to clean up data left over by others.
     // But until measurement...
     wipe() ;
 }
