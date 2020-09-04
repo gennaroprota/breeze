@@ -77,6 +77,8 @@ To build the library:
    architecture=x86_64 compiler=gcc system=windows make
    ```
 
+   *Note: on some systems, you might need to use `gmake` instead of `make`.*
+
 The `architecture` part can be omitted for x86_64 (that's the default).
 
 The `clean` target is also supported (you still need to provide `compiler` and
