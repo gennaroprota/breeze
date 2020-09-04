@@ -38,6 +38,20 @@
 #           our time_string() facility relies on passing a non-literal
 #           to std::strftime().
 #
+#       -Wstrict-overflow [not used]
+#
+#           we used -Wstrict-overflow=5 for a while, and we didn't notice any
+#           problem because we weren't doing optimized builds; when we did, we
+#           got a warning in set_of_chars::iterator::increment() until we
+#           switched to -Wstrict-overflow=2, and another one in
+#           binary_to_base64() until we switched to -Wstrict-overflow=1. But
+#           -Wstrict-overflow=1 is enabled by -Wall, so we just dropped the
+#           option.
+#
+#           I couldn't see a way to avoid the warnings by massaging the code.
+#
+#           (Problems encountered with GCC 7.4.0 and -O3.)
+#
 #       -pipe:
 #
 #           just an optimization, "but it can also allow compilations to
@@ -143,7 +157,6 @@ cpp_basic_options += -flto-odr-type-merging          \
                      -Wshift-overflow=2              \
                      -Wstack-usage=16384             \
                      -Wstrict-null-sentinel          \
-                     -Wstrict-overflow=5             \
                      -Wsuggest-attribute=noreturn    \
                      -Wsuggest-override              \
                      -Wswitch-enum                   \
