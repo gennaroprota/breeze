@@ -35,6 +35,9 @@ void do_tests()
 
     BREATH_CHECK( breath::readable_type_name< int >() == "int" ) ;
 
+    BREATH_CHECK( breath::readable_type_name< unsigned long >() ==
+                                                             "unsigned long" ) ;
+
     std::string const   s2 = breath::readable_type_name< int const &>() ;
     BREATH_CHECK( s2 == "int const&" || s2 == "int const &" ||
                   s2 == "int const & __ptr64" ) ;
@@ -42,9 +45,6 @@ void do_tests()
     std::string const   s3 = breath::readable_type_name< int volatile && >() ;
     BREATH_CHECK( s3 == "int volatile&&" || s3 == "int volatile &&" ||
                   s3 == "int volatile && __ptr64" ) ;
-
-    BREATH_CHECK( breath::readable_type_name< unsigned long >() ==
-                                                             "unsigned long" ) ;
 
     std::string const   s4 = breath::readable_type_name< int ( & )[ 10 ] >() ;
     BREATH_CHECK( s4 == "int (&) [10]" || s4 == "int (&)[10]" ||
