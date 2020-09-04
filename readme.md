@@ -91,7 +91,7 @@ At the moment, `system` must be set to one of the following:
 
 while `compiler` must be set to one of:
 
- - gcc, clang, msvc
+ - clang, gcc, msvc
 
 Finally, `architecture` can be anything, because it is currently only used to
 include or exclude a component (get_cpuid_info()) which is only implemented for
