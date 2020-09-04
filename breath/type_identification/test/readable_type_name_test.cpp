@@ -24,14 +24,14 @@ class my_template
 {
 } ;
 
-namespace {
-
 class incomplete_type ;
+
+namespace {
 
 void do_tests()
 {
     std::string const   s = breath::readable_type_name< incomplete_type >() ;
-    BREATH_CHECK( s.find( "::incomplete_type" ) != s.npos ) ;
+    BREATH_CHECK( s == "incomplete_type" || s == "class incomplete_type" ) ;
 
     BREATH_CHECK( breath::readable_type_name< int >() == "int" ) ;
 
