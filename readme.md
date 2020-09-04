@@ -74,24 +74,24 @@ To build the library:
  - issue a command like this:
 
    ```
-   architecture=x86_64 compiler=gcc system=windows make
+   architecture=x86_64 system=windows compiler=gcc make
    ```
 
    *Note: on some systems, you might need to use `gmake` instead of `make`.*
 
 The `architecture` part can be omitted for x86_64 (that's the default).
 
-The `clean` target is also supported (you still need to provide `compiler` and
-`system`: when you clean, only the files generated for a given
-architecture/compiler/system triplet are removed).
+The `clean` target is also supported (you still need to provide `system` and
+`compiler`: when you clean, only the files generated for a given
+architecture/system/compiler triplet are removed).
 
-At the moment, `compiler` must be set to one of the following:
-
- - gcc, clang, msvc
-
-while `system` must be set to one of:
+At the moment, `system` must be set to one of the following:
 
  - unix, windows
+
+while `compiler` must be set to one of:
+
+ - gcc, clang, msvc
 
 Finally, `architecture` can be anything, because it is currently only used to
 include or exclude a component (get_cpuid_info()) which is only implemented for
