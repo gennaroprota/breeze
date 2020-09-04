@@ -38,7 +38,7 @@ void do_tests()
     BREATH_CHECK( breath::readable_type_name< unsigned long >() ==
                                                              "unsigned long" ) ;
 
-    std::string const   s2 = breath::readable_type_name< int const &>() ;
+    std::string const   s2 = breath::readable_type_name< int const & >() ;
     BREATH_CHECK( s2 == "int const&" || s2 == "int const &" ||
                   s2 == "int const & __ptr64" ) ;
 
