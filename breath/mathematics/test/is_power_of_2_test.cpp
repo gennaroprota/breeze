@@ -13,7 +13,7 @@
 
 #include "breath/mathematics/is_power_of_2.hpp"
 #include "breath/testing/testing.hpp"
-#include <cstdint>
+
 #include <iostream>
 
 int                 test_is_power_of_2() ;
@@ -25,7 +25,7 @@ do_check()
 {
     BREATH_CHECK( ! breath::is_power_of_2( 0u ) ) ;
     BREATH_CHECK( breath::is_power_of_2( 1u ) ) ;
-    for ( std::uint32_t  i = 2; i > 0 ; i *= 2 ) {
+    for ( unsigned int i = 2; i > 0 ; i *= 2 ) {
         BREATH_CHECK( breath::is_power_of_2( i ) ) ;
         if (i != 2) {
             BREATH_CHECK( ! breath::is_power_of_2( i - 1 ) );
