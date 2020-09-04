@@ -144,7 +144,6 @@ cpp_basic_options += -flto-odr-type-merging          \
                      -Wstack-usage=16384             \
                      -Wstrict-null-sentinel          \
                      -Wstrict-overflow=5             \
-                     -Wsuggest-attribute=const       \
                      -Wsuggest-attribute=noreturn    \
                      -Wsuggest-override              \
                      -Wswitch-enum                   \
