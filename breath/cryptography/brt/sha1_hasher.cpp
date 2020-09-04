@@ -45,7 +45,7 @@ parity( word_type x, word_type y, word_type z )
 }
 
 //      Note:
-//          this is not a general rotate-left function: it assumes
+//          this is not a general rotate-left template: it assumes
 //          (which always happens with MD5 and SHA-1), that
 //          0 < amount < 32.
 // ---------------------------------------------------------------------------
