@@ -27,8 +27,8 @@ namespace breath_ns {
 //!     non-deterministic (i.e. non-pseudo-random) random numbers.
 //!
 //!     It is similar to \c std::random_device but predates it and is
-//!     is more portable. Differently from the standard version, it is
-//!     not implemented on systems which don't have a usable
+//!     more portable. Differently from the standard version, it is not
+//!     implemented on systems which don't have a usable
 //!     non-deterministic source (but, as of writing this, there's no
 //!     such a system among those supported by Breath).
 //!
