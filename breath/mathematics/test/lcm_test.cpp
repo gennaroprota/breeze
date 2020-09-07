@@ -61,7 +61,7 @@ void
 check_constexpr()
 {
     constexpr int       n = breath::lcm( 10, 14 ) ;
-    int                 array[ n ] ;
+    int                 array[ n ] = {} ;
     static_cast< void >( array ) ;
 }
 
