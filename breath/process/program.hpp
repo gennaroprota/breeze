@@ -131,8 +131,8 @@ public:
     //!
     //!     If the gravity is \c fatal or higher, this will also
     //!     terminate the program by calling \c program::terminate()
-    //!     (when gravity == \c fatal) or \c std::abort() (when gravity
-    //!     == \c internal).
+    //!     (when the gravity is \c fatal) or \c std::abort() (when it
+    //!     is \c internal).
     // -----------------------------------------------------------------------
     void                declare_error( gravity g ) noexcept ;
 
