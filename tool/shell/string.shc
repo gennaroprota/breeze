@@ -11,9 +11,9 @@
 #       ==============
 #
 #       Returns a string consisting of max( $1, 0 ) consecutive
-#       occurrences of "$2"; "$2" will often be a single-character
-#       string, but there's no reason why it couldn't be anything
-#       longer.
+#       occurrences of the value of $2; $2 will often be a
+#       single-character string, but there's no reason why it couldn't
+#       be anything longer.
 #
 #       Resembles one of the basic_string constructors, I know :-)
 # ----------------------------------------------------------------------------
