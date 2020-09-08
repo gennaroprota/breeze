@@ -65,8 +65,7 @@ block_non_bools( bool b )
 //!     number and source file name) to \c std::cerr, then flushing \c
 //!     std::cerr, then calling \c std::abort().
 //!
-//!     Rationale
-//!     ---------
+//!\par Rationale
 //!
 //!     It has become "common practice" to define the macro \c NDEBUG
 //!     when compiling the "release" version of code. Many IDEs do so
