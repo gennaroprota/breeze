@@ -101,7 +101,7 @@ void sha1_engine::process_block( state_type & state,
     //      NOTE: analogously to the MD5 case, we repeat this code four
     //      times; forming an array of pointers to ch, parity and maj
     //      prevents their calls to be inlined, with most compilers; but
-    //      perhaps there are (non macro-based) other beneficial
+    //      perhaps there are (non-macro-based) other beneficial
     //      solutions. ([FUTURE] [gps])
     // -----------------------------------------------------------------------
     word_type           t = 0 ;
