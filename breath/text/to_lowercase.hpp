@@ -29,8 +29,7 @@ namespace breath_ns {
 //!     are the final letter of a word or not; this function cannot
 //!     handle this.
 //!
-//!     Naming rationale:
-//!     -----------------
+//!\par Naming rationale:
 //!
 //!     I was a bit hesitant between the names "to_lower_case" and
 //!     "to_lowercase". The issue is being consistent in the

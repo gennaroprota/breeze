@@ -27,8 +27,7 @@ namespace breath_ns {
 //!     be performed: for instance it cannot convert the German Eszett
 //!     to "SS".
 //!
-//!     Naming rationale:
-//!     -----------------
+//!\par Naming rationale:
 //!
 //!     See the documentation of \c to_lowercase().
 //!

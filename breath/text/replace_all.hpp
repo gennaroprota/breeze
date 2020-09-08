@@ -30,8 +30,7 @@ namespace breath_ns {
 //!     Note that \c to can be empty; so, as a special case, this
 //!     function can *remove* all occurrences of a substring.
 //!
-//!     Rationale
-//!     ---------
+//!\par Rationale
 //!
 //!     This function modifies the string in place. A non-modifying
 //!     version (replace_all_copy()) could be constructed in terms of
