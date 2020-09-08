@@ -79,8 +79,6 @@ public:
     //!     \return
     //!         The result of calling %elapsed() on the underlying \c
     //!         Device.
-    //!
-    //!         TODO gps: unit of measure.
     // -----------------------------------------------------------------------
     duration_type       elapsed() const ;
 
