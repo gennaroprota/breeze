@@ -24,12 +24,14 @@ class               sha1_engine ;
 template< typename Hasher >
 class               digest ;
 
-//!     Convenience typedefs
+//!\{
+//!     Convenience typedef(s).
 // ---------------------------------------------------------------------------
 typedef merkle_damgard_machine< sha1_engine >
                     sha1_hasher ;
 typedef digest< sha1_hasher >
                     sha1_digest ;
+//!\}
 
 
 //!     SHA-1 policy class for merkle_damgard_machine.

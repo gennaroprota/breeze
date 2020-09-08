@@ -24,10 +24,14 @@ class               sha384_engine ;
 template< typename Hasher >
 class               digest ;
 
+//!\{
+//!     Convenience typedef(s).
+// ---------------------------------------------------------------------------
 typedef merkle_damgard_machine< sha384_engine >
                     sha384_hasher ;
 typedef digest< sha384_hasher >
                     sha384_digest ;
+//!\}
 
 class sha384_engine
     :   public merkle_damgard_engine< 384, 1024, big_endian_policy, 64, 512 >

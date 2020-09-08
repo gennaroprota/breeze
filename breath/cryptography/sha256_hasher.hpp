@@ -25,12 +25,14 @@ template< typename Hasher >
 class               digest ;
 
 
-//!     Convenience typedefs
+//!\{
+//!     Convenience typedef(s).
 // ---------------------------------------------------------------------------
 typedef merkle_damgard_machine< sha256_engine >
                     sha256_hasher ;
 typedef digest< sha256_hasher >
                     sha256_digest ;
+//!\}
 
 //      sha256_engine:
 //      ==============

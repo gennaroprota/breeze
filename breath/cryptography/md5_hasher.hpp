@@ -24,11 +24,12 @@ class md5_engine ;
 template< typename Hasher >
 class digest ;
 
-//
-//      Convenience typedef(s)
+//!\{
+//!     Convenience typedef(s).
 // ---------------------------------------------------------------------------
 typedef merkle_damgard_machine< md5_engine > md5_hasher ;
 typedef digest< md5_hasher >                 md5_digest ;
+//!\}
 
 
 //!     The MD5 policy class for merkle_damgard_machine.
