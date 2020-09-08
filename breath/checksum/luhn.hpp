@@ -49,7 +49,7 @@ bool                has_luhn_sum( std::string const & s ) ;
 //
 //!     \return
 //!         The Luhn checksum digit for the given string. This is a \c
-//!         char in ['0', '9'].
+//!         char in <code>['0', '9']</code>.
 //!
 //!     \throw
 //!         A \c std::invalid_argument if any of the characters in \c s
