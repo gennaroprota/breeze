@@ -27,7 +27,7 @@ namespace adl_shield {
 //!     namespace-scope functions whose name is associated "on demand"
 //!     (i.e. at instantiation) to class \c T, via ADL.
 //!
-//!\par Usage:
+//!\par Usage
 //!
 //!      - Provide an %is_equal() function for your class \c C, as a
 //!        \e public and \e const member function.
@@ -38,7 +38,7 @@ namespace adl_shield {
 //!     As a result, \c == and \c != will be available too for class \c
 //!     C and defined in terms of is_equal().
 //!
-//!\par ADL protection:
+//!\par ADL protection
 //!
 //!     Even though this uses the Barton-Nackman idiom and relies on its
 //!     standard-conforming, ADL-based, mechanics (no friend injection),
@@ -51,7 +51,7 @@ namespace adl_shield {
 //!
 //!         Example TODO:
 //!
-//!\par Naming rationale:
+//!\par Naming rationale
 //!
 //!     The name of the class template indicates the kind of comparison
 //!     that its target will support. This leads to a noun-based name
