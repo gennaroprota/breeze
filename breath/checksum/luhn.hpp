@@ -48,12 +48,12 @@ bool                has_luhn_sum( std::string const & s ) ;
 //      ===================
 //
 //      \return
-//!         The Luhn checksum digit for the given string. This is a char
-//!         in ['0', '9'].
+//!         The Luhn checksum digit for the given string. This is a \c
+//!         char in ['0', '9'].
 //!
 //!     \throw
 //!         A \c std::invalid_argument if any of the characters in \c s
-//!         is not a decimal digit (i.e. one of 0123456789).
+//!         is not a decimal digit (i.e. one of \c 0123456789).
 // ---------------------------------------------------------------------------
 char                luhn_check_digit( std::string const & s ) ;
 

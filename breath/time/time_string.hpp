@@ -83,7 +83,7 @@ public:
 //!
 //!     This is a simple tool for simple and quick formatting needs.
 //!     You should use a more complete solution for more complex needs
-//!     (but don't underestimate the good old strftime() ;-)).
+//!     (but don't underestimate the good old \c strftime() ;-)).
 //!
 //!     NOTE:
 //!         this function is thread-safe and reentrant.

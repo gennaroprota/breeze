@@ -22,7 +22,8 @@ namespace breath_ns {
 //      ======
 //
 //!     This template follows the C++ Library Fundamental TS v2, as of
-//!     May 14, 2016. (It adds, as allowed, a noexcept specification.)
+//!     May 14, 2016. (It adds, as allowed, a \c noexcept
+//!     specification.)
 //!
 //!     If either \c M or \c N is not an integral type the program is
 //!     ill-formed. If \c |m| is not representable as a value of type \c
