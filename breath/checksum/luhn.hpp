@@ -21,7 +21,7 @@ namespace breath_ns {
 //      luhn_sum():
 //      ===========
 //
-//      \return
+//!     \return
 //!         The Luhn sum of the given string. This is a number in
 //!         <code>[0, 9]</code>.
 //!
@@ -47,7 +47,7 @@ bool                has_luhn_sum( std::string const & s ) ;
 //      luhn_check_digit():
 //      ===================
 //
-//      \return
+//!     \return
 //!         The Luhn checksum digit for the given string. This is a \c
 //!         char in ['0', '9'].
 //!
