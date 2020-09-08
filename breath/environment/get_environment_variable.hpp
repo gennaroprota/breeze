@@ -32,7 +32,7 @@ namespace breath_ns {
 //!     This function overcomes three usability issues of \c
 //!     std::getenv():
 //!
-//!      - const unsafety: \c getenv() returns a pointer to (non const)
+//!      - const unsafety: \c getenv() returns a pointer to (non-const)
 //!        char (which the program shall not modify)
 //!
 //!      - subsequent calls to \c getenv() may overwrite the pointed to
