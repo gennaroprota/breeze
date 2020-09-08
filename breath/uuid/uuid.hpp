@@ -89,9 +89,9 @@ public:
 private:
     uint8_t             m_octets[ 16 ] ;
 
-    //!     Outputs \c uu to the provided \c std::ostream, as prescribed
-    //!     by RFC 4122 (in particular, the letters 'a' to 'f' are
-    //!     output as lowercase).
+    //!     Outputs \c uu to the provided \c std::ostream, in the format
+    //!     prescribed by RFC 4122 (in particular, the letters 'a' to
+    //!     'f' are output as lowercase).
     // -----------------------------------------------------------------------
     friend std::ostream & operator <<( std::ostream &, uuid const & uu ) ;
 } ;
