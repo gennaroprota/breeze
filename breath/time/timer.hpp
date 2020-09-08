@@ -67,8 +67,8 @@ public:
     enum start_mode { auto_start, manual_start } ;
 
     //!     Initializes the underlying device by calling the default
-    //!     constructor and, if <code>mode == auto_start</code> calls
-    //!     start().
+    //!     constructor and, if (and only if) <code>mode == auto_start
+    //!     </code>, calls start().
     // -----------------------------------------------------------------------
     explicit            timer( start_mode mode = auto_start ) ;
 
