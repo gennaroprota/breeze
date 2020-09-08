@@ -20,7 +20,7 @@ namespace breath_ns {
 
 //!     This "determines" the running OS based on information returned
 //!     by Windows itself: initially the implementation used
-//!     GetVersionEx(), which "lies" when the executable runs in
+//!     \c GetVersionEx(), which "lies" when the executable runs in
 //!     compatibility mode; now it uses an API which doesn't appear to
 //!     be affected by the compatibility settings, so we should detect
 //!     the "true" OS, anyway.

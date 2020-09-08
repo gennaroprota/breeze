@@ -72,7 +72,7 @@ public:
     // -----------------------------------------------------------------------
     explicit            timer( start_mode mode = auto_start ) ;
 
-    //!     Calls Device::start().
+    //!     Calls \c Device::start().
     // -----------------------------------------------------------------------
     void                start() ;
 
@@ -85,7 +85,7 @@ public:
     duration_type       elapsed() const ;
 
     //!     \return
-    //!         The result of calling Device::resolution().
+    //!         The result of calling \c Device::resolution().
     // -----------------------------------------------------------------------
     duration_type       resolution() const ;
 

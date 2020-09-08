@@ -19,7 +19,7 @@
 //!     which isn't an open paren), but this has a self-documenting
 //!     name.
 //!
-//!     Typically used for the identifiers min and max. Example:
+//!     Typically used for the identifiers \c min and \c max. Example:
 //!
 //!     <code>
 //!         int const           m =
