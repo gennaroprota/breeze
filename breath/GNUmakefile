@@ -123,9 +123,12 @@ endif
 
 
 target := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
+object_files :=                                                             \
+    $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), $(source_files))   \
+    $(patsubst %.asm, $(bin_dir)/%$(object_file_suffix), $(asm_source_files))
 
-$(target): $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), $(source_files))  \
-             $(patsubst %.asm, $(bin_dir)/%$(object_file_suffix), $(asm_source_files))
+
+$(target): $(object_files)
 	$(build_library)
 
 define assemble_to_object
@@ -141,10 +144,7 @@ all: $(target)
 .PHONY: clean
 clean:
 	rm -fr $(dependency_dir)
-	rm -f $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix),  \
-                                                            $(source_files))
-	rm -f $(patsubst %.asm, $(bin_dir)/%$(object_file_suffix),  \
-                                                            $(asm_source_files))
+	rm -f $(object_files)
 	rm -f $(target)
 
 # Local Variables:
