@@ -189,6 +189,8 @@ public:
 //      endian_codec:
 //      =============
 //
+//!     \copybrief endian_codec.hpp
+//!
 //!     Converts generic values to/from (byte-)sequence
 //!     representations.
 //!

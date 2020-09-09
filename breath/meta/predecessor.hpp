@@ -18,8 +18,9 @@
 namespace breath_ns {
 namespace meta {
 
-//!     A meta::constant with the same \c value_type as \c T and \c
-//!     value equal to <code>T::value - 1</code>.
+//!     \brief
+//!         A meta::constant with the same \c value_type as \c T and \c
+//!         value equal to <code>T::value - 1</code>.
 // ---------------------------------------------------------------------------
 template< typename T >
 class predecessor

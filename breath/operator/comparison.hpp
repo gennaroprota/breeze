@@ -24,6 +24,8 @@ namespace adl_shield {
 //      comparison:
 //      ===========
 //
+//!     \copybrief comparison.hpp
+//!
 //!     This is completely analogous to \c equality_comparison, but
 //!     provides all six comparison operators (\c ==, \c !=, \c <, \c
 //!     <=, \c >, \c >=).

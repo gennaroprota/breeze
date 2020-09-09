@@ -33,6 +33,8 @@ typedef digest< sha384_hasher >
                     sha384_digest ;
 //!\}
 
+//!     SHA-384 policy class for merkle_damgard_machine.
+// ---------------------------------------------------------------------------
 class sha384_engine
     :   public merkle_damgard_engine< 384, 1024, big_endian_policy, 64, 512 >
 {

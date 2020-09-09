@@ -32,7 +32,7 @@ namespace meta {
 //      unqualify:
 //      ==========
 //
-//!     Gives the corresponding unqualified type of its argument.
+//!     \copybrief unqualify.hpp
 // ---------------------------------------------------------------------------
 template< typename T >
 class unqualify

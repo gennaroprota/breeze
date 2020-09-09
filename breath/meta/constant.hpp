@@ -22,6 +22,8 @@ namespace meta {
 //      constant:
 //      =========
 //
+//!     \copybrief constant.hpp
+//!
 //!     This template is a fundamental building block for our
 //!     meta-programming facilities, which date from when C++ didn't
 //!     have \c constexpr. So, it wraps a constant into a type.

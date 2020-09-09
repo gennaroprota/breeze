@@ -22,8 +22,9 @@ namespace meta {
 //      has_sign:
 //      =========
 //
-//!     A \c meta::constant yielding whether a type allows negative
-//!     values.
+//!     \brief
+//!         A \c meta::constant yielding whether a type allows negative
+//!         values.
 // ---------------------------------------------------------------------------
 template< typename T >
 class has_sign
@@ -36,6 +37,8 @@ class has_sign
 {
 } ;
 
+//!\cond implementation
+//
 //      The specialization here is logically unnecessary but silences
 //      compiler warnings.
 // ---------------------------------------------------------------------------
@@ -44,6 +47,7 @@ class has_sign< bool >
     :   public constant< bool, false >
 {
 } ;
+//!\endcond
 
 }
 }

@@ -21,6 +21,8 @@ namespace breath_ns {
 //      stream_equivalent:
 //      ==================
 //
+//!     \copybrief stream_equivalent.hpp
+//!
 //!     This is a replacement for basic_format_saver, which was been
 //!     removed from the library, since it was impossible to implement
 //!     in its generality (i.e. making it also save and restore the

@@ -91,10 +91,13 @@ cpp_basic_options += -pipe                              \
 #       recognizes \endcond; this is better than using
 #       -Wno-documentation-unknown-command, as that could hide real
 #       errors). - gps
+#
+#       Addendum: Clang doesn't recognize \copybrief, either (problem
+#       encountered with Clang 5.0.1).
 # ----------------------------------------------------------------------------
 cpp_basic_options += -Wno-exit-time-destructors         \
                      -Wno-global-constructors           \
-                     -fcomment-block-commands=cond
+                     -fcomment-block-commands=cond,copybrief
 
 #       See:
 #       <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html>.

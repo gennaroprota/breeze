@@ -25,9 +25,11 @@ namespace meta {
 //      width:
 //      ======
 //
-//!     Metafunction yielding the \e width of \c T, i.e. the number of
-//!     bits it uses to represent values, including any sign but
-//!     excluding any padding bits.
+//!     \copybrief width.hpp
+//!
+//!     The \e width of \c T is the number of bits that \c T uses to
+//!     represent values, including any sign but excluding any padding
+//!     bits.
 //!
 //!     This is a meta::constant, with \c value_type \c int.
 //!

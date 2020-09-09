@@ -20,6 +20,8 @@ namespace breath_ns {
 //      stream_buffer_wrapper:
 //      ======================
 //
+//!     \copybrief stream_buffer_wrapper.hpp
+//!
 //!     This template is meant to be used to wrap a \c basic_streambuf
 //!     when defining a new stream type. In this case, we'd want to have
 //!     a stream buffer data member in the derived class, but that would

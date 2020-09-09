@@ -76,8 +76,9 @@ public:
     //      less:
     //      =====
     //
-    //!     Implements a strict weak ordering relation between uuid
-    //!     objects. Useful for ordered associative containers.
+    //!     \brief
+    //!         Implements a strict weak ordering relation between uuid
+    //!         objects. Useful for ordered associative containers.
     // -----------------------------------------------------------------------
     class               less
     {

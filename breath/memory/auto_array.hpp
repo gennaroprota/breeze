@@ -20,6 +20,8 @@ namespace breath_ns {
 //      auto_array:
 //      ===========
 //
+//!     \copybrief auto_array.hpp
+//!
 //!     A smart pointer that retains sole ownership of an array through
 //!     a pointer. An <code>auto_array< T ></code> is similar to <code>
 //!     unique_ptr< T[], std::default_delete< T[] > ></code> but this

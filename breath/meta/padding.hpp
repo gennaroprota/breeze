@@ -23,7 +23,9 @@ namespace meta {
 //      padding:
 //      ========
 //
-//!     Metafunction yielding the number of \e padding bits of \c T.
+//!     \brief
+//!         Metafunction yielding the number of \e padding bits of a
+//!         type.
 //!
 //!     This is a meta::constant, with \c value_type \c int.
 //!

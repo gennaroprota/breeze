@@ -24,9 +24,10 @@ namespace meta {
 //      precision:
 //      ==========
 //
-//!     Metafunction yielding the \e precision of \c T, i.e. the number
-//!     of bits it uses to represent values, excluding any sign and
-//!     padding bits.
+//!     \copybrief precision.hpp
+//!
+//!     The \e precision of \c T is the number of bits that \c T uses to
+//!     represent values, excluding any sign and padding bits.
 //!
 //!     This is a meta::constant, with \c value_type \c int.
 //!
