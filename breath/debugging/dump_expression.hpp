@@ -33,16 +33,16 @@
 //!     It's intended that you use this just for quick and dirty checks,
 //!     and that you *remove* it after that.
 //!
-//!     The expression is shown in the form &lt;expression&gt; = value.
-//!     If expression contains macro invocations, the unexpanded form
-//!     is displayed, too. In any case, the output ends with \c
-//!     std::endl.
+//!     The expression is shown in the form <code><expression> = value
+//!     </code>. If \c expression contains macro invocations, the
+//!     unexpanded form is displayed, too. In any case, the output ends
+//!     with \c std::endl.
 //!
 //!     \note
 //!         The <code>#include</code>'s are not part of the interface.
 //!
 //!     \note
-//!         Macros within the argument 'expr' are expanded.
+//!         Macros within the argument \c expr are expanded.
 // ---------------------------------------------------------------------------
 #define BREATH_DUMP_EXPRESSION( expr )                                        \
         do {                                                                  \
