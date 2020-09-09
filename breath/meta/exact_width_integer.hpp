@@ -88,7 +88,7 @@ public:
 //      =============================
 //
 //!     \brief
-//!         A synonym of <code>exact_width_integer< N, unsigned >
+//!         A synonym of <code>exact_width_integer< width, unsigned >
 //!         </code>.
 // ---------------------------------------------------------------------------
 template< int width >
