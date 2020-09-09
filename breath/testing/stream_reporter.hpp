@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief An object to report unit tests errors to a \c
+//!     \brief A test_reporter to report unit tests errors to a \c
 //!            std::ostream.
 // ---------------------------------------------------------------------------
 
