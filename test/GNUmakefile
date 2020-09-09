@@ -122,12 +122,13 @@ source_files := unit_test_main.cpp                          \
 include $(root)/makefile/main.mk
 
 target := $(bin_dir)/breath_test$(exe_name_suffix)
+object_files :=     \
+    $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), $(source_files))
+
 libraries := advapi32.lib
 breath_library := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
 
-$(target): $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), \
-                $(source_files))                                \
-           $(breath_library)
+$(target): $(object_files) $(breath_library)
 	$(link_to_exec)
 
 .PHONY: all test test-run
@@ -137,6 +138,12 @@ test:       $(target)
 
 test-run:   test
 	$(bin_dir)/breath_test
+
+.PHONY: clean
+clean:
+	rm -fr $(dependency_dir)
+	rm -f $(object_files)
+	rm -f $(target)
 
 # Local Variables:
 # mode: makefile
