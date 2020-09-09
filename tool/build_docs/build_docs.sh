@@ -43,6 +43,16 @@ clean_up()
     rm -f "$root_dir"/doc/source/doxygen_*db_*.tmp
 }
 
+run_doxygen()
+{
+    breath_version=` sed -n 's/#define \+BREATH_VERSION \+\(.\+\)/\1/p'     \
+                            "$root_dir/breath/version.hpp" `
+
+    (
+        cat doxygen.cfg
+        printf '%s\n' "PROJECT_NUMBER = \"version $breath_version\""
+    ) | doxygen -
+}
 
 if [ $# -ne 1 ]
 then
@@ -65,7 +75,7 @@ output_dir="$root_dir/doc"
 
 cd "$root_dir/doc/source"
 printf '%s\n' "Using Doxygen ` doxygen --version `"
-if ! doxygen doxygen.cfg
+if ! run_doxygen
 then
     quit_script 'an error occurred.'
 else
