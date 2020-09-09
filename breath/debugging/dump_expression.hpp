@@ -48,7 +48,7 @@
         do {                                                                  \
             char const              expanded[] =                              \
                                   BREATH_STRINGIZE_AFTER_EXPANSION( expr )  ; \
-            char const              unexpanded[] = #expr ;                    \
+            char const              unexpanded[] = # expr ;                   \
             std::ostream &          os = std::cout ;                          \
             os << expanded << " = " << ( expr ) ;                             \
             if ( std::strcmp( expanded, unexpanded ) != 0 ) {                 \
