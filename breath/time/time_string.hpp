@@ -60,7 +60,7 @@ extern char const   iso8601_extended_time[] ;
 //
 //!     \brief
 //!         The type of timezone (UTC/local) in which the time must be
-//!         returned.
+//!         represented by time_string().
 // ---------------------------------------------------------------------------
 class time_string_zone
 {
