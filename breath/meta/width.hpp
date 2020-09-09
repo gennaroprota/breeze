@@ -36,6 +36,7 @@ namespace meta {
 //!     See also: meta::precision and meta::padding.
 //!
 //!     \par Type requirements
+//!
 //!         \c T shall be an integral type or a cv-qualified version
 //!         thereof.
 // ---------------------------------------------------------------------------
