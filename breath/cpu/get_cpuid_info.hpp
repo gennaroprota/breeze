@@ -47,17 +47,17 @@ struct cpuid_result
 //!         returned by the CPUID instruction itself.
 //!
 //!     \note
-//!         Unusually for our code base, this file uses extern "C";
-//!         that's because the actual routines are written in assembly
-//!         and it is just easier to write portable assembly that way
-//!         (no name mangling differences, for example). The fact that
-//!         the routines are written in assembly however is an
+//!         Unusually for our code base, this file uses <code>extern "C"
+//!         </code>; that's because the actual routines are written in
+//!         assembly and it is just easier to write portable assembly
+//!         that way (no name mangling differences, for example). The
+//!         fact that the routines are written in assembly however is an
 //!         implementation detail (which I'm mentioning just to provide
-//!         the rationale for extern "C").
+//!         the rationale for <code>extern "C"</code>).
 //!     \note
-//!         Once you use extern "C", then, you're better off not using a
-//!         namespace (because it would be ignored by the linker
-//!         anyway). So, the names here are *global*.
+//!         Once you use <code>extern "C"</code>, then, you're better
+//!         off not using a namespace (because it would be ignored by
+//!         the linker anyway). So, the names here are *global*.
 //!     \note
 //!         Finally, note that all the values (either in input and
 //!         output) are 32-bit. This is not by mistake: the CPUID
