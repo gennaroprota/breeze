@@ -60,6 +60,9 @@ public:
 }
 //!\endcond
 
+//      exact_width_integer:
+//      ====================
+//
 //!     \brief
 //!         Provides an integer type with width \c width.
 //!
@@ -77,6 +80,9 @@ public:
                          ::selector< width, T, 0 >::type type ;
 } ;
 
+//      exact_width_unsigned_integer:
+//      =============================
+//
 //!     \brief
 //!         A synonym of <code>exact_width_integer< N, unsigned >
 //!         </code>.

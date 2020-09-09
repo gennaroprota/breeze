@@ -38,6 +38,9 @@
 
 extern "C" {
 
+//      cpuid_result:
+//      =============
+//
 //!     \brief
 //!         Represents the result of the CPUID instruction.
 // ---------------------------------------------------------------------------
