@@ -21,6 +21,9 @@
 namespace breath_ns {
 namespace meta {
 
+//      successor:
+//      ==========
+//
 //!     \brief
 //!         A meta::constant with the same \c value_type as \c T and \c
 //!         value equal to <code>T::value + 1</code>.
