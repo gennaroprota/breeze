@@ -64,11 +64,14 @@ public:
 //      ====================
 //
 //!     \brief
-//!         Provides an integer type with width \c width.
+//!         Provides, if available, an integer type with width \c width.
 //!
 //!     Differently from \c intN_t in C99, it can have padding and,
 //!     until C++20, can use a representation different from two's
 //!     complement.
+//!
+//!     If a type with width \c width is not available, the program is
+//!     ill-formed.
 //!
 //!     \par Type requirements
 //!         \c T shall be either \c signed \c int or \c unsigned \c int.
