@@ -77,7 +77,7 @@ public:
 //      ==============
 //
 //!     \return
-//!         The current date and time formatted according to \c format,
+//!         The current (date or) time formatted according to \c format,
 //!         interpreted as if passed to the \c strftime() standard
 //!         function. See also: time_string_zone.
 //!
