@@ -25,7 +25,7 @@ namespace breath_ns {
 //      set_of_chars:
 //      =============
 //
-//!     A set of chars.
+//!     \copybrief set_of_chars.hpp
 //!
 //!     With respect to a \c std::string, a \c set_of_chars can't have
 //!     duplicates and may model the concept more closely; and it has
@@ -258,7 +258,8 @@ public:
     //      iterator:
     //      =========
     //
-    //!     An iterator for the set.
+    //!     \brief
+    //!         An iterator for the set.
     //!
     //!     Iterates over all of the characters in the set.  It is a
     //!     \e constant forward iterator (\c iterator and \c

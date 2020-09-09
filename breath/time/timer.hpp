@@ -20,6 +20,8 @@ namespace breath_ns {
 //      timer:
 //      ======
 //
+//!     \copybrief timer.hpp
+//!
 //!     A policy-based timer which allows the user to retrieve the
 //!     amount of time elapsed from its start (i.e. a "stopwatch").
 //!

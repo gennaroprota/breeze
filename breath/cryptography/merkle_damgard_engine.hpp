@@ -23,6 +23,8 @@
 
 namespace breath_ns {
 
+//!     \copybrief merkle_damgard_engine.hpp
+//
 //      All parameters here have pretty much self-explanatory names.
 //      The only exception is perhaps length_exponent: it determines the
 //      maximum message length that the engine will keep track of:

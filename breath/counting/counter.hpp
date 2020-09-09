@@ -22,8 +22,7 @@ namespace breath_ns {
 //      counter:
 //      ========
 //
-//!     A counter providing only operations meaningful for a counter,
-//!     plus error checking.
+//!     \copybrief counter.hpp
 // ---------------------------------------------------------------------------
 template< typename IntegralType >
 class counter

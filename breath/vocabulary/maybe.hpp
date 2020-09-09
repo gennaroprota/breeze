@@ -21,8 +21,9 @@ namespace breath_ns {
 //      boolean_maybe_traits:
 //      =====================
 //
-//!     The default traits class for \c maybe. Logically corresponds to
-//!     a boolean (valid/invalid).
+//!     \brief
+//!         The default traits class for \c maybe. Logically corresponds
+//!         to a boolean (valid/invalid).
 // ---------------------------------------------------------------------------
 class boolean_maybe_traits
 {
@@ -65,6 +66,8 @@ public:
 //      maybe:
 //      ======
 //
+//!     \copybrief maybe.hpp
+//!
 //!     A class template to represent "possible" values. The idea was
 //!     signaled by James Kanze, and comes from
 //!

@@ -24,6 +24,8 @@ namespace breath_ns {
 //      printable_string:
 //      =================
 //
+//!     \copybrief printable_string.hpp
+//!
 //!     Represents a string that prints to an \c ostream without
 //!     non-printable characters.
 //!

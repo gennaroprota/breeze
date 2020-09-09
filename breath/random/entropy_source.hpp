@@ -23,6 +23,8 @@ namespace breath_ns {
 //      entropy_source:
 //      ===============
 //
+//!     \copybrief entropy_source.hpp
+//!
 //!     This class represents the system entropy source, for generating
 //!     non-deterministic (i.e. non-pseudo-random) random numbers.
 //!

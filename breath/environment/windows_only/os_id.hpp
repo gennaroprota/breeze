@@ -22,7 +22,7 @@ namespace breath_ns {
 //      os_id:
 //      ======
 //
-//!     Operating system identifier.
+//!     \copybrief os_id.hpp
 //!
 //!     A thin wrapper around an int: we assign distinct integral
 //!     numbers to the different Windows versions.

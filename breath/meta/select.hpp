@@ -21,6 +21,10 @@
 namespace breath_ns {
 namespace meta {
 
+//!     \brief
+//!         Like select, but with the condition represented as a <code>
+//!         bool</code> value, not a type.
+// ---------------------------------------------------------------------------
 template< bool condition, typename T, typename U >
 class select_
 {
@@ -35,6 +39,8 @@ public:
                         opposite ;
 } ;
 
+//!\cond implementation
+//!
 template< typename T, typename U >
 class select_< false, T, U >
 {
@@ -47,8 +53,10 @@ public:
     typedef select_< true, T, U >
                         opposite ;
 } ;
+//!\endcond
 
-//!     The truly polymorphic select template.
+
+//!     \copybrief select.hpp
 // ---------------------------------------------------------------------------
 template< typename Cond, typename T, typename U >
 class select

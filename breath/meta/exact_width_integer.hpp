@@ -60,9 +60,11 @@ public:
 }
 //!\endcond
 
-//!     Provides an integer type with width \c width. Differently from
-//!     \c intN_t in C99, it can have padding and can use a
-//!     representation different from two's complement.
+//!     \brief
+//!         Provides an integer type with width \c width.
+//!
+//!     Differently from \c intN_t in C99, it can have padding and can
+//!     use a representation different from two's complement.
 //!
 //!     \par Type requirements
 //!         \c T shall be either \c signed \c int or \c unsigned \c int.
@@ -75,8 +77,9 @@ public:
                          ::selector< width, T, 0 >::type type ;
 } ;
 
-//!
-//!     A synonym of <code>exact_width_integer< N, unsigned ></code>.
+//!     \brief
+//!         A synonym of <code>exact_width_integer< N, unsigned >
+//!         </code>.
 // ---------------------------------------------------------------------------
 template< int width >
 class exact_width_unsigned_integer

@@ -18,10 +18,27 @@
 
 namespace breath_ns {
 
+//!     \brief
+//!         Count policy for the hashing algorithm.
+// ---------------------------------------------------------------------------
 class hashing_count
 {
 public:
     class exception ;
+
+    //!     \brief
+    //!         The type of exceptions emitted if the input sequence to
+    //!         a hashing algorithm is too long.
+    //
+    //      Note: defined in-class as otherwise Doxygen doesn't pick its
+    //      documentation up. (Problem encountered with Doxygen 1.8.18.)
+    // -----------------------------------------------------------------------
+    class exception
+        :   public std::length_error
+    {
+    public:
+        explicit            exception( char const * what_message ) ;
+    } ;
 
     enum type
     {
@@ -30,13 +47,6 @@ public:
     } ;
 
     static void         on_length_exhausted( type t ) ;
-} ;
-
-class hashing_count::exception
-    :   public std::length_error
-{
-public:
-    explicit            exception( char const * what_message ) ;
 } ;
 
 }

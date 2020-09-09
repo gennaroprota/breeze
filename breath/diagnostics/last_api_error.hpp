@@ -22,6 +22,8 @@ namespace breath_ns {
 //      last_api_error:
 //      ===============
 //
+//!     \copybrief last_api_error.hpp
+//!
 //!     An exception class representing the last error encountered
 //!     in an OS API call. It corresponds to \c GetLastError() under
 //!     Windows and \c errno under Unix.

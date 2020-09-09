@@ -25,6 +25,8 @@ class               digest ;
 //      merkle_damgard_machine:
 //      =======================
 //
+//!     \copybrief merkle_damgard_machine.hpp
+//!
 //!     This template models a simple state machine for Merkle-Damgard's
 //!     construction of unkeyed hash functions.
 //!

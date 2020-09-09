@@ -22,8 +22,9 @@ namespace breath_ns {
 //      digest:
 //      =======
 //
-//!     A digest object represents the result of applying a digest
-//!     algorithm to a given input sequence.
+//!     \brief
+//!         The result of applying a digest algorithm to a given input
+//!         sequence.
 // ---------------------------------------------------------------------------
 template< typename Hasher >
 class digest
@@ -58,9 +59,14 @@ public:
     const_iterator      end() const ;
     //!     \}
 
+    class               less ;
+    friend class        less ;
     //      less:
     //      =====
     //
+    //!     \brief
+    //!         A functor to compare digest objects.
+    //!
     //!     Implements a strict weak ordering relation between digests
     //!     (from the same Hasher type). Useful for ordered associative
     //!     containers.
@@ -70,8 +76,6 @@ public:
     //!     which is the oldest, to be still compilable as C++03, if
     //!     needed.
     // -----------------------------------------------------------------------
-    class               less ;
-    friend class        less ;
     class               less
     {
     public:

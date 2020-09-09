@@ -23,7 +23,7 @@ namespace breath_ns {
 //      stream_reporter:
 //      ================
 //
-//!     A test_reporter that reports to a \c std::ostream.
+//!     \copybrief stream_reporter.hpp
 //!
 //!     \par Naming rationale
 //!

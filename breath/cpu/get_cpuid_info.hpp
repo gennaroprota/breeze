@@ -38,7 +38,8 @@
 
 extern "C" {
 
-//!     Represents the result of the CPUID instruction.
+//!     \brief
+//!         Represents the result of the CPUID instruction.
 // ---------------------------------------------------------------------------
 struct cpuid_result
 {
@@ -51,10 +52,11 @@ struct cpuid_result
 //      get_cpuid_info():
 //      =================
 //
-//!     Namespace: global (see above).
+//!     \brief
+//!         Executes the CPUID instruction with the provided values in
+//!         \c EAX and \c ECX.
 //!
-//!     Executes the CPUID instruction with the provided values in \c
-//!     EAX and \c ECX.
+//!     Namespace: global (see above).
 //!
 //!     \pre
 //!         The CPUID instruction is supported (this is always true on
