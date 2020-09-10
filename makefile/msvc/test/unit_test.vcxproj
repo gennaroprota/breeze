@@ -29,6 +29,7 @@
     <ClCompile Include="..\..\..\breath\checksum\test\luhn_test.cpp" />
     <ClCompile Include="..\..\..\breath\conversion\test\bit_cast_test.cpp" />
     <ClCompile Include="..\..\..\breath\conversion\test\roman_test.cpp" />
+    <ClCompile Include="..\..\..\breath\counting\test\counter_test.cpp" />
     <ClCompile Include="..\..\..\breath\cryptography\test\digest_ordering_test.cpp" />
     <ClCompile Include="..\..\..\breath\cryptography\test\merkle_damgard_hashing_test.cpp" />
     <ClCompile Include="..\..\..\breath\cryptography\test\nist_vectors_test.cpp" />

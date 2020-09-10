@@ -51,6 +51,8 @@ source_files := unit_test_main.cpp                          \
                 bit_cast_test.cpp                           \
                 roman_test.cpp                              \
                                                             \
+                counter_test.cpp                            \
+                                                            \
                 digest_ordering_test.cpp                    \
                 merkle_damgard_hashing_test.cpp             \
                 nist_vectors_test.cpp                       \
