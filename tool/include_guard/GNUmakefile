@@ -8,7 +8,7 @@
 
 root         := ../..
 
-source_files := main.cpp                        \
+source_files := include_guard.cpp               \
                 macro_name.cpp
 
 include $(root)/makefile/main.mk
