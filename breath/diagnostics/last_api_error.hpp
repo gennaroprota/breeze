@@ -58,9 +58,9 @@ public:
     virtual             ~last_api_error() noexcept override ;
 
     //!     \return
-    //!         The code of the last error. A long long, which is enough
-    //!         to accomodate both \c errno and the result of \c
-    //!         GetLastError() under Windows.
+    //!         The code of the last error. A <code>long long</code>,
+    //!         which is enough to accomodate both \c errno and the
+    //!         result of \c GetLastError() under Windows.
     // -----------------------------------------------------------------------
     long long           code() const noexcept ;
     virtual char const *
