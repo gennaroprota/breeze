@@ -18,6 +18,7 @@ int                 test_binary_to_base64() ;
 int                 test_bit_cast() ;
 int                 test_clamp() ;
 int                 test_count_bits() ;
+int                 test_counter() ;
 int                 test_crc32() ;
 int                 test_damerau_levenshtein_distance() ;
 int                 test_digest_ordering() ;

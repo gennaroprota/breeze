@@ -188,6 +188,9 @@
     <ClCompile Include="..\..\..\breath\vocabulary\test\maybe_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\breath\counting\test\counter_test.cpp">
+      <Filter>Component Tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\test\unit_test_main.hpp">
