@@ -34,7 +34,7 @@ to_duration_type( std::clock_t elapsed )
 std::clock_t
 retrieve()
 {
-    std::clock_t const  result( std::clock() ) ;
+    std::clock_t const  result = std::clock() ;
     return result != static_cast< std::clock_t >( -1 )
         ? result
         : throw std::runtime_error( "std::clock() failed (e.g. because the time"
@@ -61,7 +61,7 @@ c_clock_policy::start()
 {
     //      Synchronize our start.
     // -----------------------------------------------------------------------
-    std::clock_t const  s( retrieve() ) ;
+    std::clock_t const  s = retrieve() ;
     while ( s == ( m_start_tick = retrieve() ) ) { }
 }
 
@@ -70,7 +70,7 @@ c_clock_policy::elapsed() const
 {
     BREATH_ASSERT( m_start_tick != invalid_tick ) ;
 
-    std::clock_t const  now( retrieve() ) ;
+    std::clock_t const  now = retrieve() ;
 
     if ( now < m_start_tick ) {
         throw_because_of_wrap_around() ;
@@ -85,7 +85,7 @@ c_clock_policy::resolution() const
     std::clock_t        start ;
     std::clock_t        end ;
 
-    std::clock_t const  s( retrieve() ) ;
+    std::clock_t const  s = retrieve() ;
     while ( s     == ( start = retrieve() ) ) { }
     while ( start == (   end = retrieve() ) ) { }
 
