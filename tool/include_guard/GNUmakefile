@@ -11,29 +11,10 @@ root         := ../..
 source_files := include_guard.cpp               \
                 macro_name.cpp
 
-include $(root)/makefile/main.mk
-
-object_files := $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix),    \
-                    $(source_files))
-target       := $(bin_dir)/include_guard$(exe_name_suffix)
-
 libraries    := advapi32.lib
              ##gps temp! (Windows only :-() --coupled with msvc.mk!!!
 
-.PHONY: all
-all: $(target)
-
-
-breath_library := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
-
-$(target): $(object_files) $(breath_library)
-	$(link_to_exec)
-
-.PHONY: clean
-clean:
-	rm -fr $(dependency_dir)
-	rm -f  $(object_files)
-	rm -f  $(target)
+include $(root)/makefile/executable.mk
 
 # Local Variables:
 # mode: makefile
