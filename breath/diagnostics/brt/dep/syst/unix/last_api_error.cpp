@@ -98,9 +98,7 @@ last_api_error::last_api_error( last_api_error const & other ) noexcept
     strcpy( &m_message[ 0 ], &other.m_message[ 0 ] ) ;
 }
 
-last_api_error::~last_api_error() noexcept
-{
-}
+last_api_error::~last_api_error() noexcept = default ;
 
 long long
 last_api_error::code() const noexcept
