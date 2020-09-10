@@ -24,7 +24,8 @@ breath::c_clock_policy::duration_type
 to_duration_type( std::clock_t elapsed )
 {
     return breath::c_clock_policy::duration_type(
-            static_cast< long double >( elapsed ) / CLOCKS_PER_SEC *
+            static_cast< long double >( elapsed )                  /
+            static_cast< long double >( CLOCKS_PER_SEC )           *
                 breath::c_clock_policy::duration_type::period::den /
                 breath::c_clock_policy::duration_type::period::num
         ) ;
