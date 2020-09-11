@@ -99,7 +99,7 @@ $(bin_dir)/%$(object_file_suffix): %.cpp $(dependency_dir)/%.dep  |  $(dependenc
 	$(compile_to_object)
 	$(post_compile)
 
-$(dependency_dir): ; mkdir -p $@ > /dev/null
+$(dependency_dir): ; mkdir -p $@
 
 $(dependency_dir)/%.dep: ;
 .PRECIOUS: $(dependency_dir)/%.dep
