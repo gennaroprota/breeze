@@ -97,6 +97,9 @@ Finally, `architecture` can be anything, because it is currently only used to
 include or exclude a component (get_cpuid_info()) which is only implemented for
 x86_64.
 
+*Note: to get a list of the available Make targets, with a brief description for
+each one, launch the command `make help` (or `gmake help`).*
+
 # A note about the documentation
 
 The documentation is contained in the source files, in the form of Doxygen
