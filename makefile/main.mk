@@ -107,7 +107,7 @@ include $(root)/makefile/$(system).mk
 #          dependency file to be corrupted, the dependency file isn't
 #          actually used (see $(post_compile))
 # ----------------------------------------------------------------------------
-dependency_dir := .dependency/$(dependent_subdir)
+dependency_dir := .mkdep/$(dependent_subdir)
 post_compile = mv -f $(dependency_dir)/$*.temp_dep $(dependency_dir)/$*.dep \
                  && touch $@
 
