@@ -10,7 +10,7 @@
 !/doc/source/
 
 # Directories of Make dependency files
-.dependency/
+.mkdep/
 
 # ======================================
 # Non-Breath-specific patterns
