@@ -43,7 +43,7 @@ namespace breath_ns {
 //!            amount of time that the \c Device can measure and
 //!            doesn't, in itself, tell anything about the \e accuracy
 //!
-//!     and the typedef
+//!     and the typedef:
 //!
 //!      - \c duration_type,
 //!            which is the return type of \c %elapsed() and
