@@ -101,11 +101,11 @@ $(bin_dir)/%$(object_file_suffix): %.cpp $(dependency_dir)/%.dep  |  $(dependenc
 
 $(dependency_dir): ; mkdir -p $@
 
-$(dependency_dir)/%.dep: ;
-.PRECIOUS: $(dependency_dir)/%.dep
+dependency_files := $(patsubst %,$(dependency_dir)/%.dep, $(basename $(source_files)))
 
-include $(wildcard $(patsubst %,$(dependency_dir)/%.dep,    \
-                     $(basename $(source_files))))
+$(dependency_files):
+
+include $(wildcard $(dependency_files))
 
 #       Documentation generation.
 #
