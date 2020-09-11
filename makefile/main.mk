@@ -88,6 +88,19 @@ include $(root)/makefile/$(system).mk
 #       described in:
 #
 #         <http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/>.
+#
+#       It has, among others, the following properties (well explained
+#       in the aforementioned article):
+#
+#        - dependency files will be kept; Make will not consider them
+#          just intermediate files and delete them
+#
+#        - if a dependency file is deleted without modifying any source
+#          files, Make will recreate it
+#
+#        - if the build is killed at the "wrong" moment, causing a
+#          dependency file to be corrupted, the dependency file isn't
+#          actually used (see $(post_compile))
 # ----------------------------------------------------------------------------
 dependency_dir := .dependency/$(dependent_subdir)
 post_compile = mv -f $(dependency_dir)/$*.temp_dep $(dependency_dir)/$*.dep \
