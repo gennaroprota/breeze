@@ -21,12 +21,17 @@ ruler := \
 
 #       Common targets
 # ----------------------------------------------------------------------------
+
+#       Builds the library, runs the unit tests and builds the tools.
+#
 .PHONY: all
 all: $(bin_dir)
 	$(info $(ruler))
 	$(info Using $(compiler_display_name) $(compiler_version))
 	$(do_for_all_subdirs)
 
+#       Deletes the build artifacts.
+#
 .PHONY: clean
 clean:
 	$(do_for_all_subdirs)
