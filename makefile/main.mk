@@ -90,7 +90,7 @@ include $(root)/makefile/$(system).mk
 #         <http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/>.
 # ----------------------------------------------------------------------------
 dependency_dir := .dependency/$(dependent_subdir)
-post_compile = @mv -f $(dependency_dir)/$*.temp_dep $(dependency_dir)/$*.dep \
+post_compile = mv -f $(dependency_dir)/$*.temp_dep $(dependency_dir)/$*.dep \
                  && touch $@
 
 $(bin_dir)/%$(object_file_suffix): %.cpp
