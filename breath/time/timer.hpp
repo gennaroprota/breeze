@@ -38,8 +38,10 @@ namespace breath_ns {
 //!            last call to \c %start()
 //!
 //!      - \c %resolution(),
-//!            which must return the resolution of the \c Device, i.e.
-//!            the smallest amount of time it can measure
+//!            which must return the resolution of the \c Device or an
+//!            estimate of it; note that the resolution is the smallest
+//!            amount of time that the \c Device can measure and
+//!            doesn't, in itself, tell anything about the \e accuracy
 //!
 //!     and the typedef
 //!
