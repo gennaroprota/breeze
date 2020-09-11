@@ -43,7 +43,7 @@ public:
         test_entry( std::string const & s, std::string const & e, int r = 0 )
             :   source( s ), expected( e ), repetitions( r )
         {
-        } 
+        }
 
         std::string         source ;
         std::string         expected ;
