@@ -32,7 +32,7 @@ clean:
 	$(do_for_all_subdirs)
 
 $(bin_dir):
-	mkdir -p $(bin_dir)
+	mkdir -p $@
 
 .PHONY: test-run
 test-run:
