@@ -43,6 +43,9 @@ ifeq ($(architecture),)
     architecture := $(default_architecture)
 endif
 
+#       do_for_all_subdirs():
+#       =====================
+#
 #       Recurses on the same target. $(subdirs) must be defined before
 #       including this file for it to work.
 #
@@ -84,8 +87,10 @@ exe_dir := $(bin_dir)
 include $(root)/makefile/$(compiler).mk
 include $(root)/makefile/$(system).mk
 
-#       Automatic dependency generation; the method used here is
-#       described in:
+#       Automatic dependency generation:
+#       ================================
+#
+#       The method used here is described in:
 #
 #         <http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/>.
 #
@@ -120,7 +125,8 @@ $(dependency_files):
 
 include $(wildcard $(dependency_files))
 
-#       Documentation generation.
+#       Documentation generation:
+#       =========================
 #
 #       For convenience, we provide two target names: 'documentation'
 #       and 'doc' (names meant for user consumption are almost never
