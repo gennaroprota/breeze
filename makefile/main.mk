@@ -27,11 +27,19 @@
 MAKEFLAGS += --warn-undefined-variables
 .DEFAULT_GOAL := all
 
-ifeq ($(and $(compiler), $(system)),)
-    $(error Please, define 'compiler' and 'system' on the command line; e.g. \
-            run 'compiler=gcc system=unix make')
+has_triplet := no
+ifneq ($(and $(compiler), $(system)),)
+    has_triplet := yes
 endif
+export has_triplet
 
+define require_triplet
+    if [ $$has_triplet = "no" ] ; then                                         \
+        printf '%s%s\n' "Please, define 'compiler' and 'system' on the"        \
+            " command line; e.g. run 'compiler=gcc system=unix make <target>'";\
+        exit 2 ;                                                               \
+    fi
+endef
 
 default_architecture := x86_64
 
@@ -84,8 +92,11 @@ bin_dir := $(bin_root)/$(dependent_subdir)
 exe_dir := $(bin_dir)
          # ^^^^ variant debug/release?
 
-include $(root)/makefile/$(compiler).mk
-include $(root)/makefile/$(system).mk
+
+ifeq ($(has_triplet),yes)
+    include $(root)/makefile/$(compiler).mk
+    include $(root)/makefile/$(system).mk
+endif
 
 #       Automatic dependency generation:
 #       ================================
