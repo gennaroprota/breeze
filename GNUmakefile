@@ -22,7 +22,10 @@ ruler := \
 #       Common targets
 # ----------------------------------------------------------------------------
 
-##      Builds the library, runs the unit tests and builds the tools.
+##      Builds the library, runs the unit tests and builds the tools,
+##      for a given architecture/system/compiler triplet. This is the
+##      default target, and requires 'system' and 'compiler' to be
+##      defined.
 ##
 .PHONY: all
 all: $(bin_dir)
@@ -31,7 +34,8 @@ all: $(bin_dir)
 	$(info Using $(compiler_display_name) $(compiler_version))
 	$(do_for_all_subdirs)
 
-##      Deletes the build artifacts.
+##      Deletes the build artifacts for a given triplet (see 'all').
+##      Requires 'system' and 'compiler' to be defined.
 ##
 .PHONY: clean
 clean:
