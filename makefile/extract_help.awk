@@ -13,7 +13,7 @@
 #       Extracts the documentation for the available makefile targets.
 #       Invoked by GNU Make itself when building the target 'help'.
 #
-#       Does not allow for multiline help text for any given target.
+#       Allows for multiline help text for any given target.
 #
 #       The script is tailored to our commenting and formatting style.
 #       E.g. we expect a Make target name to always begin in column 1,
@@ -28,23 +28,38 @@
 #       makefiles to parse).
 # ----------------------------------------------------------------------------
 
+function do_print_line( first_column_text, help_text )
+{
+    width = 16
+    printf( "%-" width "s%s\n", first_column_text, help_text )
+}
+
 BEGIN {
     target_pattern = "^[A-Za-z0-9_-]+ *:([^=]|$)"
-    comment_pattern = "^#"
-    current_comment_text = ""
+    comment_pattern = "^##"
+    help_line_count = 0
     FS = "[: ]"
-    first_column_width = 16
 }
 
 $0 ~ comment_pattern " " {
+    ++ help_line_count
+
     current_comment_text = $0
     sub( comment_pattern " +", "", current_comment_text )
+
+    help_lines[ help_line_count ] = current_comment_text
 }
 
 $0 ~ target_pattern {
-    if ( current_comment_text != "" ) {
-        printf "%-" first_column_width "s%s\n", $1 ":", current_comment_text
-        current_comment_text = ""
+    if ( help_line_count != 0 ) {
+        do_print_line( $1 ":", help_lines[ 1 ] )
+
+        for ( i = 2 ; i <= help_line_count; ++ i ) {
+            do_print_line( "", help_lines[ i ] )
+        }
+
+        delete help_lines
+        help_line_count = 0
     }
 }
 
