@@ -135,13 +135,13 @@ include $(wildcard $(dependency_files))
 #       name as the folder).
 # ----------------------------------------------------------------------------
 
-#       The same as 'documentation'.
-#
+##      The same as 'documentation'.
+##
 .PHONY: doc documentation
 doc: documentation
 
-#       Builds the Doxygen documentation.
-#
+##      Builds the Doxygen documentation.
+##
 documentation:
 	$(root)/tool/build_docs/build_docs.sh "` pwd `"
 
@@ -151,15 +151,15 @@ documentation:
 #       See extract_help.awk for more info.
 # ----------------------------------------------------------------------------
 
-#       Shows brief documentation about the available targets.
-#
+##      Shows brief documentation about the available targets.
+##
 .PHONY: help
 help:
 	$(info )
 	$(info Available targets:)
 	$(info ------------------)
 	$(info )
-	@$(root)/makefile/extract_help.awk $(MAKEFILE_LIST) | sort -
+	@$(root)/makefile/extract_help.awk $(MAKEFILE_LIST)
 
 # Local Variables:
 # mode: makefile
