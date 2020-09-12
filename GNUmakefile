@@ -26,6 +26,7 @@ ruler := \
 ##
 .PHONY: all
 all: $(bin_dir)
+	@$(require_triplet)
 	$(info $(ruler))
 	$(info Using $(compiler_display_name) $(compiler_version))
 	$(do_for_all_subdirs)
@@ -34,6 +35,7 @@ all: $(bin_dir)
 ##
 .PHONY: clean
 clean:
+	@$(require_triplet)
 	$(do_for_all_subdirs)
 
 $(bin_dir):
@@ -41,6 +43,7 @@ $(bin_dir):
 
 .PHONY: test-run
 test-run:
+	@$(require_triplet)
 	$(do_for_all_subdirs)
 
 # Local Variables:
