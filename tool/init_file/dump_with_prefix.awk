@@ -15,12 +15,15 @@
 #
 #        - alignment
 #           One of 'align_right', 'align_center', 'align_left'  [gps]
+#
 #        - prefix
 #           A string to be prefixed to every line of the input; can be
 #           empty
+#
 #        - width
 #           An integer > length( prefix ), giving the maximum length in
 #           characters of the whole output line (including prefix)
+#
 #        - comment_pattern
 #           An ERE. Input lines matching this regular expression are
 #           considered "comments": they yield no corresponding output
