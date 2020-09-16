@@ -25,8 +25,9 @@
 #           characters of the whole output line (including prefix)
 #
 #        - comment_pattern
-#           An ERE. Input lines matching this regular expression are
-#           considered "comments": they yield no corresponding output
+#           An ERE. If this is non-empty, input lines matching this
+#           regular expression are considered "comments": they yield no
+#           corresponding output. If this is empty, it is ignored
 # ----------------------------------------------------------------------------
 
 function centered( text, room )
@@ -45,7 +46,7 @@ BEGIN {
     comment_pattern = ENVIRON[ "comment_pattern" ]
 }
 
-$0 ~ comment_pattern {
+comment_pattern != "" && $0 ~ comment_pattern {
     next
 }
 
