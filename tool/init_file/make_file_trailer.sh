@@ -45,7 +45,7 @@ sed 's/VimModeline/vim/g'
 #       yet introduced Emacs support; the code, then, was reasonably
 #       straightforward. Adding support for more types, however,
 #       especially those for which Emacs doesn't already ship a mode
-#       package, it become apparent that the various trailers had too
+#       package, it became apparent that the various trailers had too
 #       few in common to be set up that way; so I went for this
 #       "enumerative" approach, with a here-document for each file type.
 #
