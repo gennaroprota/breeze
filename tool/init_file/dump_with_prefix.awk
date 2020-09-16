@@ -55,9 +55,10 @@ length() == 0 {
 }
 
 {
-    printf( "%s ", prefix )
+    incipit = prefix " "
+    printf( "%s", incipit )
 
-    room = width - length( prefix ) - 1
+    room = width - length( incipit )
     text = substr( $0, 1, room ) # this may truncate
 
     if ( alignment == "align_center" ) {
