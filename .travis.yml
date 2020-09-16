@@ -28,7 +28,7 @@ matrix:
                     - g++-6
 
           env:
-            - compiler=gcc system=unix compiler_command=g++-6
+            - system=unix compiler=gcc compiler_command=g++-6
 
           name: "GCC 6 on Ubuntu 16.04 (Xenial)"
 
@@ -36,7 +36,7 @@ matrix:
           dist: xenial
 
           env:
-            - compiler=clang system=unix
+            - system=unix compiler=clang
 
           name: "Clang 7 on Ubuntu 16.04 (Xenial)"
 
@@ -50,7 +50,7 @@ matrix:
                 packages:
                     - g++-7
           env:
-            - compiler=gcc system=unix compiler_command=g++-7
+            - system=unix compiler=gcc compiler_command=g++-7
 
           name: "GCC 7 on Ubuntu 16.04 (Xenial)"
 
@@ -65,7 +65,7 @@ matrix:
                     - clang-8
 
           env:
-            - compiler=clang system=unix compiler_command=clang++-8
+            - system=unix compiler=clang compiler_command=clang++-8
 
           name: "Clang 8 on Ubuntu 16.04 (Xenial)"
 
@@ -79,7 +79,7 @@ matrix:
                 packages:
                     - g++-8
           env:
-            - compiler=gcc system=unix compiler_command=g++-8
+            - system=unix compiler=gcc compiler_command=g++-8
 
           name: "GCC 8 on Ubuntu 16.04 (Xenial)"
 
@@ -92,14 +92,14 @@ matrix:
                     - libc++-dev
 
           env:
-            - compiler=clang system=unix cpp_extra_options=-stdlib=libc++
+            - system=unix compiler=clang cpp_extra_options=-stdlib=libc++
 
           name: "Clang 7 with libc++ on Ubuntu 16.04 (Xenial)"
 
         - os: freebsd
 
           env:
-            - compiler=clang system=unix
+            - system=unix compiler=clang
 
           name: "Clang 8.0.1 on FreeBSD 12.1"
 
