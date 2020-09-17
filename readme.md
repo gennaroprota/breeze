@@ -97,6 +97,26 @@ Finally, `architecture` can be anything, because it is currently only used to
 include or exclude a component (get_cpuid_info()) which is only implemented for
 x86_64.
 
+Under Cygwin, with both Clang and GCC, you can build with `system=windows` or
+`system=unix`. In both cases, this will, by default, generate a library which
+depends on the Cygwin DLL. To avoid this dependency when `system=windows`, you
+can use the compilers provided by the *mingw\*gcc\** or *mingw\*clang* packages
+(available in the Cygwin installer) and select one of them via the
+`compiler_command` variable; e.g.:
+
+```
+system=windows compiler=gcc compiler_command=x86_64-w64-mingw32-g++ make
+```
+
+**Warning:** you might want to also add
+
+```
+cpp_extra_options="-static -static-libgcc -static-libstdc++"
+```
+
+to the command line, but note that the `cpp_extra_options` variable is
+experimental.
+
 *Note: to get a list of the available Make targets, with a brief description for
 each one, launch the command `make help` (or `gmake help`).*
 
