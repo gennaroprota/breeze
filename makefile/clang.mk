@@ -99,13 +99,29 @@ cpp_basic_options += -Wno-exit-time-destructors         \
                      -Wno-global-constructors           \
                      -fcomment-block-commands=cond,copybrief
 
-#       See:
+#       As of September 2020, Clang's -Og is the same as -O1 but
+#
+#         "In future versions, this option might disable different
+#         optimizations in order to improve debuggability.",
+#
+#       however
+#
+#         "-O0 Means "no optimization": this level compiles the fastest
+#         and generates the most debuggable code."
+#
+#                                         (From the Clang documentation)
+#
+#       So, we use -O0 instead of -Og. (I'm not sure what -O option is
+#       the default.)
+#
+#       For the libstdc++ macros, see:
 #
 #         <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html>.
 #
 #       Keep in sync with gcc.mk.
 # ----------------------------------------------------------------------------
-cpp_debug_options := -D _GLIBCXX_ASSERTIONS=1           \
+cpp_debug_options := -O0                                \
+                     -D _GLIBCXX_ASSERTIONS=1           \
                      -D _GLIBCXX_CONCEPT_CHECKS         \
                      -D _GLIBCXX_DEBUG                  \
                      -D _GLIBCXX_DEBUG_PEDANTIC

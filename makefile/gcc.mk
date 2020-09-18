@@ -172,11 +172,16 @@ cpp_basic_options += -Wno-format-nonliteral
 
 #       See:
 #
+#         <https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html>
+#
+#       and
+#
 #         <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html>.
 #
 #       Keep in sync with clang.mk.
 # ----------------------------------------------------------------------------
-cpp_debug_options := -D _GLIBCXX_ASSERTIONS=1        \
+cpp_debug_options := -Og                             \
+                     -D _GLIBCXX_ASSERTIONS=1        \
                      -D _GLIBCXX_CONCEPT_CHECKS      \
                      -D _GLIBCXX_DEBUG               \
                      -D _GLIBCXX_DEBUG_PEDANTIC
