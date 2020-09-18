@@ -96,6 +96,78 @@ matrix:
 
           name: "Clang 7 with libc++ on Ubuntu 16.04 (Xenial)"
 
+
+
+        #       Build jobs using sanitizers.
+        # --------------------------------------------------------------------
+        - os: linux
+          dist: focal
+
+          addons:
+            apt:
+                sources:
+                    - ubuntu-toolchain-r-test
+                packages:
+                    - g++-10
+          env:
+            - ASAN_OPTIONS="check_initialization_order=true" system=unix compiler=gcc compiler_command=g++-10 cpp_extra_options=-fsanitize=address
+
+          name: "GCC 10 with AddressSanitizer on Ubuntu 20.04 (Focal)"
+
+        - os: linux
+          dist: focal
+
+          addons:
+            apt:
+                sources:
+                    - ubuntu-toolchain-r-test
+                packages:
+                    - g++-10
+          env:
+            - system=unix compiler=gcc compiler_command=g++-10 cpp_extra_options="-fsanitize=undefined,thread"
+
+          name: "GCC 10 with UndefinedBehaviorSanitizer and ThreadSanitizer on Ubuntu 20.04 (Focal)"
+
+        - os: linux
+          dist: focal
+
+          addons:
+            apt:
+                packages:
+                    - clang-11
+                sources:
+                    - sourceline: 'ppa:ubuntu-toolchain-r/test'
+                    - sourceline: 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal-11 main'
+                      key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
+
+          env:
+            - ASAN_OPTIONS="check_initialization_order=true" system=unix compiler=clang compiler_command=clang++-11 cpp_extra_options="-fsanitize=address -O1 -fno-omit-frame-pointer -fno-optimize-sibling-calls"
+
+          name: "Clang 11 with AddressSanitizer on Ubuntu 20.04 (Focal)"
+
+        - os: linux
+          dist: focal
+
+
+          addons:
+            apt:
+                packages:
+                    - clang-11
+                sources:
+                    - sourceline: 'ppa:ubuntu-toolchain-r/test'
+                    - sourceline: 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal-11 main'
+                      key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
+
+          env:
+            #       Use -O2, because, with -O1, the SHA-384 tests will
+            #       run for more than 10 minutes without producing any
+            #       output, which causes Travis CI to terminate the
+            #       build job.
+            # ----------------------------------------------------------------
+            - system=unix compiler=clang compiler_command=clang++-11 cpp_extra_options="-fsanitize=undefined,thread -O2 -fno-omit-frame-pointer -fno-optimize-sibling-calls"
+
+          name: "Clang 11 with UndefinedBehaviorSanitizer and ThreadSanitizer on Ubuntu 20.04 (Focal)"
+
         - os: freebsd
 
           env:
