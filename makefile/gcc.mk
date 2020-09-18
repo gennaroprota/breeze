@@ -171,7 +171,8 @@ cpp_basic_options += -flto-odr-type-merging          \
 cpp_basic_options += -Wno-format-nonliteral
 
 #       See:
-#       <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html>.
+#
+#         <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html>.
 #
 #       Keep in sync with clang.mk.
 # ----------------------------------------------------------------------------
