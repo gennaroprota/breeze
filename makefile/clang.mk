@@ -100,7 +100,8 @@ cpp_basic_options += -Wno-exit-time-destructors         \
                      -fcomment-block-commands=cond,copybrief
 
 #       See:
-#       <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html>.
+#
+#         <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html>.
 #
 #       Keep in sync with gcc.mk.
 # ----------------------------------------------------------------------------
