@@ -78,7 +78,7 @@ void sha1_engine::process_block( state_type & state,
     using sha_common_private::ch ;
     using sha_common_private::maj ;
 
-    //      Expand the message-block to an 80-word "schedule"
+    //      Expand the message block to an 80-word "schedule".
     // -----------------------------------------------------------------------
     int const           sz = 80 ;
     typedef word_type   schedule_type[ sz ] ;
