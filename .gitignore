@@ -2,7 +2,7 @@
 # Breath-specific patterns
 # ======================================
 
-# Executable directory
+# Directory for binary files
 /bin/
 
 # Generated documentation files
