@@ -32,7 +32,7 @@ GNUmakefile text
 *.xhtml     text
 *.xslt      text
 
-*.txt   text
+*.txt       text
 
 #       Custom for Visual Studio.
 # ----------------------------------------------------------------------------
