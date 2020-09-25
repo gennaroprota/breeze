@@ -33,9 +33,10 @@ check_known()
     {
         { "",                                            0          },
 
-        // Following test vectors verified with:
-        //   <https://www.lammertbies.nl/comm/info/crc-calculation.html>
+        //      Following test vectors verified with:
         //
+        //        <https://www.lammertbies.nl/comm/info/crc-calculation.html>.
+        // -------------------------------------------------------------------
         { "The quick brown fox jumps over the lazy dog", 0x414FA339 },
         { "123456789",                                   0xCBF43926 },
         { "breath",                                      0x3A3B4FE3 },
