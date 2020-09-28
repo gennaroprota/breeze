@@ -20,6 +20,8 @@ namespace breath_ns {
 //      as_non_constant():
 //      ==================
 //
+//!     \copybrief as_non_constant.hpp
+//!
 //!     Just returns a copy of \c value.
 //!
 //!     Used to workaround warnings from compilers or static analyzers,
