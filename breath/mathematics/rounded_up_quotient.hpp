@@ -20,6 +20,8 @@ namespace breath_ns {
 //      rounded_up_quotient():
 //      ======================
 //
+//!     \copybrief rounded_up_quotient.hpp
+//!
 //!     \par Type requirements
 //!         \c Integer shall be an integral type or a cv-qualified
 //!         version thereof.
