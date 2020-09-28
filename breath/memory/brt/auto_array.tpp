@@ -6,7 +6,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/diagnostics/check_type_completeness.hpp"
+#include "breath/diagnostics/require_type_completeness.hpp"
 #include <utility>
 
 namespace breath_ns {
@@ -74,7 +74,7 @@ template< typename T >
 void
 auto_array< T >::do_delete() noexcept
 {
-    check_type_completeness< T >() ;
+    require_type_completeness< T >() ;
     delete [] m_ptr ;
 }
 

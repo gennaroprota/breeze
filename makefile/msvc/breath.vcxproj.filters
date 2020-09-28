@@ -271,10 +271,10 @@
     <ClInclude Include="..\..\breath\diagnostics\assert.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\diagnostics\check_type_completeness.hpp">
+    <ClInclude Include="..\..\breath\diagnostics\last_api_error.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\diagnostics\last_api_error.hpp">
+    <ClInclude Include="..\..\breath\diagnostics\require_type_completeness.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\encoding\base64_to_binary.hpp">

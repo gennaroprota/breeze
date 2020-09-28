@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Checks that a type is complete at the point of
+//!     \brief Ensures that a type is complete at the point of
 //!            instantiation.
 // ---------------------------------------------------------------------------
 
@@ -18,21 +18,21 @@
 
 namespace breath_ns {
 
-//      check_type_completeness():
-//      ==========================
+//      require_type_completeness():
+//      ============================
 //
-//!     To be used to check that \c T is a complete type at the point
+//!     To be used to ensure that \c T is a complete type at the point
 //!     of instantiation. If \c T is incomplete then the expression
 //!
 //!     <code>
-//!         check_type_completeness< T >()
+//!         require_type_completeness< T >()
 //!     </code>
 //!
 //!     renders the program \e ill-formed.
 // ---------------------------------------------------------------------------
 template< typename T >
 void
-check_type_completeness()
+require_type_completeness()
 {
     static_cast< void >( sizeof( T ) ) ;
 }
