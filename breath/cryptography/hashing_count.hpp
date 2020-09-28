@@ -19,7 +19,7 @@
 namespace breath_ns {
 
 //!     \brief
-//!         Count policy for the hashing algorithm.
+//!         Count policy for the hashing algorithms.
 // ---------------------------------------------------------------------------
 class hashing_count
 {
