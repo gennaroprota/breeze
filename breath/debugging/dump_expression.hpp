@@ -42,15 +42,15 @@
 //!         The <code>#include</code>'s are not part of the interface.
 //!
 //!     \note
-//!         Macros within the argument \c expr are expanded.
+//!         Macros within the argument \c expression are expanded.
 // ---------------------------------------------------------------------------
-#define BREATH_DUMP_EXPRESSION( expr )                                        \
+#define BREATH_DUMP_EXPRESSION( expression )                                  \
         do {                                                                  \
             char const              expanded[] =                              \
-                                  BREATH_STRINGIZE_AFTER_EXPANSION( expr )  ; \
-            char const              unexpanded[] = # expr ;                   \
+                            BREATH_STRINGIZE_AFTER_EXPANSION( expression )  ; \
+            char const              unexpanded[] = # expression ;             \
             std::ostream &          os = std::cout ;                          \
-            os << expanded << " = " << ( expr ) ;                             \
+            os << expanded << " = " << ( expression ) ;                       \
             if ( std::strcmp( expanded, unexpanded ) != 0 ) {                 \
                 os << " [from: " << unexpanded << ']' ;                       \
             }                                                                 \
