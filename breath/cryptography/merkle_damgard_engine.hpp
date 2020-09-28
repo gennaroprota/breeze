@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief  Base class template to ease the definition of policies
-//!             for the \c merkle_damgard_machine template..
+//!             for the \c merkle_damgard_machine template.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_fYqwSU8p6zoTOMzKlvSB4iz96M3PyUF5
