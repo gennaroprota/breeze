@@ -18,6 +18,8 @@
 
 namespace breath_ns {
 
+//!     \brief "Determines" the running OS (Windows-only).
+//!
 //!     This "determines" the running OS based on information returned
 //!     by Windows itself: initially the implementation used
 //!     \c GetVersionEx(), which "lies" when the executable runs in
