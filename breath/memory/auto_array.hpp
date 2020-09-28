@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A smart pointer to array objects.
+//!     \brief A smart pointer to an array object.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_FvaoTt7c3pTltKsed1Av5CAvE3SvnVIn
