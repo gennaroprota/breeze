@@ -22,11 +22,11 @@ namespace breath_ns {
 //      integer_log2():
 //      ===============
 //
-//!     \return
-//!         The behavior is undefined if <code>x <= 0</code> (and might
-//!         result in an assertion failure). Otherwise the function
-//!         returns the integer part of the logarithm, base 2, of its
-//!         argument.
+//!     \brief Calculates the integer part of the logarithm, to base 2,
+//!            of its argument.
+//!
+//!     \pre
+//!         x > 0
 //!
 //!     \note
 //!         This function does not compile with Visual C++ 2015 because
