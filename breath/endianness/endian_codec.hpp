@@ -283,7 +283,7 @@ endian_store( T const & value, ByteRandomIter it )
     breath::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
 }
 
-//!     Conveniente wrapper around \c endian_codec::decode();
+//!     Convenience wrapper around \c endian_codec::decode();
 //!     \c endian_load< EndianPolicy >( it ) is equivalent to:
 //!
 //!     <code>
