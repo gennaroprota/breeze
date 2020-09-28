@@ -337,8 +337,8 @@
     <ClInclude Include="..\..\breath\cryptography\sha512_hasher.hpp" />
     <ClInclude Include="..\..\breath\debugging\dump_expression.hpp" />
     <ClInclude Include="..\..\breath\diagnostics\assert.hpp" />
-    <ClInclude Include="..\..\breath\diagnostics\check_type_completeness.hpp" />
     <ClInclude Include="..\..\breath\diagnostics\last_api_error.hpp" />
+    <ClInclude Include="..\..\breath\diagnostics\require_type_completeness.hpp" />
     <ClInclude Include="..\..\breath\encoding\base64_to_binary.hpp" />
     <ClInclude Include="..\..\breath\encoding\binary_to_base64.hpp" />
     <ClInclude Include="..\..\breath\endianness\endian_codec.hpp" />
