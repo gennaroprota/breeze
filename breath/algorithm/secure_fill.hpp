@@ -8,31 +8,6 @@
 //
 //!     \file
 //!     \brief A security-aware fill algorithm.
-//!
-//!     This is completely analogous to the \c std::fill() algorithm,
-//!     except that it guarantees that the range is written to, even if
-//!     its elements are never touched after the \c secure_fill() call
-//!     (in other words: it ensures that the compiler will not optimize
-//!     away the call); unless, of course, the provided range is empty.
-//!     Useful for zeroing passwords and other sensitive data (see
-//!
-//!       <https://devblogs.microsoft.com/oldnewthing/20130529-00/?p=4223>
-//!
-//!     for some insights on this).
-//!
-//!     Note that a convenience overload for built-in arrays is
-//!     provided.
-//!
-//!     For technical reasons, secure_fill() requires a range, or an
-//!     array, whose elements are of a \e built-in type.
-//!
-//!     \warning
-//!         Note that algorithm names are usually verb-based. However,
-//!         in the expression "secure fill", "fill" is actually a noun.
-//!         I don't like this inconsistency, but couldn't find a better,
-//!         verb-based name (some native speakers told me that
-//!         "securely_fill" would sound weird); if you have one, please
-//!         send me a mail.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
@@ -101,7 +76,33 @@ namespace breath_ns {
 //      secure_fill():
 //      ==============
 //
-//!     Version for iterator ranges.
+//!     \brief Like \c std::fill(), but guarantees that the range is
+//!            written to.
+//!
+//!     This is completely analogous to the \c std::fill() algorithm,
+//!     except that it guarantees that the range is written to, even if
+//!     its elements are never touched after the \c secure_fill() call
+//!     (in other words: it ensures that the compiler will not optimize
+//!     away the call); unless, of course, the provided range is empty.
+//!     Useful for zeroing passwords and other sensitive data (see
+//!
+//!       <https://devblogs.microsoft.com/oldnewthing/20130529-00/?p=4223>
+//!
+//!     for some insights on this).
+//!
+//!     Note that a convenience overload for built-in arrays is
+//!     provided.
+//!
+//!     For technical reasons, secure_fill() requires a range, or an
+//!     array, whose elements are of a \e built-in type.
+//!
+//!     \warning
+//!         Note that algorithm names are usually verb-based. However,
+//!         in the expression "secure fill", "fill" is actually a noun.
+//!         I don't like this inconsistency, but couldn't find a better,
+//!         verb-based name (some native speakers told me that
+//!         "securely_fill" would sound weird); if you have one, please
+//!         send me a mail.
 // ---------------------------------------------------------------------------
 //
 //      [FUTURE], [C++11] [gps]:
