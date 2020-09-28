@@ -18,6 +18,9 @@
 
 namespace breath_ns {
 
+//      get_os():
+//      =========
+//
 //!     \brief "Determines" the running OS (Windows-only).
 //!
 //!     This "determines" the running OS based on information returned
