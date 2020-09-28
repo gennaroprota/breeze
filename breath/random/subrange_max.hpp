@@ -33,9 +33,9 @@ namespace breath_ns {
 //!
 //!         <tt>32765</tt>
 //!
-//!     This allows discarding only a tiny fraction of the values in
-//!     the whole range of the source (only the last two, in fact),
-//!     rather than discarding anything greater than or equal to six.
+//!     This allows discarding only a tiny fraction of the values in the
+//!     whole range of the source (only the last two, in fact), rather
+//!     than discarding anything greater than or equal to six.
 //!
 //!     Why that value? The idea, of course, is that there are <tt>32766
 //!     </tt>numbers in <tt>[0, 32765]</tt>, and that is a multiple of
