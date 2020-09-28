@@ -27,6 +27,8 @@ namespace breath_ns {
 //      clamp():
 //      ========
 //
+//!     \copybrief clamp.hpp
+//!
 //!     Requires:
 //!      1. \c T shall be \c LessThanComparable
 //!      2. \c high shall be no lower than \c low
@@ -48,6 +50,8 @@ constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
 //      clamp():
 //      ========
 //
+//!     \copybrief clamp.hpp
+//!
 //!     Requires:
 //!         <code>comp( high, low ) == false</code>
 //!
