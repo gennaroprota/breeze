@@ -42,7 +42,7 @@ public:
 
     enum type
     {
-        wraps      = 1,
+        wraps,
         is_limited
     } ;
 
