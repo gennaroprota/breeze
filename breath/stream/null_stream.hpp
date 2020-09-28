@@ -58,10 +58,9 @@ private:
 //      null_stream:
 //      ------------
 //
-//!     \copybrief null_stream.hpp
+//!     \brief A stream that discards any output and provides no input.
 //!
-//!     A stream that discards any output and provides no input. On
-//!     output, the stream never signals failbit. On input it always
+//!     On output, the stream never signals failbit. On input it always
 //!     signals EOF. The behavior is similar to a file stream opened on
 //!     /dev/null under Unix, but this is portable and doesn't make
 //!     system calls.
