@@ -44,7 +44,7 @@
 #define BREATH_DUMP_EXPRESSION( expression )                                  \
         do {                                                                  \
             char const              expanded[] =                              \
-                            BREATH_STRINGIZE_AFTER_EXPANSION( expression )  ; \
+                             BREATH_STRINGIZE_AFTER_EXPANSION( expression ) ; \
             char const              unexpanded[] = # expression ;             \
             std::ostream &          os = std::cout ;                          \
             os << expanded << " = " << ( expression ) ;                       \
