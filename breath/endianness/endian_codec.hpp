@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Converter from/to byte sequences representations.
+//!     \brief Converter from/to byte sequence representations.
 //
 //      NOTE: to avoid overcomplicated syntax (template members of class
 //      templates), this file doesn't have a corresponding .tpp file.
