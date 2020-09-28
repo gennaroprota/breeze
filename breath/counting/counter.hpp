@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A counter providing only operations meaningful for a
-//!            counter, plus overflow checking.
+//!            counter, plus overflow and underflow checking.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_igDqQSfWTOavMKrliVx0QKSbOMZ1k4kD
