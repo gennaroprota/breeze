@@ -37,6 +37,9 @@ namespace breath_ns {
 //!     Remarks:
 //!         Returns a reference to \c value when \c value is
 //!         equivalent to one (or both) of the boundary arguments.
+//!
+//!         If <tt>NaN</tt> is avoided, \c T can be a floating-point
+//!         type.
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
@@ -59,6 +62,9 @@ constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
 //!     Remarks:
 //!         Returns a reference to \c value when \c value is
 //!         equivalent to one (or both) of the boundary arguments.
+//!
+//!         If <tt>NaN</tt> is avoided, \c T can be a floating-point
+//!         type.
 // ---------------------------------------------------------------------------
 template< typename T, typename Compare  >
 constexpr T const & clamp( T const & value,
