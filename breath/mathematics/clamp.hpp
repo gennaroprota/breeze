@@ -7,14 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief An implementation of the \c clamp() templates proposed
-//!            for C++17.
-// ---------------------------------------------------------------------------
-//      See:
-//        <http://wg21.link/n4536>,
-//        <http://wg21.link/p0025r1>
-//      and
-//        <http://wg21.link/lwg2688>.
+//!     \brief An implementation of the \c clamp() templates introduced
+//!            in C++17.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_iVIpJl3Xhjhnj23ACP0NU6ffWo7q8kd4
