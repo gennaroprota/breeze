@@ -24,8 +24,8 @@ namespace breath_ns {
 //!     \copybrief clamp.hpp
 //!
 //!     \pre
-//!      1. \c T shall be \c LessThanComparable
-//!      2. \c high shall be no lower than \c low
+//!          - \c T shall be \c LessThanComparable
+//!          - \c high shall be no lower than \c low
 //!
 //!     \return
 //!         \c low if \c value is less than \c low, \c high if \c
