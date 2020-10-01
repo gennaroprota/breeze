@@ -260,7 +260,11 @@ std::ptrdiff_t const
 endian_codec< EndianPolicy, T, Byte >::required_count ;
 
 
-//!     Convenience wrapper around \c endian_codec::encode();
+//      endian_store:
+//      =============
+//
+//!     \brief Convenience wrapper around \c endian_codec::encode()
+//!
 //!     \c endian_store< EndianPolicy( value, it ) > is equivalent to:
 //!
 //!     <code>
@@ -278,7 +282,11 @@ endian_store( T const & value, ByteOutputIter it )
     breath::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
 }
 
-//!     Convenience wrapper around \c endian_codec::decode();
+//      endian_load:
+//      ============
+//
+//!     \brief Convenience wrapper around \c endian_codec::decode()
+//!
 //!     \c endian_load< EndianPolicy >( it ) is equivalent to:
 //!
 //!     <code>
