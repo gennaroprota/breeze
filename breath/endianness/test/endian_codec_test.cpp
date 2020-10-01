@@ -71,6 +71,22 @@ check2()
     BREATH_CHECK( repr[ sizeof amount / sizeof repr[ 0 ] - 1 ] == 24 ) ;
 }
 
+template< typename T, typename Byte >
+void
+check_type_that_fits_in_byte()
+{
+    Byte dest = 0 ;
+    breath::endian_codec< breath::little_endian_policy,
+                          T,
+                          Byte >::encode( 10, &dest ) ;
+    BREATH_CHECK( dest == 10 ) ;
+
+    breath::endian_codec< breath::big_endian_policy,
+                          T,
+                          Byte >::encode( 20, &dest ) ;
+    BREATH_CHECK( dest == 20 ) ;
+}
+
 }
 
 int
@@ -79,7 +95,10 @@ test_endian_codec()
     using namespace breath ;
 
     return test_runner::instance().run( "endian_codec",
-                                        { check, check2 } ) ;
+            { check,
+              check2,
+              check_type_that_fits_in_byte< unsigned char, unsigned int >,
+              check_type_that_fits_in_byte< unsigned int,  unsigned long > } ) ;
 }
 
 // Local Variables:
