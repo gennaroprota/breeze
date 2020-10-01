@@ -148,7 +148,6 @@ matrix:
         - os: linux
           dist: focal
 
-
           addons:
             apt:
                 packages:
