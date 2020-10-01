@@ -11,6 +11,9 @@
 //!            x86_64 architectures.
 // ---------------------------------------------------------------------------
 
+#ifndef BREATH_GUARD_NdxCdLqwZx3xIY8HOQTuNFqrCGUmVJGH
+#define BREATH_GUARD_NdxCdLqwZx3xIY8HOQTuNFqrCGUmVJGH
+
 #include <cstdint>
 
 extern "C" {
@@ -71,6 +74,8 @@ struct cpuid_result
 cpuid_result        get_cpuid_info( std::uint32_t eax, std::uint32_t ecx ) ;
 
 }
+
+#endif
 
 // Local Variables:
 // mode: c++
