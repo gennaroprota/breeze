@@ -32,6 +32,7 @@ all: $(bin_dir)
 	@$(require_triplet)
 	$(info $(ruler))
 	$(info Using $(compiler_display_name) $(compiler_version))
+	@printf '%s\n' "Running on: ` uname -m ` "
 	$(do_for_all_subdirs)
 
 ##      Deletes the build artifacts for a given triplet (see 'all').
