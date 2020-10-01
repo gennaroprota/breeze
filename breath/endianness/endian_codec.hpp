@@ -137,9 +137,9 @@ public:
 //
 //      Fortunately, dependency on all of the three variables is not
 //      common. Thus, our default policies, defined below, take the
-//      endianness type only into account. Your will need to provide
-//      your own policy for more exotic cases (e.g. if you are dealing
-//      with PDP-11 endianness).
+//      endianness type only into account. You will need to provide your
+//      own policy for more exotic cases (e.g. if you are dealing with
+//      PDP-11 endianness).
 // ---------------------------------------------------------------------------
 class little_endian_policy
 {
