@@ -200,8 +200,6 @@ public:
 //!     independently of the endianness they are stored in, as long as
 //!     the endianness type is known.
 //!
-//!     It is only designed for reads and writes in memory.
-//!
 //!     \par Type requirements
 //!         \c T and \c Byte shall be integral types with no sign.
 //!         The width of \c T must be smaller than the width of \c Byte
