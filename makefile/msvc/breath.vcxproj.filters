@@ -316,9 +316,6 @@
     <ClInclude Include="..\..\breath\mathematics\lcm.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\mathematics\brt\private\check_common_gcd_lcm_preconditions.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\breath\memory\auto_array.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -560,6 +557,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\vocabulary\maybe.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\memory\amount_of_physical_memory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\meta\padding.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\top_level_namespace.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\version.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\mathematics\brt\private\gcd_lcm_common.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\time\private\thread_safe_reentrant_time_functions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
