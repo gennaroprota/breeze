@@ -72,25 +72,20 @@ class endian_codec
                         policy ;
     typedef endian_codec< policy, T, Byte, n - 1 >
                         next ;
-    enum {              shift = meta::width< Byte >::value } ;
 
 public:
     //!     Writes (encodes) the value \c value as a sequence of \c
     //!     Bytes, according to \c EndianPolicy and starting with \c
     //!     dest.
     // -----------------------------------------------------------------------
-    template< typename ByteRandomIter >
-    static void         encode( T const & value, ByteRandomIter dest )
+    template< typename ByteOutputIter >
+    static void         encode( T const & value, ByteOutputIter dest )
     {
-        // write the least significant part
-        dest[ policy::template index< T, Byte, n - 1 >()
-            ] = static_cast< Byte >( value ) ;
-        next::encode(
-            // '* (n > 1)' silences spurious warnings;
-            // the static_cast also silences a warning (GCC
-            // -Wconversion).
-            n > 1 ? static_cast< T >( value >> shift * (n > 1) ) : 0,
-            dest ) ;
+        int const           shift_amount =
+            policy:: template shift_amount< T, Byte, n - 1 >() ;
+
+        *dest = static_cast< Byte >( value >> shift_amount ) ;
+        next::encode( value, ++ dest ) ;
     }
 
     //!     \return
@@ -98,11 +93,14 @@ public:
     //!         EndianPolicy, as the sequence of \c Bytes that begins
     //!         with \c source.
     // -----------------------------------------------------------------------
-    template< typename ByteRandomIter >
-    static T            decode( ByteRandomIter source )
+    template< typename ByteInputIter >
+    static T            decode( ByteInputIter source )
     {
-        return source[ policy:: template index< T, Byte, n - 1 >() ]
-             | next::decode( source ) << shift ;
+        int const           shift_amount =
+            policy:: template shift_amount< T, Byte, n - 1 >() ;
+
+        T const             temp = T( *source ) << shift_amount ;
+        return  temp | next::decode( ++ source ) ;
     }
 } ;
 
@@ -146,13 +144,13 @@ public:
 class little_endian_policy
 {
 public:
-    // n == 0 for the most significant byte
+    // n == width_ratio - 1 to produce the first Byte
     //
     template< typename T, typename Byte, std::ptrdiff_t n >
-    static std::ptrdiff_t
-                        index()
+    static int          shift_amount()
     {
-        return endian_codec_private::width_ratio< T, Byte >::value - 1 - n ;
+        return ( endian_codec_private::width_ratio< T, Byte >::value - 1 - n ) *
+            meta::width< Byte >::value ;
     }
 
     template< typename T, typename Byte >
@@ -172,10 +170,9 @@ class big_endian_policy
 {
 public:
     template< typename T, typename Byte, std::ptrdiff_t n >
-    static std::ptrdiff_t
-                        index()
+    static int          shift_amount()
     {
-        return n ;
+        return n * meta::width< Byte >::value ;
     }
 
     template< typename T, typename Byte >
@@ -232,8 +229,8 @@ public:
     //!     Bytes, according to \c EndianPolicy and starting with \c
     //!     dest.
     // -----------------------------------------------------------------------
-    template< typename ByteRandomIter >
-    static void         encode( T const & value, ByteRandomIter dest )
+    template< typename ByteOutputIter >
+    static void         encode( T const & value, ByteOutputIter dest )
     {
         endian_codec_private::endian_codec< EndianPolicy,
                                             T,
@@ -246,8 +243,8 @@ public:
     //!         EndianPolicy, as the sequence of \c Bytes that begins
     //!         with \c source.
     // -----------------------------------------------------------------------
-    template< typename ByteRandomIter >
-    static T            decode( ByteRandomIter source )
+    template< typename ByteInputIter >
+    static T            decode( ByteInputIter source )
     {
         return endian_codec_private::endian_codec< EndianPolicy,
                                                    T,
@@ -267,16 +264,16 @@ endian_codec< EndianPolicy, T, Byte >::required_count ;
 //!     \c endian_store< EndianPolicy( value, it ) > is equivalent to:
 //!
 //!     <code>
-//!         typedef typename std::iterator_traits< ByteRandomIter >::value_type
+//!         typedef typename std::iterator_traits< ByteOutputIter >::value_type
 //!                             Byte ;
 //!         breath::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
 //!     </code>
 // ---------------------------------------------------------------------------
-template< typename EndianPolicy, typename T, typename ByteRandomIter >
+template< typename EndianPolicy, typename T, typename ByteOutputIter >
 void
-endian_store( T const & value, ByteRandomIter it )
+endian_store( T const & value, ByteOutputIter it )
 {
-    typedef typename std::iterator_traits< ByteRandomIter >::value_type
+    typedef typename std::iterator_traits< ByteOutputIter >::value_type
                         Byte ;
     breath::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
 }
@@ -285,16 +282,16 @@ endian_store( T const & value, ByteRandomIter it )
 //!     \c endian_load< EndianPolicy >( it ) is equivalent to:
 //!
 //!     <code>
-//!         typedef typename std::iterator_traits< ByteRandomIter >::value_type
+//!         typedef typename std::iterator_traits< ByteInputIter >::value_type
 //!                             Byte ;
 //!         return breath::endian_codec< EndianPolicy, T, Byte >::decode( it ) ;
 //!     </code>
 // ---------------------------------------------------------------------------
-template< typename EndianPolicy, typename T, typename ByteRandomIter >
+template< typename EndianPolicy, typename T, typename ByteInputIter >
 T
-endian_load( ByteRandomIter it )
+endian_load( ByteInputIter it )
 {
-    typedef typename std::iterator_traits< ByteRandomIter >::value_type
+    typedef typename std::iterator_traits< ByteInputIter >::value_type
                         Byte ;
     return breath::endian_codec< EndianPolicy, T, Byte >
         ::decode( it ) ;
