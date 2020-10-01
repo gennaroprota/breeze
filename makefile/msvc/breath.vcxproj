@@ -350,7 +350,7 @@
     <ClInclude Include="..\..\breath\environment\windows_only\windows_version_info.hpp" />
     <ClInclude Include="..\..\breath\idiom\volatilize.hpp" />
     <ClInclude Include="..\..\breath\iteration\begin_end.hpp" />
-    <ClInclude Include="..\..\breath\mathematics\brt\private\check_common_gcd_lcm_preconditions.hpp" />
+    <ClInclude Include="..\..\breath\mathematics\brt\private\gcd_lcm_common.hpp" />
     <ClInclude Include="..\..\breath\mathematics\clamp.hpp" />
     <ClInclude Include="..\..\breath\mathematics\count_bits.hpp" />
     <ClInclude Include="..\..\breath\mathematics\digital_root.hpp" />
@@ -360,11 +360,13 @@
     <ClInclude Include="..\..\breath\mathematics\lcm.hpp" />
     <ClInclude Include="..\..\breath\mathematics\representation_in_base.hpp" />
     <ClInclude Include="..\..\breath\mathematics\rounded_up_quotient.hpp" />
+    <ClInclude Include="..\..\breath\memory\amount_of_physical_memory.hpp" />
     <ClInclude Include="..\..\breath\memory\auto_array.hpp" />
     <ClInclude Include="..\..\breath\meta\constant.hpp" />
     <ClInclude Include="..\..\breath\meta\exact_width_integer.hpp" />
     <ClInclude Include="..\..\breath\meta\has_sign.hpp" />
     <ClInclude Include="..\..\breath\meta\is_2s_complement.hpp" />
+    <ClInclude Include="..\..\breath\meta\padding.hpp" />
     <ClInclude Include="..\..\breath\meta\precision.hpp" />
     <ClInclude Include="..\..\breath\meta\predecessor.hpp" />
     <ClInclude Include="..\..\breath\meta\select.hpp" />
@@ -424,11 +426,14 @@
     <ClInclude Include="..\..\breath\text\trim_tail_if.hpp" />
     <ClInclude Include="..\..\breath\time\c_clock_policy.hpp" />
     <ClInclude Include="..\..\breath\time\c_clock_timer.hpp" />
+    <ClInclude Include="..\..\breath\time\private\thread_safe_reentrant_time_functions.hpp" />
     <ClInclude Include="..\..\breath\time\timer.hpp" />
     <ClInclude Include="..\..\breath\time\time_string.hpp" />
     <ClInclude Include="..\..\breath\time\windows_only\performance_counter_policy.hpp" />
+    <ClInclude Include="..\..\breath\top_level_namespace.hpp" />
     <ClInclude Include="..\..\breath\type_identification\readable_type_name.hpp" />
     <ClInclude Include="..\..\breath\uuid\uuid.hpp" />
+    <ClInclude Include="..\..\breath\version.hpp" />
     <ClInclude Include="..\..\breath\vocabulary\maybe.hpp" />
     <ClInclude Include="..\..\breath\workaround\as_non_constant.hpp" />
   </ItemGroup>
