@@ -168,6 +168,24 @@ matrix:
 
           name: "Clang 11 with UndefinedBehaviorSanitizer and ThreadSanitizer on Ubuntu 20.04 (Focal)"
 
+
+        #       Build jobs on IBM Z, which is big-endian
+        # --------------------------------------------------------------------
+        - os: linux
+          dist: focal
+          arch: s390x
+
+          addons:
+            apt:
+                sources:
+                    - ubuntu-toolchain-r-test
+                packages:
+                    - g++-10
+          env:
+            - architecture=s390x system=unix compiler=gcc compiler_command=g++-10
+
+          name: "GCC 10 on IBM Z and Ubuntu 20.04 (Focal)"
+
         - os: freebsd
 
           env:
