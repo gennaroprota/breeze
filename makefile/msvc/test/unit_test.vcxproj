@@ -97,6 +97,9 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\test\unit_test_main.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\3_CLAUSE_BSD_LICENSE.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A3F790C1-08D4-4D58-AA93-DAB57469BB9E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
