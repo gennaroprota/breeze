@@ -61,6 +61,7 @@ source_files := unit_test_main.cpp                          \
                 dump_expression_test.cpp                    \
                                                             \
                 assert_test.cpp                             \
+                last_api_error_test.cpp                     \
                                                             \
                 base64_to_binary_test.cpp                   \
                 binary_to_base64_test.cpp                   \

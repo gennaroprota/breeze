@@ -35,6 +35,7 @@ int                 test_gcd() ;
 int                 test_get_environment_variable() ;
 int                 test_is_2s_complement() ;
 int                 test_is_power_of_2() ;
+int                 test_last_api_error() ;
 int                 test_lcm() ;
 int                 test_levenshtein_distance() ;
 int                 test_luhn() ;

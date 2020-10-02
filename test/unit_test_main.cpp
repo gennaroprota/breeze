@@ -48,6 +48,7 @@ main()
             test_get_environment_variable,
             test_is_2s_complement,
             test_is_power_of_2,
+            test_last_api_error,
             test_lcm,
             test_levenshtein_distance,
             test_luhn,
