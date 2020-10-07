@@ -101,9 +101,9 @@ public:
 
         //      Note:
         //          a) len[ 0 ] is always the *least* significant word
-        //          b) the order in which the words are "copied" into
-        //             dest, and the order of the bytes within each
-        //             word, follow EndianPolicy
+        //          b) the order in which the words will "appear" in
+        //             [dest, end), and the order of the bytes within
+        //             each word, follow EndianPolicy
         // -------------------------------------------------------------------
         int const           step = word_width / byte_width ;
         for ( int i = 0 ; i < max_words ; ++ i ) {
