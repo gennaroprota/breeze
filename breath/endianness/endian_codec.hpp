@@ -74,10 +74,6 @@ class endian_codec
                         next ;
 
 public:
-    //!     Writes (encodes) the value \c value as a sequence of \c
-    //!     Bytes, according to \c EndianPolicy and starting with \c
-    //!     dest.
-    // -----------------------------------------------------------------------
     template< typename ByteOutputIter >
     static void         encode( T const & value, ByteOutputIter dest )
     {
@@ -88,11 +84,6 @@ public:
         next::encode( value, ++ dest ) ;
     }
 
-    //!     \return
-    //!         The value of type \c T encoded, according to \c
-    //!         EndianPolicy, as the sequence of \c Bytes that begins
-    //!         with \c source.
-    // -----------------------------------------------------------------------
     template< typename ByteInputIter >
     static T            decode( ByteInputIter source )
     {
@@ -225,9 +216,8 @@ public:
     static std::ptrdiff_t const
                         required_count = n ; // gps experimental
 
-    //!     Writes (encodes) the value \c value as a sequence of \c
-    //!     Bytes, according to \c EndianPolicy and starting with \c
-    //!     dest.
+    //!     Writes (encodes) the value \c value into a range starting
+    //!     with \c dest, according to \c EndianPolicy.
     // -----------------------------------------------------------------------
     template< typename ByteOutputIter >
     static void         encode( T const & value, ByteOutputIter dest )
@@ -240,8 +230,7 @@ public:
 
     //!     \return
     //!         The value of type \c T encoded, according to \c
-    //!         EndianPolicy, as the sequence of \c Bytes that begins
-    //!         with \c source.
+    //!         EndianPolicy, in a range that begins with \c source.
     // -----------------------------------------------------------------------
     template< typename ByteInputIter >
     static T            decode( ByteInputIter source )
