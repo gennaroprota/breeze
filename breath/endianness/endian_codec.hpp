@@ -280,7 +280,7 @@ endian_store( T const & value, OutputIter it )
 //
 //!     \brief Convenience wrapper around \c endian_codec::decode()
 //!
-//!     \c endian_load< EndianPolicy >( it ) is equivalent to:
+//!     \c endian_load< EndianPolicy, T >( it ) is equivalent to:
 //!
 //!     <code>
 //!         typedef typename std::iterator_traits< InputIter >::value_type
