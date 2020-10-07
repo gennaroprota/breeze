@@ -253,8 +253,8 @@ std::ptrdiff_t const
 endian_codec< EndianPolicy, T, Byte >::required_count ;
 
 
-//      endian_store:
-//      =============
+//      endian_store():
+//      ===============
 //
 //!     \brief Convenience wrapper around \c endian_codec::encode()
 //!
@@ -279,8 +279,8 @@ endian_store( T const & value, ForwardIter it )
     breath::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
 }
 
-//      endian_load:
-//      ============
+//      endian_load():
+//      ==============
 //
 //!     \brief Convenience wrapper around \c endian_codec::decode()
 //!
