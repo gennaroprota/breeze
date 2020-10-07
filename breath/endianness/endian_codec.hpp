@@ -26,8 +26,9 @@ namespace breath_ns {
 //!\cond implementation
 namespace endian_codec_private {
 
+//      How many Bytes do we need to store a T?
 template< typename T, typename Byte >
-class width_ratio
+class required_count
 {
     enum { q = meta::width< T >::value / meta::width< Byte >::value } ;
 
@@ -37,21 +38,20 @@ class width_ratio
 
 
 public:
-    // how many Bytes do we need to store a T?
     static std::ptrdiff_t const
                         value = q > 1 ? q : 1 ;
 } ;
 
 template< typename T, typename Byte >
 std::ptrdiff_t const
-width_ratio< T, Byte >::value ;
+required_count< T, Byte >::value ;
 
 template< typename T, std::ptrdiff_t n, typename Byte >
-class width_ratio< T[ n ], Byte >
+class required_count< T[ n ], Byte >
 {
 public:
     static std::ptrdiff_t const
-                        value = n * width_ratio< T, Byte >::value ;
+                        value = n * required_count< T, Byte >::value ;
 } ;
 
 template<
@@ -60,7 +60,7 @@ template<
     typename Byte,
     //      Hiding this parameter from the user is the reason why we
     //      have endian_codec_private::endian_codec.
-    std::ptrdiff_t n = endian_codec_private::width_ratio< T, Byte >::value
+    std::ptrdiff_t n = endian_codec_private::required_count< T, Byte >::value
 >
 class endian_codec
 {
@@ -144,12 +144,12 @@ public:
 class little_endian_policy
 {
 public:
-    // n == width_ratio - 1 to produce the first Byte
+    // n == required_count - 1 to produce the first Byte
     //
     template< typename T, typename Byte, std::ptrdiff_t n >
     static int          shift_amount()
     {
-        return ( endian_codec_private::width_ratio< T, Byte >::value - 1 - n ) *
+        return ( endian_codec_private::required_count< T, Byte >::value - 1 - n ) *
             meta::width< Byte >::value ;
     }
 
@@ -157,7 +157,7 @@ public:
     static std::ptrdiff_t
                         index( std::ptrdiff_t n )
     {
-        return endian_codec_private::width_ratio< T, Byte >::value - 1 - n ;
+        return endian_codec_private::required_count< T, Byte >::value - 1 - n ;
     }
 } ;
 
@@ -220,7 +220,7 @@ class endian_codec
 private:
     static std::ptrdiff_t const
                         n = endian_codec_private::
-                              width_ratio< T, Byte >::value ;
+                              required_count< T, Byte >::value ;
 public:
     static std::ptrdiff_t const
                         required_count = n ; // gps experimental
