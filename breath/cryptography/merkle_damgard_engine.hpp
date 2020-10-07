@@ -105,13 +105,13 @@ public:
         //             dest, and the order of the bytes within each
         //             word, follow EndianPolicy
         // -------------------------------------------------------------------
-        int const           step( word_width / byte_width ) ;
+        int const           step = word_width / byte_width ;
         for ( int i = 0 ; i < max_words ; ++ i ) {
 
             std::ptrdiff_t const
-                            index(
+                            index =
                 step * EndianPolicy::template index< len_type,
-                                                     word_type >( i ) ) ;
+                                                     word_type >( i ) ;
             breath::endian_store< EndianPolicy >(
                 len[ max_words - 1 - i ], dest + index ) ;
         }
