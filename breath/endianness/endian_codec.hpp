@@ -231,6 +231,10 @@ public:
     //!     \return
     //!         The value of type \c T encoded, according to \c
     //!         EndianPolicy, in a range that begins with \c source.
+    //!
+    //!     \note
+    //!         The \c value_type of \c InputIter can be larger than \c
+    //!         Byte.
     // -----------------------------------------------------------------------
     template< typename InputIter >
     static T            decode( InputIter source )
