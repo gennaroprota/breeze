@@ -74,8 +74,8 @@ class endian_codec
                         next ;
 
 public:
-    template< typename ByteOutputIter >
-    static void         encode( T const & value, ByteOutputIter dest )
+    template< typename OutputIter >
+    static void         encode( T const & value, OutputIter dest )
     {
         int const           shift_amount =
             policy:: template shift_amount< T, Byte, n - 1 >() ;
@@ -84,8 +84,8 @@ public:
         next::encode( value, ++ dest ) ;
     }
 
-    template< typename ByteInputIter >
-    static T            decode( ByteInputIter source )
+    template< typename InputIter >
+    static T            decode( InputIter source )
     {
         int const           shift_amount =
             policy:: template shift_amount< T, Byte, n - 1 >() ;
@@ -99,13 +99,13 @@ template< typename EndianPolicy, typename T, typename Byte >
 class endian_codec< EndianPolicy, T, Byte, 0 >
 {
 public:
-    template< typename ByteIter >
-    static void         encode( T const &, ByteIter )
+    template< typename Iter >
+    static void         encode( T const &, Iter )
     {
     }
 
-    template< typename ByteIter >
-    static T            decode( ByteIter )
+    template< typename Iter >
+    static T            decode( Iter )
     {
         return 0 ;
     }
@@ -219,8 +219,8 @@ public:
     //!     Writes (encodes) the value \c value into a range starting
     //!     with \c dest, according to \c EndianPolicy.
     // -----------------------------------------------------------------------
-    template< typename ByteOutputIter >
-    static void         encode( T const & value, ByteOutputIter dest )
+    template< typename OutputIter >
+    static void         encode( T const & value, OutputIter dest )
     {
         endian_codec_private::endian_codec< EndianPolicy,
                                             T,
@@ -232,8 +232,8 @@ public:
     //!         The value of type \c T encoded, according to \c
     //!         EndianPolicy, in a range that begins with \c source.
     // -----------------------------------------------------------------------
-    template< typename ByteInputIter >
-    static T            decode( ByteInputIter source )
+    template< typename InputIter >
+    static T            decode( InputIter source )
     {
         return endian_codec_private::endian_codec< EndianPolicy,
                                                    T,
@@ -257,16 +257,16 @@ endian_codec< EndianPolicy, T, Byte >::required_count ;
 //!     \c endian_store< EndianPolicy( value, it ) > is equivalent to:
 //!
 //!     <code>
-//!         typedef typename std::iterator_traits< ByteOutputIter >::value_type
+//!         typedef typename std::iterator_traits< OutputIter >::value_type
 //!                             Byte ;
 //!         breath::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
 //!     </code>
 // ---------------------------------------------------------------------------
-template< typename EndianPolicy, typename T, typename ByteOutputIter >
+template< typename EndianPolicy, typename T, typename OutputIter >
 void
-endian_store( T const & value, ByteOutputIter it )
+endian_store( T const & value, OutputIter it )
 {
-    typedef typename std::iterator_traits< ByteOutputIter >::value_type
+    typedef typename std::iterator_traits< OutputIter >::value_type
                         Byte ;
     breath::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
 }
@@ -279,16 +279,16 @@ endian_store( T const & value, ByteOutputIter it )
 //!     \c endian_load< EndianPolicy >( it ) is equivalent to:
 //!
 //!     <code>
-//!         typedef typename std::iterator_traits< ByteInputIter >::value_type
+//!         typedef typename std::iterator_traits< InputIter >::value_type
 //!                             Byte ;
 //!         return breath::endian_codec< EndianPolicy, T, Byte >::decode( it ) ;
 //!     </code>
 // ---------------------------------------------------------------------------
-template< typename EndianPolicy, typename T, typename ByteInputIter >
+template< typename EndianPolicy, typename T, typename InputIter >
 T
-endian_load( ByteInputIter it )
+endian_load( InputIter it )
 {
-    typedef typename std::iterator_traits< ByteInputIter >::value_type
+    typedef typename std::iterator_traits< InputIter >::value_type
                         Byte ;
     return breath::endian_codec< EndianPolicy, T, Byte >
         ::decode( it ) ;
