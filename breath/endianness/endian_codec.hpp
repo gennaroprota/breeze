@@ -261,16 +261,20 @@ endian_codec< EndianPolicy, T, Byte >::required_count ;
 //!     \c endian_store< EndianPolicy( value, it ) > is equivalent to:
 //!
 //!     <code>
-//!         typedef typename std::iterator_traits< OutputIter >::value_type
+//!         typedef typename std::iterator_traits< ForwardIter >::value_type
 //!                             Byte ;
 //!         breath::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
 //!     </code>
+//!
+//!     \note
+//!         This can't be used for purely output iterators, because they
+//!         don't have a notion of \c value_type.
 // ---------------------------------------------------------------------------
-template< typename EndianPolicy, typename T, typename OutputIter >
+template< typename EndianPolicy, typename T, typename ForwardIter >
 void
-endian_store( T const & value, OutputIter it )
+endian_store( T const & value, ForwardIter it )
 {
-    typedef typename std::iterator_traits< OutputIter >::value_type
+    typedef typename std::iterator_traits< ForwardIter >::value_type
                         Byte ;
     breath::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
 }
