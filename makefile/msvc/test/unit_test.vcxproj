@@ -19,13 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\breath\checksum\extra\generate_crc32_table.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\breath\checksum\test\crc32_test.cpp" />
+    <ClCompile Include="..\..\..\breath\checksum\test\crc_test.cpp" />
     <ClCompile Include="..\..\..\breath\checksum\test\luhn_test.cpp" />
     <ClCompile Include="..\..\..\breath\conversion\test\bit_cast_test.cpp" />
     <ClCompile Include="..\..\..\breath\conversion\test\roman_test.cpp" />

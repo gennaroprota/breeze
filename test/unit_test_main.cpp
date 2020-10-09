@@ -32,7 +32,7 @@ main()
             test_clamp,
             test_count_bits,
             test_counter,
-            test_crc32,
+            test_crc,
             test_damerau_levenshtein_distance,
             test_digest_ordering,
             test_digital_root,

@@ -41,7 +41,7 @@
     <ClCompile Include="..\..\..\breath\mathematics\test\count_bits_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\checksum\test\crc32_test.cpp">
+    <ClCompile Include="..\..\..\breath\checksum\test\crc_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breath\metric\test\damerau_levenshtein_distance_test.cpp">
@@ -78,9 +78,6 @@
       <Filter>Component Tests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breath\mathematics\extra\generate_bit_count_table.cpp">
-      <Filter>Component Tests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\breath\checksum\extra\generate_crc32_table.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breath\encoding\extra\generate_inverse_base64_table.cpp">

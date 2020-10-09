@@ -263,7 +263,7 @@
     <ClCompile Include="..\..\breath\uuid\brt\uuid.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\breath\checksum\brt\crc32.tpp" />
+    <None Include="..\..\breath\checksum\brt\crc.tpp" />
     <None Include="..\..\breath\conversion\brt\bit_cast.tpp" />
     <None Include="..\..\breath\counting\brt\counter.tpp" />
     <CustomBuild Include="..\..\breath\cpu\brt\get_cpuid_info.asm">
@@ -317,7 +317,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\secure_fill.hpp" />
-    <ClInclude Include="..\..\breath\checksum\crc32.hpp" />
+    <ClInclude Include="..\..\breath\checksum\crc.hpp" />
     <ClInclude Include="..\..\breath\checksum\luhn.hpp" />
     <ClInclude Include="..\..\breath\conversion\bit_cast.hpp" />
     <ClInclude Include="..\..\breath\conversion\roman.hpp" />

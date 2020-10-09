@@ -45,7 +45,7 @@ vpath %.cpp     $(root)/breath/algorithm/test               \
 
 source_files := unit_test_main.cpp                          \
                                                             \
-                crc32_test.cpp                              \
+                crc_test.cpp                                \
                 luhn_test.cpp                               \
                                                             \
                 bit_cast_test.cpp                           \
