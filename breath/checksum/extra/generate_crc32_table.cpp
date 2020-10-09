@@ -22,12 +22,6 @@
 
 namespace {
 
-//      Note:
-//          if you change this type, change it in the output below, too.
-// -----------------------------------------------------------------------
-typedef std::uint_fast32_t
-                    fast32_type ;
-
 //      Implementation notes:
 //      ---------------------
 //
@@ -36,9 +30,9 @@ typedef std::uint_fast32_t
 class               byte_checksum
 {
 public:
-    fast32_type         operator()() noexcept
+    std::uint32_t       operator()() noexcept
     {
-        fast32_type const   reversed_polynomial = 0xEDB88320 ;
+        std::uint32_t const reversed_polynomial = 0xEDB88320 ;
         int const           char_bit = 8 ;
         auto                checksum = m_n ;
         ++ m_n ;
@@ -53,7 +47,7 @@ public:
     }
 
 private:
-    fast32_type     m_n = 0 ;
+    std::uint32_t   m_n = 0 ;
 } ;
 
 }
@@ -63,7 +57,7 @@ int
 main()
 {
     int const           size = 256 ;
-    std::array< fast32_type, size >
+    std::array< std::uint32_t, size >
                         table ;
 
     std::generate( table.begin(), table.end(), byte_checksum() ) ;
