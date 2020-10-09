@@ -68,7 +68,7 @@ entropy_source::operator ()( result_type maximum )
 }
 
 entropy_source::exception::
-exception( std::string const & msg ) noexcept
+exception( std::string const & msg )
     :   std::runtime_error( msg )
 {
 }

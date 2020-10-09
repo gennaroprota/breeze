@@ -36,7 +36,7 @@ public:
     //!     </code>
     // -----------------------------------------------------------------------
                         test_descriptor( test_function,
-                                         char const * name = "" ) noexcept ;
+                                         char const * name = "" ) ;
 
     //      Declare this explicitly, since, due to the user-declared
     //      copy-assignment below, the implicit definition of the copy
@@ -50,7 +50,7 @@ public:
     void                operator=( test_descriptor const & ) = delete ;
 
     test_function       function() const noexcept ;
-    std::string         name() const noexcept ;
+    std::string         name() const ;
 
 private:
     test_function       m_function ;

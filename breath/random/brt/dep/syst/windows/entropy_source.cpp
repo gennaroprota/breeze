@@ -42,8 +42,8 @@ public:
     result_type         next() ;
     bool                release() noexcept ;
 
-    result_type         minimum() const ;
-    result_type         maximum() const ;
+    result_type         minimum() const noexcept ;
+    result_type         maximum() const noexcept ;
 
 private:
     bool                acquire( DWORD flags = 0 ) ;
@@ -67,13 +67,13 @@ entropy_source::impl::impl()
 }
 
 entropy_source::result_type
-entropy_source::impl::minimum() const
+entropy_source::impl::minimum() const noexcept
 {
     return 0 ;
 }
 
 entropy_source::result_type
-entropy_source::impl::maximum() const
+entropy_source::impl::maximum() const noexcept
 {
     return static_cast< entropy_source::result_type >(
         std::numeric_limits< BYTE >::max BREATH_PREVENT_MACRO_EXPANSION ()

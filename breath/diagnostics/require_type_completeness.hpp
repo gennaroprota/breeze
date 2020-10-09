@@ -29,10 +29,14 @@ namespace breath_ns {
 //!     </code>
 //!
 //!     renders the program \e ill-formed.
+//!
+//!     This template has a \c noexcept specifier so that it can be used
+//!     in other \c noexcept functions (typically, destructors), without
+//!     warnings from compilers and static analyzers.
 // ---------------------------------------------------------------------------
 template< typename T >
 void
-require_type_completeness()
+require_type_completeness() noexcept
 {
     static_cast< void >( sizeof( T ) ) ;
 }
