@@ -11,8 +11,6 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include <algorithm>
-#include <array>
 #include <cstdint>
 #include <iomanip>
 #include <ios>
@@ -27,28 +25,21 @@ namespace {
 //
 //          see crc32.tpp for a (pseudo-)reference on the calculations.
 // ---------------------------------------------------------------------------
-class               byte_checksum
+
+std::uint32_t       byte_checksum( std::uint8_t byte )
 {
-public:
-    std::uint32_t       operator()() noexcept
-    {
-        std::uint32_t const reversed_polynomial = 0xEDB88320 ;
-        int const           char_bit = 8 ;
-        auto                checksum = m_n ;
-        ++ m_n ;
+    std::uint32_t const reversed_polynomial = 0xEDB88320 ;
+    int const           char_bit = 8  ;
+    std::uint32_t       checksum = byte ;
 
-        for ( int i = 0 ; i < char_bit ; ++ i ) {
-            checksum = checksum % 2 == 0
-                            ? ( checksum >> 1 )
-                            : ( checksum >> 1 ) ^ reversed_polynomial
-                            ;
-        }
-        return checksum ;
+    for ( int i = 0 ; i < char_bit ; ++ i ) {
+        checksum = checksum % 2 == 0
+                        ? ( checksum >> 1 )
+                        : ( checksum >> 1 ) ^ reversed_polynomial
+                        ;
     }
-
-private:
-    std::uint32_t   m_n = 0 ;
-} ;
+    return checksum ;
+}
 
 }
 
@@ -57,11 +48,6 @@ int
 main()
 {
     int const           size = 256 ;
-    std::array< std::uint32_t, size >
-                        table ;
-
-    std::generate( table.begin(), table.end(), byte_checksum() ) ;
-
     int const           numbers_per_line = 6 ;
     int const           indent_size = 4 ;
     std::string const   indent( indent_size, ' ' ) ;
@@ -73,7 +59,9 @@ main()
     os << "static std::uint_fast32_t const\n" << indent <<
           "                table[] =\n{\n"    << indent ;
     for ( int i = 0 ; i < size ; ++ i ) {
-        os << "0x" << std::setw( 8 ) << table[ i ] ;
+        auto                value = byte_checksum(
+            static_cast< std::uint8_t >( i ) ) ;
+        os << "0x" << std::setw( 8 ) << value ;
         if ( i != ( size - 1 ) ) {
             os << ',' ;
         }

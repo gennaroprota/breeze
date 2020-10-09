@@ -11,38 +11,30 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include <algorithm>
-#include <array>
 #include <cstddef>
 #include <iostream>
 #include <string>
+
+namespace {
+
+int bit_count( unsigned value )
+{
+    int                 count = 0 ;
+    while ( value != 0 ) {
+        ++ count ;
+        value &= ( value - 1 ) ;
+    }
+
+    return count ;
+}
+
+}
 
 int
 main()
 {
     int const           size = 256 ;
-    std::array< int, size >
-                        table ;
 
-    class               bit_count
-    {
-    public:
-        int                 operator()() noexcept
-        {
-            unsigned int        value = m_n ;
-            int                 count = 0 ;
-            while ( value != 0 ) {
-                ++ count ;
-                value &= ( value - 1 ) ;
-            }
-            ++ m_n ;
-            return count ;
-        }
-    private:
-        unsigned int        m_n = 0 ;
-    } ;
-
-    std::generate( table.begin(), table.end(), bit_count() ) ;
     int const           numbers_per_line = 16 ;
     int const           indent_size = 4 ;
     std::string const   indent( indent_size, ' ' ) ;
@@ -54,7 +46,7 @@ main()
        << "{"                                    << std::endl ;
     os << indent ;
     for ( int i = 0 ; i < size ; ++ i ) {
-        os << table[ i ] ;
+        os << bit_count( static_cast< unsigned >( i ) ) ;
         if ( i != ( size - 1 ) ) {
             os << ',' ;
         }
