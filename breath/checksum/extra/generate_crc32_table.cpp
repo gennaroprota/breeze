@@ -23,7 +23,7 @@ namespace {
 //      Implementation notes:
 //      ---------------------
 //
-//          see crc32.tpp for a (pseudo-)reference on the calculations.
+//      See crc32.tpp for a (pseudo-)reference on the calculations.
 // ---------------------------------------------------------------------------
 
 std::uint32_t       byte_checksum( std::uint8_t byte )
