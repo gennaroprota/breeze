@@ -12,8 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/metric/damerau_levenshtein_distance.hpp"
-#include "breath/testing/check.hpp"
-#include "breath/testing/test_runner.hpp"
+#include "breath/testing/testing.hpp"
 #include <cstddef>
 #include <iostream>
 #include <string>

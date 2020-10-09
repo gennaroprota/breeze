@@ -13,8 +13,7 @@
 
 #include "breath/checksum/luhn.hpp"
 #include "breath/iteration/begin_end.hpp"
-#include "breath/testing/check.hpp"
-#include "breath/testing/test_runner.hpp"
+#include "breath/testing/testing.hpp"
 #include <iostream>
 #include <string>
 
