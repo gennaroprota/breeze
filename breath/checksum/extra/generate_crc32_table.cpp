@@ -50,25 +50,32 @@ main()
     int const           size = 256 ;
     int const           numbers_per_line = 6 ;
     int const           indent_size = 4 ;
-    std::string const   indent( indent_size, ' ' ) ;
+
+    //      One space less than indent_size: this way we output every
+    //      value with a leading space, simplifying the logic. (An extra
+    //      comma will follow the last element, which is allowed.)
+    // -----------------------------------------------------------------------
+    std::string const   indent( indent_size - 1, ' ' ) ;
 
     std::ostream &      os = std::cout ;
 
     os.setf( std::ios_base::hex, std::ios_base::basefield ) ;
     os.fill( '0' ) ;
     os << "static std::uint_fast32_t const\n" << indent <<
-          "                table[] =\n{\n"    << indent ;
+          "                table[] =\n{\n" ;
+
+    int                 column = 0 ;
     for ( int i = 0 ; i < size ; ++ i ) {
-        auto                value = byte_checksum(
-            static_cast< std::uint8_t >( i ) ) ;
-        os << "0x" << std::setw( 8 ) << value ;
-        if ( i != ( size - 1 ) ) {
-            os << ',' ;
+        if ( column == 0 ) {
+            os << indent ;
         }
-        if ( ( i + 1 ) % numbers_per_line == 0 ) {
-            os << '\n' << indent ;
-        } else if ( i != ( size - 1 ) ) {
-            os << ' ' ;
+        std::uint32_t const value = byte_checksum(
+            static_cast< std::uint8_t >( i ) ) ;
+        os << " 0x" << std::setw( 8 ) << value << ',' ;
+        ++ column ;
+        if ( column == numbers_per_line ) {
+            os << std::endl ;
+            column = 0 ;
         }
     }
     os << "\n} ;" << std::endl ;
