@@ -124,6 +124,9 @@ check_known_crc32s()
         //      Following test vectors verified with:
         //
         //        <https://www.lammertbies.nl/comm/info/crc-calculation.html>.
+        //
+        //      Like for invented_crc (see above), take this addito
+        //      salis grano.
         // -------------------------------------------------------------------
         { "The quick brown fox jumps over the lazy dog", 0x414FA339 },
         { "breath",                                      0x3A3B4FE3 },
