@@ -27,6 +27,14 @@ main()
     int const           size = 256 ;
     int const           entries_per_row = 16 ;
     int const           invalid = -1 ;
+    int const           indent_size = 4 ;
+
+    //      One space less than indent_size: this way we output every
+    //      value with a leading space, simplifying the logic. (An extra
+    //      comma will follow the last element, which is allowed.)
+    // -----------------------------------------------------------------------
+    std::string const   indent( indent_size - 1, ' ' ) ;
+
     std::array< int, size >
                         table ;
     table.fill( invalid ) ;
@@ -37,18 +45,18 @@ main()
 
     std::ostream &      os = std::cout ;
 
-    os << "static int const    table[] =\n{\n    " ;
+    os << "static int const    table[] =\n{\n" ;
+
+    int                 column = 0 ;
     for ( int i = 0 ; i < size ; ++ i ) {
-        os << std::setw( 2 ) << table[ i ] ;
-        if ( i == ( size - 1 ) ) {
-            os << '\n' ;
-        } else {
-            os << ',' ;
-            if ( ( i + 1 ) % entries_per_row != 0 ) {
-                os << ' ' ;
-            } else {
-                os << "\n    " ;
-            }
+        if ( column == 0 ) {
+            os << indent ;
+        }
+        os << ' ' << std::setw( 2 ) << table[ i ] << ',' ;
+        ++ column ;
+        if ( column == entries_per_row ) {
+            os << std::endl ;
+            column = 0 ;
         }
     }
     os << "} ;" << std::endl ;

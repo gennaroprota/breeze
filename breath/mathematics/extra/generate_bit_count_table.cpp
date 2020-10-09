@@ -37,26 +37,29 @@ main()
 
     int const           numbers_per_line = 16 ;
     int const           indent_size = 4 ;
-    std::string const   indent( indent_size, ' ' ) ;
+
+    //      One space less than indent_size: this way we output every
+    //      value with a leading space, simplifying the logic. (An extra
+    //      comma will follow the last element, which is allowed.)
+    // -----------------------------------------------------------------------
+    std::string const   indent( indent_size - 1, ' ' ) ;
 
     std::ostream &      os = std::cout ;
 
     os << "constexpr unsigned char"              << std::endl
        << "                    count_table[] = " << std::endl
        << "{"                                    << std::endl ;
-    os << indent ;
+
+    int                 column = 0;
     for ( int i = 0 ; i < size ; ++ i ) {
-        os << bit_count( static_cast< unsigned >( i ) ) ;
-        if ( i != ( size - 1 ) ) {
-            os << ',' ;
+        if ( column == 0 ) {
+            os << indent ;
         }
-        if ( ( i + 1 ) % numbers_per_line == 0 &&
-             i != ( size - 1 ) ) {
-            os << std::endl << indent ;
-        } else if ( i != ( size - 1 ) ) {
-            os << ' ' ;
-        } else {
+        os << ' ' << bit_count( static_cast< unsigned >( i ) ) << ',' ;
+        ++ column ;
+        if ( column == numbers_per_line ) {
             os << std::endl ;
+            column = 0 ;
         }
     }
     os << "} ;" << std::endl ;
