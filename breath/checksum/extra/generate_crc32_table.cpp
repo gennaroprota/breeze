@@ -38,7 +38,7 @@ class               byte_checksum
 public:
     fast32_type         operator()() noexcept
     {
-        fast32_type const   reversed_polynomial = 0xEDB88320uL ;
+        fast32_type const   reversed_polynomial = 0xEDB88320 ;
         int const           char_bit = 8 ;
         auto                checksum = m_n ;
         ++ m_n ;
