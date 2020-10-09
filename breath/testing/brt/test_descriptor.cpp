@@ -15,7 +15,7 @@
 
 namespace breath_ns {
 
-test_descriptor::test_descriptor( test_function f, char const * name ) noexcept
+test_descriptor::test_descriptor( test_function f, char const * name )
     :   m_function( f ),
         m_name( name )
 {
@@ -28,7 +28,7 @@ test_descriptor::function() const noexcept
 }
 
 std::string
-test_descriptor::name() const noexcept
+test_descriptor::name() const
 {
     return m_name ;
 }

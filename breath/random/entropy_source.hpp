@@ -158,7 +158,7 @@ public:
     //!     Constructs an entropy_source::exception with the given
     //!     string as \c what() message.
     // -----------------------------------------------------------------------
-    explicit            exception( std::string const & msg ) noexcept ;
+    explicit            exception( std::string const & msg ) ;
 } ;
 
 }
