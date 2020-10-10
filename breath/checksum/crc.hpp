@@ -17,6 +17,7 @@
 #include "breath/meta/has_sign.hpp"
 #include "breath/meta/width.hpp"
 #include <cstdint>
+#include <ostream>
 
 namespace breath_ns {
 
@@ -168,6 +169,18 @@ private:
                    "the constant term of the polynomial must be 1") ;
 } ;
 
+//!\brief Stream inserter for crc objects.
+//!
+//!         Outputs \c crc to the stream \c dest. The output consists of
+//!         <tt>n</tt> uppercase hexadecimal digits (since CRCs are
+//!         usually presented in uppercase), where <tt>n</tt> is the
+//!         ceiling of the quotient between \c Traits::width and <tt>4
+//!         </tt>.
+// ---------------------------------------------------------------------------
+template< typename Traits >
+std::ostream &      operator <<( std::ostream & dest,
+                                 crc< Traits > const & crc ) ;
+
 //      crc16:
 //      ======
 //
@@ -242,6 +255,7 @@ struct crc16_ibm3740
 }
 
 #include "brt/crc.tpp"
+#include "brt/crc_io.tpp"
 #endif
 
 // Local Variables:
