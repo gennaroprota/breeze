@@ -265,6 +265,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\checksum\brt\crc.tpp" />
+    <None Include="..\..\breath\checksum\brt\crc_io.tpp" />
     <None Include="..\..\breath\conversion\brt\bit_cast.tpp" />
     <None Include="..\..\breath\counting\brt\counter.tpp" />
     <CustomBuild Include="..\..\breath\cpu\brt\get_cpuid_info.asm">
