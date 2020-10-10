@@ -179,6 +179,9 @@
     <ClCompile Include="..\..\breath\stream\brt\null_stream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\stream\brt\inserter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\checksum\brt\crc.tpp" />
@@ -575,6 +578,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\time\private\thread_safe_reentrant_time_functions.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\stream\inserter.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

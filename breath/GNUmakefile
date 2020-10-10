@@ -75,6 +75,7 @@ source_files := luhn.cpp                                    \
                 entropy_source.cpp                          \
                 subrange_max.cpp                            \
                                                             \
+                inserter.cpp                                \
                 null_stream.cpp                             \
                                                             \
                 stream_reporter.cpp                         \
