@@ -14,6 +14,7 @@
 #include "breath/mathematics/is_power_of_2.hpp"
 #include "breath/testing/testing.hpp"
 
+#include <climits>
 #include <iostream>
 
 int                 test_is_power_of_2() ;
@@ -23,15 +24,23 @@ namespace {
 void
 do_check()
 {
-    BREATH_CHECK( ! breath::is_power_of_2( 0u ) ) ;
-    BREATH_CHECK( breath::is_power_of_2( 1u ) ) ;
-    for ( unsigned int i = 2; i > 0 ; i *= 2 ) {
+    BREATH_CHECK( ! breath::is_power_of_2( INT_MIN ) ) ;
+
+    for ( int i = INT_MIN ; i < 0 ; i /= 2 ) {
+        BREATH_CHECK( ! breath::is_power_of_2( i ) ) ;
+    }
+
+    BREATH_CHECK( ! breath::is_power_of_2( 0 ) ) ;
+    BREATH_CHECK( breath::is_power_of_2( 1 ) ) ;
+
+    for ( int i = INT_MAX / 2 + 1 ; i > 1 ; i /= 2 ) {
         BREATH_CHECK( breath::is_power_of_2( i ) ) ;
         if (i != 2) {
             BREATH_CHECK( ! breath::is_power_of_2( i - 1 ) );
         }
         BREATH_CHECK( ! breath::is_power_of_2( i + 1 ) ) ;
     }
+    BREATH_CHECK( ! breath::is_power_of_2( INT_MAX ) ) ;
 }
 
 }
