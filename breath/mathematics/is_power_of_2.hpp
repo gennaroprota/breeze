@@ -14,8 +14,6 @@
 #define BREATH_GUARD_33316YlRoQ2LToi0iu44YByR2XFvlCOy
 
 #include "breath/top_level_namespace.hpp"
-#include <limits>
-#include <type_traits>
 
 namespace breath_ns {
 
@@ -27,14 +25,11 @@ namespace breath_ns {
 //!
 //!     \note
 //!         C++20 has \c std::has_single_bit(), which can replace this
-//!         one.
+//!         one (but only works with unsigned types and, on most
+//!         implementations, qualified versions thereof).
 // ---------------------------------------------------------------------------
 template< typename T >
-constexpr typename std::enable_if< std::numeric_limits< T >::is_integer &&
-                                   ! std::numeric_limits< T >::is_signed &&
-              ! std::is_same< typename std::remove_cv< T >::type, bool >::value,
-                                   bool >::type
-                    is_power_of_2( T x ) noexcept ;
+constexpr bool      is_power_of_2( T x ) noexcept ;
 
 }
 
