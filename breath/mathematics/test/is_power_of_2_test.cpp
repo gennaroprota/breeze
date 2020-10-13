@@ -14,33 +14,37 @@
 #include "breath/mathematics/is_power_of_2.hpp"
 #include "breath/testing/testing.hpp"
 
-#include <climits>
 #include <iostream>
+#include <limits>
 
 int                 test_is_power_of_2() ;
 
 namespace {
 
+template< typename T >
 void
 do_check()
 {
-    BREATH_CHECK( ! breath::is_power_of_2( INT_MIN ) ) ;
+    T const             min = std::numeric_limits< T >::min() ;
+    T const             max = std::numeric_limits< T >::max() ;
 
-    for ( int i = INT_MIN ; i < 0 ; i /= 2 ) {
+    BREATH_CHECK( ! breath::is_power_of_2( min ) ) ;
+
+    for ( T i = min ; i < 0 ; i /= 2 ) {
         BREATH_CHECK( ! breath::is_power_of_2( i ) ) ;
     }
 
     BREATH_CHECK( ! breath::is_power_of_2( 0 ) ) ;
     BREATH_CHECK( breath::is_power_of_2( 1 ) ) ;
 
-    for ( int i = INT_MAX / 2 + 1 ; i > 1 ; i /= 2 ) {
+    for ( T i = max / 2 + 1 ; i > 1 ; i /= 2 ) {
         BREATH_CHECK( breath::is_power_of_2( i ) ) ;
         if (i != 2) {
             BREATH_CHECK( ! breath::is_power_of_2( i - 1 ) );
         }
         BREATH_CHECK( ! breath::is_power_of_2( i + 1 ) ) ;
     }
-    BREATH_CHECK( ! breath::is_power_of_2( INT_MAX ) ) ;
+    BREATH_CHECK( ! breath::is_power_of_2( max ) ) ;
 }
 
 }
@@ -50,7 +54,13 @@ test_is_power_of_2()
 {
     using namespace breath ;
 
-    return test_runner::instance().run( "is_power_of_2()", { do_check } ) ;
+    return test_runner::instance().run( "is_power_of_2()",
+        { do_check< short >,
+          do_check< unsigned short >,
+          do_check< int >,
+          do_check< unsigned >,
+          do_check< long >,
+          do_check< unsigned long > } ) ;
 }
 
 // Local Variables:
