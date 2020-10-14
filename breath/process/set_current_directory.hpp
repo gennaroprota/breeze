@@ -18,6 +18,9 @@
 
 namespace breath_ns {
 
+//      set_current_directory():
+//      ========================
+//
 //!     Sets the current directory of the calling process to \c dir; \c
 //!     dir must be a valid directory path.
 // ---------------------------------------------------------------------------
