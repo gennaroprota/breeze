@@ -74,12 +74,8 @@ std::ostream &
 operator <<( std::ostream           & os,
              digest< Hasher > const & d )
 {
-    enum
-    {
-        bits_per_hex_digit = 4,
-        bits_per_byte  = Hasher::byte_width
-    } ;
-
+    int const           bits_per_hex_digit = 4 ;
+    int const           bits_per_byte  = Hasher::byte_width ;
     static char const   digits[] = "0123456789abcdef" ;
     unsigned const      mask = ( 1u << bits_per_hex_digit ) - 1 ;
 
