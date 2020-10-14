@@ -33,6 +33,7 @@ int                 test_extension() ;
 int                 test_from_string() ;
 int                 test_gcd() ;
 int                 test_get_environment_variable() ;
+int                 test_get_set_current_directory() ;
 int                 test_is_2s_complement() ;
 int                 test_is_power_of_2() ;
 int                 test_last_api_error() ;
