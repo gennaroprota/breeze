@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Sets the current directory of the current process.
+//!     \brief Sets the current directory of the calling process.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_E6f26R6Om6D3dxAUPssS2yROHiV0L8sv
@@ -18,7 +18,7 @@
 
 namespace breath_ns {
 
-//!     Sets the current directory of the current process to \c dir; \c
+//!     Sets the current directory of the calling process to \c dir; \c
 //!     dir must be a valid directory path.
 // ---------------------------------------------------------------------------
 void                set_current_directory( std::string const & dir ) ;

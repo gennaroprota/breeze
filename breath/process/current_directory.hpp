@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Gets the current directory of the current process.
+//!     \brief Gets the current directory of the calling process.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_KrwlefOEgShOBz9iqPeAc0R8iN3Lfl9g
@@ -21,7 +21,7 @@ namespace breath_ns {
 //      current_directory():
 //      ====================
 //
-//!     Gets the current directory of the current process.
+//!     Gets the current directory of the calling process.
 // ---------------------------------------------------------------------------
 std::string         current_directory() ;
 
