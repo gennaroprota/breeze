@@ -84,7 +84,6 @@ operator <<( std::ostream           & os,
     unsigned const      mask = ( 1u << bits_per_hex_digit ) - 1 ;
 
     static_assert(
-                    0 < bits_per_hex_digit &&
                         bits_per_byte % bits_per_hex_digit == 0 &&
                         sizeof digits == ( 2 + mask ),
                     "wrong bits_per_hex_digit and/or bits_per_byte" ) ;
