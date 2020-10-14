@@ -29,15 +29,17 @@
 // ---------------------------------------------------------------------------
 #define BREATH_CHECK_THROW( exception_type, expression )                      \
             do {                                                              \
+                bool threw_as_expected = false ;                              \
+                bool threw_but_wrong_type = false ;                           \
                 try {                                                         \
                     expression ;                                              \
-                    BREATH_ASSERT( false &&                                   \
-                      "BREATH_CHECK_THROW() failed: no exception emitted" ) ; \
                 } catch ( exception_type const & ) {                          \
+                    threw_as_expected = true ;                                \
                 } catch ( ... ) {                                             \
-                    BREATH_ASSERT( false &&                                   \
-                      "BREATH_CHECK_THROW() failed: wrong exception type" ) ; \
+                    threw_but_wrong_type = true ;                             \
                 }                                                             \
+                BREATH_CHECK( ! threw_but_wrong_type ) ;                      \
+                BREATH_CHECK( threw_as_expected ) ;                           \
             } while ( false )                                              /**/
 
 #endif
