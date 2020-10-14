@@ -23,6 +23,10 @@ namespace breath_ns {
 //
 //!     Sets the current directory of the calling process to \c dir; \c
 //!     dir must be a valid directory path.
+//!
+//!     \throw
+//!         A \c std::runtime_error (which may be a \c last_api_error)
+//!         if it fails.
 // ---------------------------------------------------------------------------
 void                set_current_directory( std::string const & dir ) ;
 
