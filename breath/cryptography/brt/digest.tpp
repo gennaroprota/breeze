@@ -83,10 +83,9 @@ operator <<( std::ostream           & os,
     static char const   digits[] = "0123456789abcdef" ;
     unsigned const      mask = ( 1u << bits_per_hex_digit ) - 1 ;
 
-    static_assert(
-                        bits_per_byte % bits_per_hex_digit == 0 &&
-                        sizeof digits == ( 2 + mask ),
-                    "wrong bits_per_hex_digit and/or bits_per_byte" ) ;
+    static_assert( bits_per_byte % bits_per_hex_digit == 0 &&
+                   sizeof digits == ( 2 + mask ),
+                   "wrong bits_per_hex_digit and/or bits_per_byte" ) ;
 
     typedef typename digest< Hasher >::const_iterator
                         it_type ;
