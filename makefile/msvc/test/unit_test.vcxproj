@@ -65,6 +65,7 @@
     <ClCompile Include="..\..\..\breath\preprocessing\test\prevent_macro_expansion_test.cpp" />
     <ClCompile Include="..\..\..\breath\preprocessing\test\stringize_after_expansion_test.cpp" />
     <ClCompile Include="..\..\..\breath\preprocessing\test\stringize_test.cpp" />
+    <ClCompile Include="..\..\..\breath\process\test\get_set_current_directory_test.cpp" />
     <ClCompile Include="..\..\..\breath\random\test\entropy_source_test.cpp" />
     <ClCompile Include="..\..\..\breath\random\test\subrange_max_test.cpp" />
     <ClCompile Include="..\..\..\breath\stream\test\eof_value_test.cpp" />

@@ -94,6 +94,8 @@ source_files := unit_test_main.cpp                          \
                 stringize_after_expansion_test.cpp          \
                 stringize_test.cpp                          \
                                                             \
+                get_set_current_directory_test.cpp          \
+                                                            \
                 entropy_source_test.cpp                     \
                 subrange_max_test.cpp                       \
                                                             \
