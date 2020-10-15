@@ -52,7 +52,7 @@ last_api_error::last_api_error( char const * p )
         ) ;
     if ( dw == 0 ) {
         strcpy( &m_message[ offset ], "can't obtain the error description"
-                                      ": see the error code, instead") ;
+                                      "; see the error code, instead") ;
     }
     // strip trailing \r\n
     if ( dw > 2 && m_message[ offset + dw - 2 ] == '\r' &&
