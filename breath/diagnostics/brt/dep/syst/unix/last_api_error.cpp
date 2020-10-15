@@ -23,7 +23,7 @@ last_api_error::last_api_error( char const * p )
 {
     static char const   cant_obtain_description[] =
                             "can't obtain the error description"
-                            ": see the error code, instead" ;
+                            "; see the error code, instead" ;
 
     //!\todo
     //! Most of this code is duplicated with the Windows variant.
