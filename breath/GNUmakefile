@@ -91,6 +91,7 @@ source_files := luhn.cpp                                    \
                 replace_all.cpp                             \
                 set_of_chars.cpp                            \
                 split.cpp                                   \
+                string_constant.cpp                         \
                 tail.cpp                                    \
                 to_lowercase.cpp                            \
                 to_uppercase.cpp                            \

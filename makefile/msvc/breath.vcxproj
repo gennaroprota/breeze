@@ -251,6 +251,7 @@
     <ClCompile Include="..\..\breath\text\brt\replace_all.cpp" />
     <ClCompile Include="..\..\breath\text\brt\set_of_chars.cpp" />
     <ClCompile Include="..\..\breath\text\brt\split.cpp" />
+    <ClCompile Include="..\..\breath\text\brt\string_constant.cpp" />
     <ClCompile Include="..\..\breath\text\brt\tail.cpp" />
     <ClCompile Include="..\..\breath\text\brt\to_lowercase.cpp" />
     <ClCompile Include="..\..\breath\text\brt\to_uppercase.cpp" />
@@ -417,6 +418,7 @@
     <ClInclude Include="..\..\breath\text\replace_all.hpp" />
     <ClInclude Include="..\..\breath\text\set_of_chars.hpp" />
     <ClInclude Include="..\..\breath\text\split.hpp" />
+    <ClInclude Include="..\..\breath\text\string_constant.hpp" />
     <ClInclude Include="..\..\breath\text\tail.hpp" />
     <ClInclude Include="..\..\breath\text\to_lowercase.hpp" />
     <ClInclude Include="..\..\breath\text\to_string.hpp" />
