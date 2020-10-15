@@ -40,7 +40,7 @@ namespace breath_ns {
 // ---------------------------------------------------------------------------
 template< typename T >
 maybe< T >          from_string( std::string const & s,
-                                 std::locale loc = std::locale() ) ;
+                                 std::locale const & loc = std::locale() ) ;
 
 //      from_string():
 //      ==============
@@ -60,7 +60,7 @@ maybe< T >          from_string( std::string const & s,
 // ---------------------------------------------------------------------------
 template<>
 maybe< std::string> from_string< std::string >( std::string const & s,
-                                                std::locale ) ;
+                                                std::locale const & ) ;
 
 }
 
