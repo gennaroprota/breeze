@@ -31,7 +31,7 @@ namespace breath_ns {
 // ---------------------------------------------------------------------------
 template< typename OutputStreamable >
 std::string         to_string( OutputStreamable const &,
-                               std::locale loc = std::locale() ) ;
+                               std::locale const & loc = std::locale() ) ;
 
 }
 

@@ -14,7 +14,7 @@ namespace breath_ns {
 
 template< typename OutputStreamable >
 std::string
-to_string( OutputStreamable const & object, std::locale loc )
+to_string( OutputStreamable const & object, std::locale const & loc )
 {
     std::ostringstream  ss ;
     ss.imbue( loc ) ;
