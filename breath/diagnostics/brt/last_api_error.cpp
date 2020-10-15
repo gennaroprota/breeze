@@ -22,7 +22,7 @@ namespace breath_ns {
 std::ostream &
 operator <<( std::ostream & dest, last_api_error const & last )
 {
-    return dest << last.m_message << " [code: " << last.code() << ']' ;
+    return dest << last.what() << " [code: " << last.code() << ']' ;
 }
 
 }

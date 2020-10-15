@@ -13,72 +13,86 @@
 
 #include "breath/top_level_namespace.hpp"
 #include <Windows.h>
-#include <cstddef>
-#include <cstring>
+#include <string>
 
 namespace breath_ns {
+namespace           {
 
-last_api_error::last_api_error( char const * p )
-    :   base_type( "<you shouldn't see this message>" ),
-        m_last_error( GetLastError() )
+std::string
+format_message( char const * incipit, long long last_error )
 {
-    int const           max_incipit_size = 512 ;
-    static_assert( max_incipit_size < (sizeof m_message / 10 ), "" ) ;
+    int const           max_size = 1024 ;
+    std::string         s( max_size, '\0' ) ;
+    DWORD const         ret = FormatMessageA(
+        FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+        nullptr,
+        static_cast< DWORD >( last_error ),
+        0,
+        &s[ 0 ], // assumes contiguity of std::string
+        max_size,
+        nullptr
+    ) ;
 
-    if ( p != nullptr ) {
-        std::strncpy( m_message, p, max_incipit_size ) ;
+    if ( ret == 0 ) {
+        s = "can't obtain the error description; see the error code, instead" ;
+    } else {
+        //      Strip the null character.
+        // -------------------------------------------------------------------
+        s.resize( ret ) ;
 
-        std::size_t const   len = std::strlen( p ) ;
-
-        char const          sep[] = ": " ;
-        if ( len != 0 ) {
-            std::strcpy( m_message + len, sep ) ;
+        //      Strip the trailing \r\n. (Could use remove_from_end().)
+        // -------------------------------------------------------------------
+        if ( ret > 2 && s[ ret - 2 ] == '\r' && s[ ret - 1 ] == '\n' ) {
+            s.resize( ret - 2 ) ;
         }
     }
 
-    std::size_t const   offset = p == nullptr
-                                    ? 0
-                                    : std::strlen( m_message )
-                                    ;
+    return incipit != nullptr && incipit[ 0 ] != '\0'
+        ? std::string( incipit ) + ": " + s
+        : s
+        ;
+}
 
-    DWORD const         dw = FormatMessageA(
-        FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
-        nullptr,
-        static_cast< DWORD >( m_last_error ),
-        0,
-        m_message + offset,
-        static_cast< DWORD >( sizeof m_message - offset ),
-        nullptr
-        ) ;
-    if ( dw == 0 ) {
-        strcpy( &m_message[ offset ], "can't obtain the error description"
-                                      "; see the error code, instead") ;
-    }
-    // strip trailing \r\n
-    if ( dw > 2 && m_message[ offset + dw - 2 ] == '\r' &&
-                   m_message[ offset + dw - 1 ] == '\n' ) {
-        m_message[ offset + dw - 2 ] = '\0' ;
-    }
+}
+
+//      Possibly tricky point: format_message() calls the
+//      FormatMessage() API, which may fail, altering GetLastError().
+//      So, we can't do something like:
+//
+//      last_api_error::last_api_error( char const * p )
+//          :   base_type( format_message( p ) ),
+//              m_last_error( GetLastError() )
+//      {
+//          ...
+//      }
+//
+//      because that could initialize m_last_error with the wrong value.
+//
+//      This is the reason why we forward to another (private)
+//      constructor.
+// ---------------------------------------------------------------------------
+last_api_error::last_api_error( char const * p )
+    :   last_api_error( p, GetLastError() )
+{
 }
 
 last_api_error::last_api_error( last_api_error const & other ) noexcept
     :   base_type( other ), m_last_error( other.m_last_error )
 {
-    std::strcpy( &m_message[ 0 ], &other.m_message[ 0 ] ) ;
 }
 
 last_api_error::~last_api_error() noexcept = default ;
+
+last_api_error::last_api_error( char const * p, long long error_code )
+    :   base_type( format_message( p, error_code ) ),
+        m_last_error( error_code )
+{
+}
 
 long long
 last_api_error::code() const noexcept
 {
     return m_last_error ;
-}
-
-char const *
-last_api_error::what() const noexcept
-{
-    return m_message ;
 }
 
 }
