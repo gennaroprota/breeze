@@ -182,6 +182,9 @@
     <ClCompile Include="..\..\breath\stream\brt\inserter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\text\brt\string_constant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\checksum\brt\crc.tpp" />
@@ -582,6 +585,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\stream\inserter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\text\string_constant.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
