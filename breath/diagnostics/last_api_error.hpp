@@ -63,8 +63,6 @@ public:
     //!         result of \c GetLastError() under Windows.
     // -----------------------------------------------------------------------
     long long           code() const noexcept ;
-    virtual char const *
-                        what() const noexcept override ;
 
     last_api_error &    operator =( last_api_error const & ) = delete ;
 
@@ -77,7 +75,12 @@ private:
                         operator <<( std::ostream &, last_api_error const & ) ;
 
     long long           m_last_error ;
-    char                m_message[ 10 * 1024 - 1 ] ;
+
+    //      See the comments in the implementation files for the purpose
+    //      of this private constructor.
+    // -----------------------------------------------------------------------
+                        last_api_error( char const * p, long long error_code ) ;
+
 } ;
 
 }

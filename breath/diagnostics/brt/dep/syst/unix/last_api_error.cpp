@@ -14,39 +14,17 @@
 #include <cerrno>
 #include <locale.h>
 #include <string.h>
+#include <string>
 
 namespace breath_ns {
+namespace           {
 
-last_api_error::last_api_error( char const * p )
-    :   base_type( "<you shouldn't see this message>" ),
-        m_last_error( errno )
+std::string
+format_message( char const * incipit, long long last_error )
 {
     static char const   cant_obtain_description[] =
                             "can't obtain the error description"
                             "; see the error code, instead" ;
-
-    //!\todo
-    //! Most of this code is duplicated with the Windows variant.
-    //! How to put it in common? --gps
-    //
-    int const           max_incipit_size = 512 ;
-    static_assert( max_incipit_size < ( sizeof m_message / 10 ), "" ) ;
-
-    if ( p != nullptr ) {
-        strncpy( m_message, p, max_incipit_size ) ;
-
-        std::size_t const   len = strlen( p ) ;
-
-        char const          sep[] = ": " ;
-        if ( len != 0 ) {
-            strcpy( m_message + len, sep ) ;
-        }
-    }
-
-    std::size_t const   offset = p == nullptr
-                                    ? 0
-                                    : strlen( m_message )
-                                    ;
 
     //      We use strerror_l(), here, although that was introduced only
     //      with POSIX.1-2008.
@@ -79,7 +57,7 @@ last_api_error::last_api_error( char const * p )
     locale_t const      locale = newlocale( LC_MESSAGES_MASK, "", locale_t() ) ;
 
     if ( locale != locale_t() ) {
-        description = strerror_l( static_cast< int >( m_last_error ), locale ) ;
+        description = strerror_l( static_cast< int >( last_error ), locale ) ;
         freelocale( locale ) ;
     }
 
@@ -87,29 +65,44 @@ last_api_error::last_api_error( char const * p )
                                       ? description
                                       : &cant_obtain_description[ 0 ]
                                       ;
-    strncpy( m_message + offset, message, sizeof m_message - offset - 1 ) ;
-    m_message[ sizeof m_message - 1 ] = '\0' ;
+    return incipit != nullptr && incipit[ 0 ] != '\0'
+        ? std::string( incipit) + ": " + message
+        : message
+        ;
+}
+
+}
+
+//      A comment similar to the one in the Windows implementation file
+//      holds, here. The system function which formats the error message
+//      may fail and set errno itself. So we need to protect from that
+//      case.
+//
+//      For this reason, we forward to another (private) constructor.
+// ---------------------------------------------------------------------------
+last_api_error::last_api_error( char const * p )
+    :   last_api_error( p, errno )
+{
 }
 
 last_api_error::last_api_error( last_api_error const & other ) noexcept
     :   base_type( other ),
         m_last_error( other.m_last_error )
 {
-    strcpy( &m_message[ 0 ], &other.m_message[ 0 ] ) ;
 }
 
 last_api_error::~last_api_error() noexcept = default ;
+
+last_api_error::last_api_error( char const * p, long long error_code )
+    :   base_type( format_message( p, error_code ) ),
+        m_last_error( error_code )
+{
+}
 
 long long
 last_api_error::code() const noexcept
 {
     return m_last_error ;
-}
-
-char const *
-last_api_error::what() const noexcept
-{
-    return m_message ;
 }
 
 }
