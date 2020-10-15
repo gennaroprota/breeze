@@ -49,8 +49,7 @@ public:
                         ~auto_array() noexcept ;
 
     auto_array &        operator =( auto_array && ) noexcept ;
-    T *                 get() noexcept ;
-    T const *           get() const noexcept ;
+    T *                 get() const noexcept ;
     void                reset( T * ) noexcept ;
 
 private:

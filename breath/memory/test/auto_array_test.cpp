@@ -74,6 +74,17 @@ check_reset()
     a.reset( nullptr ) ;
 }
 
+void
+can_assign_elements_of_const_auto_array_to_non_const()
+{
+    {
+        int *               p = new int [ 5 ]{ 0, 1, 2, 3, 4 } ;
+        breath::auto_array< int > const
+                            a( p ) ;
+        a.get()[ 0 ] = 0 ;
+    }
+}
+
 }
 
 int
@@ -82,9 +93,10 @@ test_auto_array()
     using namespace breath ;
 
     return test_runner::instance().run( "auto_array",
-                                        { check_move_semantics,
-                                          check_non_move_constructors,
-                                          check_reset                 } ) ;
+                  { check_move_semantics,
+                    check_non_move_constructors,
+                    check_reset,
+                    can_assign_elements_of_const_auto_array_to_non_const } ) ;
 }
 
 // Local Variables:
