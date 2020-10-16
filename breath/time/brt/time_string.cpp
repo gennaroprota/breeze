@@ -23,11 +23,11 @@ namespace breath_ns {
 //      libraries have updated their implementation of strftime() to
 //      support these specifiers.
 // ---------------------------------------------------------------------------
-char const          iso8601_basic_date[]    = "%Y%m%d" ;
-char const          iso8601_extended_date[] = "%Y-%m-%d" ;
+extern char const   iso8601_basic_date[]    = "%Y%m%d" ;
+extern char const   iso8601_extended_date[] = "%Y-%m-%d" ;
 
-char const          iso8601_basic_time[]    = "%H%M%S" ;
-char const          iso8601_extended_time[] = "%H:%M:%S" ;
+extern char const   iso8601_basic_time[]    = "%H%M%S" ;
+extern char const   iso8601_extended_time[] = "%H:%M:%S" ;
 
 
 //      Implementation notes:

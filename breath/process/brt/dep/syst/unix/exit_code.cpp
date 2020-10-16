@@ -22,10 +22,10 @@ namespace breath_ns {
 //       - many de facto conventions exist and it is generally better to
 //         stay below 64 anyway
 // ---------------------------------------------------------------------------
-int const           exit_warning  = 10 ;
-int const           exit_error    = 20 ;
-int const           exit_fatal    = 30 ;
-int const           exit_internal = 50 ;
+extern int const    exit_warning  = 10 ;
+extern int const    exit_error    = 20 ;
+extern int const    exit_fatal    = 30 ;
+extern int const    exit_internal = 50 ;
 
 }
 
