@@ -37,7 +37,7 @@ public:
                                                                  = delete ;
     key_handle_manager &operator =( key_handle_manager const & ) = delete ;
 
-    explicit key_handle_manager( HKEY key ) noexcept
+    explicit            key_handle_manager( HKEY key ) noexcept
         :   m_key( key )
     {
     }
@@ -48,7 +48,7 @@ public:
         return m_closed ;
     }
 
-    ~key_handle_manager() noexcept
+                        ~key_handle_manager() noexcept
     {
         //      NOTE: the return value is ignored.
         // -------------------------------------------------------------------
@@ -58,8 +58,8 @@ public:
     }
 
 private:
-    HKEY            m_key ;
-    bool            m_closed = false ;
+    HKEY                m_key ;
+    bool                m_closed = false ;
 } ;
 
 [[ noreturn ]] void
