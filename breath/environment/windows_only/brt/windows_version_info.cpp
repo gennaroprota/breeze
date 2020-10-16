@@ -42,15 +42,24 @@ public:
     {
     }
 
+    bool                close_handle() noexcept
+    {
+        m_closed = RegCloseKey( m_key ) == ERROR_SUCCESS ;
+        return m_closed ;
+    }
+
     ~key_handle_manager() noexcept
     {
         //      NOTE: the return value is ignored.
         // -------------------------------------------------------------------
-        RegCloseKey( m_key ) ;
+        if ( ! m_closed ) {
+            close_handle() ;
+        }
     }
 
 private:
     HKEY            m_key ;
+    bool            m_closed = false ;
 } ;
 
 [[ noreturn ]] void
@@ -411,8 +420,7 @@ windows_version_info::service_pack_level()
     if ( ret != ERROR_SUCCESS ) {
         raise_api_exception( "cannot open the Control\\Windows registry key" ) ;
     }
-    key_handle_manager const
-                        manager( key ) ;
+    key_handle_manager  manager( key ) ;
     DWORD               value ;
     DWORD               dw_size = sizeof value ;
     LSTATUS const       ret2 = RegGetValueA( key, "", "CSDVersion",
@@ -423,6 +431,10 @@ windows_version_info::service_pack_level()
                                                             " the registry" ) ;
     }
 
+    if ( ! manager.close_handle() ) {
+        raise_api_exception( "cannot close the Control\\Windows"
+                             " registry key" ) ;
+    }
     return value / 256 ;
 }
 
