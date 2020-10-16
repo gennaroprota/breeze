@@ -15,14 +15,14 @@
 
 namespace breath_ns {
 
-char const          latin_small_letters[]   = "abcdefghijklmnopqrstuvwxyz" ;
-char const          latin_capital_letters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
+extern char const   latin_small_letters[]   = "abcdefghijklmnopqrstuvwxyz" ;
+extern char const   latin_capital_letters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
 
-char const          decimal_digits[] = "0123456789" ;
-char const          octal_digits[]   = "01234567"   ;
+extern char const   decimal_digits[] = "0123456789" ;
+extern char const   octal_digits[]   = "01234567"   ;
 
-char const          lowercase_hex_digits[] = "0123456789abcdef" ;
-char const          uppercase_hex_digits[] = "0123456789ABCDEF" ;
+extern char const   lowercase_hex_digits[] = "0123456789abcdef" ;
+extern char const   uppercase_hex_digits[] = "0123456789ABCDEF" ;
 
 }
 
