@@ -97,7 +97,7 @@ cpp_basic_options += -pipe                              \
 # ----------------------------------------------------------------------------
 cpp_basic_options += -Wno-exit-time-destructors         \
                      -Wno-global-constructors           \
-                     -fcomment-block-commands=cond,copybrief
+                     -fcomment-block-commands=cond,copybrief,copydetails
 
 #       As of September 2020, Clang's -Og is the same as -O1 but
 #
