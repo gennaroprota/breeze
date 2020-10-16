@@ -403,7 +403,7 @@ int
 windows_version_info::service_pack_level()
 {
     HKEY                key = NULL ;
-    LONG const          ret = RegOpenKeyExA( HKEY_LOCAL_MACHINE,
+    LSTATUS const       ret = RegOpenKeyExA( HKEY_LOCAL_MACHINE,
                               "SYSTEM\\CurrentControlSet\\Control\\Windows",
                               0,
                               KEY_QUERY_VALUE | KEY_WOW64_32KEY,
@@ -415,7 +415,7 @@ windows_version_info::service_pack_level()
                         manager( key ) ;
     DWORD               value ;
     DWORD               dw_size = sizeof value ;
-    int const           ret2 = RegGetValueA( key, "", "CSDVersion",
+    LSTATUS const       ret2 = RegGetValueA( key, "", "CSDVersion",
                                  RRF_RT_ANY, nullptr,
                                  &value, &dw_size ) ;
     if ( ret2 != ERROR_SUCCESS ) {
