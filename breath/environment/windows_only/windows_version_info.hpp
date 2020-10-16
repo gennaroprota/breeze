@@ -79,6 +79,10 @@ public:
     //!     \return
     //!         The service pack level. Zero if no service pack is
     //!         installed.
+    //!
+    //!     \throw
+    //!         A \c std::runtime_error (which can be a \c
+    //!         last_api_error) if an error occurs.
     // -----------------------------------------------------------------------
     static int          service_pack_level() ;
 
