@@ -357,7 +357,7 @@ windows_version_info::is_wow64_process()
 {
     HMODULE const       module = GetModuleHandleA( "kernel32" ) ;
     if ( module == NULL ) {
-        throw last_api_error( "cannot get a handle to kernel32.dll" ) ;
+        raise_api_exception( "cannot get a handle to kernel32.dll" ) ;
     }
 
     typedef BOOL ( WINAPI * fn_ptr_type )( HANDLE, BOOL * ) ;
@@ -369,11 +369,11 @@ windows_version_info::is_wow64_process()
                         GetProcAddress( module, "IsWow64Process" ) ) ;
 
     if ( is_wow64_process == nullptr ) {
-        throw last_api_error( "cannot get the address of IsWow64Process()" ) ;
+        raise_api_exception( "cannot get the address of IsWow64Process()" ) ;
     }
 
     if ( is_wow64_process( GetCurrentProcess(), &is_wow64 ) == 0 ) {
-        throw last_api_error( "IsWow64Process() failed" ) ;
+        raise_api_exception( "IsWow64Process() failed" ) ;
     }
 
     return is_wow64 != 0 ;
