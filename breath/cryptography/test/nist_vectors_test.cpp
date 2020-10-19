@@ -27,13 +27,10 @@
 #include "breath/text/from_string.hpp"
 #include "breath/text/to_string.hpp"
 
-#include <algorithm>
-#include <cstddef>
 #include <fstream>
 #include <iostream>
 #include <istream>
 #include <ostream>
-#include <sstream>
 #include <string>
 #include <vector>
 
