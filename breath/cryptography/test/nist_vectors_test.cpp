@@ -61,12 +61,8 @@ nist_file::nist_file( char const * file_name )
     std::string const   subdir( breath_root +
                                    "/breath/cryptography/test/nist_vectors/" ) ;
     m_stream.open( ( subdir + file_name ).c_str() ) ;
-    if ( ! m_stream.fail() ) {
-        for ( std::string s ; s != "D>" ; ) {
-            m_stream >> s ;
-        }
-    }
 
+    start_new_section() ;
     if ( m_stream.fail() || m_stream.eof() ) {
         std::string const   what =
           std::string( "cannot construct nist_file object for " ) + file_name ;
