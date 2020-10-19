@@ -63,7 +63,7 @@ class               digest ;
 //!         In the future, bit iterators could be integrated here if
 //!         possible.
 //          (Note that internally we already keep the *bit* count of the
-//          input, not the byte count, so extending it should be farily
+//          input, not the byte count, so extending it should be fairly
 //          straightforward - gps )
 //
 //!     \par A note about \c std::accumulate()
