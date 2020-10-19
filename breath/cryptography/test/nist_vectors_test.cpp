@@ -63,7 +63,7 @@ nist_file::nist_file( char const * file_name )
     m_stream.open( ( subdir + file_name ).c_str() ) ;
 
     start_new_section() ;
-    if ( m_stream.fail() || m_stream.eof() ) {
+    if ( ! good() ) {
         std::string const   what =
           std::string( "cannot construct nist_file object for " ) + file_name ;
 
@@ -84,7 +84,7 @@ nist_file::start_new_section()
         m_stream >> s ;
     }
 
-    return m_stream.good() ;
+    return good() ;
 }
 
 template< typename T >
