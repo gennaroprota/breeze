@@ -100,7 +100,8 @@ std::ostream &      operator <<( std::ostream           & os,
 //      make_digest():
 //      ==============
 //
-//!     Convenience function (can use type deduction).
+//!     Convenience function to create a \c digest from a \c Hasher (can
+//!     use type deduction).
 //!
 //!     \return
 //!         digest< Hasher >( h )
