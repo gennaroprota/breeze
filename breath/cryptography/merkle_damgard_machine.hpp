@@ -114,7 +114,6 @@ private:
     enum
     {
         block_length = Engine::block_width / byte_width,
-        state_length = Engine::state_width / byte_width,
         word_length  = word_width / byte_width,
 
         length_count = Engine::length_exp / word_width
@@ -127,8 +126,6 @@ private:
 
     typedef typename Engine::state_type
                         state_type ;// gps --possibly temp
-    typedef typename Engine::block_type
-                        block_type ;// gps see above
 
 public:
     //!     \name Initialization.
