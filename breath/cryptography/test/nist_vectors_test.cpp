@@ -49,12 +49,12 @@ public:
                         nist_file(  nist_file const & ) = delete ;
     nist_file &         operator =( nist_file const & ) = delete ;
 
-    explicit            nist_file( char const * file_name ) ;
+    explicit            nist_file( std::string const & file_name ) ;
     bool                good() const ;
     bool                start_new_section() ;
 } ;
 
-nist_file::nist_file( char const * file_name )
+nist_file::nist_file( std::string const & file_name )
 {
     std::string const   breath_root( breath::get_environment_variable(
                                                     "BREATH_ROOT" ).value() ) ;
@@ -64,10 +64,8 @@ nist_file::nist_file( char const * file_name )
 
     start_new_section() ;
     if ( ! good() ) {
-        std::string const   what =
-          std::string( "cannot construct nist_file object for " ) + file_name ;
-
-        throw std::ios_base::failure( what ) ;
+        throw std::ios_base::failure(
+            "cannot construct nist_file object for " + file_name ) ;
     }
 }
 
