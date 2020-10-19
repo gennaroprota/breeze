@@ -10,6 +10,7 @@
 #include "breath/iteration/begin_end.hpp"
 #include "breath/mathematics/rounded_up_quotient.hpp"
 #include "breath/stream/inserter.hpp"
+#include <ostream>
 
 namespace breath_ns {
 
