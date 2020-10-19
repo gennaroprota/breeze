@@ -44,9 +44,7 @@ class               digest ;
 //!
 //!        \c state_type is either a built-in array or an array-like
 //!        type which provides const and non-const \c operator []()
-//!        functions; the machine guarantees that data stored in the \c
-//!        state parameter are wiped automatically when \c init_state()
-//!        returns to the caller (for obvious security reasons)
+//!        functions.
 //!
 //!      - <code>process_block( state_type & state,
 //!                             block_type const & block )</code>
