@@ -14,7 +14,7 @@
 #define BREATH_GUARD_8msuVkqs5IBc3s7j1mDOtGC97uqTUGg0
 
 #include "breath/top_level_namespace.hpp"
-#include <ostream>
+#include <iosfwd>
 #include <stdexcept>
 
 namespace breath_ns {

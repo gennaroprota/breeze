@@ -17,7 +17,7 @@
 #include "breath/meta/has_sign.hpp"
 #include "breath/meta/width.hpp"
 #include <cstdint>
-#include <ostream>
+#include <iosfwd>
 
 namespace breath_ns {
 

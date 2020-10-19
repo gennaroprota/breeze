@@ -12,6 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breath/testing/test_exception.hpp"
+#include <ostream>
 
 namespace breath_ns {
 
