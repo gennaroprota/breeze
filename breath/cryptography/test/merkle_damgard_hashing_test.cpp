@@ -185,18 +185,14 @@ test_vectors< breath::sha512_hasher >::test_entry const
 template< typename Hasher >
 void check_known_digests()
 {
-    typedef std::string string_type ;
     typedef test_vectors< Hasher >
                         known ;
 
     for ( std::ptrdiff_t i = 0 ; i < breath::signed_count( known::entries ) ;
                                                                         ++ i ) {
-
-        using breath::digest ;
-
         typename known::test_entry const &
                             entry( known::entries[ i ] ) ;
-        string_type const & src( entry.source ) ;
+        std::string const & src( entry.source ) ;
 
         Hasher              hasher( src.cbegin(), src.cend() ) ;
 
@@ -204,7 +200,7 @@ void check_known_digests()
             hasher.append( src.cbegin(), src.cend() ) ;
         }
 
-        digest< Hasher > const
+        breath::digest< Hasher > const
                             d( hasher ) ;
         std::string const   result = breath::to_string( d ) ;
         BREATH_CHECK( result == entry.expected ) ;
