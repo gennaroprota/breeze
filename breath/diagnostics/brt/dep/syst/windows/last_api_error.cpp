@@ -34,7 +34,8 @@ format_message( char const * incipit, long long last_error )
     ) ;
 
     if ( ret == 0 ) {
-        s = "can't obtain the error description; see the error code, instead" ;
+        s = "couldn't obtain the error description; see the error code, instead"
+            ;
     } else {
         //      Strip the null character.
         // -------------------------------------------------------------------
