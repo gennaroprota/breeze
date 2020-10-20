@@ -23,7 +23,7 @@ std::string
 format_message( char const * incipit, long long last_error )
 {
     static char const   cant_obtain_description[] =
-                            "can't obtain the error description"
+                            "couldn't obtain the error description"
                             "; see the error code, instead" ;
 
     //      We use strerror_l(), here, although that was introduced only
