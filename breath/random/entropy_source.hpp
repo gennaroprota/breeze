@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Represents the system entropy source (random numbers).
+//!     \brief The system entropy source (random numbers).
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_zRk6qVzrOdWWtkjYcUpuIkpnrRj8cg0q

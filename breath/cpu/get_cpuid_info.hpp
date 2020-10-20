@@ -22,7 +22,7 @@ extern "C" {
 //      =============
 //
 //!     \brief
-//!         Represents the result of the CPUID instruction.
+//!         The result of the CPUID instruction.
 // ---------------------------------------------------------------------------
 struct cpuid_result
 {
