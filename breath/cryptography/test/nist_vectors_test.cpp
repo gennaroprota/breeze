@@ -228,7 +228,7 @@ public:
                         {
                         }
 
-    int                 get_count() const
+    int                 count() const
     {
         return m_count ;
     }
@@ -315,7 +315,7 @@ do_test()
         bool const          is_montecarlo_section =
             section_types[ messages.section_number() - 1 ].pseudorandom ;
 
-        if ( is_montecarlo_section && montecarlo_harness.get_count() == 0 ) {
+        if ( is_montecarlo_section && montecarlo_harness.count() == 0 ) {
             montecarlo_harness.init( msg ) ;
         }
 
@@ -337,7 +337,7 @@ do_test()
         expected = hashes.next() ;
     }
 
-    report_results( total, failed, montecarlo_harness.get_count() ) ;
+    report_results( total, failed, montecarlo_harness.count() ) ;
 }
 
 }
