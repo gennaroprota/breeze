@@ -263,6 +263,30 @@ public:
 };
 
 void
+report_results( int total, int failed, int pseudorandom_total )
+{
+    int const           expected_total = 329 ;
+    int const           expected_pseudorandom_total = 100 ;
+    bool const          all_used = total == expected_total &&
+                pseudorandom_total == expected_pseudorandom_total ;
+    bool const          test_passed = all_used && failed == 0 ;
+
+    std::cout << "Total:  " << total  << " (of which "
+              << pseudorandom_total << " pseudorandom)" << '\n'
+              << "Failed: " << failed << std::endl ;
+
+    std::cout << ( all_used
+                     ? "All vectors used"
+                     : "Not all vectors used" )
+              << std::endl ;
+
+    std::cout << ( test_passed
+                     ? "Test passed"
+                     : "*** TEST FAILED ***" )
+              << std::endl ;
+}
+
+void
 do_test()
 {
     using namespace breath ;
@@ -313,27 +337,7 @@ do_test()
         expected = hashes.next() ;
     }
 
-    // report results
-    //
-    int const           expected_total = 329 ;
-    int const           expected_pseudorandom_total = 100 ;
-    bool const          all_used = total == expected_total &&
-                 montecarlo_harness.get_count() == expected_pseudorandom_total ;
-    bool const          test_passed = all_used && failed == 0 ;
-
-    std::cout << "Total:  " << total  << " (of which "
-              << montecarlo_harness.get_count() << " pseudorandom)" << '\n'
-              << "Failed: " << failed << std::endl ;
-
-    std::cout << ( all_used
-                     ? "All vectors used"
-                     : "Not all vectors used" )
-              << std::endl ;
-
-    std::cout << ( test_passed
-                     ? "Test passed"
-                     : "*** TEST FAILED ***" )
-              << std::endl ;
+    report_results( total, failed, montecarlo_harness.get_count() ) ;
 }
 
 }
