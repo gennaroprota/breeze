@@ -110,6 +110,9 @@ public:
         digest_width = Engine::digest_width
     } ;
 
+    typedef typename Engine::byte_type
+                        byte_type ;
+
 private:
     enum
     {
@@ -121,8 +124,6 @@ private:
 
     typedef typename Engine::word_type
                         word_type ;
-    typedef typename Engine::byte_type
-                        byte_type ;
 
     typedef typename Engine::state_type
                         state_type ;// gps --possibly temp
