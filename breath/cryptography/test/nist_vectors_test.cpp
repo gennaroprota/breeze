@@ -4,7 +4,7 @@
 //          PVS-Studio Static Code Analyzer for C, C++, C#, and Java:
 //                            http://www.viva64.com
 // ===========================================================================
-//                        Copyright 2006 Gennaro Prota
+//                     Copyright 2006-2020 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -19,7 +19,6 @@
 //      is the read_me in the nist_vectors/ subdirectory.
 // ---------------------------------------------------------------------------
 
-#include "breath/counting/signed_count.hpp"
 #include "breath/cryptography/digest.hpp"
 #include "breath/cryptography/sha1_hasher.hpp"
 #include "breath/environment/get_environment_variable.hpp"
@@ -41,6 +40,7 @@ namespace {
 class nist_file
 {
     std::ifstream       m_stream ;
+    int                 m_section_number ;
 
     template< typename T >
     friend nist_file &  operator >>( nist_file &, T & t ) ;
@@ -51,10 +51,14 @@ public:
 
     explicit            nist_file( std::string const & file_name ) ;
     bool                good() const ;
+    int                 section_number() const ;
+
+protected:
     bool                start_new_section() ;
 } ;
 
 nist_file::nist_file( std::string const & file_name )
+    :   m_section_number( 0 )
 {
     std::string const   breath_root( breath::get_environment_variable(
                                                     "BREATH_ROOT" ).value() ) ;
@@ -75,6 +79,12 @@ nist_file::good() const
     return m_stream.good() ;
 }
 
+int
+nist_file::section_number() const
+{
+    return m_section_number ;
+}
+
 bool
 nist_file::start_new_section()
 {
@@ -82,6 +92,9 @@ nist_file::start_new_section()
         m_stream >> s ;
     }
 
+    if ( good() ) {
+        ++ m_section_number ;
+    }
     return good() ;
 }
 
@@ -91,6 +104,115 @@ operator >>( nist_file & f, T & t )
 {
     f.m_stream >> t ;
     return f ;
+}
+
+class message_file
+    :   public nist_file
+{
+public:
+    explicit            message_file( std::string const & file_name ) ;
+    std::vector< breath::sha1_engine::byte_type >
+                        next() ;
+
+private:
+    std::vector< breath::sha1_engine::byte_type >
+                        read_compact_string( int z ) ;
+} ;
+
+message_file::message_file( std::string const & file_name )
+    :   nist_file( file_name )
+{
+}
+
+std::vector< breath::sha1_engine::byte_type >
+message_file::next()
+{
+    std::vector< breath::sha1_engine::byte_type >
+                        result ;
+    std::string         s ;
+    *this >> s ;
+
+    if ( good() ) {
+        if ( s == "<D" ) {
+            start_new_section() ;
+            result = next() ;
+        } else {
+            result = read_compact_string(
+                breath::from_string< int >( s ).value() ) ;
+            char                terminator ;
+            *this >> terminator ;
+        }
+    }
+
+    return result ;
+}
+
+std::vector< breath::sha1_engine::byte_type >
+message_file::read_compact_string( int z )
+{
+    typedef breath::sha1_engine::byte_type
+                        byte_type ;
+
+    bool                b = false ;
+    *this >> b ;
+
+    std::vector< byte_type >
+                        msg ;
+    byte_type           curr = 0 ;
+    byte_type const     initial_mask = 128 ;
+    byte_type           mask = initial_mask ;
+    for ( int i = 0 ; i < z ; ++ i ) {
+        int                 n ;
+        *this >> n ;
+
+        while ( n > 0 ) {
+            if ( b ) {
+                curr |= mask ;
+            }
+
+            mask /= 2 ;
+            if ( mask == 0 ) {
+                msg.push_back( curr ) ;
+                curr = 0 ;
+                mask = initial_mask ;
+            }
+
+            -- n ;
+        }
+
+        b = ! b ;
+    }
+
+    return msg ;
+}
+
+class hash_file
+    :   public nist_file
+{
+public:
+    explicit            hash_file( std::string const & file_name ) ;
+    std::string         next() ;
+} ;
+
+hash_file::hash_file( std::string const & file_name )
+    :   nist_file( file_name )
+{
+}
+
+std::string
+hash_file::next()
+{
+    std::string         result ;
+    *this >> result ;
+    char                terminator ;
+    *this >> terminator ;
+
+    if ( good() && result == "<D" ) {
+        start_new_section() ;
+        result = next() ;
+    }
+
+    return result ;
 }
 
 class montecarlo_test
@@ -140,52 +262,12 @@ public:
     }
 };
 
-std::vector< breath::sha1_engine::byte_type >
-read_compact_string( nist_file & messages, int z )
-{
-    typedef breath::sha1_engine::byte_type
-                        byte_type ;
-
-    bool                b ;
-    messages >> b ;
-
-    std::vector< byte_type >
-                        msg ;
-    byte_type           curr = 0 ;
-    byte_type const     initial_mask = 128 ;
-    byte_type           mask = initial_mask ;
-    for ( int i = 0 ; i < z ; ++ i ) {
-        int                 n ;
-        messages >> n ;
-
-        while ( n > 0 ) {
-            if ( b ) {
-                curr |= mask ;
-            }
-
-            mask /= 2 ;
-            if ( mask == 0 ) {
-                msg.push_back( curr ) ;
-                curr = 0 ;
-                mask = initial_mask ;
-            }
-
-            -- n ;
-        }
-
-        b = ! b ;
-    }
-
-    return msg ;
-}
-
 void
 do_test()
 {
     using namespace breath ;
-
-    nist_file           messages( "byte-messages.sha1" ) ;
-    nist_file           hashes  ( "byte-hashes.sha1" ) ;
+    message_file        messages( "byte-messages.sha1" ) ;
+    hash_file           hashes(   "byte-hashes.sha1"   ) ;
 
     int                 total = 0 ;
     int                 failed = 0 ;
@@ -200,61 +282,23 @@ do_test()
         { true  }
     } ;
 
-    int const           sections = static_cast< int >(
-                            breath::signed_count( section_types ) ) ;
-
-    std::string         calculated ;
-    std::vector< breath::sha1_engine::byte_type >
-                        msg ;
     montecarlo_test     montecarlo_harness ;
+    std::string         expected = hashes.next() ;
+    while ( hashes.good() ) {
+        ++ total ;
+        std::vector< sha1_engine::byte_type >
+                            msg = messages.next() ;
+        bool const          is_montecarlo_section =
+            section_types[ messages.section_number() - 1 ].pseudorandom ;
 
-    for ( int sn = 0 ; sn < sections && hashes.good() ; /*++sn*/ ) {
-        bool const          montecarlo_section = section_types[
-                                                             sn ].pseudorandom ;
-        if ( /*!montecarlo_section ||*/ montecarlo_harness.get_count() == 0 ) {
-            // terminator found?
-            //
-            std::string         s ;
-            messages >> s ;
-            if ( s == "<D" ) {
-                messages.start_new_section() ;
-                hashes.start_new_section() ;
-                ++ sn ;
-                continue ;
-            }
-
-            int const           z( from_string< int >( s ).value() ) ;
-
-            if ( montecarlo_section ) {
-                msg = read_compact_string( messages, z ) ;
-                BREATH_CHECK( 8 * msg.size() == 416 ) ;
-
-                montecarlo_harness.init( msg ) ;
-            } else {
-                msg = read_compact_string( messages, z ) ;
-            }
-
-            std::string         dummy ;
-            messages >> dummy ; // skip terminator
+        if ( is_montecarlo_section && montecarlo_harness.get_count() == 0 ) {
+            montecarlo_harness.init( msg ) ;
         }
 
-        std::string     expected ;
-        hashes >> expected ;
-        if ( expected == "<D" ) {
-            break ; // done!
-        }
-
-        std::string     unused ;
-        hashes >> unused ; // terminator
-
-        if ( hashes.good() ) {
-            ++ total ;
-        }
-
-        calculated = to_string(
-            montecarlo_section
-              ? montecarlo_harness.next()
-              : make_digest( sha1_hasher( msg.begin(), msg.end() ) )
+        std::string const   calculated = to_string(
+                is_montecarlo_section
+                    ? montecarlo_harness.next()
+                    : make_digest( sha1_hasher( msg.begin(), msg.end() ) )
             ) ;
 
         if ( calculated != expected ) {
@@ -265,6 +309,8 @@ do_test()
 
             BREATH_CHECK( false ) ;
         }
+
+        expected = hashes.next() ;
     }
 
     // report results
