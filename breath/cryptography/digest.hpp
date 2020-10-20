@@ -52,12 +52,12 @@ public:
     // -----------------------------------------------------------------------
     bool                is_equal( digest< Hasher > const & ) const ;
 
-    //!     \name Byte-based iteration (read-only)
+    //!\name Byte-based iteration (read-only)
     //!           const_iterator is a forward iterator - gps
-    //!     \{
+    //!\{
     const_iterator      begin() const ;
     const_iterator      end() const ;
-    //!     \}
+    //!\}
 
     class               less ;
     friend class        less ;
