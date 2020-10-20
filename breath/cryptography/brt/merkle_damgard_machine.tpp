@@ -192,8 +192,6 @@ merkle_damgard_machine< Engine >::create_digest( raw_digest_type & raw )
         Engine::encode_word( m_state[ i ],
                              raw + i * word_length ) ;
     }
-
-    reset() ; // gps -- OK to reinitialize with the magic constants?
 }
 
 template< typename Engine >
