@@ -22,8 +22,8 @@ namespace breath_ns {
 namespace meta {
 
 //!     \brief
-//!         Like select, but with the condition represented as a <code>
-//!         bool</code> value, not a type.
+//!         Like \c select, but with the condition represented as a
+//!         <code>bool</code> value, not a type.
 // ---------------------------------------------------------------------------
 template< bool condition, typename T, typename U >
 class select_
