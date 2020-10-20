@@ -128,8 +128,8 @@ private:
                         state_type ;// gps --possibly temp
 
 public:
-    //!     \name Initialization.
-    //!     \{
+    //!\name Initialization.
+    //!\{
     // -----------------------------------------------------------------------
                         merkle_damgard_machine() ;
 
@@ -138,17 +138,17 @@ public:
     template< typename InputIter >
                         merkle_damgard_machine( InputIter begin,
                                                 InputIter end ) ;
-    //!     \}
+    //!\}
 
-    //!     \name Operations: "appending" one or more bytes
-    //!     \{
+    //!\name Operations: "appending" one or more bytes
+    //!\{
     // -----------------------------------------------------------------------
     void                push_back( byte_type b ) ;
 
     template< typename InputIter >
     merkle_damgard_machine &
                         append( InputIter begin, InputIter end ) ;
-    //!     \}
+    //!\}
 
 private:
     friend class digest< merkle_damgard_machine > ;
