@@ -92,7 +92,7 @@ merkle_damgard_machine< Engine >::reset()
 
 template< typename Engine >
 template< typename InputIter >
-merkle_damgard_machine< Engine > &
+void
 merkle_damgard_machine< Engine >::do_append( InputIter begin,
                                              InputIter end,
                                              std::input_iterator_tag )
@@ -100,13 +100,11 @@ merkle_damgard_machine< Engine >::do_append( InputIter begin,
     for ( ; begin != end ; ++ begin ) {
         push_back( *begin ) ; // gps value type=
     }
-
-    return *this ;
 }
 
 template< typename Engine >
 template< typename RandomIter >
-merkle_damgard_machine< Engine > &
+void
 merkle_damgard_machine< Engine >::do_append( RandomIter begin,
                                              RandomIter end,
                                      std::random_access_iterator_tag )
@@ -130,19 +128,17 @@ merkle_damgard_machine< Engine >::do_append( RandomIter begin,
     // bufferize any remaining input; update the bit count
     std::copy( curr, end, breath::begin( m_input_buffer ) + index ) ;
     increase_count( byte_width * ( end - begin ) ) ;
-
-    return *this ;
 }
 
 template< typename Engine >
 template< typename Iter >
-merkle_damgard_machine< Engine > &
+void
 merkle_damgard_machine< Engine >::append( Iter begin, Iter end )
 {
     typedef typename std::iterator_traits<
                         Iter >::iterator_category cat ;
 
-    return do_append( begin, end, cat() ) ;
+    do_append( begin, end, cat() ) ;
 }
 
 //      Padding:

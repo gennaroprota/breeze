@@ -147,8 +147,7 @@ public:
     void                push_back( byte_type b ) ;
 
     template< typename InputIter >
-    merkle_damgard_machine &
-                        append( InputIter begin, InputIter end ) ;
+    void                append( InputIter begin, InputIter end ) ;
     //!\}
 
 private:
@@ -172,14 +171,11 @@ private:
     void                increase_count( ptrdiff_t amount ) ;
 
     template< typename It >
-    merkle_damgard_machine &
-                        do_append( It begin, It end,
-                            std::input_iterator_tag ) ;
+    void                do_append( It begin, It end, std::input_iterator_tag ) ;
 
     template< typename It >
-    merkle_damgard_machine &
-                        do_append( It begin, It end,
-                            std::random_access_iterator_tag ) ;
+    void                do_append( It begin, It end,
+                                             std::random_access_iterator_tag ) ;
 } ;
 
 }
