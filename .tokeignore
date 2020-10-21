@@ -7,6 +7,10 @@
 # ____________________________________________________________________________
 #
 #       Ignore file for Tokei: <https://github.com/XAMPPRocky/tokei>.
+#
+#       The purpose is to include only our original files in the count,
+#       to allow useful statistics. So, for instance, papers authored by
+#       others, such as crc_v3.txt, are excluded.
 # ----------------------------------------------------------------------------
 
 # ======================================
