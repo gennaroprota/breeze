@@ -66,6 +66,13 @@ readable_type_name()
     ) ;
 }
 
+template< typename T >
+std::string
+readable_type_name( T const & ref )
+{
+    return readable_type_name_private::demangled_typeid_name( ref ) ;
+}
+
 }
 
 // Local Variables:

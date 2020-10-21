@@ -15,6 +15,7 @@
 #include "breath/testing/testing.hpp"
 
 #include <iostream>
+#include <memory>
 #include <string>
 
 int                 test_readable_type_name() ;
@@ -25,6 +26,18 @@ class my_template
 } ;
 
 class incomplete_type ;
+
+class my_base
+{
+public:
+    virtual void        f() {}
+    virtual             ~my_base() noexcept = default ;
+} ;
+
+class my_derived
+    :   public my_base
+{
+} ;
 
 namespace {
 
@@ -60,6 +73,15 @@ void do_tests()
     BREATH_CHECK( s6 == "my_template<int>" || s6 == "class my_template<int>") ;
 }
 
+void
+test_with_polymorphic_type()
+{
+    std::unique_ptr< my_base const > const
+                        u( std::make_unique< my_derived const >() ) ;
+    std::string const   s = breath::readable_type_name( *u ) ;
+    BREATH_CHECK( s == "my_derived" || s == "class my_derived" ) ;
+}
+
 }
 
 int
@@ -68,7 +90,8 @@ test_readable_type_name()
     using namespace breath ;
 
     return test_runner::instance().run( "readable_type_name()",
-                                        { do_tests } ) ;
+                                        { do_tests,
+                                          test_with_polymorphic_type } ) ;
 }
 
 // Local Variables:

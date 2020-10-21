@@ -6,7 +6,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 //
-//      Implementation helper for readable_type_name() for GCC.
+//      Implementation helpers for readable_type_name() for GCC.
 // ---------------------------------------------------------------------------
 
 #include <cstdlib>
@@ -18,9 +18,10 @@
 namespace breath_ns {
 namespace readable_type_name_private {
 
-template< typename T >
-std::string
-demangled_typeid_name()
+std::string         demangle( std::string const & name ) ;
+
+inline std::string
+demangle( char const * name )
 {
     class deallocator
     {
@@ -36,8 +37,6 @@ demangled_typeid_name()
     private:
         char * const    m_p ;
     } ;
-
-    char const * const  name = typeid( T ).name() ;
 
     //      The __cxa_demangle() specification can be found at:
     //
@@ -61,6 +60,20 @@ demangled_typeid_name()
     deallocator const   dlc( p ) ;
 
     return std::string( p ) ;
+}
+
+template< typename T >
+std::string
+demangled_typeid_name()
+{
+    return demangle( typeid( T ).name() ) ;
+}
+
+template< typename T >
+std::string
+demangled_typeid_name( T const & ref )
+{
+    return demangle( typeid( ref ).name() ) ;
 }
 
 }

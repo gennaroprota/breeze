@@ -6,7 +6,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 //
-//      Implementation helper for readable_type_name() for Clang.
+//      Implementation helpers for readable_type_name() for Clang.
 // ---------------------------------------------------------------------------
 
 #include "../gcc/readable_type_name.tpp"
