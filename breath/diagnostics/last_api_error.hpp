@@ -43,7 +43,7 @@ namespace breath_ns {
 //!      - As a convenience facility to get both the error code and the
 //!        error message for the last error.
 //!
-//!     The class is OutputStreamable, so you can also use \c
+//!     The class is <tt>OutputStreamable</tt>, so you can also use \c
 //!     breath::to_string(), which gives more information than the
 //!     member \c what(), but may throw.
 //!

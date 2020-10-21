@@ -27,12 +27,12 @@ namespace breath_ns {
 //!            representation.
 //!
 //!     \par Type requirements
-//!         \c T shall be \c DefaultConstructible and \c
-//!         MoveConstructible. Furthermore it shall be \c input \c
-//!         streamable from a \c std::istream, meaning that an <code>
-//!         operator &gt;&gt;()</code> function may be called that takes
-//!         an instance of \c std::istream as first argument and an
-//!         instance of \c T as second argument.
+//!         \c T shall be <tt>DefaultConstructible</tt> and <tt>
+//!         MoveConstructible</tt>. Furthermore it shall be <tt>input
+//!         streamable</tt> from a \c std::istream, meaning that an
+//!         <code>operator &gt;&gt;()</code> function may be called that
+//!         takes an instance of \c std::istream as first argument and
+//!         an instance of \c T as second argument.
 //!
 //!     \note
 //!         \c s and \c T being equal, the result of this function will,

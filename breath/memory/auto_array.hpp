@@ -28,9 +28,9 @@ namespace breath_ns {
 //!     template was written way before C++11.
 //!
 //!     Like for \c unique_ptr, instances of this template satisfy the
-//!     requirements of \c MoveConstructible and \c MoveAssignable, but
-//!     not the requirements of either \c CopyConstructible or
-//!     \c CopyAssignable.
+//!     requirements of <tt>MoveConstructible</tt> and <tt>
+//!     MoveAssignable</tt>, but not the requirements of either <tt>
+//!     CopyConstructible</tt> or <tt>CopyAssignable</tt>.
 // ---------------------------------------------------------------------------
 template< typename T >
 class auto_array
