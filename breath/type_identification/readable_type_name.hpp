@@ -27,6 +27,19 @@ namespace breath_ns {
 template< typename T >
 std::string         readable_type_name() ;
 
+//      readable_type_name():
+//      =====================
+//
+//!     \return
+//!         A human readable name for the type of the object to which \c
+//!         ref refers. If \c T is a polymorphic class type, the name is
+//!         that of the type of the most derived object (i.e. the \e
+//!         dynamic type), otherwise it is that of the static type (i.e.
+//!         the name of \c T).
+// ---------------------------------------------------------------------------
+template< typename T >
+std::string         readable_type_name( T const & ref ) ;
+
 }
 
 #include "brt/readable_type_name.tpp"

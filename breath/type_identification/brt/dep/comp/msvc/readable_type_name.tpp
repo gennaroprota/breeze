@@ -6,7 +6,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 //
-//      Implementation helper for readable_type_name() for Visual C++.
+//      Implementation helpers for readable_type_name() for Visual C++.
 // ---------------------------------------------------------------------------
 
 #include <typeinfo>
@@ -19,6 +19,13 @@ std::string
 demangled_typeid_name()
 {
     return typeid( T ).name() ;
+}
+
+template< typename T >
+std::string
+demangled_typeid_name( T const & ref )
+{
+    return typeid( ref ).name() ;
 }
 
 }
