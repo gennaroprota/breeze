@@ -26,8 +26,8 @@ namespace breath_ns {
 //!     </code> and returns \c t.
 //!
 //!     This template participates in overload resolution only if \c To
-//!     and \c From have the same size and are both \c
-//!     TriviallyCopyable.
+//!     and \c From have the same size and are both <tt>
+//!     TriviallyCopyable</tt>.
 //!
 //!     It is is an approximation of C++20's \c std::bit_cast(), for
 //!     usage with C++14 and C++17.
@@ -37,7 +37,7 @@ namespace breath_ns {
 //!      - it is not \c constexpr (allowing usage in a \c constexpr
 //!        context would require compiler magic)
 //!
-//!      - requires that \c To be \c DefaultConstructible
+//!      - requires that \c To be <tt>DefaultConstructible</tt>
 //!
 //!      - it is <code>noexcept( noexcept( To() ) )</code> (the standard
 //!        version is unconditionally \c noexcept)

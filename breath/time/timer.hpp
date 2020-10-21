@@ -27,8 +27,8 @@ namespace breath_ns {
 //!
 //!     \c Device is a policy modeling the "clock device" concept: this
 //!     can be a hardware device, a network time provider, a GPS system
-//!     or pretty much anything else. It must be \c DefaultConstructible
-//!     and provide the member functions:
+//!     or pretty much anything else. It must be <tt>
+//!     DefaultConstructible</tt> and provide the member functions:
 //!
 //!      - \c %start(),
 //!            which must start or restart the \c Device
