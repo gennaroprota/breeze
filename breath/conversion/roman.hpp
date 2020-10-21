@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Roman numerals.
+//!     \brief A Roman numeral.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_hMt6bmZCT9RIwijJe5QSttMMotHJsr1N
