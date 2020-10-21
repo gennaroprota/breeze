@@ -7,7 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief The last error encountered in an OS API call.
+//!     \brief The last error encountered by the calling thread in an OS
+//!            API call.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_HC9mIXMvniKHLa6eFGhdRhDkxlSaZErK
