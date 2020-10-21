@@ -15,6 +15,7 @@
 
 crc_v3.txt
 **/test/a006968.txt
+**/test/nist_vectors/
 
 # Local Variables:
 # mode: conf
