@@ -22,13 +22,12 @@ namespace breath_ns {
 //      roman:
 //      ======
 //
-//!     A number that outputs in Roman numerals.
+//!\copybrief roman.hpp
 // ---------------------------------------------------------------------------
 class roman
 {
 public:
-    //!     Constructs a Roman number object corresponding to number
-    //!     \c n.
+    //!     Constructs a Roman numeral corresponding to number \c n.
     //!
     //!     \pre
     //!         1 <= n && n <= 3999
@@ -38,10 +37,9 @@ public:
 private:
     int                 m_value ;
 
-    //!     Stream output operator: outputs the number in Roman
-    //!     numerals. The uppercase flag (\c std::ios_base::uppercase)
-    //!     is supported, so the user can obtain all-uppercase or
-    //!     all-lowercase.
+    //!     Stream output operator: outputs the Roman numeral. The
+    //!     uppercase flag (\c std::ios_base::uppercase) is supported,
+    //!     so the user can obtain all-uppercase or all-lowercase.
     // -----------------------------------------------------------------------
     friend std::ostream &
                     operator <<( std::ostream &, roman const & ) ;
