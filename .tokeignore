@@ -14,6 +14,7 @@
 # ======================================
 
 crc_v3.txt
+**/test/a006968.txt
 
 # Local Variables:
 # mode: conf
