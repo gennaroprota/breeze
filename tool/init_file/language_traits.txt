@@ -57,6 +57,7 @@
 \.vim$                  no       no       "          Vim
 \.xhtml$                <!--     -->      no         XHTML
 \.xslt$                 <!--     -->      no         XSLT
+\.(yml|yaml)$           no       no       #          YAML
 # --------------------------------------------------------------------
 \.txt$                  no       no       #          Text
 

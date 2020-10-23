@@ -28,3 +28,31 @@ indent_size = 2
 [*.{vcxproj,vcxproj.filters,props}]
 indent_size = 2
 insert_final_newline = false
+
+#       The recommended name extension for YAML files is '.yaml', but
+#       Travis CI requires '.yml', instead; so we support both.
+#
+#       As to indent_size, YAML looks irregular with 4-space indentation
+#       when you use "- "; consider e.g. this snippet:
+#
+#         include:
+#             - os: linux
+#               dist: xenial
+#
+#               addons:
+#                 apt:
+#                     sources:
+#                         - ubuntu-toolchain-r-test
+#                     packages:
+#                         - g++-6
+#
+#       Here, "- os: linux" is indented by 4 spaces, but the line
+#       immediately after it is indented by 2, to align with
+#       "os: linux". Similarly, "apt:", which was aligned by pressing
+#       the tab key, is only 2 spaces to the right of "addons:". So, I
+#       think, either one never uses the tab key and always adds 4
+#       spaces "manually", or use the 2-space indentation that everyone
+#       is using. I chose the latter.
+# ----------------------------------------------------------------------------
+[*.{yml,yaml}]
+indent_size = 2

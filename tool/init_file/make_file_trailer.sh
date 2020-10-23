@@ -211,6 +211,13 @@ VimModeline: set ft=xslt et sts=%sts sw=%sw:
 VimModeline: set fenc=utf-8 nobomb:
 XSLT
 
+:   <<YAML
+EmacsVariablesList:
+mode: yaml
+indent-tabs-mode: nil
+End:
+VimModeline: set ft=yaml et sts=2 sw=2:
+YAML
 
 :   <<Batch
 EmacsVariablesList:
