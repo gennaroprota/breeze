@@ -31,6 +31,8 @@ GNUmakefile text
 *.vim       text
 *.xhtml     text
 *.xslt      text
+*.yml       text
+*.yaml      text
 
 *.txt       text
 
