@@ -83,16 +83,23 @@ operator <<( std::ostream           & os,
                    sizeof digits == ( 2 + mask ),
                    "wrong bits_per_hex_digit and/or bits_per_byte" ) ;
 
+    int const           repr_len = Hasher::digest_width / bits_per_hex_digit ;
+    char                repr[ repr_len + 1 ] ;
+    repr[ repr_len ] = '\0' ;
+
     typedef typename digest< Hasher >::const_iterator
                         it_type ;
+    int                 i = 0 ;
     for ( it_type it( d.begin() ) ; it != d.end() ; ++ it ) {
         for ( int t = bits_per_byte - bits_per_hex_digit ;
                 t >= 0 ;
                 t -= bits_per_hex_digit ) {
-            os.put( os.widen( digits[ ( *it >> t ) & mask ] ) ) ;
+            repr[ i ] = digits[ ( *it >> t ) & mask ] ;
+            ++ i ;
         }
     }
 
+    os << repr ;
     return os ;
 }
 
