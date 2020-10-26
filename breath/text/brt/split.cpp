@@ -23,8 +23,10 @@ split( std::string const & s, std::string const & separators )
     std::vector< std::string >
                         result ;
 
-    std::size_t         start = 0 ;
-    std::size_t         end   = 0 ;
+    std::string::size_type
+                        start = 0 ;
+    std::string::size_type
+                        end   = 0 ;
     while ( start < s.size() && end != s.npos ) {
         end = s.find_first_of( separators, start );
         if ( end != s.npos ) {
