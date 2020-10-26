@@ -203,7 +203,7 @@ Breath is made available subject to the terms of the 3-Clause BSD License,
 reproduced in the file `3_CLAUSE_BSD_LICENSE.txt`, at the root of the source
 tree.
 
-# Issues
+# Reporting issues
 
 I can't guarantee any kind of support, but if you have issues with the library,
 please send me a mail describing the problem (*name.surname*@gmail.com) and I
