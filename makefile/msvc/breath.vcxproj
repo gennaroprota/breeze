@@ -309,6 +309,7 @@
     <None Include="..\..\breath\stream\brt\stream_buffer_wrapper.tpp" />
     <None Include="..\..\breath\stream\brt\stream_equivalent.tpp" />
     <None Include="..\..\breath\text\brt\from_string.tpp" />
+    <None Include="..\..\breath\text\brt\split.tpp" />
     <None Include="..\..\breath\text\brt\to_string.tpp" />
     <None Include="..\..\breath\text\brt\trim_head_if.tpp" />
     <None Include="..\..\breath\text\brt\trim_if.tpp" />
