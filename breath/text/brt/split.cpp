@@ -20,28 +20,20 @@ namespace breath_ns {
 std::vector< std::string >
 split( std::string const & s, std::string const & separators )
 {
-    BREATH_ASSERT( s.size() < std::size_t( -1 ) ) ;
-
     std::vector< std::string >
                         result ;
 
-    //      Note:
-    //          The <= (in lieu of <) in the for condition is
-    //          intentional (note that find_first_of() has no
-    //          preconditions).
-    //
-    //          In theory, this is susceptible of an infinite loop, but
-    //          this would only occur with a string of std::size_t( -1 )
-    //          characters, which we do not support.
-    // -----------------------------------------------------------------------
-    for ( std::size_t i = 0 ; i <= s.size() ; ++ i ) {
-        auto const          start = i ;
-        i = s.find_first_of( separators, i );
-        if ( i == s.npos ) {
-            i = s.size() ;
+    std::size_t         start = 0 ;
+    std::size_t         end   = 0 ;
+    while ( start < s.size() && end != s.npos ) {
+        end = s.find_first_of( separators, start );
+        if ( end != s.npos ) {
+            result.emplace_back( s.cbegin() + start, s.cbegin() + end ) ;
+            start = end + 1 ;
         }
-        result.emplace_back( s.cbegin() + start, s.cbegin() + i ) ;
     }
+
+    result.emplace_back( s.cbegin() + start, s.cend() ) ;
     return result ;
 }
 
