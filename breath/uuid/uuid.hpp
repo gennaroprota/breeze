@@ -29,8 +29,13 @@ class uuid
     :   private equality_comparison< uuid >
 {
 public:
+    //!     A type to represent the variant of the uuid.
+    // -----------------------------------------------------------------------
     enum variant_type { ncs, rfc_4122, microsoft, future } ;
 
+    //!     A type to represent the version of the uuid (meaningful only
+    //!     when the variant is <code>rfc_4122</code>).
+    // -----------------------------------------------------------------------
     enum version_type { time_based = 1, dce_security = 2, name_based_md5 = 3,
                         pseudo_random = 4, name_based_sha1 = 5 } ;
 
