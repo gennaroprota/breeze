@@ -20,8 +20,9 @@ autodocSettings:
     language: cpp
     INPUT: breath breath/main_page.dox breath/namespaces.dox
     EXCLUDE: ''
-    EXCLUDE_PATTERNS: '*/private/* */brt/* */dep/* */test/* */extra/* */example/*
-      */dependent_code.hpp */top_level_namespace.hpp */version.hpp'
+    EXCLUDE_PATTERNS: '*/breath/testing/* */private/* */brt/* */dep/* */test/*
+      */extra/* */example/* */dependent_code.hpp */top_level_namespace.hpp
+      */version.hpp'
     includeApi: []
     excludeApi: []
     documentSingleUnderscore: true
