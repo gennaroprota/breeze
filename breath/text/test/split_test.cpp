@@ -15,6 +15,7 @@
 #include "breath/text/split.hpp"
 
 #include <iostream>
+#include <locale>
 #include <string>
 #include <vector>
 
@@ -23,7 +24,7 @@ int                 test_split() ;
 namespace {
 
 void
-do_test()
+do_test_split()
 {
     using               breath::split ;
 
@@ -139,6 +140,24 @@ do_test()
     }
 }
 
+void
+do_test_split_if()
+{
+    {
+        std::string const   s( "aBc" ) ;
+        auto const          is_upper =
+            []( char c )
+            {
+                return std::isupper( c, std::locale::classic() ) ;
+            } ;
+        std::vector< std::string > const
+                            v = breath::split_if( s, is_upper ) ;
+        BREATH_CHECK( v.size() == 2 ) ;
+        BREATH_CHECK( v[ 0 ] == "a" ) ;
+        BREATH_CHECK( v[ 1 ] == "c" ) ;
+    }
+}
+
 }
 
 int
@@ -147,8 +166,9 @@ test_split()
     using namespace breath ;
 
     return test_runner::instance().run(
-             "split()",
-             { do_test } ) ;
+             "split() and split_if()",
+             { do_test_split,
+               do_test_split_if } ) ;
 }
 
 // Local Variables:

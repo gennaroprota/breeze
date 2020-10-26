@@ -222,6 +222,7 @@
     <None Include="..\..\breath\vocabulary\brt\maybe.tpp" />
     <None Include="..\..\breath\cryptography\private\sha_common.tpp" />
     <None Include="..\..\breath\checksum\brt\crc_io.tpp" />
+    <None Include="..\..\breath\text\brt\split.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\secure_fill.hpp">
