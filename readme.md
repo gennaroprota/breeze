@@ -44,7 +44,7 @@ The test/ subdirectories can be a good place to look at if you need to see usage
 examples (but, please, let me know if you feel that the usage of a component
 should be documented better).
 
-# Getting started
+# Building the library
 
 Breath has been designed and implemented to be as portable as possible, without
 a single usage of `#if`, `#ifdef` or `#ifndef` (the only conditional compilation
