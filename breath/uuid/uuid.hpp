@@ -49,7 +49,7 @@ public:
                         uuid( variant_type, version_type ) ;
 
     //!     \pre
-    //!         *this is not a nil uuid.
+    //!         \c *this is not a nil uuid.
     //!
     //!     \return
     //!         The variant of the uuid.
@@ -57,7 +57,7 @@ public:
     variant_type        variant() const noexcept ;
 
     //!     \pre
-    //!         *this is not a nil uuid.
+    //!         \c *this is not a nil uuid.
     //!
     //!     \return
     //!         The version of the uuid.
