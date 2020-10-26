@@ -19,12 +19,11 @@
 #include "breath/endianness/endian_codec.hpp"
 #include "breath/iteration/begin_end.hpp"
 #include "breath/random/entropy_source.hpp"
-#include "breath/stream/stream_equivalent.hpp"
+#include "breath/text/string_constant.hpp"
 
 #include <algorithm>
 #include <cstddef>
 #include <cstdint>
-#include <iomanip>
 #include <ostream>
 
 namespace breath_ns {
@@ -174,28 +173,32 @@ uuid::less::operator()( uuid const & u1, uuid const & u2 ) const noexcept
 }
 
 std::ostream &
-operator <<( std::ostream & original_stream, uuid const & uu )
+operator <<( std::ostream & os, uuid const & uu )
 {
-    stream_equivalent< std::ostream >
-                        equiv( original_stream ) ;
-    std::ostream &      os = equiv.get() ;
+    int const           bit_count = 128 ;
+    int const           bits_per_hex_digit = 4 ;
+    int const           hyphen_count = 4 ;
+    auto const &        digits = lowercase_hex_digits ;
 
-    os.fill( '0' ) ;
+    int const           len = bit_count / bits_per_hex_digit + hyphen_count ;
+    char                repr[ len + 1 ] ;
+    repr[ len ] = '\0' ;
 
-    os.setf( std::ios_base::hex, std::ios_base::basefield ) ;
-    os.setf( std::ios_base::right, std::ios_base::adjustfield ) ;
-    os.unsetf( std::ios_base::showbase ) ;
-    os.unsetf( std::ios_base::uppercase ) ;
-
-    for ( int i = 0 ; i < 16 ; ++ i ) {
-        os << std::setw( 2 ) <<
-              static_cast< unsigned int >( uu.m_octets[ i ] ) ;
+    int to = 0 ;
+    for ( int i = 0 ; i < bit_count / 8 ; ++ i ) {
+        repr[ to ] = digits[ uu.m_octets[ i ] >> 4 ] ;
+        ++ to ;
+        repr[ to ] = digits[ uu.m_octets[ i ] & 0x0f ] ;
+        ++ to ;
 
         if ( i == 3 || i == 5 || i == 7 || i == 9 ) {
-            os << '-' ;
+            repr[ to ] = '-' ;
+            ++ to ;
         }
     }
-    return original_stream ;
+
+    os << repr ;
+    return os ;
 }
 
 }
