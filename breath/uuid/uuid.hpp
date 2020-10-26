@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Universally unique identifiers.
+//!     \brief A universally unique identifier.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_jjJFg8dCizQ6ClSYgT8Zsg2zo7zFYgfG
