@@ -23,7 +23,7 @@ namespace breath_ns {
 //      uuid:
 //      =====
 //
-//!     A universally unique identifier.
+//!\copybrief uuid.hpp
 // ---------------------------------------------------------------------------
 class uuid
     :   private equality_comparison< uuid >
