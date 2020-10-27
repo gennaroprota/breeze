@@ -14,7 +14,6 @@
 #include "breath/metric/levenshtein_distance.hpp"
 #include "breath/testing/testing.hpp"
 #include <cstddef>
-#include <iostream>
 #include <string>
 
 int                 test_levenshtein_distance() ;

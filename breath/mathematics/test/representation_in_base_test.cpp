@@ -14,7 +14,6 @@
 #include "breath/mathematics/representation_in_base.hpp"
 #include "breath/testing/testing.hpp"
 #include <cstdint>
-#include <iostream>
 #include <limits>
 #include <sstream>
 

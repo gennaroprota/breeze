@@ -15,7 +15,6 @@
 #include "breath/testing/testing.hpp"
 #include <climits>
 #include <cstddef>
-#include <iostream>
 
 int                 test_count_bits() ;
 

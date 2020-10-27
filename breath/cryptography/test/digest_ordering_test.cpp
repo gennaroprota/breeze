@@ -15,7 +15,6 @@
 #include "breath/cryptography/sha1_hasher.hpp"
 #include "breath/testing/testing.hpp"
 
-#include <iostream>
 #include <map>
 #include <string>
 

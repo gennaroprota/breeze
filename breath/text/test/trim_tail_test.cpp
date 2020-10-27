@@ -14,7 +14,6 @@
 #include "breath/testing/testing.hpp"
 #include "breath/text/set_of_chars.hpp"
 #include "breath/text/trim_tail.hpp"
-#include <iostream>
 
 int                 test_trim_tail() ;
 

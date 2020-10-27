@@ -14,7 +14,6 @@
 #include "breath/mathematics/is_power_of_2.hpp"
 #include "breath/testing/testing.hpp"
 
-#include <iostream>
 #include <limits>
 
 int                 test_is_power_of_2() ;

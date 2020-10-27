@@ -13,7 +13,6 @@
 
 #include "breath/memory/auto_array.hpp"
 #include "breath/testing/testing.hpp"
-#include <iostream>
 #include <vector>
 
 int                 test_auto_array() ;

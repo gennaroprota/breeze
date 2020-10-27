@@ -13,7 +13,6 @@
 
 #include "breath/meta/is_2s_complement.hpp"
 #include "breath/testing/testing.hpp"
-#include <iostream>
 
 int                 test_is_2s_complement() ;
 

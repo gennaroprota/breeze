@@ -14,7 +14,6 @@
 #include "breath/environment/get_environment_variable.hpp"
 #include "breath/environment/get_all_environment_variables.hpp"
 #include "breath/testing/testing.hpp"
-#include <iostream>
 
 int                 test_environment_variable_consistency() ;
 

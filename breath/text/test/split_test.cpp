@@ -14,7 +14,6 @@
 #include "breath/testing/testing.hpp"
 #include "breath/text/split.hpp"
 
-#include <iostream>
 #include <locale>
 #include <string>
 #include <vector>

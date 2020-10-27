@@ -14,7 +14,6 @@
 #include "breath/testing/testing.hpp"
 #include "breath/text/begins_with.hpp"
 #include <cstddef>
-#include <iostream>
 #include <string>
 
 int                 test_begins_with() ;

@@ -15,7 +15,6 @@
 #include "breath/iteration/begin_end.hpp"
 #include "breath/testing/testing.hpp"
 #include <string>
-#include <iostream>
 #include <iterator>
 
 int                 test_binary_to_base64() ;

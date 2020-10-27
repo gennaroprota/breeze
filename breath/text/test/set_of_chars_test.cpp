@@ -15,7 +15,6 @@
 #include "breath/text/set_of_chars.hpp"
 #include <algorithm>
 #include <climits>
-#include <iostream>
 
 int                 test_set_of_chars() ;
 

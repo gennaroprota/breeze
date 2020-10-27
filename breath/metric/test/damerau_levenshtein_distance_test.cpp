@@ -14,7 +14,6 @@
 #include "breath/metric/damerau_levenshtein_distance.hpp"
 #include "breath/testing/testing.hpp"
 #include <cstddef>
-#include <iostream>
 #include <string>
 
 int                 test_damerau_levenshtein_distance() ;

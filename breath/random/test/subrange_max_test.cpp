@@ -13,7 +13,6 @@
 
 #include "breath/random/subrange_max.hpp"
 #include "breath/testing/testing.hpp"
-#include <iostream>
 
 int                 test_subrange_max() ;
 

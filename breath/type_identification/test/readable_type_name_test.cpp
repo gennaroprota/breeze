@@ -14,7 +14,6 @@
 #include "breath/type_identification/readable_type_name.hpp"
 #include "breath/testing/testing.hpp"
 
-#include <iostream>
 #include <memory>
 #include <string>
 

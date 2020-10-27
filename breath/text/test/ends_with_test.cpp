@@ -14,7 +14,6 @@
 #include "breath/testing/testing.hpp"
 #include "breath/text/ends_with.hpp"
 
-#include <iostream>
 #include <string>
 
 int                 test_ends_with() ;

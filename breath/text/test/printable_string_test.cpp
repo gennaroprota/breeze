@@ -13,7 +13,6 @@
 
 #include "breath/testing/testing.hpp"
 #include "breath/text/printable_string.hpp"
-#include <iostream>
 #include <sstream>
 
 int                 test_printable_string() ;

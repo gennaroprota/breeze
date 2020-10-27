@@ -15,7 +15,6 @@
 #include "breath/process/current_directory.hpp"
 #include "breath/process/set_current_directory.hpp"
 #include "breath/testing/testing.hpp"
-#include <iostream>
 #include <string>
 
 int                 test_get_set_current_directory() ;

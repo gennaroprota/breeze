@@ -14,7 +14,6 @@
 #include "breath/conversion/bit_cast.hpp"
 #include "breath/testing/testing.hpp"
 #include <cstring>
-#include <iostream>
 
 int                 test_bit_cast() ;
 

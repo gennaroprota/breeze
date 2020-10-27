@@ -14,7 +14,6 @@
 #include "breath/environment/get_environment_variable.hpp"
 #include "breath/testing/testing.hpp"
 #include "breath/vocabulary/maybe.hpp"
-#include <iostream>
 #include <string>
 
 int                 test_get_environment_variable() ;
