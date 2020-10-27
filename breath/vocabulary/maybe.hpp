@@ -161,7 +161,7 @@ public:
 //!        emit exceptions (note that this is a stronger requirement
 //!        than the one on \c T, which concerns move only).
 //!
-//!\par A final note about std::optional
+//!     \par A final note about std::optional
 //!
 //!     C++17 introduces \c std::optional, which has the same purpose as
 //!     \c maybe.

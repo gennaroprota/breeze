@@ -68,33 +68,32 @@ class               digest ;
 //
 //!     \par A note about \c std::accumulate()
 //!
-//!         You can "accumulate" data into a %merkle_damgard_machine by
-//!         doing e.g.:
+//!     You can "accumulate" data into a %merkle_damgard_machine by
+//!     doing e.g.:
 //!
-//!         <code>
-//!             std::accumulate( begin, end, my_hasher, functor ) ;
-//!         </code>
+//!     <code>
+//!         std::accumulate( begin, end, my_hasher, functor ) ;
+//!     </code>
 //!
-//!         with \c functor having the following function-call operator:
+//!     with \c functor having the following function-call operator:
 //!
-//!         <code>
-//!             hasher &
-//!             operator()( hasher & h, hasher::byte_type c )
-//!             {
-//!                 h.append( c ) ;
-//!                 return h ;
-//!             }
-//!         </code>
+//!     <code>
+//!         hasher &
+//!         operator()( hasher & h, hasher::byte_type c )
+//!         {
+//!             h.append( c ) ;
+//!             return h ;
+//!         }
+//!     </code>
 //!
-//!         That, however, might be slow, due to excessive copying of
-//!         the hasher.
+//!     That, however, might be slow, due to excessive copying of the
+//!     hasher.
 //!
-//!         If that occurs to you, please drop me a mail, in which case
-//!         I might add a copy assignment operator to
-//!         %merkle_damgard_machine which does nothing for
-//!         self-assignment. In the mean time, please use \c
-//!         std::for_each(), noting in a comment that you are using a
-//!         less specific algorithm for performance reasons.
+//!     If that occurs to you, please drop me a mail, in which case I
+//!     might add a copy assignment operator to %merkle_damgard_machine
+//!     which does nothing for self-assignment. In the mean time, please
+//!     use \c std::for_each(), noting in a comment that you are using a
+//!     less specific algorithm for performance reasons.
 // ---------------------------------------------------------------------------
 template< typename Engine >
 class merkle_damgard_machine

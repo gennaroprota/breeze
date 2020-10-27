@@ -11,7 +11,8 @@
 // ---------------------------------------------------------------------------
 namespace breath_ns {
 
-//!\brief Internal namespace for facilities that must be protected from ADL.
+//!     \brief Internal namespace for facilities that must be protected
+//!            from ADL.
 //!
 //!     This namespace is \e not for user consumption and is for
 //!     internal Breath usage when we want to protect users of a Breath
@@ -34,7 +35,7 @@ namespace adl_shield {
 
 }
 
-//!\brief Namespace for our meta-programming facilities.
+//!     \brief Namespace for our meta-programming facilities.
 //!
 //!     This namespace also hosts the meta-programming facilities
 //!     designed before C++ had \c constexpr.

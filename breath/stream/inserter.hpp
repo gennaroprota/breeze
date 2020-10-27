@@ -25,7 +25,7 @@ namespace breath_ns {
 //      inserter:
 //      =========
 //
-//!\copybrief inserter.hpp
+//!     \copybrief inserter.hpp
 //!
 //!     This class encapsulates some of the details to write an inserter
 //!     for a user-defined type that uses the stream buffer layer
