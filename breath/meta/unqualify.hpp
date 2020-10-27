@@ -32,7 +32,8 @@ namespace meta {
 //
 //!     \copybrief unqualify.hpp
 //!
-//!     Example: <code>unqualify< char const >::type == char</code>
+//!     Example: <code>unqualify< char const >::type</code> is <code>
+//!     char</code>.
 // ---------------------------------------------------------------------------
 template< typename T >
 class unqualify
