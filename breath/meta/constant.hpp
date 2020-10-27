@@ -14,7 +14,6 @@
 #define BREATH_GUARD_agSZ9lxbOGpOtPA3Qy3JqLm28BJW8oRr
 
 #include "breath/top_level_namespace.hpp"
-#include "breath/meta/unqualify.hpp"
 
 namespace breath_ns {
 namespace meta {
@@ -44,14 +43,10 @@ namespace meta {
 template< typename T, T v >
 class constant
 {
-private:
-    typedef typename unqualify< T >::type unqualified_type ;
-
 public:
-    //!     The type of the member constant (cv-unqualified).
+    //!     A typedef for the type \c T.
     // -----------------------------------------------------------------------
-    typedef unqualified_type
-                        value_type ;
+    typedef T           value_type ;
 
     //!     The same as \c constant< T, v >.
     // -----------------------------------------------------------------------
