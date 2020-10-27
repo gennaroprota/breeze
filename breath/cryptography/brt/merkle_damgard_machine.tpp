@@ -34,7 +34,7 @@ merkle_damgard_machine< Engine >::merkle_damgard_machine( InputIter begin,
 
 template< typename Engine >
 void
-merkle_damgard_machine< Engine>::push_back( byte_type b )
+merkle_damgard_machine< Engine>::append( byte_type b )
 {
     int const           index( input_index() ) ;
     m_input_buffer[ index ] = b ;
@@ -98,7 +98,7 @@ merkle_damgard_machine< Engine >::do_append( InputIter begin,
                                              std::input_iterator_tag )
 {
     for ( ; begin != end ; ++ begin ) {
-        push_back( *begin ) ; // gps value type=
+        append( *begin ) ; // gps value type=
     }
 }
 
