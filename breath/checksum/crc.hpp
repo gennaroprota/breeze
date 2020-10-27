@@ -34,7 +34,7 @@ class crc_cache ;
 //      crc
 //      ===
 //
-//!\copybrief crc.hpp
+//!     \copybrief crc.hpp
 //!
 //!     This template is instantiated over a traits class which provides
 //!     the characterizing parameters of the CRC. To the best of my
@@ -169,13 +169,12 @@ private:
                    "the constant term of the polynomial must be 1") ;
 } ;
 
-//!\brief Stream inserter for crc objects.
+//!     \brief Stream inserter for crc objects.
 //!
-//!         Outputs \c crc to the stream \c dest. The output consists of
-//!         <tt>n</tt> uppercase hexadecimal digits (since CRCs are
-//!         usually presented in uppercase), where <tt>n</tt> is the
-//!         ceiling of the quotient between \c Traits::width and <tt>4
-//!         </tt>.
+//!     Outputs \c crc to the stream \c dest. The output consists of
+//!     <tt>n</tt> uppercase hexadecimal digits (since CRCs are usually
+//!     presented in uppercase), where <tt>n</tt> is the ceiling of the
+//!     quotient between \c Traits::width and <tt>4</tt>.
 // ---------------------------------------------------------------------------
 template< typename Traits >
 std::ostream &      operator <<( std::ostream & dest,
