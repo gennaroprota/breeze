@@ -29,8 +29,8 @@ namespace meta {
 //!
 //!     \par Type requirements
 //!         \a T must be a type suitable for declaring an integral
-//!         constant expression or a cv-qualified version of such a
-//!         type (e.g. <code>int volatile const</code>).
+//!         constant expression or a const-qualified version of such a
+//!         type (e.g. <code>int const</code>).
 //!
 //!     \par Naming rationale
 //!         Though at the time of writing (September 2006) only
