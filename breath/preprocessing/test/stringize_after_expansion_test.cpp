@@ -14,7 +14,6 @@
 #include "breath/preprocessing/stringize_after_expansion.hpp"
 #include "breath/testing/testing.hpp"
 #include <cstring>
-#include <iostream>
 
 #define FOO 1
 #define FOO2 FOO

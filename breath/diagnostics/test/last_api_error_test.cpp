@@ -15,7 +15,6 @@
 #include "breath/testing/testing.hpp"
 #include "breath/text/begins_with.hpp"
 #include "breath/text/ends_with.hpp"
-#include <iostream>
 #include <string>
 
 int                 test_last_api_error() ;

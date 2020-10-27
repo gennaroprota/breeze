@@ -13,7 +13,6 @@
 
 #include "breath/stream/eof_value.hpp"
 #include "breath/testing/testing.hpp"
-#include <iostream>
 #include <sstream>
 
 int                 test_eof_value() ;

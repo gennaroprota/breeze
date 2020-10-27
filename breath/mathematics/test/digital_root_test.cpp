@@ -13,7 +13,6 @@
 
 #include "breath/mathematics/digital_root.hpp"
 #include "breath/testing/testing.hpp"
-#include <iostream>
 
 int                 test_digital_root() ;
 

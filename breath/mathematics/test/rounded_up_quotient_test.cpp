@@ -13,7 +13,6 @@
 
 #include "breath/mathematics/rounded_up_quotient.hpp"
 #include "breath/testing/testing.hpp"
-#include <iostream>
 
 int                 test_rounded_up_quotient() ;
 

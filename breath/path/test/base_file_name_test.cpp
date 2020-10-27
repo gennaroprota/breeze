@@ -15,7 +15,6 @@
 #include "breath/preprocessing/stringize_after_expansion.hpp"
 #include "breath/testing/testing.hpp"
 #include <cstring>
-#include <iostream>
 
 int                 test_base_file_name() ;
 

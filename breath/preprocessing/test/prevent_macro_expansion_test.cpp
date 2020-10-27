@@ -14,7 +14,6 @@
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
 #include "breath/preprocessing/stringize_after_expansion.hpp"
 #include "breath/testing/testing.hpp"
-#include <iostream>
 
 #define foo( a )    unexisting_function( a )
 

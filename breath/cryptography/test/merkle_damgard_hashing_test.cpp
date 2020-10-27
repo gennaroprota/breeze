@@ -23,7 +23,6 @@
 #include "breath/text/to_string.hpp"
 
 #include <cstddef>
-#include <iostream>
 #include <string>
 
 int                 test_merkle_damgard_hashing() ;

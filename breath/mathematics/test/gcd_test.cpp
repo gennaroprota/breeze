@@ -14,7 +14,6 @@
 #include "breath/mathematics/gcd.hpp"
 #include "breath/testing/testing.hpp"
 #include <climits>
-#include <iostream>
 
 int                 test_gcd() ;
 

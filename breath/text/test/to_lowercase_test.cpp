@@ -13,7 +13,6 @@
 
 #include "breath/text/to_lowercase.hpp"
 #include "breath/testing/testing.hpp"
-#include <iostream>
 
 int                 test_to_lowercase() ;
 

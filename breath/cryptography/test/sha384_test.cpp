@@ -16,7 +16,6 @@
 #include "breath/text/to_string.hpp"
 #include "breath/testing/testing.hpp"
 
-#include <iostream>
 #include <string>
 
 int                 test_sha384() ;
