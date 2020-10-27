@@ -244,13 +244,13 @@ public:
         word_type const     tot = 50 * 1000 ;
         for ( word_type i = 1 ; i <= tot ; ++ i ) {
             for ( byte_type a = 1 ; a <= m_count / 4 + 3 ; ++ a ) {
-                m.push_back( 0 ) ;
+                m.append( 0 ) ;
             }
 
-            m.push_back( static_cast< byte_type >( ( i >> 24 ) & 0xff ) ) ;
-            m.push_back( static_cast< byte_type >( ( i >> 16 ) & 0xff ) ) ;
-            m.push_back( static_cast< byte_type >( ( i >>  8 ) & 0xff ) ) ;
-            m.push_back( static_cast< byte_type >( ( i       ) & 0xff ) ) ;
+            m.append( static_cast< byte_type >( ( i >> 24 ) & 0xff ) ) ;
+            m.append( static_cast< byte_type >( ( i >> 16 ) & 0xff ) ) ;
+            m.append( static_cast< byte_type >( ( i >>  8 ) & 0xff ) ) ;
+            m.append( static_cast< byte_type >( ( i       ) & 0xff ) ) ;
 
             // our "moral equivalent" of m = SHA1( m )
             result = breath::sha1_digest( m ) ;
