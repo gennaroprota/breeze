@@ -40,7 +40,7 @@ operator <<( std::ostream & dest, crc< Traits > const & crc )
                 value >>= 4 ;
             }
 
-            ins.put( iter, digit_count ) ;
+            ins.put( buffer, digit_count ) ;
             ins.pad( pad ) ;
         }
     } catch ( ... ) {
