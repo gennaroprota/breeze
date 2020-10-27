@@ -23,7 +23,7 @@
 //      meta-programming components in a code base; do not introduce
 //      dependencies (they are not logically necessary: the C++ template
 //      system has all that is needed to implement the functionality).
-
+// ---------------------------------------------------------------------------
 #include "breath/top_level_namespace.hpp"
 
 namespace breath_ns {
