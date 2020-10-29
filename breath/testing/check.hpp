@@ -19,7 +19,8 @@
 #define BREATH_CHECK( condition )                                             \
             do {                                                              \
                 if ( ! ( condition ) ) {                                      \
-                    throw breath::test_exception( __FILE__, __LINE__ ) ;      \
+                    throw breath::test_exception( # condition,                \
+                                                  __FILE__, __LINE__ ) ;      \
                 }                                                             \
             } while ( false )                                              /**/
 
