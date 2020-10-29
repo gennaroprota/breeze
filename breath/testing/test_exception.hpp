@@ -23,8 +23,6 @@ class test_exception
     :   public std::logic_error
 {
 public:
-                        test_exception( char const * file_name,
-                                        long line ) ;
                         test_exception( std::string const & message,
                                         char const * file_name,
                                         long line ) ;
