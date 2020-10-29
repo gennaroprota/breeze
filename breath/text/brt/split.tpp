@@ -17,16 +17,14 @@ split_if( std::string const & s, UnaryPredicate pred )
     std::vector< std::string >
                         result ;
     auto                start = s.cbegin() ;
-    auto                end   = start ;
+    auto                end   = std::find_if( start, s.cend(), pred ) ;
+    result.emplace_back( start, end ) ;
     while ( end != s.cend() ) {
+        start = end + 1 ;
         end = std::find_if( start, s.cend(), pred ) ;
-        if ( end != s.cend() ) {
-            result.emplace_back( start, end ) ;
-            start = end + 1 ;
-        }
+        result.emplace_back( start, end ) ;
     }
 
-    result.emplace_back( start, s.cend() ) ;
     return result ;
 }
 
