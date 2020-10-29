@@ -185,6 +185,9 @@
     <ClCompile Include="..\..\breath\text\brt\string_constant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\time\brt\steady_clock_timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\checksum\brt\crc.tpp" />
@@ -589,6 +592,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\text\string_constant.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\time\steady_clock_timer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
