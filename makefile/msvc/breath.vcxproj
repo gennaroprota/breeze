@@ -259,6 +259,7 @@
     <ClCompile Include="..\..\breath\text\brt\trim_head.cpp" />
     <ClCompile Include="..\..\breath\text\brt\trim_tail.cpp" />
     <ClCompile Include="..\..\breath\time\brt\c_clock_policy.cpp" />
+    <ClCompile Include="..\..\breath\time\brt\steady_clock_timer.cpp" />
     <ClCompile Include="..\..\breath\time\brt\time_string.cpp" />
     <ClCompile Include="..\..\breath\time\private\brt\thread_safe_reentrant_time_functions.cpp" />
     <ClCompile Include="..\..\breath\time\windows_only\brt\performance_counter_policy.cpp" />
@@ -433,6 +434,7 @@
     <ClInclude Include="..\..\breath\time\c_clock_policy.hpp" />
     <ClInclude Include="..\..\breath\time\c_clock_timer.hpp" />
     <ClInclude Include="..\..\breath\time\private\thread_safe_reentrant_time_functions.hpp" />
+    <ClInclude Include="..\..\breath\time\steady_clock_timer.hpp" />
     <ClInclude Include="..\..\breath\time\timer.hpp" />
     <ClInclude Include="..\..\breath\time\time_string.hpp" />
     <ClInclude Include="..\..\breath\time\windows_only\performance_counter_policy.hpp" />
