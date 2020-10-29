@@ -24,16 +24,16 @@ class test_exception
 {
 public:
                         test_exception( char const * file_name,
-                                        unsigned long line ) ;
+                                        long line ) ;
                         test_exception( std::string const & message,
                                         char const * file_name,
-                                        unsigned long line ) ;
+                                        long line ) ;
     char const *        file_name() const noexcept ;
-    unsigned long       line_number() const noexcept ;
+    long                line_number() const noexcept ;
 
 private:
     char const *        m_file_name ;
-    unsigned long       m_line ;
+    long                m_line ;
 } ;
 
 std::ostream &      operator <<( std::ostream &, test_exception const & ) ;
