@@ -167,7 +167,7 @@ matrix:
       name: "Clang 11 with UndefinedBehaviorSanitizer and ThreadSanitizer on Ubuntu 20.04 (Focal)"
 
 
-    #       Build jobs on IBM Z, which is big-endian
+    #       Build jobs on IBM Z, which is big-endian.
     # ------------------------------------------------------------------------
     - os: linux
       dist: focal
