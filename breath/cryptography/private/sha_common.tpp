@@ -19,7 +19,7 @@
 namespace breath_ns {
 namespace sha_common_private {
 
-//      The "choice" function - for each bit position p it acts as a
+//      "Choice" function - for each bit position p it acts as a
 //      conditional: "if x(p) then y(p) else z(p)".
 // ---------------------------------------------------------------------------
 template< typename T >
