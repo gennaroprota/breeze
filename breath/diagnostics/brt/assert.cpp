@@ -24,6 +24,12 @@ namespace assert_private {
 fire( char const * expression_text,
       char const * file_name, long line_number ) noexcept
 {
+    std::cerr << R"(
+The program encountered an internal error. Please, contact the developers or
+the customer support, providing the following information:
+
+)" ;
+
     std::cerr << "Assertion failed: "
               << expression_text
               << ", file " << file_name
