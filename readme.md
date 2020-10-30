@@ -10,6 +10,7 @@
 
 # Overview
 
+*GitHub's master at a glance:*
 
 <!--    Note: if you word-wrap these links differently, make sure they
         appear correctly on <github.com>.
