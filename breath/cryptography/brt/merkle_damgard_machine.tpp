@@ -163,7 +163,8 @@ template< typename Engine >
 void
 merkle_damgard_machine< Engine >::finalize()
 {
-    enum { r = word_length * length_count } ; // room to append bit-length
+    // room to append bit-length
+    int const           r = word_length * length_count ;
 
     // save a representation in bytes of the unpadded bit-length
     byte_type           message_len[ r ] ;
