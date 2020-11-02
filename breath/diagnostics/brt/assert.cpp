@@ -18,11 +18,17 @@
 #include <ostream>
 
 namespace breath_ns {
-namespace assert_private {
+namespace           {
+
+assert_handler_type *
+                    g_assert_handler = &default_assert_handler;
+
+}
 
 [[ noreturn ]] void
-fire( char const * expression_text,
-      char const * file_name, long line_number ) noexcept
+default_assert_handler( char const * expression_text,
+                        char const * file_name,
+                        long line_number ) noexcept
 {
     std::cerr << R"(
 The program encountered an internal error. Please, contact the developers or
@@ -39,7 +45,29 @@ the customer support, providing the following information:
     std::abort() ;
 }
 
+void
+set_assert_handler( assert_handler_type * f )
+{
+    //      Note that we *can* assert here. It's just that the assertion
+    //      will use the previously active assert handler.
+    // -----------------------------------------------------------------------
+    BREATH_ASSERT( f != nullptr ) ;
+    g_assert_handler = f ;
 }
+
+namespace assert_private {
+
+[[ noreturn ]] void
+fire( char const * expression_text,
+      char const * file_name,
+      long line_number )
+{
+    ( *g_assert_handler )( expression_text, file_name, line_number ) ;
+    std::abort() ;
+}
+
+}
+
 }
 
 // Local Variables:

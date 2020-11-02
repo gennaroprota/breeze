@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A basic assertion facility.
+//!     \brief A basic, configurable assertion facility.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_k8gjtzbloTDgF7FRM6AWORSGsE1IHkXq
@@ -16,6 +16,64 @@
 #include "breath/top_level_namespace.hpp"
 
 namespace breath_ns {
+
+//      assert_handler_type:
+//      ====================
+//
+//!     The type of the function called by <code>
+//!     BREATH_ASSERT( expression )</code> if \c expression evaluates to
+//!     \c false.
+//!
+//!     \param expression_text
+//!         A pointer to a C-style string containing the text of \c
+//!         expression.
+//!
+//!     \param file_name
+//!         A pointer to a C-style string containing the name of the
+//!         source file in which \c BREATH_ASSERT() was invoked.
+//!
+//!     \param line_number
+//!         The line number of the line in which \c BREATH_ASSERT() was
+//!         invoked.
+// ---------------------------------------------------------------------------
+typedef void      ( assert_handler_type )( char const * expression_text,
+                                           char const * file_name,
+                                           long line_number ) ;
+
+//      set_assert_handler():
+//      =====================
+//
+//!     Sets \c *f as the "assert handler", i.e. as the function which
+//!     is called by <code>BREATH_ASSERT( expression )</code> if \c
+//!     expression evaluates to \c false.
+//!
+//!     \param f
+//!         Pointer to the assert handler to set. The handler must not
+//!         return: it must either terminate the program or emit an
+//!         exception.
+// ---------------------------------------------------------------------------
+void                set_assert_handler( assert_handler_type * f ) ;
+
+//      default_assert_handler():
+//      =========================
+//
+//!     \brief The default assert handler for \c BREATH_ASSERT().
+//!
+//!     Writes the passed in arguments to \c std::cerr, then flushes \c
+//!     std::cerr, then calls \c std::abort().
+//!
+//!     \note
+//!         Since this is a \c noexcept function, the program will
+//!         terminate anyway if writing to \c std::cerr causes an
+//!         exception to be emitted (this means that such an exception
+//!         will not hide the programming error detected thanks to the
+//!         assertion).
+// ---------------------------------------------------------------------------
+[[ noreturn ]] void
+default_assert_handler( char const * expression_text,
+                        char const * file_name,
+                        long line_number ) noexcept ;
+
 //!\cond implementation
 namespace assert_private {
 
@@ -30,7 +88,7 @@ block_non_bools( bool b )
 
 [[ noreturn ]] void fire( char const * expression_text,
                           char const * file_name,
-                          long line_number ) noexcept ;
+                          long line_number ) ;
 
 }
 //!\endcond
@@ -60,10 +118,12 @@ block_non_bools( bool b )
 //!     assert_expr has no effects besides the evaluation of the
 //!     sub-expression \c expr.
 //!
-//!     In this context, "triggering an assertion" means writing
-//!     information related to the specific macro invocation (e.g. line
-//!     number and source file name) to \c std::cerr, then flushing \c
-//!     std::cerr, then calling \c std::abort().
+//!     In this context, "triggering an assertion" means calling the
+//!     current <i>assert handler</i>, i.e. the last function specified
+//!     with \c set_assert_handler(), passing it information related to
+//!     the specific \c BREATH_ASSERT() invocation (in particular, the
+//!     text of the expression, the source file name and the line
+//!     number).
 //!
 //!     \par Rationale
 //!
@@ -82,6 +142,13 @@ block_non_bools( bool b )
 //!     suggests "no debug". And that's the meaning everyone seems to
 //!     have assigned to it. Had they called it e.g. "NASSERT" all this
 //!     wouldn't probably have happened.)
+//!
+//!     About the possibility to throw an exception instead of
+//!     terminating the program: while critical software will certainly
+//!     need to terminate immediately in case of a programming error,
+//!     there are applications which can continue: consider e.g. an
+//!     editor, which could give the user a chance to save their work
+//!     before aborting.
 // ---------------------------------------------------------------------------
 #define BREATH_ASSERT( expression )                                            \
     (                                                                          \
