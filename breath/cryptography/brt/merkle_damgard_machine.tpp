@@ -176,7 +176,8 @@ merkle_damgard_machine< Engine >::finalize()
               ? 1 : 2 ) * block_length - ( filled + r ) ) ;
 
     static byte_type const
-                        padding[ block_length ] = { 0x80 } ;
+                        padding[ block_length ] = {
+                            byte_type( 1 ) << ( byte_width - 1 ) } ;
     append( breath::cbegin( padding ), breath::cbegin( padding ) + pad_len ) ;
 
     // append byte-based representation of the unpadded bit-length
