@@ -203,6 +203,17 @@ void check_known_digests()
     }
 }
 
+void
+digest_can_be_constructed_directly_if_range_is_all_available()
+{
+    std::string const   s( "the content of this string doesn't matter" ) ;
+    breath::sha1_hasher h( s.cbegin(), s.cend() ) ;
+
+    breath::sha1_digest directly( s.cbegin(), s.cend() ) ;
+
+    BREATH_CHECK( directly == breath::make_digest( h ) ) ;
+}
+
 }
 
 
@@ -218,7 +229,9 @@ test_merkle_damgard_hashing()
         check_known_digests< breath::  sha1_hasher >,
         check_known_digests< breath::sha256_hasher >,
         check_known_digests< breath::sha224_hasher >,
-        check_known_digests< breath::sha512_hasher >
+        check_known_digests< breath::sha512_hasher >,
+
+        digest_can_be_constructed_directly_if_range_is_all_available
     } ;
 
     return test_runner::instance().run( "Merkle-Damgard hashing",

@@ -23,6 +23,14 @@ digest< Hasher >::digest( Hasher hasher_copy )
 }
 
 template< typename Hasher >
+template< typename InputIter >
+digest< Hasher >::digest( InputIter begin, InputIter end )
+{
+    Hasher              hasher( begin, end ) ;
+    hasher.create_digest( m_raw_digest ) ;
+}
+
+template< typename Hasher >
 bool
 digest< Hasher >::is_equal( digest< Hasher > const & other ) const
 {

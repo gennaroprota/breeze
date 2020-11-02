@@ -40,6 +40,16 @@ public:
     //!     argument is passed by value its state is not affected.
     // -----------------------------------------------------------------------
     explicit            digest( Hasher hasher_copy ) ;
+
+    //!     Constructs the digest of the range <tt>[begin, end)</tt>.
+    //!     This constructor saves the user from constructing a \c
+    //!     Hasher object explicitly, but, of course, is only suitable
+    //!     if the input range is all available at once. If you need to
+    //!     accumulate the input in multiple steps, you'll need to use a
+    //!     \c Hasher in your client code, instead.
+    // -----------------------------------------------------------------------
+    template< typename InputIter >
+                        digest( InputIter begin, InputIter end ) ;
     //!\}
 
     //!     Copy and destruction.
