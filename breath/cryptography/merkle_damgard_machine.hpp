@@ -91,7 +91,7 @@ class               digest ;
 //!
 //!     If that occurs to you, please drop me a mail, in which case I
 //!     might add a copy assignment operator to %merkle_damgard_machine
-//!     which does nothing for self-assignment. In the mean time, please
+//!     which does nothing for self-assignment. In the meantime, please
 //!     use \c std::for_each(), noting in a comment that you are using a
 //!     less specific algorithm for performance reasons.
 // ---------------------------------------------------------------------------
