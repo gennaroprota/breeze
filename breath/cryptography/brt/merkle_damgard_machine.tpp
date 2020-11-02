@@ -36,7 +36,7 @@ template< typename Engine >
 void
 merkle_damgard_machine< Engine>::append( byte_type b )
 {
-    int const           index( input_index() ) ;
+    int const           index = input_index() ;
     m_input_buffer[ index ] = b ;
     increase_count( byte_width ) ;
 
@@ -113,7 +113,7 @@ merkle_damgard_machine< Engine >::do_append( RandomIter begin,
                         difference_type ;
 
     // bufferize/compress as many times as possible
-    int                 index( input_index() ) ;
+    int                 index = input_index() ;
     RandomIter          curr( begin ) ;
 
     for ( difference_type avail( block_length - index ) ;
@@ -170,10 +170,10 @@ merkle_damgard_machine< Engine >::finalize()
     Engine::encode_length( m_bit_count, breath::begin( message_len ) ) ;
 
     // append padding
-    int const           filled( input_index() ) ;
-    int const           pad_len(
+    int const           filled = input_index() ;
+    int const           pad_len =
             ( filled < ( block_length - r )
-              ? 1 : 2 ) * block_length - ( filled + r ) ) ;
+              ? 1 : 2 ) * block_length - ( filled + r ) ;
 
     static byte_type const
                         padding[ block_length ] = {
