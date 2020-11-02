@@ -38,7 +38,7 @@ merkle_damgard_machine< Engine>::append( byte_type b )
 {
     int const           index = input_index() ;
     m_input_buffer[ index ] = b ;
-    increase_count( byte_width ) ;
+    update_count( byte_width ) ;
 
     if ( index == ( block_length - 1 ) ) {
         compress() ;
@@ -127,7 +127,7 @@ merkle_damgard_machine< Engine >::do_append( RandomIter begin,
 
     // bufferize any remaining input; update the bit count
     std::copy( curr, end, breath::begin( m_input_buffer ) + index ) ;
-    increase_count( byte_width * ( end - begin ) ) ;
+    update_count( byte_width * ( end - begin ) ) ;
 }
 
 template< typename Engine >
@@ -194,7 +194,7 @@ merkle_damgard_machine< Engine >::create_digest( raw_digest_type & raw )
 
 template< typename Engine >
 void
-merkle_damgard_machine< Engine >::increase_count( std::ptrdiff_t amount )
+merkle_damgard_machine< Engine >::update_count( std::ptrdiff_t amount )
 {
     BREATH_ASSERT( amount >= 0 ) ;
 
