@@ -227,7 +227,7 @@ merkle_damgard_machine< Engine >::update_count( std::ptrdiff_t amount )
     //      we can represent; now, either the specific hashing
     //      algorithm prescribes wrapping (MD5, for instance, does so)
     //      or we have to give up: in the latter case
-    //      on_length_exhausted will throw an exception. With numbers
+    //      on_length_exhausted() will throw an exception. With numbers
     //      such as 2**64 and bigger, this is of course a very
     //      unlikely case.
     // -----------------------------------------------------------------------
