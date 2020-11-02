@@ -167,7 +167,7 @@ private:
     void                create_digest( raw_digest_type & ) ;
 
     int                 input_index() const ;
-    void                increase_count( ptrdiff_t amount ) ;
+    void                increase_count( std::ptrdiff_t amount ) ;
 
     template< typename It >
     void                do_append( It begin, It end, std::input_iterator_tag ) ;
