@@ -47,6 +47,24 @@ do_test()
     static_cast< void >( n ) ;
 }
 
+class my_exception
+{
+} ;
+
+[[ noreturn ]] void
+my_assert_handler( char const *, char const *, long )
+{
+    throw my_exception() ;
+}
+
+void
+failed_assertion_calls_active_handler()
+{
+    breath::set_assert_handler( my_assert_handler ) ;
+
+    BREATH_CHECK_THROW( my_exception, BREATH_ASSERT( false ) ) ;
+}
+
 }
 
 int
@@ -56,7 +74,8 @@ test_breath_assert()
 
     return test_runner::instance().run(
              "BREATH_ASSERT()",
-             { do_test } ) ;
+             { do_test,
+               failed_assertion_calls_active_handler } ) ;
 }
 
 // Local Variables:
