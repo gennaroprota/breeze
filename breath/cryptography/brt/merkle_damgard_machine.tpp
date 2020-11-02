@@ -7,6 +7,7 @@
 // ___________________________________________________________________________
 
 #include "breath/algorithm/secure_fill.hpp"
+#include "breath/cryptography/hashing_count.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include "breath/endianness/endian_codec.hpp"
 #include "breath/iteration/begin_end.hpp"
