@@ -166,24 +166,19 @@ merkle_damgard_machine< Engine >::finalize()
     // room to append bit-length
     int const           r = word_length * length_count ;
 
-    // save a representation in bytes of the unpadded bit-length
-    byte_type           message_len[ r ] ;
-    Engine::encode_length( m_bit_count, breath::begin( message_len ) ) ;
-
-    // append padding
     int const           filled = input_index() ;
     int const           avail = block_length - filled ;
     int const           pad_len = avail > r
                                     ? avail - r
                                     : block_length - r + avail ;
 
-    static byte_type const
-                        padding[ block_length ] = {
-                            byte_type( 1 ) << ( byte_width - 1 ) } ;
-    append( breath::cbegin( padding ), breath::cbegin( padding ) + pad_len ) ;
+    byte_type           final_bytes[ block_length + r ] = {
+        byte_type( 1 ) << ( byte_width - 1 ) } ;
 
-    // append byte-based representation of the unpadded bit-length
-    append( breath::cbegin( message_len ), breath::cend( message_len ) ) ;
+    Engine::encode_length( m_bit_count, final_bytes + pad_len ) ;
+
+    append( breath::cbegin( final_bytes ),
+            breath::cbegin( final_bytes ) + pad_len + r ) ;
 }
 
 template< typename Engine >
