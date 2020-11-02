@@ -171,9 +171,10 @@ merkle_damgard_machine< Engine >::finalize()
 
     // append padding
     int const           filled = input_index() ;
-    int const           pad_len =
-            ( filled < ( block_length - r )
-              ? 1 : 2 ) * block_length - ( filled + r ) ;
+    int const           avail = block_length - filled ;
+    int const           pad_len = avail > r
+                                    ? avail - r
+                                    : block_length - r + avail ;
 
     static byte_type const
                         padding[ block_length ] = {
