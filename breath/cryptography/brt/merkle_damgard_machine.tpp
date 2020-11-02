@@ -12,7 +12,6 @@
 #include "breath/iteration/begin_end.hpp"
 
 #include <algorithm>
-#include <iterator>
 
 namespace breath_ns {
 

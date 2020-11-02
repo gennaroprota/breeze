@@ -15,6 +15,7 @@
 
 #include "breath/top_level_namespace.hpp"
 #include <cstddef>
+#include <iterator>
 
 namespace breath_ns {
 
