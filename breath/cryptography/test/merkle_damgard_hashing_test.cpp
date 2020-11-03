@@ -176,9 +176,6 @@ test_vectors< breath::sha512_hasher >::test_entry const
         "de0ff244877ea60a4cb0432ce577c31beb009c5c2c49aa2e4eadb217ad8cc09b"}
 } ;
 
-}
-
-
 //      Smoke test - Check against a list of known digests.
 // ---------------------------------------------------------------------------
 template< typename Hasher >
@@ -205,6 +202,9 @@ void check_known_digests()
         BREATH_CHECK( result == entry.expected ) ;
     }
 }
+
+}
+
 
 int
 test_merkle_damgard_hashing()
