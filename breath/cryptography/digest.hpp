@@ -78,8 +78,8 @@ public:
     //!         A functor to compare digest objects.
     //!
     //!     Implements a strict weak ordering relation between digests
-    //!     (from the same Hasher type). Useful for ordered associative
-    //!     containers.
+    //!     (from the same \c Hasher type). Useful for ordered
+    //!     associative containers.
     //!
     //!     The function call operator is not \c noexcept, and the class
     //!     is a \c friend, because I'd like this part of the library,
