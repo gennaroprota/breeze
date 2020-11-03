@@ -214,10 +214,10 @@ test_merkle_damgard_hashing()
     test_descriptor const
                         desc[] =
     {
-        check_known_digests< breath::   md5_hasher > ,
-        check_known_digests< breath::  sha1_hasher > ,
-        check_known_digests< breath::sha256_hasher > ,
-        check_known_digests< breath::sha224_hasher > ,
+        check_known_digests< breath::   md5_hasher >,
+        check_known_digests< breath::  sha1_hasher >,
+        check_known_digests< breath::sha256_hasher >,
+        check_known_digests< breath::sha224_hasher >,
         check_known_digests< breath::sha512_hasher >
     } ;
 
