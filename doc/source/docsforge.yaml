@@ -55,6 +55,13 @@ autodocSettings:
     # ------------------------------------------------------------------------
     FORCE_LOCAL_INCLUDES: 'YES'
 
+additionalSettings:
+  autolink_exclude:
+  #         Doxygen won't link this, since it's all-lowercase, but
+  #         DocsForge does.
+  # --------------------------------------------------------------------------
+    - inserter
+
 # Local Variables:
 # mode: yaml
 # indent-tabs-mode: nil
