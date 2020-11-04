@@ -16,10 +16,10 @@
 //!     All of the function templates are non-members, and the syntax
 //!     is, uniformly
 //!
-//!     <code>
+//!     \code
 //!         breath::begin( a ) ;
 //!         breath::end( a ) ;
-//!     </code>
+//!     \endcode
 //!
 //!     regardless of whether \c a refers to a standard container or to
 //!     a built-in array. See also signed_count.hpp.

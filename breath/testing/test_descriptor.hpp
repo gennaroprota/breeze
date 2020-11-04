@@ -30,10 +30,10 @@ public:
     //!     name and running the given function.
     //!     Intentionally not explicit to allow our typical usage:
     //!
-    //!     <code>
+    //!     \code
     //!         test_runner::instance().run( "description...",
     //!                                      { func1, func2... funcN } ) ;
-    //!     </code>
+    //!     \endcode
     // -----------------------------------------------------------------------
                         test_descriptor( test_function,
                                          char const * name = "" ) ;

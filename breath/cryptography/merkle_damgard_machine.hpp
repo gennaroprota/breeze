@@ -72,20 +72,20 @@ class               digest ;
 //!     You can "accumulate" data into a %merkle_damgard_machine by
 //!     doing e.g.:
 //!
-//!     <code>
+//!     \code
 //!         std::accumulate( begin, end, my_hasher, functor ) ;
-//!     </code>
+//!     \endcode
 //!
 //!     with \c functor having the following function-call operator:
 //!
-//!     <code>
+//!     \code
 //!         hasher &
 //!         operator()( hasher & h, hasher::byte_type c )
 //!         {
 //!             h.append( c ) ;
 //!             return h ;
 //!         }
-//!     </code>
+//!     \endcode
 //!
 //!     That, however, might be slow, due to excessive copying of the
 //!     hasher.

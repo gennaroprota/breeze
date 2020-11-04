@@ -260,11 +260,11 @@ endian_codec< EndianPolicy, T, Byte >::required_count ;
 //!
 //!     \c endian_store< EndianPolicy( value, it ) > is equivalent to:
 //!
-//!     <code>
+//!     \code
 //!         typedef typename std::iterator_traits< ForwardIter >::value_type
 //!                             Byte ;
 //!         breath::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
-//!     </code>
+//!     \endcode
 //!
 //!     \note
 //!         This can't be used for purely output iterators, because they
@@ -286,11 +286,11 @@ endian_store( T const & value, ForwardIter it )
 //!
 //!     \c endian_load< EndianPolicy, T >( it ) is equivalent to:
 //!
-//!     <code>
+//!     \code
 //!         typedef typename std::iterator_traits< InputIter >::value_type
 //!                             Byte ;
 //!         return breath::endian_codec< EndianPolicy, T, Byte >::decode( it ) ;
-//!     </code>
+//!     \endcode
 // ---------------------------------------------------------------------------
 template< typename EndianPolicy, typename T, typename InputIter >
 T
