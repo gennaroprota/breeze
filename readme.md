@@ -19,12 +19,10 @@
 [![Build status](
 https://travis-ci.com/gennaroprota/breath.svg?branch=master)](
 https://travis-ci.com/gennaroprota/breath)
-[![Lines of code counter](
-https://tokei.rs/b1/github/gennaroprota/breath?category=code)](
-https://github.com/gennaroprota/breath)
-[![Lines of comment counter](
-https://tokei.rs/b1/github/gennaroprota/breath?category=comments)](
-https://github.com/gennaroprota/breath)
+![Lines of code counter](
+https://tokei.rs/b1/github/gennaroprota/breath?category=code)
+![Lines of comment counter](
+https://tokei.rs/b1/github/gennaroprota/breath?category=comments)
 
 *DocsForge documentation:*
 
