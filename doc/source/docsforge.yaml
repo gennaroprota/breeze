@@ -46,6 +46,15 @@ autodocSettings:
     ALIASES: ''
     EXAMPLE_PATH: ''
 
+    #       This is the only option not in sync with doxygen.cfg, as
+    #       Doxygen is showing our #include directives in the "" form
+    #       even when it is set to 'NO' (the default). DocsForge seems
+    #       to require 'YES' for that, instead.
+    #
+    #       See <https://github.com/erez-o/docsforge/issues/21>.
+    # ------------------------------------------------------------------------
+    FORCE_LOCAL_INCLUDES: 'YES'
+
 # Local Variables:
 # mode: yaml
 # indent-tabs-mode: nil
