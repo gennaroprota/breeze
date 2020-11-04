@@ -114,7 +114,8 @@ public:
     void                set_name( std::string const & name ) ;
 
     //!     \return
-    //!         The program name set by \c set_name().
+    //!         The program name set by \c set_name(). An invalid \c
+    //!         maybe if the name was never set.
     // -----------------------------------------------------------------------
     maybe< std::string >
                         name() const ;
