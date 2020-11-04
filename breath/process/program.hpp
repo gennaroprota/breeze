@@ -74,7 +74,7 @@ public:
     // -----------------------------------------------------------------------
     int                 exit_code() ;
 
-    //!     Sets the program name from the arguments to main, if they
+    //!     Sets the program name from the arguments to main(), if they
     //!     contain a non-empty name (<tt>argc > 0 && argv[ 0 ][ 0 ]
     //!     != '\0'</tt>). Otherwise does nothing.
     //!
@@ -88,7 +88,7 @@ public:
     // -----------------------------------------------------------------------
     void                set_name( int argc, char const * const * argv ) ;
 
-    //!     Sets the program name from the arguments to main, if they
+    //!     Sets the program name from the arguments to main(), if they
     //!     contain a non-empty name; otherwise sets it from \c
     //!     fallback.
     //!
