@@ -19,14 +19,17 @@
 [![Build status](
 https://travis-ci.com/gennaroprota/breath.svg?branch=master)](
 https://travis-ci.com/gennaroprota/breath)
-[![DocsForge documentation](
-https://img.shields.io/badge/docs-docsforge-blue)](https://breath.docsforge.com)
 [![Lines of code counter](
 https://tokei.rs/b1/github/gennaroprota/breath?category=code)](
 https://github.com/gennaroprota/breath)
 [![Lines of comment counter](
 https://tokei.rs/b1/github/gennaroprota/breath?category=comments)](
 https://github.com/gennaroprota/breath)
+
+*DocsForge documentation:*
+
+[![DocsForge documentation](
+https://img.shields.io/badge/docs-docsforge-blue)](https://breath.docsforge.com)
 
 Welcome to *Breath*, my personal toolkit of C++ components. The components range
 from cryptography (MD5, SHA-1, SHA-2) to string utilities, operating system
