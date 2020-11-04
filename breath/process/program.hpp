@@ -39,7 +39,6 @@ public:
 
 private:
                         program() noexcept ;
-                        ~program() noexcept = default ;
 
 public:
     //!     The gravity of an error.
