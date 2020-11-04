@@ -51,11 +51,12 @@ should be documented better).
 Breath has been designed and implemented to be as portable as possible, without
 a single usage of `#if`, `#ifdef` or `#ifndef` (the only conditional compilation
 is for include guards), and the goal is that it can be compiled with any
-conforming C++14 compiler.
+conforming C++14 compiler (plus, for the x86_64 build only, the GNU Assembler,
+but just for a single component that I needed but you can easily exclude).
 
-Building the library, however, requires a Unix toolkit, with GNU Make and, for
-the x86_64 builds only, the GNU Assembler. On Microsoft Windows, you'll need
-Cygwin. (If I had to redo it today, most things would probably use Python.)
+The provided build system, however, requires a Unix toolkit and GNU Make. On
+Microsoft Windows, you'll need Cygwin. (If I had to redo it today, most things
+would probably use Python.)
 
 Note that only Cygwin 64-bit is supported.
 
