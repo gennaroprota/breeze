@@ -42,7 +42,7 @@ class crc_cache ;
 //!     Williams in his paper "A painless guide to CRC error detection
 //!     algorithms", available online (a copy of the version available
 //!     on <ross.net> at the time of this writing---October 7, 2020---is
-//!     in the same directory of this source file).
+//!     in the source tree; the file name is <tt>crc_v3.txt</tt>).
 //!
 //!     crc.hpp also provides traits classes for common CRC types (of
 //!     course, other such classes can be defined by the user).
