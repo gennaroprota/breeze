@@ -169,7 +169,7 @@ private:
                    "the constant term of the polynomial must be 1") ;
 } ;
 
-//!     \brief Stream inserter for crc objects.
+//!     \brief Stream inserter for \ref crc objects.
 //!
 //!     Outputs \c crc to the stream \c dest. The output consists of
 //!     <tt>n</tt> uppercase hexadecimal digits (since CRCs are usually
