@@ -43,7 +43,7 @@ namespace breath_ns {
 //!
 //!     This allows writing e.g.:
 //!
-//!     <code>
+//!     \code
 //!         std::ostream &
 //!         operator <<( std::ostream & original_os, my_type const & m )
 //!         {
@@ -56,7 +56,7 @@ namespace breath_ns {
 //!             return original_os ; // NOTA BENE: see the documentation of
 //!                                                the get() member.
 //!         }
-//!     </code>
+//!     \endcode
 //!
 //!     and change formatting flags (including those allocated via
 //!     iword() or pword()), precision, fill character, exception mask,
@@ -114,7 +114,7 @@ public:
     //!
     //!         Example:
     //!
-    //!         <code>
+    //!         \code
     //!             std::ostream &
     //!             operator <<( std::ostream & original_stream,
     //!                          my_type const & m )
@@ -129,7 +129,7 @@ public:
     //!                 //
     //!                 return original_stream ;
     //!             }
-    //!         </code>
+    //!         \endcode
     //!
     //!         Note that this may occur if you "adapt" an existing
     //!         inserter which didn't use \c stream_equivalent, by

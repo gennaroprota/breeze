@@ -34,9 +34,9 @@ namespace breath_ns {
 //!
 //!        the idea is that after an unsuccessful API call you write:
 //!
-//!        <code>
+//!        \code
 //!            throw last_api_error( "<APIName>() failed" ) ;
-//!        </code>
+//!        \endcode
 //!
 //!        and you're done with error handling.
 //!

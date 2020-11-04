@@ -38,22 +38,22 @@ namespace breath_ns {
 //!     \c char has a sign, CHAR_MIN may expand to a (non-char) null
 //!     pointer constant, which means that e.g. the call to add() in
 //!
-//!     <code>
+//!     \code
 //!         set_of_chars sc ;
 //!         sc.add( CHAR_MIN ) ;
-//!     </code>
+//!     \endcode
 //!
 //!     may be ambiguous. To avoid the ambiguity, write:
 //!
-//!     <code>
+//!     \code
 //!         sc.add( static_cast< char >( CHAR_MIN ) ) ;
-//!     </code>
+//!     \endcode
 //!
 //!     or use
 //!
-//!     <code>
+//!     \code
 //!         std::numeric_limits< char >::min()
-//!     </code>
+//!     \endcode
 // ---------------------------------------------------------------------------
 class set_of_chars
 {

@@ -21,10 +21,10 @@
 //!
 //!     Typically used for the identifiers \c min and \c max. Example:
 //!
-//!     <code>
+//!     \code
 //!         int const           m =
 //!          std::numeric_limits< int >::max BREATH_PREVENT_MACRO_EXPANSION () ;
-//!     </code>
+//!     \endcode
 //!
 //!     Note that you can prevent macro substitution by enclosing the
 //!     offending name in parentheses, but that also inhibits ADL,

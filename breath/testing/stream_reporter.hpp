@@ -33,7 +33,7 @@ namespace breath_ns {
 //!     name on one line and the variable name on the next line, which
 //!     is ugly. Example:
 //!
-//!     <code>
+//!     \code
 //!                  1         2
 //!         1234567890123456789012345
 //!         {
@@ -41,7 +41,7 @@ namespace breath_ns {
 //!                                 r ;
 //!             ...
 //!         }
-//!     </code>
+//!     \endcode
 //!
 //!     An alternative would have been \c ostream_reporter, but that's
 //!     inconsistent with the rest of the library.
