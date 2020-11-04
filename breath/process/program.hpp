@@ -81,7 +81,7 @@ public:
     //!     If the name is set, any leading path is stripped.
     //!
     //!     \pre
-    //!         name was not set before
+    //!         No name was set before
     //!
     //!     \post
     //!         \e none
@@ -95,8 +95,7 @@ public:
     //!     In any case, any leading path is stripped.
     //!
     //!     \pre
-    //!         <tt>! fallback.empty()</tt> and name was not
-    //!         set before
+    //!         <tt>! fallback.empty()</tt> and no name was set before
     //!
     //!     \post
     //!         <tt>name().is_valid()</tt>
@@ -108,8 +107,7 @@ public:
     //!     stripped.
     //!
     //!     \pre
-    //!         <tt>! name.empty()</tt> and name was not set
-    //!          before
+    //!         <tt>! name.empty()</tt> and no name was set before
     //!
     //!     \post
     //!         <tt>name().is_valid()</tt>
