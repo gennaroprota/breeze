@@ -12,19 +12,17 @@
 
 *GitHub repo's master branch at a glance:*
 
-<!--    Note: if you word-wrap these links differently, make sure they
-        appear correctly on <github.com>.
+<!--    Note: if you word-wrap these lines differently, make sure that
+        everything appears correctly on <github.com>.
      -------------------------------------------------------------------------
 -->
 [![Build status](
 https://travis-ci.com/gennaroprota/breath.svg?branch=master)](
 https://travis-ci.com/gennaroprota/breath)
-[![Lines of code counter](
-https://tokei.rs/b1/github/gennaroprota/breath?category=code)](
-https://github.com/gennaroprota/breath)
-[![Lines of comment counter](
-https://tokei.rs/b1/github/gennaroprota/breath?category=comments)](
-https://github.com/gennaroprota/breath)
+![Lines of code counter](
+https://tokei.rs/b1/github/gennaroprota/breath?category=code)
+![Lines of comment counter](
+https://tokei.rs/b1/github/gennaroprota/breath?category=comments)
 
 *DocsForge documentation:*
 
