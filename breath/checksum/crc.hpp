@@ -100,9 +100,9 @@ class crc_cache ;
 //!         const</code>.</dd>
 //!
 //!     <dt><tt>check:</tt></dt><dd>
-//!         The CRC of the sequence "123456789" (nine ASCII characters,
-//!         without any terminator); used to verify the implementation
-//!         and the traits class.</dd>
+//!         The CRC of the sequence "123456789", encoded as ASCII (nine
+//!         characters, without any terminator); used to verify the
+//!         implementation and the traits class.</dd>
 //!     </dl>
 // ---------------------------------------------------------------------------
 template< typename Traits >
