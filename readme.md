@@ -17,7 +17,7 @@
      -------------------------------------------------------------------------
 -->
 [![Build status](
-https://travis-ci.com/gennaroprota/breath.svg?branch=master)](
+https://img.shields.io/travis/com/gennaroprota/breath/master?label=builds%20%26%20tests)](
 https://travis-ci.com/gennaroprota/breath)
 ![Lines of code counter](
 https://tokei.rs/b1/github/gennaroprota/breath?category=code)
