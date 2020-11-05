@@ -46,7 +46,7 @@ check_known_sums()
         { "8510293847392103485729301287451276780259", 3, '3' }
       } ;
 
-    for ( auto const e : known ) {
+    for ( auto const & e : known ) {
         BREATH_CHECK( breath::luhn_sum( e.text ) == e.luhn_sum ) ;
         BREATH_CHECK( breath::luhn_check_digit( e.text ) == e.digit ) ;
 
@@ -66,7 +66,7 @@ luhn_routines_throw_on_invalid_chars()
         with_nul
     } ;
 
-    for ( auto const s : invalid_strings ) {
+    for ( auto const & s : invalid_strings ) {
         BREATH_CHECK_THROW( std::invalid_argument, breath::luhn_sum( s ) ) ;
         BREATH_CHECK_THROW( std::invalid_argument, breath::has_luhn_sum( s ) ) ;
         BREATH_CHECK_THROW( std::invalid_argument, breath::luhn_check_digit( s ) ) ;
