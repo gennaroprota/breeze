@@ -60,7 +60,7 @@ class               digest ;
 //!
 //!     \warning
 //!         The current interface only supports hashing messages whose
-//!         length is a multiple of the \c byte_width.
+//!         length is a multiple of \c byte_width.
 //!         In the future, bit iterators could be integrated here if
 //!         possible.
 //          (Note that internally we already keep the *bit* count of the
