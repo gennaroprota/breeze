@@ -24,8 +24,8 @@ namespace breath_ns {
 //!     Gets the current directory of the calling process.
 //!
 //!     \throw
-//!         A \c std::runtime_error (which may be a \c last_api_error)
-//!         if it fails.
+//!         std::runtime_error (which may be a \c last_api_error) if it
+//!         fails.
 // ---------------------------------------------------------------------------
 std::string         current_directory() ;
 

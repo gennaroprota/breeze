@@ -68,7 +68,7 @@ public:
     //!     \param wr
     //!         See the documentation of the destructor.
     //!
-    //!     \throw
+    //!     \note
     //!         This constructor might throw an exception originating
     //!         from the \c sentry constructor.
     // -----------------------------------------------------------------------
