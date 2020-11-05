@@ -46,11 +46,11 @@ check_known_sums()
         { "8510293847392103485729301287451276780259", 3, '3' }
       } ;
 
-    for ( auto it = breath::cbegin( known ) ; it != breath::cend( known ) ; ++ it ) {
-        BREATH_CHECK( breath::luhn_sum( it->text ) == it->luhn_sum ) ;
-        BREATH_CHECK( breath::luhn_check_digit( it->text ) == it->digit ) ;
+    for ( auto const e : known ) {
+        BREATH_CHECK( breath::luhn_sum( e.text ) == e.luhn_sum ) ;
+        BREATH_CHECK( breath::luhn_check_digit( e.text ) == e.digit ) ;
 
-        BREATH_CHECK( breath::has_luhn_sum( it->text + it->digit ) ) ;
+        BREATH_CHECK( breath::has_luhn_sum( e.text + e.digit ) ) ;
     }
 
     BREATH_CHECK( ! breath::has_luhn_sum( "" ) ) ;
