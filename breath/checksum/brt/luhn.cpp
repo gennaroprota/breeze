@@ -57,7 +57,7 @@ luhn_sum( std::string const & str )
 bool
 has_luhn_sum( std::string const & s )
 {
-    return luhn_sum( s ) == 0 ;
+    return ! s.empty() && luhn_sum( s ) == 0 ;
 }
 
 char

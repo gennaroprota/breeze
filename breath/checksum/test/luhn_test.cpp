@@ -51,6 +51,8 @@ check_known_sums()
 
         BREATH_CHECK( breath::has_luhn_sum( it->text + it->digit ) ) ;
     }
+
+    BREATH_CHECK( ! breath::has_luhn_sum( "" ) ) ;
 }
 
 }
