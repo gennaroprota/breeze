@@ -48,6 +48,8 @@ check_known_sums()
     for ( auto it = breath::cbegin( known ) ; it != breath::cend( known ) ; ++ it ) {
         BREATH_CHECK( breath::luhn_sum( it->text ) == it->luhn_sum ) ;
         BREATH_CHECK( breath::luhn_check_digit( it->text ) == it->digit ) ;
+
+        BREATH_CHECK( breath::has_luhn_sum( it->text + it->digit ) ) ;
     }
 }
 
