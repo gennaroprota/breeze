@@ -24,7 +24,7 @@ namespace breath_ns {
 //!\cond implementation
 namespace exact_width_integer_private {
 
-//      This might be elegantly implemented via type lists or maps, but
+//      This could be elegantly implemented via type lists or maps, but
 //      we chose to keep metaprogramming (and dependencies) to a
 //      minimum.
 // ---------------------------------------------------------------------------
