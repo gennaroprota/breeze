@@ -28,7 +28,7 @@ namespace breath_ns {
 //!         environment variables.
 //!
 //!     \throw
-//!         A \c std::runtime_error if an error occurs. TODO: document
+//!         std::runtime_error if an error occurs. TODO: document
 //!         exceptions for allocation errors?
 // ---------------------------------------------------------------------------
 std::map< std::string, std::string >

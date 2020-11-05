@@ -26,8 +26,8 @@ namespace breath_ns {
 //!         <code>[0, 9]</code>.
 //!
 //!     \throw
-//!         A \c std::invalid_argument if any of the characters in \c s
-//!         is not a decimal digit (i.e. one of \c 0123456789).
+//!         std::invalid_argument if any of the characters in \c s is
+//!         not a decimal digit (i.e. one of \c 0123456789).
 // ---------------------------------------------------------------------------
 int                 luhn_sum( std::string const & s ) ;
 
@@ -39,8 +39,8 @@ int                 luhn_sum( std::string const & s ) ;
 //!         character.
 //!
 //!     \throw
-//!         A \c std::invalid_argument if any of the characters in \c s
-//!         is not a decimal digit (i.e. one of \c 0123456789).
+//!         std::invalid_argument if any of the characters in \c s is
+//!         not a decimal digit (i.e. one of \c 0123456789).
 // ---------------------------------------------------------------------------
 bool                has_luhn_sum( std::string const & s ) ;
 
@@ -52,8 +52,8 @@ bool                has_luhn_sum( std::string const & s ) ;
 //!         char in <code>['0', '9']</code>.
 //!
 //!     \throw
-//!         A \c std::invalid_argument if any of the characters in \c s
-//!         is not a decimal digit (i.e. one of \c 0123456789).
+//!         std::invalid_argument if any of the characters in \c s is
+//!         not a decimal digit (i.e. one of \c 0123456789).
 // ---------------------------------------------------------------------------
 char                luhn_check_digit( std::string const & s ) ;
 

@@ -57,7 +57,7 @@ public:
     //!     Starts or restarts measurement (see elapsed()).
     //!
     //!     \throw
-    //!         A \c std::runtime_error if \c std::clock() fails.
+    //!         std::runtime_error if \c std::clock() fails.
     // -----------------------------------------------------------------------
     void                start() ;
 
@@ -69,9 +69,9 @@ public:
     //!         The function start() has been called at least once.
     //!
     //!     \throw
-    //!         A \c std::runtime_error if it detects wrap-around (it
-    //!         only detects \e some wrap-arounds), or if \c
-    //!         std::clock() fails.
+    //!         std::runtime_error if it detects wrap-around (it only
+    //!         detects \e some wrap-arounds), or if \c std::clock()
+    //!         fails.
     // -----------------------------------------------------------------------
     duration_type       elapsed() const ;
 
@@ -80,9 +80,9 @@ public:
     //!         May return slightly different values from call to call.
     //!
     //!     \throw
-    //!         A \c std::runtime_error if it detects wrap-around (it
-    //!         only detects \e some wrap-arounds), or if \c
-    //!         std::clock() fails.
+    //!         std::runtime_error if it detects wrap-around (it only
+    //!         detects \e some wrap-arounds), or if \c std::clock()
+    //!         fails.
     // -----------------------------------------------------------------------
     duration_type       resolution() const ;
 
