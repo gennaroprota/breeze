@@ -25,11 +25,11 @@ namespace breath_ns {
 //!     This function conforms to RFC 3548 with one exception: it
 //!     allows \e newlines to appear anywhere in the input.
 //!
-//!     \throw
-//!         std::runtime_error on any invalid input character; this does
-//!         not throw \c std::logic_error because, for input iterators,
-//!         it's not possible for the user to check the input before
-//!         passing it to us.
+//!     \par Exceptions
+//!         A \c std::runtime_error on any invalid input character; this
+//!         does not throw \c std::logic_error because, for input
+//!         iterators, it's not possible for the user to check the input
+//!         before passing it to us.
 //!
 //!     \param begin
 //!         Iterator to the first element of the input (i.e. Base64)

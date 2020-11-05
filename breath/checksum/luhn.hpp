@@ -25,9 +25,9 @@ namespace breath_ns {
 //!         The Luhn sum of the given string. This is a number in
 //!         <code>[0, 9]</code>.
 //!
-//!     \throw
-//!         std::invalid_argument if any of the characters in \c s is
-//!         not a decimal digit (i.e. one of \c 0123456789).
+//!     \par Exceptions
+//!         A \c std::invalid_argument if any of the characters in \c s
+//!         is not a decimal digit (i.e. one of \c 0123456789).
 // ---------------------------------------------------------------------------
 int                 luhn_sum( std::string const & s ) ;
 
@@ -38,9 +38,9 @@ int                 luhn_sum( std::string const & s ) ;
 //!         Whether the given string has a Luhn sum as its last
 //!         character.
 //!
-//!     \throw
-//!         std::invalid_argument if any of the characters in \c s is
-//!         not a decimal digit (i.e. one of \c 0123456789).
+//!     \par Exceptions
+//!         A \c std::invalid_argument if any of the characters in \c s
+//!         is not a decimal digit (i.e. one of \c 0123456789).
 // ---------------------------------------------------------------------------
 bool                has_luhn_sum( std::string const & s ) ;
 
@@ -51,9 +51,9 @@ bool                has_luhn_sum( std::string const & s ) ;
 //!         The Luhn checksum digit for the given string. This is a \c
 //!         char in <code>['0', '9']</code>.
 //!
-//!     \throw
-//!         std::invalid_argument if any of the characters in \c s is
-//!         not a decimal digit (i.e. one of \c 0123456789).
+//!     \par Exceptions
+//!         A \c std::invalid_argument if any of the characters in \c s
+//!         is not a decimal digit (i.e. one of \c 0123456789).
 // ---------------------------------------------------------------------------
 char                luhn_check_digit( std::string const & s ) ;
 

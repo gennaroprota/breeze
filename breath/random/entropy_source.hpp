@@ -130,7 +130,7 @@ public:
     //!         \c true if and only if the resource(s) were successfully
     //!         released.
     //!
-    //!     \throw
+    //!     \par Exceptions
     //!         none (reports via its return value)
     //!
     //!     \warning
