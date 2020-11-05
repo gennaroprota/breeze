@@ -14,6 +14,7 @@
 #include "breath/checksum/luhn.hpp"
 #include "breath/iteration/begin_end.hpp"
 #include "breath/testing/testing.hpp"
+#include <stdexcept>
 #include <string>
 
 int                 test_luhn() ;
@@ -55,6 +56,23 @@ check_known_sums()
     BREATH_CHECK( ! breath::has_luhn_sum( "" ) ) ;
 }
 
+void
+luhn_routines_throw_on_invalid_chars()
+{
+    std::string const   with_nul( 1, '\0' ) ;
+    std::string const   invalid_strings[] =
+    {
+        "abc",
+        with_nul
+    } ;
+
+    for ( auto const s : invalid_strings ) {
+        BREATH_CHECK_THROW( std::invalid_argument, breath::luhn_sum( s ) ) ;
+        BREATH_CHECK_THROW( std::invalid_argument, breath::has_luhn_sum( s ) ) ;
+        BREATH_CHECK_THROW( std::invalid_argument, breath::luhn_check_digit( s ) ) ;
+    }
+}
+
 }
 
 int
@@ -63,7 +81,8 @@ test_luhn()
     using namespace breath ;
 
     return test_runner::instance().run( "Luhn routines",
-                                        { check_known_sums } ) ;
+                                        { check_known_sums,
+                                      luhn_routines_throw_on_invalid_chars } ) ;
 }
 
 // Local Variables:
