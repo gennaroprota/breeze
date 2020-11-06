@@ -15,6 +15,8 @@
 #include "breath/text/set_of_chars.hpp"
 #include <algorithm>
 #include <climits>
+#include <iterator>
+#include <sstream>
 
 int                 test_set_of_chars() ;
 
@@ -204,6 +206,17 @@ do_test()
     }
 }
 
+void
+set_of_chars_can_be_constructed_from_input_iterators()
+{
+    std::istringstream  iss( "bca" ) ;
+    breath::set_of_chars
+                        set(   std::istream_iterator< char >( iss ),
+                             ( std::istream_iterator< char >() ) ) ;
+
+    BREATH_CHECK( set.as_string() == "abc" ) ;
+}
+
 }
 
 int
@@ -213,7 +226,8 @@ test_set_of_chars()
 
     return test_runner::instance().run(
              "set_of_chars",
-             { do_test } ) ;
+             { do_test,
+               set_of_chars_can_be_constructed_from_input_iterators } ) ;
 }
 
 
