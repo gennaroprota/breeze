@@ -28,7 +28,7 @@ namespace breath_ns {
 //!     numbers to the different Windows versions.
 // ---------------------------------------------------------------------------
 //
-//      Rationale for the absence of comparison operators:
+//      Rationale for the absence of relational operators:
 //
 //      in my first idea of this class, it was my intent to support
 //      inequality comparisons:
