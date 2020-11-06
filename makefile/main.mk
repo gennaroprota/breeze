@@ -14,6 +14,21 @@
 #  - subdirs?? -gps
 
 
+#       libraries:      (Optional.)
+#
+#                       A space-separated list with the names of the
+#                       libraries to link with.
+#
+#                       Since Clang and GCC want the library names (-l
+#                       option) without prefix and suffix, and since
+#                       adding is easier than removing in GNU Make, the
+#                       names in the list must be specified without
+#                       prefix and suffix (they will be added where
+#                       needed; for instance, suffixes will be added in
+#                       msvc.mk).
+# ----------------------------------------------------------------------------
+
+
 #       Rationale:
 #
 #       this is almost always what one wants; see:
@@ -77,6 +92,12 @@ ifndef cpp_extra_options
     cpp_extra_options :=
 endif
 
+ifndef libraries
+    #       Likewise.
+    # ------------------------------------------------------------------------
+    libraries :=
+endif
+
 cpp_options = $(cpp_basic_options)                  \
               $(cpp_debug_options)                  \
               $(cpp_extra_options)                  \
@@ -94,8 +115,8 @@ exe_dir := $(bin_dir)
 
 
 ifeq ($(has_triplet),yes)
-    include $(root)/makefile/$(compiler).mk
     include $(root)/makefile/$(system).mk
+    include $(root)/makefile/$(compiler).mk
 endif
 
 #       Automatic dependency generation:

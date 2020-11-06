@@ -128,6 +128,9 @@ cpp_basic_options += /wd4623 /wd4625 /wd4626 /wd4774        \
 include_switch := /I
 object_file_suffix := .obj
 
+library_options := $(addsuffix $(library_name_suffix),   \
+                     $(addprefix $(library_name_prefix),$(libraries)))
+
 compiler_command := cl
 
 linker_options := /WX /LTCG
@@ -165,7 +168,7 @@ endef
 # ----------------------------------------------------------------------------
 define link_to_exec
     $(compiler_command) $(cpp_options) /Fe$@  $+                \
-                        /link $(linker_options) $(libraries)
+                        /link $(linker_options) $(library_options)
 endef
 
 # Local Variables:

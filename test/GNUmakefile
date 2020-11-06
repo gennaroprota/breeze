@@ -124,13 +124,16 @@ source_files := unit_test_main.cpp                          \
                 maybe_test.cpp
 
 
+ifeq ($(system),windows)
+    libraries += Advapi32
+endif
+
 include $(root)/makefile/main.mk
 
 target := $(bin_dir)/breath_test$(exe_name_suffix)
 object_files :=     \
     $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), $(source_files))
 
-libraries := advapi32.lib
 breath_library := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
 
 $(target): $(object_files) $(breath_library)

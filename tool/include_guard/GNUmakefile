@@ -11,8 +11,9 @@ root         := ../..
 source_files := include_guard.cpp               \
                 macro_name.cpp
 
-libraries    := advapi32.lib
-             ##gps temp! (Windows only :-() --coupled with msvc.mk!!!
+ifeq ($(system),windows)
+    libraries += Advapi32
+endif
 
 include $(root)/makefile/executable.mk
 
