@@ -60,7 +60,7 @@ do_test()
     //      Copy constructor.
     // -----------------------------------------------------------------------
     {
-        set_of_chars const s("abcdefghijklmnopqrstuvwxyz") ;
+        set_of_chars const s( "abcdefghijklmnopqrstuvwxyz" ) ;
         set_of_chars const t( s ) ;
 
         BREATH_CHECK( t == s ) ;
