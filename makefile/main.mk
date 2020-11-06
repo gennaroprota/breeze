@@ -77,6 +77,12 @@ ifndef cpp_extra_options
     cpp_extra_options :=
 endif
 
+ifndef libraries
+    #       Likewise.
+    # ------------------------------------------------------------------------
+    libraries :=
+endif
+
 cpp_options = $(cpp_basic_options)                  \
               $(cpp_debug_options)                  \
               $(cpp_extra_options)                  \
@@ -94,8 +100,8 @@ exe_dir := $(bin_dir)
 
 
 ifeq ($(has_triplet),yes)
-    include $(root)/makefile/$(compiler).mk
     include $(root)/makefile/$(system).mk
+    include $(root)/makefile/$(compiler).mk
 endif
 
 #       Automatic dependency generation:

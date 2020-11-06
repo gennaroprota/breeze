@@ -131,6 +131,7 @@ cpp_debug_options += -ggdb3
 
 include_switch := -I
 object_file_suffix := .o
+library_options := $(addprefix -l,$(libraries))
 
 #       Note that this differs from the compiler name, which is in
 #       $(compiler). And that, for Travis CI, we often need to select a
@@ -164,7 +165,7 @@ define build_library
 endef
 
 define link_to_exec
-    $(compiler_command) $(cpp_options) -o $@ $+
+    $(compiler_command) $(cpp_options) -o $@ $+ $(library_options)
 endef
 
 # Local Variables:

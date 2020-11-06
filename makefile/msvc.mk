@@ -128,6 +128,13 @@ cpp_basic_options += /wd4623 /wd4625 /wd4626 /wd4774        \
 include_switch := /I
 object_file_suffix := .obj
 
+#       Since Clang and GCC want the library names (-l option) without
+#       prefix and suffix, we always specify the names without prefix
+#       and suffix, and add them for MSVC.
+# ----------------------------------------------------------------------------
+library_options := $(addsuffix $(library_name_suffix),   \
+                     $(addprefix $(library_name_prefix),$(libraries)))
+
 compiler_command := cl
 
 linker_options := /WX /LTCG
@@ -165,7 +172,7 @@ endef
 # ----------------------------------------------------------------------------
 define link_to_exec
     $(compiler_command) $(cpp_options) /Fe$@  $+                \
-                        /link $(linker_options) $(libraries)
+                        /link $(linker_options) $(library_options)
 endef
 
 # Local Variables:
