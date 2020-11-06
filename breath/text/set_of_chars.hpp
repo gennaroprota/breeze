@@ -29,13 +29,14 @@ namespace breath_ns {
 //!
 //!     With respect to a \c std::string, a \c set_of_chars can't have
 //!     duplicates and may model the concept more closely; and it has
-//!     different complexity guarantees: adding a char, removing a char,
-//!     and testing if a char is in the set are all <tt>O(1)</tt>; on
-//!     the other hand, incrementing an iterator is a linear search.
+//!     different complexity guarantees: adding a \c char, removing a \c
+//!     char, and testing if a \c char is in the set are all <tt>O(1)
+//!     </tt>; on the other hand, incrementing an iterator is a linear
+//!     search.
 //!
 //!     Note that several functions, below, are overloaded on \c char
 //!     and <code>char const *</code>. Now, depending on whether plain
-//!     \c char has a sign, CHAR_MIN may expand to a (non-char) null
+//!     \c char has a sign, \c CHAR_MIN may expand to a (non-char) null
 //!     pointer constant, which means that e.g. the call to add() in
 //!
 //!     \code
@@ -43,7 +44,7 @@ namespace breath_ns {
 //!         sc.add( CHAR_MIN ) ;
 //!     \endcode
 //!
-//!     may be ambiguous. To avoid the ambiguity, write:
+//!     may be ambiguous. To avoid this ambiguity, write:
 //!
 //!     \code
 //!         sc.add( static_cast< char >( CHAR_MIN ) ) ;
@@ -85,7 +86,7 @@ public:
                         set_of_chars( FwdIterator begin, FwdIterator end )
                                                                       noexcept ;
 
-    //!     A special value used by some constructors.
+    //!     A special type and value used by some constructors.
     // -----------------------------------------------------------------------
     enum except_for { except } ;
 
@@ -261,9 +262,9 @@ public:
     //!     \brief
     //!         An iterator for the set.
     //!
-    //!     Iterates over all of the characters in the set.  It is a
-    //!     \e constant forward iterator (\c iterator and \c
-    //!     const_iterator have the same semantics).
+    //!     Iterates over all of the characters in the set. It is a \e
+    //!     constant forward iterator (\c iterator and \c const_iterator
+    //!     have the same semantics).
     // -----------------------------------------------------------------------
     class               iterator
     {
