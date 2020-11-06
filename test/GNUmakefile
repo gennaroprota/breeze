@@ -125,7 +125,8 @@ source_files := unit_test_main.cpp                          \
 
 
 ifeq ($(system),windows)
-    libraries += Advapi32
+    libraries += Advapi32   \
+                 Version
 endif
 
 include $(root)/makefile/main.mk
