@@ -82,8 +82,8 @@ public:
     //!     Constructs a set containing all and only the characters in
     //!     the range <code>[begin, end)</code>.
     // -----------------------------------------------------------------------
-    template< typename FwdIterator>
-                        set_of_chars( FwdIterator begin, FwdIterator end )
+    template< typename InputIterator>
+                        set_of_chars( InputIterator begin, InputIterator end )
                                                                       noexcept ;
 
     //!     A special type and value used by some constructors.
@@ -178,8 +178,8 @@ public:
     //!     \note
     //!         No iterators are invalidated.
     // -----------------------------------------------------------------------
-    template< typename FwdIterator >
-    set_of_chars &      add( FwdIterator begin, FwdIterator end ) noexcept ;
+    template< typename InputIterator >
+    set_of_chars &      add( InputIterator begin, InputIterator end ) noexcept ;
 
     //!     Removes the character \c c from the set.
     //!
@@ -323,16 +323,16 @@ public:
     } ;
 } ;
 
-template< typename FwdIterator>
-set_of_chars::set_of_chars( FwdIterator begin, FwdIterator end ) noexcept
+template< typename InputIterator>
+set_of_chars::set_of_chars( InputIterator begin, InputIterator end ) noexcept
     :   m_bits()
 {
     add( begin, end ) ;
 }
 
-template< typename FwdIterator >
+template< typename InputIterator >
 set_of_chars &
-set_of_chars::add( FwdIterator begin, FwdIterator end ) noexcept
+set_of_chars::add( InputIterator begin, InputIterator end ) noexcept
 {
     while ( begin != end ) {
         add( *begin ) ;
