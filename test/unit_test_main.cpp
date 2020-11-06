@@ -12,6 +12,7 @@
 // ___________________________________________________________________________
 
 #include "unit_test_main.hpp"
+#include "breath/environment/operating_system_name.hpp"
 #include <cstdlib>
 #include <iostream>
 
@@ -93,6 +94,14 @@ main()
     std::cout << ( result == EXIT_SUCCESS
         ? "All tests passed."
         : "At least one test FAILED." ) << std::endl ;
+
+    //      We output the detected operating system description here,
+    //      because the operating_system_name class is basically
+    //      untestable. We hope that, this way, the user can notice if
+    //      something is wrong.
+    // -----------------------------------------------------------------------
+    std::cout << "\nDetected operating system: " <<
+        breath::operating_system_name() << '\n' << std::endl ;
 
     return result ;
 }
