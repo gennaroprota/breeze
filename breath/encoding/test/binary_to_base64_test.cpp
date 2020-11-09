@@ -13,9 +13,9 @@
 
 #include "breath/encoding/binary_to_base64.hpp"
 #include "breath/testing/testing.hpp"
+#include <iterator>
 #include <sstream>
 #include <string>
-#include <iterator>
 
 int                 test_binary_to_base64() ;
 
