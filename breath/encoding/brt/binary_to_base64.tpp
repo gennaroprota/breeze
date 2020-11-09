@@ -60,14 +60,14 @@ binary_to_base64( InputIter begin, InputIter end,
 
     auto                do_output = [ &out, &column, &wrap_column ]( char c )
     {
-      *out = c ;
-      ++ out ;
-      ++ column ;
-      if ( column == wrap_column ) {
-        *out = '\n' ;
+        *out = c ;
         ++ out ;
-        column = 0 ;
-      }
+        ++ column ;
+        if ( column == wrap_column ) {
+            *out = '\n' ;
+            ++ out ;
+            column = 0 ;
+        }
     } ;
 
     unsigned            accum = 0 ;
