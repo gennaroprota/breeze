@@ -14,6 +14,7 @@
 #include "breath/encoding/base64_to_binary.hpp"
 #include "breath/testing/testing.hpp"
 #include <iterator>
+#include <sstream>
 #include <stdexcept>
 #include <string>
 
@@ -68,10 +69,17 @@ check_valid()
     } ;
 
     for ( auto const & k : known ) {
-        std::string         out ;
-        breath::base64_to_binary( k.b64.cbegin(), k.b64.cend(),
-                                    std::back_inserter( out ) ) ;
-        BREATH_CHECK( out == k.binary ) ;
+        std::istringstream  in( k.b64 ) ;
+        std::ostringstream  out ;
+
+        //      We use istream and ostream iterators here, to check that
+        //      base64_to_binary() doesn't accidentally require
+        //      iterators of more powerful categories.
+        // -------------------------------------------------------------------
+        breath::base64_to_binary( std::istream_iterator< char >( in ),
+                                  std::istream_iterator< char >(),
+                                  std::ostream_iterator< char >( out ) ) ;
+        BREATH_CHECK( out.str() == k.binary ) ;
     }
 }
 
