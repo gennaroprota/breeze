@@ -12,7 +12,6 @@
 // ___________________________________________________________________________
 
 #include "breath/encoding/base64_to_binary.hpp"
-#include "breath/iteration/begin_end.hpp"
 #include "breath/testing/testing.hpp"
 #include <iterator>
 #include <stdexcept>
@@ -68,11 +67,11 @@ check_valid()
           "VGhlIGZp\ndmUgYm94a\nW5nIHdpemFyZHMga\nnVtcCBxdWlja2x5" }
     } ;
 
-    for ( auto it = breath::cbegin( known ) ; it != breath::cend( known ) ; ++ it ) {
+    for ( auto const & k : known ) {
         std::string         out ;
-        breath::base64_to_binary( it->b64.cbegin(), it->b64.cend(),
+        breath::base64_to_binary( k.b64.cbegin(), k.b64.cend(),
                                     std::back_inserter( out ) ) ;
-        BREATH_CHECK( out == it->binary ) ;
+        BREATH_CHECK( out == k.binary ) ;
     }
 }
 
