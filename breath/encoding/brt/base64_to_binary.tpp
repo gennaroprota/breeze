@@ -46,10 +46,11 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
                    "" ) ;
     static char const   error_message[] = "invalid input to base64_to_binary()" ;
     int const           not_to_be_translated = -1 ;
-    unsigned            block = 0 ;
-    int                 num_bits = 0 ;
     int const           block_length = 6 ;
     int const           char_bit = CHAR_BIT ;
+
+    unsigned            block = 0 ;
+    int                 num_bits = 0 ;
     bool                equals_seen = false ;
     for ( InputIter curr( begin ) ; curr != end ; ++ curr ) {
         auto const          x = static_cast< unsigned char >( *curr ) ;
