@@ -44,7 +44,6 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
        ( std::is_same< typename InputIter::value_type, char >::value
       || std::is_same< typename InputIter::value_type, unsigned char >::value ),
                    "" ) ;
-    static char const   error_message[] = "invalid input to base64_to_binary()" ;
     int const           not_to_be_translated = -1 ;
     int const           block_length = 6 ;
     int const           char_bit = CHAR_BIT ;
@@ -63,11 +62,13 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
             equals_seen = true ;
         }
         if ( x != '=' && x != '\n' && equals_seen ) {
-            throw std::runtime_error( error_message ) ;
+            throw std::runtime_error(
+                "base64_to_binary(): extra characters after padding" ) ;
         }
         if ( value == not_to_be_translated ) {
             if ( x != '\n' && x != '=' ) {
-                throw std::runtime_error( error_message ) ;
+                throw std::runtime_error(
+                    "base64_to_binary(): invalid input characters") ;
             }
         } else {
             block = ( block << block_length ) | value ;
