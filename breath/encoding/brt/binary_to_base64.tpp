@@ -28,8 +28,9 @@ binary_to_base64( InputIter begin, InputIter end,
                                      "abcdefghijklmnopqrstuvwxyz"
                                      "0123456789+/" ;
     int const           group_size = 3 ;
-    auto                curr = begin ;
-    int                 count = 0 ;
+    int const           bits_per_base64_char = 6 ;
+    int const           char_bit = CHAR_BIT ;
+
     int                 column = 0 ;
 
     auto                do_output = [ &out, &column, &wrap_column ]( char c )
@@ -44,37 +45,31 @@ binary_to_base64( InputIter begin, InputIter end,
       }
     } ;
 
-    //      This code is ugly because we stick to input iterators and
-    //      don't assume random access. Furthermore we have to check for
-    //      the end of the range at each increment.
-    //  ----------------------------------------------------------------------
+    unsigned            accum = 0 ;
+    int                 accum_bit_count = 0 ;
+    auto                curr = begin ;
+    int                 count = 0 ;
+
     while ( curr != end ) {
-        do_output( alphabet[ static_cast< unsigned char>( *curr ) >> 2 ] ) ;
+        accum = accum << char_bit | static_cast< unsigned char >( *curr ) ;
+        accum_bit_count += char_bit ;
         ++ count ;
-        auto                tmp = ( static_cast< unsigned char >( *curr )
-                                                             & 0x03 ) << 4 ;
-
-        if ( ++curr != end ) {
-            ++ count ;
-            tmp |= ( static_cast< unsigned char >( *curr ) & 0xf0 ) >> 4 ;
-            do_output( alphabet[ tmp ] ) ;
-
-            auto            tmp2 = ( static_cast< unsigned char >( *curr )
-                                                                & 0x0f ) << 2 ;
-            if ( ++curr != end ) {
-                ++ count ;
-                tmp2 |= static_cast< unsigned char >( *curr ) >> 6 ;
-                do_output( alphabet[ tmp2 ] ) ;
-                do_output( alphabet[ static_cast< unsigned char >(
-                                                            *curr ) & 0x3f ] ) ;
-                ++ curr ;
-            } else {
-                do_output( alphabet[ tmp2 ] ) ;
-            }
-        } else {
-            do_output( alphabet[ tmp ] ) ;
-        }
         count %= group_size ;
+
+        while ( accum_bit_count >= bits_per_base64_char ) {
+            int const       next = accum_bit_count - bits_per_base64_char ;
+            auto            c = static_cast< unsigned char >( accum >> next ) ;
+            do_output( alphabet[ c ] ) ;
+            accum &= ( ( 1 << next ) - 1 ) ;
+            accum_bit_count = next ;
+        }
+
+        ++ curr ;
+    }
+
+    if ( accum_bit_count != 0 ) {
+        accum <<= ( bits_per_base64_char - accum_bit_count ) ;
+        do_output( alphabet[ accum ] ) ;
     }
 
     for ( int i = 0 ; i < ( group_size - count ) % group_size ; ++ i ) {
