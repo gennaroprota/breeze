@@ -55,7 +55,7 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
         auto const          x = static_cast< unsigned char >( *curr ) ;
         auto const          value = table[ x ] ;
 
-        //      Once we've seen an equal sign, only equal signs and
+        //      Once we've seen an equal sign, only equal signs or
         //      newlines can follow; otherwise the input is ill-formed.
         // -------------------------------------------------------------------
         if ( x == '=' ) {
