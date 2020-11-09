@@ -29,9 +29,9 @@ operator <<( std::ostream & dest, operating_system_name const & )
     }
 
     return dest << un.sysname
-                << ' ' << un.release
-                << ' ' << un.version
-                << ' ' << un.machine ;
+                << ' '  << un.release
+                << ", " << un.version
+                << ", " << un.machine ;
 }
 
 }
