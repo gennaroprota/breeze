@@ -14,7 +14,6 @@
 #include "breath/diagnostics/last_api_error.hpp"
 
 #include <ostream>
-#include <cstring>
 #include <sys/utsname.h>
 
 namespace breath_ns {
