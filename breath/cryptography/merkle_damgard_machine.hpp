@@ -129,7 +129,7 @@ private:
                         state_type ;// gps --possibly temp
 
 public:
-    //!\name Initialization.
+    //!\name Initialization
     //!\{
     // -----------------------------------------------------------------------
                         merkle_damgard_machine() ;
