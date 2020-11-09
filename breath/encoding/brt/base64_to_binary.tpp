@@ -8,7 +8,6 @@
 
 #include "breath/counting/signed_count.hpp"
 #include <climits>
-#include <cstddef>
 #include <stdexcept>
 #include <type_traits>
 
