@@ -62,6 +62,14 @@ additionalSettings:
   # --------------------------------------------------------------------------
     - inserter
 
+source_browser:
+  title: 'Source Browser'               # section title
+  base_url: 'source'                    # base url
+  input: 'breath'                       # incldue these directories
+  exclude: ''                           # exclude this directory
+  filename_extensions: ''               # include only these filename extension
+  filename_extensions_exclude: '.dox'   # exclude these filename extension
+
 # Local Variables:
 # mode: yaml
 # indent-tabs-mode: nil
