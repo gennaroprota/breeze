@@ -6,7 +6,12 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breath/counting/signed_count.hpp"
 #include "breath/diagnostics/assert.hpp"
+#include "breath/mathematics/integer_log2.hpp"
+#include "breath/mathematics/is_power_of_2.hpp"
+#include "breath/mathematics/lcm.hpp"
+#include "breath/mathematics/rounded_up_quotient.hpp"
 #include <climits>
 #include <type_traits>
 
@@ -22,14 +27,20 @@ binary_to_base64( InputIter begin, InputIter end,
       || std::is_same< typename InputIter::value_type, unsigned char >::value ),
                    "" ) ;
 
-    BREATH_ASSERT( wrap_column >= 0 ) ;
-
     static char const   alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                      "abcdefghijklmnopqrstuvwxyz"
                                      "0123456789+/" ;
-    int const           group_size = 3 ;
-    int const           bits_per_base64_char = 6 ;
+    auto const          base = breath::signed_count( alphabet ) - 1 ;
+
+    static_assert( breath::is_power_of_2( base ), "" ) ;
+
+    int const           bits_per_output_char = breath::integer_log2( base ) ;
     int const           char_bit = CHAR_BIT ;
+    int const           bits_per_group = breath::lcm( bits_per_output_char,
+                                                      char_bit ) ;
+    int const           group_size = bits_per_group / char_bit ;
+
+    BREATH_ASSERT( wrap_column >= 0 ) ;
 
     int                 column = 0 ;
 
@@ -56,8 +67,8 @@ binary_to_base64( InputIter begin, InputIter end,
         ++ count ;
         count %= group_size ;
 
-        while ( accum_bit_count >= bits_per_base64_char ) {
-            int const       next = accum_bit_count - bits_per_base64_char ;
+        while ( accum_bit_count >= bits_per_output_char ) {
+            int const       next = accum_bit_count - bits_per_output_char ;
             auto            c = static_cast< unsigned char >( accum >> next ) ;
             do_output( alphabet[ c ] ) ;
             accum &= ( ( 1 << next ) - 1 ) ;
@@ -68,12 +79,16 @@ binary_to_base64( InputIter begin, InputIter end,
     }
 
     if ( accum_bit_count != 0 ) {
-        accum <<= ( bits_per_base64_char - accum_bit_count ) ;
+        accum <<= ( bits_per_output_char - accum_bit_count ) ;
         do_output( alphabet[ accum ] ) ;
     }
 
-    for ( int i = 0 ; i < ( group_size - count ) % group_size ; ++ i ) {
-        do_output( '=' ) ;
+    if ( count != 0 ) {
+        int const           pad_count = bits_per_group / bits_per_output_char -
+         breath::rounded_up_quotient( count * char_bit, bits_per_output_char ) ;
+        for ( int i = 0 ; i < pad_count ; ++ i ) {
+            do_output( '=' );
+        }
     }
 }
 
