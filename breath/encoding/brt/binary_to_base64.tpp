@@ -36,9 +36,9 @@ binary_to_base64( InputIter begin, InputIter end,
 
     int const           bits_per_output_char = breath::integer_log2( base ) ;
     int const           char_bit = CHAR_BIT ;
-    int const           bits_per_group = breath::lcm( bits_per_output_char,
-                                                      char_bit ) ;
-    int const           group_size = bits_per_group / char_bit ;
+    int const           bits_per_quantum = breath::lcm( bits_per_output_char,
+                                                        char_bit ) ;
+    int const           bytes_per_quantum = bits_per_quantum / char_bit ;
 
     BREATH_ASSERT( wrap_column >= 0 ) ;
 
@@ -65,7 +65,7 @@ binary_to_base64( InputIter begin, InputIter end,
         accum = accum << char_bit | static_cast< unsigned char >( *curr ) ;
         accum_bit_count += char_bit ;
         ++ count ;
-        count %= group_size ;
+        count %= bytes_per_quantum ;
 
         while ( accum_bit_count >= bits_per_output_char ) {
             int const       next = accum_bit_count - bits_per_output_char ;
@@ -84,7 +84,8 @@ binary_to_base64( InputIter begin, InputIter end,
     }
 
     if ( count != 0 ) {
-        int const           pad_count = bits_per_group / bits_per_output_char -
+        int const           pad_count =
+         bits_per_quantum / bits_per_output_char -
          breath::rounded_up_quotient( count * char_bit, bits_per_output_char ) ;
         for ( int i = 0 ; i < pad_count ; ++ i ) {
             do_output( '=' );
