@@ -40,16 +40,13 @@ namespace breath_ns {
 //!     <https://codingnest.com/generating-random-numbers-using-c-standard-library-the-problems/>).
 //!
 //!     \note
-//!         This class is designed to be usable with random_shuffle
-//!         and shuffle. (This is, BTW, why it has members with the
-//!         names "min" and "max", which I generally avoid, given
-//!         how many sources define them as macro names.)
-//!
-//!     It satisfies the requirements of a "uniform random number
-//!     generator".
-//!
-//!     What about the complexity of g()? [gps]
-//!
+//!         This class is designed to satisfy the requirements of a <tt>
+//!         uniform random number generator</tt> (C++11,
+//!         [rand.req.urng]), except that, to be honest, I don't know
+//!         what the complexity of the function call operator is. (These
+//!         requirements are, by the way, why it has members named "min"
+//!         and "max", which I generally avoid, given that many sources
+//!         define homonym macros.)
 // ---------------------------------------------------------------------------
 class entropy_source
 {
@@ -61,8 +58,8 @@ public:
     entropy_source &    operator =(     entropy_source const & ) = delete ;
     //!\}
 
-    //!     The type of the random numbers returned (\c next()
-    //!     function).
+    //!     The type of the random numbers returned (or, which is the
+    //!     same, the return type of the \c next() function).
     //!
     //!     Guaranteed to be \e unsigned and different from \c char and
     //!     <code>unsigned char</code>.
@@ -70,7 +67,7 @@ public:
     //!     Note that the system entropy source may work on a smaller
     //!     type (typically <code>unsigned char</code>); but we don't
     //!     use \c char or <code>unsigned char</code> on the interface
-    //!     because we don't want things such as
+    //!     because we don't want things like
     //!
     //!     \code
     //!         std::cout << rnd.next() ;
@@ -84,20 +81,23 @@ public:
     class               exception ;
 
     //!     Acquires the resource(s) necessary to generate random
-    //!     numbers. May throw an \c entropy_source::exception or a
-    //!     \c std::bad_alloc.
+    //!     numbers.
+    //!
+    //!     \par Exceptions
+    //!         May throw an \c entropy_source::exception or a \c
+    //!         std::bad_alloc.
     // -----------------------------------------------------------------------
                         entropy_source() ;
 
-    //!     Calls \c release() ignoring its return value, and destroys
+    //!     Calls \c release(), ignoring its return value, and destroys
     //!     the object.
     // -----------------------------------------------------------------------
                         ~entropy_source() noexcept ;
 
     //!     \return
-    //!         A new random value, evenly distributed in [min(),
-    //!         max()]. Each call gives, with overwhelming probability,
-    //!         a different value.
+    //!         A new random value, evenly distributed in <tt>[min(),
+    //!         max()]</tt>. Each call gives, with overwhelming
+    //!         probability, a different value.
     // -----------------------------------------------------------------------
     result_type         next() ;
 
@@ -108,12 +108,12 @@ public:
     result_type         min BREATH_PREVENT_MACRO_EXPANSION () const noexcept ;
 
     //!     \return
-    //!         The maximum random number that can be emitted.
+    //!         The maximum random number that can be emitted
+    //!         (typically, <tt>255</tt>).
     // -----------------------------------------------------------------------
     result_type         max BREATH_PREVENT_MACRO_EXPANSION () const noexcept ;
 
-    //!     \return
-    //!         A new random value: the same as \c next().
+    //!     The same as \c next().
     // -----------------------------------------------------------------------
     result_type         operator ()() ;
 
@@ -123,8 +123,8 @@ public:
     // -----------------------------------------------------------------------
     result_type         operator ()( result_type maximum ) ;
 
-    //!     Releases the system resource(s) associated with this
-    //!     object (usually a file or a handle).
+    //!     Releases the system resource(s) associated with this object
+    //!     (usually a file or a handle).
     //!
     //!     \return
     //!         \c true if and only if the resource(s) were successfully
