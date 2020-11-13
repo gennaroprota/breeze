@@ -77,13 +77,6 @@ last_api_error::last_api_error( char const * p )
 {
 }
 
-last_api_error::last_api_error( last_api_error const & other ) noexcept
-    :   base_type( other ), m_last_error( other.m_last_error )
-{
-}
-
-last_api_error::~last_api_error() noexcept = default ;
-
 last_api_error::last_api_error( char const * p, long long error_code )
     :   base_type( format_message( p, error_code ) ),
         m_last_error( error_code )
