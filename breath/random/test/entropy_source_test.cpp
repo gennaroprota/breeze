@@ -13,6 +13,9 @@
 
 #include "breath/random/entropy_source.hpp"
 #include "breath/testing/testing.hpp"
+#include <algorithm>
+#include <numeric>
+#include <vector>
 
 int                 test_entropy_source() ;
 
@@ -40,6 +43,30 @@ do_test()
     BREATH_CHECK( ! source.release() ) ;
 }
 
+template< typename RandomIter >
+void
+all_elements_do_appear_and_once( RandomIter begin, RandomIter end )
+{
+    auto const          count = end - begin ;
+    for ( int i = 0 ; i < count ; ++ i ) {
+        BREATH_CHECK( std::count( begin, end, i ) == 1 ) ;
+    }
+}
+
+void
+entropy_source_is_usable_with_shuffle()
+{
+    //      Note how we test with more than 256 elements (entropy_source
+    //      currently generates numbers from 0 to 255).
+    // -----------------------------------------------------------------------
+    int const           count = 300 ;
+    std::vector< int >  v( count ) ;
+    std::iota( v.begin(), v.end(), 0 ) ;
+    std::shuffle( v.begin(), v.end(), breath::entropy_source() ) ;
+
+    all_elements_do_appear_and_once( v.cbegin(), v.cend() ) ;
+}
+
 }
 
 int
@@ -49,7 +76,8 @@ test_entropy_source()
 
     return test_runner::instance().run(
              "entropy_source",
-             { do_test } ) ;
+             { do_test,
+               entropy_source_is_usable_with_shuffle } ) ;
 }
 
 // Local Variables:
