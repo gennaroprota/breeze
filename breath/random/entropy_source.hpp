@@ -105,13 +105,15 @@ public:
     //!         The minimum random number that can be emitted, i.e.
     //!         zero.
     // -----------------------------------------------------------------------
-    result_type         min BREATH_PREVENT_MACRO_EXPANSION () const noexcept ;
+    static constexpr result_type
+                        min BREATH_PREVENT_MACRO_EXPANSION () noexcept ;
 
     //!     \return
     //!         The maximum random number that can be emitted
     //!         (typically, <tt>255</tt>).
     // -----------------------------------------------------------------------
-    result_type         max BREATH_PREVENT_MACRO_EXPANSION () const noexcept ;
+    static constexpr result_type
+                        max BREATH_PREVENT_MACRO_EXPANSION () noexcept ;
 
     //!     The same as \c next().
     // -----------------------------------------------------------------------
@@ -163,6 +165,7 @@ public:
 
 }
 
+#include "brt/entropy_source.ipp"
 #endif
 
 // Local Variables:

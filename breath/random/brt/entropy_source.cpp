@@ -14,7 +14,6 @@
 #include "breath/random/entropy_source.hpp"
 #include "breath/porting/dependent_code.hpp"
 #include BREATH_DEPENDENT_CODE( system, entropy_source.cpp )
-#include "breath/preprocessing/prevent_macro_expansion.hpp"
 #include "breath/random/subrange_adaptor.hpp"
 
 namespace breath_ns {
@@ -39,18 +38,6 @@ bool
 entropy_source::release() noexcept
 {
     return m_impl->release() ;
-}
-
-entropy_source::result_type
-entropy_source::min BREATH_PREVENT_MACRO_EXPANSION () const noexcept
-{
-    return m_impl->minimum() ;
-}
-
-entropy_source::result_type
-entropy_source::max BREATH_PREVENT_MACRO_EXPANSION () const noexcept
-{
-    return m_impl->maximum() ;
 }
 
 entropy_source::result_type

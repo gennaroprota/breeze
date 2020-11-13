@@ -14,12 +14,10 @@
 #include "breath/random/entropy_source.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
-#include "breath/preprocessing/prevent_macro_expansion.hpp"
 
 #include <Windows.h>
 #include <wincrypt.h>
 
-#include <limits>
 #include <string>
 #include <vector>
 
@@ -42,9 +40,6 @@ public:
     result_type         next() ;
     bool                release() noexcept ;
 
-    result_type         minimum() const noexcept ;
-    result_type         maximum() const noexcept ;
-
 private:
     bool                acquire( DWORD flags = 0 ) ;
     bool                is_released() const noexcept ;
@@ -64,20 +59,6 @@ entropy_source::impl::impl()
     //      no way it could be used.
     // -----------------------------------------------------------------------
     m_handle_is_valid = true ;
-}
-
-entropy_source::result_type
-entropy_source::impl::minimum() const noexcept
-{
-    return 0 ;
-}
-
-entropy_source::result_type
-entropy_source::impl::maximum() const noexcept
-{
-    return static_cast< entropy_source::result_type >(
-        std::numeric_limits< BYTE >::max BREATH_PREVENT_MACRO_EXPANSION ()
-        ) ;
 }
 
 bool

@@ -35,8 +35,6 @@ public:
                         ~impl() noexcept ;
     bool                release() noexcept ;
     result_type         next() ;
-    result_type         minimum() const noexcept ;
-    result_type         maximum() const noexcept ;
 
 private:
     bool                is_open() const noexcept ;
@@ -77,18 +75,6 @@ entropy_source::impl::next()
     unsigned char       buffer[ 1 ] ;
     to_buffer( &buffer[ 0 ], breath::signed_count( buffer ) ) ;
     return buffer[ 0 ] ;
-}
-
-entropy_source::result_type
-entropy_source::impl::minimum() const noexcept
-{
-    return 0 ;
-}
-
-entropy_source::result_type
-entropy_source::impl::maximum() const noexcept
-{
-    return 255 ;
 }
 
 bool
