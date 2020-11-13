@@ -21,6 +21,7 @@
 *.cpp       text
 GNUmakefile text
 *.hpp       text
+*.ipp       text
 *.tpp       text
 *.css       text
 *.el        text

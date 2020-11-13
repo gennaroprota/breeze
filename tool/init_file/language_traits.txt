@@ -48,7 +48,7 @@
 \.asm$                  /*       */       #          Asm
 \.awk$                  no       no       #          AWK
 \.bat$                  no       no       rem        Batch
-\.[cht]pp$              /*       */       //         C++
+\.[chit]pp$             /*       */       //         C++
 \.css$                  /*       */       no         CSS
 \.el$                   no       no       ;;         Emacs-Lisp
 \.html$                 <!--     -->      no         HTML
