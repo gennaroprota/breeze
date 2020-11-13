@@ -163,7 +163,7 @@ public:
     //!     \note
     //!         No iterators are invalidated.
     // -----------------------------------------------------------------------
-    set_of_chars &      add( char const * s ) noexcept ;
+    set_of_chars &      add( char const * s ) ;
 
     //!     Adds all the characters in \c s to the set.
     //!
@@ -198,7 +198,7 @@ public:
     //!         All iterators referring to removed characters are
     //!         invalidated.
     // -----------------------------------------------------------------------
-    set_of_chars &      remove( char const * s ) noexcept ;
+    set_of_chars &      remove( char const * s ) ;
 
     //!     Removes all the characters in \c s from the set.
     //!
@@ -311,7 +311,7 @@ public:
         index_type          m_index ;
 
         void                increment() noexcept ;
-        void                assert_refers_to_a_char() const noexcept ;
+        void                assert_refers_to_a_char() const ;
     } ;
 } ;
 

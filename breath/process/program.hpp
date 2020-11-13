@@ -132,7 +132,7 @@ public:
     //!     (when the gravity is \c fatal) or \c std::abort() (when it
     //!     is \c internal).
     // -----------------------------------------------------------------------
-    void                declare_error( gravity g ) noexcept ;
+    void                declare_error( gravity g ) ;
 
     //!     Triggers the termination of the program with the exit
     //!     code which corresponds to the maximum value seen until

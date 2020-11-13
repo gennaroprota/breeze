@@ -106,7 +106,7 @@ set_of_chars::add( char c ) noexcept
 }
 
 set_of_chars &
-set_of_chars::add( char const * s ) noexcept
+set_of_chars::add( char const * s )
 {
     BREATH_ASSERT( s != nullptr ) ;
 
@@ -134,7 +134,7 @@ set_of_chars::remove( char c ) noexcept
 }
 
 set_of_chars &
-set_of_chars::remove( char const * s ) noexcept
+set_of_chars::remove( char const * s )
 {
     BREATH_ASSERT( s != nullptr ) ;
 
@@ -272,7 +272,7 @@ set_of_chars::iterator::increment() noexcept
 }
 
 void
-set_of_chars::iterator::assert_refers_to_a_char() const noexcept
+set_of_chars::iterator::assert_refers_to_a_char() const
 {
     BREATH_ASSERT( m_index < set_of_chars::size ) ;
 

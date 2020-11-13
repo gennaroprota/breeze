@@ -33,7 +33,7 @@ namespace breath_ns {
 //!         the compiler does not yet implement \c constexpr functions
 //!         as generalized in C++14.
 // ---------------------------------------------------------------------------
-constexpr int       integer_log2( std::intmax_t x ) noexcept ;
+constexpr int       integer_log2( std::intmax_t x ) ;
 
 }
 

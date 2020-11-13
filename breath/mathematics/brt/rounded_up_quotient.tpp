@@ -12,7 +12,7 @@ namespace breath_ns {
 
 template< typename Integer >
 constexpr Integer
-rounded_up_quotient( Integer a, Integer b ) noexcept
+rounded_up_quotient( Integer a, Integer b )
 {
     BREATH_ASSERT( b != 0 ) ;
 

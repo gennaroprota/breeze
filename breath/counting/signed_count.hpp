@@ -18,9 +18,7 @@
 //!     Following C++ best practices, these templates return a \e signed
 //!     integer. They are made obsolete in C++20 by the namespace-scope
 //!     \c std::ssize()'s. However our version avoids any fancy
-//!     derivation of the return type, even for containers; and, for
-//!     containers again, has a conditional noexcept that the standard
-//!     version is not required to have.
+//!     derivation of the return type, even for containers.
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
@@ -57,7 +55,7 @@ signed_count( T const ( & )[ n ] ) noexcept
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr std::ptrdiff_t
-signed_count( T const & t ) noexcept( noexcept( t.size() ) )
+signed_count( T const & t )
 {
     typedef std::ptrdiff_t
                         return_type ;

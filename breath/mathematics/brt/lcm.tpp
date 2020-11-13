@@ -15,7 +15,7 @@ namespace breath_ns {
 
 template< typename M, typename N >
 constexpr std::common_type_t< M, N >
-lcm( M a, N b ) noexcept
+lcm( M a, N b )
 {
     using gcd_lcm_private::check_common_gcd_lcm_preconditions ;
     using gcd_lcm_private::absolute_value ;

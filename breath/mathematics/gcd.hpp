@@ -22,8 +22,7 @@ namespace breath_ns {
 //      ======
 //
 //!     This template follows the C++ Library Fundamental TS v2, as of
-//!     May 14, 2016. (It adds, as allowed, a \c noexcept
-//!     specification.)
+//!     May 14, 2016.
 //!
 //!     If either \c M or \c N is not an integral type the program is
 //!     ill-formed. If \c |m| is not representable as a value of type \c
@@ -39,7 +38,7 @@ namespace breath_ns {
 // ---------------------------------------------------------------------------
 template< typename M, typename N >
 constexpr std::common_type_t< M, N >
-                    gcd( M m, N n ) noexcept ;
+                    gcd( M m, N n ) ;
 
 }
 

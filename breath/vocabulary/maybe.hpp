@@ -235,7 +235,7 @@ public:
     //!         - status() == status
     // -----------------------------------------------------------------------
     explicit            maybe( status_type status =
-                                          Traits::default_invalid() ) noexcept ;
+                                          Traits::default_invalid() ) ;
 
     //!     Constructs a valid \c maybe.
     //!
@@ -271,7 +271,7 @@ public:
     //!         - status() == status
     // -----------------------------------------------------------------------
     explicit            maybe( T && value, status_type status =
-                                            Traits::default_valid() ) noexcept ;
+                                            Traits::default_valid() ) ;
 
     //!     \post
     //!         - ! is_valid() || value() refers to a copy of
@@ -334,7 +334,7 @@ public:
     //!     \pre
     //!         is_valid()
     // -----------------------------------------------------------------------
-    T const &           value() const noexcept ;
+    T const &           value() const ;
 
     //!     \return
     //!         \c value() if \c is_valid(); otherwise \c default_value.
@@ -354,7 +354,7 @@ private:
     void                construct( T && value ) noexcept ;
     void                destroy() noexcept ;
 
-    T &                 non_const_value() noexcept ;
+    T &                 non_const_value() ;
 
     alignas( T ) unsigned char
                         m_storage[ sizeof( T ) ] ;

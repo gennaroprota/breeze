@@ -121,7 +121,7 @@ uuid::uuid( uuid::variant_type var, uuid::version_type ver )
 }
 
 uuid::variant_type
-uuid::variant() const noexcept
+uuid::variant() const
 {
     //      Reference: RFC 4122
     // -----------------------------------------------------------------------
@@ -140,7 +140,7 @@ uuid::variant() const noexcept
 }
 
 uuid::version_type
-uuid::version() const noexcept
+uuid::version() const
 {
     //      Reference: RFC 4122
     // -----------------------------------------------------------------------

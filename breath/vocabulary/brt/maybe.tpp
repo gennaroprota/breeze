@@ -13,7 +13,7 @@
 namespace breath_ns {
 
 template< typename T, typename Traits >
-maybe< T, Traits >::maybe( status_type status ) noexcept
+maybe< T, Traits >::maybe( status_type status )
     :   m_status( status ) // gps use std::move()?
 {
     BREATH_ASSERT( ! Traits::is_valid( status ) ) ;
@@ -29,7 +29,7 @@ maybe< T, Traits >::maybe( T const & value, status_type status )
 }
 
 template< typename T, typename Traits >
-maybe< T, Traits >::maybe( T && value, status_type status ) noexcept
+maybe< T, Traits >::maybe( T && value, status_type status )
     :   m_status( status ) // gps use std::move()?
 {
     BREATH_ASSERT( Traits::is_valid( status ) ) ;
@@ -154,7 +154,7 @@ maybe< T, Traits >::is_valid() const noexcept
 
 template< typename T, typename Traits >
 T const &
-maybe< T, Traits >::value() const noexcept
+maybe< T, Traits >::value() const
 {
     BREATH_ASSERT( is_valid() ) ;
     return *static_cast< T const * >(
@@ -193,7 +193,7 @@ maybe< T, Traits >::destroy() noexcept
 
 template< typename T, typename Traits >
 T &
-maybe< T, Traits >::non_const_value() noexcept
+maybe< T, Traits >::non_const_value()
 {
     BREATH_ASSERT( is_valid() ) ;
     return *static_cast< T * >( static_cast< void * >( &m_storage[ 0 ] ) ) ;

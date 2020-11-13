@@ -27,7 +27,7 @@ namespace breath_ns {
 //!         n >= 0 && base >= 2
 // ---------------------------------------------------------------------------
 template< typename T >
-constexpr int       digital_root( T n, int base = 10 ) noexcept ;
+constexpr int       digital_root( T n, int base = 10 ) ;
 
 }
 

@@ -37,7 +37,7 @@ namespace breath_ns {
 //!     </code>.
 // ---------------------------------------------------------------------------
 template< typename Integer >
-constexpr Integer   rounded_up_quotient( Integer a, Integer b ) noexcept ;
+constexpr Integer   rounded_up_quotient( Integer a, Integer b ) ;
 
 }
 

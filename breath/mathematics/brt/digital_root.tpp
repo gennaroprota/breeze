@@ -12,7 +12,7 @@ namespace breath_ns {
 
 template< typename T >
 constexpr int
-digital_root( T n, int base ) noexcept
+digital_root( T n, int base )
 {
     BREATH_ASSERT( n >= 0 && base >= 2 ) ;
 

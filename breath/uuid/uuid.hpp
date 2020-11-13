@@ -54,7 +54,7 @@ public:
     //!     \return
     //!         The variant of the uuid.
     // -----------------------------------------------------------------------
-    variant_type        variant() const noexcept ;
+    variant_type        variant() const ;
 
     //!     \pre
     //!         \c *this is not a nil uuid.
@@ -62,7 +62,7 @@ public:
     //!     \return
     //!         The version of the uuid.
     // -----------------------------------------------------------------------
-    version_type        version() const noexcept ;
+    version_type        version() const ;
 
     //!     A named alternative to the default constructor.
     //!
