@@ -71,8 +71,6 @@ public:
     // -----------------------------------------------------------------------
     long long           code() const noexcept ;
 
-    last_api_error &    operator =( last_api_error const & ) = delete ;
-
 private:
     typedef std::runtime_error
                         base_type ;
