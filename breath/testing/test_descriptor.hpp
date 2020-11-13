@@ -39,7 +39,7 @@ public:
                                          char const * name = "" ) ;
 
     //      Declare this explicitly, since, due to the user-declared
-    //      copy-assignment below, the implicit definition of the copy
+    //      copy assignment below, the implicit definition of the copy
     //      constructor as defaulted is deprecated.
     // -----------------------------------------------------------------------
                         test_descriptor( test_descriptor const & ) = default ;
