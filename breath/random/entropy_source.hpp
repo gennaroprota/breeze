@@ -96,8 +96,7 @@ public:
 
     //!     \return
     //!         A new random value, evenly distributed in <tt>[min(),
-    //!         max()]</tt>. Each call gives, with overwhelming
-    //!         probability, a different value.
+    //!         max()]</tt>.
     //!
     //!     \par Exceptions
     //!         An \c entropy_source::exception if the random number
