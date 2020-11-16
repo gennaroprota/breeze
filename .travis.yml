@@ -5,6 +5,11 @@
 #              (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
+#
+#       Configuration for Travis CI:
+#
+#         <https://travis-ci.com/gennaroprota/breath>.
+# ----------------------------------------------------------------------------
 
 language: cpp
 script: BREATH_ROOT=` pwd ` && export BREATH_ROOT && make
