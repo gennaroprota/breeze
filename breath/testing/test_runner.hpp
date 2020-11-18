@@ -62,7 +62,7 @@ test_runner::run( char const * group_description,
     for ( ; begin != end ; ++ begin, ++ test_number ) {
         try {
             m_reporter->on_test_begin( test_number ) ;
-            (begin->function())() ;
+            ( begin->function() )() ;
             m_reporter->on_test_passed( test_number ) ;
         } catch ( test_exception const & ex ) {
             exit_code = breath::exit_failure ;
