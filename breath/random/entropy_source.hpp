@@ -156,7 +156,10 @@ public:
     //!         none (reports via its return value)
     //!
     //!     \note
-    //!         This function may be called multiple times.
+    //!         This function may be called multiple times. After
+    //!         calling \c release(), the only functions that can be
+    //!         called on the object are \c release() and the
+    //!         destructor.
     // -----------------------------------------------------------------------
     bool                release() noexcept ;
 
