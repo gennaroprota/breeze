@@ -152,8 +152,8 @@ public:
     //!     \par Exceptions
     //!         none (reports via its return value)
     //!
-    //!     \warning
-    //!         You cannot reattempt a release if it already succeeded.
+    //!     \note
+    //!         This function may be called multiple times.
     // -----------------------------------------------------------------------
     bool                release() noexcept ;
 
