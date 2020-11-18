@@ -72,8 +72,8 @@ public:
 //!     signaled by James Kanze, and comes from
 //!
 //!     John J. Barton, Lee R. Nackman (1994).
-//!     Scientific and Engineering C++: An Introduction with Advanced
-//!     Techniques and Examples. Addison-Wesley Professional. ISBN
+//!     <i>Scientific and Engineering C++: An Introduction with Advanced
+//!     Techniques and Examples</i>. Addison-Wesley Professional. ISBN
 //!     0-201-53393-6.
 //!
 //!     which calls it "Fallible".
