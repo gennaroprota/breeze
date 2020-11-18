@@ -129,14 +129,12 @@ entropy_source::impl::~impl() noexcept
 [[ noreturn ]] void
 entropy_source::exception::raise( std::string const & message )
 {
-    std::string         what_msg = "Breath entropy_source: " +
+    std::string const   s = "Breath entropy_source: " +
                                         message + " - " ;
     last_api_error const
-                        err( "" ) ;
+                        err( s.c_str() ) ;
 
-    what_msg += err.what() ;
-
-    throw entropy_source::exception( what_msg ) ;
+    throw entropy_source::exception( err.what() ) ;
 }
 
 }
