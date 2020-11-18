@@ -125,6 +125,9 @@ public:
     //!     \return
     //!         A new random value in the range <code>[min(), maximum]
     //!         </code>.
+    //!
+    //!     \pre
+    //!         maximum <= max()
     // -----------------------------------------------------------------------
     result_type         operator ()( result_type maximum ) ;
 
