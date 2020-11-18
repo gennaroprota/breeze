@@ -176,7 +176,7 @@
     <ClCompile Include="..\..\..\breath\text\test\tail_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\random\test\subrange_max_test.cpp">
+    <ClCompile Include="..\..\..\breath\random\test\max_for_subrange_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breath\uuid\test\uuid_test.cpp">

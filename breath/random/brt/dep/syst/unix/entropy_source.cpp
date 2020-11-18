@@ -17,7 +17,7 @@
 #include "breath/random/entropy_source.hpp"
 #include "breath/counting/signed_count.hpp"
 #include "breath/diagnostics/assert.hpp"
-#include "breath/random/subrange_max.hpp"
+#include "breath/random/max_for_subrange.hpp"
 
 #include <cstddef>
 #include <cstdio>

@@ -24,7 +24,7 @@ namespace breath_ns {
 //!
 //!     Adapts a random or pseudorandom number generator to emit
 //!     numbers in a subrange of its original range (see the
-//!     subrange_max facility).
+//!     max_for_subrange facility).
 //!
 //!     \note
 //!         Does NOT support min != 0.

@@ -97,7 +97,7 @@ source_files := unit_test_main.cpp                          \
                 get_set_current_directory_test.cpp          \
                                                             \
                 entropy_source_test.cpp                     \
-                subrange_max_test.cpp                       \
+                max_for_subrange_test.cpp                   \
                                                             \
                 eof_value_test.cpp                          \
                 null_stream_test.cpp                        \

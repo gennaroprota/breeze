@@ -67,7 +67,7 @@
     <ClCompile Include="..\..\..\breath\preprocessing\test\stringize_test.cpp" />
     <ClCompile Include="..\..\..\breath\process\test\get_set_current_directory_test.cpp" />
     <ClCompile Include="..\..\..\breath\random\test\entropy_source_test.cpp" />
-    <ClCompile Include="..\..\..\breath\random\test\subrange_max_test.cpp" />
+    <ClCompile Include="..\..\..\breath\random\test\max_for_subrange_test.cpp" />
     <ClCompile Include="..\..\..\breath\stream\test\eof_value_test.cpp" />
     <ClCompile Include="..\..\..\breath\stream\test\null_stream_test.cpp" />
     <ClCompile Include="..\..\..\breath\stream\test\stream_equivalent_test.cpp" />

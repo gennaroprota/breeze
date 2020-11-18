@@ -11,10 +11,10 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/random/subrange_max.hpp"
+#include "breath/random/max_for_subrange.hpp"
 #include "breath/testing/testing.hpp"
 
-int                 test_subrange_max() ;
+int                 test_max_for_subrange() ;
 
 namespace {
 
@@ -33,18 +33,19 @@ do_test()
 
     };
     for ( auto const elem : values ) {
-        BREATH_CHECK( breath::subrange_max( elem.m, elem.x ) == elem.result ) ;
+        BREATH_CHECK( breath::max_for_subrange( elem.m, elem.x ) ==
+            elem.result ) ;
     }
 }
 
 }
 
 int
-test_subrange_max()
+test_max_for_subrange()
 {
     using namespace breath ;
 
-    return test_runner::instance().run( "subrange_max()", { do_test } ) ;
+    return test_runner::instance().run( "max_for_subrange()", { do_test } ) ;
 
 }
 

@@ -17,8 +17,8 @@
 
 namespace breath_ns {
 
-//      subrange_max():
-//      ===============
+//      max_for_subrange():
+//      ===================
 //
 //!     \return
 //!         The maximum value that can be kept (before taking the
@@ -29,7 +29,7 @@ namespace breath_ns {
 //!
 //!     Typical example: wanting a value in <tt>[0, 5]</tt> (dice) from
 //!     <tt>[0, RAND_MAX]</tt>; if e.g. <tt>RAND_MAX == 32767</tt> then
-//!     <tt>subrange_max(5, RAND_MAX)</tt> returns
+//!     <tt>max_for_subrange(5, RAND_MAX)</tt> returns
 //!
 //!         <tt>32765</tt>
 //!
@@ -58,7 +58,7 @@ namespace breath_ns {
 //!         0 <= x <= m   (i.e. destination range not wider
 //!                        than source one)
 // ---------------------------------------------------------------------------
-unsigned long       subrange_max( unsigned long x, unsigned long m ) ;
+unsigned long       max_for_subrange( unsigned long x, unsigned long m ) ;
 
 }
 

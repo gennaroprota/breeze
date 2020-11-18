@@ -8,7 +8,7 @@
 
 #include "breath/diagnostics/assert.hpp"
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
-#include "breath/random/subrange_max.hpp"
+#include "breath/random/max_for_subrange.hpp"
 
 namespace breath_ns {
 
@@ -32,7 +32,7 @@ subrange_adaptor< Engine >::next()
 
     auto                n = m_engine.next() ;
     unsigned long const sub_max =
-                    breath::subrange_max( m_max,
+                    breath::max_for_subrange( m_max,
                               m_engine.max BREATH_PREVENT_MACRO_EXPANSION () ) ;
     while ( n > sub_max ) {
         n = m_engine.next() ;

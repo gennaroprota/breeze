@@ -236,7 +236,7 @@
     <ClCompile Include="..\..\breath\process\brt\program_option.cpp" />
     <ClCompile Include="..\..\breath\process\brt\set_current_directory.cpp" />
     <ClCompile Include="..\..\breath\random\brt\entropy_source.cpp" />
-    <ClCompile Include="..\..\breath\random\brt\subrange_max.cpp" />
+    <ClCompile Include="..\..\breath\random\brt\max_for_subrange.cpp" />
     <ClCompile Include="..\..\breath\stream\brt\inserter.cpp" />
     <ClCompile Include="..\..\breath\stream\brt\null_stream.cpp" />
     <ClCompile Include="..\..\breath\testing\brt\stream_reporter.cpp" />
@@ -399,7 +399,7 @@
     <ClInclude Include="..\..\breath\process\set_current_directory.hpp" />
     <ClInclude Include="..\..\breath\random\entropy_source.hpp" />
     <ClInclude Include="..\..\breath\random\subrange_adaptor.hpp" />
-    <ClInclude Include="..\..\breath\random\subrange_max.hpp" />
+    <ClInclude Include="..\..\breath\random\max_for_subrange.hpp" />
     <ClInclude Include="..\..\breath\stream\eof_value.hpp" />
     <ClInclude Include="..\..\breath\stream\inserter.hpp" />
     <ClInclude Include="..\..\breath\stream\null_stream.hpp" />

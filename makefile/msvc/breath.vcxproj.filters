@@ -74,7 +74,7 @@
     <ClCompile Include="..\..\breath\random\brt\entropy_source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\random\brt\subrange_max.cpp">
+    <ClCompile Include="..\..\breath\random\brt\max_for_subrange.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breath\testing\brt\stream_reporter.cpp">
@@ -399,7 +399,7 @@
     <ClInclude Include="..\..\breath\random\subrange_adaptor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\random\subrange_max.hpp">
+    <ClInclude Include="..\..\breath\random\max_for_subrange.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\stream\eof_value.hpp">

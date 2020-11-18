@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breath/random/subrange_max.hpp"
+#include "breath/random/max_for_subrange.hpp"
 #include "breath/diagnostics/assert.hpp"
 
 namespace breath_ns {
@@ -38,7 +38,7 @@ namespace breath_ns {
 //      implementation below.
 // ---------------------------------------------------------------------------
 unsigned long
-subrange_max( unsigned long x, unsigned long m )
+max_for_subrange( unsigned long x, unsigned long m )
 {
     BREATH_ASSERT( x <= m ) ;
 

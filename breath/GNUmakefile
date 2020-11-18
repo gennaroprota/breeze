@@ -73,7 +73,7 @@ source_files := luhn.cpp                                    \
                 set_current_directory.cpp                   \
                                                             \
                 entropy_source.cpp                          \
-                subrange_max.cpp                            \
+                max_for_subrange.cpp                        \
                                                             \
                 inserter.cpp                                \
                 null_stream.cpp                             \
