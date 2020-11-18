@@ -27,14 +27,23 @@ do_test()
     breath::entropy_source
                         source ;
 
-    auto const          value = source.next() ;
-    BREATH_CHECK( source.min() <= value &&
-                    value <= source.max() ) ;
-
-    int const           maximum = 15 ;
-    auto const          capped_value = source( maximum ) ;
-    BREATH_CHECK( source.min() <= capped_value &&
-                    capped_value <= maximum ) ;
+    {
+        auto const          value = source.next() ;
+        BREATH_CHECK( source.min() <= value &&
+                        value <= source.max() ) ;
+    }
+    {
+        int const           maximum = 15 ;
+        auto const          capped_value = source( maximum ) ;
+        BREATH_CHECK( source.min() <= capped_value &&
+                        capped_value <= maximum ) ;
+    }
+    {
+        int const           minimum = 100 ;
+        int const           maximum = 200 ;
+        auto const          value = source( minimum, maximum ) ;
+        BREATH_CHECK( minimum <= value && value <= maximum ) ;
+    }
 
     BREATH_CHECK( source.release() ) ;
 

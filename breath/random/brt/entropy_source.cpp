@@ -54,6 +54,13 @@ entropy_source::operator ()( result_type maximum )
     return adaptor.next() ;
 }
 
+entropy_source::result_type
+entropy_source::operator ()( result_type minimum, result_type maximum )
+{
+    BREATH_ASSERT( minimum <= maximum ) ;
+    return operator ()( maximum - minimum ) + minimum ;
+}
+
 entropy_source::exception::
 exception( std::string const & msg )
     :   std::runtime_error( msg )

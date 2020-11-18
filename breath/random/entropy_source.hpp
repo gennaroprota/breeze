@@ -131,6 +131,17 @@ public:
     // -----------------------------------------------------------------------
     result_type         operator ()( result_type maximum ) ;
 
+    //!     \return
+    //!         A new random value in the range <code>[minimum, maximum]
+    //!         </code>.
+    //!
+    //!     \pre
+    //!         minimum <= maximum
+    //!         maximum - minimum <= max()
+    // -----------------------------------------------------------------------
+    result_type         operator ()( result_type minimum,
+                                     result_type maximum ) ;
+
     //!     Releases the system resource(s) associated with this object
     //!     (usually a file or a handle).
     //!
