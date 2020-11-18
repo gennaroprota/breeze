@@ -12,8 +12,8 @@
 //!     An extension of \c container::size() to cover both standard
 //!     containers and built-in arrays.
 //!
-//!     The syntax is, uniformly, \c breath::count( a ) regardless of
-//!     the actual type of \c a. See also begin_end.hpp.
+//!     The syntax is, uniformly, \c breath::signed_count( a )
+//!     regardless of the actual type of \c a. See also begin_end.hpp.
 //!
 //!     Following C++ best practices, these templates return a \e signed
 //!     integer. They are made obsolete in C++20 by the namespace-scope
