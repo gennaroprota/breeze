@@ -36,15 +36,15 @@ public:
     class status
     {
     public:
-        explicit            status( bool b ) noexcept : m_status( b ) {}
-        bool                m_status ;
+        explicit            status( bool b ) noexcept : value( b ) {}
+        bool                value ;
     } ;
 
     //!     See the \c maybe documentation.
     // -----------------------------------------------------------------------
     static bool         is_valid( status s ) noexcept
     {
-        return s.m_status ;
+        return s.value ;
     }
 
     //!     See the \c maybe documentation.
