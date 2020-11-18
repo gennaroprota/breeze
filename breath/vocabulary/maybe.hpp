@@ -71,10 +71,10 @@ public:
 //!     A class template to represent "possible" values. The idea was
 //!     signaled by James Kanze, and comes from
 //!
-//!         John J. Barton, Lee R. Nackman (1994).
-//!         Scientific and Engineering C++: An Introduction with
-//!         Advanced Techniques and Examples. Addison-Wesley
-//!         Professional. ISBN 0-201-53393-6.
+//!     John J. Barton, Lee R. Nackman (1994).
+//!     Scientific and Engineering C++: An Introduction with Advanced
+//!     Techniques and Examples. Addison-Wesley Professional. ISBN
+//!     0-201-53393-6.
 //!
 //!     which calls it "Fallible".
 //!     Basically: \c maybe< T > is used as return type for functions
