@@ -145,6 +145,9 @@ public:
     //!     Releases the system resource(s) associated with this object
     //!     (usually a file or a handle).
     //!
+    //!     This function is called by the destructor, but calling it
+    //!     manually allows checking for errors.
+    //!
     //!     \return
     //!         \c true if and only if the resource(s) were successfully
     //!         released.
