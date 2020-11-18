@@ -103,7 +103,6 @@ public:
 //!
 //!         - when you want to invoke a member function on the "real"
 //!           object:
-//!
 //!           \code
 //!               maybe< std::string > my_function() ;
 //!               my_function().size() ;        // error
