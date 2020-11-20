@@ -24,7 +24,7 @@ do_test()
     static struct {
         int m ;
         int x ;
-        unsigned int result ;
+        int result ;
     }                   values[] = {
         { 5, 32767, 32765 },
         { 5,   255,   251 },

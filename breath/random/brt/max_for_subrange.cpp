@@ -37,9 +37,10 @@ namespace breath_ns {
 //      division of m-x (which is non-negative) by x+1. Hence the
 //      implementation below.
 // ---------------------------------------------------------------------------
-unsigned long
-max_for_subrange( unsigned long x, unsigned long m )
+long
+max_for_subrange( long x, long m )
 {
+    BREATH_ASSERT( x >= 0 ) ;
     BREATH_ASSERT( x <= m ) ;
 
     // note how x+1 cannot overflow in its branch (because,

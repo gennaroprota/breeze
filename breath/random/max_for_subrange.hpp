@@ -58,7 +58,7 @@ namespace breath_ns {
 //!         0 <= x <= m   (i.e. destination range not wider
 //!                        than source one)
 // ---------------------------------------------------------------------------
-unsigned long       max_for_subrange( unsigned long x, unsigned long m ) ;
+long                max_for_subrange( long x, long m ) ;
 
 }
 
