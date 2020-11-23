@@ -22,8 +22,8 @@ void
 do_test()
 {
     static struct {
-        int m ;
         int x ;
+        int m ;
         int result ;
     }                   values[] = {
         { 5, 32767, 32765 },
@@ -33,7 +33,7 @@ do_test()
 
     };
     for ( auto const elem : values ) {
-        BREATH_CHECK( breath::max_for_subrange( elem.m, elem.x ) ==
+        BREATH_CHECK( breath::max_for_subrange( elem.x, elem.m ) ==
             elem.result ) ;
     }
 }
