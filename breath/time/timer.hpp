@@ -55,8 +55,10 @@ class timer
 public:
     //!     Deleted copy constructor.
     //!
+    //!     \par Rationale
+    //!
     //!     Specifying copy semantics for a timer is a bit difficult
-    //!     and, although it can probably be done, is not worth it, as
+    //!     and, although it can probably be done, it's not worth it, as
     //!     who would copy a timer or a timer policy, anyway? (A timer
     //!     will, in practice, always be used like a Python context.)
     // -----------------------------------------------------------------------
