@@ -13,6 +13,7 @@
 
 #include "breath/random/max_for_subrange.hpp"
 #include "breath/testing/testing.hpp"
+#include <climits>
 
 int                 test_max_for_subrange() ;
 
@@ -29,8 +30,9 @@ do_test()
         { 5, 32767, 32765 },
         { 5,   255,   251 },
         { 1,   255,   255 },
-        { 0,   255,   255 }
-
+        { 0,   255,   255 },
+        { 200, 300,   200 },
+        { 255, INT_MAX, INT_MAX }
     };
     for ( auto const elem : values ) {
         BREATH_CHECK( breath::max_for_subrange( elem.x, elem.m ) ==
