@@ -33,11 +33,9 @@ namespace breath_ns {
 //!      - As an exception type;
 //!
 //!        the idea is that after an unsuccessful API call you write:
-//!
 //!        \code
 //!            throw last_api_error( "<APIName>() failed" ) ;
 //!        \endcode
-//!
 //!        and you're done with error handling.
 //!
 //!      - As a convenience facility to get both the error code and the
