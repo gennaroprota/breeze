@@ -22,16 +22,17 @@ namespace {
 void
 do_test()
 {
-    static struct {
+    static struct
+    {
         int x ;
         int m ;
         int result ;
     }                   values[] = {
-        { 5, 32767, 32765 },
-        { 5,   255,   251 },
-        { 1,   255,   255 },
-        { 0,   255,   255 },
-        { 200, 300,   200 },
+        {   5,   32767,   32765 },
+        {   5,     255,     251 },
+        {   1,     255,     255 },
+        {   0,     255,     255 },
+        { 200,     300,     200 },
         { 255, INT_MAX, INT_MAX }
     };
     for ( auto const elem : values ) {
