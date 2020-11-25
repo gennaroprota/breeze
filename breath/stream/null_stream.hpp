@@ -77,12 +77,13 @@ private:
                         buffer_wrapper_type ;
 
 public:
-    //!\{
-    //!     Copy members are deleted.
+    //!     Deleted copy constructor.
     // -----------------------------------------------------------------------
                         null_stream( null_stream const & ) = delete ;
+
+    //!     Deleted copy assignment operator.
+    // -----------------------------------------------------------------------
     null_stream &       operator =(  null_stream const & ) = delete ;
-    //!\}
 
                         null_stream() ;
     virtual             ~null_stream() noexcept override = default ;

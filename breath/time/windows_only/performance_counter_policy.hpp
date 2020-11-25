@@ -27,13 +27,14 @@ namespace breath_ns {
 class performance_counter_policy
 {
 public:
-    //!\{
-    //!     Copy members are deleted.
+    //!     Deleted copy constructor.
     // -----------------------------------------------------------------------
     performance_counter_policy( performance_counter_policy const & ) = delete ;
+
+    //!     Deleted copy assignment operator.
+    // -----------------------------------------------------------------------
     performance_counter_policy &
                     operator =( performance_counter_policy const & ) = delete ;
-    //!\}
 
     typedef std::chrono::duration< double, std::micro >
                         duration_type ;

@@ -91,13 +91,14 @@ public:
         typename Stream::traits_type >
                         stream_type ;
 
-    //!\{
-    //!     Copy members are deleted.
+    //!     Deleted copy constructor.
     // -----------------------------------------------------------------------
                         stream_equivalent( stream_equivalent const & )
                                                                 = delete ;
+
+    //!     Deleted copy assignment operator.
+    // -----------------------------------------------------------------------
     stream_equivalent & operator =( stream_equivalent const & ) = delete ;
-    //!\}
 
     explicit            stream_equivalent( Stream & original ) ;
                         ~stream_equivalent() noexcept ;

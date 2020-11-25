@@ -25,12 +25,13 @@ namespace breath_ns {
 class test_runner
 {
 public:
-    //!\{
-    //!     Copy members are deleted (this class is a singleton).
+    //!     Deleted copy constructor (this class is a singleton).
     // -----------------------------------------------------------------------
                     test_runner( test_runner const & ) = delete ;
+
+    //!     Deleted copy assignment operator (this class is a singleton).
+    // -----------------------------------------------------------------------
     test_runner &   operator =(  test_runner const & ) = delete ;
-    //!\}
 
 private:
                     test_runner() ;

@@ -53,8 +53,7 @@ template< class Device >
 class timer
 {
 public:
-    //!\{
-    //!     Copy members are deleted.
+    //!     Deleted copy constructor.
     //!
     //!     Specifying copy semantics for a timer is a bit difficult
     //!     and, although it can probably be done, is not worth it, as
@@ -62,8 +61,14 @@ public:
     //!     will, in practice, always be used like a Python context.)
     // -----------------------------------------------------------------------
                         timer(      timer const & ) = delete ;
+
+    //!     Deleted copy assignment operator.
+    //!
+    //!     See the documentation of the (deleted) copy constructor for
+    //!     the rationale.
+    // -----------------------------------------------------------------------
+
     timer &             operator =( timer const & ) = delete ;
-    //!\}
 
     typedef typename Device::duration_type
                         duration_type ;

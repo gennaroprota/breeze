@@ -30,12 +30,13 @@ namespace breath_ns {
 class program
 {
 public:
-    //!\{
-    //!     Copy members are deleted (this class is a singleton).
+    //!     Deleted copy constructor (this class is a singleton).
     // -----------------------------------------------------------------------
                         program(    program const & ) = delete ;
+
+    //!     Deleted copy assignment operator (this class is a singleton).
+    // -----------------------------------------------------------------------
     program &           operator =( program const & ) = delete ;
-    //!\}
 
 private:
                         program() noexcept ;

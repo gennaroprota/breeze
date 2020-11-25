@@ -51,12 +51,13 @@ namespace breath_ns {
 class entropy_source
 {
 public:
-    //!\{
-    //!     Copy members are deleted.
+    //!     Deleted copy constructor.
     // -----------------------------------------------------------------------
                         entropy_source( entropy_source const & ) = delete ;
+
+    //!     Deleted copy assignment operator.
+    // -----------------------------------------------------------------------
     entropy_source &    operator =(     entropy_source const & ) = delete ;
-    //!\}
 
     //!     The type of the random numbers returned (or, which is the
     //!     same, the return type of the \c next() function).

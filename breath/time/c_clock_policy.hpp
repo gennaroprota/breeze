@@ -36,12 +36,13 @@ namespace breath_ns {
 class c_clock_policy
 {
 public:
-    //!\{
-    //!     Copy members are deleted.
+    //!     Deleted copy constructor.
     // -----------------------------------------------------------------------
                         c_clock_policy( c_clock_policy const & ) = delete ;
+
+    //!     Deleted copy assignment operator.
+    // -----------------------------------------------------------------------
     c_clock_policy &    operator =(     c_clock_policy const & ) = delete ;
-    //!\}
 
     //!     The type used to represent a duration.
     // -----------------------------------------------------------------------

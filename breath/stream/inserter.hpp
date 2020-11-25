@@ -75,12 +75,13 @@ public:
     explicit            inserter( std::ostream & dest,
                                   width_reset    wr = reset_width ) ;
 
-    //!\{
-    //!     Copy members are deleted.
+    //!     Deleted copy constructor.
     // -----------------------------------------------------------------------
                         inserter(   inserter const & ) = delete ;
+
+    //!     Deleted copy assignment operator.
+    // -----------------------------------------------------------------------
     inserter &          operator =( inserter const & ) = delete ;
-    //!\}
 
     //!     If \c sentry_is_ok() returns \c true, and \c reset_width was
     //!     passed to the constructor, sets the width of the destination

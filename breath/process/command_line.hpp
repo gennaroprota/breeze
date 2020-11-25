@@ -29,12 +29,13 @@ class               option_base ;
 class command_line
 {
 public:
-    //!\{
-    //!     Copy members are deleted (this class is a singleton).
+    //!     Deleted copy constructor (this class is a singleton).
     // -----------------------------------------------------------------------
                         command_line( command_line const & ) = delete ;
+
+    //!     Deleted copy assignment operator (this class is a singleton).
+    // -----------------------------------------------------------------------
     command_line &      operator =(   command_line const & ) = delete ;
-    //!\}
 
 private:
                         command_line() = default ;

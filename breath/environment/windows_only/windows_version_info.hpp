@@ -34,14 +34,15 @@ public:
     // -----------------------------------------------------------------------
                         ~windows_version_info() noexcept ;
 
-    //!\{
-    //!     Copy members are deleted.
+    //!     Deleted copy constructor.
     // -----------------------------------------------------------------------
                         windows_version_info( windows_version_info const & )
                                                                    = delete ;
+
+    //!     Deleted copy assignment operator.
+    // -----------------------------------------------------------------------
     windows_version_info &
                         operator =( windows_version_info const & ) = delete ;
-    //!\}
 
     //!     \return
     //!         The major version number of the operating system.

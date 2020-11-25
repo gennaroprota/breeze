@@ -36,12 +36,13 @@ template< typename T >
 class auto_array
 {
 public:
-    //!\{
-    //!     Copy members are deleted.
+    //!     Deleted copy constructor.
     // -----------------------------------------------------------------------
                         auto_array( auto_array const & ) = delete ;
+
+    //!     Deleted copy assignment operator.
+    // -----------------------------------------------------------------------
     auto_array &        operator =( auto_array const & ) = delete ;
-    //!\}
 
                         auto_array() noexcept ;
     explicit            auto_array( T * ) noexcept ;
