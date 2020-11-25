@@ -8,18 +8,18 @@
 # ____________________________________________________________________________
 #
 #       This script must be used to initialize all text files intended
-#       for Breath. It ensures, among other things, that our copyright
+#       for Breeze. It ensures, among other things, that our copyright
 #       notice and license reference (plus, guards for C++ includes) are
 #       inserted. See the documentation for further details.
 # ----------------------------------------------------------------------------
 
 set -eu
 
-.   "$BREATH_ROOT/tool/shell/copyright.shc"
-.   "$BREATH_ROOT/tool/shell/file_name.shc"
-.   "$BREATH_ROOT/tool/shell/new_line.shc"
-.   "$BREATH_ROOT/tool/shell/script.shc"
-.   "$BREATH_ROOT/tool/shell/string.shc"
+.   "$BREEZE_ROOT/tool/shell/copyright.shc"
+.   "$BREEZE_ROOT/tool/shell/file_name.shc"
+.   "$BREEZE_ROOT/tool/shell/new_line.shc"
+.   "$BREEZE_ROOT/tool/shell/script.shc"
+.   "$BREEZE_ROOT/tool/shell/string.shc"
 
 make_opening_line()
 {
@@ -79,16 +79,16 @@ dump()
     width=` get_line_width `                \
     comment_pattern="$comment_pattern"      \
     alignment="$2"                          \
-                  awk -f "$BREATH_ROOT/tool/init_file/dump_with_prefix.awk" "$1"
+                  awk -f "$BREEZE_ROOT/tool/init_file/dump_with_prefix.awk" "$1"
 }
 
 
 
 #       Main
 # ============================================================================
-if [ -z "$BREATH_ROOT" ] || [ -z "$BREATH_CONTRIBUTOR" ]
+if [ -z "$BREEZE_ROOT" ] || [ -z "$BREEZE_CONTRIBUTOR" ]
 then
-    quit_script '$BREATH_ROOT or $BREATH_CONTRIBUTOR not defined or empty'
+    quit_script '$BREEZE_ROOT or $BREEZE_CONTRIBUTOR not defined or empty'
 fi
 
 full_path="$1"
@@ -105,7 +105,7 @@ fi
 #       the relevant data about it.
 # ----------------------------------------------------------------------------
 language=""
-traits_file="$BREATH_ROOT/tool/init_file/language_traits.txt"
+traits_file="$BREEZE_ROOT/tool/init_file/language_traits.txt"
 comment_pattern='^[:space:]*#'
 
 eval ` awk '
@@ -134,8 +134,8 @@ then
     prefix="$line_comment_start"
 fi
 
-tool_root="$BREATH_ROOT/tool"
-exe_root="$BREATH_ROOT/bin"
+tool_root="$BREEZE_ROOT/tool"
+exe_root="$BREEZE_ROOT/bin"
 
 #       Header
 # ----------------------------------------------------------------------------
@@ -154,7 +154,7 @@ width=` get_line_width `
     fi
 
     printf '%s\n' "$row1"
-    make_copyright_notice "$BREATH_CONTRIBUTOR"
+    make_copyright_notice "$BREEZE_CONTRIBUTOR"
     new_line '1'
     cat "$tool_root/init_file/license_reference.txt"
     printf '%s\n' "$row2"
@@ -188,15 +188,15 @@ then
         if [ -x "$exe_root/include_guard" ]
         then
             new_line 1
-            (printf '\n#include "breath/top_level_namespace.hpp"\n';
-             printf '\nnamespace breath_ns {'; new_line "$blank_lines"; printf '}\n') |
+            (printf '\n#include "breeze/top_level_namespace.hpp"\n';
+             printf '\nnamespace breeze_ns {'; new_line "$blank_lines"; printf '}\n') |
                 "$exe_root/include_guard"
             new_line 1
         else
             printf '%s\n' "Cannot find or execute the include_guard tool. Did you build it?"
         fi
     else
-        printf '\nnamespace breath_ns {\n\n}\n\n'
+        printf '\nnamespace breeze_ns {\n\n}\n\n'
     fi
 else
     new_line "$blank_lines"

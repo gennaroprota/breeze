@@ -19,9 +19,9 @@ target        := $(bin_dir)/$(exe_base_name)$(exe_name_suffix)
 .PHONY: all
 all: $(target)
 
-breath_library := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
+breeze_library := $(bin_dir)/$(library_name_prefix)breeze$(library_name_suffix)
 
-$(target): $(object_files) $(breath_library)
+$(target): $(object_files) $(breeze_library)
 	$(link_to_exec)
 
 .PHONY: clean

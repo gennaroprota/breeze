@@ -14,184 +14,184 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\breath\diagnostics\test\assert_test.cpp">
+    <ClCompile Include="..\..\..\breeze\diagnostics\test\assert_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\memory\test\auto_array_test.cpp">
+    <ClCompile Include="..\..\..\breeze\memory\test\auto_array_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\path\test\base_file_name_test.cpp">
+    <ClCompile Include="..\..\..\breeze\path\test\base_file_name_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\encoding\test\base64_to_binary_test.cpp">
+    <ClCompile Include="..\..\..\breeze\encoding\test\base64_to_binary_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\begins_with_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\begins_with_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\encoding\test\binary_to_base64_test.cpp">
+    <ClCompile Include="..\..\..\breeze\encoding\test\binary_to_base64_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\conversion\test\bit_cast_test.cpp">
+    <ClCompile Include="..\..\..\breeze\conversion\test\bit_cast_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\mathematics\test\clamp_test.cpp">
+    <ClCompile Include="..\..\..\breeze\mathematics\test\clamp_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\mathematics\test\count_bits_test.cpp">
+    <ClCompile Include="..\..\..\breeze\mathematics\test\count_bits_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\checksum\test\crc_test.cpp">
+    <ClCompile Include="..\..\..\breeze\checksum\test\crc_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\metric\test\damerau_levenshtein_distance_test.cpp">
+    <ClCompile Include="..\..\..\breeze\metric\test\damerau_levenshtein_distance_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\mathematics\test\digital_root_test.cpp">
+    <ClCompile Include="..\..\..\breeze\mathematics\test\digital_root_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\debugging\test\dump_expression_test.cpp">
+    <ClCompile Include="..\..\..\breeze\debugging\test\dump_expression_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\endianness\test\endian_codec_test.cpp">
+    <ClCompile Include="..\..\..\breeze\endianness\test\endian_codec_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\ends_with_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\ends_with_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\random\test\entropy_source_test.cpp">
+    <ClCompile Include="..\..\..\breeze\random\test\entropy_source_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\environment\test\environment_variable_consistency_test.cpp">
+    <ClCompile Include="..\..\..\breeze\environment\test\environment_variable_consistency_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\stream\test\eof_value_test.cpp">
+    <ClCompile Include="..\..\..\breeze\stream\test\eof_value_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\path\test\extension_test.cpp">
+    <ClCompile Include="..\..\..\breeze\path\test\extension_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\from_string_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\from_string_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\mathematics\test\gcd_test.cpp">
+    <ClCompile Include="..\..\..\breeze\mathematics\test\gcd_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\mathematics\extra\generate_bit_count_table.cpp">
+    <ClCompile Include="..\..\..\breeze\mathematics\extra\generate_bit_count_table.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\encoding\extra\generate_inverse_base64_table.cpp">
+    <ClCompile Include="..\..\..\breeze\encoding\extra\generate_inverse_base64_table.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\environment\test\get_environment_variable_test.cpp">
+    <ClCompile Include="..\..\..\breeze\environment\test\get_environment_variable_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\meta\test\is_2s_complement_test.cpp">
+    <ClCompile Include="..\..\..\breeze\meta\test\is_2s_complement_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\mathematics\test\lcm_test.cpp">
+    <ClCompile Include="..\..\..\breeze\mathematics\test\lcm_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\metric\test\levenshtein_distance_test.cpp">
+    <ClCompile Include="..\..\..\breeze\metric\test\levenshtein_distance_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\checksum\test\luhn_test.cpp">
+    <ClCompile Include="..\..\..\breeze\checksum\test\luhn_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\cryptography\test\merkle_damgard_hashing_test.cpp">
+    <ClCompile Include="..\..\..\breeze\cryptography\test\merkle_damgard_hashing_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\cryptography\test\nist_vectors_test.cpp">
+    <ClCompile Include="..\..\..\breeze\cryptography\test\nist_vectors_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\stream\test\null_stream_test.cpp">
+    <ClCompile Include="..\..\..\breeze\stream\test\null_stream_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\preprocessing\test\prevent_macro_expansion_test.cpp">
+    <ClCompile Include="..\..\..\breeze\preprocessing\test\prevent_macro_expansion_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\printable_string_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\printable_string_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\type_identification\test\readable_type_name_test.cpp">
+    <ClCompile Include="..\..\..\breeze\type_identification\test\readable_type_name_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\remove_from_end_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\remove_from_end_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\replace_all_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\replace_all_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\mathematics\test\representation_in_base_test.cpp">
+    <ClCompile Include="..\..\..\breeze\mathematics\test\representation_in_base_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\conversion\test\roman_test.cpp">
+    <ClCompile Include="..\..\..\breeze\conversion\test\roman_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\mathematics\test\rounded_up_quotient_test.cpp">
+    <ClCompile Include="..\..\..\breeze\mathematics\test\rounded_up_quotient_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\set_of_chars_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\set_of_chars_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\cryptography\test\sha384_test.cpp">
+    <ClCompile Include="..\..\..\breeze\cryptography\test\sha384_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\split_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\split_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\stream\test\stream_equivalent_test.cpp">
+    <ClCompile Include="..\..\..\breeze\stream\test\stream_equivalent_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\to_lowercase_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\to_lowercase_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\to_string_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\to_string_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\to_uppercase_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\to_uppercase_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\trim_head_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\trim_head_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\trim_tail_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\trim_tail_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\test\unit_test_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\cryptography\test\digest_ordering_test.cpp">
+    <ClCompile Include="..\..\..\breeze\cryptography\test\digest_ordering_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\mathematics\test\is_power_of_2_test.cpp">
+    <ClCompile Include="..\..\..\breeze\mathematics\test\is_power_of_2_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\preprocessing\test\stringize_after_expansion_test.cpp">
+    <ClCompile Include="..\..\..\breeze\preprocessing\test\stringize_after_expansion_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\preprocessing\test\stringize_test.cpp">
+    <ClCompile Include="..\..\..\breeze\preprocessing\test\stringize_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\text\test\tail_test.cpp">
+    <ClCompile Include="..\..\..\breeze\text\test\tail_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\random\test\max_for_subrange_test.cpp">
+    <ClCompile Include="..\..\..\breeze\random\test\max_for_subrange_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\uuid\test\uuid_test.cpp">
+    <ClCompile Include="..\..\..\breeze\uuid\test\uuid_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\vocabulary\test\maybe_test.cpp">
+    <ClCompile Include="..\..\..\breeze\vocabulary\test\maybe_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\counting\test\counter_test.cpp">
+    <ClCompile Include="..\..\..\breeze\counting\test\counter_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\diagnostics\test\last_api_error_test.cpp">
+    <ClCompile Include="..\..\..\breeze\diagnostics\test\last_api_error_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\process\test\get_set_current_directory_test.cpp">
+    <ClCompile Include="..\..\..\breeze\process\test\get_set_current_directory_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
   </ItemGroup>

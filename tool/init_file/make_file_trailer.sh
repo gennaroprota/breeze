@@ -9,7 +9,7 @@
 
 set -eu
 
-.   "$BREATH_ROOT/tool/shell/here_document.shc"
+.   "$BREEZE_ROOT/tool/shell/here_document.shc"
 
 
 language="$1"

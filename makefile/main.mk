@@ -104,8 +104,8 @@ cpp_options = $(cpp_basic_options)                  \
               $(include_switch)"$(include_dir)"     \
               $(cpp_preprocessing_defines)
 
-cpp_preprocessing_defines := -D BREATH_SYSTEM=$(system)      \
-                             -D BREATH_COMPILER=$(compiler)
+cpp_preprocessing_defines := -D BREEZE_SYSTEM=$(system)      \
+                             -D BREEZE_COMPILER=$(compiler)
 
 bin_root := $(root)/bin
 dependent_subdir := $(architecture)/$(system)/$(compiler)
@@ -162,7 +162,7 @@ include $(wildcard $(dependency_files))
 #
 #       For convenience, we provide two target names: 'documentation'
 #       and 'doc' (names meant for user consumption are almost never
-#       abbreviated in Breath, but the documentation folder name is; so,
+#       abbreviated in Breeze, but the documentation folder name is; so,
 #       some user will expect the full name, others will expect the same
 #       name as the folder).
 # ----------------------------------------------------------------------------

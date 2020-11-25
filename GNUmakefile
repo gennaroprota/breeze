@@ -6,10 +6,10 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 #
-#       Breath Library - Root makefile (for GNU Make)
+#       Breeze Library - Root makefile (for GNU Make)
 # ----------------------------------------------------------------------------
 
-subdirs := breath   \
+subdirs := breeze   \
            test     \
            tool
 

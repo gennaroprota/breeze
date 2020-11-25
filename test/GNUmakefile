@@ -9,38 +9,38 @@
 
 root := ..
 
-vpath %.cpp     $(root)/breath/algorithm/test               \
-                $(root)/breath/alignment/test               \
-                $(root)/breath/checksum/test                \
-                $(root)/breath/conversion/test              \
-                $(root)/breath/counting/test                \
-                $(root)/breath/cpu/test                     \
-                $(root)/breath/cryptography/test            \
-                $(root)/breath/debugging/test               \
-                $(root)/breath/diagnostics/test             \
-                $(root)/breath/encoding/test                \
-                $(root)/breath/endianness/test              \
-                $(root)/breath/environment/test             \
-                $(root)/breath/idiom/test                   \
-                $(root)/breath/iteration/test               \
-                $(root)/breath/mathematics/test             \
-                $(root)/breath/memory/test                  \
-                $(root)/breath/meta/test                    \
-                $(root)/breath/metric/test                  \
-                $(root)/breath/operator/test                \
-                $(root)/breath/path/test                    \
-                $(root)/breath/porting/test                 \
-                $(root)/breath/preprocessing/test           \
-                $(root)/breath/process/test                 \
-                $(root)/breath/random/test                  \
-                $(root)/breath/stream/test                  \
-                $(root)/breath/testing/test                 \
-                $(root)/breath/text/test                    \
-                $(root)/breath/time/test                    \
-                $(root)/breath/type_identification/test     \
-                $(root)/breath/uuid/test                    \
-                $(root)/breath/vocabulary/test              \
-                $(root)/breath/workaround/test
+vpath %.cpp     $(root)/breeze/algorithm/test               \
+                $(root)/breeze/alignment/test               \
+                $(root)/breeze/checksum/test                \
+                $(root)/breeze/conversion/test              \
+                $(root)/breeze/counting/test                \
+                $(root)/breeze/cpu/test                     \
+                $(root)/breeze/cryptography/test            \
+                $(root)/breeze/debugging/test               \
+                $(root)/breeze/diagnostics/test             \
+                $(root)/breeze/encoding/test                \
+                $(root)/breeze/endianness/test              \
+                $(root)/breeze/environment/test             \
+                $(root)/breeze/idiom/test                   \
+                $(root)/breeze/iteration/test               \
+                $(root)/breeze/mathematics/test             \
+                $(root)/breeze/memory/test                  \
+                $(root)/breeze/meta/test                    \
+                $(root)/breeze/metric/test                  \
+                $(root)/breeze/operator/test                \
+                $(root)/breeze/path/test                    \
+                $(root)/breeze/porting/test                 \
+                $(root)/breeze/preprocessing/test           \
+                $(root)/breeze/process/test                 \
+                $(root)/breeze/random/test                  \
+                $(root)/breeze/stream/test                  \
+                $(root)/breeze/testing/test                 \
+                $(root)/breeze/text/test                    \
+                $(root)/breeze/time/test                    \
+                $(root)/breeze/type_identification/test     \
+                $(root)/breeze/uuid/test                    \
+                $(root)/breeze/vocabulary/test              \
+                $(root)/breeze/workaround/test
 
 
 source_files := unit_test_main.cpp                          \
@@ -131,13 +131,13 @@ endif
 
 include $(root)/makefile/main.mk
 
-target := $(bin_dir)/breath_test$(exe_name_suffix)
+target := $(bin_dir)/breeze_test$(exe_name_suffix)
 object_files :=     \
     $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), $(source_files))
 
-breath_library := $(bin_dir)/$(library_name_prefix)breath$(library_name_suffix)
+breeze_library := $(bin_dir)/$(library_name_prefix)breeze$(library_name_suffix)
 
-$(target): $(object_files) $(breath_library)
+$(target): $(object_files) $(breeze_library)
 	$(link_to_exec)
 
 .PHONY: all test test-run
@@ -146,7 +146,7 @@ all:        test test-run
 test:       $(target)
 
 test-run:   test
-	$(bin_dir)/breath_test
+	$(bin_dir)/breeze_test
 
 .PHONY: clean
 clean:

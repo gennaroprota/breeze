@@ -6,8 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#ifndef BREATH_GUARD_6wcoEyV5QUsnWplOvviqZvbfmnCMU19g
-#define BREATH_GUARD_6wcoEyV5QUsnWplOvviqZvbfmnCMU19g
+#ifndef BREEZE_GUARD_6wcoEyV5QUsnWplOvviqZvbfmnCMU19g
+#define BREEZE_GUARD_6wcoEyV5QUsnWplOvviqZvbfmnCMU19g
 
 #include <string>
 

@@ -1,4 +1,4 @@
-The Breath library is made available subject to the terms of the 3-Clause BSD
+The Breeze library is made available subject to the terms of the 3-Clause BSD
 License, reproduced below.
 
 Notes:

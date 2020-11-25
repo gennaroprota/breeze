@@ -6,10 +6,10 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#ifndef BREATH_GUARD_lU2gmIzNvSwoDFBlIFUy6Z3fdnxfiNTi
-#define BREATH_GUARD_lU2gmIzNvSwoDFBlIFUy6Z3fdnxfiNTi
+#ifndef BREEZE_GUARD_lU2gmIzNvSwoDFBlIFUy6Z3fdnxfiNTi
+#define BREEZE_GUARD_lU2gmIzNvSwoDFBlIFUy6Z3fdnxfiNTi
 
-int                 test_breath_assert() ;
+int                 test_breeze_assert() ;
 int                 test_auto_array() ;
 int                 test_base_file_name() ;
 int                 test_base64_to_binary() ;
@@ -23,7 +23,7 @@ int                 test_crc() ;
 int                 test_damerau_levenshtein_distance() ;
 int                 test_digest_ordering() ;
 int                 test_digital_root() ;
-int                 test_breath_dump_expression() ;
+int                 test_breeze_dump_expression() ;
 int                 test_endian_codec() ;
 int                 test_ends_with() ;
 int                 test_entropy_source() ;
@@ -45,7 +45,7 @@ int                 test_maybe() ;
 int                 test_merkle_damgard_hashing() ;
 int                 test_nist_vectors() ;
 int                 test_null_stream() ;
-int                 test_breath_prevent_macro_expansion() ;
+int                 test_breeze_prevent_macro_expansion() ;
 int                 test_printable_string() ;
 int                 test_readable_type_name() ;
 int                 test_remove_from_end() ;
@@ -57,8 +57,8 @@ int                 test_set_of_chars() ;
 int                 test_sha384() ;
 int                 test_split() ;
 int                 test_stream_equivalent() ;
-int                 test_breath_stringize() ;
-int                 test_breath_stringize_after_expansion() ;
+int                 test_breeze_stringize() ;
+int                 test_breeze_stringize_after_expansion() ;
 int                 test_tail() ;
 int                 test_to_lowercase() ;
 int                 test_to_string() ;

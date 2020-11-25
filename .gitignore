@@ -7,7 +7,7 @@
 # ____________________________________________________________________________
 
 # ======================================
-# Breath-specific patterns
+# Breeze-specific patterns
 # ======================================
 
 # Directory for binary files
@@ -21,7 +21,7 @@
 .mkdep/
 
 # ======================================
-# Non-Breath-specific patterns
+# Non-Breeze-specific patterns
 # ======================================
 
 # Generic backup files

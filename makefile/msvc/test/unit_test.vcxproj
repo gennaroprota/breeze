@@ -19,75 +19,75 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\breath\checksum\test\crc_test.cpp" />
-    <ClCompile Include="..\..\..\breath\checksum\test\luhn_test.cpp" />
-    <ClCompile Include="..\..\..\breath\conversion\test\bit_cast_test.cpp" />
-    <ClCompile Include="..\..\..\breath\conversion\test\roman_test.cpp" />
-    <ClCompile Include="..\..\..\breath\counting\test\counter_test.cpp" />
-    <ClCompile Include="..\..\..\breath\cryptography\test\digest_ordering_test.cpp" />
-    <ClCompile Include="..\..\..\breath\cryptography\test\merkle_damgard_hashing_test.cpp" />
-    <ClCompile Include="..\..\..\breath\cryptography\test\nist_vectors_test.cpp" />
-    <ClCompile Include="..\..\..\breath\cryptography\test\sha384_test.cpp" />
-    <ClCompile Include="..\..\..\breath\debugging\test\dump_expression_test.cpp" />
-    <ClCompile Include="..\..\..\breath\diagnostics\test\assert_test.cpp" />
-    <ClCompile Include="..\..\..\breath\diagnostics\test\last_api_error_test.cpp" />
-    <ClCompile Include="..\..\..\breath\encoding\extra\generate_inverse_base64_table.cpp">
+    <ClCompile Include="..\..\..\breeze\checksum\test\crc_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\checksum\test\luhn_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\conversion\test\bit_cast_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\conversion\test\roman_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\counting\test\counter_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\cryptography\test\digest_ordering_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\cryptography\test\merkle_damgard_hashing_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\cryptography\test\nist_vectors_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\cryptography\test\sha384_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\debugging\test\dump_expression_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\diagnostics\test\assert_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\diagnostics\test\last_api_error_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\encoding\extra\generate_inverse_base64_table.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\encoding\test\base64_to_binary_test.cpp" />
-    <ClCompile Include="..\..\..\breath\encoding\test\binary_to_base64_test.cpp" />
-    <ClCompile Include="..\..\..\breath\endianness\test\endian_codec_test.cpp" />
-    <ClCompile Include="..\..\..\breath\environment\test\environment_variable_consistency_test.cpp" />
-    <ClCompile Include="..\..\..\breath\environment\test\get_environment_variable_test.cpp" />
-    <ClCompile Include="..\..\..\breath\mathematics\extra\generate_bit_count_table.cpp">
+    <ClCompile Include="..\..\..\breeze\encoding\test\base64_to_binary_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\encoding\test\binary_to_base64_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\endianness\test\endian_codec_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\environment\test\environment_variable_consistency_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\environment\test\get_environment_variable_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\mathematics\extra\generate_bit_count_table.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\mathematics\test\clamp_test.cpp" />
-    <ClCompile Include="..\..\..\breath\mathematics\test\count_bits_test.cpp" />
-    <ClCompile Include="..\..\..\breath\mathematics\test\digital_root_test.cpp" />
-    <ClCompile Include="..\..\..\breath\mathematics\test\gcd_test.cpp" />
-    <ClCompile Include="..\..\..\breath\mathematics\test\is_power_of_2_test.cpp" />
-    <ClCompile Include="..\..\..\breath\mathematics\test\lcm_test.cpp" />
-    <ClCompile Include="..\..\..\breath\mathematics\test\representation_in_base_test.cpp" />
-    <ClCompile Include="..\..\..\breath\mathematics\test\rounded_up_quotient_test.cpp" />
-    <ClCompile Include="..\..\..\breath\memory\test\auto_array_test.cpp" />
-    <ClCompile Include="..\..\..\breath\meta\test\is_2s_complement_test.cpp" />
-    <ClCompile Include="..\..\..\breath\metric\test\damerau_levenshtein_distance_test.cpp" />
-    <ClCompile Include="..\..\..\breath\metric\test\levenshtein_distance_test.cpp" />
-    <ClCompile Include="..\..\..\breath\path\test\base_file_name_test.cpp" />
-    <ClCompile Include="..\..\..\breath\path\test\extension_test.cpp" />
-    <ClCompile Include="..\..\..\breath\preprocessing\test\prevent_macro_expansion_test.cpp" />
-    <ClCompile Include="..\..\..\breath\preprocessing\test\stringize_after_expansion_test.cpp" />
-    <ClCompile Include="..\..\..\breath\preprocessing\test\stringize_test.cpp" />
-    <ClCompile Include="..\..\..\breath\process\test\get_set_current_directory_test.cpp" />
-    <ClCompile Include="..\..\..\breath\random\test\entropy_source_test.cpp" />
-    <ClCompile Include="..\..\..\breath\random\test\max_for_subrange_test.cpp" />
-    <ClCompile Include="..\..\..\breath\stream\test\eof_value_test.cpp" />
-    <ClCompile Include="..\..\..\breath\stream\test\null_stream_test.cpp" />
-    <ClCompile Include="..\..\..\breath\stream\test\stream_equivalent_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\begins_with_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\ends_with_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\from_string_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\printable_string_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\remove_from_end_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\replace_all_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\set_of_chars_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\split_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\tail_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\to_lowercase_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\to_string_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\to_uppercase_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\trim_head_test.cpp" />
-    <ClCompile Include="..\..\..\breath\text\test\trim_tail_test.cpp" />
-    <ClCompile Include="..\..\..\breath\type_identification\test\readable_type_name_test.cpp" />
-    <ClCompile Include="..\..\..\breath\uuid\test\uuid_test.cpp" />
-    <ClCompile Include="..\..\..\breath\vocabulary\test\maybe_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\mathematics\test\clamp_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\mathematics\test\count_bits_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\mathematics\test\digital_root_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\mathematics\test\gcd_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\mathematics\test\is_power_of_2_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\mathematics\test\lcm_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\mathematics\test\representation_in_base_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\mathematics\test\rounded_up_quotient_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\memory\test\auto_array_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\meta\test\is_2s_complement_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\metric\test\damerau_levenshtein_distance_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\metric\test\levenshtein_distance_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\path\test\base_file_name_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\path\test\extension_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\preprocessing\test\prevent_macro_expansion_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\preprocessing\test\stringize_after_expansion_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\preprocessing\test\stringize_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\process\test\get_set_current_directory_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\random\test\entropy_source_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\random\test\max_for_subrange_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\stream\test\eof_value_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\stream\test\null_stream_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\stream\test\stream_equivalent_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\begins_with_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\ends_with_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\from_string_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\printable_string_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\remove_from_end_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\replace_all_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\set_of_chars_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\split_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\tail_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\to_lowercase_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\to_string_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\to_uppercase_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\trim_head_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\text\test\trim_tail_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\type_identification\test\readable_type_name_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\uuid\test\uuid_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\vocabulary\test\maybe_test.cpp" />
     <ClCompile Include="..\..\..\test\unit_test_main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -173,9 +173,9 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BREEZE_SYSTEM=windows;BREEZE_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREATH_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREEZE_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <EnablePREfast>true</EnablePREfast>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
@@ -183,7 +183,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>breath.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>breeze.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutputPath)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -193,9 +193,9 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BREEZE_SYSTEM=windows;BREEZE_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREATH_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREEZE_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <EnablePREfast>true</EnablePREfast>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
@@ -204,7 +204,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutputPath)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>breath.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>breeze.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -215,9 +215,9 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BREEZE_SYSTEM=windows;BREEZE_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREATH_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREEZE_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <EnablePREfast>true</EnablePREfast>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
@@ -227,7 +227,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>breath.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>breeze.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutputPath)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -239,9 +239,9 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BREEZE_SYSTEM=windows;BREEZE_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREATH_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREEZE_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <EnablePREfast>true</EnablePREfast>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
@@ -252,7 +252,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutputPath)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>breath.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>breeze.lib;Version.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

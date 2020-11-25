@@ -24,9 +24,9 @@
 //      the input.
 // ---------------------------------------------------------------------------
 
-#include "breath/diagnostics/assert.hpp"
-#include "breath/text/remove_from_end.hpp"
-#include "breath/text/trim_tail.hpp"
+#include "breeze/diagnostics/assert.hpp"
+#include "breeze/text/remove_from_end.hpp"
+#include "breeze/text/trim_tail.hpp"
 
 #include <algorithm>
 #include <cstdio> // for EOF
@@ -76,9 +76,9 @@ read_all( std::istream & in )
         switch ( ch ) {
 
         case '\n':
-            line = breath::trim_tail( line ) ;
-            line = breath::remove_from_end( line, normal_line_terminator ) ;
-            line = breath::trim_tail( line ) ;
+            line = breeze::trim_tail( line ) ;
+            line = breeze::remove_from_end( line, normal_line_terminator ) ;
+            line = breeze::trim_tail( line ) ;
 
             result.push_back( line ) ;
             line.clear() ;
@@ -131,7 +131,7 @@ main()
     std::vector< std::string> const
                         lines( read_all( in ) ) ;
 
-    BREATH_ASSERT( lines.size() > 1 ) ;
+    BREEZE_ASSERT( lines.size() > 1 ) ;
 
     size_type const     max_length = max_element_length( lines ) ;
 

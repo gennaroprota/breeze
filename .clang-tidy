@@ -5,7 +5,7 @@
 #       bugprone-macro-parentheses:
 #
 #           Suggests parentheses around the parameters of
-#           BREATH_DEPENDENT_CODE() and similar (FWIW, PVS-Studio does
+#           BREEZE_DEPENDENT_CODE() and similar (FWIW, PVS-Studio does
 #           the same). Since I don't use macros when functions or
 #           function templates do, let's just silence this.
 #
@@ -37,7 +37,7 @@
 #       cppcoreguidelines-macro-usage:
 #
 #           Seems to trigger for *every* macro usage, including
-#           BREATH_ASSERT() and BREATH_DEPENDENT_CODE(). And suggests
+#           BREEZE_ASSERT() and BREEZE_DEPENDENT_CODE(). And suggests
 #           the possibility to use a constexpr template function :-s
 #
 #       fuchsia-default-arguments-calls:

@@ -8,11 +8,11 @@
 #
 #       Configuration for Travis CI:
 #
-#         <https://travis-ci.com/gennaroprota/breath>.
+#         <https://travis-ci.com/gennaroprota/breeze>.
 # ----------------------------------------------------------------------------
 
 language: cpp
-script: BREATH_ROOT=` pwd ` && export BREATH_ROOT && make
+script: BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
 
 matrix:
   #       TODO:

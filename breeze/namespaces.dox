@@ -1,0 +1,54 @@
+// ===========================================================================
+//                        Copyright 2020 Gennaro Prota
+//
+//                  Licensed under the 3-Clause BSD License.
+//             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>.)
+// ___________________________________________________________________________
+
+
+//!     The library's top-level namespace.
+// ---------------------------------------------------------------------------
+namespace breeze_ns {
+
+//!     \brief Internal namespace for facilities that must be protected
+//!            from ADL.
+//!
+//!     This namespace is \e not for user consumption and is for
+//!     internal Breeze usage when we want to protect users of a Breeze
+//!     component from \e unintended argument-dependent lookup in
+//!     namespace \c breeze. For an example, see equality_comparison.
+//!
+//!     This namespace won't normally contain any function or function
+//!     template, except for those that we \e do want to be found by ADL
+//!     (e.g. the operator functions declared by equality_comparable).
+//!     Thus, if e.g. a class is defined here, an argument of that class
+//!     type (or derived thereof) in an unqualified function call will
+//!     trigger ADL, but the lookup won't find any unintended function
+//!     or function template.
+//!
+//!     Users can just ignore this namespace, because the class name is
+//!     then imported in namespace \c breeze via a \c using or a \c
+//!     typedef (namespace \c breeze will not be searched by ADL).
+// ---------------------------------------------------------------------------
+namespace adl_shield {
+
+}
+
+//!     \brief Namespace for our meta-programming facilities.
+//!
+//!     This namespace also hosts the meta-programming facilities
+//!     designed before C++ had \c constexpr.
+// ---------------------------------------------------------------------------
+namespace meta {
+
+}
+
+}
+
+// Local Variables:
+// mode: doxymacs??? --- TODO
+// indent-tabs-mode: nil
+// c-basic-offset: 4
+// End:
+// vim: set ft=doxygen et sts=4 sw=4:

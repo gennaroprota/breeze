@@ -3,7 +3,7 @@
 #   <https://www.viva64.com/en/b/0457/>.
 #
 # Paul Eremeeff of PVS-Studio said me I could use this comment, even if
-# Breath allows commercial usage.
+# Breeze allows commercial usage.
 #
 # Here's the quote (mail with subject "A report and a question", dated
 # March 20, 2017):

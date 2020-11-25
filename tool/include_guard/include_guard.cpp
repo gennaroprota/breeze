@@ -38,7 +38,7 @@
 //        -p or --prefix
 //
 //          The prefix to use for the generated macro name. Default =
-//          BREATH_.
+//          BREEZE_.
 //
 //          Prefixes which would make the macro name reserved are
 //          rejected.
@@ -66,9 +66,9 @@
 // ---------------------------------------------------------------------------
 
 #include "tool/include_guard/macro_name.hpp"
-#include "breath/process/command_line.hpp"
-#include "breath/process/program.hpp"
-#include "breath/process/program_option.hpp"
+#include "breeze/process/command_line.hpp"
+#include "breeze/process/program.hpp"
+#include "breeze/process/program_option.hpp"
 
 #include <cstdio> // for EOF
 #include <exception>
@@ -79,18 +79,18 @@
 
 namespace {
 
-breath::default_reader< std::string >
+breeze::default_reader< std::string >
                     option_reader ;
-breath::program_option_with_value< std::string >
-                    prefix_option( "prefix", 'p', false, "BREATH_GUARD_", "macro prefix", option_reader ) ;
+breeze::program_option_with_value< std::string >
+                    prefix_option( "prefix", 'p', false, "BREEZE_GUARD_", "macro prefix", option_reader ) ;
 
 }
 
 int
 main( int argc, char ** argv )
 {
-    using               breath::command_line ;
-    using               breath::program ;
+    using               breeze::command_line ;
+    using               breeze::program ;
 
     try {
         command_line::instance().parse_check( argc, argv ) ;

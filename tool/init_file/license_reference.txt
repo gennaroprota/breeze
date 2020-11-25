@@ -1,5 +1,5 @@
 #       Note that the name of the license file is explicitly
-#       mentioned, and unambiguous. This is IMHO very useful if Breath
+#       mentioned, and unambiguous. This is IMHO very useful if Breeze
 #       is distributed together with software having a different
 #       license.
 # ----------------------------------------------------------------------------

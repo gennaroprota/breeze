@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 
 #include "unit_test_main.hpp"
-#include "breath/environment/operating_system_name.hpp"
+#include "breeze/environment/operating_system_name.hpp"
 #include <cstdlib>
 #include <iostream>
 
@@ -23,7 +23,7 @@ main()
 
     test_function_type * const
                         tests[] = {
-            test_breath_assert,
+            test_breeze_assert,
             test_auto_array,
             test_base_file_name,
             test_base64_to_binary,
@@ -37,7 +37,7 @@ main()
             test_damerau_levenshtein_distance,
             test_digest_ordering,
             test_digital_root,
-            test_breath_dump_expression,
+            test_breeze_dump_expression,
             test_endian_codec,
             test_ends_with,
             test_entropy_source,
@@ -59,7 +59,7 @@ main()
             test_merkle_damgard_hashing,
             test_nist_vectors,
             test_null_stream,
-            test_breath_prevent_macro_expansion,
+            test_breeze_prevent_macro_expansion,
             test_printable_string,
             test_readable_type_name,
             test_remove_from_end,
@@ -71,8 +71,8 @@ main()
             test_sha384,
             test_split,
             test_stream_equivalent,
-            test_breath_stringize,
-            test_breath_stringize_after_expansion,
+            test_breeze_stringize,
+            test_breeze_stringize_after_expansion,
             test_tail,
             test_to_lowercase,
             test_to_string,
@@ -101,7 +101,7 @@ main()
     //      something is wrong.
     // -----------------------------------------------------------------------
     std::cout << "\nDetected operating system: " <<
-        breath::operating_system_name() << '\n' << std::endl ;
+        breeze::operating_system_name() << '\n' << std::endl ;
 
     return result ;
 }

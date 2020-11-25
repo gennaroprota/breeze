@@ -12,8 +12,8 @@
 // ___________________________________________________________________________
 
 #include "tool/include_guard/macro_name.hpp"
-#include "breath/diagnostics/assert.hpp"
-#include "breath/random/entropy_source.hpp"
+#include "breeze/diagnostics/assert.hpp"
+#include "breeze/random/entropy_source.hpp"
 
 #include <cstddef>
 #include <string>
@@ -21,7 +21,7 @@
 namespace {
 
 std::string
-make_random_alnum( int length, breath::entropy_source & source )
+make_random_alnum( int length, breeze::entropy_source & source )
 {
     std::string const   alnum   = "0123456789"
                                   "abcdefghijklmnopqrstuvwxyz"
@@ -57,12 +57,12 @@ make_macro_name( std::string const & prefix,
                  macro_name_creation::exit_status * exit_status )
 {
     std::size_t const   total_length = prefix.length() + random_part_length ;
-    BREATH_ASSERT( total_length > 0
+    BREEZE_ASSERT( total_length > 0
         && total_length <= 63 /* minimum required by C99 */ ) ;
 
     *exit_status = macro_name_creation::ok ;
 
-    breath::entropy_source
+    breeze::entropy_source
                         source ;
     std::string const   str = make_random_alnum ( random_part_length, source ) ;
 
@@ -76,7 +76,7 @@ make_macro_name( std::string const & prefix,
 bool
 is_reserved( std::string const & identifier )
 {
-    BREATH_ASSERT( ! identifier.empty() ) ;
+    BREEZE_ASSERT( ! identifier.empty() ) ;
 
     return identifier[ 0 ] == '_' ||
                identifier.find( "__" ) != identifier.npos ;

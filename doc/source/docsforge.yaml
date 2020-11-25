@@ -6,7 +6,7 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 #
-#       Configuration file for DocsForge: <https://breath.docsforge.com>.
+#       Configuration file for DocsForge: <https://breeze.docsforge.com>.
 #
 #       N.B.:
 #           keep in sync with doc/source/doxygen.cfg.
@@ -18,9 +18,9 @@ sidebar:
 autodocSettings:
   Public API:
     language: cpp
-    INPUT: breath breath/main_page.dox breath/namespaces.dox
+    INPUT: breeze breeze/main_page.dox breeze/namespaces.dox
     EXCLUDE: ''
-    EXCLUDE_PATTERNS: '*/breath/testing/* */private/* */brt/* */dep/* */test/*
+    EXCLUDE_PATTERNS: '*/breeze/testing/* */private/* */brz/* */dep/* */test/*
       */extra/* */example/* */dependent_code.hpp */top_level_namespace.hpp
       */version.hpp'
     includeApi: []
@@ -39,7 +39,7 @@ autodocSettings:
     ENABLE_PREPROCESSING: 'YES'
     MACRO_EXPANSION: 'YES'
     EXPAND_ONLY_PREDEF: 'YES'
-    PREDEFINED: breath_ns=breath BREATH_PREVENT_MACRO_EXPANSION=
+    PREDEFINED: breeze_ns=breeze BREEZE_PREVENT_MACRO_EXPANSION=
     SEARCH_INCLUDES: 'YES'
     INCLUDE_PATH: ''
     INCLUDE_FILE_PATTERNS: ''

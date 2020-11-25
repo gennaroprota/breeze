@@ -10,11 +10,11 @@
 #       Builds the library documentation (using Doxygen).
 #
 #       Syntax:
-#           build_docs breath_root
+#           build_docs breeze_root
 #
 #       Arguments:
 #
-#           breath_root
+#           breeze_root
 #
 #               Full path to the root directory of the source tree
 #               (without any trailing slash).
@@ -28,8 +28,8 @@
 
 set -eu
 
-.   "$BREATH_ROOT/tool/shell/file_name.shc"
-.   "$BREATH_ROOT/tool/shell/script.shc"
+.   "$BREEZE_ROOT/tool/shell/file_name.shc"
+.   "$BREEZE_ROOT/tool/shell/script.shc"
 
 
 clean_up()
@@ -45,12 +45,12 @@ clean_up()
 
 run_doxygen()
 {
-    breath_version=` sed -n 's/#define \+BREATH_VERSION \+\(.\+\)/\1/p'     \
-                            "$root_dir/breath/version.hpp" `
+    breeze_version=` sed -n 's/#define \+BREEZE_VERSION \+\(.\+\)/\1/p'     \
+                            "$root_dir/breeze/version.hpp" `
 
     (
         cat doxygen.cfg
-        printf '%s\n' "PROJECT_NUMBER = \"version $breath_version\""
+        printf '%s\n' "PROJECT_NUMBER = \"version $breeze_version\""
     ) | doxygen -
 }
 

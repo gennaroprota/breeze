@@ -6,7 +6,7 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 
-This file collects some wisdom I accumulated while working on Breath :-) The
+This file collects some wisdom I accumulated while working on Breeze :-) The
 purpose is to list things I didn't find in any book or article. If you find
 similar (or contrary) advice elsewhere, please send me a mail to let me know:
 I'll be glad to compare my findings with those of the author.
