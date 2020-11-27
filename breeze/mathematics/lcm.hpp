@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief The least common multiple of two integers.
+//!     \brief Returns the least common multiple of two integers.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_OFEP2tStNzXnzGYEV6JdW1XUXcS6lA7p
@@ -21,6 +21,8 @@ namespace breeze_ns {
 //      lcm():
 //      ======
 //
+//!     \copybrief lcm.hpp
+//!
 //!     This template follows the C++ Library Fundamental TS v2, as of
 //!     May 14, 2016.
 //!

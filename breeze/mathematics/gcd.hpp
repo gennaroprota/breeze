@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief The greatest common divisor of two integers.
+//!     \brief Returns the greatest common divisor of two integers.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_7TolwuFfch2xrqOdKkP8IrjIejdJYQxs
@@ -21,6 +21,8 @@ namespace breeze_ns {
 //      gcd():
 //      ======
 //
+//!     \copybrief gcd.hpp
+//!
 //!     This template follows the C++ Library Fundamental TS v2, as of
 //!     May 14, 2016.
 //!
