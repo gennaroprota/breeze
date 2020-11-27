@@ -49,6 +49,32 @@ check_int()
 }
 
 void
+check_unsigned_int()
+{
+    auto const          int_max = static_cast< unsigned int >( INT_MAX ) ;
+    struct
+    {
+        unsigned int a ;
+        unsigned int b ;
+        unsigned int lcm ;
+    } const             table[] = {
+        {  0,  0,  0 },
+        {  1,  0,  0 },
+        {  3,  0,  0 },
+        {  18, 24, 72 },
+        { int_max + 1, 1, int_max + 1 },
+        { int_max + 1, 0, 0 },
+        { UINT_MAX, 0, 0 },
+        { UINT_MAX, 1, UINT_MAX }
+    } ;
+
+    for ( auto const & t : table ) {
+        BREEZE_CHECK( breeze::lcm( t.a, t.b ) == t.lcm ) ;
+        BREEZE_CHECK( breeze::lcm( t.b, t.a ) == t.lcm ) ;
+    }
+}
+
+void
 check_constexpr()
 {
     constexpr int       n = breeze::lcm( 10, 14 ) ;
@@ -64,6 +90,7 @@ test_lcm()
     using namespace breeze ;
 
     return test_runner::instance().run( "lcm()", { check_int,
+                                                   check_unsigned_int,
                                                    check_constexpr } ) ;
 }
 

@@ -49,6 +49,28 @@ check_int()
     }
 }
 
+void check_unsigned_int()
+{
+    struct
+    {
+        unsigned int a ;
+        unsigned int b ;
+        unsigned int gcd ;
+    } const             table[] = {
+        {  0,  0, 0 },
+        {  1,  1, 1 },
+        { 20,  4, 4 },
+        { 72, 40, 8 },
+        { UINT_MAX, UINT_MAX, UINT_MAX },
+        { UINT_MAX, 0, UINT_MAX }
+    } ;
+
+    for ( auto const & t : table ) {
+        BREEZE_CHECK( breeze::gcd( t.a, t.b ) == t.gcd ) ;
+        BREEZE_CHECK( breeze::gcd( t.b, t.a ) == t.gcd ) ;
+    }
+}
+
 void
 check_constexpr()
 {
@@ -65,6 +87,7 @@ test_gcd()
     using namespace breeze ;
 
     return test_runner::instance().run( "gcd()", { check_int,
+                                                   check_unsigned_int,
                                                    check_constexpr } ) ;
 }
 
