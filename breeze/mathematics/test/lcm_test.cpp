@@ -13,6 +13,7 @@
 
 #include "breeze/mathematics/lcm.hpp"
 #include "breeze/testing/testing.hpp"
+#include <climits>
 
 int                 test_lcm() ;
 
@@ -35,24 +36,15 @@ check_int()
         {  12,-10, 60 },
         { -12,-10, 60 },
         { 23 * 5, 12 * 5, 23 * 12 * 5 },
-        { 31 * 7, 7 * 2,  31 * 7 * 2 }
+        { 31 * 7, 7 * 2,  31 * 7 * 2 },
+        { INT_MIN + 1, -1, INT_MAX },       // assuming 2's complement
+        { INT_MIN + 1, INT_MAX, INT_MAX },  // assuming 2's complement
+
     } ;
 
     for ( auto const & t : table ) {
         BREEZE_CHECK( breeze::lcm( t.a, t.b ) == t.lcm ) ;
         BREEZE_CHECK( breeze::lcm( t.b, t.a ) == t.lcm ) ;
-    }
-}
-
-void
-check_mixed_types()
-{
-    {
-        signed char const   a = -80 ;
-        unsigned int const  b = 32768 ;
-
-        BREEZE_CHECK( breeze::lcm( a, b ) == 163840 ) ;
-        BREEZE_CHECK( breeze::lcm( b, a ) == 163840 ) ;
     }
 }
 
@@ -72,7 +64,6 @@ test_lcm()
     using namespace breeze ;
 
     return test_runner::instance().run( "lcm()", { check_int,
-                                                   check_mixed_types,
                                                    check_constexpr } ) ;
 }
 

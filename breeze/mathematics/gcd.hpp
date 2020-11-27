@@ -14,7 +14,6 @@
 #define BREEZE_GUARD_7TolwuFfch2xrqOdKkP8IrjIejdJYQxs
 
 #include "breeze/top_level_namespace.hpp"
-#include <type_traits>
 
 namespace breeze_ns {
 
@@ -23,24 +22,31 @@ namespace breeze_ns {
 //
 //!     \copybrief gcd.hpp
 //!
-//!     This template follows the C++ Library Fundamental TS v2, as of
-//!     May 14, 2016.
-//!
-//!     If either \c M or \c N is not an integral type the program is
-//!     ill-formed. If \c |m| is not representable as a value of type \c
-//!     M or \c |n| is not representable as a value of type \c N, the
-//!     behavior is undefined.
+//!     If \c T is not an integral type the program is ill-formed. If
+//!     the greatest common divisor of \c |a| and \c |b| is not
+//!     representable as a value of type \c T, the behavior is
+//!     undefined.
 //!
 //!     \return
-//!         If both \c m and \c n are zero, returns zero. Otherwise it
-//!         returns the greatest common divisor of \c |m| and \c |n|.
+//!         If both \c a and \c b are zero, returns zero. Otherwise it
+//!         returns the greatest common divisor of \c |a| and \c |b|.
+//!
+//!     \note
+//!         The intent, for both this template and \c breeze::lcm(), was
+//!         to follow the standard specification (the initial Breeze
+//!         versions followed the C++ Library Fundamental TS v2, and I
+//!         meant to update them to C++17 when C++17 would be out). But
+//!         I soon realized that allowing two different types for the
+//!         two arguments, and using \c common_type for the result, made
+//!         everything very hard to reason about (can you tell what the
+//!         \c common_type of two arbitrary integral types is?). So I
+//!         decided to stick to what I consider a saner specification.
 //!
 //!     \see
 //!         lcm()
 // ---------------------------------------------------------------------------
-template< typename M, typename N >
-constexpr std::common_type_t< M, N >
-                    gcd( M m, N n ) ;
+template< typename T >
+constexpr T         gcd( T a, T b ) ;
 
 }
 

@@ -36,60 +36,16 @@ check_int()
         { 36, 24, 12},
         { 30,-25, 5 },
         { -3,  0, 3 },
-        {  3, -3, 3 }
+        {  3, -3, 3 },
+        { INT_MIN, -1, 1 },
+        { INT_MIN, -256, 256 },           // assuming 2's complement
+        { INT_MAX, -1,   1 },
+        { INT_MAX, INT_MIN + 1, INT_MAX } // assuming 2's complement
     } ;
 
     for ( auto const & t : table ) {
         BREEZE_CHECK( breeze::gcd( t.a, t.b ) == t.gcd ) ;
         BREEZE_CHECK( breeze::gcd( t.b, t.a ) == t.gcd ) ;
-    }
-}
-
-void
-check_mixed_types()
-{
-    {
-        signed char const   a = -80 ;
-        unsigned int const  b = 32768 ;
-
-        BREEZE_CHECK( breeze::gcd( a, b ) == 16 ) ;
-        BREEZE_CHECK( breeze::gcd( b, a ) == 16 ) ;
-    }
-
-    {
-        signed short const  a = -128 ;
-        unsigned long long const
-                            b = ULLONG_MAX ;
-        BREEZE_CHECK( breeze::gcd( a, b ) == 1 ) ;
-        BREEZE_CHECK( breeze::gcd( b, a ) == 1 ) ;
-    }
-
-    {
-        int const           a = - INT_MAX ;
-        unsigned int const  b =   INT_MAX ;
-
-        BREEZE_CHECK( breeze::gcd( a, b ) == INT_MAX ) ;
-        BREEZE_CHECK( breeze::gcd( b, a ) == INT_MAX ) ;
-    }
-
-    //      Other two cases which can be tricky for the implementation,
-    //      because a % b is not zero. See:
-    //
-    //        <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=92978>.
-    // -----------------------------------------------------------------------
-    {
-        int const           a = -120 ;
-        unsigned int const  b = 10 ;
-
-        BREEZE_CHECK( breeze::gcd( a, b ) == 10 ) ;
-        BREEZE_CHECK( breeze::gcd( b, a ) == 10 ) ;
-    }
-    {
-        unsigned int const  a = 120 ;
-        int const           b = -10 ;
-
-        BREEZE_CHECK( breeze::gcd( a, b ) == 10 ) ;
-        BREEZE_CHECK( breeze::gcd( b, a ) == 10 ) ;
     }
 }
 
@@ -109,7 +65,6 @@ test_gcd()
     using namespace breeze ;
 
     return test_runner::instance().run( "gcd()", { check_int,
-                                                   check_mixed_types,
                                                    check_constexpr } ) ;
 }
 

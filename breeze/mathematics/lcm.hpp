@@ -14,7 +14,6 @@
 #define BREEZE_GUARD_OFEP2tStNzXnzGYEV6JdW1XUXcS6lA7p
 
 #include "breeze/top_level_namespace.hpp"
-#include <type_traits>
 
 namespace breeze_ns {
 
@@ -23,26 +22,24 @@ namespace breeze_ns {
 //
 //!     \copybrief lcm.hpp
 //!
-//!     This template follows the C++ Library Fundamental TS v2, as of
-//!     May 14, 2016.
-//!
-//!     If either \c M or \c N is not an integral type the program is
-//!     ill-formed. If \c |m| is not representable as a value of type \c
-//!     M or \c |n| is not representable as a value of type \c N or the
-//!     least common multiple of \c |m| and \c |n| is not representable
-//!     as a value of type <code>common_type_t< M, N ></code>, the
-//!     behavior is undefined.
+//!     If \c T is not an integral type the program is ill-formed. If
+//!     the least common multiple of \c |a| and \c |b| is not
+//!     representable as a value of type \c T, the behavior is
+//!     undefined.
 //!
 //!     \return
-//!         If either \c m or \c n is zero, returns zero. Otherwise it
-//!         returns the least common multiple of \c |m| and \c |n|.
+//!         If either \c a or \c b is zero, returns zero. Otherwise it
+//!         returns the least common multiple of \c |a| and \c |b|.
+//!
+//!     \note
+//!         This template diverges from the C++17 specification for the
+//!         same reason why \c breeze::gcd() does.
 //!
 //!     \see
 //!         gcd()
 // ---------------------------------------------------------------------------
-template< typename M, typename N >
-constexpr std::common_type_t< M, N >
-                    lcm( M m, N n ) ;
+template< typename T >
+constexpr T         lcm( T a, T b ) ;
 
 }
 

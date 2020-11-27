@@ -7,31 +7,42 @@
 // ___________________________________________________________________________
 
 #include "private/gcd_lcm_common.hpp"
+#include "breeze/preprocessing/prevent_macro_expansion.hpp"
+#include <limits>
+#include <type_traits>
 
 namespace breeze_ns {
 
-template< typename M, typename N >
-constexpr std::common_type_t< M, N >
-gcd( M a, N b )
+template< typename T >
+constexpr T
+gcd( T a, T b )
 {
-    using gcd_lcm_private::check_common_gcd_lcm_preconditions ;
+    static_assert( std::is_integral< T >::value, "T must be integral" ) ;
     using gcd_lcm_private::absolute_value ;
 
-    check_common_gcd_lcm_preconditions( a, b ) ;
+    T const             min = std::numeric_limits< T >::min
+                            BREEZE_PREVENT_MACRO_EXPANSION () ;
 
-    a = absolute_value( a ) ;
-    b = absolute_value( b ) ;
+    if ( a < 0 && b < 0 && (
+                ( a == min && b == -1  ) ||
+                ( a == -1  && b == min )
+            )
+       )
+    {
+        return 1 ;
+    }
+
     while ( true ) {
 
         if ( a == 0 ) {
-            return b ;
+            return absolute_value( b ) ;
         }
-        b = static_cast< N >( b % a ) ;
+        b %= a ;
 
         if ( b == 0 ) {
-            return a ;
+            return absolute_value( a ) ;
         }
-        a = static_cast< M >( a % b ) ;
+        a %= b ;
     }
 }
 

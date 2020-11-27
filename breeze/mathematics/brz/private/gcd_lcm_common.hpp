@@ -10,11 +10,8 @@
 #define BREEZE_GUARD_ywAsFEinN5XbOP8UpDuYwWj4b3LAnVX2
 
 #include "breeze/top_level_namespace.hpp"
-#include "breeze/diagnostics/assert.hpp"
 #include "breeze/meta/has_sign.hpp"
-#include "breeze/meta/is_2s_complement.hpp"
 #include <type_traits>
-#include <limits>
 
 namespace breeze_ns {
 namespace gcd_lcm_private {
@@ -22,21 +19,6 @@ namespace gcd_lcm_private {
 //      Renouncing to have a separate .tpp file, since this is a
 //      private component.
 // ---------------------------------------------------------------------------
-template< typename M, typename N >
-constexpr void
-check_common_gcd_lcm_preconditions( M a, N b )
-{
-    static_assert( std::is_integral< M >::value
-                && std::is_integral< N >::value, "M and N must be integral" ) ;
-
-    BREEZE_ASSERT( ( ! meta::is_2s_complement< M >()
-       || a != std::numeric_limits< M >::min BREEZE_PREVENT_MACRO_EXPANSION () )
-     &&            ( ! meta::is_2s_complement< N >()
-       || b != std::numeric_limits< N >::min BREEZE_PREVENT_MACRO_EXPANSION () )
-    ) ;
-
-}
-
 //      We use this because std::abs() is not required to be constexpr.
 //
 //      Note that the obvious implementation yields a C4146 from MSVC

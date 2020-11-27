@@ -10,22 +10,19 @@
 #include "breeze/diagnostics/assert.hpp"
 #include "breeze/mathematics/gcd.hpp"
 #include <limits>
+#include <type_traits>
 
 namespace breeze_ns {
 
-template< typename M, typename N >
-constexpr std::common_type_t< M, N >
-lcm( M a, N b )
+template< typename T >
+constexpr T
+lcm( T a, T b )
 {
-    using gcd_lcm_private::check_common_gcd_lcm_preconditions ;
+    static_assert( std::is_integral< T >::value, "T must be integral" ) ;
+
     using gcd_lcm_private::absolute_value ;
 
-    check_common_gcd_lcm_preconditions( a, b ) ;
-
-    typedef std::common_type_t< M, N >
-                        common_type ;
-
-    common_type         result = 0 ;
+    T                   result = 0 ;
 
     if ( a != 0 && b != 0 ) {
         auto const          factor1 = absolute_value( a ) / gcd( a, b ) ;
@@ -35,7 +32,7 @@ lcm( M a, N b )
         //      here, for readability.
         // -------------------------------------------------------------------
         BREEZE_ASSERT( factor1 <=
-                ( ( std::numeric_limits< common_type >::max )() / factor2 ) ) ;
+                ( ( std::numeric_limits< T >::max )() / factor2 ) ) ;
 
         result = factor1 * factor2 ;
     }
