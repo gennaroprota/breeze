@@ -8,7 +8,6 @@
 
 #include "private/gcd_lcm_common.hpp"
 #include "breeze/preprocessing/prevent_macro_expansion.hpp"
-#include <limits>
 #include <type_traits>
 
 namespace breeze_ns {
@@ -18,17 +17,9 @@ constexpr T
 gcd( T a, T b )
 {
     static_assert( std::is_integral< T >::value, "T must be integral" ) ;
-    using gcd_lcm_private::absolute_value ;
+    using namespace gcd_lcm_private ;
 
-    T const             min = std::numeric_limits< T >::min
-                            BREEZE_PREVENT_MACRO_EXPANSION () ;
-
-    if ( a < 0 && b < 0 && (
-                ( a == min && b == -1  ) ||
-                ( a == -1  && b == min )
-            )
-       )
-    {
+    if ( would_division_overflow( a, b ) ) {
         return 1 ;
     }
 
