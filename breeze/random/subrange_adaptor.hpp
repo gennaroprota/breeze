@@ -22,7 +22,7 @@ namespace breeze_ns {
 //
 //!     \copybrief subrange_adaptor.hpp
 //!
-//!     Adapts a random or pseudorandom number generator to emit
+//!     Adapts a random or pseudo-random number generator to emit
 //!     numbers in a subrange of its original range (see the
 //!     max_for_subrange() facility).
 //!

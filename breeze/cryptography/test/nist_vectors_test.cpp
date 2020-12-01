@@ -263,16 +263,16 @@ public:
 };
 
 void
-report_results( int total, int failed, int pseudorandom_total )
+report_results( int total, int failed, int pseudo_random_total )
 {
     int const           expected_total = 329 ;
-    int const           expected_pseudorandom_total = 100 ;
+    int const           expected_pseudo_random_total = 100 ;
     bool const          all_used = total == expected_total &&
-                pseudorandom_total == expected_pseudorandom_total ;
+                pseudo_random_total == expected_pseudo_random_total ;
     bool const          test_passed = all_used && failed == 0 ;
 
     std::cout << "Total:  " << total  << " (of which "
-              << pseudorandom_total << " pseudorandom)" << '\n'
+              << pseudo_random_total << " pseudo-random)" << '\n'
               << "Failed: " << failed << std::endl ;
 
     std::cout << ( all_used
@@ -298,7 +298,7 @@ do_test()
 
     static struct
     {
-        bool                pseudorandom ;
+        bool                pseudo_random ;
     } const             section_types[]
     = {
         { false },
@@ -313,7 +313,7 @@ do_test()
         std::vector< sha1_engine::byte_type >
                             msg = messages.next() ;
         bool const          is_montecarlo_section =
-            section_types[ messages.section_number() - 1 ].pseudorandom ;
+            section_types[ messages.section_number() - 1 ].pseudo_random ;
 
         if ( is_montecarlo_section && montecarlo_harness.count() == 0 ) {
             montecarlo_harness.init( msg ) ;

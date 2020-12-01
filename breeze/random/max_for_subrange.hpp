@@ -23,7 +23,7 @@ namespace breeze_ns {
 //!     \return
 //!         The maximum value that can be kept (before taking the
 //!         remainder of the division by <tt>x + 1</tt>) for getting a
-//!         random (or pseudorandom) integer in the range <tt>[0, x]
+//!         random (or pseudo-random) integer in the range <tt>[0, x]
 //!         </tt> from a source that spans <tt>[0, m]</tt>, <tt>x <= m
 //!         </tt>.
 //!
@@ -49,7 +49,8 @@ namespace breeze_ns {
 //!     With respect to just discarding anything greater than <tt>x
 //!     </tt>:
 //!
-//!      - For pseudorandom numbers this basically saves execution time.
+//!      - For pseudo-random numbers this basically saves execution
+//!        time.
 //!
 //!      - For true random numbers it avoids needlessly discarding
 //!        numbers and thus consuming precious entropy.
