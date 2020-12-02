@@ -43,19 +43,6 @@ GNUmakefile text
 *.vcxproj         text eol=crlf
 *.vcxproj.filters text eol=crlf
 
-#       Standard to msysgit.
-# ----------------------------------------------------------------------------
-*.doc  diff=astextplain
-*.DOC  diff=astextplain
-*.docx diff=astextplain
-*.DOCX diff=astextplain
-*.dot  diff=astextplain
-*.DOT  diff=astextplain
-*.pdf  diff=astextplain
-*.PDF  diff=astextplain
-*.rtf  diff=astextplain
-*.RTF  diff=astextplain
-
 #       These files need Unix line-endings for the init_file tool to
 #       work correctly.
 # ----------------------------------------------------------------------------
