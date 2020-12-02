@@ -16,7 +16,7 @@
         everything appears correctly on <github.com>.
      -------------------------------------------------------------------------
 -->
-[![Build status](
+[![Builds and tests results](
 https://img.shields.io/travis/com/gennaroprota/breeze/master?label=builds%20%26%20tests)](
 https://travis-ci.com/gennaroprota/breeze)
 ![Lines of code counter](
