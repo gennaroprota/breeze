@@ -60,10 +60,10 @@ signed_count( T const & t )
     typedef std::ptrdiff_t
                         return_type ;
 
-    BREEZE_ASSERT(
-        t.size() <= std::numeric_limits< return_type >::max
-                                        BREEZE_PREVENT_MACRO_EXPANSION ()
-        ) ;
+    std::size_t const   max = std::numeric_limits< return_type >::max
+                                BREEZE_PREVENT_MACRO_EXPANSION () ;
+
+    BREEZE_ASSERT( t.size() <= max ) ;
     return static_cast< return_type >( t.size() ) ;
 }
 
