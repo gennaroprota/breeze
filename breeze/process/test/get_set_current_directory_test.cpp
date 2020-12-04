@@ -45,6 +45,3 @@ test_get_set_current_directory()
         { check }
     ) ;
 }
-
-
-
