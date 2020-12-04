@@ -28,7 +28,7 @@ namespace breeze_ns {
 //!
 //!         Consecutive separators, or separators as first or last
 //!         character in \c s, lead to an empty string in the resulting
-//!         vector. The size of the vector is always 1 plus the number
+//!         vector. The size of the vector is always one plus the number
 //!         of separators in \c s.
 //!
 //!     \note
@@ -50,7 +50,7 @@ std::vector< std::string >
 //!
 //!         Consecutive separators, or separators as first or last
 //!         character in \c s, lead to an empty string in the resulting
-//!         vector. The size of the vector is always 1 plus the number
+//!         vector. The size of the vector is always one plus the number
 //!         of separators in \c s.
 //!
 //!     \note
