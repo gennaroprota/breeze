@@ -123,10 +123,3 @@ test_endian_codec()
               check_type_that_fits_in_byte< unsigned int,  unsigned long >,
               check_input_output_iterators } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

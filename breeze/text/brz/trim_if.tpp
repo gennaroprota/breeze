@@ -22,7 +22,5 @@ trim_if( std::string const & str, Predicate pred )
 
 // Local Variables:
 // mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
 // End:
-// vim: set ft=cpp et sts=4 sw=4:
+// vim: set ft=cpp:

@@ -74,10 +74,3 @@ test_last_api_error()
         { message_begins_with_user_message_if_and_only_if_one_is_provided,
           message_does_not_end_with_cr_lf } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

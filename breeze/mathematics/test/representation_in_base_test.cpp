@@ -60,10 +60,3 @@ test_representation_in_base()
     return test_runner::instance().run( "representation_in_base()",
                                         { check } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

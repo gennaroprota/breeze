@@ -88,10 +88,3 @@ test_entropy_source()
              { do_test,
                entropy_source_is_usable_with_shuffle } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

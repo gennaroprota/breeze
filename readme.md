@@ -146,8 +146,10 @@ connection, it might be a good alternative for you to use:
 
 # Editor support
 
-The source tree contains a `.editorconfig` (https://editorconfig.org). This
-support was added just recently. Before that, only Emacs and Vim were supported.
+The source tree contains a `.editorconfig` (https://editorconfig.org). In
+addition, files having name extensions that are not automatically recognized by
+Emacs or Vim (e.g. .tpp) have simple trailers which make these editors recognize
+the file type.
 
 If you plan to contribute, please use `tool/init_file/init_file.sh` to
 initialize your source files. You should define the environment variable
@@ -216,13 +218,3 @@ will try to address it as soon as possible.
 
 My most heartfelt *thank you* goes to James Kanze, without whom I wouldn't be
 the programmer I am.
-
-[//]: # (
- Local Variables:
- mode: markdown
- indent-tabs-mode: nil
- coding: utf-8
- End:
- vim: set ft=markdown et sts=4 sw=4:
- vim: set fenc=utf-8 nobomb:
-)

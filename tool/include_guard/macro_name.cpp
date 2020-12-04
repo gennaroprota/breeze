@@ -81,10 +81,3 @@ is_reserved( std::string const & identifier )
     return identifier[ 0 ] == '_' ||
                identifier.find( "__" ) != identifier.npos ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

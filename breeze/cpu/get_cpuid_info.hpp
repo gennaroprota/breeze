@@ -76,10 +76,3 @@ cpuid_result        get_cpuid_info( std::uint32_t eax, std::uint32_t ecx ) ;
 }
 
 #endif
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

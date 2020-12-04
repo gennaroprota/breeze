@@ -139,9 +139,3 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
-# Local Variables:
-# mode: conf
-# indent-tabs-mode: nil
-# End:
-# vim: set ft=conf et sts=4 sw=4:

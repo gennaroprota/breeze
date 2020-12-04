@@ -23,10 +23,3 @@ set CYGWIN_ROOT=C:\cygwin64
                              --exec "./append_to_path.sh"
 
 endlocal
-
-rem Local Variables:
-rem mode: bat
-rem indent-tabs-mode: nil
-rem batch-indent-level: 4
-rem End:
-rem vim: set ft=dosbatch et sts=4 sw=4:

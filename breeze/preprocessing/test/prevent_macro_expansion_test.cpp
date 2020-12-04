@@ -52,10 +52,3 @@ test_breeze_prevent_macro_expansion()
              "BREEZE_PREVENT_MACRO_EXPANSION",
              { do_test } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

@@ -240,7 +240,5 @@ merkle_damgard_machine< Engine >::update_count( std::ptrdiff_t amount )
 
 // Local Variables:
 // mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
 // End:
-// vim: set ft=cpp et sts=4 sw=4:
+// vim: set ft=cpp:

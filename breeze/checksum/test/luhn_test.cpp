@@ -84,10 +84,3 @@ test_luhn()
                                         { check_known_sums,
                                       luhn_routines_throw_on_invalid_chars } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

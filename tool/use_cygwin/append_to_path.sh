@@ -16,10 +16,3 @@ set -eu
 
 export PATH=$PATH:/usr/local/bin:/usr/bin
 bash
-
-# Local Variables:
-# mode: shell-script
-# indent-tabs-mode: nil
-# sh-indentation: 4
-# End:
-# vim: set ft=sh et sts=4 sw=4:

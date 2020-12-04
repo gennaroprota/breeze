@@ -167,9 +167,3 @@ endef
 define link_to_exec
     $(compiler_command) $(cpp_options) -o $@ $+ $(library_options)
 endef
-
-# Local Variables:
-# mode: makefile
-# indent-tabs-mode: nil
-# End:
-# vim: set ft=make et sts=4 sw=4:

@@ -30,10 +30,3 @@ hashing_count::on_length_exhausted( hashing_count::type t )
 }
 
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

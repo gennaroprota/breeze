@@ -132,10 +132,3 @@ test_stream_equivalent()
                                           check_input_or_output_only_streams }
                                       ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

@@ -28,10 +28,3 @@ extern int const    exit_fatal    = 30 ;
 extern int const    exit_internal = 50 ;
 
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

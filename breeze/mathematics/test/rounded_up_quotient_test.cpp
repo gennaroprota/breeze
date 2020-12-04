@@ -88,10 +88,3 @@ test_rounded_up_quotient()
                        rounded_up_quotient_doesnt_warn_with_unsigned,
                        rounded_up_quotient_arguments_can_be_cv_qualified } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

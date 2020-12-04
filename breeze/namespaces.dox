@@ -48,7 +48,5 @@ namespace meta {
 
 // Local Variables:
 // mode: doxymacs??? --- TODO
-// indent-tabs-mode: nil
-// c-basic-offset: 4
 // End:
-// vim: set ft=doxygen et sts=4 sw=4:
+// vim: set ft=doxygen:

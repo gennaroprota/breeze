@@ -96,7 +96,5 @@ sensitive_buffer< T[ n ] >::operator []( std::ptrdiff_t index ) const
 
 // Local Variables:
 // mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
 // End:
-// vim: set ft=cpp et sts=4 sw=4:
+// vim: set ft=cpp:

@@ -10,9 +10,3 @@ root         := ../..
 
 source_files := line_up.cpp
 include $(root)/makefile/executable.mk
-
-# Local Variables:
-# mode: makefile
-# indent-tabs-mode: nil
-# End:
-# vim: set ft=make et sts=4 sw=4:

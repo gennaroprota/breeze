@@ -60,10 +60,3 @@ test_reporter::on_unexpected_exception( int test_number, std::exception const & 
 }
 
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

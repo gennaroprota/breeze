@@ -155,10 +155,3 @@ test_binary_to_base64()
                                           check_string_of_nuls,
                                           check_line_wrap } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

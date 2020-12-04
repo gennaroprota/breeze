@@ -16,9 +16,3 @@ exe_name_suffix  := .exe
 #       with GCC under Cywgin.
 # ----------------------------------------------------------------------------
 cpp_preprocessing_defines += -D _WIN32_WINNT=0x600
-
-# Local Variables:
-# mode: makefile
-# indent-tabs-mode: nil
-# End:
-# vim: set ft=make et sts=4 sw=4:

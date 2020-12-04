@@ -230,10 +230,3 @@ test_set_of_chars()
                set_of_chars_can_be_constructed_from_input_iterators } ) ;
 }
 
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

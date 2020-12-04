@@ -156,10 +156,3 @@ test_crc()
           check_value_from_traits< invented_crc >,
           check_known_crc32s } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

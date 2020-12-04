@@ -44,10 +44,3 @@ std::string         readable_type_name( T const & ref ) ;
 
 #include "brz/readable_type_name.tpp"
 #endif
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

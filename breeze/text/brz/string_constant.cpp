@@ -25,10 +25,3 @@ extern char const   lowercase_hex_digits[] = "0123456789abcdef" ;
 extern char const   uppercase_hex_digits[] = "0123456789ABCDEF" ;
 
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

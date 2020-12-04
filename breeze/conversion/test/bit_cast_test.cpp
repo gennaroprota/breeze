@@ -120,10 +120,3 @@ test_bit_cast()
                pointer_to_void_casts_to_pointer_to_function,
                bit_cast_is_noexcept_if_and_only_if_dest_default_ctor_is } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

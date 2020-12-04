@@ -29,9 +29,3 @@ clean:
 	rm -fr $(dependency_dir)
 	rm -f  $(object_files)
 	rm -f  $(target)
-
-# Local Variables:
-# mode: makefile
-# indent-tabs-mode: nil
-# End:
-# vim: set ft=make et sts=4 sw=4:

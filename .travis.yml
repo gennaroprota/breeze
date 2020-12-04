@@ -198,9 +198,3 @@ matrix:
 
   allow_failures:
     os: freebsd
-
-# Local Variables:
-# mode: yaml
-# indent-tabs-mode: nil
-# End:
-# vim: set ft=yaml et sts=2 sw=2:

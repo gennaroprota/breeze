@@ -10,9 +10,3 @@ library_name_prefix := lib
 library_name_suffix := .a
 
 exe_name_suffix  :=
-
-# Local Variables:
-# mode: makefile
-# indent-tabs-mode: nil
-# End:
-# vim: set ft=make et sts=4 sw=4:

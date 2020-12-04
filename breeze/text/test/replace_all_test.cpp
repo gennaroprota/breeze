@@ -84,10 +84,3 @@ test_replace_all()
 
     return test_runner::instance().run( "replace_all()", { do_tests } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

@@ -38,8 +38,3 @@ get_cpuid_info:
     pop rcx
     pop rbx
     ret
-
-# Local Variables:
-# mode: asm
-# End:
-# vim: set ft=asm et sts=4 sw=4:

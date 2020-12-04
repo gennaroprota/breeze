@@ -67,10 +67,3 @@ time_string( std::string const & format, time_string_zone::zone zone )
 }
 
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

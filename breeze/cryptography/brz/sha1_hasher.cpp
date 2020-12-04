@@ -154,10 +154,3 @@ void sha1_engine::process_block( state_type & state,
 }
 
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

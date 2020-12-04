@@ -192,9 +192,3 @@ help:
 	$(info ------------------)
 	$(info )
 	@$(root)/makefile/extract_help.awk $(MAKEFILE_LIST)
-
-# Local Variables:
-# mode: makefile
-# indent-tabs-mode: nil
-# End:
-# vim: set ft=make et sts=4 sw=4:

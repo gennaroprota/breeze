@@ -6,7 +6,6 @@
 #            - .editorconfig
 #            - .gitattributes
 #            - language_traits.txt
-#            - make_file_trailer.sh
 # ----------------------------------------------------------------------------
 
 root = true

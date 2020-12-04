@@ -51,11 +51,3 @@ test_max_for_subrange()
     return test_runner::instance().run( "max_for_subrange()", { do_test } ) ;
 
 }
-
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

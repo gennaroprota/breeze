@@ -57,10 +57,3 @@ test_environment_variable_consistency()
     return test_runner::instance().run(
         "Environment variable consistency", { check_consistency } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

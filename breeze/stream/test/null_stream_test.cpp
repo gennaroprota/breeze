@@ -54,10 +54,3 @@ test_null_stream()
 
     return test_runner::instance().run( "null_stream", { check } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

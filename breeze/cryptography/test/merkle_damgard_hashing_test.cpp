@@ -237,10 +237,3 @@ test_merkle_damgard_hashing()
     return test_runner::instance().run( "Merkle-Damgard hashing",
                                         cbegin( desc ), cend( desc) ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

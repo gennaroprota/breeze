@@ -52,10 +52,3 @@ thread_safe_reentrant_localtime( time_t const * time, tm * result )
 
 }
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

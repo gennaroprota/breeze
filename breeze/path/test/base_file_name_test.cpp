@@ -57,10 +57,3 @@ test_base_file_name()
              "base_file_name()",
              { do_test } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

@@ -97,10 +97,3 @@ test_auto_array()
                     check_reset,
                     can_assign_elements_of_const_auto_array_to_non_const } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

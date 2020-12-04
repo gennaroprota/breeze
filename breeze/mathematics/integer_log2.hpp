@@ -39,10 +39,3 @@ constexpr int       integer_log2( std::intmax_t x ) ;
 
 #include "brz/integer_log2.tpp"
 #endif
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

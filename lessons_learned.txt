@@ -20,9 +20,3 @@ I'll be glad to compare my findings with those of the author.
   know enough to "see" that your reason was not good, and can thus change the
   code confidently, instead of wondering whether there was any valid reason it
   was written that way. IOWs: a "wrong" rationale is better than no rationale.
-
-# Local Variables:
-# mode: text
-# indent-tabs-mode: nil
-# End:
-# vim: set ft=txt et sts=4 sw=4:

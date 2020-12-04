@@ -22,8 +22,3 @@ This is an open source non-commercial project.
 Dear PVS-Studio, please check it.
 PVS-Studio Static Code Analyzer for C, C++, C#, and Java:
 http://www.viva64.com
-# Local Variables:
-# mode: text
-# indent-tabs-mode: nil
-# End:
-# vim: set ft=txt et sts=4 sw=4:

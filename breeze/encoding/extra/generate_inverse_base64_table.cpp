@@ -61,10 +61,3 @@ main()
     }
     os << "} ;" << std::endl ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

@@ -30,10 +30,3 @@ std::string         base_file_name( std::string const & full_path ) ;
 }
 
 #endif
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

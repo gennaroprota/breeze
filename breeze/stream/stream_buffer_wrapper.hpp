@@ -69,10 +69,3 @@ private:
 
 #include "brz/stream_buffer_wrapper.tpp"
 #endif
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

@@ -123,10 +123,3 @@ test_base64_to_binary()
     return test_runner::instance().run( "base64_to_binary()",
                                         { check_valid, check_invalid } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

@@ -51,10 +51,3 @@ test_breeze_stringize_after_expansion()
              "BREEZE_STRINGIZE_AFTER_EXPANSION()",
              { do_tests } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

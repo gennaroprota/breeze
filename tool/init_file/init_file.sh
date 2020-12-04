@@ -202,21 +202,48 @@ else
     new_line "$blank_lines"
 fi
 #       Trailer
+#
+#       This used to invoke a separate script to add a trailer that set
+#       indent width and other variables, including the file type, for
+#       Vim and Emacs. In fact, setting the file type was only necessary
+#       for the couple of extensions (namely .tpp and .shc) that Emacs
+#       and Vim don't recognize automatically, but, while we were at it,
+#       we set it always.
+#
+#       At a point, anyway, we switched to EditorConfig, which makes
+#       things easier and works with more editors. This made most of the
+#       trailer unnnecessary, except that we still need to set the file
+#       type for those two extensions. So we add a trailer for them
+#       (only), here.
 # ----------------------------------------------------------------------------
-mark_section start
-"$tool_root/init_file/make_file_trailer.sh" "$language" | dump - 'align_left'
-
-mark_section end
+#
+#       Note:
+#           About "mode: xx", is Emacs case-sensitive on "xx"??
+#           Aesthetically I prefer lowercase, and it seems to work, but
+#           the manuals seem to use always uppercase. --gps
+# ----------------------------------------------------------------------------
+if [ "$name_extension" = "tpp" ]
+then
+    mark_section start
+    printf '%s\n%s\n%s\n%s\n'   \
+        "Local Variables:"      \
+        "mode: c++"             \
+        "End:"                  \
+        "vim: set ft=cpp:"          | dump - 'align_left'
+    mark_section end
+elif [ "$name_extension" = "shc" ]
+then
+    mark_section start
+    printf '%s\n%s\n%s\n%s\n'   \
+        "Local Variables:"      \
+        "mode: shell-script"    \
+        "End:"                  \
+        "vim: set ft=sh:"           | dump - 'align_left'
+    mark_section end
+fi
 
 if [ "$language" = 'Emacs-Lisp' ]
 then
     # Not essential but... when in Rome... :-)
     printf '\n%s\n' ";;; $base_name ends here"
 fi
-
-# Local Variables:
-# mode: shell-script
-# indent-tabs-mode: nil
-# sh-indentation: 4
-# End:
-# vim: set ft=sh et sts=4 sw=4:

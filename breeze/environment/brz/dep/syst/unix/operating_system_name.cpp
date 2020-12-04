@@ -35,10 +35,3 @@ operator <<( std::ostream & dest, operating_system_name const & )
 }
 
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

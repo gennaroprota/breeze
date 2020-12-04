@@ -66,10 +66,3 @@ maybe< std::string> from_string< std::string >( std::string const & s,
 
 #include "brz/from_string.tpp"
 #endif
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

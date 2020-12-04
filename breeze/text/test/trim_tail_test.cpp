@@ -52,10 +52,3 @@ test_trim_tail()
              "trim_tail()",
              { do_test } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

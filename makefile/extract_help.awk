@@ -62,10 +62,3 @@ $0 ~ target_pattern {
         help_line_count = 0
     }
 }
-
-# Local Variables:
-# mode: awk
-# indent-tabs-mode: nil
-# c-basic-offset: 4
-# End:
-# vim: set ft=awk et sts=4 sw=4:

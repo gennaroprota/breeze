@@ -324,10 +324,3 @@ extern program_option_without_value
 
 #include "brz/program_option.tpp"
 #endif
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

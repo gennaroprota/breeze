@@ -43,10 +43,3 @@ constexpr Integer   rounded_up_quotient( Integer a, Integer b ) ;
 
 #include "brz/rounded_up_quotient.tpp"
 #endif
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

@@ -50,9 +50,3 @@ $(bin_dir):
 test-run:
 	@$(require_triplet)
 	$(do_for_all_subdirs)
-
-# Local Variables:
-# mode: makefile
-# indent-tabs-mode: nil
-# End:
-# vim: set ft=make et sts=4 sw=4:

@@ -12,10 +12,3 @@
 // ___________________________________________________________________________
 
 #include "breeze/time/private/brz/posix/thread_safe_reentrant_time_functions.cpp"
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

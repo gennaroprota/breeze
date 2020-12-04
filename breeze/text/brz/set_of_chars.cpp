@@ -273,10 +273,3 @@ set_of_chars::iterator::assert_refers_to_a_char() const
 }
 
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

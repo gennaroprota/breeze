@@ -101,10 +101,3 @@ test_clamp()
     return test_runner::instance().run( "clamp()",
                                         { check, check2, check3 } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

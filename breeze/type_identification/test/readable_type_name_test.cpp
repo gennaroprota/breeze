@@ -92,10 +92,3 @@ test_readable_type_name()
                                         { do_tests,
                                           test_with_polymorphic_type } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

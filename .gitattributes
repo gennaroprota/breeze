@@ -13,7 +13,6 @@
 #            - .editorconfig
 #            - .gitattributes
 #            - language_traits.txt
-#            - make_file_trailer.sh
 # ----------------------------------------------------------------------------
 *.asm       text
 *.awk       text eol=lf

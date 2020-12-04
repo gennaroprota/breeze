@@ -80,13 +80,3 @@ there are inconsistencies, even for the same author).
    optimization is the root of all evil (or at least most of it) in programming.
    &mdash;D. E. Knuth, *Computer Programming as an Art*, 1974 Turing Award
    Lecture, Communications of the ACM **17** (12), (December 1974)
-
-[//]: # (
- Local Variables:
- mode: markdown
- indent-tabs-mode: nil
- coding: utf-8
- End:
- vim: set ft=markdown et sts=4 sw=4:
- vim: set fenc=utf-8 nobomb:
-)

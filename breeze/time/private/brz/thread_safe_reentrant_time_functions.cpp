@@ -15,10 +15,3 @@
 
 #include "breeze/porting/dependent_code.hpp"
 #include BREEZE_DEPENDENT_CODE( compiler, thread_safe_reentrant_time_functions.cpp )
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

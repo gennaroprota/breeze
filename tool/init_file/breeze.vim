@@ -85,8 +85,3 @@ endfunction
 " ----------------------------------------------------------------------------
 set path +=$BREEZE_ROOT,.
 set suffixesadd +=.hpp,.tpp
-
-" Local Variables:
-" indent-tabs-mode: nil
-" End:
-" vim: set ft=vim et sts=4 sw=4:

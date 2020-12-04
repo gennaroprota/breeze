@@ -158,10 +158,3 @@
     BREEZE_STRINGIZE_AFTER_EXPANSION( dep/syst/BREEZE_SYSTEM/file_name )   /**/
 
 #endif
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

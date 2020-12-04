@@ -61,10 +61,3 @@ test_is_power_of_2()
           do_check< long >,
           do_check< unsigned long > } ) ;
 }
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

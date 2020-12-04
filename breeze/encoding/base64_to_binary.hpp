@@ -50,10 +50,3 @@ void                base64_to_binary( InputIter begin, InputIter end,
 
 #include "brz/base64_to_binary.tpp"
 #endif
-
-// Local Variables:
-// mode: c++
-// indent-tabs-mode: nil
-// c-basic-offset: 4
-// End:
-// vim: set ft=cpp et sts=4 sw=4:

@@ -19,10 +19,3 @@ eof2
 
 
 dump_here_document 'eof1'
-
-# Local Variables:
-# mode: shell-script
-# indent-tabs-mode: nil
-# sh-indentation: 4
-# End:
-# vim: set ft=sh et sts=4 sw=4:
