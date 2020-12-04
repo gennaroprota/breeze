@@ -12,6 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breeze/metric/levenshtein_distance.hpp"
+#include "breeze/counting/signed_count.hpp"
 #include <algorithm>
 #include <numeric>
 #include <vector>
@@ -24,8 +25,8 @@ levenshtein_distance( std::string const & first, std::string const & second )
     typedef std::ptrdiff_t
                         length_type ;
 
-    length_type const   len1 = first.length() ;
-    length_type const   len2 = second.length() ;
+    length_type const   len1 = breeze::signed_count( first ) ;
+    length_type const   len2 = breeze::signed_count( second ) ;
 
     std::vector< length_type > costs( len2 + 1 ) ;
     std::iota( costs.begin(), costs.end(), 0 ) ;
