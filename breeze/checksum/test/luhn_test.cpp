@@ -78,9 +78,7 @@ luhn_routines_throw_on_invalid_chars()
 int
 test_luhn()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "Luhn routines",
+    return breeze::test_runner::instance().run( "Luhn routines",
                                         { check_known_sums,
                                       luhn_routines_throw_on_invalid_chars } ) ;
 }

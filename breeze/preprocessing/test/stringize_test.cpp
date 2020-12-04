@@ -43,7 +43,6 @@ do_tests()
 int
 test_breeze_stringize()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "BREEZE_STRINGIZE()", { do_tests } ) ;
+    return breeze::test_runner::instance().run( "BREEZE_STRINGIZE()",
+        { do_tests } ) ;
 }

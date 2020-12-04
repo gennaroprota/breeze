@@ -41,8 +41,6 @@ void do_tests()
 int
 test_remove_from_end()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "remove_from_end()",
+    return breeze::test_runner::instance().run( "remove_from_end()",
                                         { do_tests } ) ;
 }

@@ -50,7 +50,5 @@ check()
 int
 test_null_stream()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "null_stream", { check } ) ;
+    return breeze::test_runner::instance().run( "null_stream", { check } ) ;
 }

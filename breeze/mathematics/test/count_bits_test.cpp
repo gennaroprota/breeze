@@ -55,7 +55,6 @@ void check2()
 int
 test_count_bits()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "count_bits()", { check, check2 } ) ;
+    return breeze::test_runner::instance().run( "count_bits()",
+        { check, check2 } ) ;
 }

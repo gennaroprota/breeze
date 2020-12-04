@@ -37,9 +37,7 @@ do_test()
 int
 test_get_environment_variable()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "get_environment_variable()",
              { do_test } ) ;
 }

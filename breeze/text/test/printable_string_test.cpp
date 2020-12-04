@@ -61,9 +61,7 @@ do_test()
 int
 test_printable_string()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "printable_string",
              { do_test } ) ;
 }

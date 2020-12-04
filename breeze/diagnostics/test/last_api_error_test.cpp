@@ -68,9 +68,7 @@ message_does_not_end_with_cr_lf()
 int
 test_last_api_error()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "last_api_error",
+    return breeze::test_runner::instance().run( "last_api_error",
         { message_begins_with_user_message_if_and_only_if_one_is_provided,
           message_does_not_end_with_cr_lf } ) ;
 }

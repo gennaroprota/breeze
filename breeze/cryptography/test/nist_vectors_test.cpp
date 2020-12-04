@@ -345,9 +345,7 @@ do_test()
 int
 test_nist_vectors()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "NIST vectors",
              { do_test } ) ;
 }

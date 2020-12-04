@@ -51,9 +51,7 @@ do_test()
 int
 test_base_file_name()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "base_file_name()",
              { do_test } ) ;
 }

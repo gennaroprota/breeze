@@ -56,9 +56,7 @@ do_test()
 int
 test_extension()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "extension()",
              { do_test } ) ;
 }

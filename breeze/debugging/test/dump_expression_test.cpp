@@ -90,9 +90,7 @@ do_test()
 int
 test_breeze_dump_expression()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "BREEZE_DUMP_EXPRESSION()",
              { do_test } ) ;
 }

@@ -114,9 +114,7 @@ check_input_output_iterators()
 int
 test_endian_codec()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "endian_codec",
+    return breeze::test_runner::instance().run( "endian_codec",
             { check,
               check2,
               check_type_that_fits_in_byte< unsigned char, unsigned int >,

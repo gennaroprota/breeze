@@ -84,9 +84,7 @@ check_constexpr()
 int
 test_gcd()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "gcd()", { check_int,
+    return breeze::test_runner::instance().run( "gcd()", { check_int,
                                                    check_unsigned_int,
                                                    check_constexpr } ) ;
 }

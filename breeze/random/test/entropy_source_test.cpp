@@ -81,9 +81,7 @@ entropy_source_is_usable_with_shuffle()
 int
 test_entropy_source()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "entropy_source",
              { do_test,
                entropy_source_is_usable_with_shuffle } ) ;

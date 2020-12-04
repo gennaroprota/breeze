@@ -73,9 +73,7 @@ do_tests()
 int
 test_uuid()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "uuid",
              { do_tests } ) ;
 }

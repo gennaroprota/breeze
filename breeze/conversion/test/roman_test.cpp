@@ -92,7 +92,5 @@ check()
 int
 test_roman()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "roman", { check } ) ;
+    return breeze::test_runner::instance().run( "roman", { check } ) ;
 }

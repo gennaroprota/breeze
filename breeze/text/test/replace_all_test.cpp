@@ -80,7 +80,6 @@ void do_tests()
 int
 test_replace_all()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "replace_all()", { do_tests } ) ;
+    return breeze::test_runner::instance().run( "replace_all()",
+        { do_tests } ) ;
 }

@@ -83,9 +83,7 @@ do_check()
 int
 test_counter()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
         "counter",
         { do_check< signed char >,
           do_check< unsigned char >,

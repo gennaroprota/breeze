@@ -52,8 +52,6 @@ check_consistency()
 int
 test_environment_variable_consistency()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
         "Environment variable consistency", { check_consistency } ) ;
 }

@@ -35,7 +35,6 @@ do_tests()
 int
 test_to_lowercase()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "to_lowercase()", { do_tests } ) ;
+    return breeze::test_runner::instance().run( "to_lowercase()",
+        { do_tests } ) ;
 }

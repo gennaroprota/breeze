@@ -146,9 +146,7 @@ check_known_crc32s()
 int
 test_crc()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "crc",
+    return breeze::test_runner::instance().run( "crc",
         { check_value_from_traits< breeze::crc16 >,
           check_value_from_traits< breeze::crc32 >,
           check_value_from_traits< breeze::crc16_ibm3740 >,

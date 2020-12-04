@@ -70,9 +70,7 @@ failed_assertion_calls_active_handler()
 int
 test_breeze_assert()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "BREEZE_ASSERT()",
              { do_test,
                failed_assertion_calls_active_handler } ) ;

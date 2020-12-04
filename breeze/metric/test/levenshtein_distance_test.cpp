@@ -63,8 +63,6 @@ check()
 int
 test_levenshtein_distance()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "levenshtein_distance()",
+    return breeze::test_runner::instance().run( "levenshtein_distance()",
                                         { check } ) ;
 }

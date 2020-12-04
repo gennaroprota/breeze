@@ -94,7 +94,5 @@ check()
 int
 test_sha384()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "SHA-384", { check } ) ;
+    return breeze::test_runner::instance().run( "SHA-384", { check } ) ;
 }

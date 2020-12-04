@@ -41,9 +41,7 @@ do_test()
 int
 test_is_2s_complement()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "is_2s_complement()",
              { do_test } ) ;
 }

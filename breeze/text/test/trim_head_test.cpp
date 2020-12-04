@@ -46,9 +46,7 @@ do_test()
 int
 test_trim_head()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "trim_head()",
              { do_test } ) ;
 }

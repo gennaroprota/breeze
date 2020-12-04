@@ -67,9 +67,7 @@ do_test()
 int
 test_begins_with()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "begins_with()",
              { do_test } ) ;
 }

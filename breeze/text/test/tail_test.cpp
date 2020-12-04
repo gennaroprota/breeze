@@ -37,7 +37,5 @@ do_tests()
 int
 test_tail()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "tail()", { do_tests } ) ;
+    return breeze::test_runner::instance().run( "tail()", { do_tests } ) ;
 }

@@ -124,9 +124,7 @@ check_input_or_output_only_streams()
 int
 test_stream_equivalent()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "stream_equivalent",
+    return breeze::test_runner::instance().run( "stream_equivalent",
                                         { check_good_streams,
                                           check_non_good_streams,
                                           check_input_or_output_only_streams }

@@ -40,9 +40,7 @@ check_usability_with_map()
 int
 test_digest_ordering()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "Digest ordering",
              { check_usability_with_map } ) ;
 }

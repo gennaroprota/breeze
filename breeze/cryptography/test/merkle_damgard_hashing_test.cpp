@@ -220,9 +220,7 @@ digest_can_be_constructed_directly_if_range_is_all_available()
 int
 test_merkle_damgard_hashing()
 {
-    using namespace breeze ;
-
-    test_descriptor const
+    breeze::test_descriptor const
                         desc[] =
     {
         check_known_digests< breeze::   md5_hasher >,
@@ -234,6 +232,6 @@ test_merkle_damgard_hashing()
         digest_can_be_constructed_directly_if_range_is_all_available
     } ;
 
-    return test_runner::instance().run( "Merkle-Damgard hashing",
+    return breeze::test_runner::instance().run( "Merkle-Damgard hashing",
                                         cbegin( desc ), cend( desc) ) ;
 }

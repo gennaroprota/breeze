@@ -57,7 +57,5 @@ check()
 int
 test_digital_root()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "digital_root()", { check } ) ;
+    return breeze::test_runner::instance().run( "digital_root()", { check } ) ;
 }

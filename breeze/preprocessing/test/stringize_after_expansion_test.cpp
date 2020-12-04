@@ -45,9 +45,7 @@ do_tests()
 int
 test_breeze_stringize_after_expansion()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "BREEZE_STRINGIZE_AFTER_EXPANSION()",
              { do_tests } ) ;
 }

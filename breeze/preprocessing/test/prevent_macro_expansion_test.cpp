@@ -46,9 +46,7 @@ do_test()
 int
 test_breeze_prevent_macro_expansion()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "BREEZE_PREVENT_MACRO_EXPANSION",
              { do_test } ) ;
 }

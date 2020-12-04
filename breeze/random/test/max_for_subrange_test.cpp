@@ -46,8 +46,7 @@ do_test()
 int
 test_max_for_subrange()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "max_for_subrange()", { do_test } ) ;
+    return breeze::test_runner::instance().run( "max_for_subrange()",
+        { do_test } ) ;
 
 }

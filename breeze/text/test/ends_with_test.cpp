@@ -65,9 +65,7 @@ do_test()
 int
 test_ends_with()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "ends_with()",
              { do_test } ) ;
 }

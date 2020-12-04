@@ -148,9 +148,7 @@ check_line_wrap()
 int
 test_binary_to_base64()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "binary_to_base64()",
+    return breeze::test_runner::instance().run( "binary_to_base64()",
                                         { check,
                                           check_string_of_nuls,
                                           check_line_wrap } ) ;

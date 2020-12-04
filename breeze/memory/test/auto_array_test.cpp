@@ -89,9 +89,7 @@ can_assign_elements_of_const_auto_array_to_non_const()
 int
 test_auto_array()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "auto_array",
+    return breeze::test_runner::instance().run( "auto_array",
                   { check_move_semantics,
                     check_non_move_constructors,
                     check_reset,

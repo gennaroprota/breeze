@@ -93,8 +93,6 @@ test_move_only()
 int
 test_from_string()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run( "from_string()",
+    return breeze::test_runner::instance().run( "from_string()",
                                         { do_tests, test_move_only } ) ;
 }

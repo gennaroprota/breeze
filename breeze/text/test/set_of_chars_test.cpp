@@ -222,9 +222,7 @@ set_of_chars_can_be_constructed_from_input_iterators()
 int
 test_set_of_chars()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "set_of_chars",
              { do_test,
                set_of_chars_can_be_constructed_from_input_iterators } ) ;

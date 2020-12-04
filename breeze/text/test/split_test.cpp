@@ -162,9 +162,7 @@ do_test_split_if()
 int
 test_split()
 {
-    using namespace breeze ;
-
-    return test_runner::instance().run(
+    return breeze::test_runner::instance().run(
              "split() and split_if()",
              { do_test_split,
                do_test_split_if } ) ;
