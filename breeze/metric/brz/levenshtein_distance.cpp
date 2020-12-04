@@ -25,6 +25,9 @@ levenshtein_distance( std::string const & first, std::string const & second )
     typedef std::ptrdiff_t
                         length_type ;
 
+    //      Would it be worth to re-invoke ourselves with the arguments
+    //      swapped if len1 < len2?
+    // -----------------------------------------------------------------------
     length_type const   len1 = breeze::signed_count( first ) ;
     length_type const   len2 = breeze::signed_count( second ) ;
 
