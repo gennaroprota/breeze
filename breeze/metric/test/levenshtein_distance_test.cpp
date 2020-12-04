@@ -29,6 +29,11 @@ single_check( std::string const & first, std::string const & second,
     BREEZE_CHECK( levenshtein_distance( first, second ) == distance ) ;
     BREEZE_CHECK( levenshtein_distance( second, first ) == distance ) ;
 
+    //      Any string is distant zero from itself.
+    // -----------------------------------------------------------------------
+    BREEZE_CHECK( levenshtein_distance( first, first ) == 0 ) ;
+    BREEZE_CHECK( levenshtein_distance( second, second ) == 0 ) ;
+
     //      The distance shall remain the same if both strings are
     //      reversed.
     // -----------------------------------------------------------------------
@@ -44,9 +49,7 @@ single_check( std::string const & first, std::string const & second,
 void
 check()
 {
-    single_check( "", "", 0 ) ;
     single_check( "foo", "", 3 ) ;
-    single_check( "hello", "hello", 0 ) ;
     single_check( "hello", "hallo", 1 ) ;
     single_check( "sitting", "kitten", 3 ) ;
     single_check( "spell", "spel", 1 ) ;
