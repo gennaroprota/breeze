@@ -12,8 +12,10 @@
 // ___________________________________________________________________________
 
 #include "breeze/metric/damerau_levenshtein_distance.hpp"
+#include "breeze/diagnostics/assert.hpp"
 #include <algorithm>
 #include <cstddef>
+#include <limits>
 
 namespace breeze_ns {
 namespace           {
@@ -56,6 +58,11 @@ damerau_levenshtein_distance( std::string const & first,
 {
     typedef std::ptrdiff_t
                         length_type ;
+
+    length_type const   max = (std::numeric_limits< length_type >::max)() ;
+
+    BREEZE_ASSERT( first.length()  < max ) ;
+    BREEZE_ASSERT( second.length() < max ) ;
 
     length_type const   height = 1 + first.length() ;
     length_type const   width  = 1 + second.length() ;
