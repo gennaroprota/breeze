@@ -13,7 +13,10 @@
 
 #include "breeze/checksum/crc.hpp"
 #include "breeze/iteration/begin_end.hpp"
+#include "breeze/mathematics/rounded_up_quotient.hpp"
 #include "breeze/testing/testing.hpp"
+#include <iomanip>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -106,6 +109,26 @@ void check_value_from_traits()
     BREEZE_CHECK(
         breeze::crc< CrcTraits >( int_input.cbegin(), int_input.cend() ).value()
             == CrcTraits::check ) ;
+
+    //      And, for the moment, also make a simple stream insertion
+    //      test, until we figure out a clean way to test the stream
+    //      inserter with various formatting flags.
+    // -----------------------------------------------------------------------
+    std::ostringstream  oss ;
+    oss << crc ;
+    std::string const   output = oss.str() ;
+
+    oss.str( "" ) ;
+    oss.fill( '0' ) ;
+    oss.setf( std::ios::uppercase ) ;
+    oss.setf( std::ios::hex, std::ios::basefield ) ;
+    int const           digit_count =
+        breeze::rounded_up_quotient( CrcTraits::width, 4 ) ;
+    oss << std::setw( digit_count ) << crc.value() ;
+
+    std::string const   expected = oss.str() ;
+
+    BREEZE_CHECK( output == expected ) ;
 }
 
 void
