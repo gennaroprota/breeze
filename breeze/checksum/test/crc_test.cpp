@@ -84,7 +84,8 @@ struct invented_crc
 //      obvious).
 // ---------------------------------------------------------------------------
 template< typename CrcTraits >
-void check_value_from_traits()
+void
+check_value_from_traits()
 {
     char const          input[] = "123456789" ;
     int  const          len     = sizeof input - 1 ;
