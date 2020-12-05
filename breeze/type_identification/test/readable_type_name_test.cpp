@@ -86,7 +86,8 @@ test_with_polymorphic_type()
 int
 test_readable_type_name()
 {
-    return breeze::test_runner::instance().run( "readable_type_name()",
-                                        { do_tests,
-                                          test_with_polymorphic_type } ) ;
+    return breeze::test_runner::instance().run(
+        "readable_type_name()",
+        { do_tests,
+          test_with_polymorphic_type } ) ;
 }

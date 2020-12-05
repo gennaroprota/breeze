@@ -41,6 +41,6 @@ int
 test_digest_ordering()
 {
     return breeze::test_runner::instance().run(
-             "Digest ordering",
-             { check_usability_with_map } ) ;
+        "Digest ordering",
+        { check_usability_with_map } ) ;
 }

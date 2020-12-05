@@ -71,7 +71,7 @@ int
 test_breeze_assert()
 {
     return breeze::test_runner::instance().run(
-             "BREEZE_ASSERT()",
-             { do_test,
-               failed_assertion_calls_active_handler } ) ;
+        "BREEZE_ASSERT()",
+        { do_test,
+          failed_assertion_calls_active_handler } ) ;
 }

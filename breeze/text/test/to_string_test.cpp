@@ -40,5 +40,7 @@ void do_tests()
 int
 test_to_string()
 {
-    return breeze::test_runner::instance().run( "to_string()", { do_tests } ) ;
+    return breeze::test_runner::instance().run(
+        "to_string()",
+        { do_tests } ) ;
 }

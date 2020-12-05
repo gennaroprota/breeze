@@ -35,6 +35,7 @@ do_tests()
 int
 test_to_uppercase()
 {
-    return breeze::test_runner::instance().run( "to_uppercase()",
+    return breeze::test_runner::instance().run(
+        "to_uppercase()",
         { do_tests } ) ;
 }

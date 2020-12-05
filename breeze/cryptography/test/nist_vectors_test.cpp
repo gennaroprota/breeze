@@ -346,6 +346,6 @@ int
 test_nist_vectors()
 {
     return breeze::test_runner::instance().run(
-             "NIST vectors",
-             { do_test } ) ;
+        "NIST vectors",
+        { do_test } ) ;
 }

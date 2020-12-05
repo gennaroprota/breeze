@@ -163,7 +163,7 @@ int
 test_split()
 {
     return breeze::test_runner::instance().run(
-             "split() and split_if()",
-             { do_test_split,
-               do_test_split_if } ) ;
+        "split() and split_if()",
+        { do_test_split,
+          do_test_split_if } ) ;
 }

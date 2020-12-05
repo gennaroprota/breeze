@@ -38,6 +38,6 @@ int
 test_get_environment_variable()
 {
     return breeze::test_runner::instance().run(
-             "get_environment_variable()",
-             { do_test } ) ;
+        "get_environment_variable()",
+        { do_test } ) ;
 }

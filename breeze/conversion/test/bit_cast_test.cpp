@@ -112,9 +112,9 @@ int
 test_bit_cast()
 {
     return breeze::test_runner::instance().run(
-             "bit_cast()",
-             { struct_casts_to_struct,
-               pointer_to_object_casts_to_pointer_to_object,
-               pointer_to_void_casts_to_pointer_to_function,
-               bit_cast_is_noexcept_if_and_only_if_dest_default_ctor_is } ) ;
+        "bit_cast()",
+        { struct_casts_to_struct,
+          pointer_to_object_casts_to_pointer_to_object,
+          pointer_to_void_casts_to_pointer_to_function,
+          bit_cast_is_noexcept_if_and_only_if_dest_default_ctor_is } ) ;
 }

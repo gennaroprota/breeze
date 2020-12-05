@@ -66,6 +66,6 @@ int
 test_ends_with()
 {
     return breeze::test_runner::instance().run(
-             "ends_with()",
-             { do_test } ) ;
+        "ends_with()",
+        { do_test } ) ;
 }

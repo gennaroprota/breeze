@@ -62,6 +62,6 @@ int
 test_printable_string()
 {
     return breeze::test_runner::instance().run(
-             "printable_string",
-             { do_test } ) ;
+        "printable_string",
+        { do_test } ) ;
 }

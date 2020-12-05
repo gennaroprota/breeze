@@ -74,6 +74,6 @@ int
 test_uuid()
 {
     return breeze::test_runner::instance().run(
-             "uuid",
-             { do_tests } ) ;
+        "uuid",
+        { do_tests } ) ;
 }

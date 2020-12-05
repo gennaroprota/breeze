@@ -91,6 +91,6 @@ int
 test_breeze_dump_expression()
 {
     return breeze::test_runner::instance().run(
-             "BREEZE_DUMP_EXPRESSION()",
-             { do_test } ) ;
+        "BREEZE_DUMP_EXPRESSION()",
+        { do_test } ) ;
 }

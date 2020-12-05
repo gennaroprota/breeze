@@ -42,6 +42,5 @@ test_get_set_current_directory()
 {
     return breeze::test_runner::instance().run(
         "Get/set current directory",
-        { check }
-    ) ;
+        { check } ) ;
 }

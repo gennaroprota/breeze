@@ -51,7 +51,8 @@ do_check()
 int
 test_is_power_of_2()
 {
-    return breeze::test_runner::instance().run( "is_power_of_2()",
+    return breeze::test_runner::instance().run(
+        "is_power_of_2()",
         { do_check< short >,
           do_check< unsigned short >,
           do_check< int >,

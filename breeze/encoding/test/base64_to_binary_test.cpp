@@ -118,6 +118,7 @@ check_invalid()
 int
 test_base64_to_binary()
 {
-    return breeze::test_runner::instance().run( "base64_to_binary()",
-                                        { check_valid, check_invalid } ) ;
+    return breeze::test_runner::instance().run(
+        "base64_to_binary()",
+        { check_valid, check_invalid } ) ;
 }

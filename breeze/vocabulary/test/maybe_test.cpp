@@ -139,6 +139,8 @@ check_assignments()
 int
 test_maybe()
 {
-    return breeze::test_runner::instance().run( "maybe",
-                                   { check_constructors, check_assignments } ) ;
+    return breeze::test_runner::instance().run(
+        "maybe",
+        { check_constructors,
+          check_assignments } ) ;
 }

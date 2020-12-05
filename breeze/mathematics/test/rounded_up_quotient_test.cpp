@@ -80,9 +80,10 @@ rounded_up_quotient_arguments_can_be_cv_qualified()
 int
 test_rounded_up_quotient()
 {
-    return breeze::test_runner::instance().run( "rounded_up_quotient()",
-                     { rounded_up_quotient_is_usable_in_constexpr_contexts,
-                       rounded_up_quotient_handles_several_cases_correctly,
-                       rounded_up_quotient_doesnt_warn_with_unsigned,
-                       rounded_up_quotient_arguments_can_be_cv_qualified } ) ;
+    return breeze::test_runner::instance().run(
+        "rounded_up_quotient()",
+        { rounded_up_quotient_is_usable_in_constexpr_contexts,
+          rounded_up_quotient_handles_several_cases_correctly,
+          rounded_up_quotient_doesnt_warn_with_unsigned,
+          rounded_up_quotient_arguments_can_be_cv_qualified } ) ;
 }

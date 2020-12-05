@@ -96,6 +96,9 @@ check3()
 int
 test_clamp()
 {
-    return breeze::test_runner::instance().run( "clamp()",
-                                        { check, check2, check3 } ) ;
+    return breeze::test_runner::instance().run(
+        "clamp()",
+        { check,
+          check2,
+          check3 } ) ;
 }

@@ -92,5 +92,7 @@ check()
 int
 test_roman()
 {
-    return breeze::test_runner::instance().run( "roman", { check } ) ;
+    return breeze::test_runner::instance().run(
+        "roman",
+        { check } ) ;
 }

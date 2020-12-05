@@ -55,6 +55,8 @@ void check2()
 int
 test_count_bits()
 {
-    return breeze::test_runner::instance().run( "count_bits()",
-        { check, check2 } ) ;
+    return breeze::test_runner::instance().run(
+        "count_bits()",
+        { check,
+          check2 } ) ;
 }

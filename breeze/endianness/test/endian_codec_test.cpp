@@ -114,10 +114,11 @@ check_input_output_iterators()
 int
 test_endian_codec()
 {
-    return breeze::test_runner::instance().run( "endian_codec",
-            { check,
-              check2,
-              check_type_that_fits_in_byte< unsigned char, unsigned int >,
-              check_type_that_fits_in_byte< unsigned int,  unsigned long >,
-              check_input_output_iterators } ) ;
+    return breeze::test_runner::instance().run(
+        "endian_codec",
+        { check,
+          check2,
+          check_type_that_fits_in_byte< unsigned char, unsigned int >,
+          check_type_that_fits_in_byte< unsigned int,  unsigned long >,
+          check_input_output_iterators } ) ;
 }

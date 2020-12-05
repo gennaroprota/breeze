@@ -52,6 +52,6 @@ int
 test_base_file_name()
 {
     return breeze::test_runner::instance().run(
-             "base_file_name()",
-             { do_test } ) ;
+        "base_file_name()",
+        { do_test } ) ;
 }

@@ -57,5 +57,7 @@ check()
 int
 test_digital_root()
 {
-    return breeze::test_runner::instance().run( "digital_root()", { check } ) ;
+    return breeze::test_runner::instance().run(
+        "digital_root()",
+        { check } ) ;
 }

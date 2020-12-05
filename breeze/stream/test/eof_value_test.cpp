@@ -34,5 +34,7 @@ check()
 int
 test_eof_value()
 {
-    return breeze::test_runner::instance().run( "eof_value()", { check } ) ;
+    return breeze::test_runner::instance().run(
+        "eof_value()",
+        { check } ) ;
 }

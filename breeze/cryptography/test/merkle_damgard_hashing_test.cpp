@@ -232,6 +232,7 @@ test_merkle_damgard_hashing()
         digest_can_be_constructed_directly_if_range_is_all_available
     } ;
 
-    return breeze::test_runner::instance().run( "Merkle-Damgard hashing",
-                                        cbegin( desc ), cend( desc) ) ;
+    return breeze::test_runner::instance().run(
+        "Merkle-Damgard hashing",
+        cbegin( desc ), cend( desc) ) ;
 }

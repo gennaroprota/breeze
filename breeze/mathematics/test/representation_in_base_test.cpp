@@ -55,6 +55,7 @@ void check()
 int
 test_representation_in_base()
 {
-    return breeze::test_runner::instance().run( "representation_in_base()",
-                                        { check } ) ;
+    return breeze::test_runner::instance().run(
+        "representation_in_base()",
+        { check } ) ;
 }

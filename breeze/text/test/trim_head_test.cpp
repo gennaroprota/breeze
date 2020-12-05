@@ -47,6 +47,6 @@ int
 test_trim_head()
 {
     return breeze::test_runner::instance().run(
-             "trim_head()",
-             { do_test } ) ;
+        "trim_head()",
+        { do_test } ) ;
 }

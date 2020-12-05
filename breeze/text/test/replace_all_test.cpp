@@ -80,6 +80,7 @@ void do_tests()
 int
 test_replace_all()
 {
-    return breeze::test_runner::instance().run( "replace_all()",
+    return breeze::test_runner::instance().run(
+        "replace_all()",
         { do_tests } ) ;
 }

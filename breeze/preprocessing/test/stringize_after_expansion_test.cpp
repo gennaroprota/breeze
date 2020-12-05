@@ -46,6 +46,6 @@ int
 test_breeze_stringize_after_expansion()
 {
     return breeze::test_runner::instance().run(
-             "BREEZE_STRINGIZE_AFTER_EXPANSION()",
-             { do_tests } ) ;
+        "BREEZE_STRINGIZE_AFTER_EXPANSION()",
+        { do_tests } ) ;
 }

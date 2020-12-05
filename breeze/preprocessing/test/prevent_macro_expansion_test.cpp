@@ -47,6 +47,6 @@ int
 test_breeze_prevent_macro_expansion()
 {
     return breeze::test_runner::instance().run(
-             "BREEZE_PREVENT_MACRO_EXPANSION",
-             { do_test } ) ;
+        "BREEZE_PREVENT_MACRO_EXPANSION",
+        { do_test } ) ;
 }

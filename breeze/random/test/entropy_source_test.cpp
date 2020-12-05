@@ -82,7 +82,7 @@ int
 test_entropy_source()
 {
     return breeze::test_runner::instance().run(
-             "entropy_source",
-             { do_test,
-               entropy_source_is_usable_with_shuffle } ) ;
+        "entropy_source",
+        { do_test,
+          entropy_source_is_usable_with_shuffle } ) ;
 }

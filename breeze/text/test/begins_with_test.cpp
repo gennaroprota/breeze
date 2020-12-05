@@ -68,6 +68,6 @@ int
 test_begins_with()
 {
     return breeze::test_runner::instance().run(
-             "begins_with()",
-             { do_test } ) ;
+        "begins_with()",
+        { do_test } ) ;
 }

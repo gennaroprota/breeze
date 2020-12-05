@@ -43,6 +43,7 @@ do_tests()
 int
 test_breeze_stringize()
 {
-    return breeze::test_runner::instance().run( "BREEZE_STRINGIZE()",
+    return breeze::test_runner::instance().run(
+        "BREEZE_STRINGIZE()",
         { do_tests } ) ;
 }
