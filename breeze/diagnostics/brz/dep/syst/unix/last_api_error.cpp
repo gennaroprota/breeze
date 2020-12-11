@@ -11,60 +11,98 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breeze/iteration/begin_end.hpp"
 #include <cerrno>
-#include <locale.h>
 #include <string.h>
 #include <string>
 
 namespace breeze_ns {
 namespace           {
 
+char const          cant_obtain_description[] =
+                            "<couldn't obtain the error description"
+                            " (see the error code, instead)>" ;
+char const          empty_error_description[] =
+                            "<empty error description"
+                            " (see the error code, instead)>" ;
+
+
+//      strerror_message:
+//      =================
+//
+//      To get an error description on a Unix system, the choice is
+//      between strerror(), strerror_r() and strerror_l(). The first is
+//      not (necessarily) thread-safe, so we exclude it. And
+//      strerror_l(), which was introduced with POSIX.1-2008, is not
+//      available (as of December 2020) on macOS. So, the only choice is
+//      strerror_r().
+//
+//      Which, however, exists in two versions: a POSIX one and a GNU
+//      one. The two versions have the same argument list but different
+//      return types, so we use function overloading to handle either
+//      version. That's the purpose of this class. (In the past, we
+//      attempted to always get the POSIX version, but, on Ubuntu 16.04,
+//      or with Clang 5.0.1 on Cygwin64, that requires undefining
+//      _GNU_SOURCE, which breaks libstdc++ on Ubuntu 16.04, so it is a
+//      no-no.)
+//
+//      Finally, note that, of course, on each system, only one of the
+//      two set_message() members of this class will be used. And this
+//      causes a -Wunused-member-function warning from Clang. The choice
+//      here was between disabling the warning and defining this class
+//      outside of an unnamed namespace: we chose the former.
+// ---------------------------------------------------------------------------
+class strerror_message
+{
+public:
+    explicit            strerror_message( int error_code )
+    {
+        set_message( strerror_r( error_code, m_buffer, max_length ) ) ;
+        * ( breeze::end( m_buffer ) - 1 ) = '\0' ;
+    }
+
+    void                set_message( int posix_return_value )
+    {
+        m_message = posix_return_value == 0
+                        ? m_buffer[ 0 ] != '\0'
+                            ? m_buffer
+                            : empty_error_description
+                        : cant_obtain_description
+                        ;
+    }
+
+    void                set_message( char const * gnu_return_value )
+    {
+        //      Theoretically, the GNU variant cannot return a null
+        //      pointer, but let's be cautious (it may return a pointer
+        //      to an empty string, instead).
+        // -------------------------------------------------------------------
+        m_message = gnu_return_value != nullptr
+                        ? gnu_return_value[ 0 ] != '\0'
+                            ? gnu_return_value
+                            : empty_error_description
+                        : cant_obtain_description
+                        ;
+    }
+
+    char const *        message() const
+    {
+        return m_message ;
+    }
+
+private:
+    static int const    max_length = 1024 ;
+    char                m_buffer[ max_length + 1 ] ;
+    char const *        m_message ;
+} ;
+
 std::string
 format_message( char const * incipit, long long last_error )
 {
-    static char const   cant_obtain_description[] =
-                            "couldn't obtain the error description"
-                            "; see the error code, instead" ;
+    strerror_message const
+                        sm( static_cast< int >( last_error ) ) ;
+    char const * const  message = sm.message() ;
 
-    //      We use strerror_l(), here, although that was introduced only
-    //      with POSIX.1-2008.
-    //
-    //      Here's the reason:
-    //
-    //      the choice is between strerror(), strerror_r() and
-    //      strerror_l(). The first is not thread-safe, so is
-    //      immediately excluded. strerror_r() exists in two variants: a
-    //      POSIX one and a GNU one, and getting the POSIX version on
-    //      Ubuntu 16.04, or with Clang 5.0.1 on Cygwin64, requires
-    //      undefining _GNU_SOURCE; this undefine, though, breaks
-    //      libstdc++ on Ubuntu (again, this occurred on 16.04), so it
-    //      is a no-no.
-    //
-    //      Thus, we are left with GNU's _r() variant and the _l() one.
-    //      For portability, of course, we prefer the latter (which is
-    //      even recommended by POSIX itself:
-    //
-    //        <http://austingroupbugs.net/view.php?id=655>
-    //
-    //      ).
-    //
-    //      Note that this means we have to give up on Mac OS X, as that
-    //      doesn't support POSIX.1-2008 (nor, of course, it supports
-    //      the GNU strerror_r()). It might be supported in the future,
-    //      though (we hope).
-    // -----------------------------------------------------------------------
-    char const *        description = nullptr ;
-    locale_t const      locale = newlocale( LC_MESSAGES_MASK, "", locale_t() ) ;
-
-    if ( locale != locale_t() ) {
-        description = strerror_l( static_cast< int >( last_error ), locale ) ;
-        freelocale( locale ) ;
-    }
-
-    char const * const  message = description != nullptr
-                                      ? description
-                                      : &cant_obtain_description[ 0 ]
-                                      ;
     return incipit != nullptr && incipit[ 0 ] != '\0'
         ? std::string( incipit ) + ": " + message
         : message

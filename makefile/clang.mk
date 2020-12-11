@@ -38,6 +38,11 @@
 #           Silences warnings in the bit_cast() noexcept-ness tests
 #           which are difficult to avoid by changing the code.
 #
+#       -Wno-unused-member-function:
+#
+#           Silences a warning in the implementation of last_api_error
+#           for Unix (see the corresponding source file for details).
+#
 #       -Wno-weak-vtables:
 #
 #           The -Wweak-vtables warning tries to point out possible
@@ -71,7 +76,7 @@ cpp_basic_options := -std=c++14                         \
                      -Wno-c++98-compat-pedantic         \
                      -Werror                            \
                      -fuse-cxa-atexit                   \
-                     -D _POSIX_C_SOURCE=200809L         \
+                     -D _POSIX_C_SOURCE=200112L         \
                      -D _GLIBCXX_USE_CXX11_ABI=1
 
 cpp_basic_options += -pipe                              \
@@ -82,6 +87,7 @@ cpp_basic_options += -pipe                              \
                      -Wno-padded                        \
                      -Wno-sign-conversion               \
                      -Wno-unneeded-member-function      \
+                     -Wno-unused-member-function        \
                      -Wno-weak-vtables                  \
                      -Wno-zero-as-null-pointer-constant
 
