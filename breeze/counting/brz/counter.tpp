@@ -12,12 +12,6 @@
 
 namespace breeze_ns {
 
-template< typename Int >
-counter< Int >::counter()
-    :   m_count( 0 )
-{
-}
-
 template< typename Int>
 counter< Int >::counter( Int n )
     :   m_count( ( BREEZE_ASSERT( n >= 0 ), n ) )

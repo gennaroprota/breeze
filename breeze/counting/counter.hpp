@@ -36,11 +36,6 @@ class counter
     :   private comparison< counter< IntegralType > >
 {
 public:
-    //!     Constructs a counter having internal value \c
-    //!     IntegralType( 0 ).
-    // -----------------------------------------------------------------------
-                        counter() ;
-
     //!     Constructs a counter with internal value \c n.
     //!
     //!     This constructor executes:

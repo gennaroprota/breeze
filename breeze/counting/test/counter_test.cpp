@@ -26,7 +26,7 @@ do_check()
     using breeze::counter ;
 
     {
-        counter< T >        c ;
+        counter< T >        c( 0 ) ;
         BREEZE_CHECK( c.value() == 0 ) ;
 
         ++ c ;
