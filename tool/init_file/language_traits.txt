@@ -52,6 +52,7 @@
 \.el$                   no       no       ;;         Emacs-Lisp
 \.html$                 <!--     -->      no         HTML
 (^GNUmakefile|\.mk)$    no       no       #          Make
+\.md$                   <!--     -->      no         Markdown
 \.(sh|shc)$             no       no       #          Shell
 \.vim$                  no       no       "          Vim
 \.xhtml$                <!--     -->      no         XHTML

@@ -25,6 +25,7 @@ GNUmakefile text
 *.css       text
 *.el        text
 *.html      text
+*.md        text
 *.mk        text
 *.sh        text eol=lf
 *.shc       text eol=lf
