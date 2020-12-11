@@ -68,6 +68,10 @@ jobs:
           system: unix
           compiler: clang
           compiler_command: ${{matrix.compiler}}
+
+          #     Is there a way to avoid turning off this option?
+          # ------------------------------------------------------------------
+          cpp_extra_options: -Wno-poison-system-directories
         run: BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
 
   gcc-on-macos:
