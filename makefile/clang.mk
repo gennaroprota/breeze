@@ -134,9 +134,10 @@ object_file_suffix := .o
 library_options := $(addprefix -l,$(libraries))
 
 #       Note that this differs from the compiler name, which is in
-#       $(compiler). And that, for Travis CI, we often need to select a
-#       specific version (e.g. clang++-8), which we do externally to
-#       this makefile: hence the ifndef test.
+#       $(compiler). And that, in the continuous integration (currently,
+#       GitHub Actions), we often need to select a specific version
+#       (e.g. clang++-8), which we do externally to this makefile: hence
+#       the ifndef test.
 # ----------------------------------------------------------------------------
 ifndef compiler_command
     compiler_command := clang++

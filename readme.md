@@ -17,8 +17,8 @@
      -------------------------------------------------------------------------
 -->
 [![Builds and tests results](
-https://img.shields.io/travis/com/gennaroprota/breeze/master?label=builds%20%26%20tests)](
-https://travis-ci.com/gennaroprota/breeze)
+https://img.shields.io/github/workflow/status/gennaroprota/breeze/builds_and_tests/master?label=builds%20%26%20tests)](
+https://github.com/gennaroprota/breeze/actions)
 ![Lines of code counter](
 https://tokei.rs/b1/github/gennaroprota/breeze?category=code)
 ![Lines of comment counter](

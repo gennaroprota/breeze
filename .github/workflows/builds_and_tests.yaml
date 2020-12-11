@@ -1,0 +1,87 @@
+# ============================================================================
+#                         Copyright 2020 Gennaro Prota
+#
+#                   Licensed under the 3-Clause BSD License.
+#              (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+#               <https://opensource.org/licenses/BSD-3-Clause>.)
+# ____________________________________________________________________________
+#
+#       GitHub continuous integration.
+#
+#       This configures the builds (plus tests) to run automatically on
+#       push and other events.
+# ----------------------------------------------------------------------------
+
+
+#       TODO:
+#         there's a lot of duplication in this file: can't 'runs-on' use
+#         a matrix??
+# ----------------------------------------------------------------------------
+
+name: builds_and_tests
+on:   [push, pull_request]
+
+jobs:
+  clang-on-linux:
+    name: Clang on Linux
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        compiler: [ clang++, clang++-8, clang++-9 ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Builds and tests
+        env:
+          system: unix
+          compiler: clang
+          compiler_command: ${{matrix.compiler}}
+        run: BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
+
+  gcc-on-linux:
+    name: GCC on Linux
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        compiler: [ g++, g++-8, g++-9 ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Builds and tests
+        env:
+          system: unix
+          compiler: gcc
+          compiler_command: ${{matrix.compiler}}
+        run: BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
+
+  clang-on-macos:
+    name: Clang on macOS
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        compiler: [ clang++ ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Builds and tests
+        env:
+          system: unix
+          compiler: clang
+          compiler_command: ${{matrix.compiler}}
+        run: BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
+
+  gcc-on-macos:
+    name: GCC on macOS
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        compiler: [ g++-8, g++-9 ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Builds and tests
+        env:
+          system: unix
+          compiler: gcc
+          compiler_command: ${{matrix.compiler}}
+        run: BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
