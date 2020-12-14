@@ -66,7 +66,7 @@ format_message( char const * incipit, long long last_error )
                                       : &cant_obtain_description[ 0 ]
                                       ;
     return incipit != nullptr && incipit[ 0 ] != '\0'
-        ? std::string( incipit) + ": " + message
+        ? std::string( incipit ) + ": " + message
         : message
         ;
 }
