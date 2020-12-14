@@ -15,6 +15,12 @@
 #include <unistd.h>
 #include <stdexcept>
 
+//      This declaration should not be needed if you #include
+//      <unistd.h>, but we got errors on at least one macOS build (in
+//      GitHub Actions) without it.
+// ---------------------------------------------------------------------------
+extern char **      environ ;
+
 namespace breeze_ns {
 
 std::map< std::string, std::string >
