@@ -74,7 +74,7 @@ private:
     friend std::ostream &
                         operator <<( std::ostream &, last_api_error const & ) ;
 
-    long long           m_last_error ;
+    long long           m_code ;
 
     //      See the comments in the implementation files for the purpose
     //      of this private constructor.
