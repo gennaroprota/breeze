@@ -12,7 +12,9 @@
 // ___________________________________________________________________________
 
 #include "unit_test_main.hpp"
+#include "breeze/diagnostics/last_api_error.hpp"
 #include "breeze/environment/operating_system_name.hpp"
+#include "breeze/memory/amount_of_physical_memory.hpp"
 #include <cstdlib>
 #include <iostream>
 
@@ -101,7 +103,21 @@ main()
     //      something is wrong.
     // -----------------------------------------------------------------------
     std::cout << "\nDetected operating system: " <<
-        breeze::operating_system_name() << '\n' << std::endl ;
+        breeze::operating_system_name() << std::endl ;
+
+    //      Likewise for the amount of physical memory (use floating
+    //      point to let the user notice if the amount is not a multiple
+    //      of 1024)...
+    // -----------------------------------------------------------------------
+    auto const          amount = static_cast< double >(
+            breeze::amount_of_physical_memory() ) / 1024.0 ;
+    std::cout << "\nAmount of physical memory in MiB: " <<
+        amount << std::endl ;
+
+    //      ... and for the last API error.
+    // -----------------------------------------------------------------------
+    std::cout << "\nLast API error: " <<
+        breeze::last_api_error( "Unit tests" ) << '\n' << std::endl ;
 
     return result ;
 }
