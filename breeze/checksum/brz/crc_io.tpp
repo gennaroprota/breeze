@@ -16,20 +16,23 @@ template< typename Traits >
 std::ostream &
 operator <<( std::ostream & dest, crc< Traits > const & crc )
 {
+    typedef typename Traits::value_type
+                        value_type ;
+
     int const           digit_count =
         rounded_up_quotient( Traits::width, 4 ) ;
 
     char                buffer[ digit_count + 1 ] ;
     auto const          start = breeze::begin( buffer ) ;
     auto                iter  = breeze::end( buffer ) ;
-    typename Traits::value_type
-                        value = crc.value() ;
+    value_type          value = crc.value() ;
+
     -- iter ;
     *iter = '\0' ;
     while ( iter != start ) {
         -- iter ;
         *iter = "0123456789ABCDEF"[ value & 0x0f ] ;
-        value >>= 4 ;
+        value = static_cast< value_type >( value >> 4 ) ;
     }
 
     dest << buffer ;
