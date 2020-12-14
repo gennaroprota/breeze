@@ -83,10 +83,4 @@ last_api_error::last_api_error( char const * p, long long error_code )
 {
 }
 
-long long
-last_api_error::code() const noexcept
-{
-    return m_code ;
-}
-
 }

@@ -19,6 +19,12 @@
 
 namespace breeze_ns {
 
+long long
+last_api_error::code() const noexcept
+{
+    return m_code ;
+}
+
 std::ostream &
 operator <<( std::ostream & dest, last_api_error const & last )
 {
