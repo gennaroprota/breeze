@@ -7,7 +7,6 @@
 // ___________________________________________________________________________
 
 #include "private/gcd_lcm_common.hpp"
-#include "breeze/preprocessing/prevent_macro_expansion.hpp"
 #include <type_traits>
 
 namespace breeze_ns {
