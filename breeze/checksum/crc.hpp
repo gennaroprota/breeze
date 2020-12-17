@@ -114,7 +114,7 @@ public:
     typedef typename Traits::value_type
                         value_type ;
 
-    //!\name Initialization
+    //!\name Constructors
     //!\{
     // -----------------------------------------------------------------------
     //!     Initializes the CRC calculator.
@@ -127,13 +127,17 @@ public:
     constexpr           crc( InputIter first, InputIter last ) ;
     //!\}
 
-    //!     Appends the values in <tt>[first, last)</tt> to the
-    //!     calculation, in order.
+    //!\name Functions to process input
+    //!\{
+    // ----------------------------------------------------------------------
+    //!     Processes the values in <tt>[first, last)</tt>, updating the
+    //!     calculated CRC.
     // -----------------------------------------------------------------------
     template< typename InputIter >
     constexpr void      accumulate( InputIter first, InputIter last ) ;
+    //!\}
 
-    //!\name Reading the result
+    //!\name Functions to read the result
     //!\{
     // -----------------------------------------------------------------------
     //!     Returns the calculated CRC. This read may occur at any time,

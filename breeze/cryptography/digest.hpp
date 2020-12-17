@@ -34,7 +34,7 @@ public:
     typedef typename Hasher::byte_type const *
                         const_iterator ;
 
-    //!\name Initialization
+    //!\name Constructors
     //!\{
     // -----------------------------------------------------------------------
     //!     Constructs a digest from a \c Hasher. Since the \c Hasher
@@ -63,7 +63,7 @@ public:
     // -----------------------------------------------------------------------
     bool                is_equal( digest< Hasher > const & ) const ;
 
-    //!\name Byte-based iteration (read-only)
+    //!\name Functions for byte-based iteration (read-only)
     //!           const_iterator is a forward iterator - gps
     //!\{
     const_iterator      begin() const ;

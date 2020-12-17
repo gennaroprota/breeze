@@ -129,7 +129,7 @@ private:
                         state_type ;// gps --possibly temp
 
 public:
-    //!\name Initialization
+    //!\name Constructors
     //!\{
     // -----------------------------------------------------------------------
     //!     Constructs a machine without processing any input.
@@ -143,7 +143,7 @@ public:
                                                 InputIter end ) ;
     //!\}
 
-    //!\name Operations: "appending" one or more bytes
+    //!\name Functions to process input
     //!\{
     // -----------------------------------------------------------------------
     void                append( byte_type b ) ;
