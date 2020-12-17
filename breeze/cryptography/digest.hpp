@@ -36,6 +36,7 @@ public:
 
     //!\name Initialization
     //!\{
+    // -----------------------------------------------------------------------
     //!     Constructs a digest from a \c Hasher. Since the \c Hasher
     //!     argument is passed by value its state is not affected.
     // -----------------------------------------------------------------------

@@ -269,7 +269,8 @@ public:
     class               iterator
     {
     public:
-        //!\{   Typedefs for the standard library.
+        //!\name Typedefs for the standard library.
+        //!\{
         // -------------------------------------------------------------------
         typedef std::forward_iterator_tag
                             iterator_category  ;
@@ -287,7 +288,8 @@ public:
         // -------------------------------------------------------------------
         explicit            iterator( set_of_chars const & sc ) noexcept ;
 
-        //!\{   Iterator operations.
+        //!\name Iterator operations.
+        //!\{
         // -------------------------------------------------------------------
         value_type          operator *() const noexcept ;
         iterator &          operator ++() & noexcept ;

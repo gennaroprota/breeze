@@ -132,6 +132,8 @@ public:
     //!\name Initialization
     //!\{
     // -----------------------------------------------------------------------
+    //!     Constructs a machine without processing any input.
+    // -----------------------------------------------------------------------
                         merkle_damgard_machine() ;
 
     //!     Constructs from an input range.

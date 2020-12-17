@@ -116,6 +116,7 @@ public:
 
     //!\name Initialization
     //!\{
+    // -----------------------------------------------------------------------
     //!     Initializes the CRC calculator.
     // -----------------------------------------------------------------------
     constexpr           crc() noexcept ;
@@ -134,6 +135,7 @@ public:
 
     //!\name Reading the result
     //!\{
+    // -----------------------------------------------------------------------
     //!     Returns the calculated CRC. This read may occur at any time,
     //!     and doesn't disturb the running sum.
     // -----------------------------------------------------------------------
