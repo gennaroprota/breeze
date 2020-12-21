@@ -123,7 +123,7 @@ to the command line, but note that the `cpp_extra_options` variable is
 experimental.
 
 *Note: to get a list of the available Make targets, with a brief description for
-each one, launch the command `make help` (or `gmake help`).*
+each of them, launch the command `make help` (or `gmake help`).*
 
 # A note about the documentation
 
