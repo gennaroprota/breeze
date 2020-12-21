@@ -128,7 +128,6 @@ cpp_basic_options += -Wno-exit-time-destructors         \
 # ----------------------------------------------------------------------------
 cpp_debug_options := -O0                                \
                      -D _GLIBCXX_ASSERTIONS=1           \
-                     -D _GLIBCXX_CONCEPT_CHECKS         \
                      -D _GLIBCXX_DEBUG                  \
                      -D _GLIBCXX_DEBUG_PEDANTIC
 

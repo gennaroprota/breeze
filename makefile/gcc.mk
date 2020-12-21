@@ -182,7 +182,6 @@ cpp_basic_options += -Wno-format-nonliteral
 # ----------------------------------------------------------------------------
 cpp_debug_options := -Og                             \
                      -D _GLIBCXX_ASSERTIONS=1        \
-                     -D _GLIBCXX_CONCEPT_CHECKS      \
                      -D _GLIBCXX_DEBUG               \
                      -D _GLIBCXX_DEBUG_PEDANTIC
 
