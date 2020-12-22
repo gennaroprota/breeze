@@ -130,7 +130,7 @@ secure_fill( ForwardIterator begin, ForwardIterator end, T const & value )
 //
 //!     Version for built-in arrays.
 // ---------------------------------------------------------------------------
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 void
 secure_fill( T ( &arr )[ n ], T const & value = T() )
 {

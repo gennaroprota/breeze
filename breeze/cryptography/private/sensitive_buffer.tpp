@@ -12,14 +12,14 @@
 
 namespace breeze_ns {
 
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 void
 sensitive_buffer< T[ n ] >::wipe() noexcept
 {
     breeze::secure_fill( m_data ) ;
 }
 
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 sensitive_buffer< T[ n ] >::sensitive_buffer()
 {
     // Calling secure_fill() might cause too much performance loss; and
@@ -28,7 +28,7 @@ sensitive_buffer< T[ n ] >::sensitive_buffer()
     wipe() ;
 }
 
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 template< typename InputIter >
 sensitive_buffer< T[ n ] >::sensitive_buffer( InputIter begin,
                                               InputIter end )
@@ -36,59 +36,59 @@ sensitive_buffer< T[ n ] >::sensitive_buffer( InputIter begin,
     std::copy( begin, end, this->begin() ) ;
 }
 
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 sensitive_buffer< T[ n ] >::sensitive_buffer( T const ( &src )[ n ] )
 {
     std::copy( src, src + n, this->begin() ) ;
 }
 
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 sensitive_buffer< T[ n ] >::~sensitive_buffer() noexcept
 {
     wipe() ;
 }
 
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 typename sensitive_buffer< T[ n ] >::iterator
 sensitive_buffer< T[ n ] >::begin() noexcept
 {
     return m_data ;
 }
 
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 typename sensitive_buffer< T[ n ] >::iterator
 sensitive_buffer< T[ n ] >::end() noexcept
 {
     return m_data + n ;
 }
 
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 typename sensitive_buffer< T[ n ] >::const_iterator
 sensitive_buffer< T[ n ] >::begin() const noexcept
 {
     return m_data ;
 }
 
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 typename sensitive_buffer< T[ n ] >::const_iterator
 sensitive_buffer< T[ n ] >::end() const noexcept
 {
     return m_data + n ;
 }
 
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 typename sensitive_buffer< T[ n ] >::reference
 sensitive_buffer< T[ n ] >::operator []( std::ptrdiff_t index )
 {
-    BREEZE_ASSERT( 0 <= index && static_cast< size_type >( index ) < n ) ;
+    BREEZE_ASSERT( 0 <= index && index < n ) ;
     return m_data[ index ] ;
 }
 
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 typename sensitive_buffer< T[ n ] >::const_reference
 sensitive_buffer< T[ n ] >::operator []( std::ptrdiff_t index ) const
 {
-    BREEZE_ASSERT( 0 <= index && static_cast< size_type >( index ) < n ) ;
+    BREEZE_ASSERT( 0 <= index && index < n ) ;
     return m_data[ index ] ;
 }
 

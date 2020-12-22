@@ -24,7 +24,7 @@ namespace breeze_ns {
 template< typename T >
 class sensitive_buffer ;
 
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 class sensitive_buffer< T[ n ] >
 {
     T                   m_data[ n ] ;

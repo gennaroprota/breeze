@@ -124,7 +124,7 @@ cend( C const & c ) noexcept( noexcept( c.end() ) )
 //!
 //!     (Note that there's no need for a "T const overload".)
 // ---------------------------------------------------------------------------
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 constexpr T *
 begin( T ( &a )[ n ] ) noexcept
 {
@@ -136,7 +136,7 @@ begin( T ( &a )[ n ] ) noexcept
 //
 //!     Like container::begin(), but for a built-in array.
 // ---------------------------------------------------------------------------
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 constexpr T const *
 cbegin( T const ( &a )[ n ] ) noexcept
 {
@@ -151,7 +151,7 @@ cbegin( T const ( &a )[ n ] ) noexcept
 //!     (The remark, made for \c begin(), that there's no need for a "T
 //!     const overload" applies here, as well.)
 // ---------------------------------------------------------------------------
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 constexpr T *
 end( T ( &a )[ n ] ) noexcept
 {
@@ -163,7 +163,7 @@ end( T ( &a )[ n ] ) noexcept
 //
 //!     Like container::end(), but for a built-in array.
 // ---------------------------------------------------------------------------
-template< typename T, std::size_t n >
+template< typename T, std::ptrdiff_t n >
 constexpr T const *
 cend( T const ( &a )[ n ] ) noexcept
 {
