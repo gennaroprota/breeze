@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Returns a human readable name for its type argument.
+//!     \brief Returns a human readable name for a type.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_e0aZnjL0UZmNVTa9XkUU1WypgFnHm24u
