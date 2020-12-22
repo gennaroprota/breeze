@@ -26,7 +26,7 @@ namespace breeze_ns {
 class roman
 {
 public:
-    //!     Constructs a Roman numeral corresponding to number \c n.
+    //!     Constructs a Roman numeral corresponding to the number \c n.
     //!
     //!     \pre
     //!         1 <= n && n <= 3999
