@@ -27,9 +27,9 @@ class wrapper
 //      (1) if T is a reference to a possibly cv-qualified type, the
 //      name returned is that of the cv-unqualified referenced type;
 //      (2) if T is a cv-qualified type, the name returned is that of
-//      the cv-unqualified type; furthermore, (3) if T is a class type
-//      or a reference to a class type, the class shall be
-//      completely-defined.
+//      the cv-unqualified type;
+//      (3) if T is a class type or a reference to a class type, the
+//      class shall be completely-defined.
 //
 //      So, we take typeid( wrapper< T > ).name(), then remove
 //      "wrapper" and its angle brackets. This gets rid of all three
