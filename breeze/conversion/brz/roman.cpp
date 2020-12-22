@@ -14,6 +14,7 @@
 #include "breeze/conversion/roman.hpp"
 #include "breeze/diagnostics/assert.hpp"
 #include <ostream>
+#include <string>
 
 namespace breeze_ns {
 

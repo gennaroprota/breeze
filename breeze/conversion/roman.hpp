@@ -15,7 +15,6 @@
 
 #include "breeze/top_level_namespace.hpp"
 #include <iosfwd>
-#include <string>
 
 namespace breeze_ns {
 
