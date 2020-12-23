@@ -49,5 +49,4 @@ test_max_for_subrange()
     return breeze::test_runner::instance().run(
         "max_for_subrange()",
         { do_test } ) ;
-
 }
