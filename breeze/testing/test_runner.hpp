@@ -16,7 +16,7 @@
 #include "breeze/top_level_namespace.hpp"
 #include "breeze/process/exit_code.hpp"
 #include "breeze/testing/test_descriptor.hpp"
-#include "breeze/testing/test_exception.hpp"
+#include "breeze/testing/test_failure.hpp"
 #include "breeze/testing/test_reporter.hpp"
 #include <initializer_list>
 
@@ -65,7 +65,7 @@ test_runner::run( char const * group_description,
             m_reporter->on_test_begin( test_number ) ;
             ( begin->function() )() ;
             m_reporter->on_test_passed( test_number ) ;
-        } catch ( test_exception const & ex ) {
+        } catch ( test_failure const & ex ) {
             exit_code = breeze::exit_failure ;
             m_reporter->on_test_failed( test_number, ex ) ;
         } catch ( std::exception const & ex ) {

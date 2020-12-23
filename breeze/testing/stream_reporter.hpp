@@ -68,7 +68,7 @@ private:
                                            char const * name ) override ;
     virtual void        do_on_test_passed( int test_number ) override ;
     virtual void        do_on_test_failed( int test_number,
-                                           test_exception const & ) override ;
+                                           test_failure const & ) override ;
     virtual void        do_on_unexpected_exception( int test_number ) override ;
     virtual void        do_on_unexpected_exception( int test_number,
                                                      std::exception const & )

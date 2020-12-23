@@ -80,7 +80,7 @@ source_files := luhn.cpp                                    \
                                                             \
                 stream_reporter.cpp                         \
                 test_descriptor.cpp                         \
-                test_exception.cpp                          \
+                test_failure.cpp                            \
                 test_reporter.cpp                           \
                 test_runner.cpp                             \
                                                             \

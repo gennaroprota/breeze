@@ -18,7 +18,7 @@
 
 namespace breeze_ns {
 
-class test_exception ;
+class test_failure ;
 
 class test_reporter
 {
@@ -38,7 +38,7 @@ public:
                                        char const * name = "" ) ;
     void                on_test_passed( int test_number ) ;
     void                on_test_failed( int test_number,
-                                        test_exception const & ) ;
+                                        test_failure const & ) ;
     void                on_unexpected_exception( int test_number ) ;
     void                on_unexpected_exception( int test_number,
                                                  std::exception const & ) ;
@@ -53,7 +53,7 @@ private:
                                           char const * name ) = 0 ;
     virtual void        do_on_test_passed( int test_number ) = 0 ;
     virtual void        do_on_test_failed( int test_number,
-                                           test_exception const & ) = 0 ;
+                                           test_failure const & ) = 0 ;
     virtual void        do_on_unexpected_exception( int test_number ) = 0 ;
     virtual void        do_on_unexpected_exception( int test_number,
                                                  std::exception const & ) = 0 ;

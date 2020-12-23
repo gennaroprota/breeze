@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breeze/testing/stream_reporter.hpp"
-#include "breeze/testing/test_exception.hpp"
+#include "breeze/testing/test_failure.hpp"
 #include <ostream>
 #include <string>
 #include <typeinfo>
@@ -65,7 +65,7 @@ stream_reporter::do_on_test_passed( int )
 }
 
 void
-stream_reporter::do_on_test_failed( int, test_exception const & ex )
+stream_reporter::do_on_test_failed( int, test_failure const & ex )
 {
     m_stream << "F (" << ex << ")]" ;
     m_stream.flush() ;

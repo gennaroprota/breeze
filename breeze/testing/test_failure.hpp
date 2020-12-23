@@ -19,13 +19,13 @@
 
 namespace breeze_ns {
 
-class test_exception
+class test_failure
     :   public std::logic_error
 {
 public:
-                        test_exception( std::string const & message,
-                                        char const * file_name,
-                                        long line ) ;
+                        test_failure( std::string const & message,
+                                      char const * file_name,
+                                      long line ) ;
     char const *        file_name() const noexcept ;
     long                line_number() const noexcept ;
 
@@ -34,7 +34,7 @@ private:
     long                m_line ;
 } ;
 
-std::ostream &      operator <<( std::ostream &, test_exception const & ) ;
+std::ostream &      operator <<( std::ostream &, test_failure const & ) ;
 
 }
 

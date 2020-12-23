@@ -14,13 +14,13 @@
 #define BREEZE_GUARD_EFlfreUFA16SG5tXxNJpWtUHWTCfIjaD
 
 #include "breeze/diagnostics/assert.hpp"
-#include "breeze/testing/test_exception.hpp"
+#include "breeze/testing/test_failure.hpp"
 
 #define BREEZE_CHECK( condition )                                             \
             do {                                                              \
                 if ( ! ( condition ) ) {                                      \
-                    throw breeze::test_exception( # condition,                \
-                                                  __FILE__, __LINE__ ) ;      \
+                    throw breeze::test_failure( # condition,                  \
+                                                __FILE__, __LINE__ ) ;        \
                 }                                                             \
             } while ( false )                                              /**/
 

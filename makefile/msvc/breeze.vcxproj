@@ -241,7 +241,7 @@
     <ClCompile Include="..\..\breeze\stream\brz\null_stream.cpp" />
     <ClCompile Include="..\..\breeze\testing\brz\stream_reporter.cpp" />
     <ClCompile Include="..\..\breeze\testing\brz\test_descriptor.cpp" />
-    <ClCompile Include="..\..\breeze\testing\brz\test_exception.cpp" />
+    <ClCompile Include="..\..\breeze\testing\brz\test_failure.cpp" />
     <ClCompile Include="..\..\breeze\testing\brz\test_reporter.cpp" />
     <ClCompile Include="..\..\breeze\testing\brz\test_runner.cpp" />
     <ClCompile Include="..\..\breeze\text\brz\begins_with.cpp" />
@@ -409,7 +409,7 @@
     <ClInclude Include="..\..\breeze\testing\stream_reporter.hpp" />
     <ClInclude Include="..\..\breeze\testing\testing.hpp" />
     <ClInclude Include="..\..\breeze\testing\test_descriptor.hpp" />
-    <ClInclude Include="..\..\breeze\testing\test_exception.hpp" />
+    <ClInclude Include="..\..\breeze\testing\test_failure.hpp" />
     <ClInclude Include="..\..\breeze\testing\test_reporter.hpp" />
     <ClInclude Include="..\..\breeze\testing\test_runner.hpp" />
     <ClInclude Include="..\..\breeze\text\begins_with.hpp" />

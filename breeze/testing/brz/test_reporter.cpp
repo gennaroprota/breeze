@@ -42,7 +42,7 @@ test_reporter::on_test_passed( int test_number )
 }
 
 void
-test_reporter::on_test_failed( int test_number, test_exception const & ex )
+test_reporter::on_test_failed( int test_number, test_failure const & ex )
 {
     return do_on_test_failed( test_number, ex ) ;
 }
