@@ -27,7 +27,7 @@ do_test()
         int x ;
         int m ;
         int result ;
-    }                   values[] = {
+    } const             values[] = {
         {   5,   32767,   32765 },
         {   5,     255,     251 },
         {   1,     255,     255 },
