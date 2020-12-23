@@ -146,7 +146,7 @@ connection, it might be a good alternative for you to use:
 
 # Editor support
 
-The source tree contains a `.editorconfig` (https://editorconfig.org). In
+The source tree contains a `.editorconfig` (<https://editorconfig.org>). In
 addition, files having name extensions that are not automatically recognized by
 Emacs or Vim (e.g. .tpp) have simple trailers which make these editors recognize
 the file type.
@@ -173,7 +173,7 @@ To enable the Git commit message template provided with the library:
  - run: `git config --local commit.template ./.git_commit_message_template.txt`
 
 For better or for worse, the library uses the Git commit message guidelines
-outlined at https://chris.beams.io/posts/git-commit/, except that the subject
+outlined at <https://chris.beams.io/posts/git-commit/>, except that the subject
 line:
 
  - can reach 72 characters, just like the body lines (50 is really too little)
