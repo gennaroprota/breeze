@@ -35,6 +35,7 @@ do_test()
         { 200,     300,     200 },
         { 255, INT_MAX, INT_MAX }
     };
+
     for ( auto const elem : values ) {
         BREEZE_CHECK( breeze::max_for_subrange( elem.x, elem.m ) ==
             elem.result ) ;
