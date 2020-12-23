@@ -40,7 +40,7 @@ main()
     table.fill( invalid ) ;
     auto const          length = static_cast< int >( std::strlen( alphabet ) ) ;
     for ( int i = 0 ; i < length ; ++ i ) {
-        table[ alphabet[ i ] ] = static_cast< int >( i ) ;
+        table[ alphabet[ i ] ] = i ;
     }
 
     std::ostream &      os = std::cout ;
