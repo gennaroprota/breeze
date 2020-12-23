@@ -71,7 +71,6 @@ trap 'clean_up' 0 1 2 15
 mkdir -p "$temp_dir"
 
 root_dir=$1
-output_dir="$root_dir/doc"
 
 cd "$root_dir/doc/source"
 printf '%s\n' "Using Doxygen ` doxygen --version `"
