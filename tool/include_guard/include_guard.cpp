@@ -17,7 +17,7 @@
 //      Synopsis:
 //      ---------
 //
-//          include_guard [-p macro_prefix]
+//        include_guard [options]
 //
 //      Limitations:
 //      ------------
@@ -35,10 +35,10 @@
 //      Options:
 //      --------
 //
-//        -p or --prefix
+//        -p or --prefix=WORD
 //
 //          The prefix to use for the generated macro name. Default =
-//          BREEZE_.
+//          BREEZE_GUARD_.
 //
 //          Prefixes which would make the macro name reserved are
 //          rejected.
