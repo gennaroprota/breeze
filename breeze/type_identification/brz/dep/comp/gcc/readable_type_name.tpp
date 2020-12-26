@@ -18,8 +18,6 @@
 namespace breeze_ns {
 namespace readable_type_name_private {
 
-std::string         demangle( std::string const & name ) ;
-
 inline std::string
 demangle( char const * name )
 {
