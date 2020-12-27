@@ -7,6 +7,7 @@
 // ___________________________________________________________________________
 
 #include "breeze/diagnostics/assert.hpp"
+#include "breeze/mathematics/private/would_division_overflow.hpp"
 
 namespace breeze_ns {
 
@@ -15,6 +16,7 @@ constexpr Integer
 rounded_up_quotient( Integer a, Integer b )
 {
     BREEZE_ASSERT( b != 0 ) ;
+    BREEZE_ASSERT( ! mathematics_private::would_division_overflow( a, b ) ) ;
 
     //      We avoid introducing intermediate variables here, to make
     //      this compilable with VC++ 2015. (TODO)

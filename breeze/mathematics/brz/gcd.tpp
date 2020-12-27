@@ -6,7 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "private/gcd_lcm_common.hpp"
+#include "breeze/mathematics/private/gcd_lcm_common.hpp"
+#include "breeze/mathematics/private/would_division_overflow.hpp"
 #include <type_traits>
 
 namespace breeze_ns {
@@ -16,7 +17,8 @@ constexpr T
 gcd( T a, T b )
 {
     static_assert( std::is_integral< T >::value, "T must be integral" ) ;
-    using namespace gcd_lcm_private ;
+    using gcd_lcm_private::absolute_value ;
+    using mathematics_private::would_division_overflow ;
 
     if ( would_division_overflow( b, a ) ||
             would_division_overflow( a, b ) ) {

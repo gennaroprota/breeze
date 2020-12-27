@@ -351,7 +351,7 @@
     <ClInclude Include="..\..\breeze\environment\windows_only\windows_version_info.hpp" />
     <ClInclude Include="..\..\breeze\idiom\volatilize.hpp" />
     <ClInclude Include="..\..\breeze\iteration\begin_end.hpp" />
-    <ClInclude Include="..\..\breeze\mathematics\brz\private\gcd_lcm_common.hpp" />
+    <ClInclude Include="..\..\breeze\mathematics\private\gcd_lcm_common.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\clamp.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\count_bits.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\digital_root.hpp" />

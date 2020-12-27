@@ -568,7 +568,7 @@
     <ClInclude Include="..\..\breeze\version.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\mathematics\brz\private\gcd_lcm_common.hpp">
+    <ClInclude Include="..\..\breeze\mathematics\private\gcd_lcm_common.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\time\private\thread_safe_reentrant_time_functions.hpp">

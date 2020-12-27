@@ -6,9 +6,9 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "private/gcd_lcm_common.hpp"
 #include "breeze/diagnostics/assert.hpp"
 #include "breeze/mathematics/gcd.hpp"
+#include "breeze/mathematics/private/gcd_lcm_common.hpp"
 #include <limits>
 #include <type_traits>
 

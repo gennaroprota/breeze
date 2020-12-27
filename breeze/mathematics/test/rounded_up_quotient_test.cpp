@@ -13,6 +13,7 @@
 
 #include "breeze/mathematics/rounded_up_quotient.hpp"
 #include "breeze/testing/testing.hpp"
+#include <climits>
 
 int                 test_rounded_up_quotient() ;
 
@@ -55,6 +56,7 @@ rounded_up_quotient_handles_several_cases_correctly()
     BREEZE_CHECK( breeze::rounded_up_quotient(  15, -5 ) == -3 ) ;
     BREEZE_CHECK( breeze::rounded_up_quotient( -15,  5 ) == -3 ) ;
     BREEZE_CHECK( breeze::rounded_up_quotient( -15, -5 ) ==  3 ) ;
+    BREEZE_CHECK( breeze::rounded_up_quotient( -1, INT_MIN ) == 0 ) ;
 }
 
 void
