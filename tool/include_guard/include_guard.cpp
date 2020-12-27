@@ -66,9 +66,8 @@
 // ---------------------------------------------------------------------------
 
 #include "tool/include_guard/macro_name.hpp"
-#include "breeze/process/command_line.hpp"
 #include "breeze/process/program.hpp"
-#include "breeze/process/program_option.hpp"
+#include "breeze/text/begins_with.hpp"
 
 #include <cstdio> // for EOF
 #include <exception>
@@ -79,24 +78,69 @@
 
 namespace {
 
-breeze::default_reader< std::string >
-                    option_reader ;
-breeze::program_option_with_value< std::string >
-                    prefix_option( "prefix", 'p', false, "BREEZE_GUARD_", "macro prefix", option_reader ) ;
+std::string         macro_prefix = "BREEZE_GUARD_" ;
+
+std::string         remove_from_beginning( std::string const & str,
+                                           std::string const & to_be_removed )
+{
+    return breeze::begins_with( str, to_be_removed )
+        ? str.substr( to_be_removed.length() )
+        : str
+        ;
+}
+
+//      parse_command_line():
+//      =====================
+//
+//      A rudimentary, ad-hoc, command line parser which we'll use until
+//      we'll have a corresponding general facility in the library.
+// ---------------------------------------------------------------------------
+bool
+parse_command_line( int argc, char const * const * argv )
+{
+    bool                result = false ;
+    if ( argc == 1 ) {
+        result = true ;
+    } else if ( argc == 2 ) {
+        std::string         arg = argv[ 1 ] ;
+        std::string const   long_option  = "--prefix" ;
+        std::string const   short_option = "-p" ;
+        bool                option_found = false ;
+        bool                is_long = false ;
+        if ( breeze::begins_with( arg, long_option ) ) {
+            arg = remove_from_beginning( arg, long_option ) ;
+            arg = remove_from_beginning( arg, "=" ) ;
+            is_long = true ;
+            option_found = true ;
+        } else if ( breeze::begins_with( arg, short_option ) ) {
+            arg = remove_from_beginning( arg, short_option ) ;
+            option_found = true ;
+        }
+
+        if ( option_found ) {
+            macro_prefix = arg ;
+            result = is_long || ! arg.empty() ;
+        }
+    }
+
+    return result ;
+}
 
 }
 
 int
 main( int argc, char ** argv )
 {
-    using               breeze::command_line ;
     using               breeze::program ;
 
     try {
-        command_line::instance().parse_check( argc, argv ) ;
-        std::string const   prefix = prefix_option.get() ;
+        if ( ! parse_command_line( argc, argv ) ) {
+            std::cerr << "Erroneous invocation;"
+                         " see usage in include_guard.cpp" ;
+            program::instance().declare_error( program::fatal ) ;
+        }
 
-        if ( ::is_reserved( prefix ) ) {
+        if ( ::is_reserved( macro_prefix ) ) {
             std::cerr << "Can't use a reserved name; please, change your prefix"
                          " (see [lex.name] in the C++ standard)" ;
             program::instance().declare_error( program::fatal ) ;
@@ -107,7 +151,7 @@ main( int argc, char ** argv )
         macro_name_creation::exit_status
                             status ;
         std::string const   name =
-            ::make_macro_name( prefix, random_part_length, &status ) ;
+            ::make_macro_name( macro_prefix, random_part_length, &status ) ;
 
         if ( status == macro_name_creation::could_not_release_entropy_source ) {
             std::cerr << "Unable to release the entropy source" << std::endl ;

@@ -65,11 +65,9 @@ source_files := luhn.cpp                                    \
                 directory_separators.cpp                    \
                 extension.cpp                               \
                                                             \
-                command_line.cpp                            \
                 current_directory.cpp                       \
                 exit_code.cpp                               \
                 program.cpp                                 \
-                program_option.cpp                          \
                 set_current_directory.cpp                   \
                                                             \
                 entropy_source.cpp                          \

@@ -198,9 +198,7 @@ MSVC     | 2017
 
 # Future directions
 
-The facilities for command line options will be removed and replaced with
-something better. They came from another library, and seemed good at the time,
-but, on closer analysis, show their limitations.
+We will soon add facilities for handling command line options.
 
 # License
 

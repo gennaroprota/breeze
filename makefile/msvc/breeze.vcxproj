@@ -229,11 +229,9 @@
     <ClCompile Include="..\..\breeze\path\brz\directory_separators.cpp" />
     <ClCompile Include="..\..\breeze\path\brz\base_file_name.cpp" />
     <ClCompile Include="..\..\breeze\path\brz\extension.cpp" />
-    <ClCompile Include="..\..\breeze\process\brz\command_line.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\current_directory.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\exit_code.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\program.cpp" />
-    <ClCompile Include="..\..\breeze\process\brz\program_option.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\set_current_directory.cpp" />
     <ClCompile Include="..\..\breeze\random\brz\entropy_source.cpp" />
     <ClCompile Include="..\..\breeze\random\brz\max_for_subrange.cpp" />
@@ -304,8 +302,6 @@
     <None Include="..\..\breeze\mathematics\brz\rounded_up_quotient.tpp" />
     <None Include="..\..\breeze\memory\brz\auto_array.tpp" />
     <None Include="..\..\breeze\meta\brz\is_2s_complement.tpp" />
-    <None Include="..\..\breeze\process\brz\command_line.tpp" />
-    <None Include="..\..\breeze\process\brz\program_option.tpp" />
     <None Include="..\..\breeze\random\brz\subrange_adaptor.tpp" />
     <None Include="..\..\breeze\stream\brz\stream_buffer_wrapper.tpp" />
     <None Include="..\..\breeze\stream\brz\stream_equivalent.tpp" />
@@ -391,11 +387,9 @@
     <ClInclude Include="..\..\breeze\preprocessing\stringize_after_expansion.hpp" />
     <ClInclude Include="..\..\breeze\preprocessing\paste.hpp" />
     <ClInclude Include="..\..\breeze\preprocessing\paste_after_expansion.hpp" />
-    <ClInclude Include="..\..\breeze\process\command_line.hpp" />
     <ClInclude Include="..\..\breeze\process\current_directory.hpp" />
     <ClInclude Include="..\..\breeze\process\exit_code.hpp" />
     <ClInclude Include="..\..\breeze\process\program.hpp" />
-    <ClInclude Include="..\..\breeze\process\program_option.hpp" />
     <ClInclude Include="..\..\breeze\process\set_current_directory.hpp" />
     <ClInclude Include="..\..\breeze\random\entropy_source.hpp" />
     <ClInclude Include="..\..\breeze\random\subrange_adaptor.hpp" />

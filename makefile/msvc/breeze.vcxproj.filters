@@ -140,12 +140,6 @@
     <ClCompile Include="..\..\breeze\process\brz\program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\process\brz\command_line.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\breeze\process\brz\program_option.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\breeze\text\brz\replace_all.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -208,8 +202,6 @@
     <None Include="..\..\breeze\time\brz\timer.tpp" />
     <None Include="..\..\breeze\mathematics\brz\count_bits.tpp" />
     <None Include="..\..\breeze\type_identification\brz\readable_type_name.tpp" />
-    <None Include="..\..\breeze\process\brz\command_line.tpp" />
-    <None Include="..\..\breeze\process\brz\program_option.tpp" />
     <None Include="..\..\breeze\mathematics\brz\is_power_of_2.tpp" />
     <None Include="..\..\breeze\mathematics\brz\digital_root.tpp" />
     <None Include="..\..\breeze\mathematics\brz\representation_in_base.tpp" />
@@ -493,12 +485,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\process\program.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breeze\process\program_option.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breeze\process\command_line.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\mathematics\is_power_of_2.hpp">
