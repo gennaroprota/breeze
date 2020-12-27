@@ -17,7 +17,7 @@ rounded_up_quotient( Integer a, Integer b )
     BREEZE_ASSERT( b != 0 ) ;
 
     //      We avoid introducing intermediate variables here, to make
-    //      make this compilable with VC++ 2015. (TODO)
+    //      this compilable with VC++ 2015. (TODO)
     // -----------------------------------------------------------------------
     return ( ( a > 0 && b > 0 ) || ( a < 0 && b < 0 ) ) && a % b != 0
                    ? a / b + 1
