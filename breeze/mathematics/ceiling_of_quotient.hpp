@@ -17,10 +17,10 @@
 
 namespace breeze_ns {
 
-//      rounded_up_quotient():
+//      ceiling_of_quotient():
 //      ======================
 //
-//!     \copybrief rounded_up_quotient.hpp
+//!     \copybrief ceiling_of_quotient.hpp
 //!
 //!     \par Type requirements
 //!         \c Integer shall be an integral type or a cv-qualified
@@ -34,13 +34,13 @@ namespace breeze_ns {
 //!         The ceiling of the quotient between \c a and \c b.
 //!
 //!     Useful to answer questions such as: "How many octets do I need
-//!     to store 20 bits?". Answer: <code>rounded_up_quotient( 20, 8 )
+//!     to store 20 bits?". Answer: <code>ceiling_of_quotient( 20, 8 )
 //!     </code>.
 // ---------------------------------------------------------------------------
 template< typename Integer >
-constexpr Integer   rounded_up_quotient( Integer a, Integer b ) ;
+constexpr Integer   ceiling_of_quotient( Integer a, Integer b ) ;
 
 }
 
-#include "brz/rounded_up_quotient.tpp"
+#include "brz/ceiling_of_quotient.tpp"
 #endif

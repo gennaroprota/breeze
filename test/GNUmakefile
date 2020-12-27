@@ -71,6 +71,7 @@ source_files := unit_test_main.cpp                          \
                 environment_variable_consistency_test.cpp   \
                 get_environment_variable_test.cpp           \
                                                             \
+                ceiling_of_quotient_test.cpp                \
                 clamp_test.cpp                              \
                 count_bits_test.cpp                         \
                 digital_root_test.cpp                       \
@@ -78,7 +79,6 @@ source_files := unit_test_main.cpp                          \
                 is_power_of_2_test.cpp                      \
                 lcm_test.cpp                                \
                 representation_in_base_test.cpp             \
-                rounded_up_quotient_test.cpp                \
                                                             \
                 auto_array_test.cpp                         \
                                                             \

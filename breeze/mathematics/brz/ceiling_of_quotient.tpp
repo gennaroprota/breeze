@@ -13,7 +13,7 @@ namespace breeze_ns {
 
 template< typename Integer >
 constexpr Integer
-rounded_up_quotient( Integer a, Integer b )
+ceiling_of_quotient( Integer a, Integer b )
 {
     BREEZE_ASSERT( b != 0 ) ;
     BREEZE_ASSERT( ! mathematics_private::would_division_overflow( a, b ) ) ;

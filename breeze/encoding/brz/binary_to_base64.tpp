@@ -11,7 +11,7 @@
 #include "breeze/mathematics/integer_log2.hpp"
 #include "breeze/mathematics/is_power_of_2.hpp"
 #include "breeze/mathematics/lcm.hpp"
-#include "breeze/mathematics/rounded_up_quotient.hpp"
+#include "breeze/mathematics/ceiling_of_quotient.hpp"
 #include <climits>
 #include <type_traits>
 
@@ -86,7 +86,7 @@ binary_to_base64( InputIter begin, InputIter end,
     if ( count != 0 ) {
         int const           pad_count =
          bits_per_quantum / bits_per_output_char -
-         breeze::rounded_up_quotient( count * char_bit, bits_per_output_char ) ;
+         breeze::ceiling_of_quotient( count * char_bit, bits_per_output_char ) ;
         for ( int i = 0 ; i < pad_count ; ++ i ) {
             do_output( '=' );
         }

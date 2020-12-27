@@ -13,7 +13,7 @@
 // ___________________________________________________________________________
 
 #include "breeze/text/printable_string.hpp"
-#include "breeze/mathematics/rounded_up_quotient.hpp"
+#include "breeze/mathematics/ceiling_of_quotient.hpp"
 #include "breeze/stream/stream_equivalent.hpp"
 #include <climits>
 #include <iomanip>
@@ -104,7 +104,7 @@ operator <<( std::ostream & original_stream, printable_string const & ps )
                 dest << c ;
             }  else {
                 int const       bits_per_hex_digit = 4 ;
-                int const       width = breeze::rounded_up_quotient(
+                int const       width = breeze::ceiling_of_quotient(
                                             CHAR_BIT, bits_per_hex_digit ) ;
                 dest << "\\x"
                      << std::setw( width )

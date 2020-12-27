@@ -291,6 +291,7 @@
     <None Include="..\..\breeze\cryptography\private\sha_common.tpp" />
     <None Include="..\..\breeze\encoding\brz\base64_to_binary.tpp" />
     <None Include="..\..\breeze\encoding\brz\binary_to_base64.tpp" />
+    <None Include="..\..\breeze\mathematics\brz\ceiling_of_quotient.tpp" />
     <None Include="..\..\breeze\mathematics\brz\clamp.tpp" />
     <None Include="..\..\breeze\mathematics\brz\count_bits.tpp" />
     <None Include="..\..\breeze\mathematics\brz\digital_root.tpp" />
@@ -299,7 +300,6 @@
     <None Include="..\..\breeze\mathematics\brz\is_power_of_2.tpp" />
     <None Include="..\..\breeze\mathematics\brz\lcm.tpp" />
     <None Include="..\..\breeze\mathematics\brz\representation_in_base.tpp" />
-    <None Include="..\..\breeze\mathematics\brz\rounded_up_quotient.tpp" />
     <None Include="..\..\breeze\memory\brz\auto_array.tpp" />
     <None Include="..\..\breeze\meta\brz\is_2s_complement.tpp" />
     <None Include="..\..\breeze\random\brz\subrange_adaptor.tpp" />
@@ -352,6 +352,7 @@
     <ClInclude Include="..\..\breeze\idiom\volatilize.hpp" />
     <ClInclude Include="..\..\breeze\iteration\begin_end.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\private\gcd_lcm_common.hpp" />
+    <ClInclude Include="..\..\breeze\mathematics\ceiling_of_quotient.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\clamp.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\count_bits.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\digital_root.hpp" />
@@ -360,7 +361,6 @@
     <ClInclude Include="..\..\breeze\mathematics\is_power_of_2.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\lcm.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\representation_in_base.hpp" />
-    <ClInclude Include="..\..\breeze\mathematics\rounded_up_quotient.hpp" />
     <ClInclude Include="..\..\breeze\memory\amount_of_physical_memory.hpp" />
     <ClInclude Include="..\..\breeze\memory\auto_array.hpp" />
     <ClInclude Include="..\..\breeze\meta\constant.hpp" />

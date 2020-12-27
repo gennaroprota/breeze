@@ -212,7 +212,7 @@
     <None Include="..\..\breeze\workaround\brz\as_non_constant.tpp" />
     <None Include="..\..\breeze\stream\brz\stream_equivalent.tpp" />
     <None Include="..\..\breeze\conversion\brz\bit_cast.tpp" />
-    <None Include="..\..\breeze\mathematics\brz\rounded_up_quotient.tpp" />
+    <None Include="..\..\breeze\mathematics\brz\ceiling_of_quotient.tpp" />
     <None Include="..\..\breeze\stream\brz\stream_buffer_wrapper.tpp" />
     <None Include="..\..\breeze\vocabulary\brz\maybe.tpp" />
     <None Include="..\..\breeze\cryptography\private\sha_common.tpp" />
@@ -547,7 +547,7 @@
     <ClInclude Include="..\..\breeze\environment\get_all_environment_variables.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\mathematics\rounded_up_quotient.hpp">
+    <ClInclude Include="..\..\breeze\mathematics\ceiling_of_quotient.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\stream\stream_buffer_wrapper.hpp">

@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 
 #include "breeze/iteration/begin_end.hpp"
-#include "breeze/mathematics/rounded_up_quotient.hpp"
+#include "breeze/mathematics/ceiling_of_quotient.hpp"
 #include <ostream>
 
 namespace breeze_ns {
@@ -20,7 +20,7 @@ operator <<( std::ostream & dest, crc< Traits > const & crc )
                         value_type ;
 
     int const           digit_count =
-        rounded_up_quotient( Traits::width, 4 ) ;
+        ceiling_of_quotient( Traits::width, 4 ) ;
 
     char                buffer[ digit_count + 1 ] ;
     auto const          start = breeze::begin( buffer ) ;

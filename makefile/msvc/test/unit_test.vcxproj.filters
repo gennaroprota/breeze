@@ -128,7 +128,7 @@
     <ClCompile Include="..\..\..\breeze\conversion\test\roman_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breeze\mathematics\test\rounded_up_quotient_test.cpp">
+    <ClCompile Include="..\..\..\breeze\mathematics\test\ceiling_of_quotient_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breeze\text\test\set_of_chars_test.cpp">

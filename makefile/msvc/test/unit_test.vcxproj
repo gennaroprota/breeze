@@ -48,6 +48,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\..\breeze\mathematics\test\ceiling_of_quotient_test.cpp" />
     <ClCompile Include="..\..\..\breeze\mathematics\test\clamp_test.cpp" />
     <ClCompile Include="..\..\..\breeze\mathematics\test\count_bits_test.cpp" />
     <ClCompile Include="..\..\..\breeze\mathematics\test\digital_root_test.cpp" />
@@ -55,7 +56,6 @@
     <ClCompile Include="..\..\..\breeze\mathematics\test\is_power_of_2_test.cpp" />
     <ClCompile Include="..\..\..\breeze\mathematics\test\lcm_test.cpp" />
     <ClCompile Include="..\..\..\breeze\mathematics\test\representation_in_base_test.cpp" />
-    <ClCompile Include="..\..\..\breeze\mathematics\test\rounded_up_quotient_test.cpp" />
     <ClCompile Include="..\..\..\breeze\memory\test\auto_array_test.cpp" />
     <ClCompile Include="..\..\..\breeze\meta\test\is_2s_complement_test.cpp" />
     <ClCompile Include="..\..\..\breeze\metric\test\damerau_levenshtein_distance_test.cpp" />

@@ -13,7 +13,7 @@
 
 #include "breeze/checksum/crc.hpp"
 #include "breeze/iteration/begin_end.hpp"
-#include "breeze/mathematics/rounded_up_quotient.hpp"
+#include "breeze/mathematics/ceiling_of_quotient.hpp"
 #include "breeze/testing/testing.hpp"
 #include <iomanip>
 #include <sstream>
@@ -124,7 +124,7 @@ check_value_from_traits()
     oss.setf( std::ios::uppercase ) ;
     oss.setf( std::ios::hex, std::ios::basefield ) ;
     int const           digit_count =
-        breeze::rounded_up_quotient( CrcTraits::width, 4 ) ;
+        breeze::ceiling_of_quotient( CrcTraits::width, 4 ) ;
     oss << std::setw( digit_count ) << crc.value() ;
 
     std::string const   expected = oss.str() ;
