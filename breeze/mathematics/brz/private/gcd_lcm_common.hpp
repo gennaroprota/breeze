@@ -78,8 +78,7 @@ would_division_overflow( T a, T b )
     T const             min = std::numeric_limits< T >::min
         BREEZE_PREVENT_MACRO_EXPANSION () ;
 
-    return ( a == min && b == -1  ) ||
-           ( a == -1  && b == min ) ;
+    return a == min && b == -1 ;
 }
 
 template< typename T >

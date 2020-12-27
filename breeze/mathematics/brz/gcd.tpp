@@ -18,7 +18,8 @@ gcd( T a, T b )
     static_assert( std::is_integral< T >::value, "T must be integral" ) ;
     using namespace gcd_lcm_private ;
 
-    if ( would_division_overflow( a, b ) ) {
+    if ( would_division_overflow( b, a ) ||
+            would_division_overflow( a, b ) ) {
         return 1 ;
     }
 
