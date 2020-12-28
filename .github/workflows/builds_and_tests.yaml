@@ -111,6 +111,7 @@ jobs:
       with:
         run: |
           setenv ASSUME_ALWAYS_YES  YES
+          pkg install lang/gcc
           pkg install gmake
           setenv BREEZE_ROOT ` pwd `
           make
