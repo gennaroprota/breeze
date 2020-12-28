@@ -110,6 +110,7 @@ jobs:
     - uses: vmactions/freebsd-vm@v0.0.9
       with:
         run: |
+          setenv ASSUME_ALWAYS_YES  YES
           pkg install gmake
           setenv BREEZE_ROOT ` pwd `
           make
