@@ -111,4 +111,5 @@ jobs:
       with:
         run: |
           pkg install gmake
-          BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
+          setenv BREEZE_ROOT ` pwd `
+          make
