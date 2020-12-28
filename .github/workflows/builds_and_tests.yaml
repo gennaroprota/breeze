@@ -115,4 +115,4 @@ jobs:
           pkg install lang/gcc
           pkg install gmake
           export BREEZE_ROOT=` pwd `
-          make
+          gmake
