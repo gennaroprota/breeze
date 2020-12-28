@@ -89,3 +89,24 @@ jobs:
           compiler: gcc
           compiler_command: ${{matrix.compiler}}
         run: BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
+
+  #     As of this writing (December 28, 2020), GitHub Actions doesn't
+  #     directly support FreeBSD. But the macOS machines have VirtualBox
+  #     installed, so we run FreeBSD in a VirtualBox virtual machine
+  #     hosted by macOS.
+  #
+  #     For reference, see:
+  #
+  #       <https://github.com/marketplace/actions/freebsd-vm>.
+  # --------------------------------------------------------------------------
+  gcc-on-freebsd:
+    name: GCC on FreeBSD
+    runs-on: macos-latest
+    env:
+      system: unix
+      compiler: gcc
+    steps:
+    - uses: actions/checkout@v2
+    - uses: vmactions/freebsd-vm@v0.0.9
+      with:
+        run: BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
