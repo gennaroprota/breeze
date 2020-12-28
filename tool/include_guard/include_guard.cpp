@@ -106,11 +106,9 @@ parse_command_line( int argc, char const * const * argv )
         std::string const   long_option  = "--prefix" ;
         std::string const   short_option = "-p" ;
         bool                option_found = false ;
-        bool                is_long = false ;
         if ( breeze::begins_with( arg, long_option ) ) {
             arg = remove_from_beginning( arg, long_option ) ;
             arg = remove_from_beginning( arg, "=" ) ;
-            is_long = true ;
             option_found = true ;
         } else if ( breeze::begins_with( arg, short_option ) ) {
             arg = remove_from_beginning( arg, short_option ) ;
@@ -119,7 +117,7 @@ parse_command_line( int argc, char const * const * argv )
 
         if ( option_found ) {
             macro_prefix = arg ;
-            result = is_long || ! arg.empty() ;
+            result = ! arg.empty() ;
         }
     }
 
