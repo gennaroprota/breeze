@@ -102,15 +102,14 @@ jobs:
   gcc-on-freebsd:
     name: GCC on FreeBSD
     runs-on: macos-latest
-    env:
-      system: unix
-      compiler: gcc
     steps:
     - uses: actions/checkout@v2
     - uses: vmactions/freebsd-vm@v0.0.9
       with:
         usesh: true
         run: |
+          export system=unix
+          export compiler=gcc
           export ASSUME_ALWAYS_YES=YES
           pkg install lang/gcc
           pkg install gmake
