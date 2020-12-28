@@ -37,7 +37,10 @@
 # ----------------------------------------------------------------------------
 .DELETE_ON_ERROR:
 
-
+#       Forcing the shell to Bash is just for FreeBSD: see the comments
+#       in .github/workflows/builds_and_tests.yaml.
+# ----------------------------------------------------------------------------
+SHELL := bash
 .SHELLFLAGS += -e -u
 MAKEFLAGS += --warn-undefined-variables
 .DEFAULT_GOAL := all
