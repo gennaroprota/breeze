@@ -113,5 +113,18 @@ jobs:
           export ASSUME_ALWAYS_YES=YES
           pkg install lang/gcc
           pkg install gmake
+          #       We got errors with the default FreeBSD shell, when
+          #       launching commands from Make, along the lines of "-e:
+          #       not found". This suggests that the default shell
+          #       doesn't understand the -e option, which we pass
+          #       through GNU Make's variable .SHELLFLAGS.
+          #
+          #       Since ascertaining the actual issue is difficult if
+          #       you don't have true access to the machine, I decided
+          #       to just install Bash and set it as default shell,
+          #       here.
+          # ------------------------------------------------------------------
+          pkg install bash
+          chsh -s /usr/local/bin/bash
           export BREEZE_ROOT=` pwd `
           gmake
