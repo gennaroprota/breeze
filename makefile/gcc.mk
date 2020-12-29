@@ -126,7 +126,7 @@ cpp_basic_options := -std=c++14                      \
                      -pedantic                       \
                      -Werror                         \
                      -fuse-cxa-atexit                \
-                     -D _POSIX_C_SOURCE=200112L      \
+                     -D _XOPEN_SOURCE=600            \
                      -D _GLIBCXX_USE_CXX11_ABI=1
 
 cpp_basic_options += -flto-odr-type-merging          \
