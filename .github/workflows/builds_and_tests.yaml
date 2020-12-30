@@ -9,7 +9,7 @@
 #       GitHub continuous integration.
 #
 #       This configures the builds (plus tests) to run automatically on
-#       push and other events.
+#       pushes and other events.
 # ----------------------------------------------------------------------------
 
 
