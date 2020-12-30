@@ -13,6 +13,7 @@
 
 #include "breeze/memory/amount_of_physical_memory.hpp"
 #include "breeze/diagnostics/last_api_error.hpp"
+#include <sys/types.h>
 #include <sys/sysctl.h>
 
 namespace breeze_ns {
