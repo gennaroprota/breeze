@@ -13,6 +13,9 @@
 
 #include "breeze/memory/amount_of_physical_memory.hpp"
 #include "breeze/diagnostics/last_api_error.hpp"
+
+#define _DARWIN_C_SOURCE // Mac experts: is it OK to use this together
+                         // with -D _XOPEN_SOURCE=700?
 #include <sys/types.h>
 #include <sys/sysctl.h>
 
