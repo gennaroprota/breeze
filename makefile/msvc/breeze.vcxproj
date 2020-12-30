@@ -381,7 +381,7 @@
     <ClInclude Include="..\..\breeze\path\directory_separators.hpp" />
     <ClInclude Include="..\..\breeze\path\base_file_name.hpp" />
     <ClInclude Include="..\..\breeze\path\extension.hpp" />
-    <ClInclude Include="..\..\breeze\porting\dependent_code.hpp" />
+    <ClInclude Include="..\..\breeze\porting\dependent_source.hpp" />
     <ClInclude Include="..\..\breeze\preprocessing\prevent_macro_expansion.hpp" />
     <ClInclude Include="..\..\breeze\preprocessing\stringize.hpp" />
     <ClInclude Include="..\..\breeze\preprocessing\stringize_after_expansion.hpp" />

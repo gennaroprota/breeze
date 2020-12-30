@@ -6,5 +6,5 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/porting/dependent_code.hpp"
-#include BREEZE_DEPENDENT_CODE( system, entropy_source.ipp )
+#include "breeze/porting/dependent_source.hpp"
+#include BREEZE_DEPENDENT_SOURCE( system, entropy_source.ipp )

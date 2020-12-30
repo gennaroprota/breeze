@@ -12,8 +12,8 @@
 // ___________________________________________________________________________
 
 #include "breeze/process/exit_code.hpp"
-#include "breeze/porting/dependent_code.hpp"
-#include BREEZE_DEPENDENT_CODE( system, exit_code.cpp )
+#include "breeze/porting/dependent_source.hpp"
+#include BREEZE_DEPENDENT_SOURCE( system, exit_code.cpp )
 #include <cstdlib>
 
 namespace breeze_ns {

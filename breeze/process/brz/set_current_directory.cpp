@@ -11,5 +11,5 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/porting/dependent_code.hpp"
-#include BREEZE_DEPENDENT_CODE( system, set_current_directory.cpp )
+#include "breeze/porting/dependent_source.hpp"
+#include BREEZE_DEPENDENT_SOURCE( system, set_current_directory.cpp )

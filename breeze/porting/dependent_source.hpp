@@ -10,10 +10,10 @@
 //!     \brief This file is for internal use only.
 //
 //      This is the file which is internally included every time we need
-//      to select code according to one or more of the configuration
-//      variables (system, compiler, etc.). Note that it only relies on
-//      the preprocessing facilities, which, in turn, don't need any
-//      configuration.
+//      to select a source file according to one or more of the
+//      configuration variables (system, compiler, etc.). Note that it
+//      only relies on the preprocessing facilities, which, in turn,
+//      don't need any configuration.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_LJrbr2rF89IS3w34IDEgr8K9ZUsCl9Ll
@@ -28,7 +28,7 @@
 //      The macros below create a narrow string-literal for use in a
 //      #include directive:
 //
-//          #include BREEZE_DEPENDENT_CODE( compiler, file.hpp )
+//          #include BREEZE_DEPENDENT_SOURCE( compiler, file.hpp )
 //
 //      Since string-literals and header-names are different kinds of
 //      tokens, it's natural to ask: is that safe?
@@ -147,14 +147,14 @@
 //      example exists in C90, C99, C++98, C++03 and C++0x.
 // ---------------------------------------------------------------------------
 
-#define BREEZE_DEPENDENT_CODE( variant, file_name )                           \
-    BREEZE_PASTE( BREEZE_DEPENDENT_CODE_, variant )( file_name )           /**/
+#define BREEZE_DEPENDENT_SOURCE( variant, file_name )                         \
+    BREEZE_PASTE( BREEZE_DEPENDENT_SOURCE_, variant )( file_name )         /**/
 
 
-#define BREEZE_DEPENDENT_CODE_compiler( file_name )                           \
+#define BREEZE_DEPENDENT_SOURCE_compiler( file_name )                         \
     BREEZE_STRINGIZE_AFTER_EXPANSION( dep/comp/BREEZE_COMPILER/file_name ) /**/
 
-#define BREEZE_DEPENDENT_CODE_system( file_name )                             \
+#define BREEZE_DEPENDENT_SOURCE_system( file_name )                           \
     BREEZE_STRINGIZE_AFTER_EXPANSION( dep/syst/BREEZE_SYSTEM/file_name )   /**/
 
 #endif

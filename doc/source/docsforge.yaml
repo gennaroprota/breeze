@@ -21,7 +21,7 @@ autodocSettings:
     INPUT: breeze breeze/main_page.dox breeze/namespaces.dox
     EXCLUDE: ''
     EXCLUDE_PATTERNS: '*/breeze/testing/* */private/* */brz/* */dep/* */test/*
-      */extra/* */example/* */dependent_code.hpp */top_level_namespace.hpp
+      */extra/* */example/* */dependent_source.hpp */top_level_namespace.hpp
       */version.hpp'
     includeApi: []
     excludeApi: []

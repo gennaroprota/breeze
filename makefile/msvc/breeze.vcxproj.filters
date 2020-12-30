@@ -364,7 +364,7 @@
     <ClInclude Include="..\..\breeze\path\extension.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\porting\dependent_code.hpp">
+    <ClInclude Include="..\..\breeze\porting\dependent_source.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\preprocessing\prevent_macro_expansion.hpp">

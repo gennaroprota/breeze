@@ -12,8 +12,8 @@
 // ___________________________________________________________________________
 
 #include "breeze/diagnostics/last_api_error.hpp"
-#include "breeze/porting/dependent_code.hpp"
-#include BREEZE_DEPENDENT_CODE( system, last_api_error.cpp )
+#include "breeze/porting/dependent_source.hpp"
+#include BREEZE_DEPENDENT_SOURCE( system, last_api_error.cpp )
 
 #include <ostream>
 

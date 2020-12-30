@@ -13,5 +13,5 @@
 
 #include "breeze/time/private/thread_safe_reentrant_time_functions.hpp"
 
-#include "breeze/porting/dependent_code.hpp"
-#include BREEZE_DEPENDENT_CODE( compiler, thread_safe_reentrant_time_functions.cpp )
+#include "breeze/porting/dependent_source.hpp"
+#include BREEZE_DEPENDENT_SOURCE( compiler, thread_safe_reentrant_time_functions.cpp )

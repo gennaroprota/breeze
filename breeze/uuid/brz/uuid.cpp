@@ -11,8 +11,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/porting/dependent_code.hpp"
-#include BREEZE_DEPENDENT_CODE( system, system_time_for_uuid.cpp )
+#include "breeze/porting/dependent_source.hpp"
+#include BREEZE_DEPENDENT_SOURCE( system, system_time_for_uuid.cpp )
 
 #include "breeze/uuid/uuid.hpp"
 #include "breeze/diagnostics/assert.hpp"
