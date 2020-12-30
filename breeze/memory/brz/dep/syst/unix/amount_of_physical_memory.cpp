@@ -21,7 +21,7 @@ long long
 amount_of_physical_memory()
 {
     long const          pages = sysconf( _SC_PHYS_PAGES ) ;
-    long const          page_size = sysconf( _SC_PAGE_SIZE ) ;
+    long const          page_size = sysconf( _SC_PAGESIZE ) ;
 
     return static_cast< long long >( pages ) *
            static_cast< long long >( page_size ) / 1024 ;
