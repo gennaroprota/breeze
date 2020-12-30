@@ -92,11 +92,14 @@ architecture/system/compiler triplet are removed).
 
 At the moment, `system` must be set to one of the following:
 
- - unix, windows
+ - unix, windows, macos
 
 while `compiler` must be set to one of:
 
  - clang, gcc, msvc
+
+The value `unix` should work on all Linuxes and FreeBSD, while macOS needs its
+own value.
 
 Finally, `architecture` can be anything, because it is currently only used to
 include or exclude a component (get_cpuid_info()) which is only implemented for

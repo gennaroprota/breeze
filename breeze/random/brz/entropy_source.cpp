@@ -13,7 +13,7 @@
 
 #include "breeze/random/entropy_source.hpp"
 #include "breeze/porting/dependent_source.hpp"
-#include BREEZE_DEPENDENT_SOURCE( system, entropy_source.cpp )
+#include BREEZE_DEPENDENT_SOURCE( system_family, entropy_source.cpp )
 #include "breeze/random/subrange_adaptor.hpp"
 
 namespace breeze_ns {

@@ -12,6 +12,8 @@ library_name_suffix := .lib
 
 exe_name_suffix  := .exe
 
+system_family := windows
+
 #       This was introduced to get the declaration of GetProductInfo()
 #       with GCC under Cywgin.
 # ----------------------------------------------------------------------------

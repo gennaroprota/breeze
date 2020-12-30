@@ -13,4 +13,4 @@
 
 #include "breeze/environment/operating_system_name.hpp"
 #include "breeze/porting/dependent_source.hpp"
-#include BREEZE_DEPENDENT_SOURCE( system, operating_system_name.cpp )
+#include BREEZE_DEPENDENT_SOURCE( system_family, operating_system_name.cpp )

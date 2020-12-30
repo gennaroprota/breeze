@@ -12,4 +12,4 @@
 // ___________________________________________________________________________
 
 #include "breeze/porting/dependent_source.hpp"
-#include BREEZE_DEPENDENT_SOURCE( system, set_current_directory.cpp )
+#include BREEZE_DEPENDENT_SOURCE( system_family, set_current_directory.cpp )

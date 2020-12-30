@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breeze/porting/dependent_source.hpp"
-#include BREEZE_DEPENDENT_SOURCE( system, system_time_for_uuid.cpp )
+#include BREEZE_DEPENDENT_SOURCE( system_family, system_time_for_uuid.cpp )
 
 #include "breeze/uuid/uuid.hpp"
 #include "breeze/diagnostics/assert.hpp"

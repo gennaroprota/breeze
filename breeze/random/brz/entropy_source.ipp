@@ -7,4 +7,4 @@
 // ___________________________________________________________________________
 
 #include "breeze/porting/dependent_source.hpp"
-#include BREEZE_DEPENDENT_SOURCE( system, entropy_source.ipp )
+#include BREEZE_DEPENDENT_SOURCE( system_family, entropy_source.ipp )

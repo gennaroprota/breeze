@@ -101,14 +101,6 @@ ifndef libraries
     libraries :=
 endif
 
-cpp_options = $(cpp_basic_options)                  \
-              $(cpp_debug_options)                  \
-              $(cpp_extra_options)                  \
-              $(include_switch)"$(include_dir)"     \
-              $(cpp_preprocessing_defines)
-
-cpp_preprocessing_defines := -D BREEZE_SYSTEM=$(system)      \
-                             -D BREEZE_COMPILER=$(compiler)
 
 bin_root := $(root)/bin
 dependent_subdir := $(architecture)/$(system)/$(compiler)
@@ -121,6 +113,16 @@ ifeq ($(has_triplet),yes)
     include $(root)/makefile/$(system).mk
     include $(root)/makefile/$(compiler).mk
 endif
+
+cpp_options = $(cpp_basic_options)                  \
+              $(cpp_debug_options)                  \
+              $(cpp_extra_options)                  \
+              $(include_switch)"$(include_dir)"     \
+              $(cpp_preprocessing_defines)
+
+cpp_preprocessing_defines := -D BREEZE_SYSTEM_FAMILY=$(system_family)   \
+                             -D BREEZE_SYSTEM=$(system)                 \
+                             -D BREEZE_COMPILER=$(compiler)
 
 #       Automatic dependency generation:
 #       ================================

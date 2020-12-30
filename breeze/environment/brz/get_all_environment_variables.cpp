@@ -12,4 +12,4 @@
 // ___________________________________________________________________________
 
 #include "breeze/porting/dependent_source.hpp"
-#include BREEZE_DEPENDENT_SOURCE( system, get_all_environment_variables.cpp )
+#include BREEZE_DEPENDENT_SOURCE( system_family, get_all_environment_variables.cpp )
