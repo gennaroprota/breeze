@@ -13,9 +13,12 @@
 
 #include "breeze/cryptography/sha384_hasher.hpp"
 #include "breeze/cryptography/digest.hpp"
+#include "breeze/memory/amount_of_physical_memory.hpp"
 #include "breeze/text/to_string.hpp"
 #include "breeze/testing/testing.hpp"
 
+#include <cstddef>
+#include <iostream>
 #include <string>
 
 int                 test_sha384() ;
@@ -53,17 +56,35 @@ check()
     {
         //      16,777,216 repetitions of 'piece' ( [2] )
         //
+        //      This test will need a 1GiB string, so don't run it if we
+        //      don't have enough RAM (the FreeBSD virtual machine we
+        //      use on GitHub Actions has just 1GiB of RAM overall, and,
+        //      if we run this test, the operating system just kills the
+        //      executable).
+        //
+        std::ptrdiff_t      repetitions = 16'777'216 ;
         std::string const   piece =
-            "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmno" ;
-        std::string         s ;
-        for ( std::size_t i = 0 ; i < 16'777'216 ; ++ i ) {
-            s += piece ;
+                "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmno" ;
+        std::ptrdiff_t const
+                            final_string_size = piece.size() * repetitions ;
+        auto const          min_ram_in_kib = static_cast< long long >(
+            1.1 * static_cast< double >( final_string_size ) / 1024 ) ;
+        if ( breeze::amount_of_physical_memory() >= min_ram_in_kib ) {
+
+            std::string         s ;
+            s.reserve( final_string_size ) ;
+            for ( std::ptrdiff_t i = 0 ; i < repetitions ; ++ i ) {
+                s += piece ;
+            }
+            breeze::sha384_hasher const
+                                hasher( s.cbegin(), s.cend() ) ;
+            BREEZE_CHECK( breeze::to_string( breeze::sha384_digest( hasher ) )
+                == "5441235cc0235341ed806a64fb354742b5e5c02a3c5cb71b"
+                   "5f63fb793458d8fdae599c8cd8884943c04f11b31b89f023" ) ;
+        } else {
+            std::cout << "(skipping one of the tests because this machine"
+                " doesn't have enough RAM)" << std::endl ;
         }
-        breeze::sha384_hasher const
-                            hasher( s.cbegin(), s.cend() ) ;
-        BREEZE_CHECK( breeze::to_string( breeze::sha384_digest( hasher ) )
-            == "5441235cc0235341ed806a64fb354742b5e5c02a3c5cb71b"
-               "5f63fb793458d8fdae599c8cd8884943c04f11b31b89f023" ) ;
     }
     {
         //      One million repetitions of 'a' ( [2] )
