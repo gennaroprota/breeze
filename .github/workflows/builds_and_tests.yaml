@@ -65,7 +65,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Builds and tests
         env:
-          system: unix
+          system: macos
           compiler: clang
           compiler_command: ${{matrix.compiler}}
 
@@ -85,7 +85,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Builds and tests
         env:
-          system: unix
+          system: macos
           compiler: gcc
           compiler_command: ${{matrix.compiler}}
         run: BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
