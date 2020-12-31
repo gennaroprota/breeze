@@ -15,6 +15,7 @@ root := ..
 # ----------------------------------------------------------------------------
 vpath %.cpp     $(root)/breeze/checksum/brz         \
                 $(root)/breeze/conversion/brz       \
+                $(root)/breeze/cpu/brz              \
                 $(root)/breeze/cryptography/brz     \
                 $(root)/breeze/diagnostics/brz      \
                 $(root)/breeze/environment/brz      \
@@ -34,8 +35,6 @@ ifeq ($(system),windows)
     vpath %.cpp $(root)/breeze/environment/windows_only/brz \
                 $(root)/breeze/time/windows_only/brz
 endif
-
-vpath %.asm     $(root)/breeze/cpu/brz
 
 source_files := luhn.cpp                                    \
                                                             \
@@ -113,22 +112,23 @@ ifeq ($(system),windows)
                 performance_counter_policy.cpp
 endif
 
+has_cpuid := no
+ifeq ($(architecture),x86)
+    has_cpuid := yes
+endif
+ifeq ($(architecture),x86_64)
+    has_cpuid := yes
+endif
+
+ifeq ($(has_cpuid),yes)
+    source_files += get_cpuid_info.cpp
+endif
 
 include $(root)/makefile/main.mk
 
-asm_source_files :=
-
-ifeq ($(architecture),x86_64)
-    ifneq ($(system),macos)
-        asm_source_files := get_cpuid_info.asm
-    endif
-endif
-
-
 target := $(bin_dir)/$(library_name_prefix)breeze$(library_name_suffix)
 object_files :=                                                             \
-    $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), $(source_files))   \
-    $(patsubst %.asm, $(bin_dir)/%$(object_file_suffix), $(asm_source_files))
+    $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), $(source_files))
 
 
 $(target): $(object_files)

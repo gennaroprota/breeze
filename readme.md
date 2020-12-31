@@ -51,8 +51,7 @@ should be documented better).
 Breeze has been designed and implemented to be as portable as possible, without
 a single usage of `#if`, `#ifdef` or `#ifndef` (the only conditional compilation
 is for include guards), and the goal is that it can be compiled with any
-conforming C++14 compiler (plus, for the x86_64 build only, the GNU Assembler,
-but just for a single component that I needed but you can easily exclude).
+conforming C++14 compiler.
 
 The provided build system, however, requires a Unix toolkit and GNU Make. On
 Microsoft Windows, you'll need Cygwin. (If I had to redo it today, most things
@@ -102,7 +101,7 @@ The value `unix` should work on all Linuxes and FreeBSD, while macOS needs its
 own value.
 
 Finally, `architecture` can be anything, because it is currently only used to
-include or exclude a component (get_cpuid_info()) which is only implemented for
+include or exclude a component (get_cpuid_info()) which is specific to x86 and
 x86_64.
 
 Under Cygwin, with both Clang and GCC, you can build with `system=windows` or

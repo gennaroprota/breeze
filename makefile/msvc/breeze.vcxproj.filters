@@ -182,6 +182,9 @@
     <ClCompile Include="..\..\breeze\time\brz\steady_clock_timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breeze\cpu\brz\get_cpuid_info.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breeze\checksum\brz\crc.tpp" />
@@ -583,11 +586,6 @@
     <ClInclude Include="..\..\breeze\time\steady_clock_timer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="..\..\breeze\cpu\brz\get_cpuid_info.asm">
-      <Filter>Source Files</Filter>
-    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\3_CLAUSE_BSD_LICENSE.txt" />

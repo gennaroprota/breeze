@@ -202,6 +202,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\breeze\checksum\brz\luhn.cpp" />
     <ClCompile Include="..\..\breeze\conversion\brz\roman.cpp" />
+    <ClCompile Include="..\..\breeze\cpu\brz\get_cpuid_info.cpp" />
     <ClCompile Include="..\..\breeze\cpu\example\cpu.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -268,23 +269,6 @@
     <None Include="..\..\breeze\checksum\brz\crc_io.tpp" />
     <None Include="..\..\breeze\conversion\brz\bit_cast.tpp" />
     <None Include="..\..\breeze\counting\brz\counter.tpp" />
-    <CustomBuild Include="..\..\breeze\cpu\brz\get_cpuid_info.asm">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">as --32 --warn --fatal-warnings "%(FullPath)" -o"%(FileName).obj"</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">as --32 --warn --fatal-warnings "%(FullPath)" -o"%(FileName).obj"</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FileName).obj</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Assembling %(FileName).asm</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Assembling %(FileName).asm</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">as --warn --fatal-warnings "%(FullPath)" -o"%(FileName).obj"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">as --warn --fatal-warnings "%(FullPath)" -o"%(FileName).obj"</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Assembling %(FileName).asm</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Assembling %(FileName).asm</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(FileName).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(FileName).obj</Outputs>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </CustomBuild>
     <None Include="..\..\breeze\cryptography\brz\digest.tpp" />
     <None Include="..\..\breeze\cryptography\brz\merkle_damgard_machine.tpp" />
     <None Include="..\..\breeze\cryptography\private\sensitive_buffer.tpp" />

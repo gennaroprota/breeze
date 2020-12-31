@@ -26,6 +26,8 @@
 
 namespace {
 
+using namespace breeze ;
+
 bool
 has_processor_brand_string()
 {
