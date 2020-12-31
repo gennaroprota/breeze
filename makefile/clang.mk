@@ -66,6 +66,11 @@
 #           (we don't want to use nullptr, there). GCC seems to be
 #           smarter and doesn't give such warnings when the option is
 #           enabled.
+#
+#       -Wno-reserved-id-macro:
+#
+#           Introduced to be able to define _DARWIN_C_SOURCE under Mac
+#           OS X (GitHub Actions)---see macos/amount_of_physical_memory.cpp
 # ----------------------------------------------------------------------------
 
 #       KEEP in sync! (See above.)
@@ -89,7 +94,8 @@ cpp_basic_options += -pipe                              \
                      -Wno-unneeded-member-function      \
                      -Wno-unused-member-function        \
                      -Wno-weak-vtables                  \
-                     -Wno-zero-as-null-pointer-constant
+                     -Wno-zero-as-null-pointer-constant \
+                     -Wno-reserved-id-macro
 
 #       The following three options are temporary
 #       (-fcomment-block-commands=cond is a hack for Clang, which
