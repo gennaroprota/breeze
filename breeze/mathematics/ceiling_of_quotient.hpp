@@ -27,8 +27,7 @@ namespace breeze_ns {
 //!         version thereof.
 //!
 //!     \pre
-//!          - b != 0
-//!          - a / b does not overflow
+//!         b != 0
 //!
 //!     \return
 //!         The ceiling of the quotient between \c a and \c b.
