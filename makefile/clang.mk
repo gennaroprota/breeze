@@ -56,7 +56,7 @@
 #           in the case (as of Febrary 27, 2019) for the class
 #           command_line_error, in command_line.hpp.
 #
-#       -Wno-zero-as-null-pointer-constant
+#       -Wno-zero-as-null-pointer-constant:
 #
 #           Silences warnings on things like:
 #
