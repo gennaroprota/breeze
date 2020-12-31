@@ -66,10 +66,9 @@ struct cpuid_result
 //!         output) are 32-bit. This is not by mistake: the CPUID
 //!         instruction still uses 32-bit values even in 64-bit mode.
 //!     \note
-//!         It's intended that these functions are the lowest level
-//!         before dealing with assembly. And that higher level
-//!         interfaces be defined upper in the library/application
-//!         logic.
+//!         It's intended that this function is the lowest level before
+//!         dealing with assembly. And that higher level interfaces be
+//!         defined upper in the library/application logic.
 // ---------------------------------------------------------------------------
 cpuid_result        get_cpuid_info( std::uint32_t eax, std::uint32_t ecx ) ;
 
