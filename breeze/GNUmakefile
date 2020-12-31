@@ -119,7 +119,9 @@ include $(root)/makefile/main.mk
 asm_source_files :=
 
 ifeq ($(architecture),x86_64)
-    asm_source_files := get_cpuid_info.asm
+    ifneq ($(system),macos)
+        asm_source_files := get_cpuid_info.asm
+    endif
 endif
 
 
