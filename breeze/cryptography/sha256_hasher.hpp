@@ -7,7 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief  SHA-256 function.
+//!     \brief  SHA-256 policy and typedef's for SHA-256 hasher and
+//!             digest.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_t9rt82w9uC5ZSdNs25Tb0en1bhYQjfnf

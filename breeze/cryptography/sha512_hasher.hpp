@@ -7,7 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief SHA-512 function.
+//!     \brief SHA-512 policy and typedef's for SHA-512 hasher and
+//!            digest.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_wCcpHSPgQuuMlLcoiraq0109Dj5dIMnV

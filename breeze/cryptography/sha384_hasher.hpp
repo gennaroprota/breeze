@@ -7,7 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief  SHA-384 function.
+//!     \brief  SHA-384 policy and typedef's for SHA-384 policy and
+//!             digest.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_K9MoyAqzzHMnugSwsAjPtZppm3h4NXaI

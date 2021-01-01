@@ -7,7 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief  SHA-224 function.
+//!     \brief  SHA-224 policy and typedef's for SHA-224 hasher and
+//!             digest.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_OKBGme15I2KXAgAlHJL4gxgCmNkNyA1w
