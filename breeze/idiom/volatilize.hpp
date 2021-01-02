@@ -19,7 +19,7 @@ namespace breeze_ns {
 
 //!     Adds a \c volatile qualification to an lvalue expression.
 //!
-//!     This allows avoding using a \c const_cast or a \c static_cast,
+//!     This allows avoiding using a \c const_cast or a \c static_cast,
 //!     or introducing an additional variable.
 //!
 //!     \return
