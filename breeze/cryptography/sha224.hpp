@@ -7,37 +7,34 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief  SHA-1 policy and typedef's for SHA-1 hasher and digest.
+//!     \brief  SHA-224 policy and typedef's for SHA-224 hasher and
+//!             digest.
 // ---------------------------------------------------------------------------
 
-#ifndef BREEZE_GUARD_lTc6ZJg4kodcuFjtlYBwwj0hqDplySkG
-#define BREEZE_GUARD_lTc6ZJg4kodcuFjtlYBwwj0hqDplySkG
+#ifndef BREEZE_GUARD_OKBGme15I2KXAgAlHJL4gxgCmNkNyA1w
+#define BREEZE_GUARD_OKBGme15I2KXAgAlHJL4gxgCmNkNyA1w
 
 #include "breeze/top_level_namespace.hpp"
+#include "breeze/cryptography/digest.hpp"
 #include "breeze/cryptography/merkle_damgard_engine.hpp"
 #include "breeze/cryptography/merkle_damgard_machine.hpp"
 
 namespace breeze_ns {
 
-class               sha1_engine ;
+class               sha224_engine ;
 
-template< typename Hasher >
-class               digest ;
+typedef merkle_damgard_machine< sha224_engine >
+                    sha224_hasher ;
+typedef digest< sha224_hasher >
+                    sha224_digest ;
 
-//!\{
-//!     Convenience typedef(s).
+//      sha224_engine:
+//      ==============
+//
+//!     SHA-224 policy class for \c merkle_damgard_machine.
 // ---------------------------------------------------------------------------
-typedef merkle_damgard_machine< sha1_engine >
-                    sha1_hasher ;
-typedef digest< sha1_hasher >
-                    sha1_digest ;
-//!\}
-
-
-//!     SHA-1 policy class for \c merkle_damgard_machine.
-// ---------------------------------------------------------------------------
-class sha1_engine
-    :   public merkle_damgard_engine< 160, 512, big_endian_policy >
+class sha224_engine
+    :   public merkle_damgard_engine< 224, 512, big_endian_policy, 32, 256 >
 {
 public:
     static void         init_state( state_type & state ) ;

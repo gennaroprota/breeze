@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/cryptography/md5_hasher.hpp"
+#include "breeze/cryptography/md5.hpp"
 
 namespace breeze_ns {
 namespace           {

@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/cryptography/sha256_hasher.hpp"
+#include "breeze/cryptography/sha256.hpp"
 #include "breeze/cryptography/private/sensitive_buffer.hpp"
 #include "breeze/cryptography/private/sha_common.tpp"
 #include "breeze/iteration/begin_end.hpp"

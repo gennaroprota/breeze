@@ -14,15 +14,13 @@
 #define BREEZE_GUARD_vePXQ5mxXBYih5DCVW1zUWqL52bOdtiX
 
 #include "breeze/top_level_namespace.hpp"
+#include "breeze/cryptography/digest.hpp"
 #include "breeze/cryptography/merkle_damgard_engine.hpp"
 #include "breeze/cryptography/merkle_damgard_machine.hpp"
 
 namespace breeze_ns {
 
 class md5_engine ;
-
-template< typename Hasher >
-class digest ;
 
 //!\{
 //!     Convenience typedef(s).

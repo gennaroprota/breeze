@@ -19,8 +19,7 @@
 //      is the read_me in the nist_vectors/ subdirectory.
 // ---------------------------------------------------------------------------
 
-#include "breeze/cryptography/digest.hpp"
-#include "breeze/cryptography/sha1_hasher.hpp"
+#include "breeze/cryptography/sha1.hpp"
 #include "breeze/environment/get_environment_variable.hpp"
 #include "breeze/testing/testing.hpp"
 #include "breeze/text/from_string.hpp"

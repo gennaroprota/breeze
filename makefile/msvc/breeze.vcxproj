@@ -210,12 +210,12 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\breeze\cryptography\brz\hashing_count.cpp" />
-    <ClCompile Include="..\..\breeze\cryptography\brz\md5_hasher.cpp" />
-    <ClCompile Include="..\..\breeze\cryptography\brz\sha1_hasher.cpp" />
-    <ClCompile Include="..\..\breeze\cryptography\brz\sha224_hasher.cpp" />
-    <ClCompile Include="..\..\breeze\cryptography\brz\sha256_hasher.cpp" />
-    <ClCompile Include="..\..\breeze\cryptography\brz\sha384_hasher.cpp" />
-    <ClCompile Include="..\..\breeze\cryptography\brz\sha512_hasher.cpp" />
+    <ClCompile Include="..\..\breeze\cryptography\brz\md5.cpp" />
+    <ClCompile Include="..\..\breeze\cryptography\brz\sha1.cpp" />
+    <ClCompile Include="..\..\breeze\cryptography\brz\sha224.cpp" />
+    <ClCompile Include="..\..\breeze\cryptography\brz\sha256.cpp" />
+    <ClCompile Include="..\..\breeze\cryptography\brz\sha384.cpp" />
+    <ClCompile Include="..\..\breeze\cryptography\brz\sha512.cpp" />
     <ClCompile Include="..\..\breeze\diagnostics\brz\assert.cpp" />
     <ClCompile Include="..\..\breeze\diagnostics\brz\last_api_error.cpp" />
     <ClCompile Include="..\..\breeze\environment\brz\get_all_environment_variables.cpp" />
@@ -311,15 +311,15 @@
     <ClInclude Include="..\..\breeze\cpu\get_cpuid_info.hpp" />
     <ClInclude Include="..\..\breeze\cryptography\digest.hpp" />
     <ClInclude Include="..\..\breeze\cryptography\hashing_count.hpp" />
-    <ClInclude Include="..\..\breeze\cryptography\md5_hasher.hpp" />
+    <ClInclude Include="..\..\breeze\cryptography\md5.hpp" />
     <ClInclude Include="..\..\breeze\cryptography\merkle_damgard_engine.hpp" />
     <ClInclude Include="..\..\breeze\cryptography\merkle_damgard_machine.hpp" />
     <ClInclude Include="..\..\breeze\cryptography\private\sensitive_buffer.hpp" />
-    <ClInclude Include="..\..\breeze\cryptography\sha1_hasher.hpp" />
-    <ClInclude Include="..\..\breeze\cryptography\sha224_hasher.hpp" />
-    <ClInclude Include="..\..\breeze\cryptography\sha256_hasher.hpp" />
-    <ClInclude Include="..\..\breeze\cryptography\sha384_hasher.hpp" />
-    <ClInclude Include="..\..\breeze\cryptography\sha512_hasher.hpp" />
+    <ClInclude Include="..\..\breeze\cryptography\sha1.hpp" />
+    <ClInclude Include="..\..\breeze\cryptography\sha224.hpp" />
+    <ClInclude Include="..\..\breeze\cryptography\sha256.hpp" />
+    <ClInclude Include="..\..\breeze\cryptography\sha384.hpp" />
+    <ClInclude Include="..\..\breeze\cryptography\sha512.hpp" />
     <ClInclude Include="..\..\breeze\debugging\dump_expression.hpp" />
     <ClInclude Include="..\..\breeze\diagnostics\assert.hpp" />
     <ClInclude Include="..\..\breeze\diagnostics\last_api_error.hpp" />

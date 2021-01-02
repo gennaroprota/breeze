@@ -41,12 +41,12 @@ source_files := luhn.cpp                                    \
                 roman.cpp                                   \
                                                             \
                 hashing_count.cpp                           \
-                md5_hasher.cpp                              \
-                sha1_hasher.cpp                             \
-                sha224_hasher.cpp                           \
-                sha256_hasher.cpp                           \
-                sha384_hasher.cpp                           \
-                sha512_hasher.cpp                           \
+                md5.cpp                                     \
+                sha1.cpp                                    \
+                sha224.cpp                                  \
+                sha256.cpp                                  \
+                sha384.cpp                                  \
+                sha512.cpp                                  \
                                                             \
                 assert.cpp                                  \
                 last_api_error.cpp                          \

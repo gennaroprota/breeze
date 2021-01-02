@@ -1,5 +1,5 @@
 // ===========================================================================
-//                        Copyright 2016 Gennaro Prota
+//                     Copyright 2006-2007 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -7,40 +7,38 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief  SHA-384 policy and typedef's for SHA-384 policy and
-//!             digest.
+//!     \brief SHA-512 policy and typedef's for SHA-512 hasher and
+//!            digest.
 // ---------------------------------------------------------------------------
 
-#ifndef BREEZE_GUARD_K9MoyAqzzHMnugSwsAjPtZppm3h4NXaI
-#define BREEZE_GUARD_K9MoyAqzzHMnugSwsAjPtZppm3h4NXaI
+#ifndef BREEZE_GUARD_wCcpHSPgQuuMlLcoiraq0109Dj5dIMnV
+#define BREEZE_GUARD_wCcpHSPgQuuMlLcoiraq0109Dj5dIMnV
 
 #include "breeze/top_level_namespace.hpp"
+#include "breeze/cryptography/digest.hpp"
 #include "breeze/cryptography/merkle_damgard_engine.hpp"
 #include "breeze/cryptography/merkle_damgard_machine.hpp"
 
 namespace breeze_ns {
 
-class               sha384_engine ;
-
-template< typename Hasher >
-class               digest ;
+class               sha512_engine ;
 
 //!\{
 //!     Convenience typedef(s).
 // ---------------------------------------------------------------------------
-typedef merkle_damgard_machine< sha384_engine >
-                    sha384_hasher ;
-typedef digest< sha384_hasher >
-                    sha384_digest ;
+typedef merkle_damgard_machine< sha512_engine >
+                    sha512_hasher ;
+typedef digest< sha512_hasher >
+                    sha512_digest ;
 //!\}
 
-//      sha384_engine:
+//      sha512_engine:
 //      ==============
 //
-//!     SHA-384 policy class for \c merkle_damgard_machine.
+//!     SHA-512 policy class for \c merkle_damgard_machine.
 // ---------------------------------------------------------------------------
-class sha384_engine
-    :   public merkle_damgard_engine< 384, 1024, big_endian_policy, 64, 512 >
+class sha512_engine
+    :   public merkle_damgard_engine< 512, 1024, big_endian_policy, 64 >
 {
 public:
     static void         init_state( state_type & state ) ;

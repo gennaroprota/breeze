@@ -11,8 +11,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/cryptography/sha224_hasher.hpp"
-#include "breeze/cryptography/sha256_hasher.hpp"
+#include "breeze/cryptography/sha224.hpp"
+#include "breeze/cryptography/sha256.hpp"
 
 namespace breeze_ns {
 

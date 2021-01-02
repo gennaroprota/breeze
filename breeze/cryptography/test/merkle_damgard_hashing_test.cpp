@@ -12,12 +12,11 @@
 // ___________________________________________________________________________
 
 #include "breeze/counting/signed_count.hpp"
-#include "breeze/cryptography/digest.hpp"
-#include "breeze/cryptography/md5_hasher.hpp"
-#include "breeze/cryptography/sha1_hasher.hpp"
-#include "breeze/cryptography/sha224_hasher.hpp"
-#include "breeze/cryptography/sha256_hasher.hpp"
-#include "breeze/cryptography/sha512_hasher.hpp"
+#include "breeze/cryptography/md5.hpp"
+#include "breeze/cryptography/sha1.hpp"
+#include "breeze/cryptography/sha224.hpp"
+#include "breeze/cryptography/sha256.hpp"
+#include "breeze/cryptography/sha512.hpp"
 #include "breeze/iteration/begin_end.hpp"
 #include "breeze/testing/testing.hpp"
 #include "breeze/text/to_string.hpp"

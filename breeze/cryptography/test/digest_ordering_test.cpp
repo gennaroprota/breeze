@@ -11,8 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/cryptography/digest.hpp"
-#include "breeze/cryptography/sha1_hasher.hpp"
+#include "breeze/cryptography/sha1.hpp"
 #include "breeze/testing/testing.hpp"
 
 #include <map>

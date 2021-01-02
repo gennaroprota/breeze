@@ -11,8 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/cryptography/sha384_hasher.hpp"
-#include "breeze/cryptography/digest.hpp"
+#include "breeze/cryptography/sha384.hpp"
 #include "breeze/memory/amount_of_physical_memory.hpp"
 #include "breeze/text/to_string.hpp"
 #include "breeze/testing/testing.hpp"

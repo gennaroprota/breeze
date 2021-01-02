@@ -23,22 +23,22 @@
     <ClCompile Include="..\..\breeze\cryptography\brz\hashing_count.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\cryptography\brz\md5_hasher.cpp">
+    <ClCompile Include="..\..\breeze\cryptography\brz\md5.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\cryptography\brz\sha1_hasher.cpp">
+    <ClCompile Include="..\..\breeze\cryptography\brz\sha1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\cryptography\brz\sha224_hasher.cpp">
+    <ClCompile Include="..\..\breeze\cryptography\brz\sha224.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\cryptography\brz\sha256_hasher.cpp">
+    <ClCompile Include="..\..\breeze\cryptography\brz\sha256.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\cryptography\brz\sha384_hasher.cpp">
+    <ClCompile Include="..\..\breeze\cryptography\brz\sha384.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\cryptography\brz\sha512_hasher.cpp">
+    <ClCompile Include="..\..\breeze\cryptography\brz\sha512.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breeze\diagnostics\brz\assert.cpp">
@@ -247,25 +247,25 @@
     <ClInclude Include="..\..\breeze\cryptography\hashing_count.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\cryptography\md5_hasher.hpp">
+    <ClInclude Include="..\..\breeze\cryptography\md5.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\cryptography\merkle_damgard_engine.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\cryptography\sha1_hasher.hpp">
+    <ClInclude Include="..\..\breeze\cryptography\sha1.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\cryptography\sha224_hasher.hpp">
+    <ClInclude Include="..\..\breeze\cryptography\sha224.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\cryptography\sha256_hasher.hpp">
+    <ClInclude Include="..\..\breeze\cryptography\sha256.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\cryptography\sha384_hasher.hpp">
+    <ClInclude Include="..\..\breeze\cryptography\sha384.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\cryptography\sha512_hasher.hpp">
+    <ClInclude Include="..\..\breeze\cryptography\sha512.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\cryptography\private\sensitive_buffer.hpp">
