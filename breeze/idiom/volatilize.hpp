@@ -20,7 +20,8 @@ namespace breeze_ns {
 //      volatilize():
 //      =============
 //
-//!     Adds a \c volatile qualification to an lvalue expression.
+//!     Adds a \c volatile qualification to an lvalue expression, if it
+//!     doesn't have one.
 //!
 //!     This allows avoiding using a \c const_cast or a \c static_cast,
 //!     or introducing an additional variable.
