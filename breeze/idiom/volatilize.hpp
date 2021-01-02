@@ -17,6 +17,9 @@
 
 namespace breeze_ns {
 
+//      volatilize():
+//      =============
+//
 //!     Adds a \c volatile qualification to an lvalue expression.
 //!
 //!     This allows avoiding using a \c const_cast or a \c static_cast,
