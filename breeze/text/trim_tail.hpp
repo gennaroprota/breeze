@@ -20,9 +20,24 @@
 
 namespace breeze_ns {
 
+//      trim_tail():
+//      ============
+//
+//!     \return
+//!         A string obtained from \c str by removing all the trailing
+//!         characters \c c for which <code>std::isspace( c, loc )
+//!         </code> returns \c true.
+// ---------------------------------------------------------------------------
 std::string         trim_tail( std::string const & str,
                                std::locale const & loc = std::locale() ) ;
 
+//      trim_tail():
+//      ============
+//
+//!     \return
+//!         A string obtained from \c str by removing all the trailing
+//!         characters that are also contained in \c to_remove.
+// ---------------------------------------------------------------------------
 std::string         trim_tail( std::string const &  str,
                                set_of_chars const & to_remove ) ;
 

@@ -20,9 +20,24 @@
 
 namespace breeze_ns {
 
+//      trim_head():
+//      ============
+//
+//!     \return
+//!         A string obtained from \c str by removing all the leading
+//!         characters \c c for which <code>std::isspace( c, loc )
+//!         </code> returns \c true.
+// ---------------------------------------------------------------------------
 std::string         trim_head( std::string const & str,
                                std::locale const & loc = std::locale() ) ;
 
+//      trim_head():
+//      ============
+//
+//!     \return
+//!         A string obtained from \c str by removing all the leading
+//!         characters that are also contained in \c to_remove.
+// ---------------------------------------------------------------------------
 std::string         trim_head( std::string const &  str,
                                set_of_chars const & to_remove ) ;
 }
