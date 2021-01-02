@@ -24,7 +24,7 @@ namespace breeze_ns {
 class               sha512_engine ;
 
 //!\{
-//!     Convenience typedef(s).
+//!     A convenience typedef.
 // ---------------------------------------------------------------------------
 typedef merkle_damgard_machine< sha512_engine >
                     sha512_hasher ;

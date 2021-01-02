@@ -23,7 +23,7 @@ namespace breeze_ns {
 class md5_engine ;
 
 //!\{
-//!     Convenience typedef(s).
+//!     A convenience typedef.
 // ---------------------------------------------------------------------------
 typedef merkle_damgard_machine< md5_engine > md5_hasher ;
 typedef digest< md5_hasher >                 md5_digest ;
