@@ -87,6 +87,13 @@ check()
     } while ( n != max_roman ) ;
 }
 
+void
+out_of_range_integer_triggers_assert()
+{
+    BREEZE_CHECK_THROW( breeze::assert_failure, breeze::roman(    0 ) ) ;
+    BREEZE_CHECK_THROW( breeze::assert_failure, breeze::roman( 4000 ) ) ;
+}
+
 }
 
 int
@@ -94,5 +101,6 @@ test_roman()
 {
     return breeze::test_runner::instance().run(
         "roman",
-        { check } ) ;
+        { check,
+          out_of_range_integer_triggers_assert } ) ;
 }

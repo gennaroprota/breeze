@@ -185,6 +185,9 @@
     <ClCompile Include="..\..\breeze\cpu\brz\get_cpuid_info.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breeze\testing\brz\assert_failure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breeze\checksum\brz\crc.tpp" />
@@ -584,6 +587,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\time\steady_clock_timer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breeze\testing\assert_failure.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

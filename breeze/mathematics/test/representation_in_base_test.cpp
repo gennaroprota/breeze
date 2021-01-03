@@ -50,6 +50,17 @@ void check()
     }
 }
 
+void
+out_of_range_base_causes_assert()
+{
+    int                 base = 1 ;
+    BREEZE_CHECK_THROW( breeze::assert_failure,
+        breeze::representation_in_base( 1, base ) ) ;
+    base = 37 ;
+    BREEZE_CHECK_THROW( breeze::assert_failure,
+        breeze::representation_in_base( 1, base )) ;
+}
+
 }
 
 int
@@ -57,5 +68,6 @@ test_representation_in_base()
 {
     return breeze::test_runner::instance().run(
         "representation_in_base()",
-        { check } ) ;
+        { check,
+          out_of_range_base_causes_assert } ) ;
 }

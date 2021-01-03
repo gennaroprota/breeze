@@ -238,6 +238,7 @@
     <ClCompile Include="..\..\breeze\random\brz\max_for_subrange.cpp" />
     <ClCompile Include="..\..\breeze\stream\brz\inserter.cpp" />
     <ClCompile Include="..\..\breeze\stream\brz\null_stream.cpp" />
+    <ClCompile Include="..\..\breeze\testing\brz\assert_failure.cpp" />
     <ClCompile Include="..\..\breeze\testing\brz\stream_reporter.cpp" />
     <ClCompile Include="..\..\breeze\testing\brz\test_descriptor.cpp" />
     <ClCompile Include="..\..\breeze\testing\brz\test_failure.cpp" />
@@ -383,6 +384,7 @@
     <ClInclude Include="..\..\breeze\stream\null_stream.hpp" />
     <ClInclude Include="..\..\breeze\stream\stream_buffer_wrapper.hpp" />
     <ClInclude Include="..\..\breeze\stream\stream_equivalent.hpp" />
+    <ClInclude Include="..\..\breeze\testing\assert_failure.hpp" />
     <ClInclude Include="..\..\breeze\testing\check.hpp" />
     <ClInclude Include="..\..\breeze\testing\stream_reporter.hpp" />
     <ClInclude Include="..\..\breeze\testing\testing.hpp" />

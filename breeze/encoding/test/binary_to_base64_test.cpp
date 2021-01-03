@@ -143,6 +143,19 @@ check_line_wrap()
     "IHBpZXRhLg==" ) ;
 }
 
+void
+negative_column_number_causes_assert()
+{
+    std::string const   dummy_in ;
+    std::string         dummy_out ;
+
+    BREEZE_CHECK_THROW( breeze::assert_failure,
+        breeze::binary_to_base64( dummy_in.cbegin(),
+                                  dummy_in.cend(),
+                                  std::back_inserter( dummy_out ),
+                                  -1 ) ) ;
+}
+
 }
 
 int
@@ -152,5 +165,7 @@ test_binary_to_base64()
         "binary_to_base64()",
         { check,
           check_string_of_nuls,
-          check_line_wrap } ) ;
+          check_line_wrap,
+
+          negative_column_number_causes_assert } ) ;
 }

@@ -32,6 +32,12 @@ do_tests()
     BREEZE_CHECK( breeze::tail( "hello", 100 ) == "hello" ) ;
 }
 
+void
+negative_count_causes_assert()
+{
+    BREEZE_CHECK_THROW( breeze::assert_failure, breeze::tail( "foo", -1 ) ) ;
+}
+
 }
 
 int
@@ -39,5 +45,7 @@ test_tail()
 {
     return breeze::test_runner::instance().run(
         "tail()",
-        { do_tests } ) ;
+        { do_tests,
+
+          negative_count_causes_assert } ) ;
 }

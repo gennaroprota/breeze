@@ -52,6 +52,21 @@ check()
     }
 }
 
+void
+negative_n_causes_assert()
+{
+    int const           n = -1 ;
+    BREEZE_CHECK_THROW( breeze::assert_failure,
+        breeze::digital_root( n, 10 ) ) ;
+}
+
+void
+out_of_range_base_causes_assert()
+{
+    BREEZE_CHECK_THROW( breeze::assert_failure,
+        breeze::digital_root( 1, 1 ) ) ;
+}
+
 }
 
 int
@@ -59,5 +74,7 @@ test_digital_root()
 {
     return breeze::test_runner::instance().run(
         "digital_root()",
-        { check } ) ;
+        { check,
+          negative_n_causes_assert,
+          out_of_range_base_causes_assert } ) ;
 }

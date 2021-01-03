@@ -76,6 +76,25 @@ entropy_source_is_usable_with_shuffle()
     all_elements_do_appear_and_once( v.cbegin(), v.cend() ) ;
 }
 
+void
+empty_interval_causes_assert()
+{
+    breeze::entropy_source
+                        source ;
+    BREEZE_CHECK_THROW( breeze::assert_failure, source( 5, 1 ) ) ;
+}
+
+void
+use_after_release_causes_assert()
+{
+    breeze::entropy_source
+                        source ;
+    source.release() ;
+
+    BREEZE_CHECK_THROW( breeze::assert_failure,
+        source.next() ) ;
+}
+
 }
 
 int
@@ -84,5 +103,8 @@ test_entropy_source()
     return breeze::test_runner::instance().run(
         "entropy_source",
         { do_test,
-          entropy_source_is_usable_with_shuffle } ) ;
+          entropy_source_is_usable_with_shuffle,
+
+          empty_interval_causes_assert,
+          use_after_release_causes_assert } ) ;
 }

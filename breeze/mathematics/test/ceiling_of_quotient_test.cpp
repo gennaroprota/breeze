@@ -77,6 +77,20 @@ ceiling_of_quotient_arguments_can_be_cv_qualified()
     BREEZE_CHECK( breeze::ceiling_of_quotient( a, b ) == 3 ) ;
 }
 
+void
+null_divisor_causes_assert()
+{
+    BREEZE_CHECK_THROW( breeze::assert_failure,
+        breeze::ceiling_of_quotient( 1, 0 ) ) ;
+}
+
+void
+overflow_in_division_causes_assert()
+{
+    BREEZE_CHECK_THROW( breeze::assert_failure,
+        breeze::ceiling_of_quotient( INT_MIN, -1 ) ) ;
+}
+
 }
 
 int
@@ -87,5 +101,8 @@ test_ceiling_of_quotient()
         { ceiling_of_quotient_is_usable_in_constexpr_contexts,
           ceiling_of_quotient_handles_several_cases_correctly,
           ceiling_of_quotient_doesnt_warn_with_unsigned,
-          ceiling_of_quotient_arguments_can_be_cv_qualified } ) ;
+          ceiling_of_quotient_arguments_can_be_cv_qualified,
+
+          null_divisor_causes_assert,
+          overflow_in_division_causes_assert } ) ;
 }

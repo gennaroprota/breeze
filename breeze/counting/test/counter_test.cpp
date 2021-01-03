@@ -78,6 +78,28 @@ do_check()
     }
 }
 
+void
+counter_checks_for_errors()
+{
+    {
+        BREEZE_CHECK_THROW( breeze::assert_failure,
+            breeze::counter< int >( -1 ) ) ;
+    }
+
+    {
+        breeze::counter< int >
+                            min( 0 ) ;
+        BREEZE_CHECK_THROW( breeze::assert_failure, -- min ) ;
+    }
+
+    {
+        auto const          int_max = std::numeric_limits< int >::max() ;
+        breeze::counter< int >
+                            max( int_max ) ;
+        BREEZE_CHECK_THROW( breeze::assert_failure, ++ max ) ;
+    }
+}
+
 }
 
 int
@@ -88,7 +110,9 @@ test_counter()
         { do_check< signed char >,
           do_check< unsigned char >,
           do_check< int >,
-          do_check< unsigned int > } ) ;
+          do_check< unsigned int >,
+
+          counter_checks_for_errors } ) ;
 }
 
 

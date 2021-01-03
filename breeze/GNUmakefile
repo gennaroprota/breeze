@@ -75,6 +75,7 @@ source_files := luhn.cpp                                    \
                 inserter.cpp                                \
                 null_stream.cpp                             \
                                                             \
+                assert_failure.cpp                          \
                 stream_reporter.cpp                         \
                 test_descriptor.cpp                         \
                 test_failure.cpp                            \

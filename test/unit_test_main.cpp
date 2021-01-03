@@ -12,16 +12,32 @@
 // ___________________________________________________________________________
 
 #include "unit_test_main.hpp"
+#include "breeze/diagnostics/assert.hpp"
 #include "breeze/diagnostics/last_api_error.hpp"
 #include "breeze/environment/operating_system_name.hpp"
 #include "breeze/memory/amount_of_physical_memory.hpp"
+#include "breeze/testing/assert_failure.hpp"
 #include <cstdlib>
 #include <iostream>
+
+namespace {
+
+[[ noreturn ]] void
+unit_test_assert_handler( char const *,
+                          char const *,
+                          long )
+{
+    throw breeze::assert_failure() ;
+}
+
+}
 
 int
 main()
 {
     using               test_function_type = int () ;
+
+    breeze::set_assert_handler( unit_test_assert_handler ) ;
 
     test_function_type * const
                         tests[] = {

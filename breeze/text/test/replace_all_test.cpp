@@ -75,6 +75,14 @@ void do_tests()
     }
 }
 
+void
+empty_from_string_causes_assert()
+{
+    std::string         source = "foo" ;
+    BREEZE_CHECK_THROW( breeze::assert_failure,
+        breeze::replace_all( source, "", "bar" ) ) ;
+}
+
 }
 
 int
@@ -82,5 +90,7 @@ test_replace_all()
 {
     return breeze::test_runner::instance().run(
         "replace_all()",
-        { do_tests } ) ;
+        { do_tests,
+
+          empty_from_string_causes_assert } ) ;
 }

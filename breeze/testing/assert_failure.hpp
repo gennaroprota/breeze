@@ -1,5 +1,5 @@
 // ===========================================================================
-//                        Copyright 2016 Gennaro Prota
+//                        Copyright 2021 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -7,16 +7,24 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Cumulative include file for the unit testing facilities.
+//!     \brief An exception class representing an assertion failure.
 // ---------------------------------------------------------------------------
 
-#ifndef BREEZE_GUARD_ntjESDWS7R0VczgCNAyZQonfItWUZ2As
-#define BREEZE_GUARD_ntjESDWS7R0VczgCNAyZQonfItWUZ2As
+#ifndef BREEZE_GUARD_d9dt4Uehn6MQi2IQwM3KigBOfFpQWbVT
+#define BREEZE_GUARD_d9dt4Uehn6MQi2IQwM3KigBOfFpQWbVT
 
-#include "breeze/testing/assert_failure.hpp"
-#include "breeze/testing/check.hpp"
-#include "breeze/testing/stream_reporter.hpp"
-#include "breeze/testing/test_descriptor.hpp"
-#include "breeze/testing/test_runner.hpp"
+#include "breeze/top_level_namespace.hpp"
+#include <exception>
+
+namespace breeze_ns {
+
+class assert_failure
+    :   public std::exception
+{
+public:
+    virtual char const *what() const noexcept override ;
+} ;
+
+}
 
 #endif

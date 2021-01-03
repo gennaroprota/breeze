@@ -42,6 +42,16 @@ do_test()
     }
 }
 
+void
+unallowed_arguments_cause_assert()
+{
+    BREEZE_CHECK_THROW( breeze::assert_failure,
+        breeze::max_for_subrange( -1, 8 ) ) ;
+
+    BREEZE_CHECK_THROW( breeze::assert_failure,
+        breeze::max_for_subrange( 9, 8 ) ) ;
+}
+
 }
 
 int
@@ -49,5 +59,7 @@ test_max_for_subrange()
 {
     return breeze::test_runner::instance().run(
         "max_for_subrange()",
-        { do_test } ) ;
+        { do_test,
+
+          unallowed_arguments_cause_assert } ) ;
 }

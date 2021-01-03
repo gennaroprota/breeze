@@ -47,22 +47,17 @@ do_test()
     static_cast< void >( n ) ;
 }
 
-class my_exception
-{
-} ;
-
-[[ noreturn ]] void
-my_assert_handler( char const *, char const *, long )
-{
-    throw my_exception() ;
-}
-
 void
 failed_assertion_calls_active_handler()
 {
-    breeze::set_assert_handler( my_assert_handler ) ;
+    BREEZE_CHECK_THROW( breeze::assert_failure, BREEZE_ASSERT( false ) ) ;
+}
 
-    BREEZE_CHECK_THROW( my_exception, BREEZE_ASSERT( false ) ) ;
+void
+cant_pass_nullptr_to_set_assert_handler()
+{
+    BREEZE_CHECK_THROW( breeze::assert_failure,
+        breeze::set_assert_handler( nullptr ) ) ;
 }
 
 }
@@ -73,5 +68,6 @@ test_breeze_assert()
     return breeze::test_runner::instance().run(
         "BREEZE_ASSERT()",
         { do_test,
-          failed_assertion_calls_active_handler } ) ;
+          failed_assertion_calls_active_handler,
+          cant_pass_nullptr_to_set_assert_handler } ) ;
 }

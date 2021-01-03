@@ -20,7 +20,7 @@ Notes:
 The 3-Clause BSD License:
 =========================
 
-© Copyright 2006-2020 Gennaro Prota
+© Copyright 2006-2021 Gennaro Prota
 © Copyright 1997-2004 James Kanze
 All rights reserved.
 
