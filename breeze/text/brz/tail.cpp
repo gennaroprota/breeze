@@ -13,6 +13,7 @@
 
 #include "breeze/text/tail.hpp"
 #include "breeze/diagnostics/assert.hpp"
+#include <cstddef>
 
 namespace breeze_ns {
 
@@ -21,13 +22,12 @@ tail( std::string const & s, std::ptrdiff_t count )
 {
     BREEZE_ASSERT( count >= 0 ) ;
 
-    std::ptrdiff_t const
-                        length = s.length() ;
+    std::size_t const   length = s.length() ;
 
     //      Note how the first argument to substr() *may* be equal to
     //      length (count == 0).
     // -----------------------------------------------------------------------
-    return count >= length
+    return static_cast< std::size_t >( count ) >= length
                 ? s
                 : s.substr( length - count )
                 ;
