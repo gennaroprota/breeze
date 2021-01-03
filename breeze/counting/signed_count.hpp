@@ -49,6 +49,9 @@ signed_count( T const ( & )[ n ] ) noexcept
 //      signed_count():
 //      ===============
 //
+//!     \pre
+//!         t.size() <= PTRDIFF_MAX
+//!
 //!     \return
 //!         The value of \c t.size() converted to \c std::ptrdiff_t. See
 //!         also the file-level documentation.

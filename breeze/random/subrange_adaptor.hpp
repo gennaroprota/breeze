@@ -42,6 +42,9 @@ public:
 
     //!     Constructs a subrange adaptor from a given Engine and a new max
     //!     value.
+    //!
+    //!     \pre
+    //!         new_max <= e.max()
     // -----------------------------------------------------------------------
                         subrange_adaptor( Engine & e, result_type new_max ) ;
 

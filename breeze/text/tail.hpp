@@ -22,6 +22,9 @@ namespace breeze_ns {
 //      tail():
 //      =======
 //
+//!     \pre
+//!         count >= 0
+//!
 //!     \return
 //!         If <code>count >= s.length()</code>, \c s; otherwise the
 //!         string composed of the last \c count characters of \c s (an
