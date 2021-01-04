@@ -110,8 +110,8 @@ block_non_bools( bool b )
 //!     \c expr must have type bool or cv-qualified bool (this is a
 //!     change from the past: we used to accept anything implicitly or
 //!     explicitly convertible to bool; which means that e.g. \c expr
-//!     could be the name of a \c std::optional---we think the new
-//!     specification is safer).
+//!     could be the name of a <code>std::optional</code>---we think the
+//!     new specification is safer).
 //!
 //!     When \c assert_expr is evaluated: if \c expr is \c false, an
 //!     assertion is triggered; if it is \c true, the evaluation of \c
