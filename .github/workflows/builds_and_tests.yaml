@@ -104,9 +104,10 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: vmactions/freebsd-vm@v0.0.9
+    - uses: vmactions/freebsd-vm@v0.1.0
       with:
         usesh: true
+        mem: 2048
         run: |
           export system=unix
           export compiler=gcc
