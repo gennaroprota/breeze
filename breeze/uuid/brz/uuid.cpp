@@ -160,7 +160,7 @@ bool
 uuid::is_equal( uuid const & other ) const noexcept
 {
     return std::equal( breeze::cbegin( m_octets ), breeze::cend( m_octets ),
-                       breeze::cbegin( other.m_octets )) ;
+                       breeze::cbegin( other.m_octets ) ) ;
 }
 
 bool
