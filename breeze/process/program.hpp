@@ -25,7 +25,7 @@ namespace breeze_ns {
 //      program:
 //      ========
 //
-//!     Manager of the overall program status and termination.
+//!     \copybrief program.hpp
 // ---------------------------------------------------------------------------
 class program
 {
