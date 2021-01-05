@@ -68,9 +68,9 @@ public:
     //!     distinguished in the exit code; if not, all you get is
     //!     \c EXIT_SUCCESS or \c EXIT_FAILURE.
     //!
-    //!     Important: this function also flushes \c std::cout, and
-    //!     calls \c declare_error() if the flush fails (for this
-    //!     reason, it is not \c const).
+    //!     <strong>Important</strong>: this function also attempts to
+    //!     flush \c std::cout, and calls \c declare_error( fatal ) if
+    //!     the flush fails (for this reason, it is not \c const).
     // -----------------------------------------------------------------------
     int                 exit_code() ;
 
