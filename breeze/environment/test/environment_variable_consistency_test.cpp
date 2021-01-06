@@ -37,7 +37,7 @@ check_consistency()
 
         //      Give up on testing PATH, because, under Cygwin, the
         //      paths may be Windows-style or Unix-style according to
-        //      whether we use get_enviroment_map() or
+        //      whether we use get_all_enviroment_variables() or
         //      get_environment_variable().
         // -------------------------------------------------------------------
         if ( from_map.first != "PATH" )
