@@ -31,7 +31,7 @@ current_directory()
     char const *        p = nullptr ;
     do {
         aa.reset( new char[ sz ] ) ;
-        p = getcwd( aa.get(), sz ) ;
+        p = getcwd( aa.raw_pointer(), sz ) ;
         sz *= 2 ;
     } while ( p == nullptr && errno == ERANGE ) ;
 

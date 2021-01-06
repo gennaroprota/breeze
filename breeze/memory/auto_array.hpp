@@ -50,7 +50,7 @@ public:
                         ~auto_array() noexcept ;
 
     auto_array &        operator =( auto_array && ) noexcept ;
-    T *                 get() const noexcept ;
+    T *                 raw_pointer() const noexcept ;
     void                reset( T * ) noexcept ;
 
 private:

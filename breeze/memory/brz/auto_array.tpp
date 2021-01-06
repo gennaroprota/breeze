@@ -46,7 +46,7 @@ auto_array< T >::operator =( auto_array && rhs ) noexcept
 
 template< typename T >
 T *
-auto_array< T >::get() const noexcept
+auto_array< T >::raw_pointer() const noexcept
 {
     return m_ptr ;
 }

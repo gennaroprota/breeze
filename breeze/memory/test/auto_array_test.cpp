@@ -32,14 +32,14 @@ check_move_semantics()
     //
     breeze::auto_array< int > a = f() ;
     for ( int i = 0 ; i < 3 ; ++i ) {
-        BREEZE_CHECK( a.get()[ i ] == i ) ;
+        BREEZE_CHECK( a.raw_pointer()[ i ] == i ) ;
     }
     // Check also the move assignment operator.
     // NOTE: this is bad code, with a hard-coded constant (3) and
     // hard-coded values (plus, code repetition).
     a = f() ;
     for ( int i = 0 ; i < 3 ; ++i ) {
-        BREEZE_CHECK( a.get()[ i ] == i ) ;
+        BREEZE_CHECK( a.raw_pointer()[ i ] == i ) ;
     }
 }
 
@@ -48,14 +48,14 @@ check_non_move_constructors()
 {
     breeze::auto_array< std::string >
                         a( new std::string[ 2 ]{ "foo", "bar" } ) ;
-    BREEZE_CHECK( a.get()[ 0 ] == "foo" ) ;
-    BREEZE_CHECK( a.get()[ 1 ] == "bar" ) ;
+    BREEZE_CHECK( a.raw_pointer()[ 0 ] == "foo" ) ;
+    BREEZE_CHECK( a.raw_pointer()[ 1 ] == "bar" ) ;
 
     breeze::auto_array< double > deflt ;
-    BREEZE_CHECK( deflt.get() == nullptr ) ;
+    BREEZE_CHECK( deflt.raw_pointer() == nullptr ) ;
 
     breeze::auto_array< char > n( nullptr ) ;
-    BREEZE_CHECK( n.get() == nullptr ) ;
+    BREEZE_CHECK( n.raw_pointer() == nullptr ) ;
 
 }
 
@@ -80,7 +80,7 @@ can_assign_elements_of_const_auto_array_to_non_const()
         int *               p = new int [ 5 ]{ 0, 1, 2, 3, 4 } ;
         breeze::auto_array< int > const
                             a( p ) ;
-        a.get()[ 0 ] = 0 ;
+        a.raw_pointer()[ 0 ] = 0 ;
     }
 }
 
