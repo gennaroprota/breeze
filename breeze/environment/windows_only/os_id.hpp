@@ -14,7 +14,6 @@
 #define BREEZE_GUARD_y14wSYOBPQ4ReQuQzkBRjijvOvqDhYc7
 
 #include "breeze/top_level_namespace.hpp"
-#include "breeze/operator/equality_comparison.hpp"
 #include <iosfwd>
 
 namespace breeze_ns {
@@ -24,11 +23,11 @@ namespace breeze_ns {
 //
 //!     \copybrief os_id.hpp
 //!
-//!     A thin wrapper around an int: we assign distinct integral
-//!     numbers to the different Windows versions.
+//!     A scoped enumeration to distinguish the various Windows
+//!     versions.
 // ---------------------------------------------------------------------------
 //
-//      Rationale for the absence of relational operators:
+//      Rationale for the deletion of the relational operators:
 //
 //      in my first idea of this class, it was my intent to support
 //      inequality comparisons:
@@ -48,44 +47,44 @@ namespace breeze_ns {
 //      seems to me they could well release two Windows variants of
 //      which neither is "higher" or "lower" than the other.
 // ---------------------------------------------------------------------------
-class os_id
-    :   private equality_comparison< os_id >
+enum class os_id
 {
-private:
-    typedef int         id_type ;
-    id_type             m_id ;
+    //      Attention: keep in sync with the array definition in the
+    //      .cpp file (used for stream insertion).
+    //
+    //      * windows_xp_professional_x64_edition is the only case where
+    //      the word "edition" appears directly as a part of the OS
+    //      name, rather than in the edition name (as in "Web Edition",
+    //      "Home Edition" etc.) -- what should we do? leave "edition"
+    //      or not?
+    // ---------------------------------------------------------------------------
+    windows_unknown,
 
-    explicit            os_id( id_type ) ;
-
-    friend std::ostream &
-                        operator <<( std::ostream &, os_id const & ) ;
-
-public:
-    // compiler-generated copy and destructor
-
-    bool                is_equal( os_id const & ) const ;
-
-    static const os_id  windows_unknown,
-
-                        windows_2000,
-                        windows_xp,
-                        windows_server_2003,
-                        windows_home_server,
-                        windows_storage_server_2003,
-                        windows_server_2003_r2,
-                        windows_xp_professional_x64_edition,
-                        windows_vista,
-                        windows_server_2008,
-                        windows_server_2008_r2,
-                        windows_7,
-                        windows_8,
-                        windows_server_2012,
-                        windows_8_1,
-                        windows_server_2012_r2,
-                        windows_10,
-                        windows_server_2016
-    ;
+    windows_2000,
+    windows_xp,
+    windows_server_2003,
+    windows_home_server,
+    windows_storage_server_2003,
+    windows_server_2003_r2,
+    windows_xp_professional_x64_edition,  // gps leave "edition"?
+    windows_vista,
+    windows_server_2008,
+    windows_server_2008_r2,
+    windows_7,
+    windows_8,
+    windows_server_2012,
+    windows_8_1,
+    windows_server_2012_r2,
+    windows_10,
+    windows_server_2016
 } ;
+
+std::ostream &      operator <<( std::ostream &, os_id ) ;
+
+bool                operator <(  os_id, os_id ) = delete ;
+bool                operator <=( os_id, os_id ) = delete ;
+bool                operator >(  os_id, os_id ) = delete ;
+bool                operator >=( os_id, os_id ) = delete ;
 
 }
 
