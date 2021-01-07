@@ -61,7 +61,7 @@ operator <<( std::ostream & dest, os_id id )
 
     int const           sp = windows_version_info::service_pack_level() ;
     if ( sp != 0 ) {
-        dest << "Service Pack " << sp ;
+        dest << " Service Pack " << sp ;
     }
 
     if ( windows_version_info::is_64_bit() ) {
