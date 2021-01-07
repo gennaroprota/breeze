@@ -78,8 +78,12 @@
 *.obj.enc
 *.nativecodeanalysis.xml
 *.nativecodeanalysis.all.xml
+*.nativecodeanalysis.sarif
+CodeAnalysisResultManifest.txt
 *.lastcodeanalysis*
+*.vcxproj.FileListAbsolute.txt
 *.vcxproj.user
+*.lib.recipe
 *.diagsession
 .vs/
 
