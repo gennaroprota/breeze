@@ -29,7 +29,7 @@ indent_style=tab
 
 #       Ditto.
 # ----------------------------------------------------------------------------
-[*.{vcxproj,vcxproj.filters}]
+[*.{vcxproj,vcxproj.filters,ruleset}]
 indent_size = 2
 insert_final_newline = false
 

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Rules for breeze" Description="Code analysis rules for breeze.vcxproj." ToolsVersion="16.0">
+  <IncludeAll Action="Warning" />
+  <Rules AnalyzerId="Microsoft.Analyzers.NativeCodeAnalysis" RuleNamespace="Microsoft.Rules.Native">
+    <Rule Id="C26440" Action="None" />
+    <Rule Id="C26446" Action="None" />
+    <Rule Id="C26472" Action="None" />
+    <Rule Id="C26481" Action="None" />
+    <Rule Id="C26482" Action="None" />
+    <Rule Id="C26485" Action="None" />
+    <Rule Id="C26497" Action="None" />
+  </Rules>
+</RuleSet>

@@ -224,6 +224,7 @@
     <None Include="..\..\breeze\cryptography\private\sha_common.tpp" />
     <None Include="..\..\breeze\checksum\brz\crc_io.tpp" />
     <None Include="..\..\breeze\text\brz\split.tpp" />
+    <None Include="breeze.ruleset" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breeze\algorithm\secure_fill.hpp">
