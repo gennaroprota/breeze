@@ -43,9 +43,12 @@ typedef void      ( assert_handler_type )( char const * expression_text,
 //      set_assert_handler():
 //      =====================
 //
-//!     Sets \c *f as the "assert handler", i.e. as the function which
-//!     is called by <code>BREEZE_ASSERT( expression )</code> if \c
-//!     expression evaluates to \c false.
+//!     Sets \c *f as the current "assert handler", i.e. as the function
+//!     which is called by <code>BREEZE_ASSERT( expression )</code> if
+//!     \c expression evaluates to \c false.
+//!
+//!     At program start up, the assert handler is \c
+//!     default_assert_handler().
 //!
 //!     \param f
 //!         Pointer to the assert handler to set. The handler must not
@@ -119,11 +122,10 @@ block_non_bools( bool b )
 //!     sub-expression \c expr.
 //!
 //!     In this context, "triggering an assertion" means calling the
-//!     current <i>assert handler</i>, i.e. the last function specified
-//!     with \c set_assert_handler(), passing it information related to
-//!     the specific \c BREEZE_ASSERT() invocation (in particular, the
-//!     text of the expression, the source file name and the line
-//!     number).
+//!     current <i>assert handler</i> (see \c set_assert_handler()),
+//!     passing it information related to the specific \c
+//!     BREEZE_ASSERT() invocation (in particular, the text of the
+//!     expression, the source file name and the line number).
 //!
 //!     \par Rationale
 //!
