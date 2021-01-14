@@ -7,7 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Determines the running operating system.
+//!     \brief Returns the \c os_id of the running operating system
+//!            (Windows only).
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_lc9dZp5eUrNd9dbNZHDcvW36RGyTlJ77
@@ -21,7 +22,7 @@ namespace breeze_ns {
 //      get_os():
 //      =========
 //
-//!     \brief "Determines" the running OS (Windows-only).
+//!     \copybrief get_os.hpp
 //!
 //!     This "determines" the running OS based on information returned
 //!     by Windows itself: initially the implementation used
