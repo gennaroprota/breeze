@@ -29,6 +29,9 @@
 //!     standard versions and ours should just go with time. The only
 //!     reason these are still around is that I haven't had time to
 //!     update the code that uses them.
+//!
+//!     \see
+//!         signed_count().
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_Ve2uzZNiUDgCTZXgV1iB3bUD5U0n1kKD

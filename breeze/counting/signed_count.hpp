@@ -13,12 +13,15 @@
 //!     that covers both standard containers and built-in arrays.
 //!
 //!     The syntax is, uniformly, \c breeze::signed_count( a )
-//!     regardless of the actual type of \c a. See also begin_end.hpp.
+//!     regardless of the actual type of \c a.
 //!
 //!     Following C++ best practices, these templates return a \e signed
 //!     integer. They are made obsolete in C++20 by the namespace-scope
 //!     \c std::ssize()'s. However our version avoids any fancy
 //!     derivation of the return type, even for containers.
+//!
+//!     \see
+//!         begin(), end(), cbegin(), cend().
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
