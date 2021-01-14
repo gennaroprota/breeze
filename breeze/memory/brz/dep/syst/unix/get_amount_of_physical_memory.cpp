@@ -11,14 +11,14 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/memory/amount_of_physical_memory.hpp"
+#include "breeze/memory/get_amount_of_physical_memory.hpp"
 
 #include <unistd.h>
 
 namespace breeze_ns {
 
 long long
-amount_of_physical_memory()
+get_amount_of_physical_memory()
 {
     long const          pages = sysconf( _SC_PHYS_PAGES ) ;
     long const          page_size = sysconf( _SC_PAGESIZE ) ;

@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/process/current_directory.hpp"
+#include "breeze/process/get_current_directory.hpp"
 #include "breeze/diagnostics/assert.hpp"
 #include "breeze/diagnostics/last_api_error.hpp"
 #include "breeze/memory/auto_array.hpp"
@@ -23,7 +23,7 @@
 namespace breeze_ns {
 
 std::string
-current_directory()
+get_current_directory()
 {
     std::ptrdiff_t      sz = 1024 ;
     auto_array< char >  aa ;

@@ -15,7 +15,7 @@
 #include "breeze/diagnostics/assert.hpp"
 #include "breeze/diagnostics/last_api_error.hpp"
 #include "breeze/environment/operating_system_name.hpp"
-#include "breeze/memory/amount_of_physical_memory.hpp"
+#include "breeze/memory/get_amount_of_physical_memory.hpp"
 #include "breeze/testing/assert_failure.hpp"
 #include <cstdlib>
 #include <iostream>
@@ -126,7 +126,7 @@ main()
     //      of 1024)...
     // -----------------------------------------------------------------------
     auto const          amount = static_cast< double >(
-            breeze::amount_of_physical_memory() ) / 1024.0 ;
+            breeze::get_amount_of_physical_memory() ) / 1024.0 ;
     std::cout << "\nAmount of physical memory in MiB: " <<
         amount << std::endl ;
 

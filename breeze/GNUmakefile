@@ -55,7 +55,7 @@ source_files := luhn.cpp                                    \
                 get_environment_variable.cpp                \
                 operating_system_name.cpp                   \
                                                             \
-                amount_of_physical_memory.cpp               \
+                get_amount_of_physical_memory.cpp           \
                                                             \
                 damerau_levenshtein_distance.cpp            \
                 levenshtein_distance.cpp                    \
@@ -64,7 +64,7 @@ source_files := luhn.cpp                                    \
                 directory_separators.cpp                    \
                 extension.cpp                               \
                                                             \
-                current_directory.cpp                       \
+                get_current_directory.cpp                   \
                 exit_code.cpp                               \
                 program.cpp                                 \
                 set_current_directory.cpp                   \

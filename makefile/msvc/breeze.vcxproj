@@ -224,14 +224,14 @@
     <ClCompile Include="..\..\breeze\environment\windows_only\brz\get_os.cpp" />
     <ClCompile Include="..\..\breeze\environment\windows_only\brz\os_id.cpp" />
     <ClCompile Include="..\..\breeze\environment\windows_only\brz\windows_version_info.cpp" />
-    <ClCompile Include="..\..\breeze\memory\brz\amount_of_physical_memory.cpp" />
+    <ClCompile Include="..\..\breeze\memory\brz\get_amount_of_physical_memory.cpp" />
     <ClCompile Include="..\..\breeze\metric\brz\damerau_levenshtein_distance.cpp" />
     <ClCompile Include="..\..\breeze\metric\brz\levenshtein_distance.cpp" />
     <ClCompile Include="..\..\breeze\path\brz\directory_separators.cpp" />
     <ClCompile Include="..\..\breeze\path\brz\base_file_name.cpp" />
     <ClCompile Include="..\..\breeze\path\brz\extension.cpp" />
-    <ClCompile Include="..\..\breeze\process\brz\current_directory.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\exit_code.cpp" />
+    <ClCompile Include="..\..\breeze\process\brz\get_current_directory.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\program.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\set_current_directory.cpp" />
     <ClCompile Include="..\..\breeze\random\brz\entropy_source.cpp" />
@@ -347,8 +347,8 @@
     <ClInclude Include="..\..\breeze\mathematics\is_power_of_2.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\lcm.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\representation_in_base.hpp" />
-    <ClInclude Include="..\..\breeze\memory\amount_of_physical_memory.hpp" />
     <ClInclude Include="..\..\breeze\memory\auto_array.hpp" />
+    <ClInclude Include="..\..\breeze\memory\get_amount_of_physical_memory.hpp" />
     <ClInclude Include="..\..\breeze\meta\constant.hpp" />
     <ClInclude Include="..\..\breeze\meta\exact_width_integer.hpp" />
     <ClInclude Include="..\..\breeze\meta\has_sign.hpp" />
@@ -373,8 +373,8 @@
     <ClInclude Include="..\..\breeze\preprocessing\stringize_after_expansion.hpp" />
     <ClInclude Include="..\..\breeze\preprocessing\paste.hpp" />
     <ClInclude Include="..\..\breeze\preprocessing\paste_after_expansion.hpp" />
-    <ClInclude Include="..\..\breeze\process\current_directory.hpp" />
     <ClInclude Include="..\..\breeze\process\exit_code.hpp" />
+    <ClInclude Include="..\..\breeze\process\get_current_directory.hpp" />
     <ClInclude Include="..\..\breeze\process\program.hpp" />
     <ClInclude Include="..\..\breeze\process\set_current_directory.hpp" />
     <ClInclude Include="..\..\breeze\random\entropy_source.hpp" />

@@ -128,7 +128,7 @@
     <ClCompile Include="..\..\breeze\uuid\brz\uuid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\memory\brz\amount_of_physical_memory.cpp">
+    <ClCompile Include="..\..\breeze\memory\brz\get_amount_of_physical_memory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breeze\metric\brz\levenshtein_distance.cpp">
@@ -146,7 +146,7 @@
     <ClCompile Include="..\..\breeze\process\brz\set_current_directory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\process\brz\current_directory.cpp">
+    <ClCompile Include="..\..\breeze\process\brz\get_current_directory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breeze\text\brz\tail.cpp">
@@ -503,7 +503,7 @@
     <ClInclude Include="..\..\breeze\mathematics\digital_root.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\process\current_directory.hpp">
+    <ClInclude Include="..\..\breeze\process\get_current_directory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\process\set_current_directory.hpp">
@@ -563,7 +563,7 @@
     <ClInclude Include="..\..\breeze\vocabulary\maybe.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\memory\amount_of_physical_memory.hpp">
+    <ClInclude Include="..\..\breeze\memory\get_amount_of_physical_memory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\meta\padding.hpp">

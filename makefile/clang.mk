@@ -70,7 +70,7 @@
 #       -Wno-reserved-id-macro:
 #
 #           Introduced to be able to define _DARWIN_C_SOURCE under Mac
-#           OS X (GitHub Actions)---see macos/amount_of_physical_memory.cpp
+#           OS X (GitHub Actions)---see macos/get_amount_of_physical_memory.cpp
 # ----------------------------------------------------------------------------
 
 #       KEEP in sync! (See above.)

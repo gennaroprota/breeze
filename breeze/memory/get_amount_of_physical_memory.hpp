@@ -1,5 +1,5 @@
 // ===========================================================================
-//                     Copyright 2015-2019 Gennaro Prota
+//                        Copyright 2017 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -7,27 +7,25 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Gets the current directory of the calling process.
+//!     \brief Returns the amount of physical memory in the system, in
+//!            KiB.
 // ---------------------------------------------------------------------------
 
-#ifndef BREEZE_GUARD_KrwlefOEgShOBz9iqPeAc0R8iN3Lfl9g
-#define BREEZE_GUARD_KrwlefOEgShOBz9iqPeAc0R8iN3Lfl9g
+#ifndef BREEZE_GUARD_MGUaDhlpQlBVyyLZNOhIfvYsz5BgazUe
+#define BREEZE_GUARD_MGUaDhlpQlBVyyLZNOhIfvYsz5BgazUe
 
 #include "breeze/top_level_namespace.hpp"
-#include <string>
 
 namespace breeze_ns {
 
-//      current_directory():
-//      ====================
+//      get_amount_of_physical_memory():
+//      ================================
 //
-//!     Gets the current directory of the calling process.
-//!
-//!     \par Exceptions
-//!         A \c std::runtime_error (which may be a \c last_api_error)
-//!         if it fails.
+//!     \return
+//!         The amount of physical memory installed in the system, in
+//!         KiB.
 // ---------------------------------------------------------------------------
-std::string         current_directory() ;
+long long           get_amount_of_physical_memory() ;
 
 }
 

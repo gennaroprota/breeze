@@ -11,14 +11,14 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/process/current_directory.hpp"
+#include "breeze/process/get_current_directory.hpp"
 #include "breeze/diagnostics/last_api_error.hpp"
 #include <Windows.h>
 
 namespace breeze_ns {
 
 std::string
-current_directory()
+get_current_directory()
 {
     DWORD const         required = GetCurrentDirectoryA( 0, nullptr ) ;
     if ( required == 0 ) {

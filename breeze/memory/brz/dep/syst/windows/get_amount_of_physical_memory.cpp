@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/memory/amount_of_physical_memory.hpp"
+#include "breeze/memory/get_amount_of_physical_memory.hpp"
 #include "breeze/conversion/bit_cast.hpp"
 #include "breeze/diagnostics/last_api_error.hpp"
 
@@ -20,7 +20,7 @@
 namespace breeze_ns {
 
 long long
-amount_of_physical_memory()
+get_amount_of_physical_memory()
 {
     //      This implementation uses GetPhysicallyInstalledSystemMemory(),
     //      if available, with a fallback to GlobalMemoryStatusEx().

@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breeze/diagnostics/last_api_error.hpp"
-#include "breeze/process/current_directory.hpp"
+#include "breeze/process/get_current_directory.hpp"
 #include "breeze/process/set_current_directory.hpp"
 #include "breeze/testing/testing.hpp"
 #include <string>
@@ -25,7 +25,7 @@ void
 check()
 {
     {
-        std::string const   cur = breeze::current_directory() ;
+        std::string const   cur = breeze::get_current_directory() ;
         breeze::set_current_directory( cur ) ;
     }
     {
