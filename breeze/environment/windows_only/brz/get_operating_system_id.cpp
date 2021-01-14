@@ -201,11 +201,11 @@ identify_nt( windows_version_info const & info )
             break ;
 
         case win_version( 6, 1 ):
-                id = operating_system_id::windows_7 ;
+            id = operating_system_id::windows_7 ;
             break ;
 
         case win_version( 6, 0 ):
-                id = operating_system_id::windows_vista ;
+            id = operating_system_id::windows_vista ;
             break ;
 
         case win_version( 5, 2 ):
@@ -243,19 +243,19 @@ identify_nt( windows_version_info const & info )
             break ;
 
         case win_version( 6, 1 ):
-                id = operating_system_id::windows_server_2008_r2 ;
+            id = operating_system_id::windows_server_2008_r2 ;
             break ;
 
         case win_version( 6, 0 ):
-                id = operating_system_id::windows_server_2008 ;
+            id = operating_system_id::windows_server_2008 ;
             break ;
 
         case win_version( 5, 2 ):
             // gps TODO: how to distinguish Windows Storage Server 2003?
-                id = is_server_2003_r2()
-                    ? operating_system_id::windows_server_2003_r2
-                    : operating_system_id::windows_server_2003
-                    ;
+            id = is_server_2003_r2()
+                ? operating_system_id::windows_server_2003_r2
+                : operating_system_id::windows_server_2003
+                ;
             break ;
 
         case win_version( 5, 0 ):
