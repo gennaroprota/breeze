@@ -29,7 +29,7 @@
       <tab type="exceptionhierarchy" visible="yes" title="" intro=""/>
     </tab>
     <tab type="filelist" visible="yes" title="Files" intro=""/>
-    <tab type="globals" visible="yes" title="Macros and global functions" intro=""/>
+    <tab type="globals" visible="yes" title="Macros" intro=""/>
     <tab type="examples" visible="yes" title="" intro=""/>
     <tab type="pages" visible="yes" title="TODOs, etc." intro=""/>
   </navindex>
