@@ -9,8 +9,8 @@
 //!     \file
 //!     \brief Arrays and containers element counter.
 //!
-//!     An extension of \c container::size() to cover both standard
-//!     containers and built-in arrays.
+//!     \c signed_count() provides an extension of \c container::size()
+//!     that covers both standard containers and built-in arrays.
 //!
 //!     The syntax is, uniformly, \c breeze::signed_count( a )
 //!     regardless of the actual type of \c a. See also begin_end.hpp.
@@ -35,9 +35,11 @@ namespace breeze_ns {
 //      signed_count():
 //      ===============
 //
+//!     \copydoc signed_count.hpp
+//!
 //!     \return
 //!         The number of elements of the array argument (obviously, \c
-//!         n). See also the file-level documentation.
+//!         n).
 // ---------------------------------------------------------------------------
 template< typename T, std::ptrdiff_t n >
 constexpr std::ptrdiff_t
@@ -49,12 +51,13 @@ signed_count( T const ( & )[ n ] ) noexcept
 //      signed_count():
 //      ===============
 //
+//!     \copydoc signed_count.hpp
+//!
 //!     \pre
 //!         t.size() <= PTRDIFF_MAX
 //!
 //!     \return
-//!         The value of \c t.size() converted to \c std::ptrdiff_t. See
-//!         also the file-level documentation.
+//!         The value of \c t.size() converted to \c std::ptrdiff_t.
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr std::ptrdiff_t
