@@ -181,9 +181,9 @@ is_server_2003_r2()
 operating_system_id
 identify_nt( windows_version_info const & info )
 {
-    operating_system_id id( operating_system_id::windows_unknown ) ;
-    int const           version(
-                  win_version( info.major_version(), info.minor_version() ) ) ;
+    operating_system_id id = operating_system_id::windows_unknown ;
+    int const           version =
+                  win_version( info.major_version(), info.minor_version() ) ;
 
     if ( windows_version_info::is_client() ) {
         switch ( version )
