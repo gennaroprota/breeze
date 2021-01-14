@@ -106,8 +106,8 @@ source_files := luhn.cpp                                    \
 
 ifeq ($(system),windows)
     source_files +=                                         \
-                get_os.cpp                                  \
-                os_id.cpp                                   \
+                get_operating_system_id.cpp                 \
+                operating_system_id.cpp                     \
                 windows_version_info.cpp                    \
                                                             \
                 performance_counter_policy.cpp

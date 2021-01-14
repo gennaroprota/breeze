@@ -221,8 +221,8 @@
     <ClCompile Include="..\..\breeze\environment\brz\get_all_environment_variables.cpp" />
     <ClCompile Include="..\..\breeze\environment\brz\get_environment_variable.cpp" />
     <ClCompile Include="..\..\breeze\environment\brz\operating_system_name.cpp" />
-    <ClCompile Include="..\..\breeze\environment\windows_only\brz\get_os.cpp" />
-    <ClCompile Include="..\..\breeze\environment\windows_only\brz\os_id.cpp" />
+    <ClCompile Include="..\..\breeze\environment\windows_only\brz\get_operating_system_id.cpp" />
+    <ClCompile Include="..\..\breeze\environment\windows_only\brz\operating_system_id.cpp" />
     <ClCompile Include="..\..\breeze\environment\windows_only\brz\windows_version_info.cpp" />
     <ClCompile Include="..\..\breeze\memory\brz\get_amount_of_physical_memory.cpp" />
     <ClCompile Include="..\..\breeze\metric\brz\damerau_levenshtein_distance.cpp" />
@@ -332,8 +332,8 @@
     <ClInclude Include="..\..\breeze\environment\get_all_environment_variables.hpp" />
     <ClInclude Include="..\..\breeze\environment\get_environment_variable.hpp" />
     <ClInclude Include="..\..\breeze\environment\operating_system_name.hpp" />
-    <ClInclude Include="..\..\breeze\environment\windows_only\get_os.hpp" />
-    <ClInclude Include="..\..\breeze\environment\windows_only\os_id.hpp" />
+    <ClInclude Include="..\..\breeze\environment\windows_only\get_operating_system_id.hpp" />
+    <ClInclude Include="..\..\breeze\environment\windows_only\operating_system_id.hpp" />
     <ClInclude Include="..\..\breeze\environment\windows_only\windows_version_info.hpp" />
     <ClInclude Include="..\..\breeze\idiom\volatilize.hpp" />
     <ClInclude Include="..\..\breeze\iteration\begin_end.hpp" />

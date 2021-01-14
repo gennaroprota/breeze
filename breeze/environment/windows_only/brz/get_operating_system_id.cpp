@@ -11,8 +11,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 //
-//      get_os():
-//      =========
+//      get_operating_system_id():
+//      ==========================
 //
 //      Windows-specific implementation.
 //
@@ -153,8 +153,8 @@
 //      (NT Workstation: Workstation, Home Edition, Professional)
 //      (NT Server:      Datacenter Edition, Enterprise Edition, Web Edition, Standard Edition)
 
-#include "breeze/environment/windows_only/get_os.hpp"
-#include "breeze/environment/windows_only/os_id.hpp"
+#include "breeze/environment/windows_only/get_operating_system_id.hpp"
+#include "breeze/environment/windows_only/operating_system_id.hpp"
 #include "breeze/environment/windows_only/windows_version_info.hpp"
 
 #include <Windows.h>
@@ -178,10 +178,10 @@ is_server_2003_r2()
     return GetSystemMetrics( sm_serverr2 ) != 0 ;
 }
 
-os_id
+operating_system_id
 identify_nt( windows_version_info const & info )
 {
-    os_id               id( os_id::windows_unknown ) ;
+    operating_system_id id( operating_system_id::windows_unknown ) ;
     int const           version(
                   win_version( info.major_version(), info.minor_version() ) ) ;
 
@@ -189,82 +189,82 @@ identify_nt( windows_version_info const & info )
         switch ( version )
         {
         case win_version( 10, 0 ):
-            id = os_id::windows_10 ;
+            id = operating_system_id::windows_10 ;
             break ;
 
         case win_version( 6, 3 ):
-            id = os_id::windows_8_1 ;
+            id = operating_system_id::windows_8_1 ;
             break ;
 
         case win_version( 6, 2 ):
-            id = os_id::windows_8 ;
+            id = operating_system_id::windows_8 ;
             break ;
 
         case win_version( 6, 1 ):
-                id = os_id::windows_7 ;
+                id = operating_system_id::windows_7 ;
             break ;
 
         case win_version( 6, 0 ):
-                id = os_id::windows_vista ;
+                id = operating_system_id::windows_vista ;
             break ;
 
         case win_version( 5, 2 ):
             if ( windows_version_info::is_64_bit() ) {
-                id = os_id::windows_xp_professional_x64_edition ;
+                id = operating_system_id::windows_xp_professional_x64_edition ;
             }
             break ;
 
         case win_version( 5, 1 ):
-            id = os_id::windows_xp ;
+            id = operating_system_id::windows_xp ;
             break ;
 
         case win_version( 5, 0 ):
-            id = os_id::windows_2000 ;
+            id = operating_system_id::windows_2000 ;
             break ;
 
         default:
             // hmm... new version on the shelves?
-            id = os_id::windows_unknown ;
+            id = operating_system_id::windows_unknown ;
             break ;
         }
     } else {
         switch ( version )
         {
         case win_version( 10, 0 ):
-            id = os_id::windows_server_2016 ;
+            id = operating_system_id::windows_server_2016 ;
             break ;
 
         case win_version( 6, 3 ):
-            id = os_id::windows_server_2012_r2 ;
+            id = operating_system_id::windows_server_2012_r2 ;
             break ;
 
         case win_version( 6, 2 ):
-            id = os_id::windows_server_2012 ;
+            id = operating_system_id::windows_server_2012 ;
             break ;
 
         case win_version( 6, 1 ):
-                id = os_id::windows_server_2008_r2 ;
+                id = operating_system_id::windows_server_2008_r2 ;
             break ;
 
         case win_version( 6, 0 ):
-                id = os_id::windows_server_2008 ;
+                id = operating_system_id::windows_server_2008 ;
             break ;
 
         case win_version( 5, 2 ):
             // gps TODO: how to distinguish Windows Storage Server 2003?
                 id = is_server_2003_r2()
-                    ? os_id::windows_server_2003_r2
-                    : os_id::windows_server_2003
+                    ? operating_system_id::windows_server_2003_r2
+                    : operating_system_id::windows_server_2003
                     ;
             break ;
 
         case win_version( 5, 0 ):
-            id = os_id::windows_2000 ;
+            id = operating_system_id::windows_2000 ;
             break ;
 
         default:
             // hmm... new version on the shelves?
-            id = os_id::windows_unknown ;
+            id = operating_system_id::windows_unknown ;
             break ;
         }
     }
@@ -274,8 +274,8 @@ identify_nt( windows_version_info const & info )
 
 }
 
-os_id
-get_os()
+operating_system_id
+get_operating_system_id()
 {
     windows_version_info const
                         info ;
@@ -283,7 +283,8 @@ get_os()
     //      When Windows 9x was supported as well, the function
     //      identify_nt() was accompanied by a corresponding
     //      identify_9x(). Now that the latter has disappeared,
-    //      identify_nt() could be incorporated directly into get_os().
+    //      identify_nt() could be incorporated directly into
+    //      get_operating_system_id().
     // -----------------------------------------------------------------------
     return identify_nt( info ) ;
 }

@@ -18,16 +18,17 @@
 
 namespace breeze_ns {
 
-//      os_id:
-//      ======
+//      operating_system_id:
+//      ====================
 //
-//!     \copybrief os_id.hpp
+//!     \copybrief operating_system_id.hpp
 //!
 //!     A scoped enumeration to distinguish the various Windows
 //!     versions.
 //!
 //!     \note
-//!         \c os_id does not support the relational operators.
+//!         \c operating_system_id does not support the relational
+//!            operators.
 //!
 //!     \par Rationale
 //!
@@ -36,7 +37,7 @@ namespace breeze_ns {
 //!
 //!     \code
 //!         // Is it Windows 2000 or "later"?
-//!         if ( id >= os_id::windows_2000 )
+//!         if ( id >= operating_system_id::windows_2000 )
 //!     \endcode
 //!
 //!     And the enumerators, in fact, appear in oldest-to-newest order.
@@ -51,7 +52,7 @@ namespace breeze_ns {
 //!     seems to me they could well release two Windows variants of
 //!     which neither is "higher" or "lower" than the other.
 // ---------------------------------------------------------------------------
-enum class os_id
+enum class operating_system_id
 {
     //      Attention: keep in sync with the array definition in the
     //      .cpp file (used for stream insertion).
@@ -83,18 +84,22 @@ enum class os_id
     windows_server_2016
 } ;
 
-std::ostream &      operator <<( std::ostream &, os_id ) ;
+std::ostream &      operator <<( std::ostream &, operating_system_id ) ;
 
 //!\name Relational operators
 //
 //!     The relational operator functions are all deleted. See the
-//!     documentation of \c os_id for the rationale.
+//!     documentation of \c operating_system_id for the rationale.
 // ---------------------------------------------------------------------------
 //\{
-bool                operator <(  os_id, os_id ) = delete ;
-bool                operator <=( os_id, os_id ) = delete ;
-bool                operator >(  os_id, os_id ) = delete ;
-bool                operator >=( os_id, os_id ) = delete ;
+bool                operator <(  operating_system_id,
+                                 operating_system_id ) = delete ;
+bool                operator <=( operating_system_id,
+                                 operating_system_id ) = delete ;
+bool                operator >(  operating_system_id,
+                                 operating_system_id ) = delete ;
+bool                operator >=( operating_system_id,
+                                 operating_system_id ) = delete ;
 //\}
 
 }

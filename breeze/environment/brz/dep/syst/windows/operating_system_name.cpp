@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/environment/windows_only/get_os.hpp"
+#include "breeze/environment/windows_only/get_operating_system_id.hpp"
 #include <ostream>
 
 namespace breeze_ns {
@@ -19,7 +19,7 @@ namespace breeze_ns {
 std::ostream &
 operator <<( std::ostream & dest, operating_system_name const & )
 {
-    return dest << get_os() ;
+    return dest << get_operating_system_id() ;
 }
 
 }

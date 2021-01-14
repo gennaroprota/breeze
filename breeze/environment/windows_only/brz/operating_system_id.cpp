@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/environment/windows_only/os_id.hpp"
+#include "breeze/environment/windows_only/operating_system_id.hpp"
 #include "breeze/environment/windows_only/windows_version_info.hpp"
 
 #include <ostream>
@@ -48,7 +48,7 @@ char const * const  names[] =
 }
 
 std::ostream &
-operator <<( std::ostream & dest, os_id id )
+operator <<( std::ostream & dest, operating_system_id id )
 {
     dest << breeze::names[ static_cast< int >( id ) ] ;
 

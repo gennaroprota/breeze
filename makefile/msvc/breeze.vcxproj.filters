@@ -50,10 +50,10 @@
     <ClCompile Include="..\..\breeze\environment\brz\operating_system_name.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\environment\windows_only\brz\get_os.cpp">
+    <ClCompile Include="..\..\breeze\environment\windows_only\brz\get_operating_system_id.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\environment\windows_only\brz\os_id.cpp">
+    <ClCompile Include="..\..\breeze\environment\windows_only\brz\operating_system_id.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breeze\environment\windows_only\brz\windows_version_info.cpp">
@@ -299,10 +299,10 @@
     <ClInclude Include="..\..\breeze\environment\operating_system_name.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\environment\windows_only\get_os.hpp">
+    <ClInclude Include="..\..\breeze\environment\windows_only\get_operating_system_id.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\environment\windows_only\os_id.hpp">
+    <ClInclude Include="..\..\breeze\environment\windows_only\operating_system_id.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\environment\windows_only\windows_version_info.hpp">
