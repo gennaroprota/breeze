@@ -104,12 +104,12 @@ cpp_basic_options += -pipe                              \
 #       -Wno-documentation-unknown-command, as that could hide real
 #       errors). - gps
 #
-#       Addendum: Clang doesn't recognize \copybrief, either (problem
-#       encountered with Clang 5.0.1).
+#       Addendum: Clang doesn't recognize \copydoc and its variants,
+#       either.
 # ----------------------------------------------------------------------------
 cpp_basic_options += -Wno-exit-time-destructors         \
                      -Wno-global-constructors           \
-                     -fcomment-block-commands=cond,copybrief,copydetails
+                     -fcomment-block-commands=cond,copydoc,copybrief,copydetails
 
 #       As of September 2020, Clang's -Og is the same as -O1 but
 #
