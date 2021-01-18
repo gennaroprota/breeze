@@ -156,7 +156,7 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
     // -----------------------------------------------------------------------
     if ( reflect_in ) {
         while ( first != last ) {
-            m_current = static_cast< value_type > (
+            m_current = static_cast< value_type >(
                 s_cache[ ( m_current ^ *first ) & mask ] ^
                     ( m_current >> char_bit ) ) ;
             ++ first ;
