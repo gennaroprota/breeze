@@ -56,6 +56,9 @@ public:
         internal
     } ;
 
+    //!     \return
+    //!         A reference to the one and only instance of the class.
+    // -----------------------------------------------------------------------
     static program &    instance() noexcept ;
 
     //!     \return
