@@ -159,7 +159,7 @@ private:
 
 
     value_type          m_current ;
-    static constexpr    crc_private::crc_cache< Traits >
+    static constexpr crc_private::crc_cache< Traits >
                         s_cache{} ;
 
     //      A few sanity checks on the traits class. These use
