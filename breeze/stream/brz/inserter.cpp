@@ -29,13 +29,13 @@ inserter::inserter( std::ostream & dest, width_reset wr )
 
 inserter::~inserter() noexcept
 {
-    if ( m_reset_width && sentry_is_ok() ) {
+    if ( m_reset_width && is_sentry_ok() ) {
         m_dest.width( 0 ) ;
     }
 }
 
 bool
-inserter::sentry_is_ok() const noexcept
+inserter::is_sentry_ok() const noexcept
 {
     return static_cast< bool >( m_sentry ) ;
 }
@@ -43,7 +43,7 @@ inserter::sentry_is_ok() const noexcept
 void
 inserter::put( char c )
 {
-    BREEZE_ASSERT( sentry_is_ok() ) ;
+    BREEZE_ASSERT( is_sentry_ok() ) ;
 
     if ( m_dest && m_dest.rdbuf()->sputc( c ) == EOF ) {
         m_dest.setstate( std::ios::badbit ) ;
@@ -53,7 +53,7 @@ inserter::put( char c )
 void
 inserter::put( char const * source, std::streamsize count )
 {
-    BREEZE_ASSERT( sentry_is_ok() ) ;
+    BREEZE_ASSERT( is_sentry_ok() ) ;
     BREEZE_ASSERT( count >= 0 ) ;
 
     if ( m_dest && m_dest.rdbuf()->sputn( source, count ) != count ) {

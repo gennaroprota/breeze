@@ -83,7 +83,7 @@ public:
     // -----------------------------------------------------------------------
     inserter &          operator =( inserter const & ) = delete ;
 
-    //!     If \c sentry_is_ok() returns \c true, and \c reset_width was
+    //!     If \c is_sentry_ok() returns \c true, and \c reset_width was
     //!     passed to the constructor, sets the width of the destination
     //!     stream to <tt>0</tt>. Note that this is also done if the
     //!     inserter emits an exception, which is different from e.g.
@@ -96,13 +96,13 @@ public:
 
     //!     Tells if the sentry is OK.
     // -----------------------------------------------------------------------
-    bool                sentry_is_ok() const noexcept ;
+    bool                is_sentry_ok() const noexcept ;
 
     //!     \param c
     //!         The character to be output.
     //!
     //!     \pre
-    //!         sentry_is_ok()
+    //!         is_sentry_ok()
     //!
     //!     If the destination stream converts to \c true (i.e. if
     //!     <code>! fail()</code>), calls <code>sputc( c )</code> on its
@@ -118,7 +118,7 @@ public:
     //!         The number of characters.
     //!
     //!     \pre
-    //!          - sentry_is_ok()
+    //!          - is_sentry_ok()
     //!          - count >= 0
     //!
     //!     If the destination stream converts to \c true (i.e. if
