@@ -39,6 +39,9 @@ reflect( Unsigned n )
     return result ;
 }
 
+//      zeroize_extra_bits():
+//      =====================
+//
 //      Leaves only the least significant 'count' bits in 'n', zeroizing
 //      all the other bits, if any.
 // ---------------------------------------------------------------------------
