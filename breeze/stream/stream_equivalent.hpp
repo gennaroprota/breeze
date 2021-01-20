@@ -101,7 +101,15 @@ public:
     // -----------------------------------------------------------------------
     stream_equivalent & operator =( stream_equivalent const & ) = delete ;
 
+    //!     Constructs a stream equivalent for \c original (see the
+    //!     class-level documentation).
+    // -----------------------------------------------------------------------
     explicit            stream_equivalent( Stream & original ) ;
+
+    //!     Turns on the \c rdstate() bits that are on in the
+    //!     equivalent, in the original stream, too, without emitting an
+    //!     \c std::ios_base::failure, and destroys the object.
+    // -----------------------------------------------------------------------
                         ~stream_equivalent() noexcept ;
 
     //!     \return
