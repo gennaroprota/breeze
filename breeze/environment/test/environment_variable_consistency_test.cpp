@@ -26,11 +26,13 @@ namespace {
 void
 check_consistency()
 {
-    auto const &        map = breeze::get_all_environment_variables() ;
+    std::map< std::string, std::string > const &
+                        map = breeze::get_all_environment_variables() ;
 
     for ( auto const & from_map : map )
     {
-        auto const &        from_get_single = breeze::get_environment_variable(
+        breeze::maybe< std::string>
+                            from_get_single = breeze::get_environment_variable(
                                                   from_map.first ) ;
 
         BREEZE_CHECK( from_get_single.is_valid() ) ;

@@ -32,7 +32,7 @@ template< typename Int >
 counter< Int >
 counter< Int >::operator ++( int ) &
 {
-    auto                result( *this ) ;
+    counter             result( *this ) ;
     operator ++() ;
     return result ;
 }
@@ -50,7 +50,7 @@ template< typename Int >
 counter< Int >
 counter< Int >::operator --( int ) &
 {
-    auto                result( *this ) ;
+    counter             result( *this ) ;
     operator --() ;
     return result ;
 }

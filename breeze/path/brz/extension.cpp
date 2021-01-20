@@ -13,13 +13,14 @@
 
 #include "breeze/path/extension.hpp"
 #include "breeze/path/directory_separators.hpp"
+#include <cstddef>
 
 namespace breeze_ns {
 
 std::string
 extension( std::string const & path )
 {
-    auto const          last_sep = path.find_last_of(
+    std::size_t const   last_sep = path.find_last_of(
                             breeze::directory_separators()
                         ) ;
 
@@ -29,7 +30,7 @@ extension( std::string const & path )
     // -----------------------------------------------------------------------
     std::string const   last_name = path.substr( last_sep + 1 ) ;
 
-    auto const          pos = last_name.rfind( '.' ) ;
+    std::size_t const   pos = last_name.rfind( '.' ) ;
     return pos == std::string::npos ||
            pos == 0                 ||
            last_name == ".."

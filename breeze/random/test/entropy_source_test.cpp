@@ -24,24 +24,26 @@ namespace {
 void
 do_test()
 {
+    using result_type = breeze::entropy_source::result_type ;
+
     breeze::entropy_source
                         source ;
 
     {
-        auto const          value = source.next() ;
+        result_type const   value = source.next() ;
         BREEZE_CHECK( source.min() <= value &&
                         value <= source.max() ) ;
     }
     {
         int const           maximum = 15 ;
-        auto const          capped_value = source( maximum ) ;
+        result_type const   capped_value = source( maximum ) ;
         BREEZE_CHECK( source.min() <= capped_value &&
                         capped_value <= maximum ) ;
     }
     {
         int const           minimum = 100 ;
         int const           maximum = 200 ;
-        auto const          value = source( minimum, maximum ) ;
+        result_type const   value = source( minimum, maximum ) ;
         BREEZE_CHECK( minimum <= value && value <= maximum ) ;
     }
 

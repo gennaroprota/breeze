@@ -11,6 +11,7 @@
 
 #include "breeze/diagnostics/assert.hpp"
 #include "breeze/text/trim_tail.hpp"
+#include <cstddef>
 
 namespace breeze_ns {
 namespace readable_type_name_private {
@@ -44,8 +45,8 @@ readable_type_name()
             readable_type_name_private::wrapper< T >
         >() ;
 
-    auto const          begin_pos = wrapped_name.find(  '<' ) ;
-    auto const          end_pos   = wrapped_name.rfind( '>' ) ;
+    std::size_t const   begin_pos = wrapped_name.find(  '<' ) ;
+    std::size_t const   end_pos   = wrapped_name.rfind( '>' ) ;
 
     BREEZE_ASSERT( begin_pos < end_pos &&
                      end_pos != wrapped_name.npos ) ;

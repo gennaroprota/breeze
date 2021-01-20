@@ -30,7 +30,8 @@ subrange_adaptor< Engine >::next()
         return m_engine.next() ; // subrange coincides with full range
     }
 
-    auto                n = m_engine.next() ;
+    typename Engine::result_type
+                        n = m_engine.next() ;
     unsigned long const sub_max =
                     breeze::max_for_subrange( m_max,
                               m_engine.max BREEZE_PREVENT_MACRO_EXPANSION () ) ;

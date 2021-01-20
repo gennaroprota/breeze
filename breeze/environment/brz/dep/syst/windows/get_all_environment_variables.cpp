@@ -17,6 +17,7 @@
 #undef UNICODE          // it seems impossible to directly call
                         // GetEnvironmentStringsA(), so undefine UNICODE
 #include <Windows.h>    // and use the normal name
+#include <cstddef>
 #include <utility>
 
 namespace breeze_ns {
@@ -49,7 +50,7 @@ get_all_environment_variables()
         char const *        curr = start ;
         while ( *curr != '\0' ) {
             std::string const   single = curr ;
-            auto const          pos = single.find( '=' ) ;
+            std::size_t const   pos = single.find( '=' ) ;
             std::string const   name = single.substr( 0, pos ) ;
 
             //      On my system the string pointed to by start begins

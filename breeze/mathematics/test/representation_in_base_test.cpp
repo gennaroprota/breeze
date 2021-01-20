@@ -43,7 +43,7 @@ void check()
     }
 
     {
-        auto const          m = std::numeric_limits< std::intmax_t >::min() ;
+        std::intmax_t const m = std::numeric_limits< std::intmax_t >::min() ;
         std::ostringstream  ss ;
         ss << m ;
         BREEZE_CHECK( breeze::representation_in_base( m, 10 ) == ss.str() ) ;

@@ -51,7 +51,7 @@ do_check()
     {
         counter< T >        c( 100 ) ;
 
-        auto const          old = c ++ ;
+        counter< T > const  old = c ++ ;
         BREEZE_CHECK( old.value() == 100 ) ;
         BREEZE_CHECK( c.value() == 101 ) ;
     }
@@ -59,7 +59,7 @@ do_check()
     {
         counter< T >        c( 100 ) ;
 
-        auto const          old = c -- ;
+        counter< T > const  old = c -- ;
         BREEZE_CHECK( old.value() == 100 ) ;
         BREEZE_CHECK( c.value() == 99 ) ;
     }
@@ -93,7 +93,7 @@ counter_checks_for_errors()
     }
 
     {
-        auto const          int_max = std::numeric_limits< int >::max() ;
+        int const           int_max = std::numeric_limits< int >::max() ;
         breeze::counter< int >
                             max( int_max ) ;
         BREEZE_CHECK_THROW( breeze::assert_failure, ++ max ) ;

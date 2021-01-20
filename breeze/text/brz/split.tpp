@@ -16,8 +16,10 @@ split_if( std::string const & s, UnaryPredicate pred )
 {
     std::vector< std::string >
                         result ;
-    auto                start = s.cbegin() ;
-    auto                end   = std::find_if( start, s.cend(), pred ) ;
+    std::string::const_iterator
+                        start = s.cbegin() ;
+    std::string::const_iterator
+                        end   = std::find_if( start, s.cend(), pred ) ;
     result.emplace_back( start, end ) ;
     while ( end != s.cend() ) {
         start = end + 1 ;

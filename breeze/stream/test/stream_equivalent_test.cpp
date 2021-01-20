@@ -38,7 +38,7 @@ check_good_streams()
     {
         stream_equivalent< std::stringstream >
                             equiv( str ) ;
-        auto &              dest = equiv.get() ;
+        std::iostream &     dest = equiv.get() ;
 
         dest.setf( std::ios_base::hex, std::ios_base::basefield ) ;
         dest.fill( '0' ) ;
@@ -74,7 +74,7 @@ check_non_good_streams()
     {
         stream_equivalent< std::fstream >
                             equiv( fs ) ;
-        auto &              dest = equiv.get() ;
+        std::iostream &     dest = equiv.get() ;
 
         fs.clear( std::ios_base::eofbit ) ;
 
@@ -106,7 +106,8 @@ check_input_or_output_only_streams()
     {
         stream_equivalent< std::istream >
                             equiv( is ) ;
-        auto const &        dest = equiv.get() ;
+        std::iostream const &
+                            dest = equiv.get() ;
         static_cast< void >( dest ) ;
     }
 
@@ -114,7 +115,8 @@ check_input_or_output_only_streams()
     {
         stream_equivalent< std::ostream >
                             equiv( os ) ;
-        auto const &        dest = equiv.get() ;
+        std::iostream const &
+                            dest = equiv.get() ;
         static_cast< void >( dest ) ;
     }
 }

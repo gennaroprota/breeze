@@ -58,7 +58,7 @@ binary_to_base64( InputIter begin, InputIter end,
 
     unsigned            accum = 0 ;
     int                 accum_bit_count = 0 ;
-    auto                curr = begin ;
+    InputIter           curr = begin ;
     int                 count = 0 ;
 
     while ( curr != end ) {

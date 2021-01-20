@@ -101,7 +101,7 @@ main()
     } ;
 
     int                 result = EXIT_SUCCESS ;
-    for ( auto const & f : tests )
+    for ( test_function_type * f : tests )
     {
         int const           exit_code = f() ;
         if ( exit_code != EXIT_SUCCESS ) {

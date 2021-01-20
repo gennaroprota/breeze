@@ -25,7 +25,8 @@ template< typename T >
 bool
 is_expected( std::string const & s, T expected )
 {
-    auto const          m = breeze::from_string< T >( s ) ;
+    breeze::maybe< T > const
+                        m = breeze::from_string< T >( s ) ;
     return m.is_valid() && m.value() == expected ;
 }
 
@@ -47,7 +48,8 @@ void do_tests()
     //      -Wfloat-equal warning with GCC (and Clang?).
     // -----------------------------------------------------------------------
     std::ostringstream  oss ;
-    auto const &        m = breeze::from_string< double >( "1.2" ) ;
+    breeze::maybe< double > const
+                        m = breeze::from_string< double >( "1.2" ) ;
     BREEZE_CHECK( m.is_valid() ) ;
     oss << m.value() ;
     BREEZE_CHECK( oss.str() == "1.2" ) ;
@@ -84,7 +86,8 @@ operator >>( std::istream & is, move_only & m )
 void
 test_move_only()
 {
-    auto const &        m = breeze::from_string< move_only >( "test" ) ;
+    breeze::maybe< move_only > const
+                        m = breeze::from_string< move_only >( "test" ) ;
     BREEZE_CHECK( m.is_valid() && m.value().get() == "test" ) ;
 }
 

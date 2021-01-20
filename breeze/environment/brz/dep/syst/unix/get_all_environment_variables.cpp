@@ -13,6 +13,7 @@
 
 #include "breeze/environment/get_all_environment_variables.hpp"
 #include <unistd.h>
+#include <cstddef>
 #include <stdexcept>
 
 //      This declaration should not be needed if you #include
@@ -40,7 +41,7 @@ get_all_environment_variables()
                         curr = environ ;
     while ( *curr != nullptr ) {
         std::string const   single = *curr ;
-        auto const          pos = single.find( '=' ) ;
+        std::size_t         pos = single.find( '=' ) ;
         std::string const   name = single.substr( 0, pos ) ;
         std::string const   value = pos != single.npos
                                         ? single.substr( pos + 1 )

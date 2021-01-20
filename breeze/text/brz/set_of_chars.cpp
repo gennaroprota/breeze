@@ -110,7 +110,7 @@ set_of_chars::add( char const * s )
 set_of_chars &
 set_of_chars::add( std::string const & s ) noexcept
 {
-    for ( auto const c : s ) {
+    for ( char const c : s ) {
         add( c ) ;
     }
     return *this ;
@@ -138,7 +138,7 @@ set_of_chars::remove( char const * s )
 set_of_chars &
 set_of_chars::remove( std::string const & s ) noexcept
 {
-    for ( auto const c : s ) {
+    for ( char const c : s ) {
         remove( c ) ;
     }
     return *this ;
@@ -230,7 +230,8 @@ set_of_chars::iterator::operator ++() & noexcept
 set_of_chars::iterator
 set_of_chars::iterator::operator ++( int ) & noexcept
 {
-    auto                result( *this ) ;
+    set_of_chars::iterator
+                        result( *this ) ;
     operator ++() ;
     return result ;
 }

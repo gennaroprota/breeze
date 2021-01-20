@@ -23,12 +23,12 @@ void
 ceiling_of_quotient_is_usable_in_constexpr_contexts()
 {
     {
-        constexpr auto      r = breeze::ceiling_of_quotient( 20, 8 ) ;
+        constexpr int       r = breeze::ceiling_of_quotient( 20, 8 ) ;
         static_assert( r == 3, "" ) ;
     }
 
     {
-        constexpr auto      r = breeze::ceiling_of_quotient( -20, 8 ) ;
+        constexpr int       r = breeze::ceiling_of_quotient( -20, 8 ) ;
         static_assert( r == -2, "" ) ;
     }
 }

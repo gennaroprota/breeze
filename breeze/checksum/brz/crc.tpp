@@ -82,8 +82,8 @@ template< typename CrcTraits >
 constexpr crc_cache< CrcTraits >::crc_cache() noexcept
     :   m_data()
 {
-    auto const          top_bit = value_type( 1 )  << ( CrcTraits::width - 1 ) ;
-    auto const          mask    = value_type( -1 ) >>
+    value_type const    top_bit = value_type( 1 )  << ( CrcTraits::width - 1 ) ;
+    value_type const    mask    = value_type( -1 ) >>
         ( meta::width< value_type >::value - CrcTraits::width ) ;
 
     for ( int i = 0 ; i < size ; ++ i ) {

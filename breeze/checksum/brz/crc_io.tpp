@@ -23,8 +23,8 @@ operator <<( std::ostream & dest, crc< Traits > const & crc )
         ceiling_of_quotient( Traits::width, 4 ) ;
 
     char                buffer[ digit_count + 1 ] ;
-    auto const          start = breeze::begin( buffer ) ;
-    auto                iter  = breeze::end( buffer ) ;
+    char const * const  start = breeze::begin( buffer ) ;
+    char *              iter  = breeze::end( buffer ) ;
     value_type          value = crc.value() ;
 
     -- iter ;

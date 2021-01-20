@@ -13,6 +13,7 @@
 
 #include "breeze/text/ends_with.hpp"
 #include <algorithm>
+#include <cstddef>
 #include <string>
 
 namespace breeze_ns {
@@ -27,7 +28,7 @@ namespace breeze_ns {
 bool
 ends_with( std::string const & str, std::string const & with ) noexcept
 {
-    auto const          sz( with.size() ) ;
+    std::size_t const   sz( with.size() ) ;
     return str.size() >= sz
         && std::equal( with.cbegin(), with.cend(), str.cend() - sz ) ;
 }

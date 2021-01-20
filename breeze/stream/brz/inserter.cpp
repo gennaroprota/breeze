@@ -70,7 +70,8 @@ inserter::pad( std::streamsize count )
         char                buffer[ buf_size ] ;
         std::memset( buffer, m_dest.fill(), sizeof buffer ) ;
         do {
-            auto const          n = std::min( buf_size, count ) ;
+            std::streamsize const
+                                n = std::min( buf_size, count ) ;
             put( buffer, n ) ;
             count -= n ;
         } while ( m_dest && count > 0 ) ;
