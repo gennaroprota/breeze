@@ -25,9 +25,9 @@ namespace breeze_ns {
 //!
 //!     This is a replacement for \c basic_format_saver, which was
 //!     removed from the library, since it was impossible to implement
-//!     in its generality (i.e. making it also save and restore the \c
-//!     iword()/pword() info---see its source code comments from Git's
-//!     history).
+//!     in its generality (i.e. making it also save and restore the
+//!     <code>iword()</code>/<code>pword()</code> info---see its source
+//!     code comments from Git's history).
 //!
 //!     The idea was suggested to me by Peter Sommerlad. Basically, it
 //!     constructs a stream which is equivalent to a given one, i.e.
