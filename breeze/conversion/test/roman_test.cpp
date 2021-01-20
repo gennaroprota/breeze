@@ -90,8 +90,8 @@ check()
 void
 out_of_range_integer_triggers_assert()
 {
-    BREEZE_CHECK_THROW( breeze::assert_failure, breeze::roman(    0 ) ) ;
-    BREEZE_CHECK_THROW( breeze::assert_failure, breeze::roman( 4000 ) ) ;
+    BREEZE_CHECK_THROWS( breeze::assert_failure, breeze::roman(    0 ) ) ;
+    BREEZE_CHECK_THROWS( breeze::assert_failure, breeze::roman( 4000 ) ) ;
 }
 
 }

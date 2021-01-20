@@ -26,9 +26,9 @@
 
 
 // For PVS-Studio:
-// -V:BREEZE_CHECK_THROW:565
+// -V:BREEZE_CHECK_THROWS:565
 // ---------------------------------------------------------------------------
-#define BREEZE_CHECK_THROW( exception_type, expression )                      \
+#define BREEZE_CHECK_THROWS( exception_type, expression )                     \
             do {                                                              \
                 bool threw_as_expected = false ;                              \
                 bool threw_but_wrong_type = false ;                           \

@@ -80,14 +80,14 @@ ceiling_of_quotient_arguments_can_be_cv_qualified()
 void
 null_divisor_causes_assert()
 {
-    BREEZE_CHECK_THROW( breeze::assert_failure,
+    BREEZE_CHECK_THROWS( breeze::assert_failure,
         breeze::ceiling_of_quotient( 1, 0 ) ) ;
 }
 
 void
 overflow_in_division_causes_assert()
 {
-    BREEZE_CHECK_THROW( breeze::assert_failure,
+    BREEZE_CHECK_THROWS( breeze::assert_failure,
         breeze::ceiling_of_quotient( INT_MIN, -1 ) ) ;
 }
 

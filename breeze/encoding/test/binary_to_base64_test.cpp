@@ -149,7 +149,7 @@ negative_column_number_causes_assert()
     std::string const   dummy_in ;
     std::string         dummy_out ;
 
-    BREEZE_CHECK_THROW( breeze::assert_failure,
+    BREEZE_CHECK_THROWS( breeze::assert_failure,
         breeze::binary_to_base64( dummy_in.cbegin(),
                                   dummy_in.cend(),
                                   std::back_inserter( dummy_out ),

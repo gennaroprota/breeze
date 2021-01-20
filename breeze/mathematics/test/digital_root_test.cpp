@@ -56,14 +56,14 @@ void
 negative_n_causes_assert()
 {
     int const           n = -1 ;
-    BREEZE_CHECK_THROW( breeze::assert_failure,
+    BREEZE_CHECK_THROWS( breeze::assert_failure,
         breeze::digital_root( n, 10 ) ) ;
 }
 
 void
 out_of_range_base_causes_assert()
 {
-    BREEZE_CHECK_THROW( breeze::assert_failure,
+    BREEZE_CHECK_THROWS( breeze::assert_failure,
         breeze::digital_root( 1, 1 ) ) ;
 }
 

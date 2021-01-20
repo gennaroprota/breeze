@@ -30,8 +30,8 @@ check()
     }
     {
         std::string const   nonexisting = "NonExistingDirectoryName" ;
-        BREEZE_CHECK_THROW( breeze::last_api_error,
-                            breeze::set_current_directory( nonexisting ) ) ;
+        BREEZE_CHECK_THROWS( breeze::last_api_error,
+                             breeze::set_current_directory( nonexisting ) ) ;
     }
 }
 

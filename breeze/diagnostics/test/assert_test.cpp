@@ -50,13 +50,13 @@ do_test()
 void
 failed_assertion_calls_active_handler()
 {
-    BREEZE_CHECK_THROW( breeze::assert_failure, BREEZE_ASSERT( false ) ) ;
+    BREEZE_CHECK_THROWS( breeze::assert_failure, BREEZE_ASSERT( false ) ) ;
 }
 
 void
 cant_pass_nullptr_to_set_assert_handler()
 {
-    BREEZE_CHECK_THROW( breeze::assert_failure,
+    BREEZE_CHECK_THROWS( breeze::assert_failure,
         breeze::set_assert_handler( nullptr ) ) ;
 }
 

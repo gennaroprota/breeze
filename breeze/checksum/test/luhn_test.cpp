@@ -67,9 +67,9 @@ luhn_routines_throw_on_invalid_chars()
     } ;
 
     for ( auto const & s : invalid_strings ) {
-        BREEZE_CHECK_THROW( std::invalid_argument, breeze::luhn_sum( s ) ) ;
-        BREEZE_CHECK_THROW( std::invalid_argument, breeze::has_luhn_sum( s ) ) ;
-        BREEZE_CHECK_THROW( std::invalid_argument, breeze::luhn_check_digit( s ) ) ;
+        BREEZE_CHECK_THROWS( std::invalid_argument, breeze::luhn_sum( s ) ) ;
+        BREEZE_CHECK_THROWS( std::invalid_argument, breeze::has_luhn_sum( s ) ) ;
+        BREEZE_CHECK_THROWS( std::invalid_argument, breeze::luhn_check_digit( s ) ) ;
     }
 }
 

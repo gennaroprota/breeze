@@ -82,21 +82,21 @@ void
 counter_checks_for_errors()
 {
     {
-        BREEZE_CHECK_THROW( breeze::assert_failure,
+        BREEZE_CHECK_THROWS( breeze::assert_failure,
             breeze::counter< int >( -1 ) ) ;
     }
 
     {
         breeze::counter< int >
                             min( 0 ) ;
-        BREEZE_CHECK_THROW( breeze::assert_failure, -- min ) ;
+        BREEZE_CHECK_THROWS( breeze::assert_failure, -- min ) ;
     }
 
     {
         int const           int_max = std::numeric_limits< int >::max() ;
         breeze::counter< int >
                             max( int_max ) ;
-        BREEZE_CHECK_THROW( breeze::assert_failure, ++ max ) ;
+        BREEZE_CHECK_THROWS( breeze::assert_failure, ++ max ) ;
     }
 }
 

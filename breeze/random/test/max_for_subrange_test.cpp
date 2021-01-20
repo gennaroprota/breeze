@@ -45,10 +45,10 @@ do_test()
 void
 unallowed_arguments_cause_assert()
 {
-    BREEZE_CHECK_THROW( breeze::assert_failure,
+    BREEZE_CHECK_THROWS( breeze::assert_failure,
         breeze::max_for_subrange( -1, 8 ) ) ;
 
-    BREEZE_CHECK_THROW( breeze::assert_failure,
+    BREEZE_CHECK_THROWS( breeze::assert_failure,
         breeze::max_for_subrange( 9, 8 ) ) ;
 }
 

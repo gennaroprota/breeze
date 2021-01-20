@@ -35,7 +35,7 @@ do_tests()
 void
 negative_count_causes_assert()
 {
-    BREEZE_CHECK_THROW( breeze::assert_failure, breeze::tail( "foo", -1 ) ) ;
+    BREEZE_CHECK_THROWS( breeze::assert_failure, breeze::tail( "foo", -1 ) ) ;
 }
 
 }

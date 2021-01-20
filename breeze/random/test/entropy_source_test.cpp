@@ -83,7 +83,7 @@ empty_interval_causes_assert()
 {
     breeze::entropy_source
                         source ;
-    BREEZE_CHECK_THROW( breeze::assert_failure, source( 5, 1 ) ) ;
+    BREEZE_CHECK_THROWS( breeze::assert_failure, source( 5, 1 ) ) ;
 }
 
 void
@@ -93,7 +93,7 @@ use_after_release_causes_assert()
                         source ;
     source.release() ;
 
-    BREEZE_CHECK_THROW( breeze::assert_failure,
+    BREEZE_CHECK_THROWS( breeze::assert_failure,
         source.next() ) ;
 }
 

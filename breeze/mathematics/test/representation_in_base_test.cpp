@@ -54,10 +54,10 @@ void
 out_of_range_base_causes_assert()
 {
     int                 base = 1 ;
-    BREEZE_CHECK_THROW( breeze::assert_failure,
+    BREEZE_CHECK_THROWS( breeze::assert_failure,
         breeze::representation_in_base( 1, base ) ) ;
     base = 37 ;
-    BREEZE_CHECK_THROW( breeze::assert_failure,
+    BREEZE_CHECK_THROWS( breeze::assert_failure,
         breeze::representation_in_base( 1, base )) ;
 }
 
