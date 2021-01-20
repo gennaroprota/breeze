@@ -23,9 +23,9 @@ namespace breeze_ns {
 //
 //!     \copybrief stream_equivalent.hpp
 //!
-//!     This is a replacement for basic_format_saver, which was been
+//!     This is a replacement for \c basic_format_saver, which was been
 //!     removed from the library, since it was impossible to implement
-//!     in its generality (i.e. making it also save and restore the
+//!     in its generality (i.e. making it also save and restore the \c
 //!     iword()/pword() info---see its source code comments from Git's
 //!     history).
 //!
@@ -36,9 +36,9 @@ namespace breeze_ns {
 //!
 //!      - is constructed with the same rdstate()
 //!
-//!      - gets a copyfmt() from the original stream,
+//!      - gets a \c copyfmt() from the original stream,
 //!
-//!     and propagates any changes to rdstate() back to the original
+//!     and propagates any changes to \c rdstate() back to the original
 //!     stream, when it (the equivalent) is destroyed.
 //!
 //!     This allows writing e.g.:
@@ -58,17 +58,18 @@ namespace breeze_ns {
 //!         }
 //!     \endcode
 //!
-//!     and change formatting flags (including those allocated via
-//!     iword() or pword()), precision, fill character, exception mask,
-//!     stream locale (but not the stream buffer one) or synchronized
-//!     output stream, without affecting the original stream.
+//!     and change formatting flags (including those allocated via \c
+//!     iword() or \c pword()), precision, fill character, exception
+//!     mask, stream locale (but not the stream buffer one) or
+//!     synchronized output stream, without affecting the original
+//!     stream.
 //!
 //!     \par Credits
 //!
 //!     Peter Sommerlad suggested the key idea of this template, when I
-//!     was stuck with basic_format_saver. James Kanze gave, as usual,
-//!     excellent feedback on basic_format_saver, in particular about
-//!     locales and imbue().
+//!     was stuck with \c basic_format_saver. James Kanze gave, as
+//!     usual, excellent feedback on \c basic_format_saver, in
+//!     particular about locales and \c imbue().
 // ---------------------------------------------------------------------------
 template< typename Stream >
 class stream_equivalent
@@ -80,10 +81,10 @@ public:
     //!     replace the stream buffer (file streams, for instance, are
     //!     like that).
     //!
-    //!     This means that, for instance, if you have a
+    //!     This means that, for instance, if you have a \c
     //!     std::stringstream, you will get an equivalent but you can't
-    //!     call the str() member on that equivalent. This is not a
-    //!     limitation in practice, because you can call str() on the
+    //!     call the \c str() member on that equivalent. This is not a
+    //!     limitation in practice, because you can call \c str() on the
     //!     original stream, instead.
     // -----------------------------------------------------------------------
     typedef std::basic_iostream<
