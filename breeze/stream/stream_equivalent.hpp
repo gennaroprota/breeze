@@ -23,7 +23,7 @@ namespace breeze_ns {
 //
 //!     \copybrief stream_equivalent.hpp
 //!
-//!     This is a replacement for \c basic_format_saver, which was been
+//!     This is a replacement for \c basic_format_saver, which was
 //!     removed from the library, since it was impossible to implement
 //!     in its generality (i.e. making it also save and restore the \c
 //!     iword()/pword() info---see its source code comments from Git's
