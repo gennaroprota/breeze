@@ -51,7 +51,7 @@ namespace breeze_ns {
 //!             std::ostream & os = equiv.get() ;
 //!
 //!             // OK, just use 'os' from now on.
-//!           ...
+//!             ...
 //!
 //!             return original_os ; // NOTA BENE: see the documentation of
 //!                                                the get() member.
