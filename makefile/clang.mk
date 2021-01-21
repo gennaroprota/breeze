@@ -46,10 +46,10 @@
 #       -Wno-weak-vtables:
 #
 #           The -Wweak-vtables warning tries to point out possible
-#           object files bloat, but that's probably moot either because
-#           it isn't really going to make a difference on performances,
-#           and because the linker will likely collapse the duplicated
-#           vtables anyway.
+#           object file bloat, but that's probably moot either because
+#           it isn't really going to make a difference with regard to
+#           performance, and because the linker will likely collapse the
+#           duplicated vtables anyway.
 #
 #           So this warning can be safely suppressed. Note, too, that it
 #           would be difficult to silence it by modifying the code, as
