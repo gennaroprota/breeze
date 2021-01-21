@@ -61,7 +61,7 @@ there are inconsistencies, even for the same author).
  - How do we convince people that in programming simplicity and clarity --in
    short: what mathematicians call "elegance"-- are not a dispensable luxury,
    but a crucial matter that decides between success and failure? &mdash;E. W.
-   Dijkstra (???) *"Why is software so expensive?" An explanation to the
+   Dijkstra (year?) *"Why is software so expensive?" An explanation to the
    hardware designer.* (EWD648)
 
  - You know that testing will not find all the problems and that if the
