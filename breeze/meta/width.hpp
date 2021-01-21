@@ -16,8 +16,6 @@
 #include "breeze/top_level_namespace.hpp"
 #include "breeze/meta/has_sign.hpp"
 #include "breeze/meta/precision.hpp"
-#include "breeze/meta/select.hpp"
-#include "breeze/meta/successor.hpp"
 
 namespace breeze_ns {
 namespace meta {
@@ -42,10 +40,9 @@ namespace meta {
 // ---------------------------------------------------------------------------
 template< typename T >
 class width
-    :   public select< has_sign< T >,
-                       successor< precision < T > >,
-                       precision < T >
-                     >::type
+    : public constant< int, has_sign< T >::value
+                                ? precision< T >::value + 1
+                                : precision< T >::value >
 {
 } ;
 

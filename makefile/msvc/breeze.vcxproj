@@ -355,9 +355,7 @@
     <ClInclude Include="..\..\breeze\meta\is_2s_complement.hpp" />
     <ClInclude Include="..\..\breeze\meta\padding.hpp" />
     <ClInclude Include="..\..\breeze\meta\precision.hpp" />
-    <ClInclude Include="..\..\breeze\meta\predecessor.hpp" />
     <ClInclude Include="..\..\breeze\meta\select.hpp" />
-    <ClInclude Include="..\..\breeze\meta\successor.hpp" />
     <ClInclude Include="..\..\breeze\meta\unqualify.hpp" />
     <ClInclude Include="..\..\breeze\meta\width.hpp" />
     <ClInclude Include="..\..\breeze\metric\damerau_levenshtein_distance.hpp" />
