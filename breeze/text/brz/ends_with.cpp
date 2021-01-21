@@ -18,9 +18,6 @@
 
 namespace breeze_ns {
 
-//      ends_with():
-//      ============
-//
 //      Note:
 //          if 'with' is empty this always returns true. (See the
 //          analogous comment in begins_with.cpp.)

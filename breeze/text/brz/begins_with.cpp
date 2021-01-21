@@ -17,9 +17,6 @@
 
 namespace breeze_ns {
 
-//      begins_with():
-//      ==============
-//
 //      Note:
 //          if 'with' is empty this always returns true. (Two empty
 //          ranges always compare equal with std::equal(). To me, this

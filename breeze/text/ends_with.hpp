@@ -18,6 +18,9 @@
 
 namespace breeze_ns {
 
+//      ends_with():
+//      ============
+//
 //!     \return
 //!         Whether \c str ends with \c with. If \c with is empty, the
 //!         result is always \c true.

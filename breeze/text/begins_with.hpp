@@ -18,6 +18,9 @@
 
 namespace breeze_ns {
 
+//      begins_with():
+//      ==============
+//
 //!     \return
 //!         Whether \c str begins with \c with. If \c with is empty, the
 //!         result is always \c true.
