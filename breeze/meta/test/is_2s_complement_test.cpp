@@ -16,8 +16,6 @@
 
 int                 test_is_2s_complement() ;
 
-using breeze::meta::is_2s_complement ;
-
 namespace {
 
 //      This is actually a compile-time test. But we turn it into a
