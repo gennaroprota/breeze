@@ -35,23 +35,23 @@ portable_is_digit( char c )
 }
 
 int
-luhn_sum( std::string const & str )
+luhn_sum( std::string const & s )
 {
     bool                from_table = false ;
-    auto checked_adder = [ &from_table ]( int s, char c )
+    auto checked_adder = [ &from_table ]( int old_sum, char c )
     {
         if ( ! portable_is_digit( c ) ) {
             throw std::invalid_argument( "non-digit char in Luhn string" ) ;
         }
         int const           value = c - '0' ;
-        int const           sum = s + ( from_table
-                                          ? table[ value ]
-                                          : value ) ;
+        int const           sum = old_sum + ( from_table
+                                                ? table[ value ]
+                                                : value ) ;
         from_table = ! from_table ;
         return sum % base ;
     } ;
 
-    return std::accumulate( str.crbegin(), str.crend(), 0, checked_adder ) ;
+    return std::accumulate( s.crbegin(), s.crend(), 0, checked_adder ) ;
 }
 
 bool

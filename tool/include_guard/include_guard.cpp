@@ -80,12 +80,12 @@ namespace {
 
 std::string         macro_prefix = "BREEZE_GUARD_" ;
 
-std::string         remove_from_beginning( std::string const & str,
+std::string         remove_from_beginning( std::string const & s,
                                            std::string const & to_be_removed )
 {
-    return breeze::begins_with( str, to_be_removed )
-        ? str.substr( to_be_removed.length() )
-        : str
+    return breeze::begins_with( s, to_be_removed )
+        ? s.substr( to_be_removed.length() )
+        : s
         ;
 }
 

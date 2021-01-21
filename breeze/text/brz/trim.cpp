@@ -18,15 +18,16 @@
 namespace breeze_ns {
 
 std::string
-trim( std::string const & str, std::locale const & loc )
+trim( std::string const & s, std::locale const & loc )
 {
-    return breeze::trim_tail( breeze::trim_head( str, loc ), loc ) ;
+    return breeze::trim_tail( breeze::trim_head( s, loc ), loc ) ;
 }
 
 std::string
-trim( std::string const & str, set_of_chars const & to_remove )
+trim( std::string const & s, set_of_chars const & to_be_removed )
 {
-    return breeze::trim_tail( breeze::trim_head( str, to_remove ), to_remove ) ;
+    return breeze::trim_tail(
+        breeze::trim_head( s, to_be_removed ), to_be_removed ) ;
 }
 
 }

@@ -22,7 +22,7 @@ namespace breeze_ns {
 //      ==============
 //
 //!     \return
-//!         Whether \c str begins with \c with. If \c with is empty, the
+//!         Whether \c s begins with \c with. If \c with is empty, the
 //!         result is always \c true.
 //!
 //!     \note
@@ -34,17 +34,17 @@ namespace breeze_ns {
 //!     \see
 //!         ends_with()
 // ---------------------------------------------------------------------------
-bool                begins_with( std::string const & str,
+bool                begins_with( std::string const & s,
                                  std::string const & with ) noexcept ;
 
 //      begins_with():
 //      ==============
 //
 //!     \return
-//!         \c true if and only if \c str begins with \c c; i.e. if and
-//!         only if <code>! str.empty() && str.front() == c</code>.
+//!         \c true if and only if \c s begins with \c c; i.e. if and
+//!         only if <code>! s.empty() && s.front() == c</code>.
 // ---------------------------------------------------------------------------
-bool                begins_with( std::string const & str,
+bool                begins_with( std::string const & s,
                                  char c )                   noexcept ;
 
 }

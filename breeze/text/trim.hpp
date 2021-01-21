@@ -25,22 +25,22 @@ class               set_of_chars ;
 //      =======
 //
 //!     \return
-//!         A string obtained from \c str by removing all the leading
-//!         and all the trailing characters \c c for which <code>
+//!         A string obtained from \c s by removing all the leading and
+//!         all the trailing characters \c c for which <code>
 //!         std::isspace( c, loc )</code> returns \c true.
 // ---------------------------------------------------------------------------
-std::string         trim( std::string const & str, std::locale const & loc ) ;
+std::string         trim( std::string const & s, std::locale const & loc ) ;
 
 //      trim():
 //      =======
 //
 //!     \return
-//!         A string obtained from \c str by removing all the leading
-//!         and all the trailing characters that are also contained in
-//!         \c to_remove.
+//!         A string obtained from \c s by removing all the leading and
+//!         all the trailing characters that are also contained in \c
+//!         to_be_removed.
 // ---------------------------------------------------------------------------
-std::string         trim( std::string const &  str,
-                          set_of_chars const & to_remove ) ;
+std::string         trim( std::string const &  s,
+                          set_of_chars const & to_be_removed ) ;
 
 }
 

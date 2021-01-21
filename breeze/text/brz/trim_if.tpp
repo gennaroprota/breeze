@@ -13,9 +13,9 @@ namespace breeze_ns {
 
 template< typename Predicate >
 std::string
-trim_if( std::string const & str, Predicate pred )
+trim_if( std::string const & s, Predicate pred )
 {
-    return breeze::trim_tail_if( breeze::trim_head_if( str, pred ), pred ) ;
+    return breeze::trim_tail_if( breeze::trim_head_if( s, pred ), pred ) ;
 }
 
 }

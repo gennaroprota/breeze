@@ -28,16 +28,16 @@ namespace breeze_ns {
 //          Of course, our unit tests verify that this is the case.)
 // ---------------------------------------------------------------------------
 bool
-begins_with( std::string const & str, std::string const & with ) noexcept
+begins_with( std::string const & s, std::string const & with ) noexcept
 {
-    return str.size() >= with.size()
-        && std::equal( with.cbegin(), with.cend(), str.cbegin() ) ;
+    return s.size() >= with.size()
+        && std::equal( with.cbegin(), with.cend(), s.cbegin() ) ;
 }
 
 bool
-begins_with( std::string const & str, char c ) noexcept
+begins_with( std::string const & s, char c ) noexcept
 {
-    return ! str.empty() && str.front() == c ;
+    return ! s.empty() && s.front() == c ;
 }
 
 }

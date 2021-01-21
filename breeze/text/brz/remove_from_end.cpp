@@ -17,9 +17,9 @@
 namespace breeze_ns {
 
 std::string
-remove_from_end( std::string const & str, std::string const & to_be_removed )
+remove_from_end( std::string const & s, std::string const & to_be_removed )
 {
-    std::string         copy( str ) ;
+    std::string         copy( s ) ;
     if ( breeze::ends_with( copy, to_be_removed ) ) {
         copy.erase( copy.end() - to_be_removed.length(), copy.end() ) ;
     }
@@ -27,11 +27,11 @@ remove_from_end( std::string const & str, std::string const & to_be_removed )
 }
 
 std::string
-remove_from_end( std::string const & str, char c )
+remove_from_end( std::string const & s, char c )
 {
-    return ends_with( str, c )
-        ? str.substr( 0, str.length() - 1 )
-        : str
+    return ends_with( s, c )
+        ? s.substr( 0, s.length() - 1 )
+        : s
         ;
 }
 

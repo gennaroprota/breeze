@@ -12,11 +12,11 @@ namespace breeze_ns {
 
 template< typename Predicate >
 std::string
-trim_tail_if( std::string const & str, Predicate pred )
+trim_tail_if( std::string const & s, Predicate pred )
 {
     return std::string(
-             str.cbegin(),
-             std::find_if_not( str.crbegin(), str.crend(), pred ).base() ) ;
+             s.cbegin(),
+             std::find_if_not( s.crbegin(), s.crend(), pred ).base() ) ;
 }
 
 }

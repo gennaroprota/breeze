@@ -22,7 +22,7 @@ namespace breeze_ns {
 //      ============
 //
 //!     \return
-//!         Whether \c str ends with \c with. If \c with is empty, the
+//!         Whether \c s ends with \c with. If \c with is empty, the
 //!         result is always \c true.
 //!
 //!     \note
@@ -34,17 +34,17 @@ namespace breeze_ns {
 //!     \see
 //!         begins_with()
 // ---------------------------------------------------------------------------
-bool                ends_with( std::string const & str,
+bool                ends_with( std::string const & s,
                                std::string const & with ) noexcept ;
 
 //      ends_with():
 //      ============
 //
 //!     \return
-//!         \c true if and only if \c str ends with \c c, i.e. if and
-//!         only if <code>! str.empty() && str.back() == c</code>.
+//!         \c true if and only if \c s ends with \c c, i.e. if and only
+//!         if <code>! s.empty() && s.back() == c</code>.
 // ---------------------------------------------------------------------------
-bool                ends_with( std::string const & str,
+bool                ends_with( std::string const & s,
                                char c )                   noexcept ;
 
 }

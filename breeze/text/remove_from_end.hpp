@@ -23,21 +23,21 @@ namespace breeze_ns {
 //      ==================
 //
 //!     \return
-//!         If \c str ends with \c to_be_removed, \c str with the
-//!         \c to_be_removed part erased from its end; otherwise
-//!         a copy of \c str.
+//!         If \c s ends with \c to_be_removed, \c s with the \c
+//!         to_be_removed part erased from its end; otherwise a copy of
+//!         \c s.
 // ---------------------------------------------------------------------------
-std::string         remove_from_end( std::string const & str,
+std::string         remove_from_end( std::string const & s,
                                      std::string const & to_be_removed ) ;
 
 //      remove_from_end():
 //      ==================
 //
 //!     \return
-//!         If \c str ends with \c c, \c str with the last character
-//!         removed; otherwise a copy of \c str.
+//!         If \c s ends with \c c, \c s with the last character
+//!         removed; otherwise a copy of \c s.
 // ---------------------------------------------------------------------------
-std::string         remove_from_end( std::string const & str,
+std::string         remove_from_end( std::string const & s,
                                      char c ) ;
 }
 

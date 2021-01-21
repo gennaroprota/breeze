@@ -23,11 +23,11 @@ namespace breeze_ns {
 //      ===============
 //
 //!     \return
-//!         A string obtained from \c str by removing all the trailing
+//!         A string obtained from \c s by removing all the trailing
 //!         characters that satisfy the predicate \c pred.
 // ---------------------------------------------------------------------------
 template< typename Predicate >
-std::string         trim_tail_if( std::string const & str, Predicate pred ) ;
+std::string         trim_tail_if( std::string const & s, Predicate pred ) ;
 
 }
 

@@ -18,21 +18,21 @@
 namespace breeze_ns {
 
 std::string
-trim_head( std::string const & str, std::locale const & loc )
+trim_head( std::string const & s, std::locale const & loc )
 {
-    return breeze::trim_head_if( str, [ &loc ]( char c ) -> bool
-                                      {
-                                          return std::isspace( c, loc ) ;
-                                      } ) ;
+    return breeze::trim_head_if( s, [ &loc ]( char c ) -> bool
+                                    {
+                                        return std::isspace( c, loc ) ;
+                                    } ) ;
 }
 
 std::string
-trim_head( std::string const & str, set_of_chars const & to_remove )
+trim_head( std::string const & s, set_of_chars const & to_be_removed )
 {
-    return breeze::trim_head_if( str, [ &to_remove ]( char c ) -> bool
-                                      {
-                                          return to_remove.contains( c ) ;
-                                      } ) ;
+    return breeze::trim_head_if( s, [ &to_be_removed ]( char c ) -> bool
+                                    {
+                                        return to_be_removed.contains( c ) ;
+                                    } ) ;
 }
 
 }
