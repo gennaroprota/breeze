@@ -66,10 +66,10 @@ class crc_cache ;
 //!         The number of bits in the CRC. This is also the degree of
 //!         the polynomial used for divisions. The polynomial can have
 //!         at most <code>width + 1</code> terms, but since the highest
-//!         degree term has always a coefficient of <tt>1</tt>
-//!         (otherwise the degree wouldn't be \c width), that
-//!         coefficient will be implied. The type of this constant is
-//!         <code>int const</code>.</dd>
+//!         degree term has always the coefficient <tt>1</tt> (otherwise
+//!         the degree wouldn't be \c width), that coefficient will be
+//!         implied. The type of this constant is <code>int
+//!         const</code>.</dd>
 //!
 //!     <dt><tt>poly:</tt></dt><dd>
 //!         The unreflected divisor polynomial, with the top-most bit
