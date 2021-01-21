@@ -97,7 +97,8 @@ main()
             test_to_uppercase,
             test_trim_head,
             test_trim_tail,
-            test_uuid
+            test_uuid,
+            test_width
     } ;
 
     int                 result = EXIT_SUCCESS ;

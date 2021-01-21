@@ -58,6 +58,7 @@
     <ClCompile Include="..\..\..\breeze\mathematics\test\representation_in_base_test.cpp" />
     <ClCompile Include="..\..\..\breeze\memory\test\auto_array_test.cpp" />
     <ClCompile Include="..\..\..\breeze\meta\test\is_2s_complement_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\meta\test\width_test.cpp" />
     <ClCompile Include="..\..\..\breeze\metric\test\damerau_levenshtein_distance_test.cpp" />
     <ClCompile Include="..\..\..\breeze\metric\test\levenshtein_distance_test.cpp" />
     <ClCompile Include="..\..\..\breeze\path\test\base_file_name_test.cpp" />

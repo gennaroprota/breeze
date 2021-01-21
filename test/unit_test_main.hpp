@@ -66,5 +66,6 @@ int                 test_to_uppercase() ;
 int                 test_trim_head() ;
 int                 test_trim_tail() ;
 int                 test_uuid() ;
+int                 test_width() ;
 
 #endif

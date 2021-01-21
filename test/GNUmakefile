@@ -84,6 +84,8 @@ source_files := unit_test_main.cpp                          \
                                                             \
                 is_2s_complement_test.cpp                   \
                                                             \
+                width_test.cpp                              \
+                                                            \
                 damerau_levenshtein_distance_test.cpp       \
                 levenshtein_distance_test.cpp               \
                                                             \
