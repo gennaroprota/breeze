@@ -26,10 +26,12 @@
 //!
 //!     \note
 //!         C++11 and C++14 introduced templates like these and C++17
-//!         makes them almost equivalent to ours. New code should use
-//!         the standard versions and ours should just go with time. The
-//!         only reason these are still around is that I haven't had
-//!         time to update the code that uses them.
+//!         made them almost equivalent to ours. Ideally, new code
+//!         should use the standard versions, and ours should just go.
+//!         But the standard <code>cbegin()</code>/<code>cend()</code>
+//!         reserve, as common in C++, a surprise: they don't
+//!         necessarily return an iterator to const (!). So, I'll keep
+//!         my versions around.
 //!
 //!     \see
 //!         signed_count().
