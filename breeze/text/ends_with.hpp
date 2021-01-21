@@ -32,7 +32,7 @@ namespace breeze_ns {
 //!         for this.
 //!
 //!     \see
-//!         begins_with()
+//!         begins_with().
 // ---------------------------------------------------------------------------
 bool                ends_with( std::string const & s,
                                std::string const & with ) noexcept ;

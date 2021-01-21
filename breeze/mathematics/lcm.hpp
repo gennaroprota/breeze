@@ -36,7 +36,7 @@ namespace breeze_ns {
 //!         same reason why \c breeze::gcd() does.
 //!
 //!     \see
-//!         gcd()
+//!         gcd().
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr T         lcm( T a, T b ) ;

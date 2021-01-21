@@ -80,7 +80,10 @@ public:
 //!     \return
 //!         The current (date or) time formatted according to \c format,
 //!         interpreted as if passed to the \c strftime() standard
-//!         function. See also: time_string_zone.
+//!         function.
+//!
+//!     \see
+//!         time_string_zone.
 //!
 //!     This is a simple tool for simple and quick formatting needs.
 //!     You should use a more complete solution for more complex needs

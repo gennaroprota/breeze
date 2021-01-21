@@ -43,7 +43,7 @@ namespace breeze_ns {
 //!         decided to stick to what I consider a saner specification.
 //!
 //!     \see
-//!         lcm()
+//!         lcm().
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr T         gcd( T a, T b ) ;

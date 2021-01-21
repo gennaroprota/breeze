@@ -43,7 +43,7 @@ namespace breeze_ns {
 //!     std::uppercase.
 //!
 //!     \see
-//!         to_uppercase()
+//!         to_uppercase().
 // ---------------------------------------------------------------------------
 std::string         to_lowercase( std::string const & source,
                                   std::locale const & loc = std::locale() ) ;

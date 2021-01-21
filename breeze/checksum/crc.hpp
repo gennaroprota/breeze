@@ -193,7 +193,7 @@ std::ostream &      operator <<( std::ostream & dest,
 //!     Traits for CRC-16 (also known as CRC-16/ARC).
 //!
 //!     \see
-//!         crc
+//!         crc.
 // ---------------------------------------------------------------------------
 struct crc16
 {
@@ -217,7 +217,7 @@ struct crc16
 //!     Bzip2, PNG.
 //!
 //!     \see
-//!         crc
+//!         crc.
 // ---------------------------------------------------------------------------
 struct crc32
 {
@@ -241,7 +241,7 @@ struct crc32
 //!     CRC-CCITT and is thus also known as CRC-16/CCITT-FALSE.
 //!
 //!     \see
-//!         crc
+//!         crc.
 // ---------------------------------------------------------------------------
 struct crc16_ibm3740
 {

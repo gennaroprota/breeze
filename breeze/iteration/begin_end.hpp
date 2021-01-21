@@ -22,7 +22,7 @@
 //!     \endcode
 //!
 //!     regardless of whether \c a refers to a standard container or to
-//!     a built-in array. See also signed_count.hpp.
+//!     a built-in array.
 //!
 //!     \note
 //!         C++11 and C++14 introduced templates like these and C++17

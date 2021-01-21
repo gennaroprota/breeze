@@ -35,7 +35,7 @@
 //!     have been inconsistent in our library).
 //!
 //!     \see
-//!         BREEZE_PASTE_AFTER_EXPANSION()
+//!         BREEZE_PASTE_AFTER_EXPANSION().
 // ---------------------------------------------------------------------------
 #define BREEZE_PASTE( x, y )  x ## y
 

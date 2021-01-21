@@ -19,7 +19,7 @@
 //!     Expands to a string literal obtained with <code># x</code>.
 //!
 //!     \see
-//!         BREEZE_STRINGIZE_AFTER_EXPANSION()
+//!         BREEZE_STRINGIZE_AFTER_EXPANSION().
 // ---------------------------------------------------------------------------
 #define BREEZE_STRINGIZE( x )   # x
 
