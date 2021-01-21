@@ -32,6 +32,9 @@ operator <<( std::ostream & dest, crc< Traits > const & crc )
     while ( iter != start ) {
         -- iter ;
         *iter = "0123456789ABCDEF"[ value & 0x0f ] ;
+        //!     The following statement could just be 'value >>= 4' but
+        //!     that gives the usual compiler warnings, so...
+        // -------------------------------------------------------------------
         value = static_cast< value_type >( value >> 4 ) ;
     }
 
