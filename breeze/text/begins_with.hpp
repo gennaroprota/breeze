@@ -34,6 +34,16 @@ namespace breeze_ns {
 bool                begins_with( std::string const & str,
                                  std::string const & with ) noexcept ;
 
+//      begins_with():
+//      ==============
+//
+//!     \return
+//!         \c true if and only if \c str begins with \c c; i.e. if and
+//!         only if <code>! str.empty() && str.front() == c</code>.
+// ---------------------------------------------------------------------------
+bool                begins_with( std::string const & str,
+                                 char c )                   noexcept ;
+
 }
 
 #endif

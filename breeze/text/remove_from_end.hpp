@@ -30,6 +30,15 @@ namespace breeze_ns {
 std::string         remove_from_end( std::string const & str,
                                      std::string const & to_be_removed ) ;
 
+//      remove_from_end():
+//      ==================
+//
+//!     \return
+//!         If \c str ends with \c c, \c str with the last character
+//!         removed; otherwise a copy of \c str.
+// ---------------------------------------------------------------------------
+std::string         remove_from_end( std::string const & str,
+                                     char c ) ;
 }
 
 #endif

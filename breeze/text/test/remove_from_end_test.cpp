@@ -36,6 +36,20 @@ void do_tests()
     BREEZE_CHECK( breeze::remove_from_end( test, test ) == "" ) ;
 }
 
+void
+cannot_remove_any_char_from_an_empty_string()
+{
+    BREEZE_CHECK( breeze::remove_from_end( "", 'x'  ) == "" ) ;
+    BREEZE_CHECK( breeze::remove_from_end( "", '\0' ) == "" ) ;
+}
+
+void can_only_remove_the_last_char_from_a_non_empty_string()
+{
+    BREEZE_CHECK( breeze::remove_from_end( "foo", 'o'  ) == "fo"  ) ;
+    BREEZE_CHECK( breeze::remove_from_end( "foo", 'O'  ) == "foo" ) ;
+    BREEZE_CHECK( breeze::remove_from_end( "foo", '\0' ) == "foo" ) ;
+}
+
 }
 
 int
@@ -43,5 +57,7 @@ test_remove_from_end()
 {
     return breeze::test_runner::instance().run(
         "remove_from_end()",
-        { do_tests } ) ;
+        { do_tests,
+          cannot_remove_any_char_from_an_empty_string,
+          can_only_remove_the_last_char_from_a_non_empty_string } ) ;
 }

@@ -34,6 +34,16 @@ namespace breeze_ns {
 bool                ends_with( std::string const & str,
                                std::string const & with ) noexcept ;
 
+//      ends_with():
+//      ============
+//
+//!     \return
+//!         \c true if and only if \c str ends with \c c, i.e. if and
+//!         only if <code>! str.empty() && str.back() == c</code>.
+// ---------------------------------------------------------------------------
+bool                ends_with( std::string const & str,
+                               char c )                   noexcept ;
+
 }
 
 #endif

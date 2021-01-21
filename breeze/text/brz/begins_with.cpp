@@ -37,4 +37,10 @@ begins_with( std::string const & str, std::string const & with ) noexcept
         && std::equal( with.cbegin(), with.cend(), str.cbegin() ) ;
 }
 
+bool
+begins_with( std::string const & str, char c ) noexcept
+{
+    return ! str.empty() && str.front() == c ;
+}
+
 }

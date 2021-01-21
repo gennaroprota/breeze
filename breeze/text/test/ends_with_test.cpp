@@ -60,6 +60,25 @@ do_test()
     BREEZE_CHECK( ends_with( s, t ) ) ;
 }
 
+void
+empty_string_does_not_end_with_any_char()
+{
+    using breeze::ends_with ;
+
+    BREEZE_CHECK( ! ends_with( "", 'x'  ) ) ;
+    BREEZE_CHECK( ! ends_with( "", 'y'  ) ) ;
+    BREEZE_CHECK( ! ends_with( "", '\0' ) ) ;
+}
+
+void non_empty_string_ends_with_its_last_char()
+{
+    using breeze::ends_with ;
+
+    BREEZE_CHECK(   ends_with( "foo", 'o' ) ) ;
+    BREEZE_CHECK( ! ends_with( "foo", 'O' ) ) ;
+    BREEZE_CHECK( ! ends_with( "foo", 'x' ) ) ;
+}
+
 }
 
 int
@@ -67,5 +86,7 @@ test_ends_with()
 {
     return breeze::test_runner::instance().run(
         "ends_with()",
-        { do_test } ) ;
+        { do_test,
+          empty_string_does_not_end_with_any_char,
+          non_empty_string_ends_with_its_last_char } ) ;
 }

@@ -62,6 +62,25 @@ do_test()
     BREEZE_CHECK( begins_with( t, t ) ) ;
 }
 
+void
+empty_string_does_not_begin_with_any_char()
+{
+    using breeze::begins_with ;
+
+    BREEZE_CHECK( ! begins_with( "", 'x'  ) ) ;
+    BREEZE_CHECK( ! begins_with( "", 'y'  ) ) ;
+    BREEZE_CHECK( ! begins_with( "", '\0' ) ) ;
+}
+
+void non_empty_string_begins_with_its_first_char()
+{
+    using breeze::begins_with ;
+
+    BREEZE_CHECK(   begins_with( "foo", 'f' ) ) ;
+    BREEZE_CHECK( ! begins_with( "foo", 'F' ) ) ;
+    BREEZE_CHECK( ! begins_with( "foo", 'x' ) ) ;
+}
+
 }
 
 int
@@ -69,5 +88,7 @@ test_begins_with()
 {
     return breeze::test_runner::instance().run(
         "begins_with()",
-        { do_test } ) ;
+        { do_test,
+          empty_string_does_not_begin_with_any_char,
+          non_empty_string_begins_with_its_first_char } ) ;
 }

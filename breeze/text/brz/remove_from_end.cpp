@@ -26,4 +26,13 @@ remove_from_end( std::string const & str, std::string const & to_be_removed )
     return copy ;
 }
 
+std::string
+remove_from_end( std::string const & str, char c )
+{
+    return ends_with( str, c )
+        ? str.substr( 0, str.length() - 1 )
+        : str
+        ;
+}
+
 }
