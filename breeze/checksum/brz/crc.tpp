@@ -182,7 +182,8 @@ crc< Traits >::value() const noexcept
         result = crc_private::reflect< width >( result ) ;
     }
 
-    return result ^ xor_out ;
+    result ^= xor_out;
+    return result ;
 }
 
 template< typename Traits >
