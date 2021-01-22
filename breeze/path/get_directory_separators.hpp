@@ -18,8 +18,8 @@
 
 namespace breeze_ns {
 
-//      directory_separators():
-//      =======================
+//      get_directory_separators():
+//      ===========================
 //
 //!     \return
 //!         A pointer to a C string with static lifetime containing the
@@ -28,7 +28,7 @@ namespace breeze_ns {
 //!         If a "preferred" separator exists, it is guaranteed to be
 //!         the first character of the string.
 // ---------------------------------------------------------------------------
-char const *        directory_separators() noexcept ; //gps constexpr?
+char const *        get_directory_separators() noexcept ; //gps constexpr?
 
 }
 #endif

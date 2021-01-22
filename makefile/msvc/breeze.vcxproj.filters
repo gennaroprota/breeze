@@ -59,9 +59,6 @@
     <ClCompile Include="..\..\breeze\environment\windows_only\brz\windows_version_info.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\path\brz\directory_separators.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\breeze\path\brz\base_file_name.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -186,6 +183,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breeze\testing\brz\assert_failure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\breeze\path\brz\get_directory_separators.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -354,9 +354,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\operator\equality_comparison.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breeze\path\directory_separators.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\path\base_file_name.hpp">
@@ -585,6 +582,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\testing\assert_failure.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breeze\path\get_directory_separators.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

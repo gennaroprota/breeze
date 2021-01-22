@@ -11,14 +11,14 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/path/directory_separators.hpp"
+#include "breeze/path/get_directory_separators.hpp"
 
 namespace breeze_ns {
 
 char const *
-directory_separators() noexcept
+get_directory_separators() noexcept
 {
-    return "/" ;
+    return "\\/" ;
 }
 
 }

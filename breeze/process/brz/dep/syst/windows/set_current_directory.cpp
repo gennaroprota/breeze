@@ -23,7 +23,7 @@ set_current_directory( std::string const & dir )
 {
     BREEZE_ASSERT( 0 < dir.length() && dir.length() < MAX_PATH ) ;
 
-    //      TODO: use directory_separators()?
+    //      TODO: use get_directory_separators()?
     // -----------------------------------------------------------------------
     BREEZE_ASSERT( dir.back() == '\\' || dir.back() == '/' ||
                    dir.length() <= ( MAX_PATH - 2 ) ) ;

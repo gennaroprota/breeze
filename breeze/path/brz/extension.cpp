@@ -12,7 +12,7 @@
 // ___________________________________________________________________________
 
 #include "breeze/path/extension.hpp"
-#include "breeze/path/directory_separators.hpp"
+#include "breeze/path/get_directory_separators.hpp"
 #include <cstddef>
 
 namespace breeze_ns {
@@ -21,7 +21,7 @@ std::string
 extension( std::string const & path )
 {
     std::size_t const   last_sep = path.find_last_of(
-                            breeze::directory_separators()
+                            breeze::get_directory_separators()
                         ) ;
 
     //      Note that last_sep can equal npos or path.size() - 1; in
