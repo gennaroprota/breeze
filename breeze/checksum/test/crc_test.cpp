@@ -12,7 +12,6 @@
 // ___________________________________________________________________________
 
 #include "breeze/checksum/crc.hpp"
-#include "breeze/iteration/begin_end.hpp"
 #include "breeze/mathematics/ceiling_of_quotient.hpp"
 #include "breeze/testing/testing.hpp"
 #include <iomanip>
@@ -158,10 +157,9 @@ check_known_crc32s()
         { "Nel mezzo del cammin di nostra vita",         0x5BFBCBF8 }
       } ;
 
-    for ( auto it = breeze::cbegin( known ) ; it != breeze::cend( known ) ;
-                                                                       ++ it ) {
+    for ( auto const & k : known ) {
         BREEZE_CHECK( breeze::crc< breeze::crc32 >(
-            it->text.cbegin(), it->text.cend() ).value() == it->crc32 ) ;
+            k.text.cbegin(), k.text.cend() ).value() == k.crc32 ) ;
     }
 }
 
