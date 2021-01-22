@@ -28,10 +28,10 @@ namespace meta {
 // ---------------------------------------------------------------------------
 template< typename T >
 class has_sign
-    // The natural form here would be "T( -1 ) < 0"; but GCC, and
-    // possibly other compilers, would warn when instantiating the
-    // template with T being an unsigned type. Of course it also
-    // warns if using "!( T( -1 ) >= 0 )"
+    //      The natural form here would be "T( -1 ) < 0"; but GCC, and
+    //      possibly other compilers, would warn when instantiating the
+    //      template with T being an unsigned type. Of course it also
+    //      warns if using "!( T( -1 ) >= 0 )"
     // -----------------------------------------------------------------------
     :   public constant< bool, ! ( T( -1 ) > 0 ) >
 {
