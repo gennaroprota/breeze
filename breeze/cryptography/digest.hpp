@@ -34,7 +34,13 @@ public:
     typedef typename Hasher::byte_type const *
                         const_iterator ;
 
-    //!\name Constructors
+    //!\name Constructors, destructor and copy assignment
+    //!
+    //!     \c digest uses the compiler-generated copy constructor,
+    //!     destructor and copy assignment operator.
+    //!
+    //!     The other constructors are listed below.
+    //!
     //!\{
     // -----------------------------------------------------------------------
     //!     Constructs a digest from a \c Hasher. Since the \c Hasher
@@ -52,11 +58,6 @@ public:
     template< typename InputIter >
                         digest( InputIter begin, InputIter end ) ;
     //!\}
-
-    //!     Copy and destruction.
-    //!     Compiler-generated copy constructor, copy assignment
-    //!     operator and destructor.
-    // -----------------------------------------------------------------------
 
 
     //!     Equality comparison (both \c == and \c != are provided).
