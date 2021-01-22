@@ -65,7 +65,10 @@ public:
     bool                is_equal( digest< Hasher > const & ) const ;
 
     //!\name Functions for byte-based iteration (read-only)
-    //!           const_iterator is a forward iterator - gps
+    //!
+    //!     \note
+    //!         \c const_iterator is a forward iterator.
+    //          [gps]
     //!\{
     const_iterator      begin() const ;
     const_iterator      end() const ;
