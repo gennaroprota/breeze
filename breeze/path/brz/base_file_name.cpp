@@ -13,6 +13,7 @@
 
 #include "breeze/path/base_file_name.hpp"
 #include "breeze/path/get_directory_separators.hpp"
+#include <cstddef>
 #include <string>
 
 namespace breeze_ns {
@@ -20,8 +21,7 @@ namespace breeze_ns {
 std::string
 base_file_name( std:: string const & full_path)
 {
-    std::string::size_type const
-                        pos = full_path.find_last_of(
+    std::size_t const   pos = full_path.find_last_of(
                                 breeze::get_directory_separators() ) ;
     return pos == std::string::npos
                     ? full_path

@@ -29,6 +29,7 @@
 #include "breeze/text/trim_tail.hpp"
 
 #include <algorithm>
+#include <cstddef>
 #include <cstdio> // for EOF
 #include <iostream>
 #include <istream>
@@ -104,7 +105,7 @@ read_all( std::istream & in )
 //      Returns 0 if 'v' is empty; otherwise the length of the longest
 //      string in 'v'.
 // ---------------------------------------------------------------------------
-std::string::size_type
+std::size_t
 max_element_length( std::vector< std::string > const & v )
 {
     auto const          iter =
@@ -124,18 +125,15 @@ max_element_length( std::vector< std::string > const & v )
 int
 main()
 {
-    typedef std::string::size_type
-                        size_type ;
-
     std::istream &      in( std::cin ) ;
     std::vector< std::string> const
                         lines( read_all( in ) ) ;
 
     BREEZE_ASSERT( lines.size() > 1 ) ;
 
-    size_type const     max_length = max_element_length( lines ) ;
+    std::size_t const   max_length = max_element_length( lines ) ;
 
-    size_type column =
+    std::size_t         column =
         last_line_terminator.length() > normal_line_terminator.length()
             ? max_length + 2 + ( last_line_terminator.length() -
                                  normal_line_terminator.length() )
@@ -153,7 +151,7 @@ main()
 
         bool const          is_last_line = it == lines.cend() - 1 ;
 
-        size_type const     space_count = is_last_line
+        std::size_t const   space_count = is_last_line
                                 ? column - 1 - it->length()             -
                                         last_line_terminator.length()   +
                                         normal_line_terminator.length()

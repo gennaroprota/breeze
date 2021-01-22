@@ -13,6 +13,7 @@
 
 #include "breeze/text/replace_all.hpp"
 #include "breeze/diagnostics/assert.hpp"
+#include <cstddef>
 #include <string>
 
 namespace breeze_ns {
@@ -24,7 +25,7 @@ void replace_all(
 {
     BREEZE_ASSERT( ! from.empty() ) ;
 
-    std::string::size_type pos = 0 ;
+    std::size_t         pos = 0 ;
 
     //      Note that 'pos', below, may reach s.size(): this happens
     //      (only) when 's' is empty (pos == 0) or when a replacement
