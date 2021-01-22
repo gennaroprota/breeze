@@ -64,8 +64,8 @@ source_files := luhn.cpp                                    \
                 extension.cpp                               \
                 get_directory_separators.cpp                \
                                                             \
-                get_current_directory.cpp                   \
                 exit_code.cpp                               \
+                get_current_directory.cpp                   \
                 program.cpp                                 \
                 set_current_directory.cpp                   \
                                                             \
