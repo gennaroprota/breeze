@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Cryptographic hash digest object.
+//!     \brief A cryptographic hash digest.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_HJb5zsPZzS9ztbt5GdVJMPv00mZUAnQI
