@@ -34,7 +34,7 @@ public:
     typedef typename Hasher::byte_type const *
                         const_iterator ;
 
-    //!\name Constructors, destructor and copy assignment
+    //!     \name Constructors, destructor and copy assignment
     //!
     //!     \c digest uses the compiler-generated copy constructor,
     //!     destructor and copy assignment operator.
@@ -64,7 +64,7 @@ public:
     // -----------------------------------------------------------------------
     bool                is_equal( digest< Hasher > const & ) const ;
 
-    //!\name Functions for byte-based iteration (read-only)
+    //!     \name Functions for byte-based iteration (read-only)
     //!
     //!     \note
     //!         \c const_iterator is a forward iterator.
