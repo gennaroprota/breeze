@@ -21,7 +21,7 @@ namespace breeze_ns {
 //!
 //!     This namespace won't normally contain any function or function
 //!     template, except for those that we \e do want to be found by ADL
-//!     (e.g. the operator functions declared by equality_comparable).
+//!     (e.g. the operator functions declared by equality_comparison).
 //!     Thus, if e.g. a class is defined here, an argument of that class
 //!     type (or derived thereof) in an unqualified function call will
 //!     trigger ADL, but the lookup won't find any unintended function
