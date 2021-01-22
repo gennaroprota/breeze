@@ -15,6 +15,7 @@
 
 #include "breeze/top_level_namespace.hpp"
 #include "breeze/meta/constant.hpp"
+#include "breeze/meta/unqualify.hpp"
 
 namespace breeze_ns {
 namespace meta {
@@ -31,9 +32,12 @@ class has_sign
     //      The natural form here would be "T( -1 ) < 0"; but GCC, and
     //      possibly other compilers, would warn when instantiating the
     //      template with T being an unsigned type. Of course it also
-    //      warns if using "!( T( -1 ) >= 0 )"
+    //      warns if using "!( T( -1 ) >= 0 )".
+    //
+    //      The use of unqualify is also to avoid a warning: MSVC's
+    //      C4197.
     // -----------------------------------------------------------------------
-    :   public constant< bool, ! ( T( -1 ) > 0 ) >
+    :   public constant< bool, ! ( typename unqualify< T >::type( -1 ) > 0 ) >
 {
 } ;
 
