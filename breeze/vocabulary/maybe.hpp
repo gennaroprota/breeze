@@ -1,5 +1,5 @@
 // ===========================================================================
-//                     Copyright 2006-2019 Gennaro Prota
+//                     Copyright 2006-2021 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -76,7 +76,11 @@ public:
 //!     Techniques and Examples</i>. Addison-Wesley Professional. ISBN
 //!     0-201-53393-6.
 //!
-//!     which calls it "Fallible".
+//!     which calls it "Fallible". In type theory terminology, \c maybe<
+//!     T > is an <i>option type</i>. Many languages support this
+//!     concept, or the related concept of <i>nullable type</i>,
+//!     directly.
+//!
 //!     Basically: \c maybe< T > is used as return type for functions
 //!     that logically return a \c T or fail (thus, it is an intrusive,
 //!     although lightweight, solution). The \c maybe< T > object
