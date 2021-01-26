@@ -80,7 +80,8 @@ can_assign_elements_through_const_array_pointer_to_non_const()
         int *               p = new int [ 5 ]{ 0, 1, 2, 3, 4 } ;
         breeze::array_pointer< int > const
                             a( p ) ;
-        a.raw_pointer()[ 0 ] = 0 ;
+        a.raw_pointer()[ 0 ] = 10 ;
+        BREEZE_CHECK( p[ 0 ] == 10 ) ;
     }
 }
 
