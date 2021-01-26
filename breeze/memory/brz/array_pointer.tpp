@@ -12,33 +12,33 @@
 namespace breeze_ns {
 
 template< typename T >
-auto_array< T >::auto_array() noexcept
+array_pointer< T >::array_pointer() noexcept
     :   m_ptr( nullptr )
 {
 }
 
 template< typename T >
-auto_array< T >::auto_array( T * p ) noexcept
+array_pointer< T >::array_pointer( T * p ) noexcept
     :   m_ptr( p )
 {
 }
 
 template< typename T >
-auto_array< T >::auto_array( auto_array && other ) noexcept
+array_pointer< T >::array_pointer( array_pointer && other ) noexcept
     :   m_ptr( other.m_ptr )
 {
     other.m_ptr = nullptr ;
 }
 
 template< typename T >
-auto_array< T >::~auto_array() noexcept
+array_pointer< T >::~array_pointer() noexcept
 {
     do_delete() ;
 }
 
 template< typename T >
-auto_array< T > &
-auto_array< T >::operator =( auto_array && rhs ) noexcept
+array_pointer< T > &
+array_pointer< T >::operator =( array_pointer && rhs ) noexcept
 {
     std::swap( m_ptr, rhs.m_ptr ) ;
     return *this ;
@@ -46,14 +46,14 @@ auto_array< T >::operator =( auto_array && rhs ) noexcept
 
 template< typename T >
 T *
-auto_array< T >::raw_pointer() const noexcept
+array_pointer< T >::raw_pointer() const noexcept
 {
     return m_ptr ;
 }
 
 template< typename T >
 void
-auto_array< T >::reset( T * p ) noexcept
+array_pointer< T >::reset( T * p ) noexcept
 {
     if ( p == m_ptr ) {
         return ;
@@ -65,7 +65,7 @@ auto_array< T >::reset( T * p ) noexcept
 
 template< typename T >
 void
-auto_array< T >::do_delete() noexcept
+array_pointer< T >::do_delete() noexcept
 {
     require_type_completeness< T >() ;
     delete [] m_ptr ;

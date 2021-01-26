@@ -42,7 +42,7 @@ main()
     test_function_type * const
                         tests[] = {
             test_breeze_assert,
-            test_auto_array,
+            test_array_pointer,
             test_base_file_name,
             test_base64_to_binary,
             test_begins_with,

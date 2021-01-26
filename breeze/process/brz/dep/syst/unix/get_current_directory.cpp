@@ -14,7 +14,7 @@
 #include "breeze/process/get_current_directory.hpp"
 #include "breeze/diagnostics/assert.hpp"
 #include "breeze/diagnostics/last_api_error.hpp"
-#include "breeze/memory/auto_array.hpp"
+#include "breeze/memory/array_pointer.hpp"
 #include <unistd.h>
 #include <cerrno>
 #include <cstddef>
@@ -26,12 +26,12 @@ std::string
 get_current_directory()
 {
     std::ptrdiff_t      sz = 1024 ;
-    auto_array< char >  aa ;
+    array_pointer< char >  ap ;
 
     char const *        p = nullptr ;
     do {
-        aa.reset( new char[ sz ] ) ;
-        p = getcwd( aa.raw_pointer(), sz ) ;
+        ap.reset( new char[ sz ] ) ;
+        p = getcwd( ap.raw_pointer(), sz ) ;
         sz *= 2 ;
     } while ( p == nullptr && errno == ERANGE ) ;
 

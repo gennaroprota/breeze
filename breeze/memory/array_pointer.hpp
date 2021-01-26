@@ -17,13 +17,13 @@
 
 namespace breeze_ns {
 
-//      auto_array:
-//      ===========
+//      array_pointer:
+//      ==============
 //
-//!     \copybrief auto_array.hpp
+//!     \copybrief array_pointer.hpp
 //!
 //!     A smart pointer that retains sole ownership of an array through
-//!     a pointer. An <code>auto_array< T ></code> is similar to a
+//!     a pointer. An <code>array_pointer< T ></code> is similar to a
 //!     <code>unique_ptr< T[], std::default_delete< T[] > ></code> but
 //!     this template was written way before C++11.
 //!
@@ -33,23 +33,23 @@ namespace breeze_ns {
 //!     CopyConstructible</tt> or <tt>CopyAssignable</tt>.
 // ---------------------------------------------------------------------------
 template< typename T >
-class auto_array
+class array_pointer
 {
 public:
     //!     Deleted copy constructor.
     // -----------------------------------------------------------------------
-                        auto_array( auto_array const & ) = delete ;
+                        array_pointer( array_pointer const & ) = delete ;
 
     //!     Deleted copy assignment operator.
     // -----------------------------------------------------------------------
-    auto_array &        operator =( auto_array const & ) = delete ;
+    array_pointer &     operator =( array_pointer const & ) = delete ;
 
-                        auto_array() noexcept ;
-    explicit            auto_array( T * ) noexcept ;
-                        auto_array( auto_array && ) noexcept ;
-                        ~auto_array() noexcept ;
+                        array_pointer() noexcept ;
+    explicit            array_pointer( T * ) noexcept ;
+                        array_pointer( array_pointer && ) noexcept ;
+                        ~array_pointer() noexcept ;
 
-    auto_array &        operator =( auto_array && ) noexcept ;
+    array_pointer &     operator =( array_pointer && ) noexcept ;
     T *                 raw_pointer() const noexcept ;
     void                reset( T * ) noexcept ;
 
@@ -60,5 +60,5 @@ private:
 
 }
 
-#include "brz/auto_array.tpp"
+#include "brz/array_pointer.tpp"
 #endif

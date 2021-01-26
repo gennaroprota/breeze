@@ -17,7 +17,7 @@
     <ClCompile Include="..\..\..\breeze\diagnostics\test\assert_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breeze\memory\test\auto_array_test.cpp">
+    <ClCompile Include="..\..\..\breeze\memory\test\array_pointer_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breeze\path\test\base_file_name_test.cpp">

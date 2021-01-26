@@ -80,7 +80,7 @@ source_files := unit_test_main.cpp                          \
                 lcm_test.cpp                                \
                 representation_in_base_test.cpp             \
                                                             \
-                auto_array_test.cpp                         \
+                array_pointer_test.cpp                      \
                                                             \
                 is_2s_complement_test.cpp                   \
                                                             \

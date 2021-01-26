@@ -11,18 +11,18 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/memory/auto_array.hpp"
+#include "breeze/memory/array_pointer.hpp"
 #include "breeze/testing/testing.hpp"
 #include <vector>
 
-int                 test_auto_array() ;
+int                 test_array_pointer() ;
 
 namespace {
 
-breeze::auto_array< int >
+breeze::array_pointer< int >
 f()
 {
-    return breeze::auto_array< int >( new int[ 3 ]{ 0, 1, 2 } ) ;
+    return breeze::array_pointer< int >( new int[ 3 ]{ 0, 1, 2 } ) ;
 }
 
 void
@@ -30,7 +30,7 @@ check_move_semantics()
 {
     // Check that the move constructor is in effect.
     //
-    breeze::auto_array< int > a = f() ;
+    breeze::array_pointer< int > a = f() ;
     for ( int i = 0 ; i < 3 ; ++i ) {
         BREEZE_CHECK( a.raw_pointer()[ i ] == i ) ;
     }
@@ -46,15 +46,15 @@ check_move_semantics()
 void
 check_non_move_constructors()
 {
-    breeze::auto_array< std::string >
+    breeze::array_pointer< std::string >
                         a( new std::string[ 2 ]{ "foo", "bar" } ) ;
     BREEZE_CHECK( a.raw_pointer()[ 0 ] == "foo" ) ;
     BREEZE_CHECK( a.raw_pointer()[ 1 ] == "bar" ) ;
 
-    breeze::auto_array< double > deflt ;
+    breeze::array_pointer< double > deflt ;
     BREEZE_CHECK( deflt.raw_pointer() == nullptr ) ;
 
-    breeze::auto_array< char > n( nullptr ) ;
+    breeze::array_pointer< char > n( nullptr ) ;
     BREEZE_CHECK( n.raw_pointer() == nullptr ) ;
 
 }
@@ -67,18 +67,18 @@ check_reset()
     // TODO: should we check if operator delete[]() is called with the
     //       correct pointer value?
     //
-    breeze::auto_array< std::vector< int > >
+    breeze::array_pointer< std::vector< int > >
                         a( new std::vector< int >[ 100 ] ) ;
     a.reset( new std::vector< int >[ 5 ]) ;
     a.reset( nullptr ) ;
 }
 
 void
-can_assign_elements_of_const_auto_array_to_non_const()
+can_assign_elements_through_const_array_pointer_to_non_const()
 {
     {
         int *               p = new int [ 5 ]{ 0, 1, 2, 3, 4 } ;
-        breeze::auto_array< int > const
+        breeze::array_pointer< int > const
                             a( p ) ;
         a.raw_pointer()[ 0 ] = 0 ;
     }
@@ -87,12 +87,12 @@ can_assign_elements_of_const_auto_array_to_non_const()
 }
 
 int
-test_auto_array()
+test_array_pointer()
 {
     return breeze::test_runner::instance().run(
-        "auto_array",
+        "array_pointer",
         { check_move_semantics,
           check_non_move_constructors,
           check_reset,
-          can_assign_elements_of_const_auto_array_to_non_const } ) ;
+          can_assign_elements_through_const_array_pointer_to_non_const } ) ;
 }

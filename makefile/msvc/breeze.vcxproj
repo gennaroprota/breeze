@@ -285,7 +285,7 @@
     <None Include="..\..\breeze\mathematics\brz\is_power_of_2.tpp" />
     <None Include="..\..\breeze\mathematics\brz\lcm.tpp" />
     <None Include="..\..\breeze\mathematics\brz\representation_in_base.tpp" />
-    <None Include="..\..\breeze\memory\brz\auto_array.tpp" />
+    <None Include="..\..\breeze\memory\brz\array_pointer.tpp" />
     <None Include="..\..\breeze\meta\brz\is_2s_complement.tpp" />
     <None Include="..\..\breeze\random\brz\subrange_adaptor.tpp" />
     <None Include="..\..\breeze\stream\brz\stream_buffer_wrapper.tpp" />
@@ -347,7 +347,7 @@
     <ClInclude Include="..\..\breeze\mathematics\is_power_of_2.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\lcm.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\representation_in_base.hpp" />
-    <ClInclude Include="..\..\breeze\memory\auto_array.hpp" />
+    <ClInclude Include="..\..\breeze\memory\array_pointer.hpp" />
     <ClInclude Include="..\..\breeze\memory\get_amount_of_physical_memory.hpp" />
     <ClInclude Include="..\..\breeze\meta\constant.hpp" />
     <ClInclude Include="..\..\breeze\meta\exact_width_integer.hpp" />

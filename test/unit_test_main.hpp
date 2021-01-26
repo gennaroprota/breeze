@@ -9,8 +9,8 @@
 #ifndef BREEZE_GUARD_lU2gmIzNvSwoDFBlIFUy6Z3fdnxfiNTi
 #define BREEZE_GUARD_lU2gmIzNvSwoDFBlIFUy6Z3fdnxfiNTi
 
+int                 test_array_pointer() ;
 int                 test_breeze_assert() ;
-int                 test_auto_array() ;
 int                 test_base_file_name() ;
 int                 test_base64_to_binary() ;
 int                 test_begins_with() ;

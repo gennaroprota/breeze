@@ -200,7 +200,7 @@
     <None Include="..\..\breeze\mathematics\brz\gcd.tpp" />
     <None Include="..\..\breeze\mathematics\brz\integer_log2.tpp" />
     <None Include="..\..\breeze\mathematics\brz\lcm.tpp" />
-    <None Include="..\..\breeze\memory\brz\auto_array.tpp" />
+    <None Include="..\..\breeze\memory\brz\array_pointer.tpp" />
     <None Include="..\..\breeze\meta\brz\is_2s_complement.tpp" />
     <None Include="..\..\breeze\random\brz\subrange_adaptor.tpp" />
     <None Include="..\..\breeze\text\brz\from_string.tpp" />
@@ -326,7 +326,7 @@
     <ClInclude Include="..\..\breeze\mathematics\lcm.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\memory\auto_array.hpp">
+    <ClInclude Include="..\..\breeze\memory\array_pointer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\meta\constant.hpp">
