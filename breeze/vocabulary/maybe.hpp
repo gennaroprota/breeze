@@ -71,10 +71,9 @@ public:
 //!     A class template to represent "possible" values. The idea was
 //!     signaled by James Kanze, and comes from
 //!
-//!     John J. Barton, Lee R. Nackman (1994).
-//!     <i>Scientific and Engineering C++: An Introduction with Advanced
-//!     Techniques and Examples</i>. Addison-Wesley Professional. ISBN
-//!     0-201-53393-6.
+//!     John J. Barton, Lee R. Nackman (1994). <i>Scientific and
+//!     Engineering C++: An Introduction with Advanced Techniques and
+//!     Examples</i>. Addison-Wesley Professional. ISBN 0-201-53393-6.
 //!
 //!     The book calls it "Fallible", but we chose a more general name.
 //!     In type theory terminology, \c maybe< T > is an <i>option
@@ -116,11 +115,11 @@ public:
 //!           (but, of course, the latter is stylistically rare: one
 //!           would usually assign the function return value first)
 //!
-//!         - when \c T itself has a user defined conversion, which
-//!           you want to be applied
+//!         - when \c T itself has a user defined conversion, which you
+//!           want to be applied
 //!
-//!        As shown above, in these cases you have to explicitly
-//!        invoke \c value().
+//!        As shown above, in these cases you have to explicitly invoke
+//!        \c value().
 //!
 //!        Curiously enough, Barton and Nackman's book introduces \c
 //!        Fallible as an example of using conversions ("to add a binary
