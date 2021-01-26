@@ -113,21 +113,6 @@ public:
     typedef typename Engine::byte_type
                         byte_type ;
 
-private:
-    enum
-    {
-        block_length = Engine::block_width / byte_width,
-        word_length  = word_width / byte_width,
-
-        length_count = Engine::length_exp / word_width
-    } ;
-
-    typedef typename Engine::word_type
-                        word_type ;
-
-    typedef typename Engine::state_type
-                        state_type ;// gps --possibly temp
-
 public:
     //!\name Constructors
     //!\{
@@ -155,13 +140,25 @@ public:
 private:
     friend class digest< merkle_damgard_machine > ;
 
+    enum
+    {
+        block_length = Engine::block_width / byte_width,
+        word_length  = word_width / byte_width,
+
+        length_count = Engine::length_exp / word_width
+    } ;
+
+    typedef typename Engine::word_type
+                        word_type ;
+
+    typedef typename Engine::state_type
+                        state_type ;
+
     typedef word_type   length_unit_type ;
     typedef byte_type   raw_digest_type[ digest_width / byte_width ] ;
 
-    // data
-    // gps do we characterize the Engine by count or by state_type?
-    state_type          m_state ;// gps word_type        m_state[ state_count ] ;
-    length_unit_type    m_bit_count[ length_count ] ; // low-unit first
+    state_type          m_state ;
+    length_unit_type    m_bit_count[ length_count ] ;
     byte_type           m_input_buffer[ block_length ] ;
 
     void                compress() ;

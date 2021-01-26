@@ -98,7 +98,7 @@ public:
     static void encode_length( word_type const ( &len )[ max_words ],
                                byte_type * dest )
     {
-        typedef word_type   len_type[ max_words ] ; // gps typeof( len )
+        typedef word_type len_type[ max_words ] ;
 
         //      Note:
         //          a) len[ 0 ] is always the *least* significant word
