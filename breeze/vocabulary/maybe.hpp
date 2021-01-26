@@ -76,14 +76,13 @@ public:
 //!     Techniques and Examples</i>. Addison-Wesley Professional. ISBN
 //!     0-201-53393-6.
 //!
-//!     which calls it "Fallible". In type theory terminology, \c maybe<
-//!     T > is an <i>option type</i>. Many languages support this
-//!     concept, or the related concept of <i>nullable type</i>,
-//!     directly.
+//!     The book calls it "Fallible", but we chose a more general name.
+//!     In type theory terminology, \c maybe< T > is an <i>option
+//!     type</i>. Many languages support this concept, or the related
+//!     concept of <i>nullable type</i>, directly.
 //!
 //!     Basically: \c maybe< T > is used as return type for functions
-//!     that logically return a \c T or fail (thus, it is an intrusive,
-//!     although lightweight, solution). The \c maybe< T > object
+//!     that logically return a \c T or fail. The \c maybe< T > object
 //!     keeps track of its validity state, and any attempt to retrieve
 //!     the \c T object when it is marked as invalid will cause an
 //!     assertion failure.
@@ -91,8 +90,9 @@ public:
 //!     Note that the original Barton and Nackman solution threw an
 //!     exception, instead.
 //!
-//!     The library guarantees that the \c T object, if any, is stored
-//!     as a part of its \c maybe object: no additional storage is used.
+//!     The Breeze library guarantees that the \c T object, if any, is
+//!     stored as a part of its \c maybe object: no additional storage
+//!     is used.
 //!
 //!     There are other important differences compared to the version
 //!     provided by Barton and Nackman.
@@ -122,12 +122,12 @@ public:
 //!        As shown above, in these cases you have to explicitly
 //!        invoke \c value().
 //!
-//!        Curiously enough, B&N's book introduces \c Fallible as an
-//!        example of using conversions "to add a binary state"---valid
-//!        or invalid---and checking to objects. The conversion itself,
-//!        however, isn't part of the concept: it just makes the
-//!        checking more "transparent" (at the well-known cost that
-//!        implicit conversions generally bring).
+//!        Curiously enough, Barton and Nackman's book introduces \c
+//!        Fallible as an example of using conversions ("to add a binary
+//!        state"---valid or invalid---and checking to objects). The
+//!        conversion itself, however, isn't part of the concept: it
+//!        just makes the checking more "transparent" (at the well-known
+//!        cost that implicit conversions generally bring).
 //!
 //!     3. It isn't required for \c T to have a default constructor.
 //!
@@ -167,7 +167,7 @@ public:
 //!     \par A final note about std::optional
 //!
 //!     C++17 introduces \c std::optional, which has the same purpose as
-//!     \c maybe.
+//!     our \c maybe.
 //!
 //!     Generally, I'm against using components that do double duty with
 //!     the standard library, but \c std::optional:
@@ -177,8 +177,8 @@ public:
 //!      - abuses operator overloading to provide a pointer-like syntax
 //!        for unchecked access to the contained value
 //!
-//!      - has an error-prone conversion to \c bool for \c is_valid():
-//!        see \c std::optional< bool >
+//!      - has an error-prone conversion to \c bool instead of an \c
+//!        is_valid() function: see \c std::optional< bool >
 //!
 //!      - treats a valid \c std::optional< T > as a \c T in some
 //!        contexts (comparison operators) and not in others
