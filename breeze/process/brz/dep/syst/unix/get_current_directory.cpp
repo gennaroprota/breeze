@@ -12,7 +12,6 @@
 // ___________________________________________________________________________
 
 #include "breeze/process/get_current_directory.hpp"
-#include "breeze/diagnostics/assert.hpp"
 #include "breeze/diagnostics/last_api_error.hpp"
 #include "breeze/memory/array_pointer.hpp"
 #include <unistd.h>
