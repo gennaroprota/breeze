@@ -105,7 +105,7 @@ compiler_display_name := GCC
 #           --with-gcc-major-version-only configure option). This
 #           insight is from Jonathan Wakely, as well.
 # ----------------------------------------------------------------------------
-compiler_version := $(shell $(compiler_command) -dumpfullversion 2>/dev/null \
+compiler_version := $(shell $(compiler_command) -dumpfullversion 2> /dev/null \
                         || $(compiler_command) -dumpversion)
 
 lowest_version := $(shell                                            \
