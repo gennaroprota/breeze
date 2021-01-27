@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Displays an expression to \c std::cout.
+//!     \brief Displays an expression and its value to \c std::cout.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_v4ifHvyokFutGDGkksKs5kPv6rpDcUGv
