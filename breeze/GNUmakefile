@@ -135,13 +135,6 @@ object_files :=                                                             \
 $(target): $(object_files)
 	$(build_library)
 
-define assemble_to_object
-    as --warn --fatal-warnings -o $@ $<
-endef
-
-$(bin_dir)/%$(object_file_suffix): %.asm
-	$(assemble_to_object)
-
 .PHONY: all
 all: $(target)
 
