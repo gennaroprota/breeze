@@ -69,6 +69,19 @@ ifeq ($(architecture),)
     architecture := $(default_architecture)
 endif
 
+#       check_compiler_is_found():
+#       ==========================
+#
+#       Exits the build if we can't find the compiler command.
+# ----------------------------------------------------------------------------
+define check_compiler_is_found
+    if ! which $(compiler_command) >/dev/null 2>&1 ;                \
+    then                                                            \
+        printf '%s\n' "Error: can't find $(compiler_command)." ;    \
+        exit 2 ;                                                    \
+    fi
+endef
+
 #       do_for_all_subdirs():
 #       =====================
 #

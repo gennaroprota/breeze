@@ -30,6 +30,7 @@ ruler := \
 .PHONY: all
 all: $(bin_dir)
 	@$(require_triplet)
+	@$(check_compiler_is_found)
 	$(info $(ruler))
 	$(info Using $(compiler_display_name) $(compiler_version))
 	@printf '%s\n' "Running on: ` uname -m ` "
@@ -44,6 +45,7 @@ clean:
 	$(do_for_all_subdirs)
 
 $(bin_dir):
+	@$(check_compiler_is_found)
 	mkdir -p $@
 
 .PHONY: test-run
