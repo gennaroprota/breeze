@@ -102,17 +102,17 @@ ifndef libraries
 endif
 
 
-bin_root := $(root)/bin
-dependent_subdir := $(architecture)/$(system)/$(compiler)
-bin_dir := $(bin_root)/$(dependent_subdir)
-exe_dir := $(bin_dir)
-         # ^^^^ variant debug/release?
-
-
 ifeq ($(has_triplet),yes)
     include $(root)/makefile/$(system).mk
     include $(root)/makefile/$(compiler).mk
 endif
+
+
+bin_root := $(root)/bin
+dependent_subdir := $(architecture)/$(system)/$(compiler)-$(compiler_version)
+bin_dir := $(bin_root)/$(dependent_subdir)
+exe_dir := $(bin_dir)
+         # ^^^^ variant debug/release?
 
 cpp_options = $(cpp_basic_options)                  \
               $(cpp_debug_options)                  \
