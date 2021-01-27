@@ -6,14 +6,14 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 
-get_base_name()
+base_file_name()
 {
     basename -- "$1"
 }
 
-get_extension()
+file_name_extension()
 {
-    get_base_name "$1" | awk -F. ' NF > 1 && $1 != "" { printf "%s", $NF } '
+    base_file_name "$1" | awk -F. ' NF > 1 && $1 != "" { printf "%s", $NF } '
 }
 
 # Local Variables:

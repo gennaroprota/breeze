@@ -9,12 +9,12 @@
 .   "$BREEZE_ROOT/tool/shell/file_name.shc"
 
 {
-get_extension name ; printf '\n'
-get_extension name.ext ; printf '\n'
-get_extension name.ext1.ext2 ; printf '\n'
-get_extension .dotfile ; printf '\n'
-get_extension a/b/c/file.txt ; printf '\n'
-get_extension ./a/file.txt ; printf '\n'
+file_name_extension name ; printf '\n'
+file_name_extension name.ext ; printf '\n'
+file_name_extension name.ext1.ext2 ; printf '\n'
+file_name_extension .dotfile ; printf '\n'
+file_name_extension a/b/c/file.txt ; printf '\n'
+file_name_extension ./a/file.txt ; printf '\n'
 }       >   output
 
 printf '

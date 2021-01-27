@@ -92,8 +92,8 @@ then
 fi
 
 full_path="$1"
-base_name=` get_base_name "$full_path" `
-name_extension=` get_extension "$full_path" `
+base_name=` base_file_name "$full_path" `
+name_extension=` file_name_extension "$full_path" `
 
 if [ -z "$full_path" ]
 then
