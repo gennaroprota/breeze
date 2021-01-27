@@ -61,7 +61,7 @@ source_files := luhn.cpp                                    \
                 levenshtein_distance.cpp                    \
                                                             \
                 base_file_name.cpp                          \
-                extension.cpp                               \
+                file_name_extension.cpp                     \
                 get_directory_separators.cpp                \
                                                             \
                 exit_code.cpp                               \

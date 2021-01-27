@@ -90,7 +90,7 @@ source_files := unit_test_main.cpp                          \
                 levenshtein_distance_test.cpp               \
                                                             \
                 base_file_name_test.cpp                     \
-                extension_test.cpp                          \
+                file_name_extension_test.cpp                \
                                                             \
                 prevent_macro_expansion_test.cpp            \
                 stringize_after_expansion_test.cpp          \

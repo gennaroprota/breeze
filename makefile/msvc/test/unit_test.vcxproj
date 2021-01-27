@@ -62,7 +62,7 @@
     <ClCompile Include="..\..\..\breeze\metric\test\damerau_levenshtein_distance_test.cpp" />
     <ClCompile Include="..\..\..\breeze\metric\test\levenshtein_distance_test.cpp" />
     <ClCompile Include="..\..\..\breeze\path\test\base_file_name_test.cpp" />
-    <ClCompile Include="..\..\..\breeze\path\test\extension_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\path\test\file_name_extension_test.cpp" />
     <ClCompile Include="..\..\..\breeze\preprocessing\test\prevent_macro_expansion_test.cpp" />
     <ClCompile Include="..\..\..\breeze\preprocessing\test\stringize_after_expansion_test.cpp" />
     <ClCompile Include="..\..\..\breeze\preprocessing\test\stringize_test.cpp" />

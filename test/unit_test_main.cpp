@@ -62,7 +62,7 @@ main()
             test_entropy_source,
             test_environment_variable_consistency,
             test_eof_value,
-            test_extension,
+            test_file_name_extension,
             test_from_string,
             test_gcd,
             test_get_environment_variable,

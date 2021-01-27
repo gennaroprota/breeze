@@ -11,14 +11,14 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/path/extension.hpp"
+#include "breeze/path/file_name_extension.hpp"
 #include "breeze/path/get_directory_separators.hpp"
 #include <cstddef>
 
 namespace breeze_ns {
 
 std::string
-extension( std::string const & path )
+file_name_extension( std::string const & path )
 {
     std::size_t const   last_sep = path.find_last_of(
                             breeze::get_directory_separators()

@@ -18,8 +18,8 @@
 
 namespace breeze_ns {
 
-//      extension():
-//      ============
+//      file_name_extension():
+//      ======================
 //
 //!     \return
 //!         The extension of the file name part of \c path, including
@@ -37,7 +37,7 @@ namespace breeze_ns {
 //!         This behavior is aligned with that of <code>
 //!         std::filesystem::path::extension()</code> (C++17).
 // ---------------------------------------------------------------------------
-std::string         extension( std::string const & path ) ;
+std::string         file_name_extension( std::string const & path ) ;
 
 }
 

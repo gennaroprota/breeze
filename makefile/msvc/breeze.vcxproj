@@ -229,7 +229,7 @@
     <ClCompile Include="..\..\breeze\metric\brz\levenshtein_distance.cpp" />
     <ClCompile Include="..\..\breeze\path\brz\get_directory_separators.cpp" />
     <ClCompile Include="..\..\breeze\path\brz\base_file_name.cpp" />
-    <ClCompile Include="..\..\breeze\path\brz\extension.cpp" />
+    <ClCompile Include="..\..\breeze\path\brz\file_name_extension.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\exit_code.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\get_current_directory.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\program.cpp" />
@@ -364,7 +364,7 @@
     <ClInclude Include="..\..\breeze\operator\equality_comparison.hpp" />
     <ClInclude Include="..\..\breeze\path\get_directory_separators.hpp" />
     <ClInclude Include="..\..\breeze\path\base_file_name.hpp" />
-    <ClInclude Include="..\..\breeze\path\extension.hpp" />
+    <ClInclude Include="..\..\breeze\path\file_name_extension.hpp" />
     <ClInclude Include="..\..\breeze\porting\dependent_source.hpp" />
     <ClInclude Include="..\..\breeze\preprocessing\prevent_macro_expansion.hpp" />
     <ClInclude Include="..\..\breeze\preprocessing\stringize.hpp" />

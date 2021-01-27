@@ -62,7 +62,7 @@
     <ClCompile Include="..\..\breeze\path\brz\base_file_name.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\path\brz\extension.cpp">
+    <ClCompile Include="..\..\breeze\path\brz\file_name_extension.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breeze\process\brz\exit_code.cpp">
@@ -359,7 +359,7 @@
     <ClInclude Include="..\..\breeze\path\base_file_name.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\path\extension.hpp">
+    <ClInclude Include="..\..\breeze\path\file_name_extension.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\porting\dependent_source.hpp">
