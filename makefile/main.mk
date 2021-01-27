@@ -133,7 +133,7 @@ cpp_options = $(cpp_basic_options)                  \
               $(include_switch)"$(include_dir)"     \
               $(cpp_preprocessing_defines)
 
-cpp_preprocessing_defines := -D BREEZE_SYSTEM_FAMILY=$(system_family)   \
+cpp_preprocessing_defines += -D BREEZE_SYSTEM_FAMILY=$(system_family)   \
                              -D BREEZE_SYSTEM=$(system)                 \
                              -D BREEZE_COMPILER=$(compiler)
 
