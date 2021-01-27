@@ -72,7 +72,7 @@
 # ----------------------------------------------------------------------------
 cygwin_sort := '/bin/sort'
 
-minimum_msvc_version := 19.00.24215.1
+minimum_msvc_version := 19.15.26726
 
 compiler_display_name := MSVC
 
