@@ -151,8 +151,9 @@
     BREEZE_PASTE( BREEZE_DEPENDENT_SOURCE_, variant )( file_name )         /**/
 
 
-#define BREEZE_DEPENDENT_SOURCE_system_family( file_name )                         \
-    BREEZE_STRINGIZE_AFTER_EXPANSION( dep/syst/BREEZE_SYSTEM_FAMILY/file_name ) /**/
+#define BREEZE_DEPENDENT_SOURCE_system_family( file_name )                    \
+    BREEZE_STRINGIZE_AFTER_EXPANSION(                                         \
+         dep/syst/BREEZE_SYSTEM_FAMILY/file_name )                         /**/
 
 #define BREEZE_DEPENDENT_SOURCE_system( file_name )                           \
     BREEZE_STRINGIZE_AFTER_EXPANSION( dep/syst/BREEZE_SYSTEM/file_name )   /**/
