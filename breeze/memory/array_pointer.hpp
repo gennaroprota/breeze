@@ -44,14 +44,50 @@ public:
     // -----------------------------------------------------------------------
     array_pointer &     operator =( array_pointer const & ) = delete ;
 
+    //!     Constructs an \c array_pointer that doesn't own any array.
+    //!
+    //!     \post
+    //!         raw_pointer() == nullptr
+    // -----------------------------------------------------------------------
                         array_pointer() noexcept ;
-    explicit            array_pointer( T * ) noexcept ;
+
+    //!     Sets the internal pointer to \c p, taking ownership of the
+    //!     pointed to array if \c p is non-null (in which case, the
+    //!     array must have been allocated with <code>new []</code>.
+    // -----------------------------------------------------------------------
+    explicit            array_pointer( T * p ) noexcept ;
+
+    //!     Move constructs from another \c array_pointer.
+    // -----------------------------------------------------------------------
                         array_pointer( array_pointer && ) noexcept ;
+
+    //!     Executes <code>delete [] raw_pointer() </code>.
+    //!
+    //!     Requires for \c T to be a complete type at the point of
+    //!     instantiation.
+    // ----------------------------------------------------------------------.
                         ~array_pointer() noexcept ;
 
+    //!     Move assigns from another \c array_pointer.
+    // -----------------------------------------------------------------------
     array_pointer &     operator =( array_pointer && ) noexcept ;
+
+    //!     \return
+    //!         A pointer to the owned array.
+    // -----------------------------------------------------------------------
     T *                 raw_pointer() const noexcept ;
-    void                reset( T * ) noexcept ;
+
+    //!     If the argument equals \c raw_pointer(), does nothing.
+    //!     Otherwise, executes <code>delete [] raw_pointer()</code> and
+    //!     sets the internal pointer to the argument.
+    //!
+    //!     Requires for \c T to be a complete type at the point of
+    //!     instantiation.
+    //!
+    //!     \post
+    //!         raw_pointer() == p
+    // -----------------------------------------------------------------------
+    void                reset( T * p ) noexcept ;
 
 private:
     T *                 m_ptr ;
