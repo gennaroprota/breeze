@@ -61,7 +61,7 @@ public:
     // -----------------------------------------------------------------------
                         array_pointer( array_pointer && ) noexcept ;
 
-    //!     Executes <code>delete [] raw_pointer() </code>.
+    //!     Executes <code>delete [] raw_pointer()</code>.
     //!
     //!     Requires for \c T to be a complete type at the point of
     //!     instantiation.
