@@ -89,8 +89,9 @@ std::ostream &      operator <<( std::ostream &, operating_system_id ) ;
 //      Relational operators:
 //      =====================
 //
-//!     The relational operator functions are all deleted. See the
-//!     documentation of \c operating_system_id for the rationale.
+//!     The relational operator functions for \ref operating_system_id
+//!     are all deleted. See the documentation of that class for the
+//!     rationale.
 // ---------------------------------------------------------------------------
 bool                operator <(  operating_system_id,
                                  operating_system_id ) = delete ;
