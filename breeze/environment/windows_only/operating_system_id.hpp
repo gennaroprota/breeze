@@ -84,6 +84,8 @@ enum class operating_system_id
     windows_server_2016
 } ;
 
+//!     Stream inserter for \c operating_system_id.
+// ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream &, operating_system_id ) ;
 
 //      Relational operators:
