@@ -86,22 +86,26 @@ enum class operating_system_id
 
 std::ostream &      operator <<( std::ostream &, operating_system_id ) ;
 
-//!\name Relational operators
+//      Relational operators:
+//      =====================
 //
 //!     The relational operator functions are all deleted. See the
 //!     documentation of \c operating_system_id for the rationale.
 // ---------------------------------------------------------------------------
-//\{
 bool                operator <(  operating_system_id,
                                  operating_system_id ) = delete ;
+//!     \copydoc operator<
+// ---------------------------------------------------------------------------
 bool                operator <=( operating_system_id,
                                  operating_system_id ) = delete ;
+//!     \copydoc operator<
+// ---------------------------------------------------------------------------
 bool                operator >(  operating_system_id,
                                  operating_system_id ) = delete ;
+//!     \copydoc operator<
+// ---------------------------------------------------------------------------
 bool                operator >=( operating_system_id,
                                  operating_system_id ) = delete ;
-//\}
-
 }
 
 #endif
