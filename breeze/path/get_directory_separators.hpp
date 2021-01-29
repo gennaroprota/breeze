@@ -22,8 +22,8 @@ namespace breeze_ns {
 //      ===========================
 //
 //!     \return
-//!         A pointer to a C string with static lifetime containing the
-//!         directory separators allowed in the system.
+//!         A pointer to a C string with static storage duration
+//!         containing the directory separators allowed in the system.
 //!
 //!         If a "preferred" separator exists, it is guaranteed to be
 //!         the first character of the string.
