@@ -77,8 +77,8 @@ public:
     // -----------------------------------------------------------------------
     T *                 raw_pointer() const noexcept ;
 
-    //!     If the argument equals \c raw_pointer(), does nothing.
-    //!     Otherwise, executes <code>delete [] raw_pointer()</code> and
+    //!     If the argument equals \c raw_pointer(), does nothing;
+    //!     otherwise, executes <code>delete [] raw_pointer()</code> and
     //!     sets the internal pointer to the argument.
     //!
     //!     Requires for \c T to be a complete type at the point of
