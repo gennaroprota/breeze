@@ -27,6 +27,9 @@ class operating_system_name
 {
 } ;
 
+//!     Stream inserter for \c operating_system_name. Outputs a
+//!     description of the operating system.
+// ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream &,
                                  operating_system_name const & ) ;
 
