@@ -35,9 +35,6 @@ namespace breeze_ns {
 //!     his idea a bit, for instance by also encapsulating the <code>
 //!     ostream</code>'s \c sentry.
 //!
-//!     For a usage example, see the stream inserter of the <code>crc
-//!     </code> template.
-//!
 //!     The class allows reducing the high amount of duplication
 //!     otherwise implied in writing such inserters, and makes your
 //!     inserter definitely shorter and easier to read. But I guess
