@@ -42,7 +42,7 @@ namespace adl_shield {
 //!
 //!     \par ADL protection
 //!
-//!     Even though this uses the Barton-Nackman idiom and relies on its
+//!     Even though this uses the Barton-Nackman trick and relies on its
 //!     standard-conforming, ADL-based, mechanics (no friend injection),
 //!     it is protected from ADL in namespace \c breeze in a way which
 //!     allows only the provided operator functions to be found.
