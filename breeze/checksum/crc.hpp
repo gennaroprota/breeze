@@ -37,12 +37,13 @@ class crc_cache ;
 //!     \copybrief crc.hpp
 //!
 //!     This template is instantiated over a traits class which provides
-//!     the characterizing parameters of the CRC. To the best of my
-//!     knowledge, these parameters were first identified by Ross N.
-//!     Williams in his paper "A painless guide to CRC error detection
-//!     algorithms", available online (a copy of the version available
-//!     on <ross.net> at the time of this writing---October 7, 2020---is
-//!     in the source tree; the file name is <tt>crc_v3.txt</tt>).
+//!     the characterizing parameters of the CRC to calculate. To the
+//!     best of my knowledge, these parameters were first identified by
+//!     Ross N. Williams in his paper "A painless guide to CRC error
+//!     detection algorithms", available online (a copy of the version
+//!     available on <ross.net> at the time of this writing---October 7,
+//!     2020---is in the source tree; the file name is
+//!     <tt>crc_v3.txt</tt>).
 //!
 //!     crc.hpp also provides traits classes for common CRC types (of
 //!     course, other such classes can be defined by the user).
@@ -64,12 +65,12 @@ class crc_cache ;
 //!
 //!     <dt><tt>width:</tt></dt><dd>
 //!         The number of bits in the CRC. This is also the degree of
-//!         the polynomial used for divisions. The polynomial can have
-//!         at most <code>width + 1</code> terms, but since the highest
-//!         degree term has always the coefficient <tt>1</tt> (otherwise
-//!         the degree wouldn't be \c width), that coefficient will be
-//!         implied. The type of this constant is <code>int
-//!         const</code>.</dd>
+//!         the polynomial used for the divisions. The polynomial can
+//!         have at most <code>width + 1</code> terms, but since the
+//!         highest degree term has always the coefficient <tt>1</tt>
+//!         (otherwise the degree wouldn't be \c width), that
+//!         coefficient will be implied. The type of this constant is
+//!         <code>int const</code>.</dd>
 //!
 //!     <dt><tt>poly:</tt></dt><dd>
 //!         The unreflected divisor polynomial, with the top-most bit
