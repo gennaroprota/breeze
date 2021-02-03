@@ -29,6 +29,7 @@ void
 check_good_streams()
 {
     using breeze::stream_equivalent ;
+
     std::stringstream   str ;
 
     str.tie( &std::cout ) ;
@@ -61,6 +62,7 @@ void
 check_non_good_streams()
 {
     using breeze::stream_equivalent ;
+
     std::fstream        fs ;
     fs.clear( std::ios_base::failbit ) ;
 
