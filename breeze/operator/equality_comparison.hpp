@@ -49,7 +49,7 @@ namespace adl_shield {
 //!
 //!     This means that the user can safely derive their own type from
 //!     any of its instantiations \e without risk of ADL picking up
-//!     anything \e unintended in \c namespace \c breeze. Example:
+//!     anything \e unintended in namespace \c breeze. Example:
 //!
 //!         Example TODO:
 //!
