@@ -50,7 +50,8 @@ class crc_cache ;
 //!
 //!     \warning
 //!         I haven't thought out the case <code>CHAR_BIT > 8</code>, so
-//!         expect little changes to be done for unusual machines.
+//!         expect little changes to be done for unusual machines. Also,
+//!         CRCs with a width less than <tt>8</tt> are not supported.
 //!
 //!     Each traits class must declare the following public members:
 //!
