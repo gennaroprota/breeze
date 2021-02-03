@@ -55,21 +55,34 @@ class comparison
 {
     // [FUTURE], [C++17], [gps]:
     //      These are all candidates for [[ nodiscard ]]
+    //
+    //!     \return
+    //!         lhs.compare( rhs ) < 0
+    // -----------------------------------------------------------------------
     friend bool         operator <( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) < 0 ;
     }
 
+    //!     \return
+    //!         lhs.compare( rhs ) <= 0 ;
+    // -----------------------------------------------------------------------
     friend bool         operator <=( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) <= 0 ;
     }
 
+    //!     \return
+    //!         lhs.compare( rhs ) > 0 ;
+    // -----------------------------------------------------------------------
     friend bool         operator >( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) > 0 ;
     }
 
+    //!     \return
+    //!         lhs.compare( rhs ) >= 0 ;
+    // -----------------------------------------------------------------------
     friend bool         operator >=( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) >= 0 ;
