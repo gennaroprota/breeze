@@ -118,7 +118,7 @@ public:
 
     //!\name Constructors
     //!\{
-    // -----------------------------------------------------------------------
+    //
     //!     Initializes the CRC calculator.
     // -----------------------------------------------------------------------
     constexpr           crc() noexcept ;
@@ -131,7 +131,7 @@ public:
 
     //!\name Functions to process input
     //!\{
-    // ----------------------------------------------------------------------
+    //
     //!     Processes the values in <tt>[first, last)</tt>, updating the
     //!     calculated CRC.
     // -----------------------------------------------------------------------
@@ -141,7 +141,7 @@ public:
 
     //!\name Functions to read the result
     //!\{
-    // -----------------------------------------------------------------------
+    //
     //!     Returns the calculated CRC. This read may occur at any time,
     //!     and doesn't disturb the running sum.
     // -----------------------------------------------------------------------
