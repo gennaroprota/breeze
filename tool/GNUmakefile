@@ -6,8 +6,7 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 
-subdirs := include_guard    \
-           line_up
+subdirs := include_guard
 
 root := ..
 include $(root)/makefile/main.mk
