@@ -101,13 +101,14 @@ check_value_from_traits()
     BREEZE_CHECK( breeze::crc< CrcTraits >( input, input + len ).value() ==
         CrcTraits::check ) ;
 
-    //      Now check in two steps.
+    //      Now check in multiple steps.
     // -----------------------------------------------------------------------
     int const           step1_len = len / 2 ;
     breeze::crc< CrcTraits >
                         crc ;
     crc.accumulate( input, input + step1_len ) ;
-    crc.accumulate( input + step1_len, input + len ) ;
+    crc.accumulate( input + step1_len, input + len - 1 ) ;
+    crc.accumulate( input[ len - 1 ] ) ;
     BREEZE_CHECK( crc.value() == CrcTraits::check ) ;
 
     //      Also check with iterators that are not to bytes.

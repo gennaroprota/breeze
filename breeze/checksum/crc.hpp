@@ -137,6 +137,10 @@ public:
     // -----------------------------------------------------------------------
     template< typename InputIter >
     constexpr void      accumulate( InputIter first, InputIter last ) ;
+
+    //!     Processes the character \c c, updating the calculated CRC.
+    // -----------------------------------------------------------------------
+    constexpr void      accumulate( char c ) noexcept ;
     //!\}
 
     //!\name Functions to read the result

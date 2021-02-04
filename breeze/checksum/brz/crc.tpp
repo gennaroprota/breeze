@@ -185,6 +185,13 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
 }
 
 template< typename Traits >
+constexpr void
+crc< Traits >::accumulate( char c ) noexcept
+{
+    accumulate( &c, &c + 1 ) ;
+}
+
+template< typename Traits >
 constexpr typename crc< Traits >::value_type
 crc< Traits >::value() const noexcept
 {
