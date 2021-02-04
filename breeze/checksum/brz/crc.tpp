@@ -162,7 +162,8 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
             value_type          new_current =
                 s_cache[ ( m_current ^ *first ) & mask ] ;
             if ( meta::width< value_type >::value > char_bit ) {
-                new_current ^= m_current >> char_bit ;
+                new_current = static_cast< value_type >(
+                    new_current ^ ( m_current >> char_bit ) ) ;
             }
             m_current = new_current ;
             ++ first ;
