@@ -23,6 +23,15 @@ int                 test_crc() ;
 
 namespace {
 
+//      Returns the value of t. Useful when T is a character type, to
+//      output t as a number, not as a character.
+// ---------------------------------------------------------------------------
+template< typename T >
+auto as_number( T t ) -> decltype( + t )
+{
+    return t ;
+}
+
 //      crc12_umts:
 //      ===========
 //
@@ -124,11 +133,67 @@ check_value_from_traits()
     oss.setf( std::ios::hex, std::ios::basefield ) ;
     int const           digit_count =
         breeze::ceiling_of_quotient( CrcTraits::width, 4 ) ;
-    oss << std::setw( digit_count ) << crc.value() ;
+    oss << std::setw( digit_count ) << as_number( crc.value() ) ;
 
     std::string const   expected = oss.str() ;
 
     BREEZE_CHECK( output == expected ) ;
+}
+
+void
+check_known_crc8_autosars()
+{
+    struct
+    {
+        std::string         text ;
+        unsigned long       crc32 ;
+    } const             known[] =
+    {
+        //      Following test vectors verified with:
+        //
+        //        <https://sourceforge.net/projects/crccheck/>.
+        //
+        //      Like for invented_crc (see above), take this with a
+        //      grain of salt.
+        // -------------------------------------------------------------------
+        { "",                                                 0    },
+        { "Just a test",                                      0x34 },
+        { "A single man in the possession of a good fortune", 0x60 },
+        { "Quel ramo del lago di Como",                       0xC1 }
+    } ;
+
+    for ( auto const & k : known ) {
+        BREEZE_CHECK( breeze::crc< breeze::crc8_autosar >(
+            k.text.cbegin(), k.text.cend() ).value() == k.crc32 ) ;
+    }
+}
+
+void
+check_known_crc8_bluetooths()
+{
+    struct
+    {
+        std::string         text ;
+        unsigned long       crc32 ;
+    } const             known[] =
+    {
+        //      Following test vectors verified with:
+        //
+        //        <https://sourceforge.net/projects/crccheck/>.
+        //
+        //      Like for invented_crc (see above), take this with a
+        //      grain of salt.
+        // -------------------------------------------------------------------
+        { "",                                                 0    },
+        { "Just a test",                                      0x62 },
+        { "A single man in the possession of a good fortune", 0x59 },
+        { "Quel ramo del lago di Como",                       0x79 }
+    } ;
+
+    for ( auto const & k : known ) {
+        BREEZE_CHECK( breeze::crc< breeze::crc8_bluetooth >(
+            k.text.cbegin(), k.text.cend() ).value() == k.crc32 ) ;
+    }
 }
 
 void
@@ -173,7 +238,11 @@ test_crc()
         { check_value_from_traits< breeze::crc16 >,
           check_value_from_traits< breeze::crc32 >,
           check_value_from_traits< breeze::crc16_ibm3740 >,
+          check_value_from_traits< breeze::crc8_autosar >,
+          check_value_from_traits< breeze::crc8_bluetooth >,
           check_value_from_traits< crc12_umts >,
           check_value_from_traits< invented_crc >,
+          check_known_crc8_autosars,
+          check_known_crc8_bluetooths,
           check_known_crc32s } ) ;
 }

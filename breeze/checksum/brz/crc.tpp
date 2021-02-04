@@ -6,6 +6,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breeze/meta/width.hpp"
 #include "breeze/workaround/as_non_constant.hpp"
 
 namespace breeze_ns {
@@ -93,7 +94,9 @@ constexpr crc_cache< CrcTraits >::crc_cache() noexcept
             crc = reflect< 8 >( crc ) ;
         }
 
-        crc = static_cast< value_type >( crc << ( CrcTraits::width - 8 ) ) ;
+        if ( CrcTraits::width > 8 ) {
+            crc = static_cast< value_type >( crc << ( CrcTraits::width - 8 ) ) ;
+        }
 
         for ( int k = 0 ; k < 8 ; ++ k ) {
             crc = static_cast< value_type >( mask & ( crc & top_bit
@@ -156,16 +159,24 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
     // -----------------------------------------------------------------------
     if ( reflect_in ) {
         while ( first != last ) {
-            m_current = static_cast< value_type >(
-                s_cache[ ( m_current ^ *first ) & mask ] ^
-                    ( m_current >> char_bit ) ) ;
+            value_type          new_current =
+                s_cache[ ( m_current ^ *first ) & mask ] ;
+            if ( meta::width< value_type >::value > char_bit ) {
+                new_current ^= m_current >> char_bit ;
+            }
+            m_current = new_current ;
             ++ first ;
         }
     } else {
         while ( first != last ) {
-            m_current = static_cast< value_type >(
+            value_type          new_current =
                 s_cache[ ( ( m_current >> ( width - char_bit ) ) ^ *first )
-                         & mask ] ^ ( m_current << char_bit ) ) ;
+                    & mask ] ;
+            if ( meta::width< value_type >::value > char_bit ) {
+                new_current = static_cast< value_type >(
+                    new_current ^ ( m_current << char_bit ) );
+            }
+            m_current = new_current ;
             ++ first ;
         }
     }

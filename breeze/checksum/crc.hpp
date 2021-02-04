@@ -259,6 +259,52 @@ struct crc16_ibm3740
     static value_type const check       = 0x29B1 ;
 } ;
 
+//      crc8_autosar:
+//      =============
+//
+//!\brief
+//!     Traits for the CRC-8 used by AUTOSAR (CRC-8/AUTOSAR).
+//!
+//!     \see
+//!         crc.
+// ---------------------------------------------------------------------------
+struct crc8_autosar
+{
+    typedef std::uint8_t    value_type ;
+
+    static int        const width       = 8     ;
+    static value_type const poly        = 0x2F  ;
+    static value_type const init        = 0xFF  ;
+    static bool       const reflect_in  = false ;
+    static bool       const reflect_out = false ;
+    static value_type const xor_out     = 0xFF  ;
+
+    static value_type const check       = 0xDF  ;
+} ;
+
+//      crc8_bluetooth:
+//      ===============
+//
+//!\brief
+//!     Traits for the CRC-8 used by Bluetooth (CRC-8/BLUETOOTH).
+//!
+//!     \see
+//!         crc.
+// ---------------------------------------------------------------------------
+struct crc8_bluetooth
+{
+    typedef std::uint8_t    value_type ;
+
+    static int        const width       = 8    ;
+    static value_type const poly        = 0xA7 ;
+    static value_type const init        = 0    ;
+    static bool       const reflect_in  = true ;
+    static bool       const reflect_out = true ;
+    static value_type const xor_out     = 0    ;
+
+    static value_type const check       = 0x26 ;
+} ;
+
 }
 
 #include "brz/crc.tpp"
