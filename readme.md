@@ -30,9 +30,9 @@ https://tokei.rs/b1/github/gennaroprota/breeze?category=comments)
 https://img.shields.io/badge/breeze-on%20docsforge-blue)](https://breeze.docsforge.com)
 
 Welcome to *Breeze*, my personal toolkit of C++ components. The components range
-from cryptography (MD5, SHA-1, SHA-2) to string utilities, operating system
-identification and much more. You'll get a precise idea by exploring the breeze/
-subdirectory of the source tree or the full documentation (see below).
+from cryptography (MD5, SHA-1, SHA-2) to checksums, string utilities, operating
+system identification and much more. You'll get a precise idea by exploring the
+breeze/ subdirectory of the source tree or the full documentation (see below).
 
 The library has been developed, in my spare time, over a period of about 13
 years (as of June 2019) and I don't claim that all of it is of production
