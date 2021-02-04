@@ -220,7 +220,7 @@ check_known_crc32s()
         { "A",                                           0xD3D99E8B },
         { "ABC",                                         0xA3830348 },
         { "Nel mezzo del cammin di nostra vita",         0x5BFBCBF8 }
-      } ;
+    } ;
 
     for ( auto const & k : known ) {
         BREEZE_CHECK( breeze::crc< breeze::crc32 >(
