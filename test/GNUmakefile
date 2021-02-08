@@ -128,6 +128,7 @@ source_files := unit_test_main.cpp                          \
 
 ifeq ($(system),windows)
     libraries += Advapi32   \
+                 User32     \
                  Version
 endif
 
