@@ -9,7 +9,7 @@
 namespace breeze_ns {
 
 constexpr entropy_source::result_type
-entropy_source::min BREEZE_PREVENT_MACRO_EXPANSION() noexcept
+entropy_source::min BREEZE_PREVENT_MACRO_EXPANSION () noexcept
 {
     return 0 ;
 }
