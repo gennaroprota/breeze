@@ -17,6 +17,7 @@
 #include "breeze/environment/operating_system_name.hpp"
 #include "breeze/memory/get_amount_of_physical_memory.hpp"
 #include "breeze/testing/assert_failure.hpp"
+#include "breeze/time/format_time.hpp"
 #include <cstdlib>
 #include <iostream>
 
@@ -131,10 +132,22 @@ main()
     std::cout << "\nAmount of physical memory in MiB: " <<
         amount << std::endl ;
 
-    //      ... and for the last API error.
+    //      ... for the last API error...
     // -----------------------------------------------------------------------
     std::cout << "\nLast API error: " <<
-        breeze::last_api_error( "Unit tests" ) << '\n' << std::endl ;
+        breeze::last_api_error( "Unit tests" ) << std::endl ;
+
+    //      ... and for the current time.
+    // -----------------------------------------------------------------------
+    breeze::maybe< std::string >
+                        time = breeze::format_time(
+                            "%A, %B %e, %Y %I:%M:%S %p UTC",
+                            breeze::time_kind::utc) ;
+    std::cout << "\nFinished at: " << ( time.is_valid()
+                                        ? time.value()
+                                        : "n/a" )
+                                 << std::endl ;
+    std::cout << std::endl ;
 
     return result ;
 }
