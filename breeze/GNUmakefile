@@ -98,8 +98,8 @@ source_files := luhn.cpp                                    \
                 trim_tail.cpp                               \
                                                             \
                 c_clock_policy.cpp                          \
+                format_time.cpp                             \
                 steady_clock_timer.cpp                      \
-                time_string.cpp                             \
                 thread_safe_reentrant_time_functions.cpp    \
                                                             \
                 uuid.cpp

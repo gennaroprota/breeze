@@ -24,10 +24,10 @@ namespace breeze_ns {
 //      ==========================
 //
 //!     These variables allow using meaningful names in combination with
-//!     \c time_string(); e.g. you can write
+//!     \c format_time(); e.g. you can write
 //!
 //!     \code
-//!         time_string( iso8601_extended_date ) ;
+//!         format_time( iso8601_extended_date ) ;
 //!     \endcode
 //!
 //!     Only a small number of format strings are provided.
@@ -55,26 +55,21 @@ extern char const   iso8601_basic_time[] ;
 extern char const   iso8601_extended_time[] ;
 
 
-//      time_string_zone:
-//      =================
+//      time_kind:
+//      ==========
 //
 //!     \brief
-//!         The type of timezone (UTC/local) in which the time must be
-//!         represented by time_string().
+//!         The type (UTC/local) of the representation requested to
+//!         format_time().
 // ---------------------------------------------------------------------------
-class time_string_zone
+enum class time_kind
 {
-public:
-    enum zone
-    {
-        utc,
-        local
-    } ;
-
-} ;
+    utc,
+    local
+};
 
 
-//      time_string():
+//      format_time():
 //      ==============
 //
 //!     \return
@@ -83,7 +78,7 @@ public:
 //!         function.
 //!
 //!     \see
-//!         time_string_zone.
+//!         time_kind.
 //!
 //!     This is a simple tool for simple and quick formatting needs.
 //!     You should use a more complete solution for more complex needs
@@ -93,9 +88,8 @@ public:
 //!         this function is thread-safe and reentrant.
 // ---------------------------------------------------------------------------
 maybe< std::string >
-                    time_string( std::string const & format,
-                                 time_string_zone::zone =
-                                                    time_string_zone::utc ) ;
+                    format_time( std::string const & format,
+                                 time_kind = time_kind::utc ) ;
 
 }
 

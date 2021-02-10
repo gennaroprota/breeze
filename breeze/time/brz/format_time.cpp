@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/time/time_string.hpp"
+#include "breeze/time/format_time.hpp"
 #include "breeze/time/private/thread_safe_reentrant_time_functions.hpp"
 #include "breeze/vocabulary/maybe.hpp"
 #include <time.h>
@@ -39,7 +39,7 @@ extern char const   iso8601_extended_time[] = "%H:%M:%S" ;
 //      like over-engineering.
 // ---------------------------------------------------------------------------
 maybe< std::string >
-time_string( std::string const & format, time_string_zone::zone zone )
+format_time( std::string const & format, time_kind kind )
 {
     using namespace time_private ;
 
@@ -49,7 +49,7 @@ time_string( std::string const & format, time_string_zone::zone zone )
     time_t const        time_stamp( time( nullptr ) ) ;
     if ( time_stamp != static_cast< time_t >( -1 ) ) { // gps
         tm                  broken_down ;
-        tm const * const    p( zone == time_string_zone::utc
+        tm const * const    p( kind == time_kind::utc
                 ? thread_safe_reentrant_gmtime(    &time_stamp, &broken_down )
                 : thread_safe_reentrant_localtime( &time_stamp, &broken_down ) )
                         ;

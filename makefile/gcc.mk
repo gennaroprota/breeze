@@ -35,7 +35,7 @@
 #
 #       -Wno-format-nonliteral:
 #
-#           our time_string() facility relies on passing a non-literal
+#           our format_time() facility relies on passing a non-literal
 #           to std::strftime().
 #
 #       -Wstrict-overflow [not used]
