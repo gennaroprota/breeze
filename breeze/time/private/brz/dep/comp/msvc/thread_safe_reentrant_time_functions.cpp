@@ -31,7 +31,7 @@ thread_safe_reentrant_gmtime( time_t const * time, tm * result )
 {
     errno_t const       e = gmtime_s( result, time ) ;
 
-    return e != 0
+    return e == 0
                ? result
                : nullptr
                ;
@@ -44,7 +44,7 @@ thread_safe_reentrant_localtime( time_t const * time, tm * result )
 {
     errno_t const       e = localtime_s( result, time ) ;
 
-    return e != 0
+    return e == 0
                ? result
                : nullptr
                ;
