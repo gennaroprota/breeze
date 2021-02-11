@@ -17,6 +17,7 @@
 #include "breeze/top_level_namespace.hpp"
 #include "breeze/vocabulary/maybe.hpp"
 #include <string>
+#include <ctime>
 
 namespace breeze_ns {
 
@@ -73,9 +74,9 @@ enum class time_kind
 //      ==============
 //
 //!     \return
-//!         The current (date or) time formatted according to \c format,
-//!         interpreted as if passed to the \c strftime() standard
-//!         function.
+//!         The time corresponding to \c time_stamp, formatted according
+//!         to \c format. \c format is interpreted as if passed to the
+//!         \c strftime() standard function.
 //!
 //!     \see
 //!         time_kind.
@@ -89,7 +90,8 @@ enum class time_kind
 // ---------------------------------------------------------------------------
 maybe< std::string >
                     format_time( std::string const & format,
-                                 time_kind = time_kind::utc ) ;
+                                 time_kind = time_kind::utc,
+                               std::time_t time_stamp = std::time( nullptr ) ) ;
 
 }
 

@@ -39,14 +39,13 @@ extern char const   iso8601_extended_time[] = "%H:%M:%S" ;
 //      like over-engineering.
 // ---------------------------------------------------------------------------
 maybe< std::string >
-format_time( std::string const & format, time_kind kind )
+format_time( std::string const & format, time_kind kind, std::time_t time_stamp )
 {
     using namespace time_private ;
 
     maybe< std::string >
                         result ;
 
-    time_t const        time_stamp( time( nullptr ) ) ;
     if ( time_stamp != static_cast< time_t >( -1 ) ) { // gps
         tm                  broken_down ;
         tm const * const    p( kind == time_kind::utc
