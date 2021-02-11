@@ -85,8 +85,8 @@ enum class time_kind
 //!     You should use a more complete solution for more complex needs
 //!     (but don't underestimate the good old \c strftime() ;-)).
 //!
-//!     NOTE:
-//!         this function is thread-safe and reentrant.
+//!     \note
+//!         This function is thread-safe and reentrant.
 // ---------------------------------------------------------------------------
 maybe< std::string >
                     format_time( std::string const & format,
