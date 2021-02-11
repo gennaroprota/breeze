@@ -31,6 +31,20 @@ unit_test_assert_handler( char const *,
     throw breeze::assert_failure() ;
 }
 
+std::string
+describe_time( std::time_t time_stamp )
+{
+    std::string const   format = "%A, %B %e, %Y %I:%M:%S %p UTC" ;
+    breeze::maybe< std::string >
+                        descr = breeze::format_time(
+                            format, breeze::time_kind::utc,
+                            time_stamp ) ;
+    return descr.is_valid()
+        ? descr.value()
+        : "n/a"
+        ;
+}
+
 }
 
 int
@@ -102,6 +116,7 @@ main()
             test_width
     } ;
 
+    std::time_t const   start_time = std::time( nullptr ) ;
     int                 result = EXIT_SUCCESS ;
     for ( test_function_type * f : tests )
     {
@@ -110,6 +125,7 @@ main()
             result = EXIT_FAILURE ;
         }
     }
+    std::time_t const   end_time = std::time( nullptr ) ;
 
     std::cout << ( result == EXIT_SUCCESS
         ? "All tests passed."
@@ -137,16 +153,12 @@ main()
     std::cout << "\nLast API error: " <<
         breeze::last_api_error( "Unit tests" ) << std::endl ;
 
-    //      ... and for the current time.
+    //      ... and for the start and finish time.
     // -----------------------------------------------------------------------
-    breeze::maybe< std::string >
-                        time = breeze::format_time(
-                            "%A, %B %e, %Y %I:%M:%S %p UTC",
-                            breeze::time_kind::utc) ;
-    std::cout << "\nFinished at: " << ( time.is_valid()
-                                        ? time.value()
-                                        : "n/a" )
-                                 << std::endl ;
+    std::cout << '\n' ;
+    std::cout << "Started at:  " << describe_time( start_time ) << std::endl ;
+    std::cout << "Finished at: " << describe_time(   end_time ) << std::endl ;
+
     std::cout << std::endl ;
 
     return result ;
