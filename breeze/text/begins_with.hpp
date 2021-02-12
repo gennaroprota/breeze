@@ -7,7 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Returns whether a string begins with another one.
+//!     \brief Returns whether a string begins with a given string, or a
+//!            given character.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_pjj1lvDnitxdxtZbFZ64jGnnUhPhHABq

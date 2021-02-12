@@ -7,7 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Returns whether a string ends with another one.
+//!     \brief Returns whether a string ends with a given string, or a
+//!            given character.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_FXhivw6tI6cV0C3govXyzZBmNCWa1e2o
