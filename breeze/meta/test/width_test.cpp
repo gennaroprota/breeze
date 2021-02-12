@@ -21,7 +21,8 @@ using breeze::meta::width ;
 
 namespace {
 
-void width_of_unsigned_char_equals_char_bit()
+void
+width_of_unsigned_char_equals_char_bit()
 {
     static_assert( width< unsigned char >::value == CHAR_BIT, "" ) ;
 }
