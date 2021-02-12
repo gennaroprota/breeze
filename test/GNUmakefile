@@ -120,6 +120,8 @@ source_files := unit_test_main.cpp                          \
                 trim_head_test.cpp                          \
                 trim_tail_test.cpp                          \
                                                             \
+                format_time_test.cpp                        \
+                                                            \
                 readable_type_name_test.cpp                 \
                                                             \
                 uuid_test.cpp                               \

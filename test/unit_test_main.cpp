@@ -78,6 +78,7 @@ main()
             test_environment_variable_consistency,
             test_eof_value,
             test_file_name_extension,
+            test_format_time,
             test_from_string,
             test_gcd,
             test_get_environment_variable,

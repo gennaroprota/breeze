@@ -31,6 +31,7 @@ int                 test_entropy_source() ;
 int                 test_environment_variable_consistency() ;
 int                 test_eof_value() ;
 int                 test_file_name_extension() ;
+int                 test_format_time() ;
 int                 test_from_string() ;
 int                 test_gcd() ;
 int                 test_get_environment_variable() ;

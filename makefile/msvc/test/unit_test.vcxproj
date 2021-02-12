@@ -86,6 +86,7 @@
     <ClCompile Include="..\..\..\breeze\text\test\to_uppercase_test.cpp" />
     <ClCompile Include="..\..\..\breeze\text\test\trim_head_test.cpp" />
     <ClCompile Include="..\..\..\breeze\text\test\trim_tail_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\time\test\format_time_test.cpp" />
     <ClCompile Include="..\..\..\breeze\type_identification\test\readable_type_name_test.cpp" />
     <ClCompile Include="..\..\..\breeze\uuid\test\uuid_test.cpp" />
     <ClCompile Include="..\..\..\breeze\vocabulary\test\maybe_test.cpp" />
