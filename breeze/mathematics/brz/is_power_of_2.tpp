@@ -17,7 +17,8 @@ namespace breeze_ns {
 //      awful; it will be perhaps worth doing when we''ll have Concepts.
 // ---------------------------------------------------------------------------
 template< typename T >
-constexpr bool      is_power_of_2( T x ) noexcept
+constexpr bool
+is_power_of_2( T x ) noexcept
 {
     return x > 0 && ( x & ( x-1 ) ) == 0 ;
 }
