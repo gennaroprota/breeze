@@ -6,7 +6,6 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/iteration/begin_end.hpp"
 #include "breeze/mathematics/ceiling_of_quotient.hpp"
 #include <ostream>
 
@@ -23,15 +22,14 @@ operator <<( std::ostream & dest, crc< Traits > const & crc )
         ceiling_of_quotient( Traits::width, 4 ) ;
 
     char                buffer[ digit_count + 1 ] ;
-    char const * const  start = breeze::begin( buffer ) ;
-    char *              iter  = breeze::end( buffer ) ;
+    char const * const  start = &buffer[ 0 ] ;
+    char *              p     = &buffer[ 0 ] + digit_count ;
     value_type          value = crc.value() ;
 
-    -- iter ;
-    *iter = '\0' ;
-    while ( iter != start ) {
-        -- iter ;
-        *iter = "0123456789ABCDEF"[ value & 0x0f ] ;
+    *p = '\0' ;
+    while ( p != start ) {
+        -- p ;
+        *p = "0123456789ABCDEF"[ value & 0x0f ] ;
         //!     The following statement could just be 'value >>= 4' but
         //!     that gives the usual compiler warnings, so...
         // -------------------------------------------------------------------
