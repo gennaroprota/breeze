@@ -184,16 +184,13 @@ operator <<( std::ostream & os, uuid const & uu )
     char                repr[ len + 1 ] ;
     repr[ len ] = '\0' ;
 
-    int to = 0 ;
+    char *              to = &repr[ 0 ] ;
     for ( int i = 0 ; i < bit_count / 8 ; ++ i ) {
-        repr[ to ] = digits[ uu.m_octets[ i ] >> 4 ] ;
-        ++ to ;
-        repr[ to ] = digits[ uu.m_octets[ i ] & 0x0f ] ;
-        ++ to ;
+        *to ++ = digits[ uu.m_octets[ i ] >> 4 ] ;
+        *to ++ = digits[ uu.m_octets[ i ] & 0x0f ] ;
 
         if ( i == 3 || i == 5 || i == 7 || i == 9 ) {
-            repr[ to ] = '-' ;
-            ++ to ;
+            *to ++ = '-' ;
         }
     }
 
