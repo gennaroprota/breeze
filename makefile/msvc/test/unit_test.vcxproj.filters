@@ -38,7 +38,7 @@
     <ClCompile Include="..\..\..\breeze\mathematics\test\clamp_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breeze\mathematics\test\count_bits_test.cpp">
+    <ClCompile Include="..\..\..\breeze\mathematics\test\population_count_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breeze\checksum\test\crc_test.cpp">

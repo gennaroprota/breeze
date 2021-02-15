@@ -190,7 +190,8 @@ Please, have a look at the guidelines if you are not familiar with them.
 
 Note that, as of August 24, 2020, if you need to use the library with MSVC 2015,
 that's quite easy as long as you are willing to give up on `constexpr` for some
-components (`BREEZE_ASSERT()`, `count_bits()`, `gcd()`, `lcm()`).
+components (`BREEZE_ASSERT()`, `count_bits()` (now `population_count()`),
+`gcd()`, `lcm()`).
 
 Compiler | Minimum supported version
 ---------|----------------------------

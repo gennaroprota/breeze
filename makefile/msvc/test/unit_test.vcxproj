@@ -50,11 +50,11 @@
     </ClCompile>
     <ClCompile Include="..\..\..\breeze\mathematics\test\ceiling_of_quotient_test.cpp" />
     <ClCompile Include="..\..\..\breeze\mathematics\test\clamp_test.cpp" />
-    <ClCompile Include="..\..\..\breeze\mathematics\test\count_bits_test.cpp" />
     <ClCompile Include="..\..\..\breeze\mathematics\test\digital_root_test.cpp" />
     <ClCompile Include="..\..\..\breeze\mathematics\test\gcd_test.cpp" />
     <ClCompile Include="..\..\..\breeze\mathematics\test\is_power_of_2_test.cpp" />
     <ClCompile Include="..\..\..\breeze\mathematics\test\lcm_test.cpp" />
+    <ClCompile Include="..\..\..\breeze\mathematics\test\population_count_test.cpp" />
     <ClCompile Include="..\..\..\breeze\mathematics\test\representation_in_base_test.cpp" />
     <ClCompile Include="..\..\..\breeze\memory\test\array_pointer_test.cpp" />
     <ClCompile Include="..\..\..\breeze\meta\test\is_2s_complement_test.cpp" />

@@ -17,8 +17,8 @@
 
 namespace breeze_ns {
 
-//      count_bits():
-//      =============
+//      population_count():
+//      ===================
 //
 //!     \return
 //!         The number of on bits in the value \c t. \c T must be an
@@ -29,9 +29,9 @@ namespace breeze_ns {
 //!         \c std::popcount() when Breeze will require C++20.
 // ---------------------------------------------------------------------------
 template< typename T >
-constexpr int       count_bits( T t ) noexcept ;
+constexpr int       population_count( T t ) noexcept ;
 
 }
 
-#include "brz/count_bits.tpp"
+#include "brz/population_count.tpp"
 #endif

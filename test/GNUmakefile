@@ -73,11 +73,11 @@ source_files := unit_test_main.cpp                          \
                                                             \
                 ceiling_of_quotient_test.cpp                \
                 clamp_test.cpp                              \
-                count_bits_test.cpp                         \
                 digital_root_test.cpp                       \
                 gcd_test.cpp                                \
                 is_power_of_2_test.cpp                      \
                 lcm_test.cpp                                \
+                population_count_test.cpp                   \
                 representation_in_base_test.cpp             \
                                                             \
                 array_pointer_test.cpp                      \

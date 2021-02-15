@@ -206,7 +206,7 @@
     <None Include="..\..\breeze\text\brz\from_string.tpp" />
     <None Include="..\..\breeze\text\brz\to_string.tpp" />
     <None Include="..\..\breeze\time\brz\timer.tpp" />
-    <None Include="..\..\breeze\mathematics\brz\count_bits.tpp" />
+    <None Include="..\..\breeze\mathematics\brz\population_count.tpp" />
     <None Include="..\..\breeze\type_identification\brz\readable_type_name.tpp" />
     <None Include="..\..\breeze\mathematics\brz\is_power_of_2.tpp" />
     <None Include="..\..\breeze\mathematics\brz\digital_root.tpp" />
@@ -473,7 +473,7 @@
     <ClInclude Include="..\..\breeze\metric\levenshtein_distance.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\mathematics\count_bits.hpp">
+    <ClInclude Include="..\..\breeze\mathematics\population_count.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\type_identification\readable_type_name.hpp">
