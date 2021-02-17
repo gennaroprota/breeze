@@ -26,7 +26,8 @@ namespace breeze_ns {
 //!         The textual representation of its argument. If \c T has a
 //!         <code>to_string() const</code> member function taking no
 //!         arguments, this template will use that. Otherwise, it will
-//!         use <code>breeze::to_string( object, std::locale() )</code>.
+//!         use <code>breeze::to_string( object, std::locale() )</code>,
+//!         which requires a stream inserter.
 // ---------------------------------------------------------------------------
 template< typename T >
 std::string         to_string( T const & object ) ;
@@ -36,7 +37,8 @@ std::string         to_string( T const & object ) ;
 //
 //!     \return
 //!         The textual representation of its argument. The
-//!         representation depends, in general, on \c loc.
+//!         representation depends, in general, on \c loc. This template
+//!         requires a stream inserter.
 //!
 //!     \par Exceptions
 //!         A \c std::runtime_error if the conversion fails.
