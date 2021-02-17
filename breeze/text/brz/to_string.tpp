@@ -11,6 +11,30 @@
 #include <stdexcept>
 
 namespace breeze_ns {
+namespace to_string_private {
+
+template< typename T >
+auto
+to_string_impl( T const & object, int ) -> decltype( object.to_string() )
+{
+    return object.to_string() ;
+}
+
+template< typename T >
+std::string
+to_string_impl( T const & object, ... )
+{
+    return breeze::to_string( object, std::locale() ) ;
+}
+
+}
+
+template< typename T >
+std::string
+to_string( T const & object )
+{
+    return to_string_private::to_string_impl( object, 0 ) ;
+}
 
 template< typename OutputStreamable >
 std::string
