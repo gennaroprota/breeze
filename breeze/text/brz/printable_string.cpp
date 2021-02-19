@@ -19,6 +19,7 @@
 #include <ios>
 #include <ostream>
 #include <sstream>
+#include <stdexcept>
 
 namespace breeze_ns {
 
@@ -113,6 +114,12 @@ printable_string::to_string() const
         }
     }
     oss << '\"' ;
+
+    if ( oss.fail() ) {
+        throw std::runtime_error(
+            "error in printable_string::to_string()" ) ;
+    }
+
     return oss.str() ;
 }
 

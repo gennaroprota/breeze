@@ -16,6 +16,7 @@
 
 #include <ostream>
 #include <sstream>
+#include <stdexcept>
 
 namespace breeze_ns {
 namespace           {
@@ -51,8 +52,6 @@ char const * const  names[] =
 std::string
 to_string( operating_system_id id )
 {
-    //      TODO: error checking?
-    //
     std::ostringstream  oss ;
 
     oss << breeze::names[ static_cast< int >( id ) ] ;
@@ -75,6 +74,11 @@ to_string( operating_system_id id )
 
     oss << " (" << info.major_version() << '.' << info.minor_version()
                 << ", build " << info.build_number() << ')' ;
+
+    if ( oss.fail() ) {
+        throw std::runtime_error(
+            "error in to_string( operating_system_id )" ) ;
+    }
 
     return oss.str();
 }

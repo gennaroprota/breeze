@@ -17,6 +17,7 @@
 
 #include <ostream>
 #include <sstream>
+#include <stdexcept>
 
 namespace breeze_ns {
 
@@ -29,10 +30,14 @@ last_api_error::code() const noexcept
 std::string
 last_api_error::to_string() const
 {
-    //      TODO: error checking?
-    //
     std::ostringstream  oss ;
     oss << what() << " [code: " << code() << ']';
+
+    if ( oss.fail() ) {
+        throw std::runtime_error(
+            "error in last_api_error::to_string()" ) ;
+    }
+
     return oss.str() ;
 }
 
