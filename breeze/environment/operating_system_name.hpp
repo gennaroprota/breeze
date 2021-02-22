@@ -15,6 +15,7 @@
 
 #include "breeze/top_level_namespace.hpp"
 #include <iosfwd>
+#include <string>
 
 namespace breeze_ns {
 
@@ -25,6 +26,8 @@ namespace breeze_ns {
 // ---------------------------------------------------------------------------
 class operating_system_name
 {
+public:
+    std::string         to_string() const ;
 } ;
 
 //!     Stream inserter for \c operating_system_name. Outputs a

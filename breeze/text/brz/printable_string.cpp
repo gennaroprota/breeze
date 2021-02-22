@@ -14,11 +14,11 @@
 
 #include "breeze/text/printable_string.hpp"
 #include "breeze/mathematics/ceiling_of_quotient.hpp"
-#include "breeze/stream/stream_equivalent.hpp"
 #include <climits>
 #include <iomanip>
 #include <ios>
 #include <ostream>
+#include <sstream>
 
 namespace breeze_ns {
 
@@ -34,64 +34,62 @@ printable_string::printable_string( std::string const & s )
 {
 }
 
-std::ostream &
-operator <<( std::ostream & original_stream, printable_string const & ps )
+std::string
+printable_string::to_string() const
 {
-    if ( ! ps.m_value.is_valid() ) {
-        return original_stream << "(null)" ;
+    if ( ! m_value.is_valid() ) {
+        return "(null)" ;
     }
 
-    stream_equivalent< std::ostream >
-                        equiv( original_stream ) ;
-    std::ostream &      dest = equiv.get() ;
+    std::ostringstream  oss ;
 
-    dest.setf( std::ios_base::hex, std::ios_base::basefield ) ;
-    dest.setf( std::ios_base::right, std::ios_base::adjustfield ) ;
-    dest.unsetf( std::ios_base::showbase ) ;
-    dest.fill( '0' ) ;
+    oss.setf( std::ios_base::hex, std::ios_base::basefield ) ;
+    oss.setf( std::ios_base::right, std::ios_base::adjustfield ) ;
+    oss.unsetf( std::ios_base::showbase ) ;
+    oss.fill( '0' ) ;
 
-    dest << '\"' ;
-    std::string const & s = ps.m_value.value() ;
+    oss << '\"' ;
+    std::string const & s = m_value.value() ;
     for ( char const c : s ) {
         switch ( c ) {
         case '\\':
-            dest << "\\\\" ;
+            oss << "\\\\" ;
             break ;
 
         case '\"':
-            dest << "\\\"" ;
+            oss << "\\\"" ;
             break ;
 
         case '\?':
-            dest << "\\\?" ;
+            oss << "\\\?" ;
             break ;
 
         case '\a':
-            dest << "\\a" ;
+            oss << "\\a" ;
             break ;
 
         case '\b':
-            dest << "\\b" ;
+            oss << "\\b" ;
             break ;
 
         case '\f':
-            dest << "\\f" ;
+            oss << "\\f" ;
             break ;
 
         case '\n':
-            dest << "\\n" ;
+            oss << "\\n" ;
             break ;
 
         case '\r':
-            dest << "\\r" ;
+            oss << "\\r" ;
             break ;
 
         case '\t':
-            dest << "\\t" ;
+            oss << "\\t" ;
             break ;
 
         case '\v':
-            dest << "\\v" ;
+            oss << "\\v" ;
             break ;
 
         default:
@@ -101,12 +99,12 @@ operator <<( std::ostream & original_stream, printable_string const & ps )
             char const      printable_min = 0x20 ;
             char const      printable_max = 0x7e ;
             if ( printable_min <= c && c <= printable_max ) {
-                dest << c ;
+                oss << c ;
             }  else {
                 int const       bits_per_hex_digit = 4 ;
                 int const       width = breeze::ceiling_of_quotient(
                                             CHAR_BIT, bits_per_hex_digit ) ;
-                dest << "\\x"
+                oss << "\\x"
                      << std::setw( width )
                      << static_cast< unsigned int >(
                          static_cast< unsigned char >( c ) ) ;
@@ -114,8 +112,15 @@ operator <<( std::ostream & original_stream, printable_string const & ps )
             break ;
         }
     }
-    dest << '\"' ;
-    return original_stream ;
+    oss << '\"' ;
+    return oss.str() ;
 }
+
+std::ostream &
+operator <<( std::ostream & dest, printable_string const & ps )
+{
+    return dest << ps.to_string() ;
+}
+
 
 }

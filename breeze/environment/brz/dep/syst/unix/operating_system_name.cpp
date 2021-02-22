@@ -18,8 +18,8 @@
 
 namespace breeze_ns {
 
-std::ostream &
-operator <<( std::ostream & dest, operating_system_name const & )
+std::string
+operating_system_name::to_string() const
 {
     utsname             un ;
     int const           ret = uname( &un ) ;
@@ -28,10 +28,17 @@ operator <<( std::ostream & dest, operating_system_name const & )
         throw last_api_error( "uname() failed" ) ;
     }
 
-    return dest << un.sysname
-                << ' '  << un.release
-                << ", " << un.version
-                << ", " << un.machine ;
+    return std::string( un.sysname ) +
+                   ' ' + un.release  +
+                  ", " + un.version  +
+                  ", " + un.machine ;
+}
+
+std::ostream &
+operator <<( std::ostream & dest, operating_system_name const & name )
+{
+    return dest << name.to_string() ;
+
 }
 
 }

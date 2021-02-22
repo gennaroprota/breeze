@@ -62,6 +62,8 @@ public:
     explicit            printable_string( char const * ) ;
     explicit            printable_string( std::string const & ) ;
 
+    std::string         to_string() const ;
+
 private:
     friend std::ostream &
                     operator <<( std::ostream & dest,

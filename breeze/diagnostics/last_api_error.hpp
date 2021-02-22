@@ -17,6 +17,7 @@
 #include "breeze/top_level_namespace.hpp"
 #include <iosfwd>
 #include <stdexcept>
+#include <string>
 
 namespace breeze_ns {
 
@@ -41,10 +42,6 @@ namespace breeze_ns {
 //!      - As a convenience facility to get both the error code and the
 //!        error message for the last error.
 //!
-//!     The class is <tt>OutputStreamable</tt>, so you can also use \c
-//!     breeze::to_string(), which gives more information than the
-//!     member \c what(), but may throw.
-//!
 //!     \warning
 //!         This class is experimental.
 //!
@@ -66,6 +63,15 @@ public:
     //!         result of \c GetLastError() under Windows.
     // -----------------------------------------------------------------------
     long long           code() const noexcept ;
+
+    //!     \return
+    //!         A string representation of the object.
+    //!
+    //!     This function gives more information than \c what(), because
+    //!     the resulting string will include the code of the error (\c
+    //!     code()), but, differently from \c what(), may throw.
+    // -----------------------------------------------------------------------
+    std::string         to_string() const ;
 
 private:
     typedef std::runtime_error

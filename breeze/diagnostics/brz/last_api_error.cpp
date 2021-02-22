@@ -16,6 +16,7 @@
 #include BREEZE_DEPENDENT_SOURCE( system_family, last_api_error.cpp )
 
 #include <ostream>
+#include <sstream>
 
 namespace breeze_ns {
 
@@ -25,10 +26,20 @@ last_api_error::code() const noexcept
     return m_code ;
 }
 
+std::string
+last_api_error::to_string() const
+{
+    //      TODO: error checking?
+    //
+    std::ostringstream  oss ;
+    oss << what() << " [code: " << code() << ']';
+    return oss.str() ;
+}
+
 std::ostream &
 operator <<( std::ostream & dest, last_api_error const & last )
 {
-    return dest << last.what() << " [code: " << last.code() << ']' ;
+    return dest << last.to_string() ;
 }
 
 }

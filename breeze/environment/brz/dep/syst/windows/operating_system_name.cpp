@@ -16,10 +16,16 @@
 
 namespace breeze_ns {
 
-std::ostream &
-operator <<( std::ostream & dest, operating_system_name const & )
+std::string
+operating_system_name::to_string() const
 {
-    return dest << get_operating_system_id() ;
+    return breeze::to_string( get_operating_system_id() ) ;
+}
+
+std::ostream &
+operator <<( std::ostream & dest, operating_system_name const & name )
+{
+    return dest << name.to_string() ;
 }
 
 }

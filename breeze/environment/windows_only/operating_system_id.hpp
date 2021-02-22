@@ -15,6 +15,7 @@
 
 #include "breeze/top_level_namespace.hpp"
 #include <iosfwd>
+#include <string>
 
 namespace breeze_ns {
 
@@ -83,6 +84,13 @@ enum class operating_system_id
     windows_10,
     windows_server_2016
 } ;
+
+//!     Converts an \c operating_system_id to a \c std::string. This
+//!     overloads the general \c breeze:to_string() template, since
+//!     \c operating_system_id is an \c enum and can't have member
+//!      functions.
+// ---------------------------------------------------------------------------
+std::string         to_string( operating_system_id id ) ;
 
 //!     Stream inserter for \c operating_system_id.
 // ---------------------------------------------------------------------------

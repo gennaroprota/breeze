@@ -15,6 +15,7 @@
 #include "breeze/environment/windows_only/windows_version_info.hpp"
 
 #include <ostream>
+#include <sstream>
 
 namespace breeze_ns {
 namespace           {
@@ -47,29 +48,41 @@ char const * const  names[] =
 
 }
 
-std::ostream &
-operator <<( std::ostream & dest, operating_system_id id )
+std::string
+to_string( operating_system_id id )
 {
-    dest << breeze::names[ static_cast< int >( id ) ] ;
+    //      TODO: error checking?
+    //
+    std::ostringstream  oss ;
+
+    oss << breeze::names[ static_cast< int >( id ) ] ;
 
     windows_version_info const
                         info ;
     std::string const   edition = info.edition() ;
     if ( ! edition.empty() ) {
-        dest << ' ' << edition ;
+        oss << ' ' << edition ;
     }
 
     int const           sp = windows_version_info::service_pack_level() ;
     if ( sp != 0 ) {
-        dest << " Service Pack " << sp ;
+        oss << " Service Pack " << sp ;
     }
 
     if ( windows_version_info::is_64_bit() ) {
-        dest << ", 64-bit" ;
+        oss << ", 64-bit" ;
     }
 
-    return dest << " (" << info.major_version() << '.' << info.minor_version()
+    oss << " (" << info.major_version() << '.' << info.minor_version()
                 << ", build " << info.build_number() << ')' ;
+
+    return oss.str();
+}
+
+std::ostream &
+operator <<( std::ostream & dest, operating_system_id id )
+{
+    return dest << breeze::to_string( id ) ;
 }
 
 }
