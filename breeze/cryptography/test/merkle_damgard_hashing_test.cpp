@@ -29,7 +29,7 @@ int                 test_merkle_damgard_hashing() ;
 namespace {
 
 long const          million = 1000 * 1000 ;
-std::string const   one_million_a( million, 'a' );
+std::string const   one_million_a( million, 'a' ) ;
 
 template< typename Hasher >
 class test_vectors
@@ -49,7 +49,7 @@ public:
 
     static test_entry const
                         entries[] ;
-};
+} ;
 
 //      MD5 test vectors
 // ---------------------------------------------------------------------------

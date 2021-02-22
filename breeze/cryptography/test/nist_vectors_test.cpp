@@ -259,7 +259,7 @@ public:
         ++ m_count ;
         return result ;
     }
-};
+} ;
 
 void
 report_results( int total, int failed, int pseudo_random_total )

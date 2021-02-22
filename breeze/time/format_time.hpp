@@ -67,7 +67,7 @@ enum class time_kind
 {
     utc,
     local
-};
+} ;
 
 
 //      format_time():

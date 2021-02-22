@@ -21,7 +21,7 @@ namespace breeze_ns {
 namespace           {
 
 assert_handler_type *
-                    g_assert_handler = &default_assert_handler;
+                    g_assert_handler = &default_assert_handler ;
 
 }
 

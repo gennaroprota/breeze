@@ -98,7 +98,7 @@ bit_cast_is_noexcept_if_and_only_if_dest_default_ctor_is()
           { [[ noreturn ]] not_noexcept_dest() { throw 1 ; } } ;
     struct     noexcept_dest { noexcept_dest() noexcept {} } ;
 
-    struct source { };
+    struct source { } ;
 
     static_assert(  noexcept( breeze::bit_cast<     noexcept_dest >( source() )
                  ), "" ) ;

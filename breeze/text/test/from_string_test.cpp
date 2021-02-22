@@ -71,7 +71,7 @@ public:
                         move_only()                     = default ;
                         move_only( move_only && other ) = default ;
 
-    std::string         get() const { return m_s; }
+    std::string         get() const { return m_s ; }
 
     friend std::istream &
                         operator >>( std::istream &, move_only & ) ;

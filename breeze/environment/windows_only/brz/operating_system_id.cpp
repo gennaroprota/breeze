@@ -80,7 +80,7 @@ to_string( operating_system_id id )
             "error in to_string( operating_system_id )" ) ;
     }
 
-    return oss.str();
+    return oss.str() ;
 }
 
 std::ostream &

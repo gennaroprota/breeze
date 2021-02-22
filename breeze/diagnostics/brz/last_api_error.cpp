@@ -31,7 +31,7 @@ std::string
 last_api_error::to_string() const
 {
     std::ostringstream  oss ;
-    oss << what() << " [code: " << code() << ']';
+    oss << what() << " [code: " << code() << ']' ;
 
     if ( oss.fail() ) {
         throw std::runtime_error(

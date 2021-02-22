@@ -175,7 +175,7 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
                     & mask ] ;
             if ( meta::width< value_type >::value > char_bit ) {
                 new_current = static_cast< value_type >(
-                    new_current ^ ( m_current << char_bit ) );
+                    new_current ^ ( m_current << char_bit ) ) ;
             }
             m_current = new_current ;
             ++ first ;
@@ -201,7 +201,7 @@ crc< Traits >::value() const noexcept
         result = crc_private::reflect< width >( result ) ;
     }
 
-    result ^= xor_out;
+    result ^= xor_out ;
     return result ;
 }
 

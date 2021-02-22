@@ -88,7 +88,7 @@ binary_to_base64( InputIter begin, InputIter end,
          bits_per_quantum / bits_per_output_char -
          breeze::ceiling_of_quotient( count * char_bit, bits_per_output_char ) ;
         for ( int i = 0 ; i < pad_count ; ++ i ) {
-            do_output( '=' );
+            do_output( '=' ) ;
         }
     }
 }

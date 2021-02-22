@@ -114,7 +114,7 @@ check_value_from_traits()
     //      Also check with iterators that are not to bytes.
     // -----------------------------------------------------------------------
     std::vector< int > const
-                        int_input( input, input + len );
+                        int_input( input, input + len ) ;
 
     BREEZE_CHECK(
         breeze::crc< CrcTraits >( int_input.cbegin(), int_input.cend() ).value()

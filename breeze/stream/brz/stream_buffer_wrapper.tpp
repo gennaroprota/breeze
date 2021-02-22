@@ -12,7 +12,7 @@ template< typename StreamBufferType >
 StreamBufferType *
 stream_buffer_wrapper< StreamBufferType >::stream_buffer()
 {
-    return &m_buffer;
+    return &m_buffer ;
 }
 
 }

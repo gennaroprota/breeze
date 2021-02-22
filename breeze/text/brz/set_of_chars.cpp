@@ -69,12 +69,12 @@ set_of_chars::set_of_chars( except_for, std::string const & s ) noexcept
     remove( s ) ;
 }
 
-set_of_chars::~set_of_chars() noexcept = default;
+set_of_chars::~set_of_chars() noexcept = default ;
 
-set_of_chars::set_of_chars( set_of_chars const & other ) noexcept = default;
+set_of_chars::set_of_chars( set_of_chars const & other ) noexcept = default ;
 
 set_of_chars &
-set_of_chars::operator =( set_of_chars const & other ) noexcept = default;
+set_of_chars::operator =( set_of_chars const & other ) noexcept = default ;
 
 bool
 set_of_chars::operator ==( set_of_chars const & other ) const noexcept

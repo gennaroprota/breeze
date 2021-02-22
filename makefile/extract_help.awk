@@ -54,7 +54,7 @@ $0 ~ target_pattern {
     if ( help_line_count != 0 ) {
         do_print_line( $1 ":", help_lines[ 1 ] )
 
-        for ( i = 2 ; i <= help_line_count; ++ i ) {
+        for ( i = 2 ; i <= help_line_count ; ++ i ) {
             do_print_line( "", help_lines[ i ] )
         }
 

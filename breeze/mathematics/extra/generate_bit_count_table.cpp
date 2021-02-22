@@ -50,7 +50,7 @@ main()
        << "                    count_table[] = " << std::endl
        << "{"                                    << std::endl ;
 
-    int                 column = 0;
+    int                 column = 0 ;
     for ( int i = 0 ; i < size ; ++ i ) {
         if ( column == 0 ) {
             os << indent ;

@@ -28,7 +28,7 @@ void check()
     using               breeze::big_endian_policy ;
     using               breeze::little_endian_policy ;
 
-    std::uint32_t const value = 0x01020304;
+    std::uint32_t const value = 0x01020304 ;
     std::uint8_t        array[ 4 ] ;
     breeze::endian_store< little_endian_policy >( value, &array[ 0 ] ) ;
     BREEZE_CHECK( array[ 0 ] == 4 ) ;
@@ -90,7 +90,7 @@ check_type_that_fits_in_byte()
 void
 check_input_output_iterators()
 {
-    std::uint64_t const value = 0x01'02'03'04'05'06'07'08;
+    std::uint64_t const value = 0x01'02'03'04'05'06'07'08 ;
     std::stringstream   ss ;
 
     breeze::endian_codec<
