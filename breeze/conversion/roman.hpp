@@ -15,6 +15,7 @@
 
 #include "breeze/top_level_namespace.hpp"
 #include <iosfwd>
+#include <string>
 
 namespace breeze_ns {
 
@@ -32,6 +33,13 @@ public:
     //!         1 <= n && n <= 3999
     // -----------------------------------------------------------------------
     explicit            roman( int n ) ;
+
+    //!     \return
+    //!         A string containing the Roman numeral. This will always
+    //!         be all-uppercase. To get all-lowercase, use the stream
+    //!         inserter, instead.
+    //! ----------------------------------------------------------------------
+    std::string         to_string() const ;
 
 private:
     int                 m_value ;
