@@ -29,7 +29,7 @@ namespace breeze_ns {
 //!
 //!     \return
 //!         \c low if \c value is less than \c low, \c high if \c
-//!         value is greater than \c high, otherwise \c value
+//!         high is less than \c value, otherwise \c value
 //!
 //!     \par Complexity
 //!         One or two comparisons.
@@ -53,7 +53,7 @@ constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
 //!
 //!     \return
 //!         \c low if \c value is less than \c low, \c high if \c
-//!         value is greater than \c high, otherwise \c value.
+//!         high is less than \c value, otherwise \c value.
 //!
 //!     \par Complexity
 //!         One or two comparisons.
