@@ -44,6 +44,12 @@ to_string( OutputStreamable const & object, std::locale const & loc )
     ss.imbue( loc ) ;
     ss << object ;
     if ( ss.fail() ) {
+        //      The output to the ostringstream may, in fact, only fail
+        //      for an out of memory condition. In that case,
+        //      readable_type_name() or the construction of the
+        //      std::runtime_error might fail as well, but we try. In
+        //      the worst case, we will throw a bad_alloc, anyway.
+        // -------------------------------------------------------------------
         throw std::runtime_error( "error in to_string(), trying to convert"
                                   " an instance of " +
                                   readable_type_name< OutputStreamable >() ) ;
