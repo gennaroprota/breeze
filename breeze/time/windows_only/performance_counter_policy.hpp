@@ -36,7 +36,7 @@ public:
     performance_counter_policy &
                     operator =( performance_counter_policy const & ) = delete ;
 
-    typedef std::chrono::duration< double, std::micro >
+    typedef std::chrono::duration< long long, std::nano >
                         duration_type ;
                         performance_counter_policy() ;
 

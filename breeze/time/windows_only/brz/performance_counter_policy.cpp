@@ -55,7 +55,7 @@ performance_counter_policy::duration_type
 performance_counter_policy::resolution() const
 {
     return duration_type(
-         static_cast< long double >( duration_type::period::den ) /
+        duration_type::period::den /
             m_frequency /
             duration_type::period::num
         ) ;
