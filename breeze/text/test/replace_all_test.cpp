@@ -25,14 +25,14 @@ void do_tests()
     {
         std::string         test ;
         breeze::replace_all( test, "ab", "" ) ;
-        BREEZE_CHECK( test == "" ) ;
+        BREEZE_CHECK( test.empty() ) ;
     }
 
     // No replacement should occur in an empty string
     {
         std::string         test ;
         breeze::replace_all( test, "ab", "xy" ) ;
-        BREEZE_CHECK( test == "" ) ;
+        BREEZE_CHECK( test.empty() ) ;
     }
 
     // Test a real replacement (with one occurrence)
