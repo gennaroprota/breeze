@@ -13,10 +13,10 @@
 
 #include "breeze/process/get_current_directory.hpp"
 #include "breeze/diagnostics/last_api_error.hpp"
-#include "breeze/memory/array_pointer.hpp"
 #include <unistd.h>
 #include <cerrno>
 #include <cstddef>
+#include <cstring>
 #include <string>
 
 namespace breeze_ns {
@@ -25,19 +25,25 @@ std::string
 get_current_directory()
 {
     std::ptrdiff_t      sz = 1024 ;
-    array_pointer< char >  ap ;
+    std::string         result ;
 
     char const *        p = nullptr ;
     do {
-        ap.reset( new char[ sz ] ) ;
-        p = getcwd( ap.raw_pointer(), sz ) ;
+        result.resize( sz ) ;
+        //      Note:
+        //          this assumes contiguity of std::string, which is
+        //          guaranteed starting from C++11.
+        // -------------------------------------------------------------------
+        p = getcwd( &result[ 0 ], sz ) ;
         sz *= 2 ;
     } while ( p == nullptr && errno == ERANGE ) ;
 
     if ( p == nullptr ) {
         throw last_api_error( "getcwd() failed" ) ;
     }
-    return std::string( p ) ;
+
+    result.resize( std::strlen( result.c_str() ) ) ;
+    return result ;
 }
 
 }
