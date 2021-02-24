@@ -41,7 +41,8 @@ std::string         to_string( T const & object ) ;
 //!         requires a stream inserter.
 //!
 //!     \par Exceptions
-//!         A \c std::runtime_error if the conversion fails.
+//!         A \c std::runtime_error (or a \c std::bad_alloc) if the
+//!         conversion fails.
 // ---------------------------------------------------------------------------
 template< typename OutputStreamable >
 std::string         to_string( OutputStreamable const &,
