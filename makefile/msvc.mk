@@ -136,6 +136,15 @@ cpp_basic_options += /wd5031 /wd5032
 # ----------------------------------------------------------------------------
 cpp_basic_options += /wd4127
 
+#       This is about shifting an integer by a too large amount;
+#       unfortunately, it is also emitted if the offending code is
+#       guarded by an if statement which makes the "excessive" shift
+#       impossible. We still check for such shifts with GCC and Clang
+#       (which don't have the just mentioned problem), so disabling the
+#       warning with MSVC is OK.
+# ----------------------------------------------------------------------------
+cpp_basic_options += /wd4333
+
 include_switch := /I
 object_file_suffix := .obj
 
