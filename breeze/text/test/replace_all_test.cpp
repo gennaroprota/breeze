@@ -78,20 +78,20 @@ void do_tests()
 void
 empty_from_string_causes_assert()
 {
-    std::string         source( "foo" ) ;
+    std::string         test( "foo" ) ;
     BREEZE_CHECK_THROWS( breeze::assert_failure,
-        breeze::replace_all( source, "", "bar" ) ) ;
+        breeze::replace_all( test, "", "bar" ) ) ;
 }
 
 void
 whole_string_can_be_replaced()
 {
-    std::string         source( "foo" ) ;
-    breeze::replace_all( source, "foo", "abcdefgh" ) ;
-    BREEZE_CHECK( source == "abcdefgh" ) ;
+    std::string         test( "foo" ) ;
+    breeze::replace_all( test, "foo", "abcdefgh" ) ;
+    BREEZE_CHECK( test == "abcdefgh" ) ;
 
-    breeze::replace_all( source, "abcdefgh", "" ) ;
-    BREEZE_CHECK( source.empty() ) ;
+    breeze::replace_all( test, "abcdefgh", "" ) ;
+    BREEZE_CHECK( test.empty() ) ;
 }
 
 }
