@@ -177,7 +177,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>BREEZE_SYSTEM_FAMILY=windows;BREEZE_SYSTEM=windows;BREEZE_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREEZE_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREEZE_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4127 /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <EnablePREfast>true</EnablePREfast>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
@@ -197,7 +197,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>BREEZE_SYSTEM_FAMILY=windows;BREEZE_SYSTEM=windows;BREEZE_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREEZE_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREEZE_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4127 /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <EnablePREfast>true</EnablePREfast>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
@@ -219,7 +219,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>BREEZE_SYSTEM_FAMILY=windows;BREEZE_SYSTEM=windows;BREEZE_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREEZE_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREEZE_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4127 /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <EnablePREfast>true</EnablePREfast>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
@@ -243,7 +243,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>BREEZE_SYSTEM_FAMILY=windows;BREEZE_SYSTEM=windows;BREEZE_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREEZE_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/analyze /Wall /Zc:wchar_t /I"%BREEZE_ROOT%" /std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4127 /wd4191 /wd4365 /wd4514 /wd4548 /wd4571 /wd4623 /wd4625 /wd4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <EnablePREfast>true</EnablePREfast>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>

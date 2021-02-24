@@ -152,10 +152,6 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
     //      template specializations and such, in order to achieve that.
     //      We could use 'if constexpr' when we'll require C++17 or
     //      later, though.
-    //
-    //      (Oddly, MSVC didn't report that 'if constexpr' could be
-    //      used. This saved us from using as_non_constant(), in this
-    //      case.)
     // -----------------------------------------------------------------------
     if ( reflect_in ) {
         while ( first != last ) {

@@ -130,6 +130,12 @@ cpp_basic_options += /wd4623 /wd4625 /wd4626 /wd4774        \
 # ----------------------------------------------------------------------------
 cpp_basic_options += /wd5031 /wd5032
 
+#       Apparently, MSVC 2019 emits more of these than MSVC 2017, so,
+#       rather than littering our code with calls to as_non_constant(),
+#       we just disable the warning.
+# ----------------------------------------------------------------------------
+cpp_basic_options += /wd4127
+
 include_switch := /I
 object_file_suffix := .obj
 
