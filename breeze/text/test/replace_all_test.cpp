@@ -78,7 +78,7 @@ void do_tests()
 void
 empty_from_string_causes_assert()
 {
-    std::string         source = "foo" ;
+    std::string         source( "foo" ) ;
     BREEZE_CHECK_THROWS( breeze::assert_failure,
         breeze::replace_all( source, "", "bar" ) ) ;
 }
