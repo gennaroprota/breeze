@@ -146,6 +146,8 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
 {
     int const           char_bit = 8 ;
     int const           mask     = ( 1 << char_bit ) - 1 ;
+    bool const          can_shift = char_bit <
+                                        meta::width< value_type >::value ;
 
     //      This 'if' could be resolved at compile time. But since the
     //      test is done once per accumulation, we didn't bother with
@@ -157,7 +159,7 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
         while ( first != last ) {
             value_type          new_current =
                 s_cache[ ( m_current ^ *first ) & mask ] ;
-            if ( meta::width< value_type >::value > char_bit ) {
+            if ( can_shift ) {
                 new_current = static_cast< value_type >(
                     new_current ^ ( m_current >> char_bit ) ) ;
             }
@@ -169,7 +171,7 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
             value_type          new_current =
                 s_cache[ ( ( m_current >> ( width - char_bit ) ) ^ *first )
                     & mask ] ;
-            if ( meta::width< value_type >::value > char_bit ) {
+            if ( can_shift ) {
                 new_current = static_cast< value_type >(
                     new_current ^ ( m_current << char_bit ) ) ;
             }
