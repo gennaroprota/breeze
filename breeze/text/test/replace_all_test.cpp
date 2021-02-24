@@ -83,6 +83,17 @@ empty_from_string_causes_assert()
         breeze::replace_all( source, "", "bar" ) ) ;
 }
 
+void
+whole_string_can_be_replaced()
+{
+    std::string         source( "foo" ) ;
+    breeze::replace_all( source, "foo", "abcdefgh" ) ;
+    BREEZE_CHECK( source == "abcdefgh" ) ;
+
+    breeze::replace_all( source, "abcdefgh", "" ) ;
+    BREEZE_CHECK( source.empty() ) ;
+}
+
 }
 
 int
@@ -92,5 +103,6 @@ test_replace_all()
         "replace_all()",
         { do_tests,
 
-          empty_from_string_causes_assert } ) ;
+          empty_from_string_causes_assert,
+          whole_string_can_be_replaced } ) ;
 }
