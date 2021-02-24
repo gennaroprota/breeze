@@ -124,6 +124,11 @@ cpp_basic_options += /wd4191 /wd4365 /wd4514 /wd4571    \
 cpp_basic_options += /wd4623 /wd4625 /wd4626 /wd4774        \
                      /wd5026 /wd5027 /wd5045 /permissive-
 
+#       These were encountered with MSVC 2019, when including
+#       <Windows.h>, and are related to messing up with #pragma pop/
+#       #pragma push. But why don't they occur when using the IDE?
+# ----------------------------------------------------------------------------
+cpp_basic_options += /wd5031 /wd5032
 
 include_switch := /I
 object_file_suffix := .obj
