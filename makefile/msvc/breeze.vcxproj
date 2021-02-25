@@ -299,7 +299,6 @@
     <None Include="..\..\breeze\time\brz\timer.tpp" />
     <None Include="..\..\breeze\type_identification\brz\readable_type_name.tpp" />
     <None Include="..\..\breeze\vocabulary\brz\maybe.tpp" />
-    <None Include="..\..\breeze\workaround\brz\as_non_constant.tpp" />
     <None Include="breeze.ruleset" />
   </ItemGroup>
   <ItemGroup>
@@ -422,7 +421,6 @@
     <ClInclude Include="..\..\breeze\uuid\uuid.hpp" />
     <ClInclude Include="..\..\breeze\version.hpp" />
     <ClInclude Include="..\..\breeze\vocabulary\maybe.hpp" />
-    <ClInclude Include="..\..\breeze\workaround\as_non_constant.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\3_CLAUSE_BSD_LICENSE.txt" />

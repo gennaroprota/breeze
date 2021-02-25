@@ -7,7 +7,6 @@
 // ___________________________________________________________________________
 
 #include "breeze/meta/width.hpp"
-#include "breeze/workaround/as_non_constant.hpp"
 
 namespace breeze_ns {
 namespace crc_private {
@@ -195,7 +194,7 @@ constexpr typename crc< Traits >::value_type
 crc< Traits >::value() const noexcept
 {
     value_type          result = m_current ;
-    if ( as_non_constant( reflect_in != reflect_out ) ) {
+    if ( reflect_in != reflect_out ) {
         result = crc_private::reflect< width >( result ) ;
     }
 

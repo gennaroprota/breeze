@@ -15,7 +15,6 @@
 #include "breeze/conversion/bit_cast.hpp"
 #include "breeze/diagnostics/last_api_error.hpp"
 #include "breeze/text/to_string.hpp"
-#include "breeze/workaround/as_non_constant.hpp"
 
 #include <Windows.h>
 #include <VersionHelpers.h> // must come after <Windows.h> to compile
@@ -387,7 +386,7 @@ windows_version_info::is_64_bit()
     //      and the system is 64-bit if and only if the process runs
     //      under WOW64.
     // -----------------------------------------------------------------------
-    return ( breeze::as_non_constant( sizeof ( void * ) * CHAR_BIT ) == 64 )
+    return sizeof ( void * ) * CHAR_BIT == 64
         || is_wow64_process() ;
 }
 

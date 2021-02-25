@@ -215,7 +215,6 @@
     <None Include="..\..\breeze\text\brz\trim_tail_if.tpp" />
     <None Include="..\..\breeze\text\brz\trim_head_if.tpp" />
     <None Include="..\..\breeze\text\brz\trim_if.tpp" />
-    <None Include="..\..\breeze\workaround\brz\as_non_constant.tpp" />
     <None Include="..\..\breeze\stream\brz\stream_equivalent.tpp" />
     <None Include="..\..\breeze\conversion\brz\bit_cast.tpp" />
     <None Include="..\..\breeze\mathematics\brz\ceiling_of_quotient.tpp" />
@@ -519,9 +518,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\text\tail.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breeze\workaround\as_non_constant.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\stream\stream_equivalent.hpp">
