@@ -146,13 +146,23 @@ breeze_library := $(bin_dir)/$(library_name_prefix)breeze$(library_name_suffix)
 $(target): $(object_files) $(breeze_library)
 	$(link_to_exec)
 
-.PHONY: all test test-run
-all:        test test-run
+.PHONY: all test test-run check_include_guards
+all:        test test-run check_include_guards
 
 test:       $(target)
 
 test-run:   test
 	$(bin_dir)/breeze_test
+
+ifeq ($(system),windows)
+    #       See the comments in check_include_guards.sh for the reason
+    #       why we don't run the script when $(system) is windows.
+    # ------------------------------------------------------------------------
+check_include_guards:
+else
+check_include_guards:
+	@$(root)/tool/check_include_guards/check_include_guards.sh
+endif
 
 .PHONY: clean
 clean:
