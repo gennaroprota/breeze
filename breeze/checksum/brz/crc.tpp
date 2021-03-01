@@ -98,7 +98,7 @@ constexpr crc_cache< CrcTraits >::crc_cache() noexcept
         }
 
         for ( int k = 0 ; k < 8 ; ++ k ) {
-            crc = static_cast< value_type >( mask & ( crc & top_bit
+            crc = static_cast< value_type >( mask & ( ( crc & top_bit ) != 0
                 ? ( crc << 1 ) ^ CrcTraits::poly
                 :   crc << 1
                 ) ) ;
