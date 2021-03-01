@@ -38,7 +38,6 @@ performance_counter_policy::start()
         throw last_api_error( "QueryPerformanceCounter() failed" ) ;
     }
     m_start = li.QuadPart ;
-
 }
 
 performance_counter_policy::duration_type
