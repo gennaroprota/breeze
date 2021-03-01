@@ -16,6 +16,21 @@
 #include <Windows.h>
 
 namespace breeze_ns {
+namespace           {
+
+long long
+query_count()
+{
+    LARGE_INTEGER       count ;
+    if ( QueryPerformanceCounter( &count ) == 0 ) {
+        throw last_api_error( "QueryPerformanceCounter() failed" ) ;
+    }
+
+    return count.QuadPart ;
+}
+
+}
+
 
 performance_counter_policy::performance_counter_policy()
 {
@@ -33,21 +48,14 @@ performance_counter_policy::performance_counter_policy()
 void
 performance_counter_policy::start()
 {
-    LARGE_INTEGER       li ;
-    if ( QueryPerformanceCounter( &li ) == 0 ) {
-        throw last_api_error( "QueryPerformanceCounter() failed" ) ;
-    }
-    m_start = li.QuadPart ;
+    m_start = query_count() ;
 }
 
 performance_counter_policy::duration_type
 performance_counter_policy::elapsed() const
 {
-    LARGE_INTEGER       li ;
-    if ( QueryPerformanceCounter( &li ) == 0 ) {
-        throw last_api_error( "QueryPerformanceCounter() failed" ) ;
-    }
-    return ( li.QuadPart - m_start ) * resolution() ;
+    long long const     now = query_count() ;
+    return ( now - m_start ) * resolution() ;
 }
 
 performance_counter_policy::duration_type
