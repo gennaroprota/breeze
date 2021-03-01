@@ -258,7 +258,7 @@ endian_codec< EndianPolicy, T, Byte >::required_count ;
 //
 //!     \brief Convenience wrapper around \c endian_codec::encode()
 //!
-//!     \c endian_store< EndianPolicy( value, it ) > is equivalent to:
+//!     \c endian_store< EndianPolicy >( value, it ) is equivalent to:
 //!
 //!     \code
 //!         typedef typename std::iterator_traits< ForwardIter >::value_type
