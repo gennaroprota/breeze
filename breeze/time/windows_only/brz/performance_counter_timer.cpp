@@ -19,7 +19,7 @@ namespace breeze_ns {
 namespace           {
 
 long long
-query_count()
+get_count()
 {
     LARGE_INTEGER       count ;
     if ( QueryPerformanceCounter( &count ) == 0 ) {
@@ -27,6 +27,24 @@ query_count()
     }
 
     return count.QuadPart ;
+}
+
+typedef breeze::performance_counter_policy::duration_type
+                    duration_type ;
+
+duration_type
+get_resolution()
+{
+    LARGE_INTEGER       f ;
+    if ( QueryPerformanceFrequency( &f ) == 0 ) {
+        throw last_api_error( "QueryPerformanceFrequency() failed" ) ;
+    }
+
+    return duration_type(
+        duration_type::period::den /
+        f.QuadPart /
+        duration_type::period::num
+    ) ;
 }
 
 }
@@ -38,34 +56,27 @@ performance_counter_policy::performance_counter_policy()
     //      the timer template, if needed. Note that this causes the
     //      member m_start to be left uninitialized.
     // -----------------------------------------------------------------------
-    LARGE_INTEGER       f ;
-    if ( QueryPerformanceFrequency( &f ) == 0 ) {
-        throw last_api_error( "QueryPerformanceFrequency() failed" ) ;
-    }
-    m_frequency = f.QuadPart ;
 }
 
 void
 performance_counter_policy::start()
 {
-    m_start = query_count() ;
+    m_start = get_count() ;
 }
 
 performance_counter_policy::duration_type
 performance_counter_policy::elapsed() const
 {
-    long long const     now = query_count() ;
+    long long const     now = get_count() ;
     return ( now - m_start ) * resolution() ;
 }
 
 performance_counter_policy::duration_type
 performance_counter_policy::resolution() const
 {
-    return duration_type(
-        duration_type::period::den /
-            m_frequency /
-            duration_type::period::num
-        ) ;
+    static duration_type const
+                        res = get_resolution() ;
+    return res ;
 }
 
 }

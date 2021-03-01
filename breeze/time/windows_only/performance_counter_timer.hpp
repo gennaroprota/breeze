@@ -46,7 +46,6 @@ public:
 
 private:
     long long           m_start ;
-    long long           m_frequency ;
 } ;
 
 typedef timer< performance_counter_policy >
