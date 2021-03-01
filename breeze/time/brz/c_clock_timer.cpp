@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/time/c_clock_policy.hpp"
+#include "breeze/time/c_clock_timer.hpp"
 #include "breeze/diagnostics/assert.hpp"
 #include <stdexcept>
 

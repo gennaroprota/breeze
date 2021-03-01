@@ -258,11 +258,11 @@
     <ClCompile Include="..\..\breeze\text\brz\trim.cpp" />
     <ClCompile Include="..\..\breeze\text\brz\trim_head.cpp" />
     <ClCompile Include="..\..\breeze\text\brz\trim_tail.cpp" />
-    <ClCompile Include="..\..\breeze\time\brz\c_clock_policy.cpp" />
+    <ClCompile Include="..\..\breeze\time\brz\c_clock_timer.cpp" />
     <ClCompile Include="..\..\breeze\time\brz\format_time.cpp" />
     <ClCompile Include="..\..\breeze\time\brz\steady_clock_timer.cpp" />
     <ClCompile Include="..\..\breeze\time\private\brz\thread_safe_reentrant_time_functions.cpp" />
-    <ClCompile Include="..\..\breeze\time\windows_only\brz\performance_counter_policy.cpp" />
+    <ClCompile Include="..\..\breeze\time\windows_only\brz\performance_counter_timer.cpp" />
     <ClCompile Include="..\..\breeze\uuid\brz\uuid.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -409,13 +409,12 @@
     <ClInclude Include="..\..\breeze\text\trim_if.hpp" />
     <ClInclude Include="..\..\breeze\text\trim_tail.hpp" />
     <ClInclude Include="..\..\breeze\text\trim_tail_if.hpp" />
-    <ClInclude Include="..\..\breeze\time\c_clock_policy.hpp" />
     <ClInclude Include="..\..\breeze\time\c_clock_timer.hpp" />
     <ClInclude Include="..\..\breeze\time\format_time.hpp" />
     <ClInclude Include="..\..\breeze\time\private\thread_safe_reentrant_time_functions.hpp" />
     <ClInclude Include="..\..\breeze\time\steady_clock_timer.hpp" />
     <ClInclude Include="..\..\breeze\time\timer.hpp" />
-    <ClInclude Include="..\..\breeze\time\windows_only\performance_counter_policy.hpp" />
+    <ClInclude Include="..\..\breeze\time\windows_only\performance_counter_timer.hpp" />
     <ClInclude Include="..\..\breeze\top_level_namespace.hpp" />
     <ClInclude Include="..\..\breeze\type_identification\readable_type_name.hpp" />
     <ClInclude Include="..\..\breeze\uuid\uuid.hpp" />

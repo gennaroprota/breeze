@@ -7,14 +7,14 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A timer policy using Windows' \c
-//!            QueryPerformanceCounter().
+//!     \brief A timer using Windows' \c QueryPerformanceCounter().
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_xQJo3uSTt7ypxnH7y1CyRR3fJM5i3dsb
 #define BREEZE_GUARD_xQJo3uSTt7ypxnH7y1CyRR3fJM5i3dsb
 
 #include "breeze/top_level_namespace.hpp"
+#include "breeze/time/timer.hpp"
 #include <chrono>
 
 namespace breeze_ns {
@@ -48,6 +48,9 @@ private:
     long long           m_start ;
     long long           m_frequency ;
 } ;
+
+typedef timer< performance_counter_policy >
+                    performance_counter_timer ;
 
 }
 

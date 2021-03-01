@@ -97,7 +97,7 @@ source_files := luhn.cpp                                    \
                 trim_head.cpp                               \
                 trim_tail.cpp                               \
                                                             \
-                c_clock_policy.cpp                          \
+                c_clock_timer.cpp                           \
                 format_time.cpp                             \
                 steady_clock_timer.cpp                      \
                 thread_safe_reentrant_time_functions.cpp    \
