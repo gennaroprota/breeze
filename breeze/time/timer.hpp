@@ -37,17 +37,22 @@ namespace breeze_ns {
 //!            which must return the amount of time elapsed from the
 //!            last call to \c %start()
 //!
+//!     and the typedef:
+//!
+//!      - \c duration_type,
+//!            which is the return type of \c %elapsed() and
+//!            \c %resolution(); it must be a \c std::chrono::duration
+//!
+//!     Optionally, it may provide the member function:
+//!
 //!      - \c %resolution(),
 //!            which must return the resolution of the \c Device or an
 //!            estimate of it; note that the resolution is the smallest
 //!            amount of time that the \c Device can measure and
 //!            doesn't, in itself, tell anything about the \e accuracy
 //!
-//!     and the typedef:
-//!
-//!      - \c duration_type,
-//!            which is the return type of \c %elapsed() and
-//!            \c %resolution(); it must be a \c std::chrono::duration
+//!     This function is only used in \c timer::resolution(), so if you
+//!     don't need the latter, you can omit it.
 // ---------------------------------------------------------------------------
 template< class Device >
 class timer
