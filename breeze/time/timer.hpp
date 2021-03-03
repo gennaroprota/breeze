@@ -26,7 +26,7 @@ namespace breeze_ns {
 //!     amount of time elapsed from its start (i.e. a "stopwatch").
 //!
 //!     \c Device is a policy modeling the "clock device" concept: this
-//!     can be a hardware device, a network time provider, a GPS system
+//!     can be a hardware device, a network time provider, a GPS clock
 //!     or pretty much anything else. It must be <tt>
 //!     DefaultConstructible</tt> and provide the member functions:
 //!
