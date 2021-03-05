@@ -53,6 +53,7 @@
 \.html$                 <!--     -->      no         HTML
 (^GNUmakefile|\.mk)$    no       no       #          Make
 \.md$                   <!--     -->      no         Markdown
+\.py$                   no       no       #          Python
 \.(sh|shc)$             no       no       #          Shell
 \.vim$                  no       no       "          Vim
 \.xhtml$                <!--     -->      no         XHTML

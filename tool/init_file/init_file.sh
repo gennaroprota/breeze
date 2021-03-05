@@ -36,6 +36,9 @@ make_opening_line()
     Emacs-Lisp)
         printf '%s\n\n' ";;; $base_name --- TODO: description"
         ;;
+    Python)
+        printf '%s\n' '#! /usr/bin/env python3'
+        ;;
     Shell)
         if [ "$name_extension" != 'shc' ]
         then

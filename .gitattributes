@@ -27,6 +27,7 @@ GNUmakefile text
 *.html      text
 *.md        text
 *.mk        text
+*.py        text
 *.sh        text eol=lf
 *.shc       text eol=lf
 *.vim       text
