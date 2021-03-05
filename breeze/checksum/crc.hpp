@@ -219,8 +219,7 @@ struct crc16
 //      ======
 //
 //!\brief
-//!     Traits for CRC-32, as used by Ethernet, Serial ATA, PKZIP, Gzip,
-//!     Bzip2, PNG.
+//!     Traits for CRC-32/ISO-HDLC. This is the CRC used by PKZIP.
 //!
 //!     \see
 //!         crc.
