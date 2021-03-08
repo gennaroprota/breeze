@@ -13,10 +13,10 @@
 # ----------------------------------------------------------------------------
 
 sidebar:
-  Basic Tutorial:
-  - Getting Started: readme.md
+  Getting started:
+    - Basic info: readme.md
 autodocSettings:
-  Public API:
+  Reference:
     language: cpp
     INPUT: breeze breeze/main_page.dox breeze/namespaces.dox
     EXCLUDE: ''
