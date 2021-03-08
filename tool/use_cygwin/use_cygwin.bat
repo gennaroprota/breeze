@@ -10,7 +10,7 @@ rem
 rem     A quick tool to invoke before compiling with Cygwin, on Windows.
 rem
 rem     The only important thing that this does is putting /usr/bin at
-rem     the *end* of %PATH%, so that Cygwin's `link' isn't found before
+rem     the *end* of %PATH%, so that Cygwin's `link` isn't found before
 rem     the homonym Microsoft linker.
 rem
 rem     Usage: see the top-level read_me.
