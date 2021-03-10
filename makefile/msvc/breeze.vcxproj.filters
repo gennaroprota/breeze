@@ -490,9 +490,6 @@
     <ClInclude Include="..\..\breeze\process\set_current_directory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\meta\exact_width_integer.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\breeze\mathematics\representation_in_base.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -578,6 +575,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\time\windows_only\performance_counter_timer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breeze\meta\integer_by_width.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

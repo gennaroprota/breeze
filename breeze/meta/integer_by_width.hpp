@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Templatized exact-width integer types.
+//!     \brief Integer types of user-specified width.
 //!
 //!     As for their C99 counterparts, there's no guarantee that the
 //!     types are provided for any given value of \c N.
@@ -22,7 +22,7 @@
 
 namespace breeze_ns {
 //!\cond implementation
-namespace exact_width_integer_private {
+namespace integer_by_width_private {
 
 //      This could be elegantly implemented via type lists or maps, but
 //      we chose to keep metaprogramming (and dependencies) to a
@@ -60,8 +60,8 @@ public:
 }
 //!\endcond
 
-//      exact_width_integer:
-//      ====================
+//      integer_by_width:
+//      =================
 //
 //!     \brief
 //!         Provides, if available, an integer type with width \c width.
@@ -77,23 +77,23 @@ public:
 //!         \c T shall be either \c signed \c int or \c unsigned \c int.
 // ---------------------------------------------------------------------------
 template< int width, typename T /* gps temp = signed */ >
-class exact_width_integer
+class integer_by_width
 {
 public:
-    typedef typename exact_width_integer_private
+    typedef typename integer_by_width_private
                          ::selector< width, T, 0 >::type type ;
 } ;
 
-//      exact_width_unsigned_integer:
-//      =============================
+//      unsigned_integer_by_width:
+//      ==========================
 //
 //!     \brief
-//!         A synonym of <code>exact_width_integer< width, unsigned >
+//!         A synonym of <code>integer_by_width< width, unsigned >
 //!         </code>.
 // ---------------------------------------------------------------------------
 template< int width >
-class exact_width_unsigned_integer
-    :   public exact_width_integer< width, unsigned >
+class unsigned_integer_by_width
+    :   public integer_by_width< width, unsigned >
 {
 } ;
 

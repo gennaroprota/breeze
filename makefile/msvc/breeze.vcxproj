@@ -349,7 +349,7 @@
     <ClInclude Include="..\..\breeze\memory\array_pointer.hpp" />
     <ClInclude Include="..\..\breeze\memory\get_amount_of_physical_memory.hpp" />
     <ClInclude Include="..\..\breeze\meta\constant.hpp" />
-    <ClInclude Include="..\..\breeze\meta\exact_width_integer.hpp" />
+    <ClInclude Include="..\..\breeze\meta\integer_by_width.hpp" />
     <ClInclude Include="..\..\breeze\meta\has_sign.hpp" />
     <ClInclude Include="..\..\breeze\meta\is_2s_complement.hpp" />
     <ClInclude Include="..\..\breeze\meta\padding.hpp" />

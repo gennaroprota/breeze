@@ -17,7 +17,7 @@
 #include "breeze/top_level_namespace.hpp"
 #include "breeze/cryptography/hashing_count.hpp"
 #include "breeze/endianness/endian_codec.hpp"
-#include "breeze/meta/exact_width_integer.hpp"
+#include "breeze/meta/integer_by_width.hpp"
 
 #include <cstddef>
 
@@ -48,9 +48,9 @@ class merkle_damgard_engine
 {
 public:
 
-    typedef typename exact_width_unsigned_integer< bits_per_byte >::type
+    typedef typename unsigned_integer_by_width< bits_per_byte >::type
                         byte_type ;
-    typedef typename exact_width_unsigned_integer< bits_per_word >::type
+    typedef typename unsigned_integer_by_width< bits_per_word >::type
                         word_type ;
 
     enum
