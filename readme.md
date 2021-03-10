@@ -53,9 +53,11 @@ a single usage of `#if`, `#ifdef` or `#ifndef` (the only conditional compilation
 is for include guards), and the goal is that it can be compiled with any
 conforming C++14 compiler.
 
-The provided build system, however, requires a Unix toolkit and GNU Make. On
-Microsoft Windows, you'll need Cygwin. (If I had to redo it today, most things
-would probably use Python.)
+The provided build system, however, requires a Unix toolkit, with Python 3 and
+GNU Make. On Microsoft Windows, you'll need Cygwin. (Historically, I used `awk`
+and other Unix tools for things that I'd now do in Python; long term, I'll
+completely migrate to Python, but, for the moment, we need those tools, as
+well.)
 
 Note that only Cygwin 64-bit is supported.
 
