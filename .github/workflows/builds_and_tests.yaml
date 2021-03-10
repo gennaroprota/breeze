@@ -113,6 +113,7 @@ jobs:
           export compiler=gcc
           export ASSUME_ALWAYS_YES=YES
           pkg install lang/gcc
+          pkg install python3
           pkg install gmake
           #       We got errors with the default FreeBSD shell, when
           #       launching commands from Make, along the lines of "-e:
