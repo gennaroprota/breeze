@@ -154,15 +154,8 @@ test:       $(target)
 test-run:   test
 	$(bin_dir)/breeze_test
 
-ifeq ($(system),windows)
-    #       See the comments in check_include_guards.sh for the reason
-    #       why we don't run the script when $(system) is windows.
-    # ------------------------------------------------------------------------
 check_include_guards:
-else
-check_include_guards:
-	@$(root)/tool/check_include_guards/check_include_guards.sh
-endif
+	@$(root)/tool/check_include_guards/check_include_guards.py
 
 .PHONY: clean
 clean:
