@@ -22,10 +22,10 @@ import re
 import sys
 
 argc = len( sys.argv )
-if ( argc > 2 ):
-    sys.exit( "Usage: check_include_guards.py [root_dir_path]" )
+if ( argc != 2 ):
+    sys.exit( "Usage: check_include_guards.py <root_dir_path>" )
 
-root = "../.." if argc == 1 else sys.argv[ 1 ]
+root = sys.argv[ 1 ]
 if ( not os.path.isdir( root ) ):
     sys.exit( "The specified directory was not found" )
 
