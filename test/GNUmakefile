@@ -155,7 +155,7 @@ test-run:   test
 	$(bin_dir)/breeze_test
 
 check_include_guards:
-	@$(root)/tool/check_include_guards/check_include_guards.py $(root)
+	$(root)/tool/check_include_guards/check_include_guards.py $(root)
 
 .PHONY: clean
 clean:
