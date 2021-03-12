@@ -7,10 +7,12 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Integer types of user-specified width.
+//!     \brief Typedef's for built-in integer types of user-specified
+//!            width.
 //!
-//!     As for their C99 counterparts, there's no guarantee that the
-//!     types are provided for any given value of \c N.
+//!     As for the various <code>std::[u]intN_t</code> from
+//!     <code><cstdint></code>, there's no guarantee that the typedef's
+//!     are provided for any given width.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_HdHZPdx1OyaeosOjcrni6ByNfUBalEG4
@@ -64,14 +66,17 @@ public:
 //      =================
 //
 //!     \brief
-//!         Provides, if available, an integer type with width \c width.
+//!         Provides, if possible, a typedef to a built-in integer type
+//!         with width \c width.
 //!
-//!     Differently from \c intN_t in C99, it can have padding and,
-//!     until C++20, can use a representation different from two's
-//!     complement.
+//!     If a (signed or unsigned, according to \c T) type with width \c
+//!     width is available, a public member typedef \c type is provided
+//!     that names that type; otherwise, the program is ill-formed.
 //!
-//!     If a type with width \c width is not available, the program is
-//!     ill-formed.
+//!     Differently from <code>std::[u]intN_t</code>, the named type may
+//!     have padding; until C++20, it may also use a representation
+//!     different from two's complement (if it allows negative values at
+//!     all).
 //!
 //!     \par Type requirements
 //!         \c T shall be either \c signed \c int or \c unsigned \c int.
@@ -88,7 +93,7 @@ public:
 //      ==========================
 //
 //!     \brief
-//!         A synonym of <code>integer_by_width< width, unsigned >
+//!         Equivalent to <code>integer_by_width< width, unsigned >
 //!         </code>.
 // ---------------------------------------------------------------------------
 template< int width >
