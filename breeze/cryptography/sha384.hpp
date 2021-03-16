@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief  SHA-384 policy and typedef's for SHA-384 policy and
+//!     \brief  SHA-384 policy and typedefs for SHA-384 policy and
 //!             digest.
 // ---------------------------------------------------------------------------
 

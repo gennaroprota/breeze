@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief  SHA-224 policy and typedef's for SHA-224 hasher and
+//!     \brief  SHA-224 policy and typedefs for SHA-224 hasher and
 //!             digest.
 // ---------------------------------------------------------------------------
 

@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief MD5 policy and typedef's for MD5 hasher and digest.
+//!     \brief MD5 policy and typedefs for MD5 hasher and digest.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_vePXQ5mxXBYih5DCVW1zUWqL52bOdtiX

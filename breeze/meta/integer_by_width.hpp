@@ -7,11 +7,11 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Typedef's for built-in integer types of user-specified
+//!     \brief Typedefs for built-in integer types of user-specified
 //!            width.
 //!
 //!     As for the various <code>std::[u]intN_t</code> from
-//!     <code><cstdint></code>, there's no guarantee that the typedef's
+//!     <code><cstdint></code>, there's no guarantee that the typedefs
 //!     are provided for any given width.
 // ---------------------------------------------------------------------------
 
