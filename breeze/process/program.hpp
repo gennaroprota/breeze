@@ -30,18 +30,6 @@ namespace breeze_ns {
 class program
 {
 public:
-    //!     Deleted copy constructor (this class is a singleton).
-    // -----------------------------------------------------------------------
-                        program(    program const & ) = delete ;
-
-    //!     Deleted copy assignment operator (this class is a singleton).
-    // -----------------------------------------------------------------------
-    program &           operator =( program const & ) = delete ;
-
-private:
-                        program() noexcept ;
-
-public:
     //!     The gravity of an error.
     //
     //      NOTE: keep the enumeration in sync with the exit_codes[]
@@ -55,6 +43,14 @@ public:
         fatal,
         internal
     } ;
+
+    //!     Deleted copy constructor (this class is a singleton).
+    // -----------------------------------------------------------------------
+                        program(    program const & ) = delete ;
+
+    //!     Deleted copy assignment operator (this class is a singleton).
+    // -----------------------------------------------------------------------
+    program &           operator =( program const & ) = delete ;
 
     //!     \return
     //!         A reference to the one and only instance of the class.
@@ -177,6 +173,7 @@ public:
     void                set_terminate_handler( void (*user_function)( int ) ) ;
 
 private:
+                        program() noexcept ;
     void                do_set_name( std::string const & name ) ;
 
     gravity             m_max_gravity ;

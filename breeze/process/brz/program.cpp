@@ -56,13 +56,6 @@ has_program_name( int argc, char const * const * argv )
 
 }
 
-
-program::program() noexcept
-    :   m_max_gravity( comment ),
-        m_terminate_handler( nullptr )
-{
-}
-
 program &
 program::instance() noexcept
 {
@@ -161,6 +154,12 @@ void
 program::set_terminate_handler( void (*handler)( int ) )
 {
     m_terminate_handler = handler ;
+}
+
+program::program() noexcept
+    :   m_max_gravity( comment ),
+        m_terminate_handler( nullptr )
+{
 }
 
 void
