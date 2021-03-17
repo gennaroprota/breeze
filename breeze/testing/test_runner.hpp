@@ -66,13 +66,13 @@ test_runner::run( char const * group_description,
             ( begin->function() )() ;
             m_reporter->on_test_passed( test_number ) ;
         } catch ( test_failure const & ex ) {
-            exit_code = breeze::exit_failure ;
+            exit_code = breeze::exit_error ;
             m_reporter->on_test_failed( test_number, ex ) ;
         } catch ( std::exception const & ex ) {
-            exit_code = breeze::exit_failure ;
+            exit_code = breeze::exit_error ;
             m_reporter->on_unexpected_exception( test_number, ex ) ;
         } catch ( ... ) {
-            exit_code = breeze::exit_failure ;
+            exit_code = breeze::exit_error ;
             m_reporter->on_unexpected_exception( test_number ) ;
         }
     }

@@ -16,9 +16,9 @@
 #include "breeze/diagnostics/last_api_error.hpp"
 #include "breeze/environment/operating_system_name.hpp"
 #include "breeze/memory/get_amount_of_physical_memory.hpp"
+#include "breeze/process/exit_code.hpp"
 #include "breeze/testing/assert_failure.hpp"
 #include "breeze/time/format_time.hpp"
-#include <cstdlib>
 #include <iostream>
 
 namespace {
@@ -118,17 +118,17 @@ main()
     } ;
 
     std::time_t const   start_time = std::time( nullptr ) ;
-    int                 result = EXIT_SUCCESS ;
+    int                 result = breeze::exit_success ;
     for ( test_function_type * f : tests )
     {
         int const           exit_code = f() ;
-        if ( exit_code != EXIT_SUCCESS ) {
-            result = EXIT_FAILURE ;
+        if ( exit_code != breeze::exit_success ) {
+            result = breeze::exit_error ;
         }
     }
     std::time_t const   end_time = std::time( nullptr ) ;
 
-    std::cout << ( result == EXIT_SUCCESS
+    std::cout << ( result == breeze::exit_success
         ? "All tests passed."
         : "At least one test FAILED." ) << std::endl ;
 

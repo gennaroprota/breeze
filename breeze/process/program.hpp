@@ -67,9 +67,12 @@ public:
     //!         error reported by client code to the \c program class
     //!         through the \c declare_error() member function.
     //!
-    //!     If the system supports it, the various gravities will be
-    //!     distinguished in the exit code; if not, all you get is
-    //!     \c EXIT_SUCCESS or \c EXIT_FAILURE.
+    //!     If possible, the various gravities will be distinguished in
+    //!     the exit code, but e.g. \c warning will be undistinguishable
+    //!     from a success with no warnings on Windows and Unix (because
+    //!     treating a distinct value as success would be too difficult
+    //!     in a shell script); in the worst case, all you get is \c
+    //!     EXIT_SUCCESS or \c EXIT_FAILURE.
     //!
     //!     <strong>Important</strong>: this function also attempts to
     //!     flush \c std::cout, and calls \c declare_error( fatal ) if

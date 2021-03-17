@@ -14,14 +14,12 @@
 #include "breeze/process/exit_code.hpp"
 #include "breeze/porting/dependent_source.hpp"
 #include BREEZE_DEPENDENT_SOURCE( system_family, exit_code.cpp )
-#include <cstdlib>
 
 namespace breeze_ns {
 
-//      These two can be specified portably, so we define them outside
-//      of the system-dependent exit_code.cpp's.
+//      This can be specified portably, so we define it outside of the
+//      system-dependent exit_code.cpp's.
 // ---------------------------------------------------------------------------
 extern int const    exit_success = 0 ;
-extern int const    exit_failure = EXIT_FAILURE ;
 
 }

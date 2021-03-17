@@ -18,7 +18,7 @@ namespace breeze_ns {
 //          there's no reason to do otherwise and that might simplify
 //          cross-platform scripts.
 // ---------------------------------------------------------------------------
-extern int const    exit_warning  = 10 ;
+extern int const    exit_warning  = 0 ;
 extern int const    exit_error    = 20 ;
 extern int const    exit_fatal    = 30 ;
 extern int const    exit_internal = 50 ;

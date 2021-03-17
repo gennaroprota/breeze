@@ -18,7 +18,6 @@
 namespace breeze_ns {
 
 extern int const    exit_success ;
-extern int const    exit_failure ;
 
 //      Maintenance note:
 //          keep in sync with *all* the .cpp files of the various code
