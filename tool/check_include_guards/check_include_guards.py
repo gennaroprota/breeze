@@ -41,7 +41,7 @@ try:
             if name.endswith( ".hpp" ):
                 full_name = os.path.join( dir_path, name )
                 guard_counts[ full_name ] = 0
-                for line in open( full_name ).readlines():
+                for line in open( full_name ):
                     m = regex.match( line )
                     if m:
                         guard_counts[ full_name ] += 1
