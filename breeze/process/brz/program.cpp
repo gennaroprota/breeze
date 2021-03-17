@@ -151,7 +151,7 @@ program::terminate()
 }
 
 void
-program::set_terminate_handler( void (*handler)( int ) )
+program::set_terminate_handler( void ( *handler )( int ) )
 {
     m_terminate_handler = handler ;
 }
