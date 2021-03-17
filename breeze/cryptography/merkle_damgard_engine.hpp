@@ -48,9 +48,9 @@ class merkle_damgard_engine
 {
 public:
 
-    typedef typename unsigned_integer_by_width< bits_per_byte >::type
+    typedef typename meta::unsigned_integer_by_width< bits_per_byte >::type
                         byte_type ;
-    typedef typename unsigned_integer_by_width< bits_per_word >::type
+    typedef typename meta::unsigned_integer_by_width< bits_per_word >::type
                         word_type ;
 
     enum

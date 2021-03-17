@@ -23,6 +23,8 @@
 #include <limits>
 
 namespace breeze_ns {
+namespace meta {
+
 //!\cond implementation
 namespace integer_by_width_private {
 
@@ -102,6 +104,7 @@ class unsigned_integer_by_width
 {
 } ;
 
+}
 }
 
 #endif
