@@ -15,7 +15,7 @@ namespace breeze_ns {
 
 //      Note (if you add/remove/change values):
 //
-//       - on POSIX conforming systems "only the least significant 8
+//       - on POSIX conforming systems, "only the least significant 8
 //         bits (that is, status & 0377) shall be available to a waiting
 //         parent process", so stay below 256
 //
