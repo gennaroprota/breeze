@@ -11,9 +11,9 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breeze/text/trim_tail.hpp"
 #include "breeze/testing/testing.hpp"
 #include "breeze/text/set_of_chars.hpp"
-#include "breeze/text/trim_tail.hpp"
 
 int                 test_trim_tail() ;
 

@@ -11,8 +11,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/testing/testing.hpp"
 #include "breeze/text/split.hpp"
+#include "breeze/testing/testing.hpp"
 
 #include <locale>
 #include <string>

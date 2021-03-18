@@ -11,8 +11,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/testing/testing.hpp"
 #include "breeze/text/printable_string.hpp"
+#include "breeze/testing/testing.hpp"
 #include <sstream>
 
 int                 test_printable_string() ;

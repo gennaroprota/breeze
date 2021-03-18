@@ -11,8 +11,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/testing/testing.hpp"
 #include "breeze/time/format_time.hpp"
+#include "breeze/testing/testing.hpp"
 
 int                 test_format_time() ;
 
