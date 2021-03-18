@@ -148,8 +148,12 @@ windows_version_info::edition() const
     }
 
     DWORD               product_type ;
-    if ( GetProductInfo( major_version(), minor_version(), 0, 0, &product_type )
-                                                                == 0 ) {
+    if ( GetProductInfo(
+            major_version(),
+            minor_version(),
+            service_pack_level(),
+            0,
+            &product_type ) == 0 ) {
         return "" ;
     }
 
