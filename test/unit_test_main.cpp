@@ -35,7 +35,7 @@ std::string
 describe_time( std::time_t time_stamp )
 {
     std::string const   format = "%A, %B %e, %Y %I:%M:%S %p UTC" ;
-    breeze::maybe< std::string >
+    breeze::maybe< std::string > const
                         descr = breeze::format_time(
                             format, breeze::time_kind::utc,
                             time_stamp ) ;
