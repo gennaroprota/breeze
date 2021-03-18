@@ -154,200 +154,200 @@ windows_version_info::edition() const
     }
 
     switch ( product_type ) {
-        case PRODUCT_BUSINESS:
-            return "Business Edition" ;
-        case PRODUCT_BUSINESS_N:
-            return "Business N" ;
-        case PRODUCT_CLUSTER_SERVER:
-            return "HPC Edition" ;
-        case PRODUCT_CLUSTER_SERVER_V:
-            return "Server Hyper Core V" ;
-        case PRODUCT_CORE:
-            return "Home" ;
-        case PRODUCT_CORE_COUNTRYSPECIFIC:
-            return "Home China" ;
-        case PRODUCT_CORE_N:
-            return "Home N" ;
-        case PRODUCT_CORE_SINGLELANGUAGE:
-            return "Home Single Language" ;
-        case PRODUCT_DATACENTER_EVALUATION_SERVER:
-            return "Server Datacenter (evaluation installation)" ;
-        case PRODUCT_DATACENTER_SERVER:
-            return "Datacenter Edition" ;
-        case PRODUCT_DATACENTER_SERVER_CORE:
-            return "Server Datacenter (core installation)" ;
-        case PRODUCT_DATACENTER_SERVER_CORE_V:
-            return "Server Datacenter without Hyper-V (core installation)" ;
-        case PRODUCT_DATACENTER_SERVER_V:
-            return "Server Datacenter without Hyper-V (full installation)" ;
-        //case PRODUCT_EDUCATION:
-        //    return "Education" ;
-        //case PRODUCT_EDUCATION_N:
-        //    return "Education N" ;
-        case PRODUCT_EMBEDDED:
-            return "undocumented [PRODUCT_EMBEDDED]" ; //gps
-        case PRODUCT_ENTERPRISE:
-            return "Enterprise" ;
-        case PRODUCT_ENTERPRISE_E:
-            return "Enterprise E" ;
-        case PRODUCT_ENTERPRISE_EVALUATION:
-            return "PRODUCT_ENTERPRISE_EVALUATION" ;
-        case PRODUCT_ENTERPRISE_N:
-            return "Enterprise N" ;
-        case PRODUCT_ENTERPRISE_N_EVALUATION:
-            return "Enterprise N Evaluation" ;
-        //case PRODUCT_ENTERPRISE_S:
-        //    return "Enterprise 2015 LTSB" ;
-        //case PRODUCT_ENTERPRISE_S_EVALUATION:
-        //    return "Enterprise 2015 LTSB Evaluation" ;
-        //case PRODUCT_ENTERPRISE_S_N:
-        //    return "Enterprise 2015 LTSB N" ;
-        //case PRODUCT_ENTERPRISE_S_N_EVALUATION:
-        //    return "Enterprise 2015 LTSB N Evaluation" ;
-        case PRODUCT_ENTERPRISE_SERVER:
-            return "Server Enterprise (full installation)" ;
-        case PRODUCT_ENTERPRISE_SERVER_CORE:
-            return "Server Enterprise (core installation)" ;
-        case PRODUCT_ENTERPRISE_SERVER_CORE_V:
-            return "Server Enterprise without Hyper-V (core installation)" ;
-        case PRODUCT_ENTERPRISE_SERVER_IA64:
-            return "Server Enterprise for Itanium-based Systems" ;
-        case PRODUCT_ENTERPRISE_SERVER_V:
-            return "Server Enterprise without Hyper-V (full installation)" ;
-        case PRODUCT_ESSENTIALBUSINESS_SERVER_ADDL:
-            return "Essential Server Solution Additional" ;
-        case PRODUCT_ESSENTIALBUSINESS_SERVER_ADDLSVC:
-            return "Essential Server Solution Additional SVC" ;
-        case PRODUCT_ESSENTIALBUSINESS_SERVER_MGMT:
-            return "Essential Server Solution Management" ;
-        case PRODUCT_ESSENTIALBUSINESS_SERVER_MGMTSVC:
-            return "Essential Server Solution Management SVC" ;
-        case PRODUCT_HOME_BASIC:
-            return "Home Basic" ;
-        case PRODUCT_HOME_BASIC_E:
-            return "Home Basic E" ;
-        case PRODUCT_HOME_BASIC_N:
-            return "Home Basic N" ;
-        case PRODUCT_HOME_PREMIUM:
-            return "Home Premium" ;
-        case PRODUCT_HOME_PREMIUM_E:
-            return "Home Premium E" ;
-        case PRODUCT_HOME_PREMIUM_N:
-            return "Home Premium N" ;
-        case PRODUCT_HOME_PREMIUM_SERVER:
-            return "Home Server 2011" ;
-        case PRODUCT_HOME_SERVER:
-            return "Storage Server 2008 R2 Essentials" ;
-        case PRODUCT_HYPERV:
-            return "Microsoft Hyper-V Server" ;
-        //case PRODUCT_IOTUAP:
-        //    return "IoT Core" ;
-        //case PRODUCT_IOTUAPCOMMERCIAL:
-        //    return "IoT Core Commercial" ;
-        case PRODUCT_MEDIUMBUSINESS_SERVER_MANAGEMENT:
-            return "Essential Business Server Management Server" ;
-        case PRODUCT_MEDIUMBUSINESS_SERVER_MESSAGING:
-            return "Essential Business Server Messaging Server" ;
-        case PRODUCT_MEDIUMBUSINESS_SERVER_SECURITY:
-            return "Essential Business Server Security Server" ;
-        //case PRODUCT_MOBILE_ENTERPRISE:
-        //    return "Mobile Enterprise" ;
-        case PRODUCT_MULTIPOINT_PREMIUM_SERVER:
-            return "MultiPoint Server Premium (full installation)" ;
-        case PRODUCT_MULTIPOINT_STANDARD_SERVER:
-            return "MultiPoint Server Standard (full installation)" ;
-        case PRODUCT_PROFESSIONAL:
-            return "Professional" ;
-        case PRODUCT_PROFESSIONAL_E:
-            return "Professional E" ;
-        // Following enum excluded because absent under Cygwin:
-        //
-        // case PRODUCT_PROFESSIONAL_EMBEDDED:
-        //    return "undocumented [PRODUCT_PROFESSIONAL_EMBEDDED]" ; // gps
-        case PRODUCT_PROFESSIONAL_N:
-            return "Professional N" ;
-        case PRODUCT_PROFESSIONAL_WMC:
-            return "Professional with Media Center" ;
-        case PRODUCT_SB_SOLUTION_SERVER:
-            return "Small Business Server 2011 Essentials" ;
-        case PRODUCT_SB_SOLUTION_SERVER_EM:
-            return "Server For SB Solutions EM" ;
-        case PRODUCT_SERVER_FOR_SB_SOLUTIONS:
-            return "Server For SB Solutions" ;
-        case PRODUCT_SERVER_FOR_SB_SOLUTIONS_EM:
-            return "Server For SB Solutions EM" ;
-        case PRODUCT_SERVER_FOR_SMALLBUSINESS:
-            return "for Windows Essential Server Solutions" ;
-        case PRODUCT_SERVER_FOR_SMALLBUSINESS_V:
-            return "without Hyper-V for Windows Essential Server Solutions" ;
-        case PRODUCT_SERVER_FOUNDATION:
-            return "Server Foundation" ;
-        case PRODUCT_SMALLBUSINESS_SERVER:
-            return "Small Business Server" ;
-        case PRODUCT_SMALLBUSINESS_SERVER_PREMIUM:
-            return "Small Business Server Premium" ;
-        case PRODUCT_SMALLBUSINESS_SERVER_PREMIUM_CORE:
-            return "Small Business Server Premium (core installation)" ;
-        case PRODUCT_SOLUTION_EMBEDDEDSERVER:
-            return "MultiPoint Server" ;
-        case PRODUCT_SOLUTION_EMBEDDEDSERVER_CORE:
-            return "undocumented [PRODUCT_SOLUTION_EMBEDDEDSERVER_CORE]" ;// gps
-        case PRODUCT_STANDARD_SERVER:
-            return "Standard Edition" ;
-        case PRODUCT_STANDARD_SERVER_CORE:
-            return "Server Standard (core installation)" ;
-        case PRODUCT_STANDARD_SERVER_CORE_V:
-            return "Server Standard without Hyper-V (core installation)" ;
-        case PRODUCT_STANDARD_SERVER_V:
-            return "Server Standard without Hyper-V (full installation)" ;
-        case PRODUCT_STANDARD_SERVER_SOLUTIONS:
-            return "Server Solutions Premium " ;
-        case PRODUCT_STANDARD_SERVER_SOLUTIONS_CORE:
-            return "Server Solutions Premium (core installation)" ;
-        case PRODUCT_STARTER:
-            return "Starter" ;
-        case PRODUCT_STARTER_E:
-            return "Starter E" ;
-        case PRODUCT_STARTER_N:
-            return "Starter N" ;
-        case PRODUCT_STORAGE_ENTERPRISE_SERVER:
-            return "Storage Server Enterprise" ;
-        case PRODUCT_STORAGE_ENTERPRISE_SERVER_CORE:
-            return "Storage Server Enterprise (core installation)" ;
-        case PRODUCT_STORAGE_EXPRESS_SERVER:
-            return "Storage Server Express" ;
-        case PRODUCT_STORAGE_EXPRESS_SERVER_CORE:
-            return "Storage Server Express (core installation)" ;
-        case PRODUCT_STORAGE_STANDARD_EVALUATION_SERVER:
-            return "Storage Server Standard (evaluation installation)" ;
-        case PRODUCT_STORAGE_STANDARD_SERVER:
-            return "Storage Server Standard" ;
-        case PRODUCT_STORAGE_STANDARD_SERVER_CORE:
-            return "Storage Server Standard (core installation)" ;
-        case PRODUCT_STORAGE_WORKGROUP_EVALUATION_SERVER:
-            return "Storage Server Workgroup (evaluation installation)" ;
-        case PRODUCT_STORAGE_WORKGROUP_SERVER:
-            return "Storage Server Workgroup" ;
-        case PRODUCT_STORAGE_WORKGROUP_SERVER_CORE:
-            return "Storage Server Workgroup (core installation)" ;
-        case PRODUCT_ULTIMATE:
-            return "Ultimate" ;
-        case PRODUCT_ULTIMATE_E:
-            return "Ultimate E" ;
-        case PRODUCT_ULTIMATE_N:
-            return "Ultimate N" ;
-        case PRODUCT_UNDEFINED:
-            return "<undefined>" ;
-        case PRODUCT_UNLICENSED:
-            return "*unlicensed*" ;
-        case PRODUCT_WEB_SERVER:
-            return "Web Server (full installation)" ;
-        case PRODUCT_WEB_SERVER_CORE:
-            return "Web Server (core installation)" ;
+    case PRODUCT_BUSINESS:
+        return "Business Edition" ;
+    case PRODUCT_BUSINESS_N:
+        return "Business N" ;
+    case PRODUCT_CLUSTER_SERVER:
+        return "HPC Edition" ;
+    case PRODUCT_CLUSTER_SERVER_V:
+        return "Server Hyper Core V" ;
+    case PRODUCT_CORE:
+        return "Home" ;
+    case PRODUCT_CORE_COUNTRYSPECIFIC:
+        return "Home China" ;
+    case PRODUCT_CORE_N:
+        return "Home N" ;
+    case PRODUCT_CORE_SINGLELANGUAGE:
+        return "Home Single Language" ;
+    case PRODUCT_DATACENTER_EVALUATION_SERVER:
+        return "Server Datacenter (evaluation installation)" ;
+    case PRODUCT_DATACENTER_SERVER:
+        return "Datacenter Edition" ;
+    case PRODUCT_DATACENTER_SERVER_CORE:
+        return "Server Datacenter (core installation)" ;
+    case PRODUCT_DATACENTER_SERVER_CORE_V:
+        return "Server Datacenter without Hyper-V (core installation)" ;
+    case PRODUCT_DATACENTER_SERVER_V:
+        return "Server Datacenter without Hyper-V (full installation)" ;
+    //case PRODUCT_EDUCATION:
+    //    return "Education" ;
+    //case PRODUCT_EDUCATION_N:
+    //    return "Education N" ;
+    case PRODUCT_EMBEDDED:
+        return "undocumented [PRODUCT_EMBEDDED]" ; //gps
+    case PRODUCT_ENTERPRISE:
+        return "Enterprise" ;
+    case PRODUCT_ENTERPRISE_E:
+        return "Enterprise E" ;
+    case PRODUCT_ENTERPRISE_EVALUATION:
+        return "PRODUCT_ENTERPRISE_EVALUATION" ;
+    case PRODUCT_ENTERPRISE_N:
+        return "Enterprise N" ;
+    case PRODUCT_ENTERPRISE_N_EVALUATION:
+        return "Enterprise N Evaluation" ;
+    //case PRODUCT_ENTERPRISE_S:
+    //    return "Enterprise 2015 LTSB" ;
+    //case PRODUCT_ENTERPRISE_S_EVALUATION:
+    //    return "Enterprise 2015 LTSB Evaluation" ;
+    //case PRODUCT_ENTERPRISE_S_N:
+    //    return "Enterprise 2015 LTSB N" ;
+    //case PRODUCT_ENTERPRISE_S_N_EVALUATION:
+    //    return "Enterprise 2015 LTSB N Evaluation" ;
+    case PRODUCT_ENTERPRISE_SERVER:
+        return "Server Enterprise (full installation)" ;
+    case PRODUCT_ENTERPRISE_SERVER_CORE:
+        return "Server Enterprise (core installation)" ;
+    case PRODUCT_ENTERPRISE_SERVER_CORE_V:
+        return "Server Enterprise without Hyper-V (core installation)" ;
+    case PRODUCT_ENTERPRISE_SERVER_IA64:
+        return "Server Enterprise for Itanium-based Systems" ;
+    case PRODUCT_ENTERPRISE_SERVER_V:
+        return "Server Enterprise without Hyper-V (full installation)" ;
+    case PRODUCT_ESSENTIALBUSINESS_SERVER_ADDL:
+        return "Essential Server Solution Additional" ;
+    case PRODUCT_ESSENTIALBUSINESS_SERVER_ADDLSVC:
+        return "Essential Server Solution Additional SVC" ;
+    case PRODUCT_ESSENTIALBUSINESS_SERVER_MGMT:
+        return "Essential Server Solution Management" ;
+    case PRODUCT_ESSENTIALBUSINESS_SERVER_MGMTSVC:
+        return "Essential Server Solution Management SVC" ;
+    case PRODUCT_HOME_BASIC:
+        return "Home Basic" ;
+    case PRODUCT_HOME_BASIC_E:
+        return "Home Basic E" ;
+    case PRODUCT_HOME_BASIC_N:
+        return "Home Basic N" ;
+    case PRODUCT_HOME_PREMIUM:
+        return "Home Premium" ;
+    case PRODUCT_HOME_PREMIUM_E:
+        return "Home Premium E" ;
+    case PRODUCT_HOME_PREMIUM_N:
+        return "Home Premium N" ;
+    case PRODUCT_HOME_PREMIUM_SERVER:
+        return "Home Server 2011" ;
+    case PRODUCT_HOME_SERVER:
+        return "Storage Server 2008 R2 Essentials" ;
+    case PRODUCT_HYPERV:
+        return "Microsoft Hyper-V Server" ;
+    //case PRODUCT_IOTUAP:
+    //    return "IoT Core" ;
+    //case PRODUCT_IOTUAPCOMMERCIAL:
+    //    return "IoT Core Commercial" ;
+    case PRODUCT_MEDIUMBUSINESS_SERVER_MANAGEMENT:
+        return "Essential Business Server Management Server" ;
+    case PRODUCT_MEDIUMBUSINESS_SERVER_MESSAGING:
+        return "Essential Business Server Messaging Server" ;
+    case PRODUCT_MEDIUMBUSINESS_SERVER_SECURITY:
+        return "Essential Business Server Security Server" ;
+    //case PRODUCT_MOBILE_ENTERPRISE:
+    //    return "Mobile Enterprise" ;
+    case PRODUCT_MULTIPOINT_PREMIUM_SERVER:
+        return "MultiPoint Server Premium (full installation)" ;
+    case PRODUCT_MULTIPOINT_STANDARD_SERVER:
+        return "MultiPoint Server Standard (full installation)" ;
+    case PRODUCT_PROFESSIONAL:
+        return "Professional" ;
+    case PRODUCT_PROFESSIONAL_E:
+        return "Professional E" ;
+    // Following enum excluded because absent under Cygwin:
+    //
+    // case PRODUCT_PROFESSIONAL_EMBEDDED:
+    //    return "undocumented [PRODUCT_PROFESSIONAL_EMBEDDED]" ; // gps
+    case PRODUCT_PROFESSIONAL_N:
+        return "Professional N" ;
+    case PRODUCT_PROFESSIONAL_WMC:
+        return "Professional with Media Center" ;
+    case PRODUCT_SB_SOLUTION_SERVER:
+        return "Small Business Server 2011 Essentials" ;
+    case PRODUCT_SB_SOLUTION_SERVER_EM:
+        return "Server For SB Solutions EM" ;
+    case PRODUCT_SERVER_FOR_SB_SOLUTIONS:
+        return "Server For SB Solutions" ;
+    case PRODUCT_SERVER_FOR_SB_SOLUTIONS_EM:
+        return "Server For SB Solutions EM" ;
+    case PRODUCT_SERVER_FOR_SMALLBUSINESS:
+        return "for Windows Essential Server Solutions" ;
+    case PRODUCT_SERVER_FOR_SMALLBUSINESS_V:
+        return "without Hyper-V for Windows Essential Server Solutions" ;
+    case PRODUCT_SERVER_FOUNDATION:
+        return "Server Foundation" ;
+    case PRODUCT_SMALLBUSINESS_SERVER:
+        return "Small Business Server" ;
+    case PRODUCT_SMALLBUSINESS_SERVER_PREMIUM:
+        return "Small Business Server Premium" ;
+    case PRODUCT_SMALLBUSINESS_SERVER_PREMIUM_CORE:
+        return "Small Business Server Premium (core installation)" ;
+    case PRODUCT_SOLUTION_EMBEDDEDSERVER:
+        return "MultiPoint Server" ;
+    case PRODUCT_SOLUTION_EMBEDDEDSERVER_CORE:
+        return "undocumented [PRODUCT_SOLUTION_EMBEDDEDSERVER_CORE]" ;// gps
+    case PRODUCT_STANDARD_SERVER:
+        return "Standard Edition" ;
+    case PRODUCT_STANDARD_SERVER_CORE:
+        return "Server Standard (core installation)" ;
+    case PRODUCT_STANDARD_SERVER_CORE_V:
+        return "Server Standard without Hyper-V (core installation)" ;
+    case PRODUCT_STANDARD_SERVER_V:
+        return "Server Standard without Hyper-V (full installation)" ;
+    case PRODUCT_STANDARD_SERVER_SOLUTIONS:
+        return "Server Solutions Premium " ;
+    case PRODUCT_STANDARD_SERVER_SOLUTIONS_CORE:
+        return "Server Solutions Premium (core installation)" ;
+    case PRODUCT_STARTER:
+        return "Starter" ;
+    case PRODUCT_STARTER_E:
+        return "Starter E" ;
+    case PRODUCT_STARTER_N:
+        return "Starter N" ;
+    case PRODUCT_STORAGE_ENTERPRISE_SERVER:
+        return "Storage Server Enterprise" ;
+    case PRODUCT_STORAGE_ENTERPRISE_SERVER_CORE:
+        return "Storage Server Enterprise (core installation)" ;
+    case PRODUCT_STORAGE_EXPRESS_SERVER:
+        return "Storage Server Express" ;
+    case PRODUCT_STORAGE_EXPRESS_SERVER_CORE:
+        return "Storage Server Express (core installation)" ;
+    case PRODUCT_STORAGE_STANDARD_EVALUATION_SERVER:
+        return "Storage Server Standard (evaluation installation)" ;
+    case PRODUCT_STORAGE_STANDARD_SERVER:
+        return "Storage Server Standard" ;
+    case PRODUCT_STORAGE_STANDARD_SERVER_CORE:
+        return "Storage Server Standard (core installation)" ;
+    case PRODUCT_STORAGE_WORKGROUP_EVALUATION_SERVER:
+        return "Storage Server Workgroup (evaluation installation)" ;
+    case PRODUCT_STORAGE_WORKGROUP_SERVER:
+        return "Storage Server Workgroup" ;
+    case PRODUCT_STORAGE_WORKGROUP_SERVER_CORE:
+        return "Storage Server Workgroup (core installation)" ;
+    case PRODUCT_ULTIMATE:
+        return "Ultimate" ;
+    case PRODUCT_ULTIMATE_E:
+        return "Ultimate E" ;
+    case PRODUCT_ULTIMATE_N:
+        return "Ultimate N" ;
+    case PRODUCT_UNDEFINED:
+        return "<undefined>" ;
+    case PRODUCT_UNLICENSED:
+        return "*unlicensed*" ;
+    case PRODUCT_WEB_SERVER:
+        return "Web Server (full installation)" ;
+    case PRODUCT_WEB_SERVER_CORE:
+        return "Web Server (core installation)" ;
 
-        default:
-            return "<unknown edition: " + breeze::to_string(
-                                                          product_type ) + ">" ;
+    default:
+        return "<unknown edition: " + breeze::to_string(
+                                                        product_type ) + ">" ;
     }
 }
 

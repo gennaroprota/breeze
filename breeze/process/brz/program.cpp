@@ -123,20 +123,19 @@ program::declare_error( program::gravity g ) // gps nome OK?
         m_max_gravity = g ;
     }
 
-    switch ( m_max_gravity )
-    {
-        case comment:
-        case warning:
-        case error:
-            break ;
+    switch ( m_max_gravity ) {
+    case comment:
+    case warning:
+    case error:
+        break ;
 
-        case fatal:
-            terminate() ;
-            // no break ;, to avoid compiler warnings
+    case fatal:
+        terminate() ;
+        // no break ;, to avoid compiler warnings
 
-        case internal:
-            std::abort() ;
-            // no break ;, to avoid compiler warnings
+    case internal:
+        std::abort() ;
+        // no break ;, to avoid compiler warnings
     }
 }
 

@@ -140,11 +140,12 @@
 // (note the initial space in " C" and " A")
 //
 // [*] Server 2003 editions:
-//      switch( SuiteMask )
-//        case DATACENTER: "Datacenter Edition" break ;
-//        case ENTERPRISE: "Enterprise Edition" break ;
-//        case BLADE:      "Web Edition"        break ;
-//        default:         "Standard Edition"   break ;
+//      switch( SuiteMask ) {
+//      case DATACENTER: "Datacenter Edition" break ;
+//      case ENTERPRISE: "Enterprise Edition" break ;
+//      case BLADE:      "Web Edition"        break ;
+//      default:         "Standard Edition"   break ;
+//      }
 //
 // Limitations:
 //  For simplicity's sake, we avoid the following detections:
@@ -186,8 +187,7 @@ identify_nt( windows_version_info const & info )
                   win_version( info.major_version(), info.minor_version() ) ;
 
     if ( windows_version_info::is_client() ) {
-        switch ( version )
-        {
+        switch ( version ) {
         case win_version( 10, 0 ):
             id = operating_system_id::windows_10 ;
             break ;
@@ -228,8 +228,7 @@ identify_nt( windows_version_info const & info )
             break ;
         }
     } else {
-        switch ( version )
-        {
+        switch ( version ) {
         case win_version( 10, 0 ):
             id = operating_system_id::windows_server_2016 ;
             break ;
