@@ -115,19 +115,23 @@ main()
     } ;
 
     std::time_t const   start_time = std::time( nullptr ) ;
-    int                 result = breeze::exit_success ;
+    int                 failure_count = 0 ;
     for ( test_function_type * f : tests )
     {
         int const           exit_code = f() ;
         if ( exit_code != breeze::exit_success ) {
-            result = breeze::exit_error ;
+            ++ failure_count ;
         }
     }
     std::time_t const   end_time = std::time( nullptr ) ;
 
-    std::cout << ( result == breeze::exit_success
-        ? "All tests passed."
-        : "At least one test FAILED." ) << std::endl ;
+    if ( failure_count == 0 ) {
+        std::cout << "All tests passed." ;
+    } else {
+        std::cout << failure_count << " test functions FAILED." ;
+    }
+
+    std::cout << std::endl ;
 
     //      We output the detected operating system description here,
     //      because the operating_system_name class is basically
@@ -159,5 +163,8 @@ main()
 
     std::cout << std::endl ;
 
-    return result ;
+    return failure_count == 0
+        ? breeze::exit_success
+        : breeze::exit_error
+        ;
 }
