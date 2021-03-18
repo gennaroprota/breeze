@@ -78,8 +78,10 @@ public:
     static bool         is_client() ;
 
     //!     \return
-    //!         The service pack level. Zero if no service pack is
-    //!         installed.
+    //!         The major version number of the installed service pack,
+    //!         if any. Zero if no service pack is installed. Note that
+    //!         this ignores the minor number (which Microsoft doesn't
+    //!         seem to be using, anyway).
     //!
     //!     \par Exceptions
     //!         A \c std::runtime_error (which can be a \c
