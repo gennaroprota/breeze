@@ -39,10 +39,7 @@ describe_time( std::time_t time_stamp )
                         descr = breeze::format_time(
                             format, breeze::time_kind::utc,
                             time_stamp ) ;
-    return descr.is_valid()
-        ? descr.value()
-        : "n/a"
-        ;
+    return descr.default_to( "n/a" ) ;
 }
 
 }
