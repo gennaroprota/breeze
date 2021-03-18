@@ -346,8 +346,7 @@ windows_version_info::edition() const
         return "Web Server (core installation)" ;
 
     default:
-        return "<unknown edition: " + breeze::to_string(
-                                                        product_type ) + ">" ;
+        return "<unknown edition: " + breeze::to_string( product_type ) + ">" ;
     }
 }
 
