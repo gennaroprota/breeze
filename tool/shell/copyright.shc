@@ -69,7 +69,7 @@
 make_copyright_notice()
 {
     #gps use "-u" for the date command??
-    printf '%s\n' "Copyright ` date +\"%Y\" ` $1"
+    printf '%s\n' "Copyright $( date +"%Y" ) $1"
 }
 
 # Local Variables:

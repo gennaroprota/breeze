@@ -193,7 +193,7 @@ doc: documentation
 ##      Builds the Doxygen documentation.
 ##
 documentation:
-	$(root)/tool/build_docs/build_docs.sh "` pwd `"
+	$(root)/tool/build_docs/build_docs.sh "$$( pwd )"
 
 #       Help target:
 #       ============

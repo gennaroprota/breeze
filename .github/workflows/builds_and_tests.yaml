@@ -36,7 +36,7 @@ jobs:
           system: unix
           compiler: clang
           compiler_command: ${{matrix.compiler}}
-        run: BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
+        run: BREEZE_ROOT=$( pwd ) && export BREEZE_ROOT && make
 
   gcc-on-linux:
     name: GCC on Linux
@@ -52,7 +52,7 @@ jobs:
           system: unix
           compiler: gcc
           compiler_command: ${{matrix.compiler}}
-        run: BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
+        run: BREEZE_ROOT=$( pwd ) && export BREEZE_ROOT && make
 
   clang-on-macos:
     name: Clang on macOS
@@ -72,7 +72,7 @@ jobs:
           #     Is there a way to avoid turning off this option?
           # ------------------------------------------------------------------
           cpp_extra_options: -Wno-poison-system-directories
-        run: BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
+        run: BREEZE_ROOT=$( pwd ) && export BREEZE_ROOT && make
 
   gcc-on-macos:
     name: GCC on macOS
@@ -88,7 +88,7 @@ jobs:
           system: macos
           compiler: gcc
           compiler_command: ${{matrix.compiler}}
-        run: BREEZE_ROOT=` pwd ` && export BREEZE_ROOT && make
+        run: BREEZE_ROOT=$( pwd ) && export BREEZE_ROOT && make
 
   #     As of this writing (December 28, 2020), GitHub Actions doesn't
   #     directly support FreeBSD. But the macOS machines have VirtualBox
@@ -128,5 +128,5 @@ jobs:
           pkg install gmake
           pkg install lang/gcc
           pkg install python3
-          export BREEZE_ROOT=` pwd `
+          export BREEZE_ROOT=$( pwd )
           gmake

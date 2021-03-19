@@ -17,7 +17,7 @@ i=$start
 while [ "$i" -lt "$finish" ]
 do
     new_line "$i"  |  wc -l
-    i=` expr "$i" + 1 `
+    i=$( expr "$i" + 1 )
 done
 }       >   output
 
@@ -26,7 +26,7 @@ i=$start
 while [ "$i" -lt "$finish" ]
 do
     printf '%s\n' "$i"
-    i=` expr "$i" + 1 `
+    i=$( expr "$i" + 1 )
 done
 }       >   expected_output
 

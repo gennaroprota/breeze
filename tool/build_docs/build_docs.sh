@@ -45,8 +45,8 @@ clean_up()
 
 run_doxygen()
 {
-    breeze_version=` sed -n 's/#define \+BREEZE_VERSION \+\(.\+\)/\1/p'     \
-                            "$root_dir/breeze/version.hpp" `
+    breeze_version=$( sed -n 's/#define \+BREEZE_VERSION \+\(.\+\)/\1/p'     \
+                            "$root_dir/breeze/version.hpp" )
 
     (
         cat doxygen.cfg
@@ -66,14 +66,14 @@ then
 fi
 
 
-temp_dir=/tmp/` script_name `_$$
+temp_dir=/tmp/$( script_name )_$$
 trap 'clean_up' 0 1 2 15
 mkdir -p "$temp_dir"
 
 root_dir=$1
 
 cd "$root_dir/doc/source"
-printf '%s\n' "Using Doxygen ` doxygen --version `"
+printf '%s\n' "Using Doxygen $( doxygen --version )"
 if ! run_doxygen
 then
     quit_script 'an error occurred.'

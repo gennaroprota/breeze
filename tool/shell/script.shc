@@ -30,7 +30,7 @@ quit_script()
 {
     if [ -n "$1" ]
     then
-        printf '%s\n' "` script_name `: $1"  >&2
+        printf '%s\n' "$( script_name ): $1"  >&2
     fi
     exit 2
 }

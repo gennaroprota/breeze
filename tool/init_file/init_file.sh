@@ -79,7 +79,7 @@ dump()
     #       The variables are passed in the environment to awk only.
     # ------------------------------------------------------------------------
     prefix="$prefix"                        \
-    width=` get_line_width `                \
+    width=$( get_line_width )               \
     comment_pattern="$comment_pattern"      \
     alignment="$2"                          \
                   awk -f "$BREEZE_ROOT/tool/init_file/dump_with_prefix.awk" "$1"
@@ -95,8 +95,8 @@ then
 fi
 
 full_path="$1"
-base_name=` base_file_name "$full_path" `
-name_extension=` file_name_extension "$full_path" `
+base_name=$( base_file_name "$full_path" )
+name_extension=$( file_name_extension "$full_path" )
 
 if [ -z "$full_path" ]
 then
@@ -111,7 +111,7 @@ language=""
 traits_file="$BREEZE_ROOT/tool/init_file/language_traits.txt"
 comment_pattern='^[:space:]*#'
 
-eval ` awk '
+eval $( awk '
     /'"$comment_pattern"'/ {
         next
     }
@@ -123,7 +123,7 @@ eval ` awk '
 
         exit
 
-    }' "$traits_file" `
+    }' "$traits_file" )
 
 if [ -z "$language" ]
 then
@@ -145,10 +145,10 @@ exe_root="$BREEZE_ROOT/bin"
 make_opening_line
 mark_section start
 
-width=` get_line_width `
+width=$( get_line_width )
 (
-    row1=` make_string "$width" '=' `
-    row2=` make_string "$width" '_' `
+    row1=$( make_string "$width" '=' )
+    row2=$( make_string "$width" '_' )
 
     if [ "$name_extension" = 'cpp' ]
     then
@@ -165,8 +165,8 @@ width=` get_line_width `
 
 if [ "$name_extension" = 'hpp' ]
 then
-    length=` expr "$width" - 3 `
-    row=` make_string "$length" '-' `
+    length=$( expr "$width" - 3 )
+    row=$( make_string "$length" '-' )
     printf '%s\n' "//"
     printf '%s\n' "//!     \\file"
     printf '%s\n' "//!     \\brief"
