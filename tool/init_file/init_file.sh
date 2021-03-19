@@ -165,7 +165,7 @@ width=` get_line_width `
 
 if [ "$name_extension" = 'hpp' ]
 then
-    length=`expr "$width" - 3`
+    length=` expr "$width" - 3 `
     row=` make_string "$length" '-' `
     printf '%s\n' "//"
     printf '%s\n' "//!     \\file"
