@@ -106,8 +106,10 @@ public:
 // ---------------------------------------------------------------------------
 template< int width >
 class signed_integer_by_width
-    :   public integer_by_width< width, signed >
 {
+public:
+    typedef typename integer_by_width< width, signed >::type
+                        type ;
 } ;
 
 //      unsigned_integer_by_width:
@@ -119,8 +121,10 @@ class signed_integer_by_width
 // ---------------------------------------------------------------------------
 template< int width >
 class unsigned_integer_by_width
-    :   public integer_by_width< width, unsigned >
 {
+public:
+    typedef typename integer_by_width< width, unsigned >::type
+                        type ;
 } ;
 
 }
