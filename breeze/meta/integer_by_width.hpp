@@ -20,7 +20,7 @@
 
 #include "breeze/top_level_namespace.hpp"
 #include "breeze/meta/select.hpp"
-#include <limits>
+#include "breeze/meta/width.hpp"
 
 namespace breeze_ns {
 namespace meta {
@@ -34,7 +34,7 @@ namespace integer_by_width_private {
 // ---------------------------------------------------------------------------
 template< typename IntType, int index > struct types ;
 
-//      "list" of unsigned (list of signed not yet implemented [gps])
+//      "List" of unsigned types.
 //
 template<> struct types< unsigned, 0 > { typedef unsigned char    type ; } ;
 template<> struct types< unsigned, 1 > { typedef unsigned short   type ; } ;
@@ -42,6 +42,13 @@ template<> struct types< unsigned, 2 > { typedef unsigned int     type ; } ;
 template<> struct types< unsigned, 3 > { typedef unsigned long    type ; } ;
 template<> struct types< unsigned, 4 > { typedef unsigned long long type ; } ;
 
+//      "List" of signed types.
+//
+template<> struct types< signed, 0 > { typedef signed char      type ; } ;
+template<> struct types< signed, 1 > { typedef signed short     type ; } ;
+template<> struct types< signed, 2 > { typedef signed int       type ; } ;
+template<> struct types< signed, 3 > { typedef signed long      type ; } ;
+template<> struct types< signed, 4 > { typedef signed long long type ; } ;
 
 template< int width,
           typename IntType,
@@ -49,8 +56,7 @@ template< int width,
 class selector
 {
     typedef types< IntType, n > candidate ;
-    enum { found =
-        std::numeric_limits< typename candidate::type >::digits == width } ;
+    enum { found = meta::width< typename candidate::type >::value == width } ;
 
 public:
     typedef typename meta::select_< found,
@@ -83,12 +89,25 @@ public:
 //!     \par Type requirements
 //!         \c T shall be either \c signed \c int or \c unsigned \c int.
 // ---------------------------------------------------------------------------
-template< int width, typename T /* gps temp = signed */ >
+template< int width, typename T >
 class integer_by_width
 {
 public:
     typedef typename integer_by_width_private
                          ::selector< width, T, 0 >::type type ;
+} ;
+
+//      signed_integer_by_width:
+//      ========================
+//
+//!     \brief
+//!         Equivalent to <code>integer_by_width< width, signed >
+//!         </code>.
+// ---------------------------------------------------------------------------
+template< int width >
+class signed_integer_by_width
+    :   public integer_by_width< width, signed >
+{
 } ;
 
 //      unsigned_integer_by_width:
