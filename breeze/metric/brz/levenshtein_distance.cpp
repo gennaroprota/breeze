@@ -12,7 +12,6 @@
 // ___________________________________________________________________________
 
 #include "breeze/metric/levenshtein_distance.hpp"
-#include "breeze/counting/signed_count.hpp"
 #include <algorithm>
 #include <numeric>
 #include <vector>
@@ -22,14 +21,14 @@ namespace breeze_ns {
 std::ptrdiff_t
 levenshtein_distance( std::string const & first, std::string const & second )
 {
-    typedef std::ptrdiff_t
+    typedef std::size_t
                         length_type ;
 
     //      Would it be worth to re-invoke ourselves with the arguments
     //      swapped if len1 < len2?
     // -----------------------------------------------------------------------
-    length_type const   len1 = breeze::signed_count( first ) ;
-    length_type const   len2 = breeze::signed_count( second ) ;
+    length_type const   len1 = first.length();
+    length_type const   len2 = second.length() ;
 
     std::vector< length_type > costs( len2 + 1 ) ;
     std::iota( costs.begin(), costs.end(), 0 ) ;
