@@ -194,12 +194,12 @@ merkle_damgard_machine< Engine >::create_digest( raw_digest_type & raw )
 
 template< typename Engine >
 void
-merkle_damgard_machine< Engine >::update_count( std::ptrdiff_t amount )
+merkle_damgard_machine< Engine >::update_count( long long amount )
 {
     BREEZE_ASSERT( amount >= 0 ) ;
 
     typedef endian_codec< little_endian_policy,
-                          std::size_t,
+                          unsigned long long,
                           length_unit_type
                       > codec ;
 

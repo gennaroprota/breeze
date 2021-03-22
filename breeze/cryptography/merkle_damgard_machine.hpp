@@ -14,7 +14,6 @@
 #define BREEZE_GUARD_fZUJ99c94EAQyLGNzV2BUxw0nzawpWpw
 
 #include "breeze/top_level_namespace.hpp"
-#include <cstddef>
 #include <iterator>
 
 namespace breeze_ns {
@@ -167,7 +166,7 @@ private:
     void                create_digest( raw_digest_type & ) ;
 
     int                 input_index() const ;
-    void                update_count( std::ptrdiff_t amount ) ;
+    void                update_count( long long amount ) ;
 
     template< typename It >
     void                do_append( It begin, It end, std::input_iterator_tag ) ;
