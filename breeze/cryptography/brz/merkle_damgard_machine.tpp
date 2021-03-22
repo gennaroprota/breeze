@@ -127,7 +127,7 @@ merkle_damgard_machine< Engine >::do_append( RandomIter begin,
 
     // bufferize any remaining input; update the bit count
     std::copy( curr, end, breeze::begin( m_input_buffer ) + index ) ;
-    update_count( byte_width * ( end - begin ) ) ;
+    update_count( byte_width * static_cast< long long >( end - begin ) ) ;
 }
 
 template< typename Engine >
