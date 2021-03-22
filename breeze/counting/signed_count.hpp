@@ -30,7 +30,6 @@
 #include "breeze/top_level_namespace.hpp"
 #include "breeze/diagnostics/assert.hpp"
 #include "breeze/preprocessing/prevent_macro_expansion.hpp"
-#include <cstddef>
 #include <limits>
 
 namespace breeze_ns {
@@ -44,8 +43,8 @@ namespace breeze_ns {
 //!         The number of elements of the array argument (obviously, \c
 //!         n).
 // ---------------------------------------------------------------------------
-template< typename T, std::ptrdiff_t n >
-constexpr std::ptrdiff_t
+template< typename T, long long n >
+constexpr long long
 signed_count( T const ( & )[ n ] ) noexcept
 {
     return n ;
@@ -57,19 +56,20 @@ signed_count( T const ( & )[ n ] ) noexcept
 //!     \copydoc signed_count.hpp
 //!
 //!     \pre
-//!         t.size() <= PTRDIFF_MAX
+//!         t.size() <= LLONG_MAX
 //!
 //!     \return
-//!         The value of \c t.size() converted to \c std::ptrdiff_t.
+//!         The value of \c t.size() converted to <code>long long
+//!         </code>.
 // ---------------------------------------------------------------------------
 template< typename T >
-constexpr std::ptrdiff_t
+constexpr long long
 signed_count( T const & t )
 {
-    typedef std::ptrdiff_t
-                        return_type ;
+    typedef long long   return_type ;
 
-    std::size_t const   max = std::numeric_limits< return_type >::max
+    unsigned long long const
+                        max = std::numeric_limits< return_type >::max
                                 BREEZE_PREVENT_MACRO_EXPANSION () ;
 
     BREEZE_ASSERT( t.size() <= max ) ;

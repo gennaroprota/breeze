@@ -14,7 +14,6 @@
 #define BREEZE_GUARD_cYIOKCI73iMumaonvDavBYvSD0UPrlq4
 
 #include "breeze/top_level_namespace.hpp"
-#include <cstddef>
 
 namespace breeze_ns {
 
@@ -24,13 +23,14 @@ namespace breeze_ns {
 template< typename T >
 class sensitive_buffer ;
 
-template< typename T, std::ptrdiff_t n >
+template< typename T, long long n >
 class sensitive_buffer< T[ n ] >
 {
     T                   m_data[ n ] ;
 
 public:
-    typedef std::size_t size_type ;
+    typedef unsigned long long
+                        size_type ;
     typedef       T &   reference ;
     typedef T const &   const_reference ;
     typedef       T *   iterator ;
@@ -52,8 +52,8 @@ public:
     const_iterator      begin() const noexcept ;
     const_iterator      end()   const noexcept ;
 
-    reference           operator []( std::ptrdiff_t index ) ;
-    const_reference     operator []( std::ptrdiff_t index ) const ;
+    reference           operator []( long long index ) ;
+    const_reference     operator []( long long index ) const ;
 
 private:
     void                wipe() noexcept ;

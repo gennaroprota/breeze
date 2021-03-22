@@ -21,7 +21,6 @@
 #include "breeze/testing/testing.hpp"
 #include "breeze/text/to_string.hpp"
 
-#include <cstddef>
 #include <string>
 
 int                 test_merkle_damgard_hashing() ;
@@ -182,7 +181,7 @@ void check_known_digests()
     typedef test_vectors< Hasher >
                         known ;
 
-    for ( std::ptrdiff_t i = 0 ; i < breeze::signed_count( known::entries ) ;
+    for ( long long i = 0 ; i < breeze::signed_count( known::entries ) ;
                                                                         ++ i ) {
         typename known::test_entry const &
                             entry( known::entries[ i ] ) ;

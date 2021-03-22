@@ -15,7 +15,6 @@
 
 #include "breeze/top_level_namespace.hpp"
 #include "breeze/idiom/volatilize.hpp"
-#include <cstddef>
 
 namespace breeze_ns {
 
@@ -130,7 +129,7 @@ secure_fill( ForwardIterator begin, ForwardIterator end, T const & value )
 //
 //!     Version for built-in arrays.
 // ---------------------------------------------------------------------------
-template< typename T, std::ptrdiff_t n >
+template< typename T, long long n >
 void
 secure_fill( T ( &arr )[ n ], T const & value = T() )
 {
