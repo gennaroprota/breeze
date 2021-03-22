@@ -36,19 +36,19 @@ template< typename IntType, int index > struct types ;
 
 //      "List" of unsigned types.
 //
-template<> struct types< unsigned, 0 > { typedef unsigned char    type ; } ;
-template<> struct types< unsigned, 1 > { typedef unsigned short   type ; } ;
-template<> struct types< unsigned, 2 > { typedef unsigned int     type ; } ;
-template<> struct types< unsigned, 3 > { typedef unsigned long    type ; } ;
+template<> struct types< unsigned, 0 > { typedef unsigned char      type ; } ;
+template<> struct types< unsigned, 1 > { typedef unsigned short     type ; } ;
+template<> struct types< unsigned, 2 > { typedef unsigned int       type ; } ;
+template<> struct types< unsigned, 3 > { typedef unsigned long      type ; } ;
 template<> struct types< unsigned, 4 > { typedef unsigned long long type ; } ;
 
 //      "List" of signed types.
 //
-template<> struct types< signed, 0 > { typedef signed char      type ; } ;
-template<> struct types< signed, 1 > { typedef signed short     type ; } ;
-template<> struct types< signed, 2 > { typedef signed int       type ; } ;
-template<> struct types< signed, 3 > { typedef signed long      type ; } ;
-template<> struct types< signed, 4 > { typedef signed long long type ; } ;
+template<> struct types< signed,   0 > { typedef signed char        type ; } ;
+template<> struct types< signed,   1 > { typedef signed short       type ; } ;
+template<> struct types< signed,   2 > { typedef signed int         type ; } ;
+template<> struct types< signed,   3 > { typedef signed long        type ; } ;
+template<> struct types< signed,   4 > { typedef signed long long   type ; } ;
 
 template< int width,
           typename IntType,
