@@ -20,7 +20,7 @@ template< typename T >
 constexpr bool
 is_power_of_2( T x ) noexcept
 {
-    return x > 0 && ( x & ( x-1 ) ) == 0 ;
+    return x > 0 && ( x & ( x - 1 ) ) == 0 ;
 }
 
 }
