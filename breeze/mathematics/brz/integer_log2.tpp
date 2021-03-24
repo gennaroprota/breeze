@@ -14,10 +14,10 @@ namespace breeze_ns {
 namespace integer_log2_private {
 
 //      This constant is 4 because it must be a power of two less than
-//      the width of uintmax_t. Since the minimum width for an
-//      unsigned type (width of unsigned char) is 8, we start from 4.
-//      We could actually start from 32, because uintmax_t must have
-//      at least 64 value bits.
+//      the width of intmax_t. Since the minimum width for a signed type
+//      type (width of signed char) is 8, we start from 4. We could
+//      actually start from 32, because the width of intmax_t must be at
+//      least 64.
 // ---------------------------------------------------------------------------
 constexpr int       start_at = 4 ;
 
