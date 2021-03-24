@@ -24,7 +24,7 @@ representation_in_base( T n, int base )
     static char const   digits[] = "0123456789"
                                    "abcdefghijklmnopqrstuvwxyz" ;
 
-    auto const          max_base = breeze::signed_count( digits ) - 1 ;
+    long long const     max_base = breeze::signed_count( digits ) - 1 ;
 
     static_assert( max_base == 36, "" ) ;
 

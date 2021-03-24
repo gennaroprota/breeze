@@ -30,7 +30,7 @@ binary_to_base64( InputIter begin, InputIter end,
     static char const   alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                      "abcdefghijklmnopqrstuvwxyz"
                                      "0123456789+/" ;
-    auto const          base = breeze::signed_count( alphabet ) - 1 ;
+    long long const     base = breeze::signed_count( alphabet ) - 1 ;
 
     static_assert( breeze::is_power_of_2( base ), "" ) ;
 
