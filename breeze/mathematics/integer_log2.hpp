@@ -15,7 +15,6 @@
 #define BREEZE_GUARD_Kym3FA1ex9fw5x3d1rVgY686BX4YRKvw
 
 #include "breeze/top_level_namespace.hpp"
-#include <cstdint>
 
 namespace breeze_ns {
 
@@ -25,15 +24,19 @@ namespace breeze_ns {
 //!     \brief Calculates the integer part of the logarithm, to base 2,
 //!            of its argument.
 //!
+//!     \par Type requirements
+//!         \c T must be an integral type other than \c bool.
+//!
 //!     \pre
 //!         x > 0
 //!
 //!     \note
-//!         This function does not compile with Visual C++ 2015 because
+//!         This template does not compile with Visual C++ 2015 because
 //!         the compiler does not yet implement \c constexpr functions
 //!         as generalized in C++14.
 // ---------------------------------------------------------------------------
-constexpr int       integer_log2( std::intmax_t x ) ;
+template< typename T >
+constexpr int       integer_log2( T x ) ;
 
 }
 

@@ -9,15 +9,14 @@
 #include "breeze/diagnostics/assert.hpp"
 #include "breeze/mathematics/is_power_of_2.hpp"
 #include <limits>
+#include <type_traits>
 
 namespace breeze_ns {
 namespace integer_log2_private {
 
 //      This constant is 4 because it must be a power of two less than
-//      the width of intmax_t. Since the minimum width for a signed type
-//      type (width of signed char) is 8, we start from 4. We could
-//      actually start from 32, because the width of intmax_t must be at
-//      least 64.
+//      the width of T. Since the minimum width for an integral type
+//      other than bool is 8, we start from 4.
 // ---------------------------------------------------------------------------
 constexpr int       start_at = 4 ;
 
@@ -32,13 +31,13 @@ max_power_of_2_less_than_p( int p, int n = start_at )
         ;
 }
 
+template< typename T >
 constexpr int
-integer_log2_implementation( std::intmax_t x, int n ) noexcept
+integer_log2_implementation( T x, int n ) noexcept
 {
     int                 result = 0 ;
     while ( x !=  1 ) {
-        std::intmax_t const
-                            t = x >> n ;
+        T const             t = x >> n ;
         if ( t != 0 ) {
             result += n ;
             x = t ;
@@ -50,15 +49,18 @@ integer_log2_implementation( std::intmax_t x, int n ) noexcept
 
 }
 
+template< typename T >
 constexpr int
-integer_log2( std::intmax_t x )
+integer_log2( T x )
 {
+    static_assert( std::is_integral< T >::value, "" ) ;
+
     BREEZE_ASSERT( x > 0 ) ;
 
     using namespace integer_log2_private ;
 
     constexpr int       n = max_power_of_2_less_than_p(
-            std::numeric_limits< std::intmax_t >::digits
+            std::numeric_limits< T >::digits
         ) ;
     return integer_log2_implementation( x, n ) ;
 }
