@@ -21,12 +21,12 @@ namespace integer_log2_private {
 constexpr int       start_at = 4 ;
 
 constexpr int
-max_power_of_2_less_than_p( int p, int n = start_at )
+max_power_of_2_less_than( int p, int n = start_at )
 {
     BREEZE_ASSERT( breeze::is_power_of_2( static_cast< unsigned >( n ) ) ) ;
 
     return 2*n < p
-        ? max_power_of_2_less_than_p( p, 2*n )
+        ? max_power_of_2_less_than( p, 2*n )
         : n
         ;
 }
@@ -59,7 +59,7 @@ integer_log2( T x )
 
     using namespace integer_log2_private ;
 
-    constexpr int       n = max_power_of_2_less_than_p(
+    constexpr int       n = max_power_of_2_less_than(
             std::numeric_limits< T >::digits
         ) ;
     return integer_log2_implementation( x, n ) ;
