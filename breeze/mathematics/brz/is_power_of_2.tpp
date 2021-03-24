@@ -12,9 +12,9 @@ namespace breeze_ns {
 //      ====================
 //
 //      If T has no sign, the two arguments to && can be swapped, thus
-//      requiring a single test for non-null non-powers-of-2. I gave up
-//      doing this optimization because using SFINAE for these things is
-//      awful; it will be perhaps worth doing when we'll have Concepts.
+//      requiring a single test for non-null non-powers-of-2. Since I
+//      didn't do any measurement, and I wanted to keep things simple,
+//      I'm not doing this.
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr bool
