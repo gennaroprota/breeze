@@ -26,8 +26,7 @@ steady_clock_policy::start() noexcept
 steady_clock_policy::duration_type
 steady_clock_policy::elapsed() const noexcept
 {
-    auto const          now = std::chrono::steady_clock::now() ;
-    return now - m_start_time ;
+    return std::chrono::steady_clock::now() - m_start_time ;
 }
 
 }
