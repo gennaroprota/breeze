@@ -7,7 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Namespace-scope \c begin()/end() and \c cbegin()/cend().
+//!     \brief Namespace-scope `begin()`/`end()` and
+//!            `cbegin()`/`cend()`.
 //!
 //!     Syntax adaptors to extend the usage of begin() and end() to
 //!     C-style arrays. Also defines cbegin() and cend(), with the same
@@ -16,22 +17,21 @@
 //!     All of the function templates are non-members, and the syntax
 //!     is, uniformly
 //!
-//!     \code
+//!     ```
 //!         breeze::begin( a ) ;
 //!         breeze::end( a ) ;
-//!     \endcode
+//!     ```
 //!
-//!     regardless of whether \c a refers to a standard container or to
-//!     a built-in array.
+//!     regardless of whether `a` refers to a standard container or to a
+//!     built-in array.
 //!
 //!     \note
 //!         C++11 and C++14 introduced templates like these and C++17
 //!         made them almost equivalent to ours. Ideally, new code
 //!         should use the standard versions, and ours should just go.
-//!         But the standard <code>cbegin()</code>/<code>cend()</code>
-//!         reserve, as common in C++, a surprise: they don't
-//!         necessarily return an iterator to const (!). So, I'll keep
-//!         my versions around.
+//!         But the standard `cbegin()`/`cend()` reserve, as common in
+//!         C++, a surprise: they don't necessarily return an iterator
+//!         to const (!). So, I'll keep my versions around.
 //!
 //!     \see
 //!         signed_count().
@@ -154,7 +154,7 @@ cbegin( T const ( &a )[ n ] ) noexcept
 //
 //!     Like container::end(), but for a built-in array.
 //!
-//!     (The remark, made for \c begin(), that there's no need for a "T
+//!     (The remark, made for `begin()`, that there's no need for a "T
 //!     const overload" applies here, as well.)
 // ---------------------------------------------------------------------------
 template< typename T, long long n >

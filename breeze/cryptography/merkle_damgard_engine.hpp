@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief  Base class template to ease the definition of policies
-//!             for the \c merkle_damgard_machine template.
+//!             for the `merkle_damgard_machine` template.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_fYqwSU8p6zoTOMzKlvSB4iz96M3PyUF5
@@ -25,12 +25,12 @@ namespace breeze_ns {
 
 //!     \copybrief merkle_damgard_engine.hpp
 //
-//!     All parameters here have pretty much self-explanatory names.
-//!     The only exception is perhaps \c length_exponent: it determines
-//!     the maximum message length that the engine will keep track of:
+//!     All parameters here have pretty much self-explanatory names. The
+//!     only exception is perhaps `length_exponent`: it determines the
+//!     maximum message length that the engine will keep track of:
 //!     attempting to digest a message of <tt>2**length_exponent</tt>
 //!     bits or more either "wraps" or results in an exception, as
-//!     established by the parameter \c count_type (in theory there's no
+//!     established by the parameter `count_type` (in theory there's no
 //!     guarantee that the maximum length, if any, is of the form <tt>
 //!     2**e - 1</tt>, but that's what all one-way hash functions I know
 //!     of do).

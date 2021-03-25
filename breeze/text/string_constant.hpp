@@ -21,7 +21,7 @@ namespace breeze_ns {
 //!     The string <tt>"abcdefghijklmnopqrstuvwxyz"</tt>.
 //!
 //!     \note
-//!         This is not a \c std::string, to avoid any initialization
+//!         This is not a `std::string`, to avoid any initialization
 //!         order issues.
 // ---------------------------------------------------------------------------
 extern char const   latin_small_letters[] ;

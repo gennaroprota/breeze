@@ -22,7 +22,7 @@ namespace breeze_ns {
 //
 //!     Converts a binary sequence to Base64. Conforms to RFC 3548,
 //!     except that it allows to line-wrap the generated Base64 output
-//!     (\c wrap_column != 0).
+//!     (`wrap_column != 0`).
 //!
 //!     \pre
 //!         wrap_column >= 0
@@ -38,7 +38,7 @@ namespace breeze_ns {
 //!
 //!     \param wrap_column
 //!         Column where line-wrapping must occur in the generated
-//!         output (\c 0 means "no wrapping").
+//!         output (<tt>0</tt> means "no wrapping").
 // ---------------------------------------------------------------------------
 template< typename InputIter, typename OutputIter >
 void                binary_to_base64( InputIter begin, InputIter end,

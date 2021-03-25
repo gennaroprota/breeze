@@ -24,7 +24,7 @@ namespace meta {
 //      =========
 //
 //!     \brief
-//!         A \c meta::constant yielding whether a type allows negative
+//!         A `meta::constant` yielding whether a type allows negative
 //!         values.
 // ---------------------------------------------------------------------------
 template< typename T >

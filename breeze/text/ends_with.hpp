@@ -23,13 +23,13 @@ namespace breeze_ns {
 //      ============
 //
 //!     \return
-//!         Whether \c s ends with \c with. If \c with is empty, the
-//!         result is always \c true.
+//!         Whether `s` ends with `with`. If `with` is empty, the result
+//!         is always `true`.
 //!
 //!     \note
 //!         [FUTURE] C++20 will have
-//!           <code>std::basic_string::ends_with()</code> and
-//!           <code>std::basic_string_view::ends_with()</code>
+//!           `std::basic_string::ends_with()` and
+//!           `std::basic_string_view::ends_with()`
 //!         for this.
 //!
 //!     \see
@@ -42,8 +42,8 @@ bool                ends_with( std::string const & s,
 //      ============
 //
 //!     \return
-//!         \c true if and only if \c s ends with \c c, i.e. if and only
-//!         if <code>! s.empty() && s.back() == c</code>.
+//!         `true` if and only if `s` ends with `c`, i.e. if and only if
+//!         `! s.empty() && s.back() == c`.
 // ---------------------------------------------------------------------------
 bool                ends_with( std::string const & s,
                                char c )                   noexcept ;

@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A thin wrapper around \c std::strftime(), plus some
+//!     \brief A thin wrapper around `std::strftime()`, plus some
 //!            predefined format strings.
 // ---------------------------------------------------------------------------
 
@@ -25,33 +25,33 @@ namespace breeze_ns {
 //      ==========================
 //
 //!     These variables allow using meaningful names in combination with
-//!     \c format_time(); e.g. you can write
+//!     `format_time()`; e.g. you can write
 //!
-//!     \code
+//!     ```
 //!         format_time( iso8601_extended_date ) ;
-//!     \endcode
+//!     ```
 //!
 //!     Only a small number of format strings are provided.
 //!
 //!     \note
-//!         These are not <code>std::string</code>s, to avoid any order
-//!         of initialization issues. But this means that e.g.
-//!         concatening their values may be a bit less straightforward.
+//!         These are not `std::string`s, to avoid any order of
+//!         initialization issues. But this means that e.g. concatening
+//!         their values may be a bit less straightforward.
 // ---------------------------------------------------------------------------
 
-//!     Gives a calendar date in the format \c YYYYMMDD.
+//!     Gives a calendar date in the format <tt>YYYYMMDD</tt>.
 // ---------------------------------------------------------------------------
 extern char const   iso8601_basic_date[] ;
 
-//!     Gives a calendar date in the format \c YYYY-MM-DD.
+//!     Gives a calendar date in the format <tt>YYYY-MM-DD</tt>.
 // ---------------------------------------------------------------------------
 extern char const   iso8601_extended_date[] ;
 
-//!     Gives a time of the day in the format \c hhmmss.
+//!     Gives a time of the day in the format <tt>hhmmss</tt>.
 // ---------------------------------------------------------------------------
 extern char const   iso8601_basic_time[] ;
 
-//!     Gives a time of the day in the format \c hh:mm:ss.
+//!     Gives a time of the day in the format <tt>hh:mm:ss</tt>.
 // ---------------------------------------------------------------------------
 extern char const   iso8601_extended_time[] ;
 
@@ -61,7 +61,7 @@ extern char const   iso8601_extended_time[] ;
 //
 //!     \brief
 //!         The type (UTC/local) of the representation requested to
-//!         format_time().
+//!         `format_time()`.
 // ---------------------------------------------------------------------------
 enum class time_kind
 {
@@ -74,16 +74,16 @@ enum class time_kind
 //      ==============
 //
 //!     \return
-//!         The time corresponding to \c time_stamp, formatted according
-//!         to \c format. \c format is interpreted as if passed to the
-//!         \c strftime() standard function.
+//!         The time corresponding to `time_stamp`, formatted according
+//!         to `format`. `format` is interpreted as if passed to the
+//!         `strftime()` standard function.
 //!
 //!     \see
 //!         time_kind.
 //!
-//!     This is a simple tool for simple and quick formatting needs.
-//!     You should use a more complete solution for more complex needs
-//!     (but don't underestimate the good old \c strftime() ;-)).
+//!     This is a simple tool for simple and quick formatting needs. You
+//!     should use a more complete solution for more complex needs (but
+//!     don't underestimate the good old `strftime()` ;-)).
 //!
 //!     \note
 //!         This function is thread-safe and reentrant.

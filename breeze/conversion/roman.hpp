@@ -27,7 +27,7 @@ namespace breeze_ns {
 class roman
 {
 public:
-    //!     Constructs a Roman numeral corresponding to the number \c n.
+    //!     Constructs a Roman numeral corresponding to the number `n`.
     //!
     //!     \pre
     //!         1 <= n && n <= 3999
@@ -45,8 +45,8 @@ private:
     int                 m_value ;
 
     //!     Stream output operator: outputs the Roman numeral. The
-    //!     uppercase flag (\c std::ios_base::uppercase) is supported,
-    //!     so the user can obtain all-uppercase or all-lowercase.
+    //!     uppercase flag (`std::ios_base::uppercase`) is supported, so
+    //!     the user can obtain all-uppercase or all-lowercase.
     // -----------------------------------------------------------------------
     friend std::ostream &
                     operator <<( std::ostream &, roman const & ) ;

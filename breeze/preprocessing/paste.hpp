@@ -16,19 +16,19 @@
 //      BREEZE_PASTE():
 //      ===============
 //
-//!     Concatenates the two preprocessing tokens which end the
-//!     argument \c x and start the argument \c y, respectively, by
-//!     using the \c ## operator.
+//!     Concatenates the two preprocessing tokens which end the argument
+//!     `x` and start the argument `y`, respectively, by using the `##`
+//!     operator.
 //!
 //!     \par Naming rationale
 //!
 //!     Though both the C and the C++ standard use the term
-//!     "concatenate", and not "paste", with reference to what \c ##
+//!     "concatenate", and not "paste", with reference to what `##`
 //!     does, we preferred the shorter word, especially considering that
 //!     this macro is often invoked within other macro invocations.
 //!     "Token pasting" is a well-established expression within the C
 //!     and C++ communities. (A similar comment applies, obviously, to
-//!     the \c _AFTER_EXPANSION variant, which has an even longer name.)
+//!     the `_AFTER_EXPANSION` variant, which has an even longer name.)
 //!
 //!     Also, the names "TOKEN_PASTE" and "PASTE_TOKENS" were rejected
 //!     as, respectively, not verb-based and using plural (which would

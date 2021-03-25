@@ -26,7 +26,7 @@ namespace breeze_ns {
 //      null_stream_buffer:
 //      -------------------
 //
-//!     The stream buffer used by \c null_stream.
+//!     The stream buffer used by `null_stream`.
 // ---------------------------------------------------------------------------
 class null_stream_buffer
     :   public std::streambuf
@@ -36,14 +36,14 @@ public:
 
 protected:
     //!     \return
-    //!         A value which doesn't compare equal to \c Traits::eof()
+    //!         A value which doesn't compare equal to `Traits::eof()`
     //!         (this signals that the output succeeded).
     // -----------------------------------------------------------------------
     virtual int_type    overflow( int_type c ) override ;
 
     //!     \return
-    //!         \c Traits::eof() (this signals that the input reached
-    //!         end of file).
+    //!         `Traits::eof()` (this signals that the input reached end
+    //!         of file).
     // -----------------------------------------------------------------------
     virtual int_type    underflow() override ;
 

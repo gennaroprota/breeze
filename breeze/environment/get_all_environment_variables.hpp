@@ -28,7 +28,7 @@ namespace breeze_ns {
 //!         environment variables.
 //!
 //!     \par Exceptions
-//!         A \c std::runtime_error if an error occurs. TODO: document
+//!         A `std::runtime_error` if an error occurs. TODO: document
 //!         exceptions for allocation errors?
 // ---------------------------------------------------------------------------
 std::map< std::string, std::string >

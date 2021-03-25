@@ -25,33 +25,33 @@ namespace breeze_ns {
 //!     A policy-based timer which allows the user to retrieve the
 //!     amount of time elapsed from its start (i.e. a "stopwatch").
 //!
-//!     \c Device is a policy modeling the "clock device" concept: this
+//!     `Device` is a policy modeling the "clock device" concept: this
 //!     can be a hardware device, a network time provider, a GPS clock
 //!     or pretty much anything else. It must be <tt>
 //!     DefaultConstructible</tt> and provide the member functions:
 //!
-//!      - \c %start(),
-//!            which must start or restart the \c Device
+//!      - `%start()`,
+//!            which must start or restart the `Device`
 //!
-//!      - \c %elapsed(),
+//!      - `%elapsed()`,
 //!            which must return the amount of time elapsed from the
-//!            last call to \c %start()
+//!            last call to `%start()`
 //!
 //!     and the typedef:
 //!
-//!      - \c duration_type,
-//!            which is the return type of \c %elapsed() and
-//!            \c %resolution(); it must be a \c std::chrono::duration
+//!      - `duration_type`,
+//!            which is the return type of `%elapsed()` and
+//!            `%resolution()`; it must be a `std::chrono::duration`
 //!
 //!     Optionally, it may provide the member function:
 //!
-//!      - \c %resolution(),
-//!            which must return the resolution of the \c Device or an
+//!      - `%resolution()`,
+//!            which must return the resolution of the `Device` or an
 //!            estimate of it; note that the resolution is the smallest
-//!            amount of time that the \c Device can measure and
-//!            doesn't, in itself, tell anything about the \e accuracy
+//!            amount of time that the `Device` can measure and doesn't,
+//!            in itself, tell anything about the \e accuracy
 //!
-//!     This function is only used in \c timer::resolution(), so if you
+//!     This function is only used in `timer::resolution()`, so if you
 //!     don't need the latter, you can omit it.
 // ---------------------------------------------------------------------------
 template< class Device >
@@ -83,23 +83,23 @@ public:
     enum start_mode { auto_start, manual_start } ;
 
     //!     Initializes the underlying device by calling the default
-    //!     constructor and, if (and only if) <code>mode == auto_start
-    //!     </code>, calls start().
+    //!     constructor and, if (and only if) `mode == auto_start`,
+    //!     calls start().
     // -----------------------------------------------------------------------
     explicit            timer( start_mode mode = auto_start ) ;
 
-    //!     Calls \c Device::start().
+    //!     Calls `Device::start()`.
     // -----------------------------------------------------------------------
     void                start() ;
 
     //!     \return
-    //!         The result of calling %elapsed() on the underlying \c
-    //!         Device.
+    //!         The result of calling %elapsed() on the underlying
+    //!         `Device`.
     // -----------------------------------------------------------------------
     duration_type       elapsed() const ;
 
     //!     \return
-    //!         The result of calling \c Device::resolution().
+    //!         The result of calling `Device::resolution()`.
     // -----------------------------------------------------------------------
     duration_type       resolution() const ;
 

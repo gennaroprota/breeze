@@ -23,20 +23,20 @@ namespace breeze_ns {
 //      from_string():
 //      ==============
 //
-//!     \brief Tries to form an object of type \c T given its textual
+//!     \brief Tries to form an object of type `T` given its textual
 //!            representation.
 //!
 //!     \par Type requirements
-//!         \c T shall be <tt>DefaultConstructible</tt> and <tt>
+//!         `T` shall be <tt>DefaultConstructible</tt> and <tt>
 //!         MoveConstructible</tt>. Furthermore it shall be <tt>input
-//!         streamable</tt> from a \c std::istream, meaning that an
-//!         <code>operator &gt;&gt;()</code> function may be called that
-//!         takes an instance of \c std::istream as first argument and
-//!         an instance of \c T as second argument.
+//!         streamable</tt> from a `std::istream`, meaning that an
+//!         `operator &gt;&gt;()` function may be called that takes an
+//!         instance of `std::istream` as first argument and an instance
+//!         of `T` as second argument.
 //!
 //!     \note
-//!         \c s and \c T being equal, the result of this function will,
-//!         in general, also depend on the \c locale argument.
+//!         `s` and `T` being equal, the result of this function will,
+//!         in general, also depend on the `locale` argument.
 // ---------------------------------------------------------------------------
 template< typename T >
 maybe< T >          from_string( std::string const & s,
@@ -45,17 +45,17 @@ maybe< T >          from_string( std::string const & s,
 //      from_string():
 //      ==============
 //
-//!     \brief Specialization for <code>std::string</code>s.
+//!     \brief Specialization for `std::string`s.
 //!
 //!     \return
-//!         An (always valid) \c maybe object containing a string which
-//!         compares equal to \c s.
+//!         An (always valid) `maybe` object containing a string which
+//!         compares equal to `s`.
 //!
 //!     \note
 //!         This specialization is not just an optimization: it ensures
 //!         that e.g. " test " converts to " test " and not "test".
 //!
-//!         Also, the \c locale argument isn't actually used for this
+//!         Also, the `locale` argument isn't actually used for this
 //!         specialization.
 // ---------------------------------------------------------------------------
 template<>

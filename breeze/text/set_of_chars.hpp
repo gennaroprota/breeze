@@ -27,34 +27,34 @@ namespace breeze_ns {
 //
 //!     \copybrief set_of_chars.hpp
 //!
-//!     With respect to a \c std::string, a \c set_of_chars can't have
+//!     With respect to a `std::string`, a `set_of_chars` can't have
 //!     duplicates and may model the concept more closely. It also has
-//!     different complexity guarantees: adding a \c char, removing a \c
-//!     char, and testing if a \c char is in the set are all <tt>O(1)
+//!     different complexity guarantees: adding a `char`, removing a
+//!     `char`, and testing if a `char` is in the set are all <tt>O(1)
 //!     </tt> operations; on the other hand, incrementing an iterator is
 //!     a linear search.
 //!
-//!     Note that several functions, below, are overloaded on \c char
-//!     and <code>char const *</code>. Now, depending on whether plain
-//!     \c char has a sign, \c CHAR_MIN may expand to a (non-char) null
-//!     pointer constant, which means that e.g. the call to add() in
+//!     Note that several functions, below, are overloaded on `char` and
+//!     `char const *`. Now, depending on whether plain `char` has a
+//!     sign, `CHAR_MIN` may expand to a (non-char) null pointer
+//!     constant, which means that e.g. the call to `add()` in
 //!
-//!     \code
+//!     ```
 //!         set_of_chars sc ;
 //!         sc.add( CHAR_MIN ) ;
-//!     \endcode
+//!     ```
 //!
 //!     may be ambiguous. To avoid this ambiguity, write:
 //!
-//!     \code
+//!     ```
 //!         sc.add( static_cast< char >( CHAR_MIN ) ) ;
-//!     \endcode
+//!     ```
 //!
 //!     or use
 //!
-//!     \code
+//!     ```
 //!         std::numeric_limits< char >::min()
-//!     \endcode
+//!     ```
 // ---------------------------------------------------------------------------
 class set_of_chars
 {
@@ -67,7 +67,7 @@ public:
                         set_of_chars() noexcept ;
 
     //!     Constructs a set containing all and only the non-null
-    //!     elements of the string pointed to by \c s.
+    //!     elements of the string pointed to by `s`.
     //!
     //!     \pre
     //!         s != nullptr
@@ -75,12 +75,12 @@ public:
     explicit            set_of_chars( char const * s ) noexcept ;
 
     //!     Constructs a set containing all and only the characters in
-    //!     \c s (including null characters, if any).
+    //!     `s` (including null characters, if any).
     // -----------------------------------------------------------------------
     explicit            set_of_chars( std::string const & s ) noexcept ;
 
     //!     Constructs a set containing all and only the characters in
-    //!     the range <code>[begin, end)</code>.
+    //!     the range `[begin, end)`.
     // -----------------------------------------------------------------------
     template< typename InputIterator>
                         set_of_chars( InputIterator begin, InputIterator end )
@@ -90,12 +90,12 @@ public:
     // -----------------------------------------------------------------------
     enum except_for { except } ;
 
-    //!     Constructs a set containing all characters except \c c.
+    //!     Constructs a set containing all characters except `c`.
     // -----------------------------------------------------------------------
                         set_of_chars( except_for, char c ) noexcept ;
 
     //!     Constructs a set containing all characters except the
-    //!     non-null characters in the string pointed to by \c s.
+    //!     non-null characters in the string pointed to by `s`.
     //!
     //!     \pre
     //!         s != nullptr
@@ -103,51 +103,50 @@ public:
                         set_of_chars( except_for, char const * s ) noexcept ;
 
     //!     Constructs a set containing all characters except those in
-    //!     \c s.
+    //!     `s`.
     // -----------------------------------------------------------------------
                         set_of_chars( except_for, std::string const & s )
                                                                       noexcept ;
 
-    //!     Constructs a copy of \c other.
+    //!     Constructs a copy of `other`.
     //!
     //!     \post
     //!         *this == other
     // -----------------------------------------------------------------------
                         set_of_chars( set_of_chars const & other ) noexcept ;
 
-    //!     Copy-assigns from \c other.
+    //!     Copy-assigns from `other`.
     //!
     //!     \post
     //!         *this == other
     //!
     //!     \note
-    //!         All iterators into \c *this are invalidated.
+    //!         All iterators into `*this` are invalidated.
     // -----------------------------------------------------------------------
     set_of_chars &      operator =( set_of_chars const & other ) noexcept ;
 
     //!     Destroys the set.
     //!
     //!     \note
-    //!         All iterators into \c *this are invalidated.
+    //!         All iterators into `*this` are invalidated.
     // -----------------------------------------------------------------------
                         ~set_of_chars() noexcept ;
 
-    //!     Compares \c *this and \c other.
+    //!     Compares `*this` and `other`.
     //!
     //!     \return
-    //!         \c true if and only if the two sets contain the same
+    //!         `true` if and only if the two sets contain the same
     //!         characters.
     // -----------------------------------------------------------------------
     bool                operator ==( set_of_chars const & other ) const
                                                                       noexcept ;
 
     //!     \return
-    //!         \c true if an only if \c *this contains the character
-    //!         \c c.
+    //!         `true` if an only if `*this` contains the character `c`.
     // -----------------------------------------------------------------------
     bool                contains( char c ) const noexcept ;
 
-    //!     Adds the character \c c to the set.
+    //!     Adds the character `c` to the set.
     //!
     //!     \note
     //!         No iterators are invalidated.
@@ -155,7 +154,7 @@ public:
     set_of_chars &      add( char c ) noexcept ;
 
     //!     Adds all the non-null characters in the string pointed to by
-    //!     \c s to the set.
+    //!     `s` to the set.
     //!
     //!     \pre
     //!         s != nullptr
@@ -165,15 +164,15 @@ public:
     // -----------------------------------------------------------------------
     set_of_chars &      add( char const * s ) ;
 
-    //!     Adds all the characters in \c s to the set.
+    //!     Adds all the characters in `s` to the set.
     //!
     //!     \note
     //!         No iterators are invalidated.
     // -----------------------------------------------------------------------
     set_of_chars &      add( std::string const & s ) noexcept ;
 
-    //!     Adds all the characters in the range <code>[begin, end)
-    //!     </code> to the set.
+    //!     Adds all the characters in the range `[begin, end)` to the
+    //!     set.
     //!
     //!     \note
     //!         No iterators are invalidated.
@@ -181,15 +180,15 @@ public:
     template< typename InputIterator >
     set_of_chars &      add( InputIterator begin, InputIterator end ) noexcept ;
 
-    //!     Removes the character \c c from the set.
+    //!     Removes the character `c` from the set.
     //!
     //!     \note
-    //!         All iterators referring to \c c are invalidated.
+    //!         All iterators referring to `c` are invalidated.
     // -----------------------------------------------------------------------
     set_of_chars &      remove( char c ) noexcept ;
 
     //!     Removes all the non-null characters in the string pointed to
-    //!     by \c s from the set.
+    //!     by `s` from the set.
     //!
     //!     \pre
     //!         s != nullptr
@@ -200,7 +199,7 @@ public:
     // -----------------------------------------------------------------------
     set_of_chars &      remove( char const * s ) ;
 
-    //!     Removes all the characters in \c s from the set.
+    //!     Removes all the characters in `s` from the set.
     //!
     //!     \note
     //!         All iterators referring to removed characters are
@@ -211,7 +210,7 @@ public:
     //!     Mutates the set into its complement.
     //!
     //!     \note
-    //!         All iterators into \c *this are invalidated.
+    //!         All iterators into `*this` are invalidated.
     // -----------------------------------------------------------------------
     void                complement() noexcept ;
 
@@ -263,7 +262,7 @@ public:
     //!         An iterator for the set.
     //!
     //!     Iterates over all of the characters in the set. It is a \e
-    //!     constant forward iterator (\c iterator and \c const_iterator
+    //!     constant forward iterator (`iterator` and `const_iterator`
     //!     have the same semantics).
     // -----------------------------------------------------------------------
     class               iterator
@@ -284,7 +283,7 @@ public:
         // -------------------------------------------------------------------
                             iterator() noexcept ;
 
-        //!     Constructs an iterator to the first character in \c sc.
+        //!     Constructs an iterator to the first character in `sc`.
         // -------------------------------------------------------------------
         explicit            iterator( set_of_chars const & sc ) noexcept ;
 

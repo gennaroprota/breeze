@@ -23,7 +23,7 @@ namespace breeze_ns {
 //      =======================
 //
 //!     \return
-//!         The Levenshtein distance between \c first and \c second.
+//!         The Levenshtein distance between `first` and `second`.
 // ---------------------------------------------------------------------------
 std::ptrdiff_t      levenshtein_distance( std::string const & first,
                                           std::string const & second ) ;

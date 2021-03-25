@@ -22,7 +22,7 @@ namespace breeze_ns {
 //
 //!     \copybrief stream_buffer_wrapper.hpp
 //!
-//!     This template is meant to be used to wrap a \c basic_streambuf
+//!     This template is meant to be used to wrap a `basic_streambuf`
 //!     when defining a new stream type. In this case, we'd want to have
 //!     a stream buffer data member in the derived class, but that would
 //!     mean passing its address to the stream base class(es) \e before
@@ -33,24 +33,24 @@ namespace breeze_ns {
 //!
 //!     Using derivation solves this problem, as long as we can
 //!     guarantee that the stream buffer is constructed before the
-//!     streams. But it introduces another one: we'd need to pass the \c
-//!     this pointer, in the constructor initialization list, to the
+//!     streams. But it introduces another one: we'd need to pass the
+//!     `this` pointer, in the constructor initialization list, to the
 //!     base stream constructor(s). Which is probably undefined
 //!     behavior, as well.
 //!
 //!     A solution is to use this wrapper, which allows getting the
-//!     contained buffer address without using \c this.
+//!     contained buffer address without using `this`.
 //!
 //!     Note that this might become a generic wrapper, but we mean to
 //!     only use it for stream buffers, hence its specific name.
 //!
 //!     An alternative technique to define a stream type would be to \e
 //!     default-construct the stream base(s) and have a normal stream
-//!     buffer data member; then calling \c std::ios_base::init() with
+//!     buffer data member; then calling `std::ios_base::init()` with
 //!     the address of the buffer from the body of the derived
 //!     constructor.
 //!
-//!     This may lead to multiple calls to \c init(). Which is probably
+//!     This may lead to multiple calls to `init()`. Which is probably
 //!     meant to work, but the standard doesn't make this crystal clear.
 //!     So we avoid it, and use this wrapper, instead. (If the standard
 //!     was clearer in this regard, I'd prefer this solution.)

@@ -7,8 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Base class template to provide equality operators (\c ==
-//!            and \c !=) for a derived class.
+//!     \brief Base class template to provide equality operators (`==`
+//!            and `!=`) for a derived class.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI
@@ -24,32 +24,32 @@ namespace adl_shield {
 //
 //!     \copybrief equality_comparison.hpp
 //!
-//!     The class template \c equality_comparison provides <code>
-//!     operator ==()</code> and <code>operator !=()</code> as
-//!     namespace-scope functions whose name is associated "on demand"
-//!     (i.e. at instantiation) to class \c T, via ADL.
+//!     The class template `equality_comparison` provides `operator
+//!     ==()` and `operator !=()` as namespace-scope functions whose
+//!     name is associated "on demand" (i.e. at instantiation) to class
+//!     `T`, via ADL.
 //!
 //!     \par Usage
 //!
-//!      - Provide an %is_equal() function for your class \c C, as a
-//!        \e public and \e const member function.
+//!      - Provide an %is_equal() function for your class `C`, as a \e
+//!        public and \e const member function.
 //!
-//!      - Add <code>equality_comparison< C ></code> as a private base
-//!        class of \c C.
+//!      - Add `equality_comparison< C >` as a private base class of
+//!        `C`.
 //!
-//!     As a result, \c == and \c != will be available too for class \c
-//!     C and defined in terms of is_equal().
+//!     As a result, `==` and `!=` will be available too for class `C`
+//!     and defined in terms of is_equal().
 //!
 //!     \par ADL protection
 //!
 //!     Even though this uses the Barton-Nackman trick and relies on its
 //!     standard-conforming, ADL-based, mechanics (no friend injection),
-//!     it is protected from ADL in namespace \c breeze in a way which
+//!     it is protected from ADL in namespace `breeze` in a way which
 //!     allows only the provided operator functions to be found.
 //!
 //!     This means that the user can safely derive their own type from
 //!     any of its instantiations \e without risk of ADL picking up
-//!     anything \e unintended in namespace \c breeze. Example:
+//!     anything \e unintended in namespace `breeze`. Example:
 //!
 //!         Example TODO:
 //!

@@ -7,7 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Splits a \c std::string into a \c std::vector of strings.
+//!     \brief Splits a `std::string` into a `std::vector` of
+//!            `std::string`s.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_V50EdenEkFY3WA0JCnjok8aia0tACes8
@@ -23,16 +24,16 @@ namespace breeze_ns {
 //      ========
 //
 //!     \return
-//!         A vector of strings obtained by splitting \c s at each
-//!         character present in \c separators, in order.
+//!         A vector of strings obtained by splitting `s` at each
+//!         character present in `separators`, in order.
 //!
 //!         Consecutive separators, or separators as first or last
-//!         character in \c s, lead to an empty string in the resulting
+//!         character in `s`, lead to an empty string in the resulting
 //!         vector. The size of the vector is always one plus the number
-//!         of separators in \c s.
+//!         of separators in `s`.
 //!
 //!     \note
-//!         This should probably use \c set_of_chars.
+//!         This should probably use `set_of_chars`.
 // ---------------------------------------------------------------------------
 std::vector< std::string >
                     split( std::string const & s,
@@ -42,19 +43,19 @@ std::vector< std::string >
 //      ===========
 //
 //!     \return
-//!         A vector of strings obtained by splitting \c s at each
-//!         character which satisfies the predicate \c pred, in order.
+//!         A vector of strings obtained by splitting `s` at each
+//!         character which satisfies the predicate `pred`, in order.
 //!
-//!         A character which satisfies \c pred is called a \e separator
+//!         A character which satisfies `pred` is called a \e separator
 //!         in the following.
 //!
 //!         Consecutive separators, or separators as first or last
-//!         character in \c s, lead to an empty string in the resulting
+//!         character in `s`, lead to an empty string in the resulting
 //!         vector. The size of the vector is always one plus the number
-//!         of separators in \c s.
+//!         of separators in `s`.
 //!
 //!     \note
-//!         This should probably use \c set_of_chars.
+//!         This should probably use `set_of_chars`.
 // ---------------------------------------------------------------------------
 template< typename UnaryPredicate >
 std::vector< std::string >

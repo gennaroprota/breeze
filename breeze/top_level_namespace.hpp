@@ -29,8 +29,8 @@
 //!     against a given version of the library will not link against a
 //!     different version.
 //!
-//!     Client code must not use this name, but the "normal" name \c
-//!     breeze, which is defined as an alias to the versioned name.
+//!     Client code must not use this name, but the "normal" name
+//!     `breeze`, which is defined as an alias to the versioned name.
 //!
 //!     Once again, I got this idea from James.
 // ---------------------------------------------------------------------------

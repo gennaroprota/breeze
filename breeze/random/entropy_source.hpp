@@ -28,14 +28,14 @@ namespace breeze_ns {
 //!     This class represents the system entropy source, for generating
 //!     non-deterministic (i.e. non-pseudo-random) random numbers.
 //!
-//!     It is similar to \c std::random_device but predates it and is
+//!     It is similar to `std::random_device` but predates it and is
 //!     more portable. Differently from the standard version, it is not
 //!     implemented on systems which don't have a usable
 //!     non-deterministic source (but, as of writing this, there's no
 //!     such a system among those supported by Breeze).
 //!
-//!     Also differently from \c std::random_device, this class does not
-//!     have an \c entropy() member, as that would be of dubious
+//!     Also differently from `std::random_device`, this class does not
+//!     have an `entropy()` member, as that would be of dubious
 //!     usefulness (see e.g.
 //!     <https://codingnest.com/generating-random-numbers-using-c-standard-library-the-problems/>).
 //!
@@ -60,19 +60,19 @@ public:
     entropy_source &    operator =(     entropy_source const & ) = delete ;
 
     //!     The type of the random numbers returned (or, which is the
-    //!     same, the return type of the \c next() function).
+    //!     same, the return type of the `next()` function).
     //!
-    //!     Guaranteed to be \e unsigned and different from \c char and
-    //!     <code>unsigned char</code>.
+    //!     Guaranteed to be \e unsigned and different from `char` and
+    //!     `unsigned char`.
     //!
     //!     Note that the system entropy source may work on a smaller
-    //!     type (typically <code>unsigned char</code>); but we don't
-    //!     use \c char or <code>unsigned char</code> on the interface
-    //!     because we don't want things like
+    //!     type (typically `unsigned char`); but we don't use `char` or
+    //!     `unsigned char` on the interface because we don't want
+    //!     things like
     //!
-    //!     \code
+    //!     ```
     //!         std::cout << rnd.next() ;
-    //!     \endcode
+    //!     ```
     //!
     //!     to output a character instead of a number.
     // -----------------------------------------------------------------------
@@ -85,12 +85,12 @@ public:
     //!     numbers.
     //!
     //!     \par Exceptions
-    //!         May throw an \c entropy_source::exception or a \c
-    //!         std::bad_alloc.
+    //!         May throw an `entropy_source::exception` or a
+    //!         `std::bad_alloc`.
     // -----------------------------------------------------------------------
                         entropy_source() ;
 
-    //!     Calls \c release(), ignoring its return value, and destroys
+    //!     Calls `release()`, ignoring its return value, and destroys
     //!     the object.
     // -----------------------------------------------------------------------
                         ~entropy_source() noexcept ;
@@ -100,7 +100,7 @@ public:
     //!         max()]</tt>.
     //!
     //!     \par Exceptions
-    //!         An \c entropy_source::exception if the random number
+    //!         An `entropy_source::exception` if the random number
     //!         cannot be generated.
     // -----------------------------------------------------------------------
     result_type         next() ;
@@ -119,13 +119,13 @@ public:
     static constexpr result_type
                         max BREEZE_PREVENT_MACRO_EXPANSION () noexcept ;
 
-    //!     The same as \c next().
+    //!     The same as `next()`.
     // -----------------------------------------------------------------------
     result_type         operator ()() ;
 
     //!     \return
-    //!         A new random value in the range <code>[min(), maximum]
-    //!         </code>.
+    //!         A new random value in the range <tt>[min(),
+    //!         maximum]</tt>.
     //!
     //!     \pre
     //!         maximum <= max()
@@ -133,8 +133,8 @@ public:
     result_type         operator ()( result_type maximum ) ;
 
     //!     \return
-    //!         A new random value in the range <code>[minimum, maximum]
-    //!         </code>.
+    //!         A new random value in the range <tt>[minimum, maximum]
+    //!         </tt>.
     //!
     //!     \pre
     //!         minimum <= maximum
@@ -150,7 +150,7 @@ public:
     //!     manually allows checking for errors.
     //!
     //!     \return
-    //!         \c true if and only if the resource(s) were successfully
+    //!         `true` if and only if the resource(s) were successfully
     //!         released.
     //!
     //!     \par Exceptions
@@ -158,9 +158,8 @@ public:
     //!
     //!     \note
     //!         This function may be called multiple times. After
-    //!         calling \c release(), the only functions that can be
-    //!         called on the object are \c release() and the
-    //!         destructor.
+    //!         calling `release()`, the only functions that can be
+    //!         called on the object are `release()` and the destructor.
     // -----------------------------------------------------------------------
     bool                release() noexcept ;
 
@@ -169,8 +168,8 @@ private:
     impl * const        m_impl ;
 } ;
 
-//!     \brief  The type of exceptions thrown by the members of <code>
-//!             entropy_source</code>.
+//!     \brief  The type of exceptions thrown by the members of
+//!             `entropy_source`.
 // ---------------------------------------------------------------------------
 class entropy_source::exception
     :   public std::runtime_error
@@ -182,7 +181,7 @@ public:
     //!\endcond
 
     //!     Constructs an entropy_source::exception with the given
-    //!     string as \c what() message.
+    //!     string as `what()` message.
     // -----------------------------------------------------------------------
     explicit            exception( std::string const & msg ) ;
 } ;

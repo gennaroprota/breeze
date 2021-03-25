@@ -24,8 +24,8 @@ namespace breeze_ns {
 //!     Gets the current directory of the calling process.
 //!
 //!     \par Exceptions
-//!         A \c std::runtime_error (which may be a \c last_api_error)
-//!         if it fails.
+//!         A `std::runtime_error` (which may be a `last_api_error`) if
+//!         it fails.
 // ---------------------------------------------------------------------------
 std::string         get_current_directory() ;
 

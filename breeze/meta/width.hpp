@@ -25,18 +25,18 @@ namespace meta {
 //
 //!     \copybrief width.hpp
 //!
-//!     The \e width of \c T is the number of bits that \c T uses to
+//!     The \e width of `T` is the number of bits that `T` uses to
 //!     represent values, including any sign but excluding any padding
 //!     bits.
 //!
-//!     This is a meta::constant, with \c value_type \c int.
+//!     This is a meta::constant, with `value_type` `int`.
 //!
 //!     \see
 //!         meta::precision and meta::padding.
 //!
 //!     \par Type requirements
 //!
-//!         \c T shall be an integral type or a cv-qualified version
+//!         `T` shall be an integral type or a cv-qualified version
 //!         thereof.
 // ---------------------------------------------------------------------------
 template< typename T >

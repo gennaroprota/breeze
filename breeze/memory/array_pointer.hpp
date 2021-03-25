@@ -23,11 +23,11 @@ namespace breeze_ns {
 //!     \copybrief array_pointer.hpp
 //!
 //!     A smart pointer that retains sole ownership of an array through
-//!     a pointer. An <code>array_pointer< T ></code> is similar to a
-//!     <code>unique_ptr< T[], std::default_delete< T[] > ></code> but
-//!     this template was written way before C++11.
+//!     a pointer. An `array_pointer< T >` is similar to a `unique_ptr<
+//!     T[], std::default_delete< T[] > >` but this template was written
+//!     way before C++11.
 //!
-//!     Like for \c unique_ptr, instances of this template satisfy the
+//!     Like for `unique_ptr`, instances of this template satisfy the
 //!     requirements of <tt>MoveConstructible</tt> and <tt>
 //!     MoveAssignable</tt>, but not the requirements of either <tt>
 //!     CopyConstructible</tt> or <tt>CopyAssignable</tt>.
@@ -44,31 +44,31 @@ public:
     // -----------------------------------------------------------------------
     array_pointer &     operator =( array_pointer const & ) = delete ;
 
-    //!     Constructs an \c array_pointer that doesn't own any array.
+    //!     Constructs an `array_pointer` that doesn't own any array.
     //!
     //!     \post
     //!         raw_pointer() == nullptr
     // -----------------------------------------------------------------------
                         array_pointer() noexcept ;
 
-    //!     Sets the internal pointer to \c p, taking ownership of the
-    //!     pointed to array if \c p is non-null (in which case, the
-    //!     array must have been allocated with <code>new []</code>.
+    //!     Sets the internal pointer to `p`, taking ownership of the
+    //!     pointed to array if `p` is non-null (in which case, the
+    //!     array must have been allocated with `new []`.
     // -----------------------------------------------------------------------
     explicit            array_pointer( T * p ) noexcept ;
 
-    //!     Move constructs from another \c array_pointer.
+    //!     Move constructs from another `array_pointer`.
     // -----------------------------------------------------------------------
                         array_pointer( array_pointer && ) noexcept ;
 
-    //!     Executes <code>delete [] raw_pointer()</code>.
+    //!     Executes `delete [] raw_pointer()`.
     //!
-    //!     Requires for \c T to be a complete type at the point of
+    //!     Requires for `T` to be a complete type at the point of
     //!     instantiation.
     // ----------------------------------------------------------------------.
                         ~array_pointer() noexcept ;
 
-    //!     Move assigns from another \c array_pointer.
+    //!     Move assigns from another `array_pointer`.
     // -----------------------------------------------------------------------
     array_pointer &     operator =( array_pointer && ) noexcept ;
 
@@ -77,11 +77,11 @@ public:
     // -----------------------------------------------------------------------
     T *                 raw_pointer() const noexcept ;
 
-    //!     If the argument equals \c raw_pointer(), does nothing;
-    //!     otherwise, executes <code>delete [] raw_pointer()</code> and
-    //!     sets the internal pointer to the argument.
+    //!     If the argument equals `raw_pointer()`, does nothing;
+    //!     otherwise, executes `delete [] raw_pointer()` and sets the
+    //!     internal pointer to the argument.
     //!
-    //!     Requires for \c T to be a complete type at the point of
+    //!     Requires for `T` to be a complete type at the point of
     //!     instantiation.
     //!
     //!     \post

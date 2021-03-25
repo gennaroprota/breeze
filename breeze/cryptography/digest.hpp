@@ -36,38 +36,38 @@ public:
 
     //!     \name Constructors, destructor and copy assignment
     //!
-    //!     \c digest uses the compiler-generated copy constructor,
+    //!     `digest` uses the compiler-generated copy constructor,
     //!     destructor and copy assignment operator.
     //!
     //!     The other constructors are listed below.
     //!
     //!\{
     // -----------------------------------------------------------------------
-    //!     Constructs a digest from a \c Hasher. Since the \c Hasher
+    //!     Constructs a digest from a `Hasher`. Since the `Hasher`
     //!     argument is passed by value its state is not affected.
     // -----------------------------------------------------------------------
     explicit            digest( Hasher hasher_copy ) ;
 
     //!     Constructs the digest of the range <tt>[begin, end)</tt>.
-    //!     This constructor saves the user from constructing a \c
-    //!     Hasher object explicitly, but, of course, is only suitable
-    //!     if the input range is all available at once. If you need to
+    //!     This constructor saves the user from constructing a `Hasher`
+    //!     object explicitly, but, of course, is only suitable if the
+    //!     input range is all available at once. If you need to
     //!     accumulate the input in multiple steps, you'll need to use a
-    //!     \c Hasher in your client code, instead.
+    //!     `Hasher` in your client code, instead.
     // -----------------------------------------------------------------------
     template< typename InputIter >
                         digest( InputIter begin, InputIter end ) ;
     //!\}
 
 
-    //!     Equality comparison (both \c == and \c != are provided).
+    //!     Equality comparison (both `==` and `!=` are provided).
     // -----------------------------------------------------------------------
     bool                is_equal( digest< Hasher > const & ) const ;
 
     //!     \name Functions for byte-based iteration (read-only)
     //!
     //!     \note
-    //!         \c const_iterator is a forward iterator.
+    //!         `const_iterator` is a forward iterator.
     //          [gps]
     //!\{
     const_iterator      begin() const ;
@@ -83,11 +83,11 @@ public:
     //!         A functor to compare digest objects.
     //!
     //!     Implements a strict weak ordering relation between digests
-    //!     (from the same \c Hasher type). Useful for ordered
+    //!     (from the same `Hasher` type). Useful for ordered
     //!     associative containers.
     //!
-    //!     The function call operator is not \c noexcept, and the class
-    //!     is a \c friend, because I'd like this part of the library,
+    //!     The function call operator is not `noexcept`, and the class
+    //!     is a friend, because I'd like this part of the library,
     //!     which is the oldest, to be still compilable as C++03, if
     //!     needed.
     // -----------------------------------------------------------------------
@@ -105,8 +105,8 @@ private:
 
 //!     Outputs a hexadecimal representation of the digest. The case of
 //!     the letters A-F is unspecified (this allows us to support e.g.
-//!     \c std::uppercase and \c std::nouppercase in the future). But
-//!     it's guaranteed that all letters will have the same case.
+//!     `std::uppercase` and `std::nouppercase` in the future). But it's
+//!     guaranteed that all letters will have the same case.
 // ---------------------------------------------------------------------------
 template< typename Hasher >
 std::ostream &      operator <<( std::ostream           & os,
@@ -115,7 +115,7 @@ std::ostream &      operator <<( std::ostream           & os,
 //      make_digest():
 //      ==============
 //
-//!     Convenience function to create a \c digest from a \c Hasher (can
+//!     Convenience function to create a `digest` from a `Hasher` (can
 //!     use type deduction).
 //!
 //!     \return

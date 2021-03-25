@@ -26,11 +26,11 @@ namespace breeze_ns {
 class windows_version_info
 {
 public:
-    //!     Constructs a \c windows_version_info object.
+    //!     Constructs a `windows_version_info` object.
     // -----------------------------------------------------------------------
                         windows_version_info() ;
 
-    //!     Destroys a \c windows_version_info object.
+    //!     Destroys a `windows_version_info` object.
     // -----------------------------------------------------------------------
                         ~windows_version_info() noexcept ;
 
@@ -61,9 +61,9 @@ public:
 
     //!     \return
     //!         A (possibly empty) string with the edition of the
-    //!         operating system. The return type could be <code>maybe<
-    //!         std::string ></code> but I didn't want to introduce
-    //!         another dependency.
+    //!         operating system. The return type could be `maybe<
+    //!         std::string >` but I didn't want to introduce another
+    //!         dependency.
     // -----------------------------------------------------------------------
     std::string         edition() const ;
 
@@ -84,8 +84,8 @@ public:
     //!         seem to be using, anyway).
     //!
     //!     \par Exceptions
-    //!         A \c std::runtime_error (which can be a \c
-    //!         last_api_error) if an error occurs.
+    //!         A `std::runtime_error` (which can be a `last_api_error`)
+    //!         if an error occurs.
     // -----------------------------------------------------------------------
     static int          service_pack_level() ;
 

@@ -38,14 +38,14 @@ struct cpuid_result
 //
 //!     \brief
 //!         Executes the CPUID instruction with the provided values in
-//!         \c EAX and \c ECX.
+//!         `EAX` and `ECX`.
 //!
 //!     \pre
 //!         The CPUID instruction is supported (this is always true on
 //!         x86_64 CPUs).
 //!
 //!     \return
-//!         A struct with the values of \c EAX, \c EBX, \c ECX, \c EDX
+//!         A struct with the values of `EAX`, `EBX`, `ECX`, `EDX`
 //!         returned by the CPUID instruction itself.
 //!
 //!     \note

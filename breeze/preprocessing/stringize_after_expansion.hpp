@@ -18,8 +18,8 @@
 //      BREEZE_STRINGIZE_AFTER_EXPANSION():
 //      ===================================
 //
-//!     Stringizes (with \c BREEZE_STRINGIZE()) the result of performing
-//!     macro replacement on the argument \c x.
+//!     Stringizes (with `BREEZE_STRINGIZE()`) the result of performing
+//!     macro replacement on the argument `x`.
 // ---------------------------------------------------------------------------
 #define BREEZE_STRINGIZE_AFTER_EXPANSION( x )   BREEZE_STRINGIZE( x )
 

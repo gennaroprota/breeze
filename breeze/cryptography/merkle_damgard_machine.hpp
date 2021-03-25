@@ -35,19 +35,18 @@ class               digest ;
 //!     implemented easily by means of this class template.
 //!
 //!
-//!     \c Engine, which is the algorithm-specific policy, must provide
+//!     `Engine`, which is the algorithm-specific policy, must provide
 //!     the two static member functions described below:
 //!
-//!      - <code>init_state( state_type & state )</code>
+//!      - `init_state( state_type & state )`
 //!
-//!        Initializes \c state with the initialization vector.
+//!        Initializes `state` with the initialization vector.
 //!
-//!        \c state_type is either a built-in array or an array-like
-//!        type which provides const and non-const \c operator []()
-//!        functions.
+//!        `state_type` is either a built-in array or an array-like type
+//!        which provides const and non-const `operator []()` functions.
 //!
-//!      - <code>process_block( state_type & state,
-//!                             block_type const & block )</code>
+//!      - `process_block( state_type & state,
+//!                             block_type const & block )`
 //!
 //!        Applies the specific compression function to an input block.
 //!
@@ -59,32 +58,31 @@ class               digest ;
 //!
 //!     \warning
 //!         The current interface only supports hashing messages whose
-//!         length is a multiple of \c byte_width.
-//!         In the future, bit iterators could be integrated here if
-//!         possible.
+//!         length is a multiple of `byte_width`. In the future, bit
+//!         iterators could be integrated here if possible.
 //          (Note that internally we already keep the *bit* count of the
 //          input, not the byte count, so extending it should be fairly
 //          straightforward - gps )
 //
-//!     \par A note about \c std::accumulate()
+//!     \par A note about `std::accumulate()`
 //!
 //!     You can "accumulate" data into a %merkle_damgard_machine by
 //!     doing e.g.:
 //!
-//!     \code
+//!     ```
 //!         std::accumulate( begin, end, my_hasher, functor ) ;
-//!     \endcode
+//!     ```
 //!
-//!     with \c functor having the following function-call operator:
+//!     with `functor` having the following function-call operator:
 //!
-//!     \code
+//!     ```
 //!         hasher &
 //!         operator()( hasher & h, hasher::byte_type c )
 //!         {
 //!             h.append( c ) ;
 //!             return h ;
 //!         }
-//!     \endcode
+//!     ```
 //!
 //!     That, however, might be slow, due to excessive copying of the
 //!     hasher.
@@ -92,7 +90,7 @@ class               digest ;
 //!     If that occurs to you, please drop me a mail, in which case I
 //!     might add a copy assignment operator to %merkle_damgard_machine
 //!     which does nothing for self-assignment. In the meantime, please
-//!     use \c std::for_each(), noting in a comment that you are using a
+//!     use `std::for_each()`, noting in a comment that you are using a
 //!     less specific algorithm for performance reasons.
 // ---------------------------------------------------------------------------
 template< typename Engine >

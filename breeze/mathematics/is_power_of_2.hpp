@@ -21,10 +21,10 @@ namespace breeze_ns {
 //      ================
 //
 //!     \return
-//!         \c true if an only if \c x is a power of two.
+//!         `true` if an only if `x` is a power of two.
 //!
 //!     \note
-//!         C++20 has \c std::has_single_bit(), which can replace this
+//!         C++20 has `std::has_single_bit()`, which can replace this
 //!         one (but only works with unsigned types and, on most
 //!         implementations, qualified versions thereof).
 // ---------------------------------------------------------------------------

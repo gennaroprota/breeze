@@ -9,8 +9,8 @@
 //!     \file
 //!     \brief Compile-time selection between types.
 //!
-//!     In C++11 and later, this is superseded by \c std::conditional
-//!     but we need it in some C++03 projects.
+//!     In C++11 and later, this is superseded by `std::conditional` but
+//!     we need it in some C++03 projects.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_Mcff5zkaJE9eTbXnwJQWQ2WlCXIXfcmc
@@ -22,18 +22,18 @@ namespace breeze_ns {
 namespace meta {
 
 //!     \brief
-//!         Like \c select, but with the condition represented as a
-//!         <code>bool</code> value, not a type.
+//!         Like `select`, but with the condition represented as a
+//!         `bool` value, not a type.
 // ---------------------------------------------------------------------------
 template< bool condition, typename T, typename U >
 class select_
 {
 public:
-    //!     A typedef for the type \c T.
+    //!     A typedef for the type `T`.
     // -----------------------------------------------------------------------
     typedef T           type ;
 
-    //!     A typedef for <code>select_< ! condition, T, U ></code>.
+    //!     A typedef for `select_< ! condition, T, U >`.
     // -----------------------------------------------------------------------
     typedef select_< ! condition, T, U >
                         opposite ;
@@ -45,11 +45,11 @@ template< typename T, typename U >
 class select_< false, T, U >
 {
 public:
-    //!     A typedef for the type \c U.
+    //!     A typedef for the type `U`.
     // -----------------------------------------------------------------------
     typedef U           type ;
 
-    //!     A typedef for <code>select_< true, T, U ></code>.
+    //!     A typedef for `select_< true, T, U >`.
     typedef select_< true, T, U >
                         opposite ;
 } ;

@@ -25,12 +25,12 @@ namespace meta {
 //!
 //!     This template is a fundamental building block for our
 //!     meta-programming facilities, which date from when C++ didn't
-//!     have \c constexpr. So, it wraps a constant into a type.
+//!     have `constexpr`. So, it wraps a constant into a type.
 //!
 //!     \par Type requirements
 //!         \a T must be a type suitable for declaring an integral
 //!         constant expression or a const-qualified version of such a
-//!         type (e.g. <code>int const</code>).
+//!         type (e.g. `int const`).
 //!
 //!     \par Naming rationale
 //!         Though at the time of writing (September 2006) only
@@ -44,11 +44,11 @@ template< typename T, T v >
 class constant
 {
 public:
-    //!     A typedef for the type \c T.
+    //!     A typedef for the type `T`.
     // -----------------------------------------------------------------------
     typedef T           value_type ;
 
-    //!     The same as \c constant< T, v >.
+    //!     The same as `constant< T, v >`.
     // -----------------------------------------------------------------------
     typedef constant    type ;
 
@@ -63,7 +63,7 @@ public:
 //!
 //!     \par Credit
 //!         I got the idea of automating the definition from Paul
-//!         Mensonides and his \c map_integral (again, see core issue
+//!         Mensonides and his `map_integral` (again, see core issue
 //!         454).
 // ---------------------------------------------------------------------------
 template< typename T, T v >

@@ -9,7 +9,7 @@
 //
 //!     \file
 //!     \brief A helper class for writing stream inserters that output
-//!            directly through the \c streambuf.
+//!            directly through the `streambuf`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_tEOGCROHt16yX1uloiIgGQGhjyWIPWlv
@@ -32,8 +32,8 @@ namespace breeze_ns {
 //!     directly.
 //!
 //!     The idea for such a helper class is by James Kanze. I tweaked
-//!     his idea a bit, for instance by also encapsulating the <code>
-//!     ostream</code>'s \c sentry.
+//!     his idea a bit, for instance by also encapsulating the
+//!     `ostream`'s `sentry`.
 //!
 //!     The class allows reducing the high amount of duplication
 //!     otherwise implied in writing such inserters, and makes your
@@ -58,16 +58,16 @@ public:
     } ;
 
     //!     \param dest
-    //!         The stream to which all inserted characters will be
-    //!         sent (called the <i>destination stream</i> throughout
-    //!         the documentation of this class).
+    //!         The stream to which all inserted characters will be sent
+    //!         (called the <i>destination stream</i> throughout the
+    //!         documentation of this class).
     //!
     //!     \param wr
     //!         See the documentation of the destructor.
     //!
     //!     \par Exceptions
     //!         This constructor might throw an exception originating
-    //!         from the \c sentry constructor.
+    //!         from the `sentry` constructor.
     // -----------------------------------------------------------------------
     explicit            inserter( std::ostream & dest,
                                   width_reset    wr = reset_width ) ;
@@ -80,7 +80,7 @@ public:
     // -----------------------------------------------------------------------
     inserter &          operator =( inserter const & ) = delete ;
 
-    //!     If \c is_sentry_ok() returns \c true, and \c reset_width was
+    //!     If `is_sentry_ok()` returns `true`, and `reset_width` was
     //!     passed to the constructor, sets the width of the destination
     //!     stream to <tt>0</tt>. Note that this is also done if the
     //!     inserter emits an exception, which is different from e.g.
@@ -101,10 +101,10 @@ public:
     //!     \pre
     //!         is_sentry_ok()
     //!
-    //!     If the destination stream converts to \c true (i.e. if
-    //!     <code>! fail()</code>), calls <code>sputc( c )</code> on its
-    //!     underlying stream buffer, setting \c badbit (which may
-    //!     throw) if \c sputc() fails.
+    //!     If the destination stream converts to `true` (i.e. if `!
+    //!     fail()`), calls `sputc( c )` on its underlying stream
+    //!     buffer, setting `badbit` (which may throw) if `sputc()`
+    //!     fails.
     // -----------------------------------------------------------------------
     void                put( char c ) ;
 
@@ -118,27 +118,25 @@ public:
     //!          - is_sentry_ok()
     //!          - count >= 0
     //!
-    //!     If the destination stream converts to \c true (i.e. if
-    //!     <code>! fail()</code>), calls <code>sputn( source, count )
-    //!     </code> on its underlying stream buffer, setting \c badbit
-    //!     (which may throw) if the return value is not equal to \c
-    //!     count.
+    //!     If the destination stream converts to `true` (i.e. if `!
+    //!     fail()`), calls `sputn( source, count ) ` on its underlying
+    //!     stream buffer, setting `badbit` (which may throw) if the
+    //!     return value is not equal to `count`.
     // -----------------------------------------------------------------------
     void                put( char const * source, std::streamsize count ) ;
 
     //!     \param count
     //!         The number of characters to be output.
     //!
-    //!     If the destination stream converts to \c true (i.e. if
-    //!     <code>! fail()</code>), outputs \c count times the fill
-    //!     character of the destination stream, using either \c sputc()
-    //!     or \c sputn(), setting \c badbit (which may throw) if it is
-    //!     unable to.
+    //!     If the destination stream converts to `true` (i.e. if `!
+    //!     fail()`, outputs `count` times the fill character of the
+    //!     destination stream, using either `sputc()` or `sputn()`,
+    //!     setting `badbit` (which may throw) if it is unable to.
     //!
     //!     The number of characters may be zero, or even negative, in
     //!     which case nothing is output. (Roughly speaking, the idea is
-    //!     to be able to pass something like <code>stream.width() -
-    //!     generated.count</code> as an argument.)
+    //!     to be able to pass something like `stream.width() -
+    //!     generated.count` as an argument.)
     // -----------------------------------------------------------------------
     void                pad( std::streamsize count ) ;
 

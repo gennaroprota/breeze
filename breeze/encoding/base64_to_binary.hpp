@@ -22,12 +22,12 @@ namespace breeze_ns {
 //
 //!     Decodes a Base64 representation.
 //!
-//!     This function conforms to RFC 3548 with one exception: it
-//!     allows \e newlines to appear anywhere in the input.
+//!     This function conforms to RFC 3548 with one exception: it allows
+//!     \e newlines to appear anywhere in the input.
 //!
 //!     \par Exceptions
-//!         A \c std::runtime_error on any invalid input character; this
-//!         does not throw \c std::logic_error because, for input
+//!         A `std::runtime_error` on any invalid input character; this
+//!         does not throw `std::logic_error` because, for input
 //!         iterators, it's not possible for the user to check the input
 //!         before passing it to us.
 //!

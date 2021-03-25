@@ -22,7 +22,7 @@ namespace breeze_ns {
 //      =====================
 //
 //!     \return
-//!         A human readable name for the type \c T.
+//!         A human readable name for the type `T`.
 // ---------------------------------------------------------------------------
 template< typename T >
 std::string         readable_type_name() ;
@@ -31,11 +31,11 @@ std::string         readable_type_name() ;
 //      =====================
 //
 //!     \return
-//!         A human readable name for the type of the object to which \c
-//!         ref refers. If \c T is a polymorphic class type, the name is
-//!         that of the type of the most derived object (i.e. the \e
+//!         A human readable name for the type of the object to which
+//!         `ref` refers. If `T` is a polymorphic class type, the name
+//!         is that of the type of the most derived object (i.e. the \e
 //!         dynamic type), otherwise it is that of the static type (i.e.
-//!         the name of \c T).
+//!         the name of `T`).
 // ---------------------------------------------------------------------------
 template< typename T >
 std::string         readable_type_name( T const & ref ) ;

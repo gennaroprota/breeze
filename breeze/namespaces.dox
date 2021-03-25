@@ -17,7 +17,7 @@ namespace breeze_ns {
 //!     This namespace is \e not for user consumption and is for
 //!     internal Breeze usage when we want to protect users of a Breeze
 //!     component from \e unintended argument-dependent lookup in
-//!     namespace \c breeze. For an example, see equality_comparison.
+//!     namespace `breeze`. For an example, see equality_comparison.
 //!
 //!     This namespace won't normally contain any function or function
 //!     template, except for those that we \e do want to be found by ADL
@@ -28,8 +28,8 @@ namespace breeze_ns {
 //!     or function template.
 //!
 //!     Users can just ignore this namespace, because the class name is
-//!     then imported in namespace \c breeze via a \c using or a \c
-//!     typedef (namespace \c breeze will not be searched by ADL).
+//!     then imported in namespace `breeze` via a `using` or a `typedef`
+//!     (namespace `breeze` will not be searched by ADL).
 // ---------------------------------------------------------------------------
 namespace adl_shield {
 
@@ -38,7 +38,7 @@ namespace adl_shield {
 //!     \brief Namespace for our meta-programming facilities.
 //!
 //!     This namespace also hosts the meta-programming facilities
-//!     designed before C++ had \c constexpr.
+//!     designed before C++ had `constexpr`.
 // ---------------------------------------------------------------------------
 namespace meta {
 

@@ -26,14 +26,14 @@ class test_descriptor
 public:
     typedef      void( &test_function )() ;
 
-    //!     Constructs the descriptor for a test having a given \c
-    //!     name and running the given function.
-    //!     Intentionally not explicit to allow our typical usage:
+    //!     Constructs the descriptor for a test having a given name and
+    //!     running the given function. Intentionally not explicit to
+    //!     allow our typical usage:
     //!
-    //!     \code
+    //!     ```
     //!         test_runner::instance().run( "description...",
     //!                                      { func1, func2... funcN } ) ;
-    //!     \endcode
+    //!     ```
     // -----------------------------------------------------------------------
                         test_descriptor( test_function,
                                          char const * name = "" ) ;

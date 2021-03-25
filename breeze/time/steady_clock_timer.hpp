@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A timer based on \c std::chrono::steady_clock.
+//!     \brief A timer based on `std::chrono::steady_clock`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_nLtyKWctWF4nTnEMJ4Y66pLLeGE7RNze
@@ -22,11 +22,11 @@ namespace breeze_ns {
 //      steady_clock_policy:
 //      ====================
 //
-//!     \brief A policy for our \c timer template using \c
-//!            std::chrono::steady_clock.
+//!     \brief A policy for our `timer` template using
+//!            `std::chrono::steady_clock`.
 //!
 //!     \note
-//!         This policy does not provide the \c resolution() member.
+//!         This policy does not provide the `resolution()` member.
 // ---------------------------------------------------------------------------
 class steady_clock_policy
 {
@@ -42,7 +42,7 @@ public:
                         operator =(          steady_clock_policy const & ) =
                                                                         delete ;
 
-    //!     A typedef for \c std::chrono::steady_clock::duration.
+    //!     A typedef for `std::chrono::steady_clock::duration`.
     // -----------------------------------------------------------------------
     typedef std::chrono::steady_clock::duration
                         duration_type ;

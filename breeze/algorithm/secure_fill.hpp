@@ -75,12 +75,12 @@ namespace breeze_ns {
 //      secure_fill():
 //      ==============
 //
-//!     \brief Like \c std::fill(), but guarantees that the range is
+//!     \brief Like `std::fill()`, but guarantees that the range is
 //!            written to.
 //!
-//!     This is completely analogous to the \c std::fill() algorithm,
+//!     This is completely analogous to the `std::fill()` algorithm,
 //!     except that it guarantees that the range is written to, even if
-//!     its elements are never touched after the \c secure_fill() call
+//!     its elements are never touched after the `secure_fill()` call
 //!     (in other words: it ensures that the compiler will not optimize
 //!     away the call); unless, of course, the provided range is empty.
 //!     Useful for zeroing passwords and other sensitive data (see

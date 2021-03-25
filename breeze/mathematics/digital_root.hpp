@@ -21,7 +21,7 @@ namespace breeze_ns {
 //      ===============
 //
 //!     \return
-//!         The digital root of the number \c n in base \c base.
+//!         The digital root of the number `n` in base `base`.
 //!
 //!     \pre
 //!         n >= 0 && base >= 2

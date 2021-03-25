@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A timer based on \c std::clock().
+//!     \brief A timer based on `std::clock()`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
@@ -24,12 +24,12 @@ namespace breeze_ns {
 //      ===============
 //
 //!     \brief
-//!         A policy for our \c timer template using the C function
-//!         <code>clock()</code>.
+//!         A policy for our `timer` template using the C function
+//!         `clock()`.
 //!
 //!     \warning
-//!         Note that on some (non-conforming) implementations \c
-//!         clock() will actually measure wall-clock time. One such
+//!         Note that on some (non-conforming) implementations `clock()`
+//!         will actually measure wall-clock time. One such
 //!         implementation is the Microsoft one:<br />
 //!         <br />&nbsp;&nbsp;
 //!    <https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/clock>.
@@ -59,7 +59,7 @@ public:
     //!     Starts or restarts measurement (see elapsed()).
     //!
     //!     \par Exceptions
-    //!         A \c std::runtime_error if \c std::clock() fails.
+    //!         A `std::runtime_error` if `std::clock()` fails.
     // -----------------------------------------------------------------------
     void                start() ;
 
@@ -71,9 +71,9 @@ public:
     //!         The function start() has been called at least once.
     //!
     //!     \par Exceptions
-    //!         A \c std::runtime_error if it detects wrap-around (it
-    //!         only detects \e some wrap-arounds), or if \c
-    //!         std::clock() fails.
+    //!         A `std::runtime_error` if it detects wrap-around (it
+    //!         only detects \e some wrap-arounds), or if `std::clock()`
+    //!         fails.
     // -----------------------------------------------------------------------
     duration_type       elapsed() const ;
 
@@ -82,9 +82,9 @@ public:
     //!         May return slightly different values from call to call.
     //!
     //!     \par Exceptions
-    //!         A \c std::runtime_error if it detects wrap-around (it
-    //!         only detects \e some wrap-arounds), or if \c
-    //!         std::clock() fails.
+    //!         A `std::runtime_error` if it detects wrap-around (it
+    //!         only detects \e some wrap-arounds), or if `std::clock()`
+    //!         fails.
     // -----------------------------------------------------------------------
     duration_type       resolution() const ;
 

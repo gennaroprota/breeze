@@ -21,17 +21,17 @@ namespace breeze_ns {
 //      require_type_completeness():
 //      ============================
 //
-//!     To be used to ensure that \c T is a complete type at the point
-//!     of instantiation. If \c T is incomplete then the expression
+//!     To be used to ensure that `T` is a complete type at the point of
+//!     instantiation. If `T` is incomplete then the expression
 //!
-//!     \code
+//!     ```
 //!         require_type_completeness< T >()
-//!     \endcode
+//!     ```
 //!
 //!     renders the program \e ill-formed.
 //!
-//!     This template has a \c noexcept specifier so that it can be used
-//!     in other \c noexcept functions (typically, destructors), without
+//!     This template has a `noexcept` specifier so that it can be used
+//!     in other noexcept functions (typically, destructors), without
 //!     warnings from compilers and static analyzers.
 // ---------------------------------------------------------------------------
 template< typename T >

@@ -7,8 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A test_reporter to report unit test errors to a \c
-//!            std::ostream.
+//!     \brief A test_reporter to report unit test errors to a
+//!            `std::ostream`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_XgKxFi9sRq7YDgySOH2206PWX2ZxQrtB
@@ -27,13 +27,13 @@ namespace breeze_ns {
 //!
 //!     \par Naming rationale
 //!
-//!     Not named \c output_stream_reporter because that made difficult
+//!     Not named `output_stream_reporter` because that made difficult
 //!     to use our declaration style: with that name, declaring an
 //!     object of type output_stream_reporter required to but the type
 //!     name on one line and the variable name on the next line, which
 //!     is ugly. Example:
 //!
-//!     \code
+//!     ```
 //!                  1         2
 //!         1234567890123456789012345
 //!         {
@@ -41,9 +41,9 @@ namespace breeze_ns {
 //!                                 r ;
 //!             ...
 //!         }
-//!     \endcode
+//!     ```
 //!
-//!     An alternative would have been \c ostream_reporter, but that's
+//!     An alternative would have been `ostream_reporter`, but that's
 //!     inconsistent with the rest of the library.
 // ---------------------------------------------------------------------------
 class stream_reporter

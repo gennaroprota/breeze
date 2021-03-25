@@ -23,18 +23,17 @@ namespace breeze_ns {
 //!     \copybrief ceiling_of_quotient.hpp
 //!
 //!     \par Type requirements
-//!         \c Integer shall be an integral type or a cv-qualified
+//!         `Integer` shall be an integral type or a cv-qualified
 //!         version thereof.
 //!
 //!     \pre
 //!         b != 0
 //!
 //!     \return
-//!         The ceiling of the quotient between \c a and \c b.
+//!         The ceiling of the quotient between `a` and `b`.
 //!
 //!     Useful to answer questions such as: "How many octets do I need
-//!     to store 20 bits?". Answer: <code>ceiling_of_quotient( 20, 8 )
-//!     </code>.
+//!     to store 20 bits?". Answer: `ceiling_of_quotient( 20, 8 )`.
 // ---------------------------------------------------------------------------
 template< typename Integer >
 constexpr Integer   ceiling_of_quotient( Integer a, Integer b ) ;

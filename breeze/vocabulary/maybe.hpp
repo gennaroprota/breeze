@@ -22,7 +22,7 @@ namespace breeze_ns {
 //      =====================
 //
 //!     \brief
-//!         The default traits class for \c maybe. Logically corresponds
+//!         The default traits class for `maybe`. Logically corresponds
 //!         to a boolean (valid/invalid).
 // ---------------------------------------------------------------------------
 class boolean_maybe_traits
@@ -31,7 +31,7 @@ public:
     //      status:
     //      =======
     //
-    //!     The type of the status to associate to the \c maybe value.
+    //!     The type of the status to associate to the `maybe` value.
     // -----------------------------------------------------------------------
     class status
     {
@@ -40,21 +40,21 @@ public:
         bool                value ;
     } ;
 
-    //!     See the \c maybe documentation.
+    //!     See the `maybe` documentation.
     // -----------------------------------------------------------------------
     static bool         is_valid( status s ) noexcept
     {
         return s.value ;
     }
 
-    //!     See the \c maybe documentation.
+    //!     See the `maybe` documentation.
     // -----------------------------------------------------------------------
     static status       default_invalid() noexcept
     {
         return status( false ) ;
     }
 
-    //!     See the \c maybe documentation.
+    //!     See the `maybe` documentation.
     // -----------------------------------------------------------------------
     static status       default_valid() noexcept
     {
@@ -76,116 +76,116 @@ public:
 //!     Examples</i>. Addison-Wesley Professional. ISBN 0-201-53393-6.
 //!
 //!     The book calls it "Fallible", but we chose a more general name.
-//!     In type theory terminology, \c maybe< T > is an <i>option
+//!     In type theory terminology, `maybe< T >` is an <i>option
 //!     type</i>. Many languages support this concept, or the related
 //!     concept of <i>nullable type</i>, directly.
 //!
-//!     Basically: \c maybe< T > is used as return type for functions
-//!     that logically return a \c T or fail. The \c maybe< T > object
+//!     Basically: `maybe< T >` is used as return type for functions
+//!     that logically return a `T` or fail. The `maybe< T >` object
 //!     keeps track of its validity state, and any attempt to retrieve
-//!     the \c T object when it is marked as invalid will cause an
+//!     the `T` object when it is marked as invalid will cause an
 //!     assertion failure.
 //!
 //!     Note that the original Barton and Nackman solution threw an
 //!     exception, instead.
 //!
-//!     The Breeze library guarantees that the \c T object, if any, is
-//!     stored as a part of its \c maybe object: no additional storage
-//!     is used.
+//!     The Breeze library guarantees that the `T` object, if any, is
+//!     stored as a part of its `maybe` object: no additional storage is
+//!     used.
 //!
 //!     There are other important differences compared to the version
 //!     provided by Barton and Nackman.
 //!
-//!     1. At least for the moment, there is no \c invalidate()
-//!        function; I'm still waiting to see if a reasonable usage for
-//!        it exists (perhaps a cache?).
+//!     1. At least for the moment, there is no `invalidate()` function;
+//!        I'm still waiting to see if a reasonable usage for it exists
+//!        (perhaps a cache?).
 //!
-//!     2. No conversion function to \c T is provided. Among other
+//!     2. No conversion function to `T` is provided. Among other
 //!        things, it wouldn't be useful in at least the following
 //!        situations:
 //!
 //!         - when you want to invoke a member function on the "real"
 //!           object:
-//!           \code
+//!           ```
 //!               maybe< std::string > my_function() ;
 //!               my_function().size() ;        // error
 //!               my_function().value().size()  // OK
-//!           \endcode
+//!           ```
 //!
 //!           (but, of course, the latter is stylistically rare: one
 //!           would usually assign the function return value first)
 //!
-//!         - when \c T itself has a user defined conversion, which you
+//!         - when `T` itself has a user defined conversion, which you
 //!           want to be applied
 //!
 //!        As shown above, in these cases you have to explicitly invoke
-//!        \c value().
+//!        `value()`.
 //!
-//!        Curiously enough, Barton and Nackman's book introduces \c
-//!        Fallible as an example of using conversions ("to add a binary
-//!        state"---valid or invalid---and checking to objects). The
-//!        conversion itself, however, isn't part of the concept: it
+//!        Curiously enough, Barton and Nackman's book introduces
+//!        `Fallible` as an example of using conversions ("to add a
+//!        binary state"---valid or invalid---and checking to objects).
+//!        The conversion itself, however, isn't part of the concept: it
 //!        just makes the checking more "transparent" (at the well-known
 //!        cost that implicit conversions generally bring).
 //!
-//!     3. It isn't required for \c T to have a default constructor.
+//!     3. It isn't required for `T` to have a default constructor.
 //!
 //!     4. Has a richer interface and supports move semantics.
 //!
-//!     5. Has an additional template parameter (\c Traits) which allows
+//!     5. Has an additional template parameter (`Traits`) which allows
 //!        specifying several invalid states or several valid states.
 //!
 //!     The template parameters are:
 //!
-//!      - \c T
+//!      - `T`
 //!
-//!        The type of the value to store when the \c maybe is valid. As
+//!        The type of the value to store when the `maybe` is valid. As
 //!        usual, its move constructor(s) and move assignment
 //!        operator(s), if any, must not emit exceptions.
 //!
-//!      - \c Traits
+//!      - `Traits`
 //!
 //!        A traits class defining the valid and the invalid states of
-//!        the \c maybe object. It shall contain:
+//!        the `maybe` object. It shall contain:
 //!
 //!         - a nested type or typedef named "status" that can be used
-//!           to store the state of the \c maybe object
+//!           to store the state of the `maybe` object
 //!
-//!         - an \c %is_valid() static function, which returns whether a
-//!           given value of type \c status corresponds to a valid
-//!           status or not
+//!         - an `%is_valid()` static function, which returns whether a
+//!           given value of type `status` corresponds to a valid status
+//!           or not
 //!
 //!         - two static functions, named "default_invalid" and
 //!           "default_valid" which give the default invalid and valid
 //!           state, respectively
 //!
-//!        The copy and move operations of \c Traits::status must not
+//!        The copy and move operations of `Traits::status` must not
 //!        emit exceptions (note that this is a stronger requirement
-//!        than the one on \c T, which concerns move only).
+//!        than the one on `T`, which concerns move only).
 //!
 //!     \par A final note about std::optional
 //!
-//!     C++17 introduces \c std::optional, which has the same purpose as
-//!     our \c maybe.
+//!     C++17 introduces `std::optional`, which has the same purpose as
+//!     our `maybe`.
 //!
 //!     Generally, I'm against using components that do double duty with
-//!     the standard library, but \c std::optional:
+//!     the standard library, but `std::optional`:
 //!
 //!      - is IMHO quite over-engineered
 //!
 //!      - abuses operator overloading to provide a pointer-like syntax
 //!        for unchecked access to the contained value
 //!
-//!      - has an error-prone conversion to \c bool instead of an \c
-//!        is_valid() function: see \c std::optional< bool >
+//!      - has an error-prone conversion to `bool` instead of an
+//!        `is_valid()` function: see `std::optional< bool >`
 //!
-//!      - treats a valid \c std::optional< T > as a \c T in some
-//!        contexts (comparison operators) and not in others
+//!      - treats a valid `std::optional< T >` as a `T` in some contexts
+//!        (comparison operators) and not in others
 //!
 //!      - doesn't (yet?) support a generalized error status, which is
 //!        essential for our usages
 //!
-//!     So, I'm not going to replace our \c maybe with \c std::optional,
+//!     So, I'm not going to replace our `maybe` with `std::optional`,
 //!     even in C++17.
 // ---------------------------------------------------------------------------
 template< typename T, typename Traits = boolean_maybe_traits >
@@ -227,7 +227,7 @@ public:
     static_assert( std::is_nothrow_move_assignable< status_type >::value, "" ) ;
 
 
-    //!     Constructs an invalid \c maybe.
+    //!     Constructs an invalid `maybe`.
     //!
     //!     \pre
     //!         ! Traits::is_valid( status )
@@ -239,13 +239,13 @@ public:
     explicit            maybe( status_type status =
                                           Traits::default_invalid() ) ;
 
-    //!     Constructs a valid \c maybe.
+    //!     Constructs a valid `maybe`.
     //!
     //!     \pre
     //!         Traits::is_valid( status )
     //!
     //!     \param value
-    //!         The \c T value to copy.
+    //!         The `T` value to copy.
     //!
     //!     \param status
     //!         The status to associate to the object.
@@ -262,7 +262,7 @@ public:
     //!         Traits::is_valid( status )
     //!
     //!     \param value
-    //!         The \c T value to move from.
+    //!         The `T` value to move from.
     //!
     //!     \param status
     //!         The status to associate to the object
@@ -331,7 +331,7 @@ public:
     bool                is_valid() const noexcept ;
 
     //!     \return
-    //!         A reference to the \c T value.
+    //!         A reference to the `T` value.
     //!
     //!     \pre
     //!         is_valid()
@@ -339,15 +339,15 @@ public:
     T const &           value() const ;
 
     //!     \return
-    //!         \c value() if \c is_valid(); otherwise \c default_value.
+    //!         `value()` if `is_valid()`; otherwise `default_value`.
     //!
-    //!     Note that, differently from \c value(), this function
-    //!     returns by value, which prevents problems of dangling
-    //!     references. Note, too, that, for this reason, it is not
-    //!     noexcept (\c T's copy constructor might throw); a
-    //!     conditional noexcept() would be an option, but it adds too
-    //!     much complexity, in our opinion, and of course we would have
-    //!     to use it consistently, not just for \c %default_to().
+    //!     Note that, differently from `value()`, this function returns
+    //!     by value, which prevents problems of dangling references.
+    //!     Note, too, that, for this reason, it is not noexcept (`T`'s
+    //!     copy constructor might throw); a conditional `noexcept()`
+    //!     would be an option, but it adds too much complexity, in our
+    //!     opinion, and of course we would have to use it consistently,
+    //!     not just for `%default_to()`.
     // -----------------------------------------------------------------------
     T                   default_to( T const & default_value ) const ;
 

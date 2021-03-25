@@ -22,11 +22,11 @@ namespace breeze_ns {
 //!         base >= 2 && base <= 36
 //!
 //!     \return
-//!         The representation, in base \c base, of the integer \c n. A
+//!         The representation, in base `base`, of the integer `n`. A
 //!         negative value is represented as the character '-' (minus)
 //!         immediately followed by the representation of its absolute
-//!         value (in the mathematical sense: \c the minimum value of \c
-//!         T is handled correctly, even on a two's complement
+//!         value (in the mathematical sense: the minimum value of `T`
+//!         is handled correctly, even on a two's complement
 //!         implementation).
 // ---------------------------------------------------------------------------
 template< typename T >

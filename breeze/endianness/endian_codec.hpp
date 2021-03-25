@@ -179,25 +179,24 @@ public:
 //
 //!     \copybrief endian_codec.hpp
 //!
-//!     Converts generic values to/from (byte-)sequence
-//!     representations.
+//!     Converts generic values to/from (byte-)sequence representations.
 //!
-//!     In general, \c endian_codec can read and store a representation
+//!     In general, `endian_codec` can read and store a representation
 //!     of a value as a sequence of smaller units, regardless of their
 //!     widths. It is mostly useful to read and write values
 //!     independently of the endianness they are stored in, as long as
 //!     the endianness type is known.
 //!
 //!     \par Type requirements
-//!         \c T and \c Byte shall be integral types with no sign.
-//!         The width of \c T must be smaller than the width of \c Byte
-//!         (e.g. you can store a 32-bit integer into a 64-bit one) or
-//!         an exact multiple of it.
+//!         `T` and `Byte` shall be integral types with no sign. The
+//!         width of `T` must be smaller than the width of `Byte` (e.g.
+//!         you can store a 32-bit integer into a 64-bit one) or an
+//!         exact multiple of it.
 //!
 //!     \warning
-//!         Given its generality it might be a good idea to rename
-//!         this to something like "order_codec" or similar; feedback
-//!         is welcome.
+//!         Given its generality it might be a good idea to rename this
+//!         to something like "order_codec" or similar; feedback is
+//!         welcome.
 //!
 //!     \todo Check this; is it true for user-policies?
 // ---------------------------------------------------------------------------
@@ -216,8 +215,8 @@ public:
     static std::ptrdiff_t const
                         required_count = n ; // gps experimental
 
-    //!     Writes (encodes) the value \c value into a range starting
-    //!     with \c dest, according to \c EndianPolicy.
+    //!     Writes (encodes) the value `value` into a range starting
+    //!     with `dest`, according to `EndianPolicy`.
     // -----------------------------------------------------------------------
     template< typename OutputIter >
     static void         encode( T const & value, OutputIter dest )
@@ -229,12 +228,12 @@ public:
     }
 
     //!     \return
-    //!         The value of type \c T encoded, according to \c
-    //!         EndianPolicy, in a range that begins with \c source.
+    //!         The value of type `T` encoded, according to
+    //!         `EndianPolicy`, in a range that begins with `source`.
     //!
     //!     \note
-    //!         The \c value_type of \c InputIter can be larger than \c
-    //!         Byte.
+    //!         The `value_type` of `InputIter` can be larger than
+    //!         `Byte`.
     // -----------------------------------------------------------------------
     template< typename InputIter >
     static T            decode( InputIter source )
@@ -256,19 +255,19 @@ endian_codec< EndianPolicy, T, Byte >::required_count ;
 //      endian_store():
 //      ===============
 //
-//!     \brief Convenience wrapper around \c endian_codec::encode()
+//!     \brief Convenience wrapper around `endian_codec::encode()`
 //!
-//!     \c endian_store< EndianPolicy >( value, it ) is equivalent to:
+//!     `endian_store< EndianPolicy >( value, it )` is equivalent to:
 //!
-//!     \code
+//!     ```
 //!         typedef typename std::iterator_traits< ForwardIter >::value_type
 //!                             Byte ;
 //!         breeze::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
-//!     \endcode
+//!     ```
 //!
 //!     \note
 //!         This can't be used for purely output iterators, because they
-//!         don't have a notion of \c value_type.
+//!         don't have a notion of `value_type`.
 // ---------------------------------------------------------------------------
 template< typename EndianPolicy, typename T, typename ForwardIter >
 void
@@ -282,15 +281,15 @@ endian_store( T const & value, ForwardIter it )
 //      endian_load():
 //      ==============
 //
-//!     \brief Convenience wrapper around \c endian_codec::decode()
+//!     \brief Convenience wrapper around `endian_codec::decode()`
 //!
-//!     \c endian_load< EndianPolicy, T >( it ) is equivalent to:
+//!     `endian_load< EndianPolicy, T >( it )` is equivalent to:
 //!
-//!     \code
+//!     ```
 //!         typedef typename std::iterator_traits< InputIter >::value_type
 //!                             Byte ;
 //!         return breeze::endian_codec< EndianPolicy, T, Byte >::decode( it ) ;
-//!     \endcode
+//!     ```
 // ---------------------------------------------------------------------------
 template< typename EndianPolicy, typename T, typename InputIter >
 T

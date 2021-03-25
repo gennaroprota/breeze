@@ -22,11 +22,11 @@ namespace breeze_ns {
 //      to_lowercase():
 //      ----------------
 //
-//!     Converts each character in \c source to lowercase, using the \c
-//!     ctype facet of the given locale. Only 1:1 character mapping can
-//!     be performed: for instance, the uppercase Greek letter sigma has
-//!     two lowercase forms, which are chosen depending on whether they
-//!     are the final letter of a word or not; this function cannot
+//!     Converts each character in `source` to lowercase, using the
+//!     `ctype` facet of the given locale. Only 1:1 character mapping
+//!     can be performed: for instance, the uppercase Greek letter sigma
+//!     has two lowercase forms, which are chosen depending on whether
+//!     they are the final letter of a word or not; this function cannot
 //!     handle this.
 //!
 //!     \par Naming rationale
@@ -35,12 +35,12 @@ namespace breeze_ns {
 //!     "to_lowercase". The issue is being consistent in the
 //!     documentation: separating "lower" and "case" would mean using a
 //!     space between the two words for usage as a noun, and a hyphen,
-//!     instead, for usage as an adjective. This is error-prone.
-//!     So I decided to use the spelling "lowercase" everywhere: code
-//!     and documentation.
+//!     instead, for usage as an adjective. This is error-prone. So I
+//!     decided to use the spelling "lowercase" everywhere: code and
+//!     documentation.
 //!
-//!     This is also consistent with the stream manipulator \c
-//!     std::uppercase.
+//!     This is also consistent with the stream manipulator
+//!     `std::uppercase`.
 //!
 //!     \see
 //!         to_uppercase().

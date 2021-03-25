@@ -7,8 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Removes a \c std::string or a character from the end of a
-//!            \c std::string.
+//!     \brief Removes a `std::string` or a character from the end of a
+//!            `std::string`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_vf6LuqjTQ9wAJWXZsNnALWlVf4PYtieN
@@ -23,9 +23,9 @@ namespace breeze_ns {
 //      ==================
 //
 //!     \return
-//!         If \c s ends with \c to_be_removed, \c s with the \c
-//!         to_be_removed part erased from its end; otherwise a copy of
-//!         \c s.
+//!         If `s` ends with `to_be_removed`, `s` with the
+//!         `to_be_removed` part erased from its end; otherwise a copy
+//!         of `s`.
 // ---------------------------------------------------------------------------
 std::string         remove_from_end( std::string const & s,
                                      std::string const & to_be_removed ) ;
@@ -34,8 +34,8 @@ std::string         remove_from_end( std::string const & s,
 //      ==================
 //
 //!     \return
-//!         If \c s ends with \c c, \c s with the last character
-//!         removed; otherwise a copy of \c s.
+//!         If `s` ends with `c`, `s` with the last character removed;
+//!         otherwise a copy of `s`.
 // ---------------------------------------------------------------------------
 std::string         remove_from_end( std::string const & s,
                                      char c ) ;

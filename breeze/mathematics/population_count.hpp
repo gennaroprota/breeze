@@ -22,11 +22,11 @@ namespace breeze_ns {
 //
 //!     \return
 //!         The number of on bits in the binary representation of the
-//!         value of \c t. \c T must be an unsigned integral type.
+//!         value of `t`. `T` must be an unsigned integral type.
 //!
 //!     \warning
 //!         [FUTURE] This function template will be removed in favor of
-//!         \c std::popcount() when Breeze will require C++20.
+//!         `std::popcount()` when Breeze will require C++20.
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr int       population_count( T t ) noexcept ;

@@ -22,18 +22,17 @@ namespace breeze_ns {
 //
 //!     \copybrief lcm.hpp
 //!
-//!     If \c T is not an integral type the program is ill-formed. If
-//!     the least common multiple of \c |a| and \c |b| is not
-//!     representable as a value of type \c T, the behavior is
-//!     undefined.
+//!     If `T` is not an integral type the program is ill-formed. If the
+//!     least common multiple of `|a|` and `|b|` is not representable as
+//!     a value of type `T`, the behavior is undefined.
 //!
 //!     \return
-//!         If either \c a or \c b is zero, returns zero. Otherwise it
-//!         returns the least common multiple of \c |a| and \c |b|.
+//!         If either `a` or `b` is zero, returns zero. Otherwise it
+//!         returns the least common multiple of `|a|` and `|b|`.
 //!
 //!     \note
 //!         This template diverges from the C++17 specification for the
-//!         same reason why \c breeze::gcd() does.
+//!         same reason why `breeze::gcd()` does.
 //!
 //!     \see
 //!         gcd().

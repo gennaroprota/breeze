@@ -21,13 +21,13 @@ namespace breeze_ns {
 //      replace_all():
 //      ==============
 //
-//!     Replaces all occurrences of \c from in \c s with \c to. May
-//!     throw length_error (only if \c to is longer than \c from?).
+//!     Replaces all occurrences of `from` in `s` with `to`. May throw
+//!     `length_error` (only if `to` is longer than `from`?).
 //!
 //!     \pre
 //!         ! from.empty()
 //!
-//!     Note that \c to can be empty; so, as a special case, this
+//!     Note that `to` can be empty; so, as a special case, this
 //!     function can *remove* all occurrences of a substring.
 //!
 //!     \par Rationale

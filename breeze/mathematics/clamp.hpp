@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief An implementation of the \c clamp() templates introduced
+//!     \brief An implementation of the `clamp()` templates introduced
 //!            in C++17.
 // ---------------------------------------------------------------------------
 
@@ -24,20 +24,20 @@ namespace breeze_ns {
 //!     \copybrief clamp.hpp
 //!
 //!     \pre
-//!          - \c T shall be \c LessThanComparable
-//!          - \c high shall be no lower than \c low
+//!          - `T` shall be <tt>LessThanComparable</tt>
+//!          - `high` shall be no lower than `low`
 //!
 //!     \return
-//!         \c low if \c value is less than \c low, \c high if \c high
-//!         is less than \c value, otherwise \c value
+//!         `low` if `value` is less than `low`, `high` if `high` is
+//!         less than `value`, otherwise `value`
 //!
 //!     \par Complexity
 //!         One or two comparisons.
 //!
 //!     \par Remarks
-//!          - Returns a reference to \c value when \c value is
-//!            equivalent to one (or both) of the boundary arguments.
-//!          - If <tt>NaN</tt> is avoided, \c T can be a floating-point
+//!          - Returns a reference to `value` when `value` is equivalent
+//!            to one (or both) of the boundary arguments.
+//!          - If <tt>NaN</tt> is avoided, `T` can be a floating-point
 //!            type.
 // ---------------------------------------------------------------------------
 template< typename T >
@@ -49,19 +49,19 @@ constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
 //!     \copybrief clamp.hpp
 //!
 //!     \pre
-//!         <code>comp( high, low ) == false</code>
+//!         `comp( high, low ) == false`
 //!
 //!     \return
-//!         \c low if \c value is less than \c low, \c high if \c high
-//!         is less than \c value, otherwise \c value.
+//!         `low` if `value` is less than `low`, `high` if `high` is
+//!         less than `value`, otherwise `value`.
 //!
 //!     \par Complexity
 //!         One or two comparisons.
 //!
 //!     \par Remarks
-//!          - Returns a reference to \c value when \c value is
-//!            equivalent to one (or both) of the boundary arguments.
-//!          - If <tt>NaN</tt> is avoided, \c T can be a floating-point
+//!          - Returns a reference to `value` when `value` is equivalent
+//!            to one (or both) of the boundary arguments.
+//!          - If <tt>NaN</tt> is avoided, `T` can be a floating-point
 //!            type.
 // ---------------------------------------------------------------------------
 template< typename T, typename Compare  >

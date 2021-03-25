@@ -9,15 +9,15 @@
 //!     \file
 //!     \brief Arrays and containers element counter.
 //!
-//!     \c signed_count() provides an extension of \c container::size()
+//!     `signed_count()` provides an extension of `container::size()`
 //!     that covers both standard containers and built-in arrays.
 //!
-//!     The syntax is, uniformly, \c breeze::signed_count( a )
-//!     regardless of the actual type of \c a.
+//!     The syntax is, uniformly, `breeze::signed_count( a )` regardless
+//!     of the actual type of `a`.
 //!
 //!     Following C++ best practices, these templates return a \e signed
 //!     integer. They are made obsolete in C++20 by the namespace-scope
-//!     \c std::ssize()'s. However our version avoids any fancy
+//!     `std::ssize()`'s. However our version avoids any fancy
 //!     derivation of the return type, even for containers.
 //!
 //!     \see
@@ -40,8 +40,8 @@ namespace breeze_ns {
 //!     \copydoc signed_count.hpp
 //!
 //!     \return
-//!         The number of elements of the array argument (obviously, \c
-//!         n).
+//!         The number of elements of the array argument (obviously,
+//!         `n`).
 // ---------------------------------------------------------------------------
 template< typename T, long long n >
 constexpr long long
@@ -59,8 +59,7 @@ signed_count( T const ( & )[ n ] ) noexcept
 //!         t.size() <= LLONG_MAX
 //!
 //!     \return
-//!         The value of \c t.size() converted to <code>long long
-//!         </code>.
+//!         The value of `t.size()` converted to `long long`.
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr long long

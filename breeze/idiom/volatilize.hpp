@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Adds a \c volatile qualification.
+//!     \brief Adds a `volatile` qualification.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_4VpDkPMRFQlDZhFnubC67vt6hSC6EvrJ
@@ -20,11 +20,11 @@ namespace breeze_ns {
 //      volatilize():
 //      =============
 //
-//!     Adds a \c volatile qualification to an lvalue expression, if it
+//!     Adds a `volatile` qualification to an lvalue expression, if it
 //!     doesn't have one.
 //!
-//!     This allows avoiding using a \c const_cast or a \c static_cast,
-//!     or introducing an additional variable.
+//!     This allows avoiding using a `const_cast` or a `static_cast`, or
+//!     introducing an additional variable.
 //!
 //!     \return
 //!         ref

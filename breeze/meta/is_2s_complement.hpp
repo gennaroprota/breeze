@@ -24,9 +24,9 @@ namespace meta {
 //
 //!     \copybrief is_2s_complement.hpp
 //!
-//!     If \c T is not an integral type or a cv-qualified version
-//!     thereof, the program is ill-formed. Otherwise \c
-//!     is_2s_complement() returns true if and only if the type \c T
+//!     If `T` is not an integral type or a cv-qualified version
+//!     thereof, the program is ill-formed. Otherwise
+//!     `is_2s_complement()` returns true if and only if the type `T`
 //!     uses a two's complement representation.
 //!
 //!     \note

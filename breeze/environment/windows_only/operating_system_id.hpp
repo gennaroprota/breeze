@@ -28,30 +28,30 @@ namespace breeze_ns {
 //!     versions.
 //!
 //!     \note
-//!         \c operating_system_id does not support the relational
-//!            operators.
+//!         `operating_system_id` does not support the relational
+//!         operators.
 //!
 //!     \par Rationale
 //!
 //!     In my first idea of this facility, it was my intent to support
 //!     inequality comparisons:
 //!
-//!     \code
+//!     ```
 //!         // Is it Windows 2000 or "later"?
 //!         if ( id >= operating_system_id::windows_2000 )
-//!     \endcode
+//!     ```
 //!
 //!     And the enumerators, in fact, appear in oldest-to-newest order.
 //!     But...
 //!     I don't like too much the idea of having something which only
-//!     makes sense for one of the supported OSes, and perhaps not
-//!     even for it, in the future: right now, Windows versions seem
-//!     to have an established total ordering, but what about the
-//!     future? Microsoft seems on the way of "parallelizing" their
-//!     OS products over a "client line" (Windows XP etc.) and a
-//!     "server line" (Windows Server 2003 etc.); in the future it
-//!     seems to me they could well release two Windows variants of
-//!     which neither is "higher" or "lower" than the other.
+//!     makes sense for one of the supported OSes, and perhaps not even
+//!     for it, in the future: right now, Windows versions seem to have
+//!     an established total ordering, but what about the future?
+//!     Microsoft seems on the way of "parallelizing" their OS products
+//!     over a "client line" (Windows XP etc.) and a "server line"
+//!     (Windows Server 2003 etc.); in the future it seems to me they
+//!     could well release two Windows variants of which neither is
+//!     "higher" or "lower" than the other.
 // ---------------------------------------------------------------------------
 enum class operating_system_id
 {
@@ -85,14 +85,14 @@ enum class operating_system_id
     windows_server_2016
 } ;
 
-//!     Converts an \c operating_system_id to a \c std::string. This
-//!     overloads the general \c breeze:to_string() template, since
-//!     \c operating_system_id is an \c enum and can't have member
-//!      functions.
+//!     Converts an `operating_system_id` to a `std::string`. This
+//!     overloads the general `breeze:to_string()` template, since
+//!     `operating_system_id` is an enum and can't have member
+//!     functions.
 // ---------------------------------------------------------------------------
 std::string         to_string( operating_system_id id ) ;
 
-//!     Stream inserter for \c operating_system_id.
+//!     Stream inserter for `operating_system_id`.
 // ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream &, operating_system_id ) ;
 

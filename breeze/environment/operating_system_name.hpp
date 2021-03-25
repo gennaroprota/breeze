@@ -30,7 +30,7 @@ public:
     std::string         to_string() const ;
 } ;
 
-//!     Stream inserter for \c operating_system_name. Outputs a
+//!     Stream inserter for `operating_system_name`. Outputs a
 //!     description of the operating system.
 // ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream &,

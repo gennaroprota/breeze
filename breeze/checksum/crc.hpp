@@ -49,57 +49,55 @@ class crc_cache ;
 //!     course, other such classes can be defined by the user).
 //!
 //!     \warning
-//!         I haven't thought out the case <code>CHAR_BIT > 8</code>, so
-//!         expect little changes to be done for unusual machines. Also,
-//!         CRCs with a width less than <tt>8</tt> are not supported.
+//!         I haven't thought out the case `CHAR_BIT > 8`, so expect
+//!         little changes to be done for unusual machines. Also, CRCs
+//!         with a width less than <tt>8</tt> are not supported.
 //!
 //!     Each traits class must declare the following public members:
 //!
 //!     <dl>
 //!     <dt><tt>value_type:</tt></dt><dd>
-//!         A typedef to an unsigned type (e.g. \c std::uint32_t) for
+//!         A typedef to an unsigned type (e.g. `std::uint32_t`) for
 //!         holding the CRC value. The width of this type can be larger
-//!         than \c width if e.g. an exactly-sized type is not available
+//!         than `width` if e.g. an exactly-sized type is not available
 //!         on your implementation or you want to see the effect on
-//!         performance of using a different type (e.g. \c uint_fast16_t
+//!         performance of using a different type (e.g. `uint_fast16_t`
 //!         for CRC-16).</dd>
 //!
 //!     <dt><tt>width:</tt></dt><dd>
 //!         The number of bits in the CRC. This is also the degree of
 //!         the polynomial used for the divisions. The polynomial can
-//!         have at most <code>width + 1</code> terms, but since the
-//!         highest degree term has always the coefficient <tt>1</tt>
-//!         (otherwise the degree wouldn't be \c width), that
-//!         coefficient will be implied. The type of this constant is
-//!         <code>int const</code>.</dd>
+//!         have at most `width + 1` terms, but since the highest degree
+//!         term has always the coefficient <tt>1</tt> (otherwise the
+//!         degree wouldn't be `width`), that coefficient will be
+//!         implied. The type of this constant is `int const`. </dd>
 //!
 //!     <dt><tt>poly:</tt></dt><dd>
 //!         The unreflected divisor polynomial, with the top-most bit
 //!         omitted; we emphasize that this is unreflected, regardless
-//!         of \c reflect_in and \c reflect_out. The type is <code>
-//!         value_type const</code>.</dd>
+//!         of `reflect_in` and `reflect_out`. The type is `value_type
+//!         const`.</dd>
 //!
 //!     <dt><tt>init:</tt></dt><dd>
-//!         An initial value for the computation. Type <code>value_type
-//!         const</code>.</dd>
+//!         An initial value for the computation. Type `value_type
+//!         const`.</dd>
 //!
 //!     <dt><tt>reflect_in:</tt></dt><dd>
-//!         \c true if and only if each input byte must be considerered
+//!         `true` if and only if each input byte must be considerered
 //!         reflected (UART); note that, as an optimization, this
 //!         implementation will not actually reflect the input bytes,
 //!         but the resulting CRCs will be as if it did. The type is
-//!         <code>bool const</code>.</dd>
+//!         `bool const`.</dd>
 //!
 //!     <dt><tt>reflect_out:</tt></dt><dd>
-//!         \c true if and only if the final calculated value (before
-//!         the XOR) must be reflected; usually equal to \c reflect_in,
-//!         but at least one CRC exists (CRC-12/UMTS) for which these
-//!         two values are different. The type is <code>bool const
-//!         </code>.</dd>
+//!         `true` if and only if the final calculated value (before the
+//!         XOR) must be reflected; usually equal to `reflect_in`, but
+//!         at least one CRC exists (CRC-12/UMTS) for which these two
+//!         values are different. The type is `bool const`.</dd>
 //!
 //!     <dt><tt>xor_out:</tt></dt><dd>
-//!         The final value to XOR with. The type is <code>value_type
-//!         const</code>.</dd>
+//!         The final value to XOR with. The type is `value_type
+//!         const`.</dd>
 //!
 //!     <dt><tt>check:</tt></dt><dd>
 //!         The CRC of the sequence "123456789", encoded as ASCII (nine
@@ -111,7 +109,7 @@ template< typename Traits >
 class crc
 {
 public:
-    //!     The same as \c Traits::value_type.
+    //!     The same as `Traits::value_type`.
     // -----------------------------------------------------------------------
     typedef typename Traits::value_type
                         value_type ;
@@ -138,7 +136,7 @@ public:
     template< typename InputIter >
     constexpr void      accumulate( InputIter first, InputIter last ) ;
 
-    //!     Processes the character \c c, updating the calculated CRC.
+    //!     Processes the character `c`, updating the calculated CRC.
     // -----------------------------------------------------------------------
     constexpr void      accumulate( char c ) noexcept ;
     //!\}
@@ -183,10 +181,10 @@ private:
 
 //!     \brief Stream inserter for \ref crc objects.
 //!
-//!     Outputs \c crc to the stream \c dest. The output consists of
+//!     Outputs `crc` to the stream `dest`. The output consists of
 //!     <tt>n</tt> uppercase hexadecimal digits (since CRCs are usually
 //!     presented in uppercase), where <tt>n</tt> is the ceiling of the
-//!     quotient between \c Traits::width and <tt>4</tt>.
+//!     quotient between `Traits::width` and <tt>4</tt>.
 // ---------------------------------------------------------------------------
 template< typename Traits >
 std::ostream &      operator <<( std::ostream & dest,

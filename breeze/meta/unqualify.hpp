@@ -32,14 +32,13 @@ namespace meta {
 //
 //!     \copybrief unqualify.hpp
 //!
-//!     Example: <code>unqualify< char const >::type</code> is <code>
-//!     char</code>.
+//!     Example: `unqualify< char const >::type` is `char`.
 // ---------------------------------------------------------------------------
 template< typename T >
 class unqualify
 {
 public:
-    //!     A typedef for the type \c T.
+    //!     A typedef for the type `T`.
     // -----------------------------------------------------------------------
     typedef T           type ;
 } ;
@@ -49,7 +48,7 @@ template< typename T >
 class unqualify< T const >
 {
 public:
-    //!     A typedef for the type \c T.
+    //!     A typedef for the type `T`.
     // -----------------------------------------------------------------------
     typedef T           type ;
 } ;
@@ -58,7 +57,7 @@ template< typename T >
 class unqualify< T volatile >
 {
 public:
-    //!     A typedef for the type \c T.
+    //!     A typedef for the type `T`.
     // -----------------------------------------------------------------------
     typedef T           type ;
 } ;
@@ -67,7 +66,7 @@ template< typename T >
 class unqualify< T volatile const >
 {
 public:
-    //!     A typedef for the type \c T.
+    //!     A typedef for the type `T`.
     // -----------------------------------------------------------------------
     typedef T           type ;
 } ;

@@ -25,14 +25,14 @@ namespace breeze_ns {
 //!            of its argument.
 //!
 //!     \par Type requirements
-//!         \c T must be an integral type other than \c bool.
+//!         `T` must be an integral type other than `bool`.
 //!
 //!     \pre
 //!         x > 0
 //!
 //!     \note
 //!         This template does not compile with MSVC 2015 because the
-//!         compiler does not yet implement \c constexpr functions as
+//!         compiler does not yet implement constexpr functions as
 //!         generalized in C++14.
 // ---------------------------------------------------------------------------
 template< typename T >

@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Thin wrapper around \c std::getenv().
+//!     \brief Thin wrapper around `std::getenv()`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_DJJ43p6UR3Ib7dPq3Qi3OoGCOlpQ0iRV
@@ -23,32 +23,32 @@ namespace breeze_ns {
 //      ===========================
 //
 //!     Searches an implementation-defined list, as if by calling
-//!     \c std::getenv(), for a string that matches \c name and returns
+//!     `std::getenv()`, for a string that matches `name` and returns
 //!     the associated value, if any.
 //!
 //!     We emphasize that the 'as if' above is part of this function's
 //!     contract.
 //!
-//!     This function overcomes three usability issues of \c
-//!     std::getenv():
+//!     This function overcomes three usability issues of
+//!     `std::getenv()`:
 //!
-//!      - const unsafety: \c getenv() returns a pointer to (non-const)
+//!      - const unsafety: `getenv()` returns a pointer to (non-const)
 //!        char (which the program shall not modify)
 //!
-//!      - subsequent calls to \c getenv() may overwrite the pointed to
+//!      - subsequent calls to `getenv()` may overwrite the pointed to
 //!        string
 //!
-//!      - if the searched to string is not found \c getenv() returns a
-//!        null pointer; that can easily lead to undefined behavior,
-//!        if that value is passed to one of the constructors of
-//!        \c std::string which take a <code>char const *</code>
+//!      - if the searched to string is not found `getenv()` returns a
+//!        null pointer; that can easily lead to undefined behavior, if
+//!        that value is passed to one of the constructors of
+//!        `std::string` which take a `char const *`
 //!
 //!     \return
-//!         The value associated to the given \c name, or an invalid \c
-//!         maybe if there is none.
+//!         The value associated to the given `name`, or an invalid
+//!         `maybe` if there is none.
 //!
 //!     \note
-//!         The behavior on passing an empty string for the \c name
+//!         The behavior on passing an empty string for the `name`
 //!         parameter is implementation-defined: please check the
 //!         documentation provided with your C++ implementation.
 // ---------------------------------------------------------------------------

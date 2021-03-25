@@ -20,20 +20,19 @@ namespace breeze_ns {
 //      assert_handler_type:
 //      ====================
 //
-//!     The type of the function called by <code>
-//!     BREEZE_ASSERT( expression )</code> if \c expression evaluates to
-//!     \c false.
+//!     The type of the function called by `BREEZE_ASSERT( expression )`
+//!     if `expression` evaluates to `false`.
 //!
 //!     \param expression_text
-//!         A pointer to a C-style string containing the text of \c
-//!         expression.
+//!         A pointer to a C-style string containing the text of
+//!         `expression`.
 //!
 //!     \param file_name
 //!         A pointer to a C-style string containing the name of the
-//!         source file in which \c BREEZE_ASSERT() was invoked.
+//!         source file in which `BREEZE_ASSERT()` was invoked.
 //!
 //!     \param line_number
-//!         The line number of the line in which \c BREEZE_ASSERT() was
+//!         The line number of the line in which `BREEZE_ASSERT()` was
 //!         invoked.
 // ---------------------------------------------------------------------------
 typedef void      ( assert_handler_type )( char const * expression_text,
@@ -43,12 +42,12 @@ typedef void      ( assert_handler_type )( char const * expression_text,
 //      set_assert_handler():
 //      =====================
 //
-//!     Sets \c *f as the current "assert handler", i.e. as the function
-//!     which is called by <code>BREEZE_ASSERT( expression )</code> if
-//!     \c expression evaluates to \c false.
+//!     Sets `*f` as the current "assert handler", i.e. as the function
+//!     which is called by `BREEZE_ASSERT( expression )` if `expression`
+//!     evaluates to `false`.
 //!
-//!     At program start up, the assert handler is \c
-//!     default_assert_handler().
+//!     At program start up, the assert handler is
+//!     `default_assert_handler()`.
 //!
 //!     \param f
 //!         Pointer to the assert handler to set. The handler must not
@@ -60,14 +59,14 @@ void                set_assert_handler( assert_handler_type * f ) ;
 //      default_assert_handler():
 //      =========================
 //
-//!     \brief The default assert handler for \c BREEZE_ASSERT().
+//!     \brief The default assert handler for `BREEZE_ASSERT()`.
 //!
-//!     Writes the passed in arguments to \c std::cerr, then flushes \c
-//!     std::cerr, then calls \c std::abort().
+//!     Writes the passed in arguments to `std::cerr`, then flushes
+//!     `std::cerr`, then calls `std::abort()`.
 //!
 //!     \note
-//!         Since this is a \c noexcept function, the program will
-//!         terminate anyway if writing to \c std::cerr causes an
+//!         Since this is a `noexcept` function, the program will
+//!         terminate anyway if writing to `std::cerr` causes an
 //!         exception to be emitted (this means that such an exception
 //!         will not hide the programming error detected thanks to the
 //!         assertion).
@@ -103,42 +102,42 @@ block_non_bools( bool b )
 //!     \hideinitializer
 //!
 //!     %BREEZE_ASSERT() is a simple runtime assertion facility.
-//!     Differently from the standard \c assert(), it has always the
-//!     same expansion (regardless of \c NDEBUG).
+//!     Differently from the standard `assert()`, it has always the same
+//!     expansion (regardless of `NDEBUG`).
 //!
-//!     The code <code>BREEZE_ASSERT( expr )</code> expands to an
-//!     expression, let's call it \c assert_expr, which contains \c expr
-//!     as a sub-expression.
+//!     The code `BREEZE_ASSERT( expr )` expands to an expression, let's
+//!     call it `assert_expr`, which contains `expr` as a
+//!     sub-expression.
 //!
-//!     \c expr must have type bool or cv-qualified bool (this is a
+//!     `expr` must have type bool or cv-qualified bool (this is a
 //!     change from the past: we used to accept anything implicitly or
-//!     explicitly convertible to bool; which means that e.g. \c expr
-//!     could be the name of a <code>std::optional</code>---we think the
-//!     new specification is safer).
+//!     explicitly convertible to bool; which means that e.g. `expr`
+//!     could be the name of a `std::optional`---we think the new
+//!     specification is safer).
 //!
-//!     When \c assert_expr is evaluated: if \c expr is \c false, an
-//!     assertion is triggered; if it is \c true, the evaluation of \c
-//!     assert_expr has no effects besides the evaluation of the
-//!     sub-expression \c expr.
+//!     When `assert_expr` is evaluated: if `expr` is `false`, an
+//!     assertion is triggered; if it is `true`, the evaluation of
+//!     `assert_expr` has no effects besides the evaluation of the
+//!     sub-expression `expr`.
 //!
 //!     In this context, "triggering an assertion" means calling the
-//!     current <i>assert handler</i> (see \c set_assert_handler()),
-//!     passing it information related to the specific \c
-//!     BREEZE_ASSERT() invocation (in particular, the text of the
-//!     expression, the source file name and the line number).
+//!     current <i>assert handler</i> (see `set_assert_handler()`),
+//!     passing it information related to the specific `BREEZE_ASSERT()`
+//!     invocation (in particular, the text of the expression, the
+//!     source file name and the line number).
 //!
 //!     \par Rationale
 //!
-//!     It has become common practice to define the macro \c NDEBUG when
+//!     It has become common practice to define the macro `NDEBUG` when
 //!     compiling the "release" versions of a product. Many IDEs do so
-//!     silently. In fact, \c NDEBUG (or a logical complement of it,
-//!     such as \c _DEBUG) has become the macro which is usually checked
-//!     for by your library code to know which version of it
-//!     (release/debug) you want to link with.
+//!     silently. In fact, `NDEBUG` (or a logical complement of it, such
+//!     as `_DEBUG`) has become the macro which is usually checked for
+//!     by your library code to know which version of it (release/debug)
+//!     you want to link with.
 //!
 //!     We believe, though, that assertions must be left on in the
-//!     release builds. So we wanted an assert macro decoupled from \c
-//!     NDEBUG. (Thinking of it, there has been a fatal
+//!     release builds. So we wanted an assert macro decoupled from
+//!     `NDEBUG`. (Thinking of it, there has been a fatal
 //!     misunderstanding: the C committee thought of a macro to
 //!     enable/disable assertions, but alas named it "NDEBUG", which
 //!     suggests "no debug". And that's the meaning everyone seems to

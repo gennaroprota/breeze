@@ -26,9 +26,9 @@ namespace breeze_ns {
 //!         count >= 0
 //!
 //!     \return
-//!         If <code>count >= s.length()</code>, \c s; otherwise the
-//!         string composed of the last \c count characters of \c s (an
-//!         empty string if <code>count == 0</code>).
+//!         If `count >= s.length()`, `s`; otherwise the string composed
+//!         of the last `count` characters of `s` (an empty string if
+//!         `count == 0`).
 // ---------------------------------------------------------------------------
 std::string         tail( std::string const & s, std::ptrdiff_t count ) ;
 

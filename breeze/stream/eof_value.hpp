@@ -7,32 +7,30 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A replacement for \c EOF and \c char_traits::eof().
+//!     \brief A replacement for `EOF` and `char_traits::eof()`.
 //!
 //!
 //!     A convenience source file to separate out the crazy \#includes
-//!     required for using \c EOF or \c char_traits<...>::eof():
+//!     required for using `EOF` or `char_traits<...>::eof()`:
 //!
-//!       1. the former would require including \c <stdio.h> or \c
-//!          <cstdio>
-//!       2. the latter would require \c <string>
+//!       1. the former would require including `<stdio.h>` or
+//!          `<cstdio>`
+//!       2. the latter would require `<string>`
 //!
-//!     Both choices are IMHO particularly annoying for maintenance
-//!     and code review: any reader of the code would probably wonder,
-//!     for (1), why you include \c <cstdio> if you are using C++
-//!     streams (and not stdio); and, for (2), why you include \c
-//!     <string> even where there's no usage of \c std::string.
+//!     Both choices are IMHO particularly annoying for maintenance and
+//!     code review: any reader of the code would probably wonder, for
+//!     (1), why you include `<cstdio>` if you are using C++ streams
+//!     (and not stdio); and, for (2), why you include `<string>` even
+//!     where there's no usage of `std::string`.
 //!
 //!     The root of the issue is the poor header partitioning of the
 //!     standard library but we can't do anything about that. We can,
-//!     however, separate things out so that the relevant #includes
-//!     are insulated. Which is the only real purpose of this
-//!     facility.
+//!     however, separate things out so that the relevant #includes are
+//!     insulated. Which is the only real purpose of this facility.
 //!
-//      NOTE: there's no .tpp file, here; it seemed just overkill.
-//            Also, it seemed natural to add an is_eof_value(), since
-//            using eq_int_type would still require #including the
-//            <string> header.
+//      NOTE: there's no .tpp file, here; it seemed just overkill. Also,
+//      it seemed natural to add an is_eof_value(), since using
+//      eq_int_type would still require #including the <string> header.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_9qsz7UnvkOIvyedOe6ND5qSGfNeCMIU0
@@ -47,7 +45,7 @@ namespace breeze_ns {
 //      ============
 //
 //!     \return
-//!         The end-of-file value for the given \c Stream.
+//!         The end-of-file value for the given `Stream`.
 // ---------------------------------------------------------------------------
 template< typename Stream >
 typename Stream::int_type
@@ -60,7 +58,7 @@ eof_value( Stream const & )
 //      ===============
 //
 //!     \return
-//!         Whether \c x equals the eof value for the \c Stream given as
+//!         Whether `x` equals the eof value for the `Stream` given as
 //!         the second argument.
 // ---------------------------------------------------------------------------
 template< typename Stream >

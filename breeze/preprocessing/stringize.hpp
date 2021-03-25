@@ -16,7 +16,7 @@
 //      BREEZE_STRINGIZE():
 //      ===================
 //
-//!     Expands to a string literal obtained with <code># x</code>.
+//!     Expands to a string literal obtained with `# x`.
 //!
 //!     \see
 //!         BREEZE_STRINGIZE_AFTER_EXPANSION().

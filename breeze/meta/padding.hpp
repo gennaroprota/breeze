@@ -27,13 +27,13 @@ namespace meta {
 //!         Metafunction yielding the number of \e padding bits of a
 //!         type.
 //!
-//!     This is a meta::constant, with \c value_type \c int.
+//!     This is a meta::constant, with `value_type` `int`.
 //!
 //!     \see
 //!         meta::precision and meta::width.
 //!
 //!     \par Type requirements
-//!         \c T shall be an integral type or a cv-qualified version
+//!         `T` shall be an integral type or a cv-qualified version
 //!         thereof.
 // ---------------------------------------------------------------------------
 template< typename T >

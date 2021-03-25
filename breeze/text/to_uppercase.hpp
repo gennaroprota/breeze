@@ -22,14 +22,14 @@ namespace breeze_ns {
 //      to_uppercase():
 //      ---------------
 //
-//!     Converts each character in \c source to uppercase, using the \c
-//!     ctype facet of the given locale. Only 1:1 character mapping can
-//!     be performed: for instance it cannot convert the German Eszett
-//!     to "SS".
+//!     Converts each character in `source` to uppercase, using the
+//!     `ctype` facet of the given locale. Only 1:1 character mapping
+//!     can be performed: for instance it cannot convert the German
+//!     Eszett to "SS".
 //!
 //!     \par Naming rationale
 //!
-//!     See the documentation of \c to_lowercase().
+//!     See the documentation of `to_lowercase()`.
 //!
 //!     \see
 //!         to_lowercase().

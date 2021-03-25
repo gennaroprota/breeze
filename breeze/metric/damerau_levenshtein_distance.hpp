@@ -23,12 +23,12 @@ namespace breeze_ns {
 //      ===============================
 //
 //!     \return
-//!         The Damerau-Levenshtein distance between \c first and
-//!         \c second.
+//!         The Damerau-Levenshtein distance between `first` and
+//!         `second`.
 //!
 //!     \pre
-//!         The lengths of \c first and \c second are both less than
-//!         \c PTRDIFF_MAX.
+//!         The lengths of `first` and `second` are both less than
+//!         `PTRDIFF_MAX`.
 // ---------------------------------------------------------------------------
 std::ptrdiff_t      damerau_levenshtein_distance( std::string const & first,
                                                   std::string const & second ) ;

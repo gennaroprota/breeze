@@ -22,9 +22,9 @@ namespace breeze_ns {
 //      ======================
 //
 //!     \return
-//!         The extension of the file name part of \c path, including
-//!         the period, if any. This is the substring starting from the
-//!         last period, except that:
+//!         The extension of the file name part of `path`, including the
+//!         period, if any. This is the substring starting from the last
+//!         period, except that:
 //!
 //!          - if the file name part is "." or ".." (without quotes) or
 //!            does not contain a period, the result is an empty string;
@@ -34,8 +34,8 @@ namespace breeze_ns {
 //!            gives "", while ".dotfile.txt" gives ".txt").
 //!
 //!     \note
-//!         This behavior is aligned with that of <code>
-//!         std::filesystem::path::extension()</code> (C++17).
+//!         This behavior is aligned with that of
+//!         `std::filesystem::path::extension()` (C++17).
 // ---------------------------------------------------------------------------
 std::string         file_name_extension( std::string const & path ) ;
 

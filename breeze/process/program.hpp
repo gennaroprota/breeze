@@ -58,28 +58,27 @@ public:
     static program &    instance() noexcept ;
 
     //!     \return
-    //!         An integer to be passed to \c std::exit() or returned
-    //!         from \c main(). This corresponds to the most severe
-    //!         error reported by client code to the \c program class
-    //!         through the \c declare_error() member function.
+    //!         An integer to be passed to `std::exit()` or returned
+    //!         from `main()`. This corresponds to the most severe error
+    //!         reported by client code to the `program` class through
+    //!         the `declare_error()` member function.
     //!
     //!     If possible, the various gravities will be distinguished in
-    //!     the exit code, but e.g. \c warning will be undistinguishable
+    //!     the exit code, but e.g. `warning` will be undistinguishable
     //!     from a success with no warnings on Windows and Unix (because
     //!     treating a distinct value as success would be too difficult
-    //!     in a shell script); in the worst case, all you get is \c
-    //!     EXIT_SUCCESS or \c EXIT_FAILURE.
+    //!     in a shell script); in the worst case, all you get is
+    //!     `EXIT_SUCCESS` or `EXIT_FAILURE`.
     //!
     //!     <strong>Important</strong>: this function also attempts to
-    //!     flush \c std::cout, and calls \c declare_error( fatal ) if
-    //!     the flush fails (for this reason, it is not \c const).
+    //!     flush `std::cout`, and calls `declare_error( fatal )` if the
+    //!     flush fails (for this reason, it is not const).
     // -----------------------------------------------------------------------
     int                 exit_code() ;
 
-    //!     Sets the program name from the arguments to \c main(), if
-    //!     <tt>argv[ 0 ]</tt> points to a non-empty name (i.e. if
-    //!     <tt>argc > 0 && argv[ 0 ][ 0 ] != '\0'</tt>). Otherwise does
-    //!     nothing.
+    //!     Sets the program name from the arguments to `main()`, if
+    //!     `argv[ 0 ]` points to a non-empty name (i.e. if `argc > 0 &&
+    //!     argv[ 0 ][ 0 ] != '\0'`). Otherwise does nothing.
     //!
     //!     If the name is set, any leading path is stripped.
     //!
@@ -91,35 +90,35 @@ public:
     // -----------------------------------------------------------------------
     void                set_name( int argc, char const * const * argv ) ;
 
-    //!     Sets the program name from the arguments to \c main(), if
-    //!     <tt>argv[ 0 ]</tt> points to a non-empty name; otherwise
-    //!     sets it from \c fallback.
+    //!     Sets the program name from the arguments to `main()`, if
+    //!     `argv[ 0 ]` points to a non-empty name; otherwise sets it
+    //!     from `fallback`.
     //!
     //!     In any case, any leading path is stripped.
     //!
     //!     \pre
-    //!         <tt>! fallback.empty()</tt> and no name was set before
+    //!         `! fallback.empty()` and no name was set before
     //!
     //!     \post
-    //!         <tt>name().is_valid()</tt>
+    //!         `name().is_valid()`
     // -----------------------------------------------------------------------
     void                set_name( int argc, char const * const * argv,
                                   std::string const & fallback ) ;
 
-    //!     Sets the program name to \c name, with any leading path
+    //!     Sets the program name to `name`, with any leading path
     //!     stripped.
     //!
     //!     \pre
-    //!         <tt>! name.empty()</tt> and no name was set before
+    //!         `! name.empty()` and no name was set before
     //!
     //!     \post
-    //!         <tt>name().is_valid()</tt>
+    //!         `name().is_valid()`
     // -----------------------------------------------------------------------
     void                set_name( std::string const & name ) ;
 
     //!     \return
-    //!         The program name set by \c set_name(). An invalid \c
-    //!         maybe if the name was never set.
+    //!         The program name set by `set_name()`. An invalid `maybe`
+    //!         if the name was never set.
     // -----------------------------------------------------------------------
     maybe< std::string >
                         name() const ;
@@ -127,36 +126,36 @@ public:
     //!     Declares a program error.
     //!
     //!     \param g
-    //!         The gravity of the error. If the gravity is higher
-    //!         than any seen previously, it is saved to be used in
-    //!         \c exit_code().
+    //!         The gravity of the error. If the gravity is higher than
+    //!         any seen previously, it is saved to be used in
+    //!         `exit_code()`.
     //!
-    //!     If the gravity is \c fatal or higher, this will also
-    //!     terminate the program by calling \c program::terminate()
-    //!     (when the gravity is \c fatal) or \c std::abort() (when it
-    //!     is \c internal).
+    //!     If the gravity is `fatal` or higher, this will also
+    //!     terminate the program by calling `program::terminate()`
+    //!     (when the gravity is `fatal`) or `std::abort()` (when it is
+    //!     `internal`).
     // -----------------------------------------------------------------------
     void                declare_error( gravity g ) ;
 
-    //!     Triggers the termination of the program with the exit
-    //!     code which corresponds to the maximum value seen until
-    //!     now. This function calls the function specified by
-    //!     set_terminate_handler(), if set_terminate_handler() has
-    //!     been called; otherwise, it calls \c std::exit().
+    //!     Triggers the termination of the program with the exit code
+    //!     which corresponds to the maximum value seen until now. This
+    //!     function calls the function specified by
+    //!     set_terminate_handler(), if set_terminate_handler() has been
+    //!     called; otherwise, it calls `std::exit()`.
     // -----------------------------------------------------------------------
     [[ noreturn ]] void terminate() ;
 
-    //!     Sets \c *user_function as the "terminate handler", i.e. as
+    //!     Sets `*user_function` as the "terminate handler", i.e. as
     //!     the function which is called, with the exit code as an
     //!     argument, if there is a fatal error or if the user calls
-    //!     \c program::terminate(). This makes it possible for the user
-    //!     to avoid calling the default terminate handler, which is \c
-    //!     std::exit() (and thus to avoid \e not calling destructors of
-    //!     local objects), for example, by raising an exception with the
-    //!     argument, having taken the precaution to encapsulate the
-    //!     entire contents of \c main() with:
+    //!     `program::terminate()`. This makes it possible for the user
+    //!     to avoid calling the default terminate handler, which is
+    //!     `std::exit()` (and thus to avoid \e not calling destructors
+    //!     of local objects), for example, by raising an exception with
+    //!     the argument, having taken the precaution to encapsulate the
+    //!     entire contents of `main()` with:
     //!
-    //!     \code
+    //!     ```
     //!         try {
     //!             breeze::program::instance().set_terminate_handler(
     //!                                             raise_int_exception ) ;
@@ -164,11 +163,11 @@ public:
     //!         } catch ( int exit_code ) {
     //!             return exit_code ;
     //!         }
-    //!     \endcode
+    //!     ```
     //!
     //!     \note
-    //!         The terminate handler should not return, or \c
-    //!         std::abort() will be called immediately after.
+    //!         The terminate handler should not return, or
+    //!         `std::abort()` will be called immediately after.
     // -----------------------------------------------------------------------
     void                set_terminate_handler( void (*user_function)( int ) ) ;
 

@@ -26,7 +26,7 @@ namespace breeze_ns {
 //
 //!     \copybrief last_api_error.hpp
 //!
-//!     It corresponds to \c GetLastError() under Windows and \c errno
+//!     It corresponds to `GetLastError()` under Windows and `errno`
 //!     under Unix.
 //
 //!     This class can be used in two ways:
@@ -34,9 +34,9 @@ namespace breeze_ns {
 //!      - As an exception type;
 //!
 //!        the idea is that after an unsuccessful API call you write:
-//!        \code
+//!        ```
 //!            throw last_api_error( "<APIName>() failed" ) ;
-//!        \endcode
+//!        ```
 //!        and you're done with error handling.
 //!
 //!      - As a convenience facility to get both the error code and the
@@ -46,10 +46,10 @@ namespace breeze_ns {
 //!         This class is experimental.
 //!
 //!     \warning
-//!         Only throw an exception of type \c last_api_error if the
+//!         Only throw an exception of type `last_api_error` if the
 //!         return value of the last function you called in the current
-//!         thread indicates that \c GetLastError() (if under Windows)
-//!         or \c errno (if under Unix) is meaningful.
+//!         thread indicates that `GetLastError()` (if under Windows) or
+//!         `errno` (if under Unix) is meaningful.
 // ---------------------------------------------------------------------------
 class last_api_error
     :   public std::runtime_error
@@ -58,18 +58,18 @@ public:
     explicit            last_api_error( char const * ) ;
 
     //!     \return
-    //!         The code of the last error. A <code>long long</code>,
-    //!         which is enough to accomodate both \c errno and the
-    //!         result of \c GetLastError() under Windows.
+    //!         The code of the last error. A `long long`, which is
+    //!         enough to accomodate both `errno` and the result of
+    //!         `GetLastError()` under Windows.
     // -----------------------------------------------------------------------
     long long           code() const noexcept ;
 
     //!     \return
     //!         A string representation of the object.
     //!
-    //!     This function gives more information than \c what(), because
-    //!     the resulting string will include the code of the error (\c
-    //!     code()), but, differently from \c what(), may throw.
+    //!     This function gives more information than `what()`, because
+    //!     the resulting string will include the code of the error (
+    //!     `code()`), but, differently from `what()`, may throw.
     // -----------------------------------------------------------------------
     std::string         to_string() const ;
 

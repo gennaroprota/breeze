@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A timer using Windows' \c QueryPerformanceCounter().
+//!     \brief A timer using Windows' `QueryPerformanceCounter()`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_xQJo3uSTt7ypxnH7y1CyRR3fJM5i3dsb
@@ -22,7 +22,7 @@ namespace breeze_ns {
 //      performance_counter_policy:
 //      ===========================
 //
-//!     A timer policy using Windows' \c QueryPerformanceCounter().
+//!     A timer policy using Windows' `QueryPerformanceCounter()`.
 // ---------------------------------------------------------------------------
 class performance_counter_policy
 {

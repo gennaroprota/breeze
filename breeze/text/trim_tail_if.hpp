@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A \c std::string trimmer accepting a predicate (tail of
+//!     \brief A `std::string` trimmer accepting a predicate (tail of
 //!            string).
 // ---------------------------------------------------------------------------
 
@@ -23,8 +23,8 @@ namespace breeze_ns {
 //      ===============
 //
 //!     \return
-//!         A string obtained from \c s by removing all the trailing
-//!         characters that satisfy the predicate \c pred.
+//!         A string obtained from `s` by removing all the trailing
+//!         characters that satisfy the predicate `pred`.
 // ---------------------------------------------------------------------------
 template< typename Predicate >
 std::string         trim_tail_if( std::string const & s, Predicate pred ) ;

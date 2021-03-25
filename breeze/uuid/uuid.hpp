@@ -34,7 +34,7 @@ public:
     enum variant_type { ncs, rfc_4122, microsoft, future } ;
 
     //!     A type to represent the version of the uuid (meaningful only
-    //!     when the variant is <code>rfc_4122</code>).
+    //!     when the variant is <tt>rfc_4122</tt>).
     // -----------------------------------------------------------------------
     enum version_type { time_based = 1, dce_security = 2, name_based_md5 = 3,
                         pseudo_random = 4, name_based_sha1 = 5 } ;
@@ -49,7 +49,7 @@ public:
                         uuid( variant_type, version_type ) ;
 
     //!     \pre
-    //!         \c *this is not a nil uuid.
+    //!         `*this` is not a nil uuid.
     //!
     //!     \return
     //!         The variant of the uuid.
@@ -57,7 +57,7 @@ public:
     variant_type        variant() const ;
 
     //!     \pre
-    //!         \c *this is not a nil uuid.
+    //!         `*this` is not a nil uuid.
     //!
     //!     \return
     //!         The version of the uuid.
@@ -72,9 +72,8 @@ public:
     static uuid         nil() noexcept ;
 
     //!     \return
-    //!         Whether \c *this is equal to \c other. Used by a base
-    //!         class to provide <code>operator ==()</code> and <code>
-    //!         operator !=()</code>.
+    //!         Whether `*this` is equal to `other`. Used by a base
+    //!         class to provide `operator ==()` and `operator !=()`.
     // -----------------------------------------------------------------------
     bool                is_equal( uuid const & other ) const noexcept ;
 
@@ -95,7 +94,7 @@ public:
 private:
     uint8_t             m_octets[ 16 ] ;
 
-    //!     Outputs \c uu to the provided \c std::ostream, in the format
+    //!     Outputs `uu` to the provided `std::ostream`, in the format
     //!     prescribed by RFC 4122 (in particular, the letters 'a' to
     //!     'f' are output as lowercase).
     // -----------------------------------------------------------------------

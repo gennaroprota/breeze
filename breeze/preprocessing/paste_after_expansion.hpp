@@ -19,7 +19,7 @@
 //      ===============================
 //
 //!     Applies BREEZE_PASTE() to the result of performing macro
-//!     replacement on the arguments \c x and \c y.
+//!     replacement on the arguments `x` and `y`.
 //!
 //!     See BREEZE_PASTE() for the naming rationale.
 // ---------------------------------------------------------------------------

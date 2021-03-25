@@ -23,13 +23,13 @@ namespace breeze_ns {
 //      ==============
 //
 //!     \return
-//!         Whether \c s begins with \c with. If \c with is empty, the
-//!         result is always \c true.
+//!         Whether `s` begins with `with`. If `with` is empty, the
+//!         result is always `true`.
 //!
 //!     \note
 //!         [FUTURE] C++20 will have
-//!           <code>std::basic_string::starts_with()</code> and
-//!           <code>std::basic_string_view::starts_with()</code>
+//!           `std::basic_string::starts_with()` and
+//!           `std::basic_string_view::starts_with()`
 //!         for this.
 //!
 //!     \see
@@ -42,8 +42,8 @@ bool                begins_with( std::string const & s,
 //      ==============
 //
 //!     \return
-//!         \c true if and only if \c s begins with \c c; i.e. if and
-//!         only if <code>! s.empty() && s.front() == c</code>.
+//!         `true` if and only if `s` begins with `c`; i.e. if and only
+//!         if `! s.empty() && s.front() == c`.
 // ---------------------------------------------------------------------------
 bool                begins_with( std::string const & s,
                                  char c )                   noexcept ;
