@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A timer based on `std::chrono::steady_clock`.
+//!     \brief A timer using `std::chrono::steady_clock`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_nLtyKWctWF4nTnEMJ4Y66pLLeGE7RNze
@@ -47,6 +47,10 @@ public:
     typedef std::chrono::steady_clock::duration
                         duration_type ;
 
+    //!     Leaves this object in an undefined state. The only action
+    //!     that can be performed on a just constructed policy object is
+    //!     to call start().
+    //!
     //!     See the \link timer timer\endlink documentation.
     // -----------------------------------------------------------------------
                         steady_clock_policy() ;

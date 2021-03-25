@@ -22,7 +22,9 @@ namespace breeze_ns {
 //      performance_counter_policy:
 //      ===========================
 //
-//!     A timer policy using Windows' `QueryPerformanceCounter()`.
+//!     \brief
+//!         A policy for our `timer` template using Windows'
+//!         `QueryPerformanceCounter()`.
 // ---------------------------------------------------------------------------
 class performance_counter_policy
 {
@@ -36,12 +38,49 @@ public:
     performance_counter_policy &
                     operator =( performance_counter_policy const & ) = delete ;
 
+    //!     The type used to represent elapsed times.
+    // -----------------------------------------------------------------------
     typedef std::chrono::duration< long long, std::nano >
                         duration_type ;
+
+    //!     Leaves this object in an undefined state. The only action
+    //!     that can be performed on a just constructed policy object is
+    //!     to call start().
+    //!
+    //!     See the \link timer timer\endlink documentation.
+    // -----------------------------------------------------------------------
                         performance_counter_policy() ;
 
+    //!     Starts or restarts measurement (see elapsed()).
+    //!
+    //!     \par Exceptions
+    //!         A `last_api_error` if an error occurs.
+    //!
+    //!     See the \link timer timer\endlink documentation.
+    // -----------------------------------------------------------------------
     void                start() ;
+
+    //!     \return
+    //!         The time elapsed from the last (re)start.
+    //!
+    //!     \pre
+    //!         The function start() has been called at least once.
+    //!
+    //!     \par Exceptions
+    //!         A `last_api_error` if an error occurs.
+    //!
+    //!     See the \link timer timer\endlink documentation.
+    // -----------------------------------------------------------------------
     duration_type       elapsed() const ;
+
+    //!     \return
+    //!         The timer resolution.
+    //!
+    //!     \par Exceptions
+    //!         A `last_api_error` if the resolution can't be obtained.
+    //!
+    //!     See the \link timer timer\endlink documentation.
+    // -----------------------------------------------------------------------
     duration_type       resolution() const ;
 
 private:

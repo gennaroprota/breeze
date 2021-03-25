@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A timer based on `std::clock()`.
+//!     \brief A timer using `std::clock()`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
@@ -45,14 +45,16 @@ public:
     // -----------------------------------------------------------------------
     c_clock_policy &    operator =(     c_clock_policy const & ) = delete ;
 
-    //!     The type used to represent a duration.
+    //!     The type used to represent elapsed times.
     // -----------------------------------------------------------------------
     typedef std::chrono::duration< double, std::milli >
                         duration_type ;
 
     //!     Leaves this object in an undefined state. The only action
-    //!     that can be performed on a just constructed object is to
-    //!     call start().
+    //!     that can be performed on a just constructed policy object is
+    //!     to call start().
+    //!
+    //!     See the \link timer timer\endlink documentation.
     // -----------------------------------------------------------------------
                         c_clock_policy() ;
 
@@ -60,12 +62,13 @@ public:
     //!
     //!     \par Exceptions
     //!         A `std::runtime_error` if `std::clock()` fails.
+    //!
+    //!     See the \link timer timer\endlink documentation.
     // -----------------------------------------------------------------------
     void                start() ;
 
     //!     \return
-    //!         The time, in milliseconds, elapsed from the last
-    //!         (re)start.
+    //!         The time elapsed from the last (re)start.
     //!
     //!     \pre
     //!         The function start() has been called at least once.
@@ -74,12 +77,14 @@ public:
     //!         A `std::runtime_error` if it detects wrap-around (it
     //!         only detects \e some wrap-arounds), or if `std::clock()`
     //!         fails.
+    //!
+    //!     See the \link timer timer\endlink documentation.
     // -----------------------------------------------------------------------
     duration_type       elapsed() const ;
 
     //!     \return
-    //!         An estimate of the timer resolution, in milliseconds.
-    //!         May return slightly different values from call to call.
+    //!         An estimate of the timer resolution. May return slightly
+    //!         different values from call to call.
     //!
     //!     \par Exceptions
     //!         A `std::runtime_error` if it detects wrap-around (it
