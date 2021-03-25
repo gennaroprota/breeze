@@ -82,9 +82,12 @@ public:
 
     enum start_mode { auto_start, manual_start } ;
 
-    //!     Initializes the underlying device by calling the default
-    //!     constructor and, if (and only if) `mode == auto_start`,
-    //!     calls start().
+    //!     Constructs the underlying `Device` using its default
+    //!     constructor.
+    //!
+    //!     Then, if `mode == auto_start`, calls start(); otherwise, it
+    //!     leaves the timer in an undefined state, in which the only
+    //!     action that can be performed is to call start().
     // -----------------------------------------------------------------------
     explicit            timer( start_mode mode = auto_start ) ;
 
