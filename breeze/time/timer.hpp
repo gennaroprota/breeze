@@ -88,18 +88,19 @@ public:
     // -----------------------------------------------------------------------
     explicit            timer( start_mode mode = auto_start ) ;
 
-    //!     Calls `Device::start()`.
+    //!     Calls `%start()` on the underlying `Device`.
     // -----------------------------------------------------------------------
     void                start() ;
 
     //!     \return
-    //!         The result of calling %elapsed() on the underlying
+    //!         The result of calling `%elapsed()` on the underlying
     //!         `Device`.
     // -----------------------------------------------------------------------
     duration_type       elapsed() const ;
 
     //!     \return
-    //!         The result of calling `Device::resolution()`.
+    //!         The result of calling `%resolution()` on the underlying
+    //!         `Device`.
     // -----------------------------------------------------------------------
     duration_type       resolution() const ;
 
