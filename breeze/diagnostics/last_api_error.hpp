@@ -77,9 +77,6 @@ private:
     typedef std::runtime_error
                         base_type ;
 
-    friend std::ostream &
-                        operator <<( std::ostream &, last_api_error const & ) ;
-
     long long           m_code ;
 
     //      See the comments in the implementation files for the purpose
@@ -88,6 +85,8 @@ private:
                         last_api_error( char const * p, long long error_code ) ;
 
 } ;
+
+std::ostream &      operator <<( std::ostream &, last_api_error const & ) ;
 
 }
 

@@ -64,13 +64,12 @@ public:
     std::string         to_string() const ;
 
 private:
-    friend std::ostream &
-                    operator <<( std::ostream & dest,
-                                 printable_string const & ) ;
-
     maybe< std::string >
                         m_value ;
 } ;
+
+std::ostream &      operator <<( std::ostream & dest,
+                                 printable_string const & ) ;
 
 }
 

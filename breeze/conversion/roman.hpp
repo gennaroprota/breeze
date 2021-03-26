@@ -43,14 +43,13 @@ public:
 
 private:
     int                 m_value ;
-
-    //!     Stream output operator: outputs the Roman numeral. The
-    //!     uppercase flag (`std::ios_base::uppercase`) is supported, so
-    //!     the user can obtain all-uppercase or all-lowercase.
-    // -----------------------------------------------------------------------
-    friend std::ostream &
-                    operator <<( std::ostream &, roman const & ) ;
 } ;
+
+//!     Stream output operator: outputs the Roman numeral. The uppercase
+//!     flag (`std::ios_base::uppercase`) is supported, so the user can
+//!     obtain all-uppercase or all-lowercase.
+// ---------------------------------------------------------------------------
+std::ostream &      operator <<( std::ostream &, roman const & ) ;
 
 }
 
