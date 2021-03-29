@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Converter from/to byte sequence representations.
+//!     \brief Converter from/to "byte" sequence representations.
 //
 //      NOTE: to avoid overcomplicated syntax (template members of class
 //      templates), this file doesn't have a corresponding .tpp file.
@@ -68,17 +68,16 @@ class endian_codec
                    ! meta::has_sign< Byte >::value,
                    "T and Byte can't have a sign") ;
 
-    typedef EndianPolicy
-                        policy ;
-    typedef endian_codec< policy, T, Byte, n - 1 >
+    typedef endian_codec< EndianPolicy, T, Byte, n - 1 >
                         next ;
 
 public:
     template< typename OutputIter >
-    static void         encode( T const & value, OutputIter dest )
+    static void         encode( T value, OutputIter dest )
     {
+
         int const           shift_amount =
-            policy:: template shift_amount< T, Byte, n - 1 >() ;
+            EndianPolicy:: template shift_amount< T, Byte, n - 1 >() ;
 
         *dest = static_cast< Byte >( value >> shift_amount ) ;
         next::encode( value, ++ dest ) ;
@@ -88,10 +87,10 @@ public:
     static T            decode( InputIter source )
     {
         int const           shift_amount =
-            policy:: template shift_amount< T, Byte, n - 1 >() ;
+            EndianPolicy:: template shift_amount< T, Byte, n - 1 >() ;
 
-        T const             temp = T( *source ) << shift_amount ;
-        return  temp | next::decode( ++ source ) ;
+        T const             temp = static_cast< T >( *source ) ;
+        return temp << shift_amount | next::decode( ++ source ) ;
     }
 } ;
 
@@ -100,7 +99,7 @@ class endian_codec< EndianPolicy, T, Byte, 0 >
 {
 public:
     template< typename Iter >
-    static void         encode( T const &, Iter )
+    static void         encode( T, Iter )
     {
     }
 
@@ -118,19 +117,20 @@ public:
 //      =====================
 //
 //!     Little-endian policy for endian_codec.
+//!
+//!     \see
+//!         big_endian_policy.
 // ---------------------------------------------------------------------------
 //
 //      NOTE:
 //
 //      There's no general guarantee that we can infer the load/store
 //      order via a single Endianness template parameter: the ordering
-//      also depends on the types T and Byte.
+//      might also depend on the types T and Byte.
 //
 //      Fortunately, dependency on all of the three variables is not
 //      common. Thus, our default policies, defined below, take the
-//      endianness type only into account. You will need to provide your
-//      own policy for more exotic cases (e.g. if you are dealing with
-//      PDP-11 endianness).
+//      endianness type only into account.
 // ---------------------------------------------------------------------------
 class little_endian_policy
 {
@@ -156,6 +156,9 @@ public:
 //      ==================
 //
 //!     Big-endian policy for endian_codec.
+//!
+//!     \see
+//!         little_endian_policy.
 // ---------------------------------------------------------------------------
 class big_endian_policy
 {
@@ -179,11 +182,9 @@ public:
 //
 //!     \copybrief endian_codec.hpp
 //!
-//!     Converts generic values to/from (byte-)sequence representations.
-//!
 //!     In general, `endian_codec` can read and store a representation
-//!     of a value as a sequence of smaller units, regardless of their
-//!     widths. It is mostly useful to read and write values
+//!     of a value as a sequence of (possibly smaller) units, regardless
+//!     of their widths. It is mostly useful to read and write values
 //!     independently of the endianness they are stored in, as long as
 //!     the endianness type is known.
 //!
@@ -207,24 +208,19 @@ template<
 >
 class endian_codec
 {
-private:
-    static std::ptrdiff_t const
-                        n = endian_codec_private::
-                              required_count< T, Byte >::value ;
 public:
     static std::ptrdiff_t const
-                        required_count = n ; // gps experimental
+                        required_count =
+        endian_codec_private::required_count< T, Byte >::value ;
 
     //!     Writes (encodes) the value `value` into a range starting
     //!     with `dest`, according to `EndianPolicy`.
     // -----------------------------------------------------------------------
     template< typename OutputIter >
-    static void         encode( T const & value, OutputIter dest )
+    static void         encode( T value, OutputIter dest )
     {
-        endian_codec_private::endian_codec< EndianPolicy,
-                                            T,
-                                            Byte,
-                                            n >::encode( value, dest ) ;
+        endian_codec_private::endian_codec<
+            EndianPolicy, T, Byte >::encode( value, dest ) ;
     }
 
     //!     \return
@@ -238,10 +234,8 @@ public:
     template< typename InputIter >
     static T            decode( InputIter source )
     {
-        return endian_codec_private::endian_codec< EndianPolicy,
-                                                   T,
-                                                   Byte,
-                                                   n >::decode( source ) ;
+        return endian_codec_private::endian_codec<
+            EndianPolicy, T, Byte >::decode( source );
     }
 } ;
 
@@ -255,7 +249,8 @@ endian_codec< EndianPolicy, T, Byte >::required_count ;
 //      endian_store():
 //      ===============
 //
-//!     \brief Convenience wrapper around `endian_codec::encode()`
+//!     \brief Convenience wrapper around `endian_codec::encode()` which
+//!            derives `Byte` from the iterator type.
 //!
 //!     `endian_store< EndianPolicy >( value, it )` is equivalent to:
 //!
@@ -281,7 +276,8 @@ endian_store( T const & value, ForwardIter it )
 //      endian_load():
 //      ==============
 //
-//!     \brief Convenience wrapper around `endian_codec::decode()`
+//!     \brief Convenience wrapper around `endian_codec::decode()` which
+//!            derives `Byte` from the iterator type.
 //!
 //!     `endian_load< EndianPolicy, T >( it )` is equivalent to:
 //!
@@ -297,8 +293,7 @@ endian_load( InputIter it )
 {
     typedef typename std::iterator_traits< InputIter >::value_type
                         Byte ;
-    return breeze::endian_codec< EndianPolicy, T, Byte >
-        ::decode( it ) ;
+    return breeze::endian_codec< EndianPolicy, T, Byte >::decode( it ) ;
 }
 
 }
