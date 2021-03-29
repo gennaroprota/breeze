@@ -109,7 +109,7 @@ ifeq ($(system),windows)
                 operating_system_id.cpp                     \
                 windows_version_info.cpp                    \
                                                             \
-                performance_counter_policy.cpp
+                performance_counter_timer.cpp
 endif
 
 has_cpuid := no
