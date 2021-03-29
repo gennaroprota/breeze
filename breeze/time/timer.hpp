@@ -1,5 +1,5 @@
 // ===========================================================================
-//                        Copyright 2006 Gennaro Prota
+//                     Copyright 2006-2021 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -25,36 +25,29 @@ namespace breeze_ns {
 //!     A policy-based timer which allows the user to retrieve the
 //!     amount of time elapsed from its start (i.e. a "stopwatch").
 //!
-//!     `Device` is a policy modeling the "clock device" concept: this
-//!     can be a hardware device, a network time provider, a GPS clock
-//!     or pretty much anything else. It must be <tt>
-//!     DefaultConstructible</tt> and provide the member functions:
+//!     `Clock` is a type that satisfies the <tt>Clock</tt> requirements
+//!     (C++ standard, [time.clock.req]). This means that a `timer` can
+//!     be used e.g. with `std::system_clock`, `std::steady_clock`, or
+//!     `std::gps_clock`. In addition, we provide clocks that use the C
+//!     function `std::clock()` and, for Windows,
+//!     `QueryPerformanceCounter()`.
 //!
-//!      - `%start()`,
-//!            which must start or restart the `Device`
+//!     It's the user's responsibility to check that the clock is
+//!     steady, if needed.
 //!
-//!      - `%elapsed()`,
-//!            which must return the amount of time elapsed from the
-//!            last call to `%start()`
-//!
-//!     and the typedef:
-//!
-//!      - `duration_type`,
-//!            which is the return type of `%elapsed()` and
-//!            `%resolution()`; it must be a `std::chrono::duration`
-//!
-//!     Optionally, it may provide the member function:
+//!     Optionally, the `Clock` type may provide the \e static member
+//!     function:
 //!
 //!      - `%resolution()`,
-//!            which must return the resolution of the `Device` or an
+//!            which must return the resolution of the `Clock` or an
 //!            estimate of it; note that the resolution is the smallest
-//!            amount of time that the `Device` can measure and doesn't,
+//!            amount of time that the `Clock` can measure and doesn't,
 //!            in itself, tell anything about the \e accuracy
 //!
 //!     This function is only used in `timer::resolution()`, so if you
 //!     don't need the latter, you can omit it.
 // ---------------------------------------------------------------------------
-template< class Device >
+template< class Clock >
 class timer
 {
 public:
@@ -64,8 +57,8 @@ public:
     //!
     //!     Specifying copy semantics for a timer is a bit difficult
     //!     and, although it can probably be done, it's not worth it, as
-    //!     who would copy a timer or a timer policy, anyway? (A timer
-    //!     will, in practice, always be used like a Python context.)
+    //!     who would copy a timer, anyway? (A timer will, in practice,
+    //!     always be used like a Python context.)
     // -----------------------------------------------------------------------
                         timer(      timer const & ) = delete ;
 
@@ -77,38 +70,37 @@ public:
 
     timer &             operator =( timer const & ) = delete ;
 
-    typedef typename Device::duration_type
-                        duration_type ;
+    //!     A synonym of `Clock::duration`.
+    // -----------------------------------------------------------------------
+    using               duration = typename Clock::duration ;
 
     enum start_mode { auto_start, manual_start } ;
 
-    //!     Constructs the underlying `Device` using its default
-    //!     constructor.
-    //!
-    //!     Then, if `mode == auto_start`, calls start(); otherwise, it
-    //!     leaves the timer in an undefined state, in which the only
-    //!     action that can be performed is to call start().
+    //!     If `mode == auto_start`, calls start(); otherwise, it leaves
+    //!     the timer in an undefined state, in which the only member
+    //!     functions that can be called are start() and the destructor.
     // -----------------------------------------------------------------------
     explicit            timer( start_mode mode = auto_start ) ;
 
-    //!     Calls `%start()` on the underlying `Device`.
+    //!     Marks the start of a measurement.
     // -----------------------------------------------------------------------
     void                start() ;
 
     //!     \return
-    //!         The result of calling `%elapsed()` on the underlying
-    //!         `Device`.
+    //!         The amount of time elapsed from the last call to
+    //!         start().
     // -----------------------------------------------------------------------
-    duration_type       elapsed() const ;
+    duration            elapsed() const ;
 
     //!     \return
-    //!         The result of calling `%resolution()` on the underlying
-    //!         `Device`.
+    //!         The result of calling `Clock::resolution()`.
     // -----------------------------------------------------------------------
-    duration_type       resolution() const ;
+    static duration     resolution() ;
 
 private:
-    Device              m_device ;
+    using               time_point = typename Clock::time_point ;
+
+    time_point          m_start_time ;
 } ;
 
 }

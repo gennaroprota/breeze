@@ -1,5 +1,5 @@
 // ===========================================================================
-//                        Copyright 2006 Gennaro Prota
+//                     Copyright 2006-2021 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -16,16 +16,18 @@
 #include "breeze/top_level_namespace.hpp"
 #include "breeze/time/timer.hpp"
 #include <chrono>
-#include <ctime>
 
 namespace breeze_ns {
 
-//      c_clock_policy:
-//      ===============
+//      c_clock_clock:
+//      ==============
 //
 //!     \brief
-//!         A policy for our `timer` template using the C function
+//!         A clock for our `timer` template using the C function
 //!         `clock()`.
+//!
+//!     Most times, you'll just use `c_clock_timer`, and not this class
+//!     directly.
 //!
 //!     \warning
 //!         Note that on some (non-conforming) implementations `clock()`
@@ -34,56 +36,27 @@ namespace breeze_ns {
 //!         <br />&nbsp;&nbsp;
 //!    <https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/clock>.
 // ---------------------------------------------------------------------------
-class c_clock_policy
+class c_clock_clock
 {
 public:
-    //!     Deleted copy constructor.
-    // -----------------------------------------------------------------------
-                        c_clock_policy( c_clock_policy const & ) = delete ;
+    using               rep        = double ;
+    using               period     = std::milli ;
+    using               duration   = std::chrono::duration< rep, period > ;
+    using               time_point = std::chrono::time_point< c_clock_clock > ;
 
-    //!     Deleted copy assignment operator.
-    // -----------------------------------------------------------------------
-    c_clock_policy &    operator =(     c_clock_policy const & ) = delete ;
+    static constexpr bool
+                        is_steady = true ;
 
-    //!     The type used to represent elapsed times.
-    // -----------------------------------------------------------------------
-    typedef std::chrono::duration< double, std::milli >
-                        duration_type ;
-
-    //!     Leaves this object in an undefined state. The only action
-    //!     that can be performed on a just constructed policy object is
-    //!     to call start().
-    //!
-    //!     See the \link timer timer\endlink documentation.
-    // -----------------------------------------------------------------------
-                        c_clock_policy() ;
-
-    //!     Starts or restarts measurement (see elapsed()).
+    //!     \return
+    //!         The current time.
     //!
     //!     \par Exceptions
     //!         A `std::runtime_error` if `std::clock()` fails.
-    //!
-    //!     See the \link timer timer\endlink documentation.
     // -----------------------------------------------------------------------
-    void                start() ;
+    static time_point   now() ;
 
     //!     \return
-    //!         The time elapsed from the last (re)start.
-    //!
-    //!     \pre
-    //!         The function start() has been called at least once.
-    //!
-    //!     \par Exceptions
-    //!         A `std::runtime_error` if it detects wrap-around (it
-    //!         only detects \e some wrap-arounds), or if `std::clock()`
-    //!         fails.
-    //!
-    //!     See the \link timer timer\endlink documentation.
-    // -----------------------------------------------------------------------
-    duration_type       elapsed() const ;
-
-    //!     \return
-    //!         An estimate of the timer resolution. May return slightly
+    //!         An estimate of the clock resolution. May return slightly
     //!         different values from call to call.
     //!
     //!     \par Exceptions
@@ -91,13 +64,10 @@ public:
     //!         only detects \e some wrap-arounds), or if `std::clock()`
     //!         fails.
     // -----------------------------------------------------------------------
-    duration_type       resolution() const ;
-
-private:
-    std::clock_t        m_start_tick ;
+    static duration     resolution() ;
 } ;
 
-typedef timer< c_clock_policy >
+typedef timer< c_clock_clock >
                     c_clock_timer ;
 
 }

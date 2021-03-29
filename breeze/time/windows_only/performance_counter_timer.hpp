@@ -1,5 +1,5 @@
 // ===========================================================================
-//                        Copyright 2006 Gennaro Prota
+//                     Copyright 2006-2021 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -19,75 +19,48 @@
 
 namespace breeze_ns {
 
-//      performance_counter_policy:
-//      ===========================
+//      performance_counter_clock:
+//      ==========================
 //
 //!     \brief
-//!         A policy for our `timer` template using Windows'
+//!         A clock for our `timer` template using Windows'
 //!         `QueryPerformanceCounter()`.
+//!
+//!     Most times, you'll just use `performance_counter_timer`, and not
+//!     this class directly.
 // ---------------------------------------------------------------------------
-class performance_counter_policy
+class performance_counter_clock
 {
 public:
-    //!     Deleted copy constructor.
-    // -----------------------------------------------------------------------
-    performance_counter_policy( performance_counter_policy const & ) = delete ;
+    using               rep        = long long ;
+    using               period     = std::nano ;
+    using               duration   = std::chrono::duration< rep, period > ;
+    using               time_point =
+        std::chrono::time_point< performance_counter_clock > ;
 
-    //!     Deleted copy assignment operator.
-    // -----------------------------------------------------------------------
-    performance_counter_policy &
-                    operator =( performance_counter_policy const & ) = delete ;
+    static constexpr bool
+                        is_steady = true ;
 
-    //!     The type used to represent elapsed times.
-    // -----------------------------------------------------------------------
-    typedef std::chrono::duration< long long, std::nano >
-                        duration_type ;
-
-    //!     Leaves this object in an undefined state. The only action
-    //!     that can be performed on a just constructed policy object is
-    //!     to call start().
-    //!
-    //!     See the \link timer timer\endlink documentation.
-    // -----------------------------------------------------------------------
-                        performance_counter_policy() ;
-
-    //!     Starts or restarts measurement (see elapsed()).
+    //!     \return
+    //!         The current time.
     //!
     //!     \par Exceptions
     //!         A `last_api_error` if an error occurs.
-    //!
-    //!     See the \link timer timer\endlink documentation.
     // -----------------------------------------------------------------------
-    void                start() ;
+    static time_point   now() ;
 
     //!     \return
-    //!         The time elapsed from the last (re)start.
-    //!
-    //!     \pre
-    //!         The function start() has been called at least once.
-    //!
-    //!     \par Exceptions
-    //!         A `last_api_error` if an error occurs.
-    //!
-    //!     See the \link timer timer\endlink documentation.
-    // -----------------------------------------------------------------------
-    duration_type       elapsed() const ;
-
-    //!     \return
-    //!         The timer resolution.
+    //!         The clock resolution.
     //!
     //!     \par Exceptions
     //!         A `last_api_error` if the resolution can't be obtained.
     //!
     //!     See the \link timer timer\endlink documentation.
     // -----------------------------------------------------------------------
-    duration_type       resolution() const ;
-
-private:
-    long long           m_start ;
+    static duration     resolution() ;
 } ;
 
-typedef timer< performance_counter_policy >
+typedef timer< performance_counter_clock >
                     performance_counter_timer ;
 
 }

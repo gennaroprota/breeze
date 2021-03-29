@@ -167,9 +167,6 @@
     <ClCompile Include="..\..\breeze\text\brz\string_constant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\time\brz\steady_clock_timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\breeze\cpu\brz\get_cpuid_info.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -560,9 +557,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\text\string_constant.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breeze\time\steady_clock_timer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\testing\assert_failure.hpp">

@@ -1,5 +1,5 @@
 // ===========================================================================
-//                        Copyright 2006 Gennaro Prota
+//                     Copyright 2006-2021 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -8,34 +8,33 @@
 
 namespace breeze_ns {
 
-template< typename Device >
-timer< Device >::timer( start_mode mode )
-    :   m_device()
+template< typename Clock >
+timer< Clock >::timer( start_mode mode )
 {
     if ( mode == auto_start) {
         start() ;
     }
 }
 
-template< typename Device >
+template< typename Clock >
 void
-timer< Device >::start()
+timer< Clock >::start()
 {
-    return m_device.start() ;
+    m_start_time = Clock::now() ;
 }
 
-template< typename Device >
-typename timer< Device >::duration_type
-timer< Device>::elapsed() const
+template< typename Clock >
+typename timer< Clock >::duration
+timer< Clock >::elapsed() const
 {
-    return m_device.elapsed() ;
+    return Clock::now() - m_start_time ;
 }
 
-template< typename Device >
-typename timer< Device >::duration_type
-timer< Device >::resolution() const
+template< typename Clock >
+typename timer< Clock >::duration
+timer< Clock >::resolution()
 {
-    return m_device.resolution() ;
+    return Clock::resolution() ;
 }
 
 }

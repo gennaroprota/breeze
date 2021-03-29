@@ -4,7 +4,7 @@
 //          PVS-Studio Static Code Analyzer for C, C++, C#, and Java:
 //                            http://www.viva64.com
 // ===========================================================================
-//                        Copyright 2006 Gennaro Prota
+//                     Copyright 2006-2021 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -29,10 +29,13 @@ get_count()
     return count.QuadPart ;
 }
 
-typedef breeze::performance_counter_policy::duration_type
-                    duration_type ;
+typedef breeze::performance_counter_clock::duration
+                    duration ;
 
-duration_type
+typedef breeze::performance_counter_clock::time_point
+                    time_point ;
+
+duration
 get_resolution()
 {
     LARGE_INTEGER       f ;
@@ -40,41 +43,25 @@ get_resolution()
         throw last_api_error( "QueryPerformanceFrequency() failed" ) ;
     }
 
-    return duration_type(
-        duration_type::period::den /
+    return duration(
+        duration::period::den /
         f.QuadPart /
-        duration_type::period::num
+        duration::period::num
     ) ;
 }
 
 }
 
-
-performance_counter_policy::performance_counter_policy()
+time_point
+performance_counter_clock::now()
 {
-    //      Note that start() is not called here. It will be called by
-    //      the timer template, if needed. Note that this causes the
-    //      member m_start to be left uninitialized.
-    // -----------------------------------------------------------------------
+    return time_point( get_count() * resolution() ) ;
 }
 
-void
-performance_counter_policy::start()
+performance_counter_clock::duration
+performance_counter_clock::resolution()
 {
-    m_start = get_count() ;
-}
-
-performance_counter_policy::duration_type
-performance_counter_policy::elapsed() const
-{
-    long long const     now = get_count() ;
-    return ( now - m_start ) * resolution() ;
-}
-
-performance_counter_policy::duration_type
-performance_counter_policy::resolution() const
-{
-    static duration_type const
+    static duration const
                         res = get_resolution() ;
     return res ;
 }

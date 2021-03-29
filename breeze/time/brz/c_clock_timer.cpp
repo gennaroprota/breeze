@@ -4,7 +4,7 @@
 //          PVS-Studio Static Code Analyzer for C, C++, C#, and Java:
 //                            http://www.viva64.com
 // ===========================================================================
-//                        Copyright 2006 Gennaro Prota
+//                     Copyright 2006-2021 Gennaro Prota
 //
 //                  Licensed under the 3-Clause BSD License.
 //             (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -12,22 +12,20 @@
 // ___________________________________________________________________________
 
 #include "breeze/time/c_clock_timer.hpp"
-#include "breeze/diagnostics/assert.hpp"
+#include <ctime>
 #include <stdexcept>
 
 namespace breeze_ns {
 namespace           {
 
-auto const          invalid_tick = static_cast< std::clock_t >( -1 ) ;
-
-breeze::c_clock_policy::duration_type
-to_duration_type( std::clock_t elapsed )
+breeze::c_clock_clock::duration
+to_duration_type( std::clock_t tick )
 {
-    return breeze::c_clock_policy::duration_type(
-            static_cast< long double >( elapsed )                  /
-            static_cast< long double >( CLOCKS_PER_SEC )           *
-                breeze::c_clock_policy::duration_type::period::den /
-                breeze::c_clock_policy::duration_type::period::num
+    return breeze::c_clock_clock::duration(
+            static_cast< long double >( tick )              /
+            static_cast< long double >( CLOCKS_PER_SEC )    *
+            breeze::c_clock_clock::period::den              /
+            breeze::c_clock_clock::period::num
         ) ;
 }
 
@@ -51,36 +49,14 @@ throw_because_of_wrap_around()
 
 }
 
-c_clock_policy::c_clock_policy()
-    :   m_start_tick( invalid_tick )
+c_clock_clock::time_point
+c_clock_clock::now()
 {
+    return time_point( to_duration_type( retrieve() ) ) ;
 }
 
-void
-c_clock_policy::start()
-{
-    //      Synchronize our start.
-    // -----------------------------------------------------------------------
-    std::clock_t const  s = retrieve() ;
-    while ( s == ( m_start_tick = retrieve() ) ) { }
-}
-
-c_clock_policy::duration_type
-c_clock_policy::elapsed() const
-{
-    BREEZE_ASSERT( m_start_tick != invalid_tick ) ;
-
-    std::clock_t const  now = retrieve() ;
-
-    if ( now < m_start_tick ) {
-        throw_because_of_wrap_around() ;
-    }
-
-    return to_duration_type( now - m_start_tick ) ;
-}
-
-c_clock_policy::duration_type
-c_clock_policy::resolution() const
+c_clock_clock::duration
+c_clock_clock::resolution()
 {
     std::clock_t        start ;
     std::clock_t        end ;
