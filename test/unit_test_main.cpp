@@ -128,7 +128,7 @@ main()
     if ( failure_count == 0 ) {
         std::cout << "All tests passed." ;
     } else {
-        std::cout << failure_count << " test functions FAILED." ;
+        std::cout << failure_count << " components have tests that FAILED." ;
     }
 
     std::cout << std::endl ;
