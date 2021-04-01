@@ -71,26 +71,25 @@ class endian_codec
     typedef endian_codec< EndianPolicy, T, Byte, n - 1 >
                         next ;
 
+    enum { shift_amount = meta::width< Byte >::value } ;
+
 public:
-    template< typename OutputIter >
-    static void         encode( T value, OutputIter dest )
+    template< typename RandomIter >
+    static void         encode( T value, RandomIter dest )
     {
-
-        int const           shift_amount =
-            EndianPolicy:: template shift_amount< T, Byte, n - 1 >() ;
-
-        *dest = static_cast< Byte >( value >> shift_amount ) ;
-        next::encode( value, ++ dest ) ;
+        dest[ EndianPolicy::template index< T, Byte >( n - 1 )
+            ] = static_cast< Byte >( value ) ;
+        next::encode(
+            // '* (n > 1)' silences spurious warnings
+            n > 1 ? ( value >> shift_amount * (n > 1) ) : 0
+            , dest ) ;
     }
 
-    template< typename InputIter >
-    static T            decode( InputIter source )
+    template< typename RandomIter >
+    static T            decode( RandomIter source )
     {
-        int const           shift_amount =
-            EndianPolicy:: template shift_amount< T, Byte, n - 1 >() ;
-
-        T const             temp = static_cast< T >( *source ) ;
-        return temp << shift_amount | next::decode( ++ source ) ;
+        return source[ EndianPolicy:: template index< T, Byte >( n - 1 ) ]
+             | next::decode( source ) << shift_amount ;
     }
 } ;
 
@@ -135,14 +134,6 @@ public:
 class little_endian_policy
 {
 public:
-    // n == required_count - 1 to produce the first Byte
-    //
-    template< typename T, typename Byte, std::ptrdiff_t n >
-    static int          shift_amount()
-    {
-        return ( endian_codec_private::required_count< T, Byte >::value - 1 - n ) *
-            meta::width< Byte >::value ;
-    }
 
     template< typename T, typename Byte >
     static std::ptrdiff_t
@@ -163,12 +154,6 @@ public:
 class big_endian_policy
 {
 public:
-    template< typename T, typename Byte, std::ptrdiff_t n >
-    static int          shift_amount()
-    {
-        return n * meta::width< Byte >::value ;
-    }
-
     template< typename T, typename Byte >
     static std::ptrdiff_t
                         index( std::ptrdiff_t n )
@@ -216,8 +201,8 @@ public:
     //!     Writes (encodes) the value `value` into a range starting
     //!     with `dest`, according to `EndianPolicy`.
     // -----------------------------------------------------------------------
-    template< typename OutputIter >
-    static void         encode( T value, OutputIter dest )
+    template< typename RandomIter >
+    static void         encode( T value, RandomIter dest )
     {
         endian_codec_private::endian_codec<
             EndianPolicy, T, Byte >::encode( value, dest ) ;
@@ -228,11 +213,11 @@ public:
     //!         `EndianPolicy`, in a range that begins with `source`.
     //!
     //!     \note
-    //!         The `value_type` of `InputIter` can be larger than
+    //!         The `value_type` of `RandomIter` can be larger than
     //!         `Byte`.
     // -----------------------------------------------------------------------
-    template< typename InputIter >
-    static T            decode( InputIter source )
+    template< typename RandomIter >
+    static T            decode( RandomIter source )
     {
         return endian_codec_private::endian_codec<
             EndianPolicy, T, Byte >::decode( source );
@@ -255,7 +240,7 @@ endian_codec< EndianPolicy, T, Byte >::required_count ;
 //!     `endian_store< EndianPolicy >( value, it )` is equivalent to:
 //!
 //!     ```
-//!         typedef typename std::iterator_traits< ForwardIter >::value_type
+//!         typedef typename std::iterator_traits< RandomIter >::value_type
 //!                             Byte ;
 //!         breeze::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
 //!     ```
@@ -264,11 +249,11 @@ endian_codec< EndianPolicy, T, Byte >::required_count ;
 //!         This can't be used for purely output iterators, because they
 //!         don't have a notion of `value_type`.
 // ---------------------------------------------------------------------------
-template< typename EndianPolicy, typename T, typename ForwardIter >
+template< typename EndianPolicy, typename T, typename RandomIter >
 void
-endian_store( T const & value, ForwardIter it )
+endian_store( T const & value, RandomIter it )
 {
-    typedef typename std::iterator_traits< ForwardIter >::value_type
+    typedef typename std::iterator_traits< RandomIter >::value_type
                         Byte ;
     breeze::endian_codec< EndianPolicy, T, Byte >::encode( value, it ) ;
 }
@@ -282,16 +267,16 @@ endian_store( T const & value, ForwardIter it )
 //!     `endian_load< EndianPolicy, T >( it )` is equivalent to:
 //!
 //!     ```
-//!         typedef typename std::iterator_traits< InputIter >::value_type
+//!         typedef typename std::iterator_traits< RandomIter >::value_type
 //!                             Byte ;
 //!         return breeze::endian_codec< EndianPolicy, T, Byte >::decode( it ) ;
 //!     ```
 // ---------------------------------------------------------------------------
-template< typename EndianPolicy, typename T, typename InputIter >
+template< typename EndianPolicy, typename T, typename RandomIter >
 T
-endian_load( InputIter it )
+endian_load( RandomIter it )
 {
-    typedef typename std::iterator_traits< InputIter >::value_type
+    typedef typename std::iterator_traits< RandomIter >::value_type
                         Byte ;
     return breeze::endian_codec< EndianPolicy, T, Byte >::decode( it ) ;
 }

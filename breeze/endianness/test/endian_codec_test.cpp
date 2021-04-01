@@ -87,28 +87,6 @@ check_type_that_fits_in_byte()
     BREEZE_CHECK( dest == 20 ) ;
 }
 
-void
-check_input_output_iterators()
-{
-    std::uint64_t const value = 0x01'02'03'04'05'06'07'08 ;
-    std::stringstream   ss ;
-
-    breeze::endian_codec<
-        breeze::big_endian_policy,
-        std::uint64_t,
-        std::uint8_t >::encode( value, std::ostream_iterator< int >( ss, " " ) ) ;
-
-    BREEZE_CHECK( ss.str() == "1 2 3 4 5 6 7 8 " ) ;
-
-    std::uint64_t       read =
-        breeze::endian_codec<
-            breeze::big_endian_policy,
-            std::uint64_t,
-            std::uint8_t >::decode( std::istream_iterator< int >( ss ) ) ;
-
-    BREEZE_CHECK( read == value ) ;
-}
-
 }
 
 int
@@ -119,6 +97,5 @@ test_endian_codec()
         { check,
           check2,
           check_type_that_fits_in_byte< unsigned char, unsigned int >,
-          check_type_that_fits_in_byte< unsigned int,  unsigned long >,
-          check_input_output_iterators } ) ;
+          check_type_that_fits_in_byte< unsigned int,  unsigned long > } ) ;
 }
