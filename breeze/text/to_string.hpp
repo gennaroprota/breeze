@@ -14,6 +14,7 @@
 #define BREEZE_GUARD_JRFfcCLm3oqVulEWGOycMApryPN2pq33
 
 #include "breeze/top_level_namespace.hpp"
+#include <chrono>
 #include <locale>
 #include <string>
 
@@ -31,6 +32,16 @@ namespace breeze_ns {
 // ---------------------------------------------------------------------------
 template< typename T >
 std::string         to_string( T const & object ) ;
+
+//      to_string():
+//      ============
+//
+//!     Overload for `std::chrono::duration`s. This is useful for
+//!     pre-C++20 code (C++20 has a stream inserter for
+//!     `std::chrono::duration`s.)
+// ---------------------------------------------------------------------------
+template< typename Rep, typename Period >
+std::string         to_string( std::chrono::duration< Rep, Period > d ) ;
 
 //      to_string():
 //      ============

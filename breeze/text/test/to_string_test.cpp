@@ -13,6 +13,7 @@
 
 #include "breeze/text/to_string.hpp"
 #include "breeze/testing/testing.hpp"
+#include <chrono>
 
 int                 test_to_string() ;
 
@@ -33,6 +34,19 @@ void do_tests()
     BREEZE_CHECK( breeze::to_string( 1e+50 ) == "1e+50" ) ;
     BREEZE_CHECK( breeze::to_string( 1e-50 ) == "1e-50" ) ;
     BREEZE_CHECK( breeze::to_string( 123456789.0 ) == "1.23457e+08" ) ;
+
+    //      Conversions of std::chrono::durations.
+    // -----------------------------------------------------------------------
+    BREEZE_CHECK( breeze::to_string( std::chrono::duration< double,
+        std::pico >( 100.1 ) ) == "100.1ps" ) ;
+    BREEZE_CHECK( breeze::to_string(
+        std::chrono::milliseconds( 2 ) ) == "2ms" ) ;
+    BREEZE_CHECK( breeze::to_string( std::chrono::seconds( 5 ) ) == "5s" ) ;
+    BREEZE_CHECK( breeze::to_string( std::chrono::duration< int,
+                std::ratio< 120, 2 > >( 25 ) ) == "25min" ) ;
+    BREEZE_CHECK( breeze::to_string( std::chrono::duration< int,
+                std::ratio< 3, 4 > >( 2 ) ) == "2[3/4]s" ) ;
+    BREEZE_CHECK( breeze::to_string( std::chrono::hours( 50 ) ) == "50h" ) ;
 }
 
 }

@@ -27,22 +27,41 @@ to_string_impl( T const & object, ... )
     return breeze::to_string( object, std::locale() ) ;
 }
 
+template< typename Period >
+void
+print_period( std::ostringstream & dest )
+{
+    dest << '[' ;
+    dest << Period::type::num ;
+    if ( Period::type::den != 1 ) {
+        dest << '/' << Period::type::den ;
+    }
+    dest << "]s" ;
 }
 
-template< typename T >
-std::string
-to_string( T const & object )
-{
-    return to_string_private::to_string_impl( object, 0 ) ;
-}
+#define BREEZE_print_period( period, literal )              \
+    template<>                                              \
+    inline void                                             \
+    print_period< period >( std::ostringstream & dest )     \
+    {                                                       \
+        dest << literal ;                                   \
+    }                                                    /**/
+
+BREEZE_print_period( std::pico,           "ps"  )
+BREEZE_print_period( std::nano,           "ns"  )
+BREEZE_print_period( std::micro,          "us"  )
+BREEZE_print_period( std::milli,          "ms"  )
+BREEZE_print_period( std::ratio< 1 >,     's'   )
+BREEZE_print_period( std::ratio< 60 >,    "min" )
+BREEZE_print_period( std::ratio< 3600 >,  'h'   )
+BREEZE_print_period( std::ratio< 86400 >, 'd'   )
+
+#undef BREEZE_print_period
 
 template< typename OutputStreamable >
-std::string
-to_string( OutputStreamable const & object, std::locale const & loc )
+void
+throw_on_failure( std::ostringstream const & ss )
 {
-    std::ostringstream  ss ;
-    ss.imbue( loc ) ;
-    ss << object ;
     if ( ss.fail() ) {
         //      The output to the ostringstream may, in fact, only fail
         //      for an out of memory condition. In that case,
@@ -54,6 +73,45 @@ to_string( OutputStreamable const & object, std::locale const & loc )
                                   " an instance of " +
                                   readable_type_name< OutputStreamable >() ) ;
     }
+}
+
+}
+
+template< typename T >
+std::string
+to_string( T const & object )
+{
+    return to_string_private::to_string_impl( object, 0 ) ;
+}
+
+template< typename Rep, typename Period >
+std::string
+to_string( std::chrono::duration< Rep, Period > d )
+{
+    using namespace to_string_private ;
+
+    std::ostringstream  ss ;
+    ss << d.count() ;
+    print_period< typename Period::type >( ss ) ;
+
+    throw_on_failure< decltype( d ) >( ss ) ;
+
+    return ss.str() ;
+}
+
+
+template< typename OutputStreamable >
+std::string
+to_string( OutputStreamable const & object, std::locale const & loc )
+{
+    using namespace to_string_private ;
+
+    std::ostringstream  ss ;
+    ss.imbue( loc ) ;
+    ss << object ;
+
+    throw_on_failure< OutputStreamable >( ss ) ;
+
     return ss.str() ;
 }
 
