@@ -46,12 +46,12 @@ template< typename T, typename Byte >
 std::ptrdiff_t const
 required_count< T, Byte >::value ;
 
-template< typename T, std::ptrdiff_t n, typename Byte >
-class required_count< T[ n ], Byte >
+template< typename T, std::ptrdiff_t n >
+class required_count< T[ n ], T >
 {
 public:
     static std::ptrdiff_t const
-                        value = n * required_count< T, Byte >::value ;
+                        value = n ;
 } ;
 
 template<
