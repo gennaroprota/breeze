@@ -26,6 +26,10 @@ check()
         std::stringstream   ss ;
         BREEZE_CHECK( breeze::is_eof_value( ss.peek(), ss ) ) ;
         BREEZE_CHECK( breeze::is_eof_value( breeze::eof_value( ss ), ss ) ) ;
+
+        ss.clear() ;
+        ss << "foo" ;
+        BREEZE_CHECK( ! breeze::is_eof_value( ss.peek(), ss ) ) ;
     }
 }
 
