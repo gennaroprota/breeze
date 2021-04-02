@@ -35,7 +35,9 @@ typedef digest< sha224_hasher >
 //      sha224_engine:
 //      ==============
 //
-//!     SHA-224 policy class for `merkle_damgard_machine`.
+//!     SHA-224 policy class for `merkle_damgard_machine`. This
+//!     corresponds to SHA-224 as described in FIPS 180-2 with Change
+//!     Notice 1.
 // ---------------------------------------------------------------------------
 class sha224_engine
     :   public merkle_damgard_engine< 224, 512, big_endian_policy, 32, 256 >

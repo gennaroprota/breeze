@@ -22,9 +22,9 @@
 
 
 //      NOTE:
-//          All references in the comments below are relative to
-//          FIPS 180-2 (with change notice), as indicated in the module
-//          documentation. [gps]
+//          All references in the comments below are relative to FIPS
+//          180-2 with Change Notice 1, as indicated in the user
+//          documentation.
 // ---------------------------------------------------------------------------
 
 namespace breeze_ns {
