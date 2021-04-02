@@ -74,7 +74,7 @@ merkle_damgard_machine< Engine >::compress()
     // clear input data, for security
     breeze::secure_fill( m_input_buffer ) ; // gps - improve idiom here
 
-    Engine::process_block( m_state, input_in_words ) ;
+    Engine::process_block( input_in_words, m_state ) ;
 
     breeze::secure_fill( input_in_words ) ;
 }

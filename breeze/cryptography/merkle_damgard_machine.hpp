@@ -45,8 +45,8 @@ class               digest ;
 //!        `state_type` is either a built-in array or an array-like type
 //!        which provides const and non-const `operator []()` functions.
 //!
-//!      - `process_block( state_type & state,
-//!                             block_type const & block )`
+//!      - `process_block( block_type const & block,
+//!                        state_type & state )`
 //!
 //!        Applies the specific compression function to an input block.
 //!

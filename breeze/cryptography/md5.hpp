@@ -38,8 +38,8 @@ class md5_engine
 {
 public:
     static void         init_state( state_type & state ) ;
-    static void         process_block( state_type & state,
-                                       block_type const & block ) ;
+    static void         process_block( block_type const & block,
+                                       state_type & state ) ;
 } ;
 
 }

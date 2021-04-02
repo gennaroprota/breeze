@@ -30,9 +30,9 @@ sha384_engine::init_state( state_type & state )
 }
 
 void
-sha384_engine::process_block( state_type & state, block_type const & block )
+sha384_engine::process_block( block_type const & block, state_type & state )
 {
-    return sha512_engine::process_block( state, block ) ;
+    return sha512_engine::process_block( block, state ) ;
 }
 
 }

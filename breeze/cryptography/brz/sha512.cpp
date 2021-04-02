@@ -118,7 +118,7 @@ sha512_engine::init_state( state_type & state )
 }
 
 void
-sha512_engine::process_block( state_type & state, block_type const & block )
+sha512_engine::process_block( block_type const & block, state_type & state )
 {
     using sha_common_private::ch ;
     using sha_common_private::maj ;

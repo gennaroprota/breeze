@@ -72,8 +72,8 @@ void sha1_engine::init_state( state_type & state )
 //
 //      Block processing - reference: section 6.1.2
 // ---------------------------------------------------------------------------
-void sha1_engine::process_block( state_type & state,
-                                 block_type const & block )
+void sha1_engine::process_block( block_type const & block,
+                                 state_type & state )
 {
     using sha_common_private::ch ;
     using sha_common_private::maj ;

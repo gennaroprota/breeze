@@ -90,8 +90,8 @@ void sha256_engine::init_state( state_type & state )
     state[ 7 ] = 0x5be0cd19 ;
 }
 
-void sha256_engine::process_block( state_type & state,
-                                   block_type const & block )
+void sha256_engine::process_block( block_type const & block,
+                                   state_type & state )
 {
     using sha_common_private::ch ;
     using sha_common_private::maj ;
