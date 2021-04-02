@@ -7,8 +7,8 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief SHA-512 policy and typedefs for SHA-512 hasher and
-//!            digest.
+//!     \brief SHA-512, SHA-512/224 and SHA-512/256 policies, and
+//!            typedefs for the corresponding hashers and digests.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_wCcpHSPgQuuMlLcoiraq0109Dj5dIMnV
@@ -21,7 +21,9 @@
 
 namespace breeze_ns {
 
-class               sha512_engine ;
+class               sha512_engine     ;
+class               sha512_224_engine ;
+class               sha512_256_engine ;
 
 //!\{
 //!     A convenience typedef.
@@ -30,6 +32,17 @@ typedef merkle_damgard_machine< sha512_engine >
                     sha512_hasher ;
 typedef digest< sha512_hasher >
                     sha512_digest ;
+
+typedef merkle_damgard_machine< sha512_224_engine >
+                    sha512_224_hasher ;
+typedef digest< sha512_224_hasher >
+                    sha512_224_digest ;
+
+typedef merkle_damgard_machine< sha512_256_engine >
+                    sha512_256_hasher ;
+typedef digest< sha512_256_hasher >
+                    sha512_256_digest ;
+
 //!\}
 
 //      sha512_engine:
@@ -41,6 +54,36 @@ typedef digest< sha512_hasher >
 // ---------------------------------------------------------------------------
 class sha512_engine
     :   public merkle_damgard_engine< 512, 1024, big_endian_policy, 64 >
+{
+public:
+    static void         init_state( state_type & state ) ;
+    static void         process_block( block_type const & block,
+                                       state_type & state ) ;
+} ;
+
+//      sha512_224_engine:
+//      ==================
+//
+//!     SHA-512/224 policy class for `merkle_damgard_machine`. This
+//!     corresponds to SHA-512/224 as described in FIPS 180-4.
+// ---------------------------------------------------------------------------
+class sha512_224_engine
+    :   public merkle_damgard_engine< 224, 1024, big_endian_policy, 64, 512 >
+{
+public:
+    static void         init_state( state_type & state ) ;
+    static void         process_block( block_type const & block,
+                                       state_type & state ) ;
+} ;
+
+//      sha512_256_engine:
+//      ==================
+//
+//!     SHA-512/256 policy class for `merkle_damgard_machine`. This
+//!     corresponds to SHA-512/256 as described in FIPS 180-4.
+// ---------------------------------------------------------------------------
+class sha512_256_engine
+    :   public merkle_damgard_engine< 256, 1024, big_endian_policy, 64, 512 >
 {
 public:
     static void         init_state( state_type & state ) ;

@@ -186,10 +186,34 @@ void
 merkle_damgard_machine< Engine >::create_digest( raw_digest_type & raw )
 {
     finalize() ;
-    for ( int i = 0 ; i < digest_width / word_width ; ++ i ) {
+
+    //      We used to encode directly into `raw`, here. But this had to
+    //      be changed for SHA-512/224:
+    //
+    //      SHA-512/224 uses 64-bit words but a digest of 224 bits. And
+    //      224 is not a multiple of 64. So, we use a slightly larger
+    //      intermediate buffer (64 * 4 = 256 bits), then copy only 224
+    //      / 8 = 28 bytes from there into `raw`. To put it differently:
+    //      since `raw` would have room for 3.5 words only, we encode 4
+    //      of them into a temporary buffer, then only take 3.5 of them.
+    //
+    //      Note that SHA-224 doesn't cause this problem, because it
+    //      uses 32-bit words, and 224 is a multiple of 32.
+    // -----------------------------------------------------------------------
+    int const           number_of_words_to_copy =
+        digest_width % word_width == 0
+            ? digest_width / word_width
+            : digest_width / word_width + 1 ;
+
+    byte_type           buffer[ word_length * number_of_words_to_copy ] ;
+    for ( int i = 0 ; i < number_of_words_to_copy ; ++ i ) {
         Engine::encode_word( m_state[ i ],
-                             raw + i * word_length ) ;
+                             buffer + i * word_length ) ;
     }
+
+    std::copy_n( breeze::cbegin( buffer ),
+                 digest_width / byte_width,
+                 breeze::begin( raw ) ) ;
 }
 
 template< typename Engine >

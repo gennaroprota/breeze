@@ -165,4 +165,42 @@ sha512_engine::process_block( block_type const & block, state_type & state )
                     std::plus< word_type >() ) ;
 }
 
+void
+sha512_224_engine::init_state( state_type & state )
+{
+    state[ 0 ] = 0x8c3d37c819544da2ULL ;
+    state[ 1 ] = 0x73e1996689dcd4d6ULL ;
+    state[ 2 ] = 0x1dfab7ae32ff9c82ULL ;
+    state[ 3 ] = 0x679dd514582f9fcfULL ;
+    state[ 4 ] = 0x0f6d2b697bd44da8ULL ;
+    state[ 5 ] = 0x77e36f7304c48942ULL ;
+    state[ 6 ] = 0x3f9d85a86a1d36c8ULL ;
+    state[ 7 ] = 0x1112e6ad91d692a1ULL ;
+}
+
+void
+sha512_224_engine::process_block( block_type const & block, state_type & state )
+{
+    sha512_engine::process_block( block, state ) ;
+}
+
+void
+sha512_256_engine::init_state( state_type & state )
+{
+    state[ 0 ] = 0x22312194fc2bf72cULL ;
+    state[ 1 ] = 0x9f555fa3c84c64c2ULL ;
+    state[ 2 ] = 0x2393b86b6f53b151ULL ;
+    state[ 3 ] = 0x963877195940eabdULL ;
+    state[ 4 ] = 0x96283ee2a88effe3ULL ;
+    state[ 5 ] = 0xbe5e1e2553863992ULL ;
+    state[ 6 ] = 0x2b0199fc2c85b8aaULL ;
+    state[ 7 ] = 0x0eb72ddc81c52ca2ULL ;
+}
+
+void
+sha512_256_engine::process_block( block_type const & block, state_type & state )
+{
+    sha512_engine::process_block( block, state ) ;
+}
+
 }

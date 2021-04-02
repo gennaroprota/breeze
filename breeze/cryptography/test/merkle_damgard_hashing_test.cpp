@@ -173,6 +173,39 @@ test_vectors< breeze::sha512_hasher >::test_entry const
         "de0ff244877ea60a4cb0432ce577c31beb009c5c2c49aa2e4eadb217ad8cc09b"}
 } ;
 
+//      SHA-512/224 test vectors
+// ---------------------------------------------------------------------------
+template<>
+test_vectors< breeze::sha512_224_hasher >::test_entry const
+    test_vectors< breeze::sha512_224_hasher >::entries[] =
+{
+    // from <https://csrc.nist.gov>
+    //
+    { "abc",
+        "4634270f707b6a54daae7530460842e20e37ed265ceee9a43e8924aa" },
+
+    { "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmn"
+         "hijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu",
+        "23fec5bb94d60b23308192640b0c453335d664734fe40e7268674af9"}
+} ;
+
+//      SHA-512/256 test vectors
+// ---------------------------------------------------------------------------
+template<>
+test_vectors< breeze::sha512_256_hasher >::test_entry const
+    test_vectors< breeze::sha512_256_hasher >::entries[] =
+{
+    // from <https://csrc.nist.gov>
+    //
+    { "abc",
+        "53048e2681941ef99b2e29b76b4c7dabe4c2d0c634fc6d46e0e2f13107e7af23" },
+
+    { "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmn"
+        "hijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu",
+        "3928e184fb8690f840da3988121d31be65cb9d3ef83ee6146feac861e19b563a"}
+} ;
+
+
 //      Smoke test - Check against a list of known digests.
 // ---------------------------------------------------------------------------
 template< typename Hasher >
@@ -220,11 +253,13 @@ test_merkle_damgard_hashing()
     breeze::test_descriptor const
                         desc[] =
     {
-        check_known_digests< breeze::   md5_hasher >,
-        check_known_digests< breeze::  sha1_hasher >,
-        check_known_digests< breeze::sha256_hasher >,
-        check_known_digests< breeze::sha224_hasher >,
-        check_known_digests< breeze::sha512_hasher >,
+        check_known_digests< breeze::   md5_hasher     >,
+        check_known_digests< breeze::  sha1_hasher     >,
+        check_known_digests< breeze::sha256_hasher     >,
+        check_known_digests< breeze::sha224_hasher     >,
+        check_known_digests< breeze::sha512_hasher     >,
+        check_known_digests< breeze::sha512_224_hasher >,
+        check_known_digests< breeze::sha512_256_hasher >,
 
         digest_can_be_constructed_directly_if_range_is_all_available
     } ;
