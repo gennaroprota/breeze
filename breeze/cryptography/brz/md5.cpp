@@ -17,7 +17,7 @@ namespace breeze_ns {
 namespace           {
 
 typedef md5_engine::word_type
-                        word_type ;
+                    word_type ;
 
 //      Note:
 //          this is not a general rotate-left template: it assumes
