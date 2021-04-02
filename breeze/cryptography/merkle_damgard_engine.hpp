@@ -55,11 +55,13 @@ public:
 
     enum
     {
-        digest_width = bits_per_digest,
-        block_width  = bits_per_block,
-        word_width   = bits_per_word,
-        state_width  = bits_per_state,
         byte_width   = bits_per_byte,
+        word_width   = bits_per_word,
+
+        state_width  = bits_per_state,
+        block_width  = bits_per_block,
+        digest_width = bits_per_digest,
+
 
         length_exp   = length_exponent
     } ;
