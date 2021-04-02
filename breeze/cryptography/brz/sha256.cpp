@@ -74,7 +74,8 @@ big_sigma1( word_type x )
 }
 
 
-void sha256_engine::init_state( state_type & state )
+void
+sha256_engine::init_state( state_type & state )
 {
     //      These values are obtained by taking the first 32 bits of the
     //      fractional parts of the square roots of the first 8 prime
@@ -90,8 +91,8 @@ void sha256_engine::init_state( state_type & state )
     state[ 7 ] = 0x5be0cd19 ;
 }
 
-void sha256_engine::process_block( block_type const & block,
-                                   state_type & state )
+void
+sha256_engine::process_block( block_type const & block, state_type & state )
 {
     using sha_common_private::ch ;
     using sha_common_private::maj ;

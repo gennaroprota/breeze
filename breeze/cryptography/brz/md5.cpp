@@ -99,7 +99,8 @@ md5_engine::init_state( state_type & state )
     state[ 3 ] = 0x10325476 ;
 }
 
-void md5_engine::process_block( block_type const & x, state_type & state )
+void
+md5_engine::process_block( block_type const & x, state_type & state )
 {
     enum { s11 = 7, s12 = 12, s13 = 17, s14 = 22,
            s21 = 5, s22 =  9, s23 = 14, s24 = 20,

@@ -58,7 +58,8 @@ rotate_left( word_type w )
 
 }
 
-void sha1_engine::init_state( state_type & state )
+void
+sha1_engine::init_state( state_type & state )
 {
     //      Reference: section 5.3.1
     // -----------------------------------------------------------------------
@@ -72,8 +73,8 @@ void sha1_engine::init_state( state_type & state )
 //
 //      Block processing - reference: section 6.1.2
 // ---------------------------------------------------------------------------
-void sha1_engine::process_block( block_type const & block,
-                                 state_type & state )
+void
+sha1_engine::process_block( block_type const & block, state_type & state )
 {
     using sha_common_private::ch ;
     using sha_common_private::maj ;
