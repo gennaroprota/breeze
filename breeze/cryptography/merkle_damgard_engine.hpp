@@ -61,7 +61,6 @@ public:
         block_width  = bits_per_block,
         digest_width = bits_per_digest,
 
-
         length_exp   = length_exponent
     } ;
 
@@ -71,15 +70,8 @@ public:
     typedef word_type   state_type[ state_width / word_width ] ;
     typedef word_type   block_type[ block_width / word_width ] ;
 
-private:
-
-    typedef endian_codec< EndianPolicy, word_type, byte_type >
-                        word_codec ;
-
-public:
     enum { number_of_words_for_length = length_exp / bits_per_word
                      + ( length_exp % bits_per_word != 0 ? 1 : 0 ) } ;
-
 
     static void         encode_word( word_type w, byte_type * dest )
     {
@@ -121,6 +113,10 @@ public:
                 len[ number_of_words_for_length - 1 - i ], dest + index ) ;
         }
     }
+
+private:
+    typedef endian_codec< EndianPolicy, word_type, byte_type >
+                        word_codec ;
 } ;
 
 template< int bits_per_digest,
