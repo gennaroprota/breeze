@@ -72,13 +72,15 @@ public:
     typedef word_type   block_type[ block_width / word_width ] ;
 
 private:
-    enum { max_words =   ( length_exp / bits_per_word )
-                     + ( ( length_exp % bits_per_word ) ? 1 : 0 ) } ;
 
     typedef endian_codec< EndianPolicy, word_type, byte_type >
                         word_codec ;
 
 public:
+    enum { number_of_words_for_length = length_exp / bits_per_word
+                     + ( length_exp % bits_per_word != 0 ? 1 : 0 ) } ;
+
+
     static void         encode_word( word_type w, byte_type * dest )
     {
         word_codec::encode( w, dest ) ;
@@ -96,10 +98,11 @@ public:
     //      general hasher templates could in theory use a different
     //      type.
     // -----------------------------------------------------------------------
-    static void encode_length( word_type const ( &len )[ max_words ],
-                               byte_type * dest )
+    static void encode_length(
+                        word_type const ( &len )[ number_of_words_for_length ],
+                        byte_type * dest )
     {
-        typedef word_type len_type[ max_words ] ;
+        typedef word_type len_type[ number_of_words_for_length ] ;
 
         //      Note:
         //          a) len[ 0 ] is always the *least* significant word
@@ -108,14 +111,14 @@ public:
         //             each word, follow EndianPolicy
         // -------------------------------------------------------------------
         int const           step = word_width / byte_width ;
-        for ( int i = 0 ; i < max_words ; ++ i ) {
+        for ( int i = 0 ; i < number_of_words_for_length ; ++ i ) {
 
             std::ptrdiff_t const
                             index =
                 step * EndianPolicy::template index< len_type,
                                                      word_type >( i ) ;
             breeze::endian_store< EndianPolicy >(
-                len[ max_words - 1 - i ], dest + index ) ;
+                len[ number_of_words_for_length - 1 - i ], dest + index ) ;
         }
     }
 } ;
