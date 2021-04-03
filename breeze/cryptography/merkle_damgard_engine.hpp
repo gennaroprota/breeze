@@ -75,12 +75,12 @@ public:
 
     static void         encode_word( word_type w, byte_type * dest )
     {
-        word_codec::encode( w, dest ) ;
+        breeze::endian_store< EndianPolicy >( w, dest ) ;
     }
 
     static word_type    decode_word( byte_type const * src )
     {
-        return word_codec::decode( src ) ;
+        return breeze::endian_load< EndianPolicy, word_type >( src ) ;
     }
 
     //      This function implements the most common way used in a
@@ -113,10 +113,6 @@ public:
                 len[ number_of_words_for_length - 1 - i ], dest + index ) ;
         }
     }
-
-private:
-    typedef endian_codec< EndianPolicy, word_type, byte_type >
-                        word_codec ;
 } ;
 
 template< int bits_per_digest,
