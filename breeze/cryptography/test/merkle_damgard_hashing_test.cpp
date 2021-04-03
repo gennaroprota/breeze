@@ -255,8 +255,8 @@ test_merkle_damgard_hashing()
     {
         check_known_digests< breeze::   md5_hasher     >,
         check_known_digests< breeze::  sha1_hasher     >,
-        check_known_digests< breeze::sha256_hasher     >,
         check_known_digests< breeze::sha224_hasher     >,
+        check_known_digests< breeze::sha256_hasher     >,
         check_known_digests< breeze::sha512_hasher     >,
         check_known_digests< breeze::sha512_224_hasher >,
         check_known_digests< breeze::sha512_256_hasher >,
