@@ -12,7 +12,6 @@
 // ___________________________________________________________________________
 
 #include "breeze/cryptography/sha1.hpp"
-#include "breeze/cryptography/private/sensitive_buffer.hpp"
 #include "breeze/cryptography/private/sha_common.tpp"
 #include "breeze/idiom/volatilize.hpp"
 #include "breeze/iteration/begin_end.hpp"
@@ -82,9 +81,9 @@ sha1_engine::process_block( block_type const & block, state_type & state )
     //      Expand the message block to an 80-word "schedule".
     // -----------------------------------------------------------------------
     int const           sz = 80 ;
-    typedef word_type   schedule_type[ sz ] ;
-    sensitive_buffer< schedule_type > sched(
-        breeze::cbegin( block ), breeze::cend( block ) ) ;
+    word_type           sched[ sz ] ;
+    std::copy( breeze::cbegin( block ), breeze::cend( block ),
+        breeze::begin( sched ) ) ;
     for ( int i = 16 ; i < sz ; ++ i ) {
         sched[ i ] =
             rotate_left< 1 >( sched[ i - 3  ] ^ sched[ i - 8  ]
@@ -96,8 +95,9 @@ sha1_engine::process_block( block_type const & block, state_type & state )
     //          [   0 1 2 3 4   ]
     // -----------------------------------------------------------------------
     int const           state_count = 5 ;
-    sensitive_buffer< word_type[ state_count ] >
-                        working( state ) ;
+    word_type           working[ state_count ] ;
+    std::copy( breeze::cbegin( state ), breeze::cend( state ),
+        breeze::begin( working ) ) ;
 
     //      NOTE: analogously to the MD5 case, we repeat this code four
     //      times; forming an array of pointers to ch, parity and maj

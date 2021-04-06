@@ -6,7 +6,6 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/algorithm/secure_fill.hpp"
 #include "breeze/cryptography/hashing_count.hpp"
 #include "breeze/diagnostics/assert.hpp"
 #include "breeze/endianness/endian_codec.hpp"
@@ -59,9 +58,6 @@ merkle_damgard_machine< Engine >::compress()
     //      Decode the input buffer to a buffer of words, according
     //      to the algorithm endianness, then forward the actual work
     //      to the engine.
-    //
-    //      We always clear potentially sensitive data (i.e.:
-    //      m_input_buffer and m_input_in_words).
     // -----------------------------------------------------------------------
     int const           sz = block_length / word_length ;
     word_type           input_in_words[ sz ] ;
@@ -71,23 +67,18 @@ merkle_damgard_machine< Engine >::compress()
                        breeze::begin( m_input_buffer ) + i * word_length ) ;
     }
 
-    // clear input data, for security
-    breeze::secure_fill( m_input_buffer ) ; // gps - improve idiom here
-
     Engine::process_block( input_in_words, m_state ) ;
-
-    breeze::secure_fill( input_in_words ) ;
 }
 
-// securely wipes all data (gps - at construction?)
 template< typename Engine >
 void
 merkle_damgard_machine< Engine >::reset()
 {
     Engine::init_state( m_state ) ;
 
-    breeze::secure_fill( m_bit_count ) ;
-    breeze::secure_fill( m_input_buffer ) ;
+    std::fill( breeze::begin( m_bit_count ), breeze::end( m_bit_count ), 0 ) ;
+    std::fill( breeze::begin( m_input_buffer ), breeze::end( m_input_buffer ),
+        byte_type( 0 ) ) ;
 }
 
 template< typename Engine >

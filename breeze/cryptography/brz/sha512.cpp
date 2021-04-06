@@ -12,7 +12,6 @@
 // ___________________________________________________________________________
 
 #include "breeze/cryptography/sha512.hpp"
-#include "breeze/cryptography/private/sensitive_buffer.hpp"
 #include "breeze/cryptography/private/sha_common.tpp"
 #include "breeze/iteration/begin_end.hpp"
 
@@ -125,22 +124,22 @@ sha512_engine::process_block( block_type const & block, state_type & state )
 
     //      Create an 80-word "schedule" from the message block.
     // -----------------------------------------------------------------------
-    typedef word_type   schedule_type[ 80 ] ;
-    sensitive_buffer< schedule_type >
-                        sched(
-                            breeze::cbegin( block ), breeze::cend( block ) ) ;
+    word_type           sched[ 80 ] ;
+    std::copy( breeze::cbegin( block ), breeze::cend( block ),
+            breeze::begin( sched ) ) ;
     for ( int i = 16 ; i < 80 ; ++ i ) {
         sched[ i ] = sigma1( sched[ i -  2 ] ) + sched[ i -  7 ]
                    + sigma0( sched[ i - 15 ] ) + sched[ i - 16 ] ;
     }
-    sensitive_buffer< word_type[ 8 ] > working( state ) ;
+    word_type           working[ 8 ] ;
+    std::copy( breeze::cbegin( state ), breeze::cend( state ),
+            breeze::begin( working ) ) ;
 
     //      0 1 2 3 4 5 6 7
     //      a b c d e f g h
     // -----------------------------------------------------------------------
     {
-        sensitive_buffer< word_type [ 2 ] >
-                            t ;
+        word_type           t[ 2 ] ;
         for ( int i = 0 ; i < 80 ; ++ i ) {
 
             t[ 0 ] = working[ 7 ] + big_sigma1( working[ 4 ] )

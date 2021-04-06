@@ -190,7 +190,6 @@
     <None Include="..\..\breeze\checksum\brz\crc.tpp" />
     <None Include="..\..\breeze\counting\brz\counter.tpp" />
     <None Include="..\..\breeze\cryptography\brz\digest.tpp" />
-    <None Include="..\..\breeze\cryptography\private\sensitive_buffer.tpp" />
     <None Include="..\..\breeze\encoding\brz\base64_to_binary.tpp" />
     <None Include="..\..\breeze\encoding\brz\binary_to_base64.tpp" />
     <None Include="..\..\breeze\mathematics\brz\clamp.tpp" />
@@ -223,9 +222,6 @@
     <None Include="breeze.ruleset" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\breeze\algorithm\secure_fill.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\breeze\checksum\crc.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -266,9 +262,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\cryptography\sha512.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breeze\cryptography\private\sensitive_buffer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\debugging\dump_expression.hpp">

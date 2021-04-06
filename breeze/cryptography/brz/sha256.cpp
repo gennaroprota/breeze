@@ -12,7 +12,6 @@
 // ___________________________________________________________________________
 
 #include "breeze/cryptography/sha256.hpp"
-#include "breeze/cryptography/private/sensitive_buffer.hpp"
 #include "breeze/cryptography/private/sha_common.tpp"
 #include "breeze/iteration/begin_end.hpp"
 
@@ -100,10 +99,9 @@ sha256_engine::process_block( block_type const & block, state_type & state )
     //      Expand the message block to a 64-word "schedule".
     // -----------------------------------------------------------------------
     int const           sz = 64 ;
-    typedef word_type   schedule_type[ sz ] ;
-    sensitive_buffer< schedule_type >
-                        sched(
-                            breeze::cbegin( block ), breeze::cend( block ) ) ;
+    word_type           sched[ sz ] ;
+    std::copy( breeze::cbegin( block ), breeze::cend( block ),
+            breeze::begin( sched ) ) ;
     for ( int i = 16 ; i < sz ; ++ i ) {
         sched[ i ] = sigma1( sched[ i - 2  ] ) + sched[ i - 7  ]
                    + sigma0( sched[ i - 15 ] ) + sched[ i - 16 ] ;
@@ -112,11 +110,11 @@ sha256_engine::process_block( block_type const & block, state_type & state )
    //       a b c d e f g h
    // ------------------------------------------------------------------------
    int const            state_count = 8 ;
-   sensitive_buffer< word_type[ state_count ] >
-                        working( state ) ;
+   word_type            working[ state_count ] ;
+   std::copy( std::cbegin( state ), std::cend( state ),
+           std::begin( working ) ) ;
    {
-       sensitive_buffer< word_type [ 2 ] >
-                            t ;
+       word_type            t[ 2 ] ;
        for ( int i = 0 ; i < 64 ; ++ i ) {
 
            t[ 0 ] = working[ 7 ] + big_sigma1( working[ 4 ] )

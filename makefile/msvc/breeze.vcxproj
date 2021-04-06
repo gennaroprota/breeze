@@ -271,7 +271,6 @@
     <None Include="..\..\breeze\counting\brz\counter.tpp" />
     <None Include="..\..\breeze\cryptography\brz\digest.tpp" />
     <None Include="..\..\breeze\cryptography\brz\merkle_damgard_machine.tpp" />
-    <None Include="..\..\breeze\cryptography\private\sensitive_buffer.tpp" />
     <None Include="..\..\breeze\cryptography\private\sha_common.tpp" />
     <None Include="..\..\breeze\encoding\brz\base64_to_binary.tpp" />
     <None Include="..\..\breeze\encoding\brz\binary_to_base64.tpp" />
@@ -301,7 +300,6 @@
     <None Include="breeze.ruleset" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\breeze\algorithm\secure_fill.hpp" />
     <ClInclude Include="..\..\breeze\checksum\crc.hpp" />
     <ClInclude Include="..\..\breeze\checksum\luhn.hpp" />
     <ClInclude Include="..\..\breeze\conversion\bit_cast.hpp" />
@@ -314,7 +312,6 @@
     <ClInclude Include="..\..\breeze\cryptography\md5.hpp" />
     <ClInclude Include="..\..\breeze\cryptography\merkle_damgard_engine.hpp" />
     <ClInclude Include="..\..\breeze\cryptography\merkle_damgard_machine.hpp" />
-    <ClInclude Include="..\..\breeze\cryptography\private\sensitive_buffer.hpp" />
     <ClInclude Include="..\..\breeze\cryptography\sha1.hpp" />
     <ClInclude Include="..\..\breeze\cryptography\sha224.hpp" />
     <ClInclude Include="..\..\breeze\cryptography\sha256.hpp" />
