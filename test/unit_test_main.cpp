@@ -20,6 +20,7 @@
 #include "breeze/testing/assert_failure.hpp"
 #include "breeze/text/replace_all.hpp"
 #include "breeze/time/format_time.hpp"
+#include <ctime>
 #include <iostream>
 
 namespace {
@@ -166,6 +167,8 @@ main()
     std::cout << '\n' ;
     std::cout << "Started at:  " << describe_time( start_time ) << std::endl ;
     std::cout << "Finished at: " << describe_time(   end_time ) << std::endl ;
+    std::cout << "Elapsed:     " << std::difftime( end_time, start_time ) <<
+        " s" << std::endl ;
 
     std::cout << std::endl ;
 
