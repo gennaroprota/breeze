@@ -35,20 +35,17 @@ unit_test_assert_handler( char const *,
 std::string
 describe_time( std::time_t time_stamp )
 {
-    std::string         result = "n/a" ;
-
     std::string const   format = "%A, %B %e, %Y %I:%M:%S %p UTC" ;
     breeze::maybe< std::string > const
                         descr = breeze::format_time(
                             format, breeze::time_kind::utc,
                             time_stamp ) ;
-    if ( descr.is_valid() ) {
-        result = descr.value() ;
-        breeze::replace_all( result,
-                         "  ", " ") ; // since %e may add a leading space
-    }
 
-    return result ;
+    return descr.is_valid()
+        ? breeze::replace_all( descr.value(),
+                               "  ", " ") // since %e may add a leading space
+        : "n/a"
+        ;
 }
 
 }

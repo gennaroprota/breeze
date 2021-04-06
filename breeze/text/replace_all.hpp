@@ -21,23 +21,21 @@ namespace breeze_ns {
 //      replace_all():
 //      ==============
 //
-//!     Replaces all occurrences of `from` in `s` with `to`. May throw
-//!     `length_error` (only if `to` is longer than `from`?).
+//!     \return
+//!         A string obtained from `original` by replacing all
+//!         occurrences of `from` with `to`.
+//!
+//!     \throw
+//!         `length_error`
 //!
 //!     \pre
 //!         ! from.empty()
 //!
 //!     Note that `to` can be empty; so, as a special case, this
 //!     function can *remove* all occurrences of a substring.
-//!
-//!     \par Rationale
-//!
-//!     This function modifies the string in place. A non-modifying
-//!     version (replace_all_copy()) could be constructed in terms of
-//!     this.
 // ---------------------------------------------------------------------------
-void                replace_all(
-    std::string &       s,
+std::string         replace_all(
+    std::string const & original,
     std::string const & from,
     std::string const & to ) ;
 

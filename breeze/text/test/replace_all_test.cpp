@@ -23,55 +23,59 @@ void do_tests()
 {
     // No replacement should occur in an empty string
     {
-        std::string         test ;
-        breeze::replace_all( test, "ab", "" ) ;
-        BREEZE_CHECK( test.empty() ) ;
+        std::string const   test ;
+        std::string const   result = breeze::replace_all( test, "ab", "" ) ;
+        BREEZE_CHECK( result.empty() ) ;
     }
 
     // No replacement should occur in an empty string
     {
-        std::string         test ;
-        breeze::replace_all( test, "ab", "xy" ) ;
-        BREEZE_CHECK( test.empty() ) ;
+        std::string const   test ;
+        std::string const result = breeze::replace_all( test, "ab", "xy" ) ;
+        BREEZE_CHECK( result.empty() ) ;
     }
 
     // Test a real replacement (with one occurrence)
     {
-        std::string         test( "test" ) ;
-        breeze::replace_all( test, "e", "oa" ) ;
-        BREEZE_CHECK( test == "toast" ) ;
+        std::string const   test( "test" ) ;
+        std::string const   result = breeze::replace_all( test, "e", "oa" ) ;
+        BREEZE_CHECK( result == "toast" ) ;
     }
 
     // Test real replacements (one of which at the end)
     {
-        std::string         test( "provapro" ) ;
-        breeze::replace_all( test, "pro", "i" ) ;
-        BREEZE_CHECK( test == "ivai" ) ;
+        std::string const   test( "provapro" ) ;
+        std::string         result = breeze::replace_all( test, "pro", "i" ) ;
+        BREEZE_CHECK( result == "ivai" ) ;
 
-        breeze::replace_all( test, "va", "x" ) ;
-        BREEZE_CHECK( test == "ixi" ) ;
+        result = breeze::replace_all( result, "va", "x" ) ;
+        BREEZE_CHECK( result == "ixi" ) ;
     }
 
     // Test when 'from' is a substring of 'to'
     {
-        std::string         test( "provapro" ) ;
-        breeze::replace_all( test, "prova", "provato" ) ;
-        BREEZE_CHECK( test == "provatopro" ) ;
+        std::string const   test( "provapro" ) ;
+        std::string const   result = breeze::replace_all(
+            test, "prova", "provato" ) ;
+        BREEZE_CHECK( result == "provatopro" ) ;
     }
     {
-        std::string         test( "provapro" ) ;
-        breeze::replace_all( test, "prova", "approva") ;
-        BREEZE_CHECK( test == "approvapro") ;
+        std::string const   test( "provapro" ) ;
+        std::string const   result = breeze::replace_all(
+            test, "prova", "approva") ;
+        BREEZE_CHECK( result == "approvapro") ;
     }
     {
-        std::string         test( "prova" ) ;
-        breeze::replace_all( test, "prova", "provato" ) ;
-        BREEZE_CHECK( test == "provato" ) ;
+        std::string const   test( "prova" ) ;
+        std::string const   result = breeze::replace_all(
+            test, "prova", "provato" ) ;
+        BREEZE_CHECK( result == "provato" ) ;
     }
     {
-        std::string         test( "prova" ) ;
-        breeze::replace_all( test, "prova", "approva" ) ;
-        BREEZE_CHECK( test == "approva" ) ;
+        std::string const   test( "prova" ) ;
+        std::string const   result = breeze::replace_all(
+            test, "prova", "approva" ) ;
+        BREEZE_CHECK( result == "approva" ) ;
     }
 }
 
@@ -86,12 +90,13 @@ empty_from_string_causes_assert()
 void
 whole_string_can_be_replaced()
 {
-    std::string         test( "foo" ) ;
-    breeze::replace_all( test, "foo", "abcdefgh" ) ;
-    BREEZE_CHECK( test == "abcdefgh" ) ;
+    std::string const   test( "foo" ) ;
+    std::string         result = breeze::replace_all(
+        test, "foo", "abcdefgh" ) ;
+    BREEZE_CHECK( result == "abcdefgh" ) ;
 
-    breeze::replace_all( test, "abcdefgh", "" ) ;
-    BREEZE_CHECK( test.empty() ) ;
+    result = breeze::replace_all( result, "abcdefgh", "" ) ;
+    BREEZE_CHECK( result.empty() ) ;
 }
 
 }

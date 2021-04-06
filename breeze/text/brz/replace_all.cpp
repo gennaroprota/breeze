@@ -13,33 +13,37 @@
 
 #include "breeze/text/replace_all.hpp"
 #include "breeze/diagnostics/assert.hpp"
-#include <cstddef>
+#include <algorithm>
 #include <string>
 
 namespace breeze_ns {
 
-void replace_all(
-    std::string & s,
+std::string
+replace_all(
+    std::string const & original,
     std::string const & from,
     std::string const & to )
 {
     BREEZE_ASSERT( ! from.empty() ) ;
 
-    std::size_t         pos = 0 ;
+    std::string         result ;
 
-    //      Note that 'pos', below, may reach s.size(): this happens
-    //      (only) when 's' is empty (pos == 0) or when a replacement
-    //      occurs at the end of 's' (see the statement
-    //
-    //        'pos += to.length()'
-    //
-    //      ). This is fine, because find() has no preconditions and
-    //      handles that case correctly.
-    // -----------------------------------------------------------------------
-    while ( (pos = s.find( from, pos )) != s.npos ) {
-        s.replace( pos, from.length(), to ) ;
-        pos += to.length() ;
+    std::string::const_iterator
+                        current = original.cbegin() ;
+    std::string::const_iterator const
+                        end = original.cend() ;
+    std::string::const_iterator
+                        next = std::search( current, end, from.cbegin(),
+                                 from.cend() ) ;
+    while ( next != end ) {
+        result.append( current, next ) ;
+        result.append( to ) ;
+        current = next + from.size() ;
+        next = std::search( current, end, from.cbegin(), from.cend() ) ;
     }
+
+    result.append( current, end ) ;
+    return result ;
 }
 
 }
