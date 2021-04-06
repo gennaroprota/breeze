@@ -25,7 +25,7 @@ namespace breeze_ns {
 //      necessarily declared as volatile. At the time I wrote these
 //      templates, it wasn't clear at all from the C and the C++
 //      standards that this was guaranteed to work. So, many thanks go
-//      to David R Tribble and Douglas A. Gwyn who clarified on
+//      to David R Tribble and Douglas A. Gwyn, who clarified on
 //      comp.std.c that the intent was for it to work; see the thread
 //      starting from the message with this message-id:
 //
