@@ -18,6 +18,7 @@
 #include "breeze/memory/get_amount_of_physical_memory.hpp"
 #include "breeze/process/exit_code.hpp"
 #include "breeze/testing/assert_failure.hpp"
+#include "breeze/text/replace_all.hpp"
 #include "breeze/time/format_time.hpp"
 #include <iostream>
 
@@ -34,12 +35,20 @@ unit_test_assert_handler( char const *,
 std::string
 describe_time( std::time_t time_stamp )
 {
+    std::string         result = "n/a" ;
+
     std::string const   format = "%A, %B %e, %Y %I:%M:%S %p UTC" ;
     breeze::maybe< std::string > const
                         descr = breeze::format_time(
                             format, breeze::time_kind::utc,
                             time_stamp ) ;
-    return descr.default_to( "n/a" ) ;
+    if ( descr.is_valid() ) {
+        result = descr.value() ;
+        breeze::replace_all( result,
+                         "  ", " ") ; // since %e may add a leading space
+    }
+
+    return result ;
 }
 
 }
