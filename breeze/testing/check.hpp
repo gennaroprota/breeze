@@ -25,9 +25,6 @@
             } while ( false )                                              /**/
 
 
-// For PVS-Studio:
-// -V:BREEZE_CHECK_THROWS:565
-// ---------------------------------------------------------------------------
 #define BREEZE_CHECK_THROWS( exception_type, expression )                     \
             do {                                                              \
                 bool threw_as_expected = false ;                              \

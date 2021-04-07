@@ -69,7 +69,7 @@ pointer_to_object_casts_to_pointer_to_object()
     //      suppress the corresponding diagnostic (together with the one
     //      emitted for the use of std::strcmp()).
     // -----------------------------------------------------------------------
-    BREEZE_CHECK( pc != nullptr &&         //-V560 // -V2513 (for PVS-Studio)
+    BREEZE_CHECK( pc != nullptr &&
         std::strcmp( pc, "test" ) == 0 ) ;
 }
 

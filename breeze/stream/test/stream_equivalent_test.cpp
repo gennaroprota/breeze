@@ -70,7 +70,7 @@ check_non_good_streams()
     fs.imbue( std::locale::classic() ) ;
     try {
         fs.exceptions( std::ios_base::failbit ) ;
-    } catch ( std::ios_base::failure & ) { // -V565 (for PVS-Studio)
+    } catch ( std::ios_base::failure & ) {
     }
 
     {
