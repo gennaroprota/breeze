@@ -99,6 +99,15 @@ whole_string_can_be_replaced()
     BREEZE_CHECK( result.empty() ) ;
 }
 
+void
+no_replacement_occurs_if_substring_is_not_present()
+{
+    std::string const   test( "ABCDE" ) ;
+    std::string const   result = breeze::replace_all( test, "AC", "x" ) ;
+
+    BREEZE_CHECK( result == test ) ;
+}
+
 }
 
 int
@@ -109,5 +118,6 @@ test_replace_all()
         { do_tests,
 
           empty_from_string_causes_assert,
-          whole_string_can_be_replaced } ) ;
+          whole_string_can_be_replaced,
+          no_replacement_occurs_if_substring_is_not_present } ) ;
 }
