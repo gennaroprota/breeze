@@ -13,7 +13,6 @@
 
 #include "breeze/cryptography/sha1.hpp"
 #include "breeze/cryptography/private/sha_common.tpp"
-#include "breeze/idiom/volatilize.hpp"
 #include "breeze/iteration/begin_end.hpp"
 
 #include <algorithm>
@@ -146,8 +145,6 @@ sha1_engine::process_block( block_type const & block, state_type & state )
         working[ 1 ] = working[ 0 ] ;
         working[ 0 ] = t ;
     }
-
-    breeze::volatilize( t ) = 0 ;
 
     std::transform( breeze::cbegin( state ), breeze::cend( state ),
                     breeze::cbegin( working ), breeze::begin( state ),

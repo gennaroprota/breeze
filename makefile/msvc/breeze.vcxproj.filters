@@ -297,9 +297,6 @@
     <ClInclude Include="..\..\breeze\environment\windows_only\windows_version_info.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\idiom\volatilize.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\breeze\iteration\begin_end.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -330,7 +330,6 @@
     <ClInclude Include="..\..\breeze\environment\windows_only\get_operating_system_id.hpp" />
     <ClInclude Include="..\..\breeze\environment\windows_only\operating_system_id.hpp" />
     <ClInclude Include="..\..\breeze\environment\windows_only\windows_version_info.hpp" />
-    <ClInclude Include="..\..\breeze\idiom\volatilize.hpp" />
     <ClInclude Include="..\..\breeze\iteration\begin_end.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\private\gcd_lcm_common.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\ceiling_of_quotient.hpp" />
