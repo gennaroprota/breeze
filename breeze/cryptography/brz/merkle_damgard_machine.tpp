@@ -134,10 +134,10 @@ merkle_damgard_machine< Engine >::append( Iter begin, Iter end )
 
 //      Padding:
 //
-//      append a single 1-bit, always; then append as few (possibly
-//      zero) 0-bits as needed to get a message whose last block has
+//      append a single 1 bit, always; then append as few (possibly
+//      zero) 0 bits as needed to get a message whose last block has
 //      room exactly for length_count words (that's the room to store
-//      the bitlength of the unpadded message).
+//      the bit-length of the unpadded message).
 //
 //      In all, at least one bit and at most an entire block is
 //      appended.
