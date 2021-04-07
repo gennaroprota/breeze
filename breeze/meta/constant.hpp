@@ -16,7 +16,6 @@
 #include "breeze/top_level_namespace.hpp"
 
 namespace breeze_ns {
-namespace meta {
 
 //      constant:
 //      =========
@@ -70,7 +69,6 @@ template< typename T, T v >
 typename constant< T, v >::value_type const
 constant< T, v >::value ;
 
-}
 }
 
 #endif

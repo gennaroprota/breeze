@@ -30,10 +30,9 @@ namespace endian_codec_private {
 template< typename T, typename Byte >
 class required_count
 {
-    enum { q = meta::width< T >::value / meta::width< Byte >::value } ;
+    enum { q = width< T >::value / width< Byte >::value } ;
 
-    static_assert( q == 0 ||
-                     meta::width< T >::value % meta::width< Byte >::value == 0,
+    static_assert( q == 0 || width< T >::value % width< Byte >::value == 0,
                    "a T must fit in one Byte or be wide exactly n Bytes" ) ;
 
 
@@ -64,14 +63,14 @@ template<
 >
 class endian_codec
 {
-    static_assert( ! meta::has_sign< T >::value &&
-                   ! meta::has_sign< Byte >::value,
+    static_assert( ! has_sign< T >::value &&
+                   ! has_sign< Byte >::value,
                    "T and Byte can't have a sign") ;
 
     typedef endian_codec< EndianPolicy, T, Byte, n - 1 >
                         next ;
 
-    enum { shift_amount = meta::width< Byte >::value } ;
+    enum { shift_amount = width< Byte >::value } ;
 
 public:
     template< typename RandomIter >

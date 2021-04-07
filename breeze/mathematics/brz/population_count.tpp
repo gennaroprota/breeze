@@ -56,7 +56,7 @@ population_count( T t ) noexcept
 {
     using namespace population_count_private ;
 
-    static_assert( ! meta::has_sign< T >::value, "" ) ;
+    static_assert( ! has_sign< T >::value, "" ) ;
 
     int                 count = 0 ;
     while ( t != 0 ) {

@@ -14,9 +14,9 @@
 namespace breeze_ns {
 namespace mathematics_private {
 
-//      A reimplementation of our is_2s_complement() in terms of a class
-//      template, because MSVC 2017 isn't able to handle the
-//      breeze::meta version in the SFINAE context of
+//      A reimplementation breeze::is_2s_complement() in terms of a
+//      class template, because MSVC 2017 isn't able to handle
+//      breeze::is_2s_complement() in the SFINAE context of
 //      would_division_overflow(), below.
 // ---------------------------------------------------------------------------
 template< typename T >

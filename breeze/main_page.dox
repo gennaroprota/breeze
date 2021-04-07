@@ -11,8 +11,6 @@
 //!     Most of the library facilities are in namespace `breeze`. This
 //!     won't be repeated throughout the documentation, to avoid
 //!     unnecessary noise.
-//!
-//!     The meta-programming facilities are in namespace `breeze::meta`.
 // ---------------------------------------------------------------------------
 
 // Local Variables:

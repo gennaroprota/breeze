@@ -25,7 +25,6 @@
 #include "breeze/top_level_namespace.hpp"
 
 namespace breeze_ns {
-namespace meta {
 
 //      unqualify:
 //      ==========
@@ -71,7 +70,6 @@ public:
     typedef T           type ;
 } ;
 //!\endcond
-}
 }
 
 #endif

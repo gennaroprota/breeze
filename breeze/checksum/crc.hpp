@@ -170,10 +170,10 @@ private:
     //      "Traits::" to make things clearer for the user if an assert
     //      fails.
     // -----------------------------------------------------------------------
-    static_assert( ! meta::has_sign< typename Traits::value_type >::value, "") ;
+    static_assert( ! has_sign< typename Traits::value_type >::value, "") ;
     static_assert( Traits::width > 0, "" ) ;
     static_assert( Traits::width <=
-                       meta::width< typename Traits::value_type >::value,
+                       breeze::width< typename Traits::value_type >::value,
                    "value_type does not have at least width value bits") ;
     static_assert( ( Traits::poly & 1 ) != 0,
                    "the constant term of the polynomial must be 1") ;

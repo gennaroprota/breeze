@@ -33,7 +33,7 @@ representation_in_base( T n, int base )
 
     unsigned_type       abs =
         n < 0
-        ? breeze::meta::is_2s_complement< T >() &&
+        ? breeze::is_2s_complement< T >() &&
             n == ( std::numeric_limits< T >::min )()
                 ? unsigned_type( -1 ) / 2 + 1
                 : - n

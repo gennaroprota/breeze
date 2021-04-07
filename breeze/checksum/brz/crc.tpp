@@ -48,7 +48,7 @@ reflect( Unsigned n )
 template< int count, typename Unsigned >
 void zeroize_extra_bits( Unsigned & n )
 {
-    n &= Unsigned( -1 ) >> ( breeze::meta::width< Unsigned >::value - count ) ;
+    n &= Unsigned( -1 ) >> ( breeze::width< Unsigned >::value - count ) ;
 }
 
 static_assert( reflect< 4, std::uint32_t >( 0b10101100 ) == 0b10100011,
@@ -84,7 +84,7 @@ constexpr crc_cache< CrcTraits >::crc_cache() noexcept
 {
     value_type const    top_bit = value_type( 1 )  << ( CrcTraits::width - 1 ) ;
     value_type const    mask    = value_type( -1 ) >>
-        ( meta::width< value_type >::value - CrcTraits::width ) ;
+        ( breeze::width< value_type >::value - CrcTraits::width ) ;
 
     for ( int i = 0 ; i < size ; ++ i ) {
         auto                crc = static_cast< value_type >( i ) ;
@@ -146,7 +146,7 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
     int const           char_bit = 8 ;
     int const           mask     = ( 1 << char_bit ) - 1 ;
     bool const          can_shift = char_bit <
-                                        meta::width< value_type >::value ;
+                                        breeze::width< value_type >::value ;
 
     //      This 'if' could be resolved at compile time. But since the
     //      test is done once per accumulation, we didn't bother with

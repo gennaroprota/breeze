@@ -19,7 +19,6 @@
 #include <limits>
 
 namespace breeze_ns {
-namespace meta {
 
 //      precision:
 //      ==========
@@ -29,10 +28,10 @@ namespace meta {
 //!     The \e precision of `T` is the number of bits that `T` uses to
 //!     represent values, excluding any sign and padding bits.
 //!
-//!     This is a meta::constant, with `value_type` `int`.
+//!     This is a `constant`, with `value_type` `int`.
 //!
 //!     \see
-//!         meta::width and meta::padding.
+//!         width and padding.
 //!
 //!     \par Type requirements
 //!         `T` shall be an integral type or a cv-qualified version
@@ -44,7 +43,6 @@ class precision
 {
 } ;
 
-}
 }
 
 #endif

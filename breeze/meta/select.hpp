@@ -19,7 +19,6 @@
 #include "breeze/top_level_namespace.hpp"
 
 namespace breeze_ns {
-namespace meta {
 
 //!     \brief
 //!         Like `select`, but with the condition represented as a
@@ -68,7 +67,6 @@ public:
                         type ;
 } ;
 
-}
 }
 
 #endif

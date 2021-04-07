@@ -17,7 +17,7 @@
 
 int                 test_width() ;
 
-using breeze::meta::width ;
+using breeze::width ;
 
 namespace {
 
@@ -36,7 +36,7 @@ width_of_unsigned_equals_width_of_corresponding_signed()
                    width< signed char >::value, "" ) ;
 }
 
-//      This test is worth having, because meta::constant isn't usable
+//      This test is worth having, because `constant` isn't usable
 //      with a volatile-qualified type.
 // ---------------------------------------------------------------------------
 void

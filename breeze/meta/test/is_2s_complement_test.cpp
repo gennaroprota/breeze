@@ -24,7 +24,7 @@ namespace {
 void
 do_test()
 {
-    using breeze::meta::is_2s_complement ;
+    using breeze::is_2s_complement ;
 
     static_assert( ! is_2s_complement< bool >(),          "" ) ;
     static_assert(   is_2s_complement< signed char >(),   "" ) ;

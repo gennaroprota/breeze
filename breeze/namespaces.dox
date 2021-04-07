@@ -35,15 +35,6 @@ namespace adl_shield {
 
 }
 
-//!     \brief Namespace for our meta-programming facilities.
-//!
-//!     This namespace also hosts the meta-programming facilities
-//!     designed before C++ had `constexpr`.
-// ---------------------------------------------------------------------------
-namespace meta {
-
-}
-
 }
 
 // Local Variables:

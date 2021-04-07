@@ -47,9 +47,9 @@ template< int                 bits_per_digest,
 class merkle_damgard_engine
 {
 public:
-    typedef typename meta::unsigned_integer_by_width< bits_per_byte >::type
+    typedef typename unsigned_integer_by_width< bits_per_byte >::type
                         byte_type ;
-    typedef typename meta::unsigned_integer_by_width< bits_per_word >::type
+    typedef typename unsigned_integer_by_width< bits_per_word >::type
                         word_type ;
 
     enum

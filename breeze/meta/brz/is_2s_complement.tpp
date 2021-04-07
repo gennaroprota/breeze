@@ -11,7 +11,6 @@
 #include <limits>
 
 namespace breeze_ns {
-namespace meta {
 
 template< typename T >
 constexpr bool
@@ -39,7 +38,6 @@ is_2s_complement() noexcept
         < 0 ;
 }
 
-}
 }
 
 // Local Variables:

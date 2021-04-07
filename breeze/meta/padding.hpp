@@ -18,7 +18,6 @@
 #include "breeze/meta/width.hpp"
 
 namespace breeze_ns {
-namespace meta {
 
 //      padding:
 //      ========
@@ -27,10 +26,10 @@ namespace meta {
 //!         Metafunction yielding the number of \e padding bits of a
 //!         type.
 //!
-//!     This is a meta::constant, with `value_type` `int`.
+//!     This is a `constant`, with `value_type` `int`.
 //!
 //!     \see
-//!         meta::precision and meta::width.
+//!         precision and width.
 //!
 //!     \par Type requirements
 //!         `T` shall be an integral type or a cv-qualified version
@@ -45,7 +44,6 @@ class padding
 {
 } ;
 
-}
 }
 
 #endif

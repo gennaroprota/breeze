@@ -18,7 +18,6 @@
 #include "breeze/meta/precision.hpp"
 
 namespace breeze_ns {
-namespace meta {
 
 //      width:
 //      ======
@@ -29,10 +28,10 @@ namespace meta {
 //!     represent values, including any sign but excluding any padding
 //!     bits.
 //!
-//!     This is a meta::constant, with `value_type` `int`.
+//!     This is a `constant`, with `value_type` `int`.
 //!
 //!     \see
-//!         meta::precision and meta::padding.
+//!         precision and padding.
 //!
 //!     \par Type requirements
 //!
@@ -47,7 +46,6 @@ class width
 {
 } ;
 
-}
 }
 
 #endif

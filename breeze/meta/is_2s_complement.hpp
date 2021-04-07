@@ -17,7 +17,6 @@
 #include "breeze/top_level_namespace.hpp"
 
 namespace breeze_ns {
-namespace meta {
 
 //      is_2s_complement():
 //      ===================
@@ -36,7 +35,6 @@ namespace meta {
 template< typename T >
 constexpr bool      is_2s_complement() noexcept ;
 
-}
 }
 
 #include "brz/is_2s_complement.tpp"

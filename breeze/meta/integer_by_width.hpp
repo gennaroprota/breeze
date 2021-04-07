@@ -22,7 +22,6 @@
 #include "breeze/meta/width.hpp"
 
 namespace breeze_ns {
-namespace meta {
 
 //!\cond implementation
 namespace integer_by_width_private {
@@ -55,13 +54,13 @@ template< int width,
 class selector
 {
     typedef types< IntType, n > candidate ;
-    enum { found = meta::width< typename candidate::type >::value == width } ;
+    enum { found = breeze::width< typename candidate::type >::value == width } ;
 
 public:
-    typedef typename meta::select_< found,
-                                    candidate,
-                                    selector< width, IntType, 1 + n >
-                                  >::type s ;
+    typedef typename select_< found,
+                              candidate,
+                              selector< width, IntType, 1 + n >
+                            >::type s ;
 
     typedef typename s::type type ;
 } ;
@@ -123,7 +122,6 @@ public:
                         type ;
 } ;
 
-}
 }
 
 #endif

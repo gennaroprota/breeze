@@ -28,7 +28,7 @@ namespace gcd_lcm_private {
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr std::enable_if_t<
-    meta::has_sign< T >::value,
+    has_sign< T >::value,
     T >
 absolute_value( T x )
 {
@@ -40,7 +40,7 @@ absolute_value( T x )
 
 template< typename T >
 constexpr std::enable_if_t<
-    ! meta::has_sign< T >::value,
+    ! has_sign< T >::value,
     T >
 absolute_value( T x )
 {

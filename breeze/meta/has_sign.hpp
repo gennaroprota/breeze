@@ -18,14 +18,12 @@
 #include "breeze/meta/unqualify.hpp"
 
 namespace breeze_ns {
-namespace meta {
 
 //      has_sign:
 //      =========
 //
 //!     \brief
-//!         A `meta::constant` yielding whether a type allows negative
-//!         values.
+//!         A `constant` yielding whether a type allows negative values.
 // ---------------------------------------------------------------------------
 template< typename T >
 class has_sign
@@ -53,7 +51,6 @@ class has_sign< bool >
 } ;
 //!\endcond
 
-}
 }
 
 #endif
