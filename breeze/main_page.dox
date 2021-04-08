@@ -8,9 +8,11 @@
 
 //!     \mainpage Generalities
 //!
-//!     Most of the library facilities are in namespace `breeze`. This
+//!     The top-level namespace of the Breeze library is `breeze`. This
 //!     won't be repeated throughout the documentation, to avoid
 //!     unnecessary noise.
+//!
+//!     All the Breeze macros have a name starting with "BREEZE_".
 // ---------------------------------------------------------------------------
 
 // Local Variables:
