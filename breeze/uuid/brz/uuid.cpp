@@ -44,9 +44,9 @@ adjusted_system_time()
 {
     int const           max_uuids_per_tick =
                              breeze::uuid_private::max_uuids_per_system_tick() ;
-    static int          uuids_on_this_tick ; // no initializer, see if below
+    static int          uuids_on_this_tick ; // no initializer, see `if` below
     static std::uint64_t
-                        last_time ;          // no initializer, see if below
+                        last_time ;          // no initializer, see `if` below
     static bool         is_first_call = true ;
 
     if ( is_first_call ) {

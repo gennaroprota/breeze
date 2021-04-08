@@ -148,10 +148,10 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
     bool const          can_shift = char_bit <
                                         breeze::width< value_type >::value ;
 
-    //      This 'if' could be resolved at compile time. But since the
+    //      This `if` could be resolved at compile time. But since the
     //      test is done once per accumulation, we didn't bother with
     //      template specializations and such, in order to achieve that.
-    //      We could use 'if constexpr' when we'll require C++17 or
+    //      We could use `if constexpr` when we'll require C++17 or
     //      later, though.
     // -----------------------------------------------------------------------
     if ( reflect_in ) {
