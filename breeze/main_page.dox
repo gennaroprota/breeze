@@ -16,6 +16,6 @@
 // ---------------------------------------------------------------------------
 
 // Local Variables:
-// mode: doxymacs??? --- TODO
+// mode: c++
 // End:
-// vim: set ft=doxygen:
+// vim: set ft=cpp:
