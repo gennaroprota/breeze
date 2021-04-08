@@ -6,10 +6,25 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include "breeze/diagnostics/assert.hpp"
 #include "breeze/meta/width.hpp"
+#include <climits>
 
 namespace breeze_ns {
 namespace crc_private {
+
+unsigned char
+as_unsigned_char( char c )
+{
+    return static_cast< unsigned char >( c ) ;
+}
+
+unsigned char
+as_unsigned_char( int c )
+{
+    BREEZE_ASSERT( 0 <= c && c <= UCHAR_MAX ) ;
+    return static_cast< unsigned char >( c ) ;
+}
 
 //      reflect():
 //      ==========
@@ -143,6 +158,8 @@ template< typename InputIter >
 constexpr void
 crc< Traits >::accumulate( InputIter first, InputIter last )
 {
+    using namespace crc_private ;
+
     int const           char_bit = 8 ;
     int const           mask     = ( 1 << char_bit ) - 1 ;
     bool const          can_shift = char_bit <
@@ -156,8 +173,9 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
     // -----------------------------------------------------------------------
     if ( reflect_in ) {
         while ( first != last ) {
+            unsigned char       c = as_unsigned_char( *first ) ;
             value_type          new_current =
-                s_cache[ ( m_current ^ *first ) & mask ] ;
+                s_cache[ ( m_current ^ c ) & mask ] ;
             if ( can_shift ) {
                 new_current = static_cast< value_type >(
                     new_current ^ ( m_current >> char_bit ) ) ;
@@ -167,8 +185,9 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
         }
     } else {
         while ( first != last ) {
+            unsigned char       c = as_unsigned_char( *first ) ;
             value_type          new_current =
-                s_cache[ ( ( m_current >> ( width - char_bit ) ) ^ *first )
+                s_cache[ ( ( m_current >> ( width - char_bit ) ) ^ c )
                     & mask ] ;
             if ( can_shift ) {
                 new_current = static_cast< value_type >(

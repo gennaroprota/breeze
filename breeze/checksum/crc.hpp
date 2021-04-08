@@ -130,6 +130,10 @@ public:
     //!\name Functions to process input
     //!\{
     //
+    //!     \pre
+    //!         All values in <tt>[first, last)</tt> are between
+    //!         <tt>0</tt>and `UCHAR_MAX`, inclusively.
+    //!
     //!     Processes the values in <tt>[first, last)</tt>, updating the
     //!     calculated CRC.
     // -----------------------------------------------------------------------

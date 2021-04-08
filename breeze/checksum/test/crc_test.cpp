@@ -14,6 +14,7 @@
 #include "breeze/checksum/crc.hpp"
 #include "breeze/mathematics/ceiling_of_quotient.hpp"
 #include "breeze/testing/testing.hpp"
+#include <climits>
 #include <iomanip>
 #include <sstream>
 #include <string>
@@ -229,6 +230,26 @@ check_known_crc32s()
     }
 }
 
+void
+out_of_range_values_cannot_be_accumulated()
+{
+    breeze::crc< breeze::crc32 >
+                        crc ;
+
+    {
+        std::vector< int > const
+                            v = { 0, UCHAR_MAX + 1 } ;
+        BREEZE_CHECK_THROWS( breeze::assert_failure,
+            crc.accumulate( v.cbegin(), v.cend() ) ) ;
+    }
+    {
+        std::vector< int > const
+                            v = { -1, 0 } ;
+        BREEZE_CHECK_THROWS( breeze::assert_failure,
+            crc.accumulate( v.cbegin(), v.cend() ) ) ;
+    }
+}
+
 }
 
 int
@@ -245,5 +266,6 @@ test_crc()
           check_value_from_traits< invented_crc >,
           check_known_crc8_autosars,
           check_known_crc8_bluetooths,
-          check_known_crc32s } ) ;
+          check_known_crc32s,
+          out_of_range_values_cannot_be_accumulated } ) ;
 }
