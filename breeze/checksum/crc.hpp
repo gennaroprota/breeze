@@ -31,8 +31,8 @@ class crc_cache ;
 //!\endcond
 
 
-//      crc
-//      ===
+//      crc:
+//      ====
 //
 //!     \copybrief crc.hpp
 //!
