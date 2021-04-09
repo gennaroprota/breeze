@@ -67,7 +67,6 @@ public:
     //!     See the documentation of the (deleted) copy constructor for
     //!     the rationale.
     // -----------------------------------------------------------------------
-
     timer &             operator =( timer const & ) = delete ;
 
     //!     A synonym of `Clock::duration`.
