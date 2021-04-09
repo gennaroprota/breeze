@@ -185,6 +185,9 @@
     <ClCompile Include="..\..\breeze\time\windows_only\brz\performance_counter_timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breeze\time\brz\process_timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breeze\checksum\brz\crc.tpp" />
@@ -562,6 +565,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\meta\integer_by_width.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breeze\time\process_timer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

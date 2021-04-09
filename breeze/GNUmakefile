@@ -99,6 +99,7 @@ source_files := luhn.cpp                                    \
                                                             \
                 c_clock_timer.cpp                           \
                 format_time.cpp                             \
+                process_timer.cpp                           \
                 thread_safe_reentrant_time_functions.cpp    \
                                                             \
                 uuid.cpp

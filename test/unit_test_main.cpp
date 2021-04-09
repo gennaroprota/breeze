@@ -20,6 +20,7 @@
 #include "breeze/testing/assert_failure.hpp"
 #include "breeze/text/replace_all.hpp"
 #include "breeze/time/format_time.hpp"
+#include "breeze/time/process_timer.hpp"
 #include <ctime>
 #include <iostream>
 
@@ -122,6 +123,8 @@ main()
     } ;
 
     std::time_t const   start_time = std::time( nullptr ) ;
+    breeze::process_timer
+                        process_timer ;
     int                 failure_count = 0 ;
     for ( test_function_type * f : tests )
     {
@@ -130,6 +133,8 @@ main()
             ++ failure_count ;
         }
     }
+    breeze::process_duration const
+                        process_time = process_timer.elapsed() ;
     std::time_t const   end_time = std::time( nullptr ) ;
 
     if ( failure_count == 0 ) {
@@ -162,13 +167,18 @@ main()
     std::cout << "\nLast API error: " <<
         breeze::last_api_error( "Unit tests" ) << std::endl ;
 
-    //      ... and for the start and finish time.
+    //      ... for the start and finish time...
     // -----------------------------------------------------------------------
     std::cout << '\n' ;
     std::cout << "Started at:  " << describe_time( start_time ) << std::endl ;
     std::cout << "Finished at: " << describe_time(   end_time ) << std::endl ;
     std::cout << "Elapsed:     " << std::difftime( end_time, start_time ) <<
         " s" << std::endl ;
+
+    //      ... and for the `process_timer` times.
+    // -----------------------------------------------------------------------
+    std::cout << "Process times:" << std::endl ;
+    std::cout << process_time     << std::endl ;
 
     std::cout << std::endl ;
 
