@@ -13,6 +13,9 @@
 namespace breeze_ns {
 namespace crc_private {
 
+unsigned char       as_unsigned_char( char ) ;
+unsigned char       as_unsigned_char( int ) ;
+
 unsigned char
 as_unsigned_char( char c )
 {
