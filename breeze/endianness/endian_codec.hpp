@@ -78,9 +78,12 @@ public:
     {
         dest[ EndianPolicy::template index< T, Byte >( n - 1 )
             ] = static_cast< Byte >( value ) ;
-        next::encode(
-            // '* (n > 1)' silences spurious warnings
+        T const         next_value = static_cast< T >(
+            // The `static_cast` and `* (n > 1)` silence spurious warnings
             n > 1 ? ( value >> shift_amount * (n > 1) ) : 0
+            ) ;
+        next::encode(
+            next_value
             , dest ) ;
     }
 
