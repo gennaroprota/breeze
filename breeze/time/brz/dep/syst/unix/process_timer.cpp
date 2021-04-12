@@ -43,8 +43,13 @@ ticks_to_duration( clock_t ticks )
 process_duration
 get_process_times()
 {
+    using               steady_clock = std::chrono::steady_clock ;
+
     tms                 t ;
     clock_t const       ret = times( &t ) ;
+    steady_clock::time_point const
+                        now = steady_clock::now() ;
+
     if ( ret == std::clock_t( -1 ) ) {
         throw last_api_error( "times() failed" ) ;
     }
@@ -52,6 +57,8 @@ get_process_times()
     process_duration    result ;
     result.system = ticks_to_duration( t.tms_stime + t.tms_cstime ) ;
     result.user   = ticks_to_duration( t.tms_utime + t.tms_cutime ) ;
+    result.wall   = now - steady_clock::time_point (
+                            steady_clock::duration( 0 ) ) ;
 
     return result ;
 }

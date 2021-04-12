@@ -24,8 +24,8 @@ namespace breeze_ns {
 //      =================
 //
 //!\brief
-//!     An aggregate holding the amounts of user and system time
-//!     measured by process_timer.
+//!     An aggregate holding the amounts of user and system time, and of
+//!     wall-clock time, measured by process_timer.
 // ---------------------------------------------------------------------------
 class process_duration
 {
@@ -34,7 +34,15 @@ public:
 
     duration_type       user   ;
     duration_type       system ;
+    duration_type       wall   ;
 
+    //!     \return
+    //!         The percentage of `user + system` with respect to
+    //!         `wall`. This is a non-negative number, but can be
+    //!         greater than <tt>100</tt> if the system has multiple
+    //!         CPUs or cores.
+    // -----------------------------------------------------------------------
+    double              percentage_to_total() const ;
     std::string         to_string() const ;
 } ;
 

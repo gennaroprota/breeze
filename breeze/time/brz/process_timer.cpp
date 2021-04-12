@@ -21,13 +21,24 @@
 
 namespace breeze_ns {
 
+double
+process_duration::percentage_to_total() const
+{
+    return static_cast< double >( user.count() + system.count() ) /
+           static_cast< double >( wall.count() ) *
+           100 ;
+}
+
 std::string
 process_duration::to_string() const
 {
     static char const   indent[] = "    " ;
     std::ostringstream  oss ;
-    oss << indent << "user time:   " << breeze::to_string( user )   << '\n'
-        << indent << "system time: " << breeze::to_string( system ) ;
+    oss << indent << "user time:       " << breeze::to_string( user )   << '\n'
+        << indent << "system time:     " << breeze::to_string( system ) << '\n'
+        << indent << "wall-clock time: " << breeze::to_string( wall )   << '\n'
+        << indent << "(" << percentage_to_total() <<
+                     "% on behalf of this process)";
 
     if ( oss.fail() ) {
         throw std::runtime_error( "error in process_duration::to_string()" ) ;
@@ -61,6 +72,7 @@ process_timer::elapsed() const
     process_duration    result = get_process_times() ;
     result.user   -= m_start.user ;
     result.system -= m_start.system ;
+    result.wall   -= m_start.wall ;
 
     return result ;
 }

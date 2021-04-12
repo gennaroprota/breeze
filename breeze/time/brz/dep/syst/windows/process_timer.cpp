@@ -39,6 +39,8 @@ filetime_to_duration( FILETIME const & ft )
 process_duration
 get_process_times()
 {
+    using               steady_clock = std::chrono::steady_clock ;
+
     process_duration    result ;
 
     FILETIME            creation_time ;
@@ -46,13 +48,20 @@ get_process_times()
     FILETIME            kernel_time ;
     FILETIME            user_time ;
 
-    if ( GetProcessTimes( GetCurrentProcess(), &creation_time, &exit_time,
-                            &kernel_time, &user_time )  == 0 ) {
+    int const           ret =
+        GetProcessTimes( GetCurrentProcess(), &creation_time, &exit_time,
+                            &kernel_time, &user_time ) ;
+    steady_clock::time_point const
+                        now = steady_clock::now() ;
+
+    if ( ret == 0 ) {
         throw last_api_error( "GetProcessTimes() failed" ) ;
     }
 
     result.user   = filetime_to_duration( user_time   ) ;
     result.system = filetime_to_duration( kernel_time ) ;
+    result.wall   = now - steady_clock::time_point(
+                            steady_clock::duration( 0 ) ) ;
 
     return result ;
 }
