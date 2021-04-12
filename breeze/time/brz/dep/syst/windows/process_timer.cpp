@@ -31,9 +31,12 @@ process_timer::duration
 filetime_to_duration( FILETIME const & ft )
 {
     long const          ticks_per_second = 10'000'000 ;
+    double const        second_count =
+        static_cast< double >( to_int64( ft ) ) /
+        static_cast< double >( ticks_per_second ) ;
 
     return std::chrono::duration_cast< process_timer::duration >(
-            std::chrono::seconds( to_int64( ft ) / ticks_per_second ) ) ;
+            std::chrono::duration< double >( second_count ) ) ;
 }
 
 process_duration

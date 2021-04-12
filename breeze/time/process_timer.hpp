@@ -30,7 +30,8 @@ namespace breeze_ns {
 class process_duration
 {
 public:
-    using               duration_type = std::chrono::nanoseconds ;
+    using               duration_type =
+        std::chrono::duration< double, std::micro > ;
 
     duration_type       user   ;
     duration_type       system ;

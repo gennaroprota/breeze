@@ -35,9 +35,12 @@ process_timer::duration
 ticks_to_duration( clock_t ticks )
 {
     static long const   ticks_per_second = get_ticks_per_second() ;
+    double const        second_count =
+        static_cast< double >( ticks ) /
+        static_cast< double >( ticks_per_second ) ;
 
     return std::chrono::duration_cast< process_timer::duration >(
-            std::chrono::seconds( ticks / ticks_per_second ) ) ;
+            std::chrono::duration< double >( second_count ) ) ;
 }
 
 process_duration
