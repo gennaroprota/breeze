@@ -132,6 +132,8 @@ main()
             ++ failure_count ;
         }
     }
+    breeze::set_assert_handler( breeze::default_assert_handler ) ;
+
     breeze::process_duration const
                         process_time = process_timer.elapsed() ;
     std::time_t const   end_time = std::time( nullptr ) ;
