@@ -11,6 +11,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\breeze\benchmarking\brz\bench_harness.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\breeze\checksum\brz\luhn.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -225,6 +228,9 @@
     <None Include="breeze.ruleset" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\breeze\benchmarking\bench_harness.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\breeze\checksum\crc.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -13,7 +13,8 @@ root := ..
 #
 #       But, for now, we have no homonyms.
 # ----------------------------------------------------------------------------
-vpath %.cpp     $(root)/breeze/checksum/brz         \
+vpath %.cpp     $(root)/breeze/benchmarking/brz     \
+                $(root)/breeze/checksum/brz         \
                 $(root)/breeze/conversion/brz       \
                 $(root)/breeze/cpu/brz              \
                 $(root)/breeze/cryptography/brz     \
@@ -36,7 +37,9 @@ ifeq ($(system),windows)
                 $(root)/breeze/time/windows_only/brz
 endif
 
-source_files := luhn.cpp                                    \
+source_files := bench_harness.cpp                           \
+                                                            \
+                luhn.cpp                                    \
                                                             \
                 roman.cpp                                   \
                                                             \
