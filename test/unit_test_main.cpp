@@ -173,7 +173,7 @@ main()
     std::cout << "Started at:  " << describe_time( start_time ) << std::endl ;
     std::cout << "Finished at: " << describe_time(   end_time ) << std::endl ;
     std::cout << "Elapsed:     " << std::difftime( end_time, start_time ) <<
-        " s" << std::endl ;
+        's' << std::endl ;
 
     //      ... and for the `process_timer` times.
     // -----------------------------------------------------------------------
