@@ -126,8 +126,7 @@ main()
     breeze::process_timer
                         process_timer ;
     int                 failure_count = 0 ;
-    for ( test_function_type * f : tests )
-    {
+    for ( test_function_type * f : tests ) {
         int const           exit_code = f() ;
         if ( exit_code != breeze::exit_success ) {
             ++ failure_count ;
