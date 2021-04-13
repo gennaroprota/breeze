@@ -35,8 +35,11 @@ process_duration::to_string() const
     oss << indent << "user time:       " << breeze::to_string( user )   << '\n'
         << indent << "system time:     " << breeze::to_string( system ) << '\n'
         << indent << "wall-clock time: " << breeze::to_string( wall )   << '\n'
-        << indent << "(" << percentage_to_total() <<
-                     "% on behalf of this process)";
+        << indent ;
+
+    oss.setf( std::ios::fixed, std::ios::floatfield ) ;
+    oss.precision( 2 ) ;
+    oss << "(" << percentage_to_total() << "% on behalf of this process)";
 
     if ( oss.fail() ) {
         throw std::runtime_error( "error in process_duration::to_string()" ) ;
