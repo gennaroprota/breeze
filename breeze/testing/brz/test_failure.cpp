@@ -19,10 +19,10 @@ namespace breeze_ns {
 
 test_failure::test_failure( std::string const & message,
                             char const * file_name,
-                            long line )
+                            long line_number )
     :   logic_error( message ),
         m_file_name( file_name ),
-        m_line( line )
+        m_line_number( line_number )
 {
 }
 
@@ -35,7 +35,7 @@ test_failure::file_name() const noexcept
 long
 test_failure::line_number() const noexcept
 {
-    return m_line ;
+    return m_line_number ;
 }
 
 std::ostream &

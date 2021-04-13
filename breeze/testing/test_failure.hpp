@@ -25,13 +25,13 @@ class test_failure
 public:
                         test_failure( std::string const & message,
                                       char const * file_name,
-                                      long line ) ;
+                                      long line_number ) ;
     char const *        file_name() const noexcept ;
     long                line_number() const noexcept ;
 
 private:
     char const *        m_file_name ;
-    long                m_line ;
+    long                m_line_number ;
 } ;
 
 std::ostream &      operator <<( std::ostream &, test_failure const & ) ;
