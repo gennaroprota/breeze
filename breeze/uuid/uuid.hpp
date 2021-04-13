@@ -34,7 +34,7 @@ public:
     enum variant_type { ncs, rfc_4122, microsoft, future } ;
 
     //!     A type to represent the version of the uuid (meaningful only
-    //!     when the variant is <tt>rfc_4122</tt>).
+    //!     when the variant is `rfc_4122`).
     // -----------------------------------------------------------------------
     enum version_type { time_based = 1, dce_security = 2, name_based_md5 = 3,
                         pseudo_random = 4, name_based_sha1 = 5 } ;
