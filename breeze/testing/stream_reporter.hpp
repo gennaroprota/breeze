@@ -29,7 +29,7 @@ namespace breeze_ns {
 //!
 //!     Not named `output_stream_reporter` because that made difficult
 //!     to use our declaration style: with that name, declaring an
-//!     object of type output_stream_reporter required to put the type
+//!     object of type `output_stream_reporter` required to put the type
 //!     name on one line and the variable name on the next line, which
 //!     is ugly. Example:
 //!
