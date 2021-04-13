@@ -24,9 +24,7 @@ namespace breeze_ns {
 double
 process_duration::percentage_to_total() const
 {
-    return static_cast< double >( user.count() + system.count() ) /
-           static_cast< double >( wall.count() ) *
-           100 ;
+    return ( user + system ) / wall * 100 ;
 }
 
 std::string
