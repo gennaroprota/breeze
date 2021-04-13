@@ -77,11 +77,14 @@ bench_harness::run( std::ostream &      out,
                     char const *        label,
                     display_iteration    )
 {
+    using               rep = process_duration::duration_type::rep ;
+
     display_header( out, label, s_loop_count ) ;
     process_duration    elapsed = run() ;
-    elapsed.user   /= s_loop_count ;
-    elapsed.system /= s_loop_count ;
-    elapsed.wall   /= s_loop_count ;
+    rep const           count = static_cast< rep >( s_loop_count ) ;
+    elapsed.user   /= count ;
+    elapsed.system /= count ;
+    elapsed.wall   /= count ;
 
     out << "    Times per iteration:"
         << std::endl
