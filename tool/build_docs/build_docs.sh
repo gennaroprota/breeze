@@ -73,7 +73,6 @@ mkdir -p "$temp_dir"
 root_dir=$1
 
 cd "$root_dir/doc/source"
-printf '%s\n' "Using Doxygen $( doxygen --version )"
 if ! run_doxygen
 then
     quit_script 'an error occurred.'
