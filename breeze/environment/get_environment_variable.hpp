@@ -22,6 +22,9 @@ namespace breeze_ns {
 //      get_environment_variable():
 //      ===========================
 //
+//!\brief
+//!     Retrieves an environment variable.
+//!
 //!     Searches an implementation-defined list, as if by calling
 //!     `std::getenv()`, for a string that matches `name` and returns
 //!     the associated value, if any.

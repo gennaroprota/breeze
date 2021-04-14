@@ -22,6 +22,8 @@ namespace breeze_ns {
 //      to_lowercase():
 //      ----------------
 //
+//!     \copybrief to_lowercase.hpp
+//!
 //!     Converts each character in `source` to lowercase, using the
 //!     `ctype` facet of the given locale. Only 1:1 character mapping
 //!     can be performed: for instance, the uppercase Greek letter sigma

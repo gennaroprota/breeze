@@ -22,9 +22,8 @@ namespace breeze_ns {
 //      padding:
 //      ========
 //
-//!     \brief
-//!         Metafunction yielding the number of \e padding bits of a
-//!         type.
+//!\brief
+//!     Metafunction yielding the number of \e padding bits of a type.
 //!
 //!     This is a `constant`, with `value_type` `int`.
 //!

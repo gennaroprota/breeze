@@ -16,6 +16,9 @@
 //      BREEZE_STRINGIZE():
 //      ===================
 //
+//!\brief
+//!     Stringizes preprocessing tokens.
+//!
 //!     Expands to a string literal obtained with `# x`.
 //!
 //!     \see

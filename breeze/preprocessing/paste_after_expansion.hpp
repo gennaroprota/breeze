@@ -18,6 +18,9 @@
 //      BREEZE_PASTE_AFTER_EXPANSION():
 //      ===============================
 //
+//!\brief
+//!     Concatenates two preprocessing tokens after macro expansion.
+//!
 //!     Applies BREEZE_PASTE() to the result of performing macro
 //!     replacement on the arguments `x` and `y`.
 //!

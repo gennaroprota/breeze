@@ -23,7 +23,7 @@ namespace breeze_ns {
 //      uuid:
 //      =====
 //
-//!\copybrief uuid.hpp
+//!     \copybrief uuid.hpp
 // ---------------------------------------------------------------------------
 class uuid
     :   private equality_comparison< uuid >

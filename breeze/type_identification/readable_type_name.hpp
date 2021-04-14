@@ -21,6 +21,8 @@ namespace breeze_ns {
 //      readable_type_name():
 //      =====================
 //
+//!     \copybrief readable_type_name.hpp
+//!
 //!     \return
 //!         A human readable name for the type `T`.
 // ---------------------------------------------------------------------------
@@ -30,6 +32,9 @@ std::string         readable_type_name() ;
 //      readable_type_name():
 //      =====================
 //
+//!\brief
+//!     Returns a human readable name for the type of an object.
+//!
 //!     \return
 //!         A human readable name for the type of the object to which
 //!         `ref` refers. If `T` is a polymorphic class type, the name

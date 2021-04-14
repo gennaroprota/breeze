@@ -21,7 +21,9 @@ namespace breeze_ns {
 //      set_current_directory():
 //      ========================
 //
-//!     Sets the current directory of the calling process to `dir`;
+//!\brief
+//!     Sets the current directory of the calling process to `dir`.
+//!
 //!     `dir` must be a valid directory path.
 //!
 //!     \par Exceptions

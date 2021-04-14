@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A `std::string` trimmer.
+//!     \brief Trims a `std::string`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_rws4wbvfhp1gTSnTPzZEhVe9JHM0Cwgk
@@ -24,6 +24,8 @@ class               set_of_chars ;
 //      trim():
 //      =======
 //
+//!     \copybrief trim.hpp
+//!
 //!     \return
 //!         A string obtained from `s` by removing all the leading and
 //!         all the trailing characters `c` for which `std::isspace( c,
@@ -34,6 +36,8 @@ std::string         trim( std::string const & s, std::locale const & loc ) ;
 //      trim():
 //      =======
 //
+//!     \copybrief trim.hpp
+//!
 //!     \return
 //!         A string obtained from `s` by removing all the leading and
 //!         all the trailing characters that are also contained in

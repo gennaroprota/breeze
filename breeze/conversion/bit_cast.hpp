@@ -21,6 +21,9 @@ namespace breeze_ns {
 //      bit_cast():
 //      ===========
 //
+//!\brief
+//!     Copies an object representation.
+//!
 //!     Copies the object representation of the object referred to by
 //!     `from` into an object `t` of type `std::remove_const_t< To >`
 //!     and returns `t`.

@@ -22,8 +22,8 @@ namespace breeze_ns {
 //      levenshtein_distance():
 //      =======================
 //
-//!     \return
-//!         The Levenshtein distance between `first` and `second`.
+//!\brief
+//!     Returns the Levenshtein distance between `first` and `second`.
 // ---------------------------------------------------------------------------
 std::ptrdiff_t      levenshtein_distance( std::string const & first,
                                           std::string const & second ) ;

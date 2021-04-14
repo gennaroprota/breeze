@@ -21,6 +21,8 @@ namespace breeze_ns {
 //      get_directory_separators():
 //      ===========================
 //
+//!     \copybrief get_directory_separators.hpp
+//!
 //!     \return
 //!         A pointer to a C string with static storage duration
 //!         containing the directory separators allowed in the system.

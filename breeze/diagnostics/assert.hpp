@@ -20,6 +20,7 @@ namespace breeze_ns {
 //      assert_handler_type:
 //      ====================
 //
+//!\brief
 //!     The type of the function called by `BREEZE_ASSERT( expression )`
 //!     if `expression` evaluates to `false`.
 //!
@@ -42,9 +43,12 @@ typedef void      ( assert_handler_type )( char const * expression_text,
 //      set_assert_handler():
 //      =====================
 //
-//!     Sets `*f` as the current "assert handler", i.e. as the function
-//!     which is called by `BREEZE_ASSERT( expression )` if `expression`
-//!     evaluates to `false`.
+//!\brief
+//!     Sets `*f` as the current "assert handler".
+//!
+//!     The assert handler is the function which is called by
+//!     `BREEZE_ASSERT( expression )` if `expression` evaluates to
+//!     `false`.
 //!
 //!     At program start up, the assert handler is
 //!     `default_assert_handler()`.
@@ -59,7 +63,8 @@ void                set_assert_handler( assert_handler_type * f ) ;
 //      default_assert_handler():
 //      =========================
 //
-//!     \brief The default assert handler for `BREEZE_ASSERT()`.
+//!\brief
+//!     The default assert handler for `BREEZE_ASSERT()`.
 //!
 //!     Writes the passed in arguments to `std::cerr`, then flushes
 //!     `std::cerr`, then calls `std::abort()`.
@@ -99,6 +104,9 @@ block_non_bools( bool b )
 //      BREEZE_ASSERT():
 //      ================
 //
+//!\brief
+//!     Asserts that a condition is true.
+//!
 //!     \hideinitializer
 //!
 //!     %BREEZE_ASSERT() is a simple runtime assertion facility.

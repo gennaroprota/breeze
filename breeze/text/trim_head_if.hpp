@@ -7,8 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A `std::string` trimmer accepting a predicate (head of
-//!            string).
+//!     \brief Trims the head of a `std::string`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_h57CrFESUSfZFQj2EBQob5O94l5AybNU
@@ -22,6 +21,8 @@ namespace breeze_ns {
 //      trim_head_if():
 //      ===============
 //
+//!     \copybrief trim_head_if.hpp
+//!
 //!     \return
 //!         A string obtained from `s` by removing all the leading
 //!         characters that satisfy the predicate `pred`.

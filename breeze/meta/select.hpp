@@ -20,9 +20,9 @@
 
 namespace breeze_ns {
 
-//!     \brief
-//!         Like `select`, but with the condition represented as a
-//!         `bool` value, not a type.
+//!\brief
+//!     Like `select`, but with the condition represented as a `bool`
+//!     value, not a type.
 // ---------------------------------------------------------------------------
 template< bool condition, typename T, typename U >
 class select_

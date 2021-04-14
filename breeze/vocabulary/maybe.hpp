@@ -21,9 +21,9 @@ namespace breeze_ns {
 //      boolean_maybe_traits:
 //      =====================
 //
-//!     \brief
-//!         The default traits class for `maybe`. Logically corresponds
-//!         to a boolean (valid/invalid).
+//!\brief
+//!     The default traits class for `maybe`. Logically corresponds to a
+//!     boolean (valid/invalid).
 // ---------------------------------------------------------------------------
 class boolean_maybe_traits
 {
@@ -31,6 +31,7 @@ public:
     //      status:
     //      =======
     //
+    //!\brief
     //!     The type of the status to associate to the `maybe` value.
     // -----------------------------------------------------------------------
     class status
@@ -227,6 +228,7 @@ public:
     static_assert( std::is_nothrow_move_assignable< status_type >::value, "" ) ;
 
 
+    //!\brief
     //!     Constructs an invalid `maybe`.
     //!
     //!     \pre
@@ -239,7 +241,8 @@ public:
     explicit            maybe( status_type status =
                                           Traits::default_invalid() ) ;
 
-    //!     Constructs a valid `maybe`.
+    //!\brief
+    //!     Constructs a `maybe` from a `T` lvalue.
     //!
     //!     \pre
     //!         Traits::is_valid( status )
@@ -258,6 +261,9 @@ public:
     explicit            maybe( T const & value, status_type status =
                                                      Traits::default_valid() ) ;
 
+    //!\brief
+    //!     Constructs a `maybe` from a `T` rvalue.
+    //!
     //!     \pre
     //!         Traits::is_valid( status )
     //!
@@ -275,6 +281,9 @@ public:
     explicit            maybe( T && value, status_type status =
                                             Traits::default_valid() ) ;
 
+    //!\brief
+    //!     Copy constructs a `maybe`.
+    //!
     //!     \post
     //!         - ! is_valid() || value() refers to a copy of
     //!           other.value()
@@ -282,14 +291,23 @@ public:
     // -----------------------------------------------------------------------
                         maybe( maybe const & other ) ;
 
+    //!\brief
+    //!     Move constructs a `maybe`.
+    //!
     //!     \post
     //!         - value() is moved from other.value()
     //!         - status() == other.status()
     // -----------------------------------------------------------------------
                         maybe( maybe && other ) noexcept ;
 
+    //!\brief
+    //!     Destroys the `maybe` and the contained object, if any.
+    // -----------------------------------------------------------------------
                         ~maybe() noexcept ;
 
+    //!\brief
+    //!     Copy assigns a `maybe`.
+    //!
     //!     \post
     //!         - ! is_valid() || value() refers to a copy of
     //!           other.value()
@@ -297,12 +315,18 @@ public:
     // -----------------------------------------------------------------------
     maybe &             operator =( maybe const & other ) ;
 
+    //!\brief
+    //!     Move assigns a `maybe`.
+    //!
     //!     \post
     //!         - ! is_valid() || value() is moved from other.value()
     //!         - status() == other.status()
     // -----------------------------------------------------------------------
     maybe &             operator =( maybe && other ) noexcept ;
 
+    //!\brief
+    //!     Assigns the value from a `T` lvalue.
+    //!
     //!     \param value
     //!         The value to copy.
     //!
@@ -313,6 +337,9 @@ public:
     // -----------------------------------------------------------------------
     maybe &             operator =( T const & value ) ;
 
+    //!\brief
+    //!     Moves the value from a `T` rvalue.
+    //!
     //!     \post
     //!         - is_valid()
     //!         - value() is moved from value
@@ -320,24 +347,27 @@ public:
     // -----------------------------------------------------------------------
     maybe &             operator =( T && value ) noexcept ;
 
-    //!     \return
-    //!         The validity status.
+    //!\brief
+    //!     Returns the validity status.
     // -----------------------------------------------------------------------
     status_type         status() const noexcept ;
 
-    //!     \return
-    //!         Traits::is_valid( status() )
+    //!\brief
+    //!     Returns `Traits::is_valid( status() )`.
     // -----------------------------------------------------------------------
     bool                is_valid() const noexcept ;
 
-    //!     \return
-    //!         A reference to the `T` value.
+    //!\brief
+    //!     Returns a reference to the contained value.
     //!
     //!     \pre
     //!         is_valid()
     // -----------------------------------------------------------------------
     T const &           value() const ;
 
+    //!\brief
+    //!     Returns the contained value or a default.
+    //!
     //!     \return
     //!         `value()` if `is_valid()`; otherwise `default_value`.
     //!

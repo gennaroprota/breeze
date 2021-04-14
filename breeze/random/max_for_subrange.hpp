@@ -20,6 +20,8 @@ namespace breeze_ns {
 //      max_for_subrange():
 //      ===================
 //
+//!     \copybrief max_for_subrange.hpp
+//!
 //!     \return
 //!         The maximum value that can be kept (before taking the
 //!         remainder of the division by <tt>x + 1</tt>) for getting a

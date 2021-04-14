@@ -22,6 +22,9 @@ namespace breeze_ns {
 //      remove_from_end():
 //      ==================
 //
+//!\brief
+//!     Removes a given string from the end of another one.
+//!
 //!     \return
 //!         If `s` ends with `to_be_removed`, `s` with the
 //!         `to_be_removed` part erased from its end; otherwise a copy
@@ -33,6 +36,9 @@ std::string         remove_from_end( std::string const & s,
 //      remove_from_end():
 //      ==================
 //
+//!\brief
+//!     Removes a given character from the end of a string.
+//!
 //!     \return
 //!         If `s` ends with `c`, `s` with the last character removed;
 //!         otherwise a copy of `s`.

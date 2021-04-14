@@ -21,9 +21,9 @@ namespace breeze_ns {
 //      get_amount_of_physical_memory():
 //      ================================
 //
-//!     \return
-//!         The amount of physical memory installed in the system, in
-//!         KiB.
+//!\brief
+//!     Gets the amount of physical memory installed in the system, in
+//!     KiB.
 // ---------------------------------------------------------------------------
 long long           get_amount_of_physical_memory() ;
 

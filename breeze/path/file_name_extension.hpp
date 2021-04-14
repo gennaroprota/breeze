@@ -21,6 +21,8 @@ namespace breeze_ns {
 //      file_name_extension():
 //      ======================
 //
+//!     \copybrief file_name_extension.hpp
+//!
 //!     \return
 //!         The extension of the file name part of `path`, including the
 //!         period, if any. This is the substring starting from the last

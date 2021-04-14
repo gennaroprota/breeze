@@ -21,6 +21,9 @@ namespace breeze_ns {
 //      replace_all():
 //      ==============
 //
+//!\brief
+//!     Replaces all occurrences of a given substring.
+//!
 //!     \return
 //!         A string obtained from `original` by replacing all
 //!         occurrences of `from` with `to`.

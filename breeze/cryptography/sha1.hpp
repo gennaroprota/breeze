@@ -32,8 +32,10 @@ typedef digest< sha1_hasher >
 //!\}
 
 
-//!     SHA-1 policy class for `merkle_damgard_machine`. This
-//!     corresponds to SHA-1 as described in FIPS 180-2 with Change
+//!\brief
+//!     SHA-1 policy class for `merkle_damgard_machine`.
+//!
+//!     This corresponds to SHA-1 as described in FIPS 180-2 with Change
 //!     Notice 1.
 // ---------------------------------------------------------------------------
 class sha1_engine

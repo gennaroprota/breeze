@@ -20,8 +20,8 @@ namespace breeze_ns {
 //      is_power_of_2():
 //      ================
 //
-//!     \return
-//!         `true` if an only if `x` is a power of two.
+//!\brief
+//!     Returns `true` if an only if `x` is a power of two.
 //!
 //!     \note
 //!         C++20 has `std::has_single_bit()`, which can replace this

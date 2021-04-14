@@ -22,9 +22,8 @@ namespace breeze_ns {
 //      c_clock_clock:
 //      ==============
 //
-//!     \brief
-//!         A clock for our `timer` template using the C function
-//!         `clock()`.
+//!\brief
+//!     A clock for our `timer` template using the C function `clock()`.
 //!
 //!     Most times, you'll just use `c_clock_timer`, and not this class
 //!     directly.

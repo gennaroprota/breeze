@@ -22,6 +22,7 @@ namespace breeze_ns {
 //      operating_system_name:
 //      ======================
 //
+//!\brief
 //!     A streamable description of the operating system.
 // ---------------------------------------------------------------------------
 class operating_system_name
@@ -30,8 +31,8 @@ public:
     std::string         to_string() const ;
 } ;
 
-//!     Stream inserter for `operating_system_name`. Outputs a
-//!     description of the operating system.
+//!\brief
+//!     Outputs a description of the operating system.
 // ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream &,
                                  operating_system_name const & ) ;

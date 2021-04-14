@@ -22,7 +22,7 @@ namespace breeze_ns {
 //      roman:
 //      ======
 //
-//!\copybrief roman.hpp
+//!     \copybrief roman.hpp
 // ---------------------------------------------------------------------------
 class roman
 {
@@ -45,9 +45,11 @@ private:
     int                 m_value ;
 } ;
 
-//!     Stream output operator: outputs the Roman numeral. The uppercase
-//!     flag (`std::ios_base::uppercase`) is supported, so the user can
-//!     obtain all-uppercase or all-lowercase.
+//!\brief
+//!     Outputs a Roman numeral to a stream.
+//!
+//!     The uppercase flag (`std::ios_base::uppercase`) is supported, so
+//!     the user can obtain all-uppercase or all-lowercase.
 // ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream &, roman const & ) ;
 

@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A `std::string` trimmer accepting a predicate.
+//!     \brief Trims a `std::string`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_12722kkPcCmt1PN91r0QOwrcsntBhbKr
@@ -21,6 +21,8 @@ namespace breeze_ns {
 //      trim_if():
 //      ==========
 //
+//!     \copybrief trim_if.hpp
+//!
 //!     \return
 //!         A string obtained from `s` by removing all the leading and
 //!         all the trailing characters that satisfy the predicate

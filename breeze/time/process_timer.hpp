@@ -47,6 +47,9 @@ public:
     std::string         to_string() const ;
 } ;
 
+//!\brief
+//!     Outputs a process_duration.
+// ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream & dest,
                                  process_duration const & t ) ;
 

@@ -44,6 +44,8 @@ namespace breeze_ns {
 //      eof_value():
 //      ============
 //
+//!     \copybrief eof_value.hpp
+//!
 //!     \return
 //!         The end-of-file value for the given `Stream`.
 // ---------------------------------------------------------------------------
@@ -57,6 +59,9 @@ eof_value( Stream const & )
 //      is_eof_value():
 //      ===============
 //
+//!\brief
+//!     Checks if a value is the eof value of a stream.
+//!
 //!     \return
 //!         Whether `x` equals the eof value for the `Stream` given as
 //!         the second argument.

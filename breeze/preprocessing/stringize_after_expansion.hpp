@@ -18,6 +18,9 @@
 //      BREEZE_STRINGIZE_AFTER_EXPANSION():
 //      ===================================
 //
+//!\brief
+//!     Stringizes preprocessing tokens after macro expansion.
+//!
 //!     Stringizes (with `BREEZE_STRINGIZE()`) the result of performing
 //!     macro replacement on the argument `x`.
 // ---------------------------------------------------------------------------

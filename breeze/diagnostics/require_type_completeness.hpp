@@ -21,8 +21,11 @@ namespace breeze_ns {
 //      require_type_completeness():
 //      ============================
 //
-//!     To be used to ensure that `T` is a complete type at the point of
-//!     instantiation. If `T` is incomplete then the expression
+//!\brief
+//!     Requires that `T` is a complete type at the point of
+//!     instantiation.
+//!
+//!     If `T` is incomplete then the expression
 //!
 //!     ```
 //!         require_type_completeness< T >()

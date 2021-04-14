@@ -23,6 +23,9 @@ namespace breeze_ns {
 //      get_all_environment_variables():
 //      ================================
 //
+//!\brief
+//!     Retrieves all the environment variables.
+//!
 //!     \return
 //!         A map with all name-value pairs corresponding to the defined
 //!         environment variables.

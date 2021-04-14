@@ -20,9 +20,11 @@ namespace breeze_ns {
 //      population_count():
 //      ===================
 //
-//!     \return
-//!         The number of on bits in the binary representation of the
-//!         value of `t`. `T` must be an unsigned integral type.
+//!\brief
+//!     Returns the number of on bits in the binary representation of
+//!     the value of `t`.
+//!
+//!     `T` must be an unsigned integral type.
 //!
 //!     \warning
 //!         [FUTURE] This function template will be removed in favor of

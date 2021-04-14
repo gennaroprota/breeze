@@ -21,6 +21,9 @@ namespace breeze_ns {
 //      luhn_sum():
 //      ===========
 //
+//!\brief
+//!     Calculates the Luhn sum of a string.
+//!
 //!     \return
 //!         The Luhn sum of the given string. This is a number in
 //!         <tt>[0, 9]</tt>.
@@ -34,6 +37,9 @@ int                 luhn_sum( std::string const & s ) ;
 //      has_luhn_sum():
 //      ===============
 //
+//!\brief
+//!     Verifies a string.
+//!
 //!     \return
 //!         Whether the given string has a Luhn sum as its last
 //!         character.
@@ -47,6 +53,9 @@ bool                has_luhn_sum( std::string const & s ) ;
 //      luhn_check_digit():
 //      ===================
 //
+//!\brief
+//!     Calculates a Luhn checksum digit, as a char.
+//!
 //!     \return
 //!         The Luhn checksum digit for the given string. This is a
 //!         `char` in `['0', '9']`.

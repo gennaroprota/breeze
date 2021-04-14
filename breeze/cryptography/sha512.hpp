@@ -48,9 +48,11 @@ typedef digest< sha512_256_hasher >
 //      sha512_engine:
 //      ==============
 //
-//!     SHA-512 policy class for `merkle_damgard_machine`. This
-//!     corresponds to SHA-512 as described in FIPS 180-2 with Change
-//!     Notice 1.
+//!\brief
+//!     SHA-512 policy class for `merkle_damgard_machine`.
+//!
+//!     This corresponds to SHA-512 as described in FIPS 180-2 with
+//!     Change Notice 1.
 // ---------------------------------------------------------------------------
 class sha512_engine
     :   public merkle_damgard_engine< 512, 1024, big_endian_policy, 64 >
@@ -64,8 +66,10 @@ public:
 //      sha512_224_engine:
 //      ==================
 //
-//!     SHA-512/224 policy class for `merkle_damgard_machine`. This
-//!     corresponds to SHA-512/224 as described in FIPS 180-4.
+//!\brief
+//!     SHA-512/224 policy class for `merkle_damgard_machine`.
+//!
+//!     This corresponds to SHA-512/224 as described in FIPS 180-4.
 // ---------------------------------------------------------------------------
 class sha512_224_engine
     :   public merkle_damgard_engine< 224, 1024, big_endian_policy, 64, 512 >
@@ -79,8 +83,10 @@ public:
 //      sha512_256_engine:
 //      ==================
 //
-//!     SHA-512/256 policy class for `merkle_damgard_machine`. This
-//!     corresponds to SHA-512/256 as described in FIPS 180-4.
+//!\brief
+//!     SHA-512/256 policy class for `merkle_damgard_machine`.
+//!
+//!     This corresponds to SHA-512/256 as described in FIPS 180-4.
 // ---------------------------------------------------------------------------
 class sha512_256_engine
     :   public merkle_damgard_engine< 256, 1024, big_endian_policy, 64, 512 >

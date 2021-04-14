@@ -21,6 +21,8 @@
 //      BREEZE_DUMP_EXPRESSION():
 //      =========================
 //
+//!     \copybrief dump_expression.hpp
+//!
 //!     \hideinitializer
 //!
 //!     A simple macro for quickly dumping a variable or, generally, an

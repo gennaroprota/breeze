@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A `std::string` trimmer (head of string).
+//!     \brief Trims the head of a `std::string`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_VJhjD7vyKemLfcukUGXm4RzXGSsdvmrL
@@ -23,6 +23,8 @@ namespace breeze_ns {
 //      trim_head():
 //      ============
 //
+//!     \copybrief trim_head.hpp
+//!
 //!     \return
 //!         A string obtained from `s` by removing all the leading
 //!         characters `c` for which `std::isspace( c, loc )` returns
@@ -34,6 +36,8 @@ std::string         trim_head( std::string const & s,
 //      trim_head():
 //      ============
 //
+//!     \copybrief trim_head.hpp
+//!
 //!     \return
 //!         A string obtained from `s` by removing all the leading
 //!         characters that are also contained in `to_be_removed`.

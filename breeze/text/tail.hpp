@@ -22,6 +22,8 @@ namespace breeze_ns {
 //      tail():
 //      =======
 //
+//!     \copybrief tail.hpp
+//!
 //!     \pre
 //!         count >= 0
 //!

@@ -20,8 +20,8 @@ namespace breeze_ns {
 //      digital_root():
 //      ===============
 //
-//!     \return
-//!         The digital root of the number `n` in base `base`.
+//!\brief
+//!     Returns the digital root of the number `n` in base `base`.
 //!
 //!     \pre
 //!         n >= 0 && base >= 2

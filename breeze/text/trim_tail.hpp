@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A `std::string` trimmer (tail of string).
+//!     \brief Trims the tail of a `std::string`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_rAf6FomrfEupsrKlsZvh9xwbNaeg8pxp
@@ -23,6 +23,8 @@ namespace breeze_ns {
 //      trim_tail():
 //      ============
 //
+//!     \copybrief trim_tail.hpp
+//!
 //!     \return
 //!         A string obtained from `s` by removing all the trailing
 //!         characters `c` for which `std::isspace( c, loc )` returns
@@ -34,6 +36,8 @@ std::string         trim_tail( std::string const & s,
 //      trim_tail():
 //      ============
 //
+//!     \copybrief trim_tail.hpp
+//!
 //!     \return
 //!         A string obtained from `s` by removing all the trailing
 //!         characters that are also contained in `to_be_removed`.

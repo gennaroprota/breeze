@@ -22,9 +22,10 @@ namespace breeze_ns {
 //      begins_with():
 //      ==============
 //
-//!     \return
-//!         Whether `s` begins with `with`. If `with` is empty, the
-//!         result is always `true`.
+//!\brief
+//!     Checks whether `s` begins with `with`.
+//!
+//!     If `with` is empty, the result is always `true`.
 //!
 //!     \note
 //!         [FUTURE] C++20 will have
@@ -41,6 +42,9 @@ bool                begins_with( std::string const & s,
 //      begins_with():
 //      ==============
 //
+//!\brief
+//!     Checks whether `s` begins with `c`.
+//!
 //!     \return
 //!         `true` if and only if `s` begins with `c`; i.e. if and only
 //!         if `! s.empty() && s.front() == c`.

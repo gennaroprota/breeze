@@ -99,6 +99,9 @@ std::ostream &      operator <<( std::ostream &, operating_system_id ) ;
 //      Relational operators:
 //      =====================
 //
+//!\brief
+//!     Deleted operator function for operating_system_id.
+//!
 //!     The relational operator functions for \ref operating_system_id
 //!     are all deleted. See the documentation of that class for the
 //!     rationale.

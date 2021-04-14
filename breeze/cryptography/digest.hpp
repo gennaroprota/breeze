@@ -22,9 +22,9 @@ namespace breeze_ns {
 //      digest:
 //      =======
 //
-//!     \brief
-//!         The result of applying a digest algorithm to a given input
-//!         sequence.
+//!\brief
+//!     The result of applying a digest algorithm to a given input
+//!     sequence.
 // ---------------------------------------------------------------------------
 template< typename Hasher >
 class digest
@@ -103,10 +103,13 @@ private:
                         m_raw_digest ;
 } ;
 
-//!     Outputs a hexadecimal representation of the digest. The case of
-//!     the letters A-F is unspecified (this allows us to support e.g.
-//!     `std::uppercase` and `std::nouppercase` in the future). But it's
-//!     guaranteed that all letters will have the same case.
+//!\brief
+//!     Outputs a hexadecimal representation of the digest.
+//!
+//!     The case of the letters A-F is unspecified (this allows us to
+//!     support e.g. `std::uppercase` and `std::nouppercase` in the
+//!     future). But it's guaranteed that all letters will have the same
+//!     case.
 // ---------------------------------------------------------------------------
 template< typename Hasher >
 std::ostream &      operator <<( std::ostream           & os,
@@ -115,6 +118,7 @@ std::ostream &      operator <<( std::ostream           & os,
 //      make_digest():
 //      ==============
 //
+//!\brief
 //!     Convenience function to create a `digest` from a `Hasher` (can
 //!     use type deduction).
 //!

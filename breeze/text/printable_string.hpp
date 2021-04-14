@@ -68,6 +68,9 @@ private:
                         m_value ;
 } ;
 
+//!\brief
+//!     Outputs a printable_string.
+// ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream & dest,
                                  printable_string const & ) ;
 

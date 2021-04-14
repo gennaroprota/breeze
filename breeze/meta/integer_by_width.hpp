@@ -71,9 +71,9 @@ public:
 //      integer_by_width:
 //      =================
 //
-//!     \brief
-//!         Provides, if possible, a typedef to a built-in integer type
-//!         with width `width`.
+//!\brief
+//!     Provides, if possible, a typedef to a built-in integer type with
+//!     width `width`.
 //!
 //!     If a (signed or unsigned, according to `T`) type with width
 //!     `width` is available, a public member typedef `type` is provided
@@ -97,8 +97,8 @@ public:
 //      signed_integer_by_width:
 //      ========================
 //
-//!     \brief
-//!         Equivalent to `integer_by_width< width, signed >`.
+//!\brief
+//!     Equivalent to `integer_by_width< width, signed >`.
 // ---------------------------------------------------------------------------
 template< int width >
 class signed_integer_by_width
@@ -111,8 +111,8 @@ public:
 //      unsigned_integer_by_width:
 //      ==========================
 //
-//!     \brief
-//!         Equivalent to `integer_by_width< width, unsigned >`.
+//!\brief
+//!     Equivalent to `integer_by_width< width, unsigned >`.
 // ---------------------------------------------------------------------------
 template< int width >
 class unsigned_integer_by_width

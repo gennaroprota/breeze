@@ -16,6 +16,9 @@
 //      BREEZE_PREVENT_MACRO_EXPANSION:
 //      ===============================
 //
+//!\brief
+//!     Prevents the expansion of a function-like macro.
+//!
 //!     The only purpose of this macro is to prevent the expansion of
 //!     the preceding identifier, in case it is defined as a
 //!     function-like macro. Any macro would do (in fact, anything which

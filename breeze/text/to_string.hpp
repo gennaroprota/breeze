@@ -23,6 +23,8 @@ namespace breeze_ns {
 //      to_string():
 //      ============
 //
+//!     \copybrief to_string.hpp
+//!
 //!     \return
 //!         The textual representation of its argument. If `T` has a
 //!         `to_string() const` member function taking no arguments,
@@ -36,9 +38,11 @@ std::string         to_string( T const & object ) ;
 //      to_string():
 //      ============
 //
-//!     Overload for `std::chrono::duration`s. This is useful for
-//!     pre-C++20 code (C++20 has a stream inserter for
-//!     `std::chrono::duration`s.)
+//!\brief
+//!     Returns the textual representation of a `std::chrono::duration`.
+//!
+//!     This is useful for pre-C++20 code (C++20 has a stream inserter
+//!     for `std::chrono::duration`s.)
 // ---------------------------------------------------------------------------
 template< typename Rep, typename Period >
 std::string         to_string( std::chrono::duration< Rep, Period > d ) ;
@@ -46,6 +50,8 @@ std::string         to_string( std::chrono::duration< Rep, Period > d ) ;
 //      to_string():
 //      ============
 //
+//!     \copybrief to_string.hpp
+//!
 //!     \return
 //!         The textual representation of its argument. The
 //!         representation depends, in general, on `loc`. This template

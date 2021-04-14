@@ -22,9 +22,9 @@ namespace breeze_ns {
 //      damerau_levenshtein_distance():
 //      ===============================
 //
-//!     \return
-//!         The Damerau-Levenshtein distance between `first` and
-//!         `second`.
+//!\brief
+//!     Returns the Damerau-Levenshtein distance between `first` and
+//!     `second`.
 //!
 //!     \pre
 //!         The lengths of `first` and `second` are both less than

@@ -23,8 +23,9 @@ namespace breeze_ns {
 //      from_string():
 //      ==============
 //
-//!     \brief Tries to form an object of type `T` given its textual
-//!            representation.
+//!\brief
+//!     Tries to form an object of type `T` given its textual
+//!     representation.
 //!
 //!     \par Type requirements
 //!         `T` shall be <tt>DefaultConstructible</tt> and <tt>
@@ -45,7 +46,8 @@ maybe< T >          from_string( std::string const & s,
 //      from_string():
 //      ==============
 //
-//!     \brief Specialization for `std::string`s.
+//!\brief
+//!     Specialization for `std::string`s.
 //!
 //!     \return
 //!         An (always valid) `maybe` object containing a string which

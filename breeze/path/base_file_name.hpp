@@ -21,9 +21,9 @@ namespace breeze_ns {
 //      base_file_name():
 //      =================
 //
-//!     \return
-//!         The file name part of a path. Assumes that the path is
-//!         well-formed.
+//!     \copybrief base_file_name.hpp
+//!
+//!     Assumes that the path is well-formed.
 // ---------------------------------------------------------------------------
 std::string         base_file_name( std::string const & full_path ) ;
 

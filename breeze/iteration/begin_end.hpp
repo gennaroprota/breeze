@@ -48,8 +48,8 @@ namespace breeze_ns {
 //      begin():
 //      ========
 //
-//!     \return
-//!         The same as c.begin(), for any standard container.
+//!\brief
+//!     Returns the same as c.begin(), for any standard container.
 // ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::iterator
@@ -61,8 +61,8 @@ begin( C & c ) noexcept( noexcept( c.begin() ) )
 //      begin():
 //      ========
 //
-//!     \return
-//!         The same as c.begin(), for any standard container.
+//!\brief
+//!     Returns the same as c.begin(), for any standard container.
 // ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
@@ -74,8 +74,8 @@ begin( C const & c ) noexcept( noexcept( c.begin() ) )
 //      cbegin():
 //      =========
 //
-//!     \return
-//!         The same as c.begin(), for any standard container.
+//!\brief
+//!     Returns the same as c.begin(), for any standard container.
 // ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
@@ -87,8 +87,8 @@ cbegin( C const & c ) noexcept( noexcept( c.begin() ) )
 //      end():
 //      ======
 //
-//!     \return
-//!         The same as c.end(), for any standard container.
+//!\brief
+//!     Returns the same as c.end(), for any standard container.
 // ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::iterator
@@ -100,8 +100,8 @@ end( C & c ) noexcept( noexcept( c.end() ) )
 //      end():
 //      ======
 //
-//!     \return
-//!         The same as c.end(), for any standard container.
+//!\brief
+//!     Returns the same as c.end(), for any standard container.
 // ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
@@ -113,8 +113,8 @@ end( C const & c ) noexcept( noexcept( c.end() ) )
 //      cend():
 //      =======
 //
-//!     \return
-//!         The same as c.end(), for any standard container.
+//!\brief
+//!     Returns the same as c.end(), for any standard container.
 // ---------------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
@@ -126,6 +126,7 @@ cend( C const & c ) noexcept( noexcept( c.end() ) )
 //      begin():
 //      ========
 //
+//!\brief
 //!     Like container::begin(), but for a built-in array.
 //!
 //!     (Note that there's no need for a "T const overload".)
@@ -140,6 +141,7 @@ begin( T ( &a )[ n ] ) noexcept
 //      cbegin():
 //      =========
 //
+//!\brief
 //!     Like container::begin(), but for a built-in array.
 // ---------------------------------------------------------------------------
 template< typename T, long long n >
@@ -152,6 +154,7 @@ cbegin( T const ( &a )[ n ] ) noexcept
 //      end():
 //      ======
 //
+//!\brief
 //!     Like container::end(), but for a built-in array.
 //!
 //!     (The remark, made for `begin()`, that there's no need for a "T
@@ -167,6 +170,7 @@ end( T ( &a )[ n ] ) noexcept
 //      cend():
 //      =======
 //
+//!\brief
 //!     Like container::end(), but for a built-in array.
 // ---------------------------------------------------------------------------
 template< typename T, long long n >

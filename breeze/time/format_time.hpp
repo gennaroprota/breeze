@@ -59,9 +59,9 @@ extern char const   iso8601_extended_time[] ;
 //      time_kind:
 //      ==========
 //
-//!     \brief
-//!         The type (UTC/local) of the representation requested to
-//!         `format_time()`.
+//!\brief
+//!     The type (UTC/local) of the representation requested to
+//!     `format_time()`.
 // ---------------------------------------------------------------------------
 enum class time_kind
 {
@@ -73,6 +73,9 @@ enum class time_kind
 //      format_time():
 //      ==============
 //
+//!\brief
+//!     Formats a `time_t` value.
+//!
 //!     \return
 //!         The time corresponding to `time_stamp`, formatted according
 //!         to `format`. `format` is interpreted as if passed to the

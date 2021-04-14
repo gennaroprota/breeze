@@ -18,17 +18,17 @@
 
 namespace breeze_ns {
 
-//!     \brief
-//!         Count policy for the hashing algorithms.
+//!\brief
+//!     Count policy for the hashing algorithms.
 // ---------------------------------------------------------------------------
 class hashing_count
 {
 public:
     class exception ;
 
-    //!     \brief
-    //!         The type of exceptions emitted if the input sequence to
-    //!         a hashing algorithm is too long.
+    //!\brief
+    //!     The type of exceptions emitted if the input sequence to a
+    //!     hashing algorithm is too long.
     //
     //      Note: defined in-class as otherwise Doxygen doesn't pick its
     //      documentation up. (Problem encountered with Doxygen 1.8.18.)

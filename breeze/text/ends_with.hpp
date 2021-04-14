@@ -22,9 +22,10 @@ namespace breeze_ns {
 //      ends_with():
 //      ============
 //
-//!     \return
-//!         Whether `s` ends with `with`. If `with` is empty, the result
-//!         is always `true`.
+//!\brief
+//!     Checks whether `s` ends with `with`.
+//!
+//!     If `with` is empty, the result is always `true`.
 //!
 //!     \note
 //!         [FUTURE] C++20 will have
@@ -41,6 +42,9 @@ bool                ends_with( std::string const & s,
 //      ends_with():
 //      ============
 //
+//!\brief
+//!     Checks whether `s` ends with `c`.
+//!
 //!     \return
 //!         `true` if and only if `s` ends with `c`, i.e. if and only if
 //!         `! s.empty() && s.back() == c`.

@@ -21,6 +21,7 @@ namespace breeze_ns {
 //      windows_version_info:
 //      =====================
 //
+//!\brief
 //!     Microsoft Windows version information.
 // ---------------------------------------------------------------------------
 class windows_version_info

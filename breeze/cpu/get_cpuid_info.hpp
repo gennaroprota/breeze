@@ -22,8 +22,8 @@ namespace breeze_ns {
 //      cpuid_result:
 //      =============
 //
-//!     \brief
-//!         The result of the CPUID instruction.
+//!\brief
+//!     The result of the CPUID instruction.
 // ---------------------------------------------------------------------------
 struct cpuid_result
 {
@@ -36,9 +36,9 @@ struct cpuid_result
 //      get_cpuid_info():
 //      =================
 //
-//!     \brief
-//!         Executes the CPUID instruction with the provided values in
-//!         `EAX` and `ECX`.
+//!\brief
+//!     Executes the CPUID instruction with the provided values in `EAX`
+//!     and `ECX`.
 //!
 //!     \pre
 //!         The CPUID instruction is supported (this is always true on

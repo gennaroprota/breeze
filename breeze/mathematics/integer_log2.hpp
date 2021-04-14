@@ -21,8 +21,9 @@ namespace breeze_ns {
 //      integer_log2():
 //      ===============
 //
-//!     \brief Calculates the integer part of the logarithm, to base 2,
-//!            of its argument.
+//!\brief
+//!     Returns the integer part of the logarithm, to base 2, of its
+//!     argument.
 //!
 //!     \par Type requirements
 //!         `T` must be an integral type other than `bool`.

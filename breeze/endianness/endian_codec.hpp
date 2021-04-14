@@ -117,6 +117,7 @@ public:
 //      little_endian_policy:
 //      =====================
 //
+//!\brief
 //!     Little-endian policy for endian_codec.
 //!
 //!     \see
@@ -148,6 +149,7 @@ public:
 //      big_endian_policy:
 //      ==================
 //
+//!\brief
 //!     Big-endian policy for endian_codec.
 //!
 //!     \see
@@ -236,8 +238,9 @@ endian_codec< EndianPolicy, T, Byte >::required_count ;
 //      endian_store():
 //      ===============
 //
-//!     \brief Convenience wrapper around `endian_codec::encode()` which
-//!            derives `Byte` from the iterator type.
+//!\brief
+//!     Convenience wrapper around `endian_codec::encode()` which
+//!     derives `Byte` from the iterator type.
 //!
 //!     `endian_store< EndianPolicy >( value, it )` is equivalent to:
 //!
@@ -263,8 +266,9 @@ endian_store( T const & value, RandomIter it )
 //      endian_load():
 //      ==============
 //
-//!     \brief Convenience wrapper around `endian_codec::decode()` which
-//!            derives `Byte` from the iterator type.
+//!\brief
+//!     Convenience wrapper around `endian_codec::decode()` which
+//!     derives `Byte` from the iterator type.
 //!
 //!     `endian_load< EndianPolicy, T >( it )` is equivalent to:
 //!

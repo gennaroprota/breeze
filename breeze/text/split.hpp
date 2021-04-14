@@ -23,6 +23,8 @@ namespace breeze_ns {
 //      split():
 //      ========
 //
+//!     \copybrief split.hpp
+//!
 //!     \return
 //!         A vector of strings obtained by splitting `s` at each
 //!         character present in `separators`, in order.
@@ -42,6 +44,8 @@ std::vector< std::string >
 //      split_if():
 //      ===========
 //
+//!     \copybrief split.hpp
+//!
 //!     \return
 //!         A vector of strings obtained by splitting `s` at each
 //!         character which satisfies the predicate `pred`, in order.

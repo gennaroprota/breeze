@@ -168,8 +168,9 @@ private:
     impl * const        m_impl ;
 } ;
 
-//!     \brief  The type of exceptions thrown by the members of
-//!             `entropy_source`.
+//!\brief
+//!     The type of exceptions thrown by the members of
+//!     `entropy_source`.
 // ---------------------------------------------------------------------------
 class entropy_source::exception
     :   public std::runtime_error

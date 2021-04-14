@@ -26,6 +26,7 @@ namespace breeze_ns {
 //      null_stream_buffer:
 //      -------------------
 //
+//!\brief
 //!     The stream buffer used by `null_stream`.
 // ---------------------------------------------------------------------------
 class null_stream_buffer
@@ -58,7 +59,8 @@ private:
 //      null_stream:
 //      ------------
 //
-//!     \brief A stream that discards any output and provides no input.
+//!\brief
+//!     A stream that discards any output and provides no input.
 //!
 //!     On output, the stream never signals failbit. On input, it always
 //!     signals EOF. The behavior is similar to a file stream opened on

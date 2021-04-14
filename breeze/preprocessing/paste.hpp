@@ -16,6 +16,9 @@
 //      BREEZE_PASTE():
 //      ===============
 //
+//!\brief
+//!     Concatenates two preprocessing tokens.
+//!
 //!     Concatenates the two preprocessing tokens which end the argument
 //!     `x` and start the argument `y`, respectively, by using the `##`
 //!     operator.

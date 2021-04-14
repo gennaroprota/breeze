@@ -22,9 +22,9 @@ namespace breeze_ns {
 //      performance_counter_clock:
 //      ==========================
 //
-//!     \brief
-//!         A clock for our `timer` template using Windows'
-//!         `QueryPerformanceCounter()`.
+//!\brief
+//!     A clock for our `timer` template using Windows'
+//!     `QueryPerformanceCounter()`.
 //!
 //!     Most times, you'll just use `performance_counter_timer`, and not
 //!     this class directly.

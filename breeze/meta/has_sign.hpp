@@ -22,8 +22,8 @@ namespace breeze_ns {
 //      has_sign:
 //      =========
 //
-//!     \brief
-//!         A `constant` yielding whether a type allows negative values.
+//!\brief
+//!     A `constant` yielding whether a type allows negative values.
 // ---------------------------------------------------------------------------
 template< typename T >
 class has_sign
