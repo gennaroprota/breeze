@@ -107,11 +107,11 @@ public:
 //!
 //!         - when you want to invoke a member function on the "real"
 //!           object:
-//!           ```
+//!           \code
 //!               maybe< std::string > my_function() ;
 //!               my_function().size() ;        // error
 //!               my_function().value().size()  // OK
-//!           ```
+//!           \endcode
 //!
 //!           (but, of course, the latter is stylistically rare: one
 //!           would usually assign the function return value first)
