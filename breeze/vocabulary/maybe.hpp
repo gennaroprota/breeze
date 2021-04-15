@@ -391,7 +391,6 @@ private:
     alignas( T ) unsigned char
                         m_storage[ sizeof( T ) ] ;
     status_type         m_status ;
-
 } ;
 
 }
