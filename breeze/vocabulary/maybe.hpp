@@ -109,8 +109,8 @@ public:
 //!           object:
 //!           \code
 //!               maybe< std::string > my_function() ;
-//!               my_function().size() ;        // error
-//!               my_function().value().size()  // OK
+//!               my_function().size() ;         // error
+//!               my_function().value().size() ; // OK
 //!           \endcode
 //!
 //!           (but, of course, the latter is stylistically rare: one
