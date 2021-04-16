@@ -48,15 +48,17 @@
 #
 #       -Wstrict-overflow [not used]
 #
-#           we used -Wstrict-overflow=5 for a while, and we didn't notice any
-#           problem because we weren't doing optimized builds; when we did, we
-#           got a warning in set_of_chars::iterator::increment() until we
-#           switched to -Wstrict-overflow=2, and another one in
-#           binary_to_base64() until we switched to -Wstrict-overflow=1. But
-#           -Wstrict-overflow=1 is enabled by -Wall, so we just dropped the
-#           option.
+#           we used -Wstrict-overflow=5 for a while, and we didn't
+#           notice any problem because we weren't doing optimized
+#           builds; when we did, we got a warning in
+#           set_of_chars::iterator::increment() until we switched to
+#           -Wstrict-overflow=2, and another one in binary_to_base64()
+#           until we switched to -Wstrict-overflow=1. But
+#           -Wstrict-overflow=1 is enabled by -Wall, so we just dropped
+#           the option.
 #
-#           I couldn't see a way to avoid the warnings by massaging the code.
+#           I couldn't see a way to avoid the warnings by massaging the
+#           code.
 #
 #           (Problems encountered with GCC 7.4.0 and -O3.)
 #
