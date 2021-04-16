@@ -73,19 +73,24 @@ class endian_codec
     enum { shift_amount = width< Byte >::value } ;
 
 public:
+//      Spurious warning from MSVC:
+//
+//          "warning C4293: '>>': shift count negative or too big".
+// ---------------------------------------------------------------------------
+#   pragma warning( push )
+#   pragma warning( disable: 4293 )
     template< typename RandomIter >
     static void         encode( T value, RandomIter dest )
     {
         dest[ EndianPolicy::template index< T, Byte >( n - 1 )
             ] = static_cast< Byte >( value ) ;
-        T const         next_value = static_cast< T >(
-            // The `static_cast` and `* (n > 1)` silence spurious warnings
-            n > 1 ? ( value >> shift_amount * (n > 1) ) : 0
-            ) ;
+        T const         next_value =
+            n > 1 ? ( value >> shift_amount ) : 0 ;
         next::encode(
             next_value
             , dest ) ;
     }
+#   pragma warning( pop )
 
     template< typename RandomIter >
     static T            decode( RandomIter source )

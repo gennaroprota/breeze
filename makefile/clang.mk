@@ -33,16 +33,6 @@
 #           versions we support, we also use
 #           -Wno-unknown-warning-option.
 #
-#       -Wno-unneeded-member-function:
-#
-#           Silences warnings in the bit_cast() noexcept-ness tests
-#           which are difficult to avoid by changing the code.
-#
-#       -Wno-unused-member-function:
-#
-#           Silences a warning in the implementation of last_api_error
-#           for Unix (see the corresponding source file for details).
-#
 #       -Wno-weak-vtables:
 #
 #           The -Wweak-vtables warning tries to point out possible
@@ -91,8 +81,7 @@ cpp_basic_options += -pipe                              \
                      -Wno-anon-enum-enum-conversion     \
                      -Wno-padded                        \
                      -Wno-sign-conversion               \
-                     -Wno-unneeded-member-function      \
-                     -Wno-unused-member-function        \
+                     -Wno-unknown-pragmas               \
                      -Wno-weak-vtables                  \
                      -Wno-zero-as-null-pointer-constant \
                      -Wno-reserved-id-macro

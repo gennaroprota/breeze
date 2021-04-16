@@ -110,6 +110,8 @@ cpp_basic_options := /std:c++14                 \
 
 cpp_basic_options += /nologo
 
+cpp_basic_options += /wd4068        # unknown pragma (see gcc.mk for the why)
+
 #       Enable /Wall, except for a handful of warnings (some of which
 #       arise in the standard headers). For a synopsis, see:
 #

@@ -38,6 +38,14 @@
 #           our format_time() facility relies on passing a non-literal
 #           to std::strftime().
 #
+#       -Wno-unknown-pragmas:
+#
+#           we use pragmas to disable specific warnings in small
+#           sections of code, rather than turning the warning off
+#           globally; and, of course, if, for instance, you add a pragma
+#           to turn off a warning with MSVC, you don't want GCC to
+#           complain about the pragma itself.
+#
 #       -Wstrict-overflow [not used]
 #
 #           we used -Wstrict-overflow=5 for a while, and we didn't notice any
@@ -167,7 +175,8 @@ cpp_basic_options += -flto-odr-type-merging          \
                      -Wunused-macros                 \
                      -Wzero-as-null-pointer-constant
 
-cpp_basic_options += -Wno-format-nonliteral
+cpp_basic_options += -Wno-format-nonliteral          \
+                     -Wno-unknown-pragmas
 
 #       See:
 #

@@ -45,12 +45,6 @@ char const          empty_error_description[] =
 //      or with Clang 5.0.1 on Cygwin64, that requires undefining
 //      _GNU_SOURCE, which breaks libstdc++ on Ubuntu 16.04, so it is a
 //      no-no.)
-//
-//      Finally, note that, of course, on each system, only one of the
-//      two set_message() members of this class will be used. And this
-//      causes a -Wunused-member-function warning from Clang. The choice
-//      here was between disabling the warning and defining this class
-//      outside of an unnamed namespace: we chose the former.
 // ---------------------------------------------------------------------------
 class strerror_message
 {
@@ -60,6 +54,15 @@ public:
         set_message( strerror_r( error_code, m_buffer, max_length ) ) ;
         * ( breeze::end( m_buffer ) - 1 ) = '\0' ;
     }
+
+    //      Of course, on each system, only one of the two set_message()
+    //      members of this class will be used. And this causes a
+    //      -Wunused-member-function warning from Clang. Hence, the
+    //      `#pragma`s.
+    // -----------------------------------------------------------------------
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wunused-member-function"
+    // -----------------------------------------------------------------------
 
     void                set_message( int posix_return_value )
     {
@@ -84,6 +87,7 @@ public:
                         : cant_obtain_description
                         ;
     }
+#   pragma clang diagnostic pop
 
     char const *        message() const
     {

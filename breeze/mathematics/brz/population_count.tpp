@@ -62,36 +62,19 @@ population_count( T t ) noexcept
     while ( t != 0 ) {
         count += count_table[ t & ( ( 1u << table_width ) - 1 ) ] ;
 
-        //      The following statement is a mess because of problems
-        //      with Clang, GCC and MSVC when T is unsigned char.
-        //
-        //      It all started as:
-        //
-        //        t >>= table_width ;
-        //
-        //      but that caused a -Wshift-count-overflow warning from
-        //      Clang, which seems to ignore the fact that t is
-        //      promoted.
-        //
-        //      (Problem encountered with Clang 5.0.1.)
-        //
-        //      So, we switched to:
-        //
-        //        t = t >> table_width ;
-        //
-        //      but that yields a -Wconversion warning with GCC, because
-        //      the right hand side is an int. Hence the static_cast.
-        //
-        //      (Problem encountered with GCC 7.4.0.)
-        //
-        //      But, then, MSVC 2017 complains (just like Clang did with
-        //      the first version) that the shift amount is too large.
-        //      So, we "force" a promotion, so to speak, with the unary
-        //      plus.
-        //
-        //      (Problem encountered with MSVC 19.14.26433.)
-        // -------------------------------------------------------------------
-        t = static_cast< T >( + t >> table_width ) ;
+    //      Clang gives a -Wshift-count-overflow warning on this when
+    //      `T` is `unsigned char`, apparently ignoring the fact that
+    //      `t` is promoted.
+    //
+    //      (Problem encountered with Clang 5.0.1.)
+    // -----------------------------------------------------------------------
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wshift-count-overflow"
+    // -----------------------------------------------------------------------
+
+        t >>= table_width ;
+
+#   pragma clang diagnostic pop
     }
     return count ;
 }

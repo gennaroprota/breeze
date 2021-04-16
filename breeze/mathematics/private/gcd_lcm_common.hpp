@@ -14,38 +14,29 @@
 #define BREEZE_GUARD_ywAsFEinN5XbOP8UpDuYwWj4b3LAnVX2
 
 #include "breeze/top_level_namespace.hpp"
-#include "breeze/meta/has_sign.hpp"
-#include <type_traits>
 
 namespace breeze_ns {
 namespace gcd_lcm_private {
 
 //      We use this because std::abs() is not required to be constexpr.
 //
-//      Note that the obvious implementation yields a C4146 from MSVC
-//      2017 when T is unsigned (unary minus applied to unsigned), so we
-//      take action and split the two cases...
+//      This implementation yields a C4146 from MSVC 2017 when T is
+//      unsigned (unary minus applied to unsigned), so we disable that
+//      warning locally...
+// ---------------------------------------------------------------------------
+#   pragma warning( push )
+#   pragma warning( disable: 4146 )
 // ---------------------------------------------------------------------------
 template< typename T >
-constexpr std::enable_if_t<
-    has_sign< T >::value,
-    T >
+constexpr T
 absolute_value( T x )
 {
     return x < 0
-               ? static_cast< T >( -x )
-               : x
-               ;
+        ? - x
+        : x
+        ;
 }
-
-template< typename T >
-constexpr std::enable_if_t<
-    ! has_sign< T >::value,
-    T >
-absolute_value( T x )
-{
-    return x ;
-}
+#   pragma warning( pop )
 
 }
 }
