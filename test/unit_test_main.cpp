@@ -17,6 +17,7 @@
 #include "breeze/environment/operating_system_name.hpp"
 #include "breeze/memory/get_amount_of_physical_memory.hpp"
 #include "breeze/process/exit_code.hpp"
+#include "breeze/process/program.hpp"
 #include "breeze/testing/assert_failure.hpp"
 #include "breeze/text/replace_all.hpp"
 #include "breeze/time/format_time.hpp"
@@ -181,9 +182,15 @@ main()
     std::cout << "Process times:" << std::endl ;
     std::cout << process_time     << std::endl ;
 
+    int const           exit_code = breeze::program::instance().exit_code() ;
+    if ( exit_code != 0 ) {
+        std::cout << "NOTE: program::exit_code() was set to "
+            << exit_code << std::endl ;
+    }
+
     std::cout << std::endl ;
 
-    return failure_count == 0
+    return failure_count == 0 && exit_code == 0
         ? breeze::exit_success
         : breeze::exit_error
         ;
