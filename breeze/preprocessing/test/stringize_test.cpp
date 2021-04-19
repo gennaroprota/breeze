@@ -28,8 +28,8 @@ do_tests()
     BREEZE_CHECK( std::strcmp( BREEZE_STRINGIZE( FOO2 ), "FOO2" )  == 0 ) ;
     BREEZE_CHECK( std::strcmp( BREEZE_STRINGIZE( "FOO2" ), "\"FOO2\"" ) == 0 ) ;
 
-    BREEZE_CHECK( std::strcmp( BREEZE_STRINGIZE( multiple tokens ),
-                                                "multiple tokens") == 0 ) ;
+    BREEZE_CHECK( std::strcmp( BREEZE_STRINGIZE( multiple    tokens ),
+                                                "multiple tokens" ) == 0 ) ;
 
     //      Make a dummy use of the FOO2 macro, to avoid a
     //      -Wunused-macros warning from GCC.
