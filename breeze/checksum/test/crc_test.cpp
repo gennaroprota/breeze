@@ -28,7 +28,8 @@ namespace {
 //      output t as a number, not as a character.
 // ---------------------------------------------------------------------------
 template< typename T >
-auto as_number( T t ) -> decltype( + t )
+auto
+as_number( T t ) -> decltype( + t )
 {
     return t ;
 }
