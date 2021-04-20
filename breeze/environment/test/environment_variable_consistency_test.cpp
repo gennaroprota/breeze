@@ -31,7 +31,7 @@ check_consistency()
 
     for ( auto const & from_map : map )
     {
-        breeze::maybe< std::string> const
+        breeze::maybe< std::string > const
                             from_get_single = breeze::get_environment_variable(
                                                   from_map.first ) ;
 
