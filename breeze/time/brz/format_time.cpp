@@ -48,9 +48,9 @@ format_time( std::string const & format, time_kind kind, std::time_t time_stamp 
 
     if ( time_stamp != static_cast< time_t >( -1 ) ) { // gps
         tm                  broken_down ;
-        tm const * const    p( kind == time_kind::utc
+        tm const * const    p = kind == time_kind::utc
                 ? thread_safe_reentrant_gmtime(    &time_stamp, &broken_down )
-                : thread_safe_reentrant_localtime( &time_stamp, &broken_down ) )
+                : thread_safe_reentrant_localtime( &time_stamp, &broken_down )
                         ;
         if ( p != nullptr ) {
             int const           max_size = 256 ;

@@ -24,7 +24,7 @@ get_environment_variable( std::string const & name )
     typedef maybe< std::string >
                         maybe_type ;
 
-    char const * const  p( std::getenv( name.c_str() ) ) ;
+    char const * const  p = std::getenv( name.c_str() ) ;
 
     return p == nullptr
         ? maybe_type()
