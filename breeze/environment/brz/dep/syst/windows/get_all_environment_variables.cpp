@@ -53,7 +53,7 @@ get_all_environment_variables()
             std::size_t const   pos = single.find( '=' ) ;
             std::string const   name = single.substr( 0, pos ) ;
 
-            //      On my system the string pointed to by start begins
+            //      On my system, the string pointed to by start begins
             //      with "=::=::\", hence the test on empty(). Note that
             //      this makes things consistent, because
             //      get_environment_variable( "" ) fails (at least in my
