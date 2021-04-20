@@ -49,11 +49,6 @@ namespace breeze_ns {
 //!     \return
 //!         The value associated to the given `name`, or an invalid
 //!         `maybe` if there is none.
-//!
-//!     \note
-//!         The behavior on passing an empty string for the `name`
-//!         parameter is implementation-defined: please check the
-//!         documentation provided with your C++ implementation.
 // ---------------------------------------------------------------------------
 maybe< std::string >
                     get_environment_variable( std::string const & name ) ;
