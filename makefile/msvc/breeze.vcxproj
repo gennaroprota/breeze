@@ -270,6 +270,7 @@
     <None Include="..\..\breeze\checksum\brz\crc.tpp" />
     <None Include="..\..\breeze\checksum\brz\crc_io.tpp" />
     <None Include="..\..\breeze\conversion\brz\bit_cast.tpp" />
+    <None Include="..\..\breeze\conversion\brz\checked_cast.tpp" />
     <None Include="..\..\breeze\counting\brz\counter.tpp" />
     <None Include="..\..\breeze\cryptography\brz\digest.tpp" />
     <None Include="..\..\breeze\cryptography\brz\merkle_damgard_machine.tpp" />
@@ -306,6 +307,7 @@
     <ClInclude Include="..\..\breeze\checksum\crc.hpp" />
     <ClInclude Include="..\..\breeze\checksum\luhn.hpp" />
     <ClInclude Include="..\..\breeze\conversion\bit_cast.hpp" />
+    <ClInclude Include="..\..\breeze\conversion\checked_cast.hpp" />
     <ClInclude Include="..\..\breeze\conversion\roman.hpp" />
     <ClInclude Include="..\..\breeze\counting\counter.hpp" />
     <ClInclude Include="..\..\breeze\counting\signed_count.hpp" />

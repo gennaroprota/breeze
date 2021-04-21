@@ -226,6 +226,7 @@
     <None Include="..\..\breeze\checksum\brz\crc_io.tpp" />
     <None Include="..\..\breeze\text\brz\split.tpp" />
     <None Include="breeze.ruleset" />
+    <None Include="..\..\breeze\conversion\brz\checked_cast.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breeze\benchmarking\bench_harness.hpp">
@@ -574,6 +575,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\time\process_timer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breeze\conversion\checked_cast.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
