@@ -79,6 +79,10 @@ public:
 // ---------------------------------------------------------------------------
 #   pragma warning( push )
 #   pragma warning( disable: 4293 )
+
+#   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wconversion"
+
     template< typename RandomIter >
     static void         encode( T value, RandomIter dest )
     {
@@ -90,6 +94,8 @@ public:
             next_value
             , dest ) ;
     }
+
+#   pragma GCC diagnostic pop
 #   pragma warning( pop )
 
     template< typename RandomIter >

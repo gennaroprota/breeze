@@ -67,13 +67,21 @@ population_count( T t ) noexcept
     //      `t` is promoted.
     //
     //      (Problem encountered with Clang 5.0.1.)
+    //
+    //      GCC, instead, complains about a conversion from `int` to
+    //      `unsigned char` :-(
+    //
+    //      (Problem encountered with GCC 9.3.0.)
     // -----------------------------------------------------------------------
 #   pragma clang diagnostic push
 #   pragma clang diagnostic ignored "-Wshift-count-overflow"
-    // -----------------------------------------------------------------------
 
+#   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wconversion"
+    // -----------------------------------------------------------------------
         t >>= table_width ;
 
+#   pragma GCC diagnostic pop
 #   pragma clang diagnostic pop
     }
     return count ;
