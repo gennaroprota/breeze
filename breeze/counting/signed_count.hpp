@@ -28,9 +28,7 @@
 #define BREEZE_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
 
 #include "breeze/top_level_namespace.hpp"
-#include "breeze/diagnostics/assert.hpp"
-#include "breeze/preprocessing/prevent_macro_expansion.hpp"
-#include <limits>
+#include "breeze/conversion/checked_cast.hpp"
 
 namespace breeze_ns {
 
@@ -65,14 +63,7 @@ template< typename T >
 constexpr long long
 signed_count( T const & t )
 {
-    typedef long long   return_type ;
-
-    unsigned long long const
-                        max = std::numeric_limits< return_type >::max
-                                BREEZE_PREVENT_MACRO_EXPANSION () ;
-
-    BREEZE_ASSERT( t.size() <= max ) ;
-    return static_cast< return_type >( t.size() ) ;
+    return breeze::checked_cast< long long >( t.size() ) ;
 }
 
 }
