@@ -68,9 +68,21 @@ int
 program::exit_code()
 {
     std::cout.flush() ;
-    if ( std::cout.fail() ) {
+
+    //  TODO:
+    //  -----
+    //
+    //      Since declare_error( fatal ) will call terminate(), which
+    //      will call us again, we prevent an infinite recursion, here,
+    //      with the condition `m_max_gravity < fatal`. This means,
+    //      however, that a) we may still flush twice (that's inelegant
+    //      but harmless); b) if we have both a fatal error not due to
+    //      the flush *and* a flush error, we'll not print "I/O error on
+    //      standard output".
+    // -----------------------------------------------------------------------
+    if ( m_max_gravity < program::fatal && std::cout.fail() ) {
         std::cerr << "I/O error on standard output" << std::endl ;
-        declare_error( program::error ) ;
+        declare_error( program::fatal ) ;
     }
 
     return exit_codes[ m_max_gravity ] ;
