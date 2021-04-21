@@ -41,7 +41,6 @@
 #define BREEZE_GUARD_Ve2uzZNiUDgCTZXgV1iB3bUD5U0n1kKD
 
 #include "breeze/top_level_namespace.hpp"
-#include <cstddef>
 
 namespace breeze_ns {
 
