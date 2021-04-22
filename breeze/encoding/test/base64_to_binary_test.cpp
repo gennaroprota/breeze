@@ -110,7 +110,6 @@ check_invalid()
                          breeze::base64_to_binary( invalid3.cbegin(),
                                                    invalid3.cend(),
                                                  std::back_inserter( out ) ) ) ;
-
 }
 
 }
