@@ -57,11 +57,8 @@ signed_count( T const ( & )[ n ] ) noexcept
 //
 //!     \copydoc signed_count.hpp
 //!
-//!     \pre
-//!         t.size() <= LLONG_MAX
-//!
 //!     \return
-//!         The value of `t.size()` converted to `long long`.
+//!         breeze::checked_cast< long long >( t.size() ).
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr long long
