@@ -47,7 +47,7 @@ public:
     //      Declare this explicitly to avoid Visual C++ C4626 (and
     //      C5027).
     // -----------------------------------------------------------------------
-    void                operator=( test_descriptor const & ) = delete ;
+    void                operator =( test_descriptor const & ) = delete ;
 
     test_function       function() const noexcept ;
     std::string         name() const ;

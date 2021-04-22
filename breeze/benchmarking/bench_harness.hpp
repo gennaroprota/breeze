@@ -31,7 +31,7 @@ namespace breeze_ns {
 //!     of the `run()` functions to execute the test.
 //!
 //!     To create a test, the user derives from the class, implementing
-//!     the virtual function `operator()()`. During the test, this
+//!     the virtual function `operator ()()`. During the test, this
 //!     function will be invoked as many times as was specified with
 //!     `set_loop_count()`. According to which `run()` function is
 //!     called, the elapsed times will be returned, or either the total
@@ -47,8 +47,9 @@ namespace breeze_ns {
 //!     aren't actually used, and from thus optimizing away the function
 //!     completely. Supposing, of course, that each of the individual
 //!     calls stores a result in either the derived object or in a
-//!     global variable. In addition, each test run calls `operator()()`
-//!     once before starting any measurement, to preload the cache.
+//!     global variable. In addition, each test run calls
+//!     `operator ()()` once before starting any measurement, to preload
+//!     the cache.
 //!
 //!     This class supports neither copy nor assignment.
 // ---------------------------------------------------------------------------
@@ -89,7 +90,7 @@ public:
     //!\brief
     //!     Executes the benchmark and returns the results.
     //!
-    //!     Calls `operator()()` a number of times equal to <tt>1</tt>
+    //!     Calls `operator ()()` a number of times equal to <tt>1</tt>
     //!     plus the argument last passed to `set_loop_count()`. The
     //!     first call has just the purpose of preloading the cache; the
     //!     remaining calls are benchmarked.
@@ -168,7 +169,7 @@ public:
     //!     In addition to specifying the number of iterations to be
     //!     used for each call to `run()` (regardless of the object
     //!     `run()` is called on), this function calls `run()` on an
-    //!     instance of this class with an empty `operator()()`
+    //!     instance of this class with an empty `operator ()()`
     //!     function, and memorizes the time taken, in order to subtract
     //!     it from future measurements.
     //!
@@ -187,8 +188,8 @@ protected:
                         bench_harness() noexcept ;
 
 private:
-    //      operator()():
-    //      -------------
+    //      operator ()():
+    //      --------------
     //
     //!\brief
     //!     The operation to be measured.
@@ -198,7 +199,7 @@ private:
     //!     default version, here, does absolutely nothing, and is only
     //!     used for calibration purposes.
     // -----------------------------------------------------------------------
-    virtual void        operator()() ;
+    virtual void        operator ()() ;
 
 private:
     using               duration_type = process_duration::duration_type ;

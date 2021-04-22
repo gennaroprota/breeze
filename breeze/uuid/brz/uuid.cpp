@@ -164,7 +164,7 @@ uuid::is_equal( uuid const & other ) const noexcept
 }
 
 bool
-uuid::less::operator()( uuid const & u1, uuid const & u2 ) const noexcept
+uuid::less::operator ()( uuid const & u1, uuid const & u2 ) const noexcept
 {
     return std::lexicographical_compare( breeze::cbegin( u1.m_octets ),
                                          breeze::cend(   u1.m_octets ),

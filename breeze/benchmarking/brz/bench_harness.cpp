@@ -48,7 +48,7 @@ bench_harness::bench_harness() noexcept = default ;
 bench_harness::~bench_harness() noexcept = default ;
 
 void
-bench_harness::operator()()
+bench_harness::operator ()()
 {
 }
 

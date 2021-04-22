@@ -94,8 +94,8 @@ public:
     class               less
     {
     public:
-        bool                operator()( digest< Hasher > const & d1,
-                                        digest< Hasher > const & d2 ) const ;
+        bool                operator ()( digest< Hasher > const & d1,
+                                         digest< Hasher > const & d2 ) const ;
     } ;
 
 private:

@@ -89,7 +89,7 @@ public:
     constexpr           crc_cache() noexcept ;
 
     constexpr value_type
-                        operator[]( int index ) const noexcept ;
+                        operator []( int index ) const noexcept ;
 
 private:
     value_type          m_data[ size ] ;
@@ -132,7 +132,7 @@ constexpr crc_cache< CrcTraits >::crc_cache() noexcept
 
 template< typename CrcTraits >
 constexpr typename crc_cache< CrcTraits >::value_type
-crc_cache< CrcTraits >::operator[]( int index ) const noexcept
+crc_cache< CrcTraits >::operator []( int index ) const noexcept
 {
     return m_data[ index ] ;
 }

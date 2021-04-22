@@ -53,8 +53,8 @@ digest< Hasher >::end() const
 
 template< typename Hasher >
 bool
-digest< Hasher >::less::operator()( digest< Hasher > const & d1,
-                                    digest< Hasher > const & d2 ) const
+digest< Hasher >::less::operator ()( digest< Hasher > const & d1,
+                                     digest< Hasher > const & d2 ) const
 {
     return std::lexicographical_compare( d1.begin(), d1.end(),
                                          d2.begin(), d2.end() ) ;

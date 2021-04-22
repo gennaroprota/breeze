@@ -77,7 +77,7 @@ class               digest ;
 //!
 //!     ```
 //!         hasher &
-//!         operator()( hasher & h, hasher::byte_type c )
+//!         operator ()( hasher & h, hasher::byte_type c )
 //!         {
 //!             h.append( c ) ;
 //!             return h ;

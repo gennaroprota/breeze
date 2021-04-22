@@ -87,8 +87,8 @@ public:
     class               less
     {
     public:
-        bool                operator()( uuid const & u1,
-                                        uuid const & u2 ) const noexcept ;
+        bool                operator ()( uuid const & u1,
+                                         uuid const & u2 ) const noexcept ;
     } ;
 
 private:
