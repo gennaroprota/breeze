@@ -20,6 +20,7 @@
 #include "breeze/meta/has_sign.hpp"
 #include "breeze/meta/width.hpp"
 #include <cstddef>
+#include <cstdint>
 #include <iterator>
 
 namespace breeze_ns {
@@ -45,12 +46,14 @@ template< typename T, typename Byte >
 std::ptrdiff_t const
 required_count< T, Byte >::value ;
 
-template< typename T, std::ptrdiff_t n >
+template< typename T, std::size_t n >
 class required_count< T[ n ], T >
 {
+    static_assert( n <= PTRDIFF_MAX, "" ) ;
+
 public:
     static std::ptrdiff_t const
-                        value = n ;
+                        value = static_cast< std::ptrdiff_t >( n ) ;
 } ;
 
 template<

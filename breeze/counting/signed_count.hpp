@@ -29,6 +29,8 @@
 
 #include "breeze/top_level_namespace.hpp"
 #include "breeze/conversion/checked_cast.hpp"
+#include <climits>
+#include <cstddef>
 
 namespace breeze_ns {
 
@@ -39,13 +41,15 @@ namespace breeze_ns {
 //!
 //!     \return
 //!         The number of elements of the array argument (obviously,
-//!         `n`).
+//!         `n`), cast to `long long`. The program is ill-formed if `n >
+//!          LLONG_MAX`.
 // ---------------------------------------------------------------------------
-template< typename T, long long n >
+template< typename T, std::size_t n >
 constexpr long long
 signed_count( T const ( & )[ n ] ) noexcept
 {
-    return n ;
+    static_assert( n <= LLONG_MAX, "" ) ;
+    return static_cast< long long >( n ) ;
 }
 
 //      signed_count():
