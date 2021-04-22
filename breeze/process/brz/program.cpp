@@ -38,16 +38,6 @@ int const           exit_codes[] = {
     breeze::exit_internal
 } ;
 
-
-//      Because it is implementation-defined whether exit() has C
-//      linkage or C++ linkage.
-// ---------------------------------------------------------------------------
-[[ noreturn ]] void
-cpp_exit( int exit_code )
-{
-    std::exit( exit_code ) ;
-}
-
 bool
 has_program_name( int argc, char const * const * argv )
 {
@@ -154,9 +144,12 @@ program::declare_error( program::gravity g ) // gps nome OK?
 [[ noreturn ]] void
 program::terminate()
 {
-    ( m_terminate_handler != nullptr
-      ? *m_terminate_handler
-      : cpp_exit )( exit_code() ) ;
+    int const           code = exit_code() ;
+    if ( m_terminate_handler != nullptr ) {
+        ( *m_terminate_handler )( code ) ;
+    } else {
+        std::exit( code ) ;
+    }
 
     std::abort() ;
 }
