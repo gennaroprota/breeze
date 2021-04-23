@@ -81,11 +81,11 @@ uuids_are_distinct()
                                     breeze::uuid::time_based ) ; } ) ;
 
     std::sort( uuids.begin(), uuids.end(), breeze::uuid::less() ) ;
+    std::array< breeze::uuid, count >::const_iterator const
+                        it = std::adjacent_find( uuids.cbegin(), uuids.cend() ) ;
 
     //      Outputting directly from here is all but elegant... (TODO?)
     // -----------------------------------------------------------------------
-    std::array< breeze::uuid, count >::const_iterator const
-                        it = std::adjacent_find( uuids.cbegin(), uuids.cend() ) ;
     if ( it != uuids.cend() ) {
         std::cerr << "    Duplicated uuid's: " << std::endl ;
         std::cerr << "    " << *it             << std::endl ;
