@@ -70,9 +70,12 @@ public:
     //!     in a shell script); in the worst case, all you get is
     //!     `EXIT_SUCCESS` or `EXIT_FAILURE`.
     //!
-    //!     <strong>Important</strong>: this function also attempts to
-    //!     flush `std::cout`, and calls `declare_error( fatal )` if the
-    //!     flush fails (for this reason, it is not const).
+    //!     <strong>Important</strong>: before anything else, this
+    //!     function calls `std::cout.flush()`; then, if `std::cout` is
+    //!     in a failed or bad state (because the flush failed or
+    //!     because it already was in that state before the (failed)
+    //!     flush attempt), calls `declare_error( fatal )` (for this
+    //!     reason, it is not const).
     // -----------------------------------------------------------------------
     int                 exit_code() ;
 
