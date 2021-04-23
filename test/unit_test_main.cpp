@@ -169,8 +169,6 @@ main()
     std::cout << "\nLast API error: " <<
         breeze::last_api_error( "Unit tests" ) << std::endl ;
 
-    //      ... for the start and finish time...
-    // -----------------------------------------------------------------------
     std::cout << '\n' ;
     std::cout << "Started at:  " << describe_time( start_time ) << std::endl ;
     std::cout << "Finished at: " << describe_time(   end_time ) << std::endl ;
