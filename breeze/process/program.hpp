@@ -63,31 +63,6 @@ public:
     // -----------------------------------------------------------------------
     static program &    instance() noexcept ;
 
-    //      exit_code():
-    //      ------------
-    //
-    //!     \return
-    //!         An integer to be passed to `std::exit()` or returned
-    //!         from `main()`. This corresponds to the most severe error
-    //!         reported by client code to the `program` class through
-    //!         the `declare_error()` member function.
-    //!
-    //!     If possible, the various gravities will be distinguished in
-    //!     the exit code, but e.g. `warning` will be undistinguishable
-    //!     from a success with no warnings on Windows and Unix (because
-    //!     treating a distinct value as success would be too difficult
-    //!     in a shell script); in the worst case, all you get is
-    //!     `EXIT_SUCCESS` or `EXIT_FAILURE`.
-    //!
-    //!     <strong>Important</strong>: before anything else, this
-    //!     function calls `std::cout.flush()`; then, if `std::cout` is
-    //!     in a failed or bad state (because the flush failed or
-    //!     because it already was in that state before the (failed)
-    //!     flush attempt), calls `declare_error( fatal )` (for this
-    //!     reason, it is not const).
-    // -----------------------------------------------------------------------
-    int                 exit_code() ;
-
     //      set_name():
     //      -----------
     //
@@ -163,6 +138,31 @@ public:
     //!     `internal`).
     // -----------------------------------------------------------------------
     void                declare_error( gravity g ) ;
+
+    //      exit_code():
+    //      ------------
+    //
+    //!     \return
+    //!         An integer to be passed to `std::exit()` or returned
+    //!         from `main()`. This corresponds to the most severe error
+    //!         reported by client code to the `program` class through
+    //!         the `declare_error()` member function.
+    //!
+    //!     If possible, the various gravities will be distinguished in
+    //!     the exit code, but e.g. `warning` will be undistinguishable
+    //!     from a success with no warnings on Windows and Unix (because
+    //!     treating a distinct value as success would be too difficult
+    //!     in a shell script); in the worst case, all you get is
+    //!     `EXIT_SUCCESS` or `EXIT_FAILURE`.
+    //!
+    //!     <strong>Important</strong>: before anything else, this
+    //!     function calls `std::cout.flush()`; then, if `std::cout` is
+    //!     in a failed or bad state (because the flush failed or
+    //!     because it already was in that state before the (failed)
+    //!     flush attempt), calls `declare_error( fatal )` (for this
+    //!     reason, it is not const).
+    // -----------------------------------------------------------------------
+    int                 exit_code() ;
 
     //      terminate():
     //      ------------
