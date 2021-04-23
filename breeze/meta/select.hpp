@@ -20,52 +20,37 @@
 
 namespace breeze_ns {
 
-//!\brief
-//!     Like `select`, but with the condition represented as a `bool`
-//!     value, not a type.
+//!     \copybrief select.hpp
 // ---------------------------------------------------------------------------
 template< bool condition, typename T, typename U >
-class select_
+class select
 {
 public:
     //!     A typedef for the type `T`.
     // -----------------------------------------------------------------------
     typedef T           type ;
 
-    //!     A typedef for `select_< ! condition, T, U >`.
+    //!     A typedef for `select< ! condition, T, U >`.
     // -----------------------------------------------------------------------
-    typedef select_< ! condition, T, U >
+    typedef select< ! condition, T, U >
                         opposite ;
 } ;
 
 //!\cond implementation
 //!
 template< typename T, typename U >
-class select_< false, T, U >
+class select< false, T, U >
 {
 public:
     //!     A typedef for the type `U`.
     // -----------------------------------------------------------------------
     typedef U           type ;
 
-    //!     A typedef for `select_< true, T, U >`.
-    typedef select_< true, T, U >
+    //!     A typedef for `select< true, T, U >`.
+    typedef select< true, T, U >
                         opposite ;
 } ;
 //!\endcond
-
-
-//!     \copybrief select.hpp
-// ---------------------------------------------------------------------------
-template< typename Cond, typename T, typename U >
-class select
-{
-public:
-    //!     The result of the metafunction.
-    // -----------------------------------------------------------------------
-    typedef typename select_< Cond::value, T, U >::type
-                        type ;
-} ;
 
 }
 

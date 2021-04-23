@@ -57,10 +57,10 @@ class selector
     enum { found = breeze::width< typename candidate::type >::value == width } ;
 
 public:
-    typedef typename select_< found,
-                              candidate,
-                              selector< width, IntType, 1 + n >
-                            >::type s ;
+    typedef typename select< found,
+                             candidate,
+                             selector< width, IntType, 1 + n >
+                           >::type s ;
 
     typedef typename s::type type ;
 } ;
