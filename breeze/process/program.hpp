@@ -30,6 +30,9 @@ namespace breeze_ns {
 class program
 {
 public:
+    //      gravity:
+    //      --------
+    //
     //!     The gravity of an error.
     //
     //      NOTE: keep the enumeration in sync with the exit_codes[]
@@ -52,11 +55,17 @@ public:
     // -----------------------------------------------------------------------
     program &           operator =( program const & ) = delete ;
 
+    //      instance():
+    //      -----------
+    //
     //!     \return
     //!         A reference to the one and only instance of the class.
     // -----------------------------------------------------------------------
     static program &    instance() noexcept ;
 
+    //      exit_code():
+    //      ------------
+    //
     //!     \return
     //!         An integer to be passed to `std::exit()` or returned
     //!         from `main()`. This corresponds to the most severe error
@@ -79,6 +88,9 @@ public:
     // -----------------------------------------------------------------------
     int                 exit_code() ;
 
+    //      set_name():
+    //      -----------
+    //
     //!     Sets the program name from the arguments to `main()`, if
     //!     `argv[ 0 ]` points to a non-empty name (i.e. if `argc > 0 &&
     //!     argv[ 0 ][ 0 ] != '\0'`). Otherwise does nothing.
@@ -93,6 +105,9 @@ public:
     // -----------------------------------------------------------------------
     void                set_name( int argc, char const * const * argv ) ;
 
+    //      set_name():
+    //      -----------
+    //
     //!     Sets the program name from the arguments to `main()`, if
     //!     `argv[ 0 ]` points to a non-empty name; otherwise sets it
     //!     from `fallback`.
@@ -108,6 +123,9 @@ public:
     void                set_name( int argc, char const * const * argv,
                                   std::string const & fallback ) ;
 
+    //      set_name():
+    //      -----------
+    //
     //!     Sets the program name to `name`, with any leading path
     //!     stripped.
     //!
@@ -119,6 +137,9 @@ public:
     // -----------------------------------------------------------------------
     void                set_name( std::string const & name ) ;
 
+    //      name():
+    //      -------
+    //
     //!     \return
     //!         The program name set by `set_name()`. An invalid `maybe`
     //!         if the name was never set.
@@ -126,6 +147,9 @@ public:
     maybe< std::string >
                         name() const ;
 
+    //      declare_error():
+    //      ----------------
+    //
     //!     Declares a program error.
     //!
     //!     \param g
@@ -140,6 +164,9 @@ public:
     // -----------------------------------------------------------------------
     void                declare_error( gravity g ) ;
 
+    //      terminate():
+    //      ------------
+    //
     //!     Triggers the termination of the program with the exit code
     //!     which corresponds to the maximum value seen until now. This
     //!     function calls the function specified by
@@ -148,6 +175,9 @@ public:
     // -----------------------------------------------------------------------
     [[ noreturn ]] void terminate() ;
 
+    //      set_terminate_handler():
+    //      ------------------------
+    //
     //!     Sets `*user_function` as the "terminate handler", i.e. as
     //!     the function which is called, with the exit code as an
     //!     argument, if there is a fatal error or if the user calls
