@@ -31,6 +31,9 @@ representation_in_base( T n, int base )
     typedef typename std::make_unsigned< T >::type
                         unsigned_type ;
 
+    BREEZE_ASSERT( 2 <= base && base <= max_base ) ;
+
+    std::string         result ;
     unsigned_type       abs =
         n < 0
         ? breeze::is_2s_complement< T >() &&
@@ -39,10 +42,6 @@ representation_in_base( T n, int base )
                 : - n
         : n
         ;
-
-    BREEZE_ASSERT( 2 <= base && base <= max_base ) ;
-
-    std::string         result ;
 
     do {
         result.push_back( digits[ abs % base ] ) ;
