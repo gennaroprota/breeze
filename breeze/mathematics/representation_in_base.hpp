@@ -24,11 +24,10 @@ namespace breeze_ns {
 //!     \pre
 //!         base >= 2 && base <= 36
 //!
-//!         A negative value is represented as the character '-' (minus)
-//!         immediately followed by the representation of its absolute
-//!         value (in the mathematical sense: the minimum value of `T`
-//!         is handled correctly, even on a two's complement
-//!         implementation).
+//!     A negative value is represented as the character '-' (minus)
+//!     immediately followed by the representation of its absolute value
+//!     (in the mathematical sense: the minimum value of `T` is handled
+//!     correctly, even on a two's complement implementation).
 // ---------------------------------------------------------------------------
 template< typename T >
 std::string
