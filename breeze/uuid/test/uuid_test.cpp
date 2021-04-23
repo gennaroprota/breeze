@@ -86,14 +86,14 @@ uuids_are_distinct()
     //      Outputting directly from here is all but elegant... (TODO?)
     // -----------------------------------------------------------------------
     std::vector< breeze::uuid >::const_iterator const
-                        it = std::adjacent_find( uuids.begin(), uuids.end() ) ;
-    if ( it != uuids.end() ) {
+                        it = std::adjacent_find( uuids.cbegin(), uuids.cend() ) ;
+    if ( it != uuids.cend() ) {
         std::cerr << "    Duplicated uuid's: " << std::endl ;
         std::cerr << "    " << *it             << std::endl ;
         std::cerr << "    " << *( it + 1 )     << std::endl ;
     }
 
-    BREEZE_CHECK( it == uuids.end() ) ;
+    BREEZE_CHECK( it == uuids.cend() ) ;
 }
 
 }
