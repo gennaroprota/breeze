@@ -15,10 +15,10 @@
 #include "breeze/testing/testing.hpp"
 #include "breeze/text/to_string.hpp"
 #include <algorithm>
+#include <array>
 #include <iostream>
 #include <map>
 #include <string>
-#include <vector>
 
 int                 test_uuid() ;
 
@@ -74,8 +74,8 @@ void
 uuids_are_distinct()
 {
     int const           count = 1000 ;
-    std::vector< breeze::uuid >
-                        uuids( count ) ;
+    std::array< breeze::uuid, count >
+                        uuids ;
     for ( int i = 0 ; i < count ; ++ i ) {
         uuids[ i ] = breeze::uuid( breeze::uuid::rfc_4122,
                                    breeze::uuid::time_based ) ;
@@ -85,7 +85,7 @@ uuids_are_distinct()
 
     //      Outputting directly from here is all but elegant... (TODO?)
     // -----------------------------------------------------------------------
-    std::vector< breeze::uuid >::const_iterator const
+    std::array< breeze::uuid, count >::const_iterator const
                         it = std::adjacent_find( uuids.cbegin(), uuids.cend() ) ;
     if ( it != uuids.cend() ) {
         std::cerr << "    Duplicated uuid's: " << std::endl ;
