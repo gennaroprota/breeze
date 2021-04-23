@@ -76,10 +76,9 @@ uuids_are_distinct()
     int const           count = 1000 ;
     std::array< breeze::uuid, count >
                         uuids ;
-    for ( int i = 0 ; i < count ; ++ i ) {
-        uuids[ i ] = breeze::uuid( breeze::uuid::rfc_4122,
-                                   breeze::uuid::time_based ) ;
-    }
+    std::generate( uuids.begin(), uuids.end(),
+        []() { return breeze::uuid( breeze::uuid::rfc_4122,
+                                    breeze::uuid::time_based ) ; } ) ;
 
     std::sort( uuids.begin(), uuids.end(), breeze::uuid::less() ) ;
 
