@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Converts between numeric types, with range checking.
+//!     \brief Converts between integral types, with range checking.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_dSxX3rVQBYBO6sKuxmVMVnik5e6f9qec
@@ -28,16 +28,10 @@ namespace breeze_ns {
 //!     result of `static_cast< To >( from )`; otherwise an assertion is
 //!     triggered.
 //!
-//!     Note that the conversion may still be lossy; e.g.:
 //!
-//!     ```
-//!         checked_cast< int >( 0.1 ) ;
-//!     ```
-//!
-//!     will succeed (and return <tt>0</tt>).
-//!
-//!     `To` and `From` must be types for which `std::numeric_limits` is
-//!     specialized; otherwise the program is ill-formed.
+//!     `To` and `From` must be types for which
+//!     `std::numeric_limits::is_integral` is true; otherwise the
+//!     program is ill-formed.
 // ---------------------------------------------------------------------------
 template< typename To, typename From >
 constexpr To        checked_cast( From from ) ;
