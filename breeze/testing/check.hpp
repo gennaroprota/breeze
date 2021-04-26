@@ -13,7 +13,6 @@
 #ifndef BREEZE_GUARD_EFlfreUFA16SG5tXxNJpWtUHWTCfIjaD
 #define BREEZE_GUARD_EFlfreUFA16SG5tXxNJpWtUHWTCfIjaD
 
-#include "breeze/diagnostics/assert.hpp"
 #include "breeze/testing/test_failure.hpp"
 
 #define BREEZE_CHECK( condition )                                             \
