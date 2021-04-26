@@ -20,6 +20,9 @@
 //!     ```
 //!         breeze::begin( a ) ;
 //!         breeze::end( a ) ;
+//!
+//!         breeze::cbegin( a ) ;
+//!         breeze::cend( a ) ;
 //!     ```
 //!
 //!     regardless of whether `a` refers to a standard container or to a
