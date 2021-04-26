@@ -22,19 +22,21 @@ int                 test_get_set_current_directory() ;
 namespace {
 
 void
-check()
+can_set_the_directory_which_is_already_current()
+{
+    std::string const   cur = breeze::get_current_directory() ;
+    breeze::set_current_directory( cur ) ;
+}
+
+void
+attempting_to_set_a_non_existing_directory_throws_and_doesnt_change_dir()
 {
     std::string const   cur = breeze::get_current_directory() ;
 
-    {
-        breeze::set_current_directory( cur ) ;
-    }
-    {
-        std::string const   nonexisting = "NonExistingDirectoryName" ;
-        BREEZE_CHECK_THROWS( breeze::last_api_error,
-                             breeze::set_current_directory( nonexisting ) ) ;
-        BREEZE_CHECK( breeze::get_current_directory() == cur ) ;
-    }
+    std::string const   nonexisting = "NonExistingDirectoryName" ;
+    BREEZE_CHECK_THROWS( breeze::last_api_error,
+                         breeze::set_current_directory( nonexisting ) ) ;
+    BREEZE_CHECK( breeze::get_current_directory() == cur ) ;
 }
 
 }
@@ -44,5 +46,6 @@ test_get_set_current_directory()
 {
     return breeze::test_runner::instance().run(
         "Get/set current directory",
-        { check } ) ;
+        { can_set_the_directory_which_is_already_current,
+   attempting_to_set_a_non_existing_directory_throws_and_doesnt_change_dir } ) ;
 }
