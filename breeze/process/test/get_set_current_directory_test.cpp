@@ -24,14 +24,16 @@ namespace {
 void
 check()
 {
+    std::string const   cur = breeze::get_current_directory() ;
+
     {
-        std::string const   cur = breeze::get_current_directory() ;
         breeze::set_current_directory( cur ) ;
     }
     {
         std::string const   nonexisting = "NonExistingDirectoryName" ;
         BREEZE_CHECK_THROWS( breeze::last_api_error,
                              breeze::set_current_directory( nonexisting ) ) ;
+        BREEZE_CHECK( breeze::get_current_directory() == cur ) ;
     }
 }
 
