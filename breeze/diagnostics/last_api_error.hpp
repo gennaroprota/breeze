@@ -83,7 +83,6 @@ private:
     //      of this private constructor.
     // -----------------------------------------------------------------------
                         last_api_error( char const * p, long long error_code ) ;
-
 } ;
 
 //!\brief
