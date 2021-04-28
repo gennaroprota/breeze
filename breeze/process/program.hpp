@@ -160,7 +160,21 @@ public:
     //!     in a failed or bad state (because the flush failed or
     //!     because it already was in that state before the (failed)
     //!     flush attempt), calls `declare_error( fatal )` (for this
-    //!     reason, it is not const).
+    //!     reason, it is not const). This is somewhat of a hack, but it
+    //!     ensures that the exit code never indicates success if there
+    //!     is an I/O error on `std::cout`, which means that, for
+    //!     instance, if the usual shell idiom
+    //!
+    //!     ```
+    //!         my_program file > tmp && mv tmp file
+    //!     ```
+    //!
+    //!     is used and `std::cout` in `my_program` hits a disk full,
+    //!     `file` won't be truncated.
+    //!
+    //!     Of course, the exit code is unaffected if `std::cout` isn't
+    //!     used at all, which should be the case e.g. in a Windows GUI
+    //!     application.
     // -----------------------------------------------------------------------
     int                 exit_code() ;
 
