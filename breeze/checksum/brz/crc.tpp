@@ -176,7 +176,7 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
     // -----------------------------------------------------------------------
     if ( reflect_in ) {
         while ( first != last ) {
-            unsigned char       c = as_unsigned_char( *first ) ;
+            unsigned char const c = as_unsigned_char( *first ) ;
             value_type          new_current =
                 s_cache[ ( m_current ^ c ) & mask ] ;
             if ( can_shift ) {
@@ -188,7 +188,7 @@ crc< Traits >::accumulate( InputIter first, InputIter last )
         }
     } else {
         while ( first != last ) {
-            unsigned char       c = as_unsigned_char( *first ) ;
+            unsigned char const c = as_unsigned_char( *first ) ;
             value_type          new_current =
                 s_cache[ ( ( m_current >> ( width - char_bit ) ) ^ c )
                     & mask ] ;

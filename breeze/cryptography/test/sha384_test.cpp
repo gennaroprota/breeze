@@ -53,7 +53,8 @@ check()
     {
         //      16,777,216 repetitions of 'piece' ( [2] )
         //
-        std::ptrdiff_t      repetitions = 16'777'216 ;
+        std::ptrdiff_t const
+                            repetitions = 16'777'216 ;
         std::string const   piece =
                 "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmno" ;
         std::ptrdiff_t const

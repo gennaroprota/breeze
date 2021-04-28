@@ -69,7 +69,7 @@ binary_to_base64( InputIter begin, InputIter end,
 
         while ( accum_bit_count >= bits_per_output_char ) {
             int const       next = accum_bit_count - bits_per_output_char ;
-            auto            c = static_cast< unsigned char >( accum >> next ) ;
+            auto const      c = static_cast< unsigned char >( accum >> next ) ;
             do_output( alphabet[ c ] ) ;
             accum &= ( ( 1 << next ) - 1 ) ;
             accum_bit_count = next ;
