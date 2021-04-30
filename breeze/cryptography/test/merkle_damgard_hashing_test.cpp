@@ -21,6 +21,8 @@
 #include "breeze/testing/testing.hpp"
 #include "breeze/text/to_string.hpp"
 
+#include <iterator>
+#include <sstream>
 #include <string>
 
 int                 test_merkle_damgard_hashing() ;
@@ -220,16 +222,38 @@ void check_known_digests()
                             entry( known::entries[ i ] ) ;
         std::string const & src( entry.source ) ;
 
-        Hasher              hasher( src.cbegin(), src.cend() ) ;
+        //      Test with random access iterators.
+        // -------------------------------------------------------------------
+        {
+            Hasher              hasher( src.cbegin(), src.cend() ) ;
 
-        for ( int r = 0 ; r < entry.repetitions ; ++ r ) {
-            hasher.append( src.cbegin(), src.cend() ) ;
+            for ( int r = 0 ; r < entry.repetitions ; ++ r ) {
+                hasher.append( src.cbegin(), src.cend() ) ;
+            }
+
+            breeze::digest< Hasher > const
+                                d( hasher ) ;
+            std::string const   result = breeze::to_string( d ) ;
+            BREEZE_CHECK( result == entry.expected ) ;
         }
 
-        breeze::digest< Hasher > const
-                            d( hasher ) ;
-        std::string const   result = breeze::to_string( d ) ;
-        BREEZE_CHECK( result == entry.expected ) ;
+        //      Now test with input iterators.
+        // -------------------------------------------------------------------
+        {
+            Hasher              hasher2 ;
+
+            std::stringstream   ss ;
+            for ( int r = 0 ; r < entry.repetitions + 1 ; ++ r ) {
+                ss << src ;
+            }
+            ss.unsetf( std::ios::skipws ) ;
+
+            hasher2.append( std::istream_iterator< char >( ss ),
+                            std::istream_iterator< char >() ) ;
+            std::string const   result2 = breeze::to_string(
+                breeze::make_digest( hasher2 ) ) ;
+            BREEZE_CHECK( result2 == entry.expected ) ;
+        }
     }
 }
 
