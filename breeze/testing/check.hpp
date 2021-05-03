@@ -15,28 +15,28 @@
 
 #include "breeze/testing/test_failure.hpp"
 
-#define BREEZE_CHECK( condition )                                             \
-            do {                                                              \
-                if ( ! ( condition ) ) {                                      \
-                    throw breeze::test_failure( # condition,                  \
-                                                __FILE__, __LINE__ ) ;        \
-                }                                                             \
-            } while ( false )                                              /**/
+#define BREEZE_CHECK( condition )                                   \
+    do {                                                            \
+        if ( ! ( condition ) ) {                                    \
+            throw breeze::test_failure( # condition,                \
+                                        __FILE__, __LINE__ ) ;      \
+        }                                                           \
+    } while ( false )                                            /**/
 
 
-#define BREEZE_CHECK_THROWS( exception_type, expression )                     \
-            do {                                                              \
-                bool threw_as_expected = false ;                              \
-                bool threw_but_wrong_type = false ;                           \
-                try {                                                         \
-                    expression ;                                              \
-                } catch ( exception_type const & ) {                          \
-                    threw_as_expected = true ;                                \
-                } catch ( ... ) {                                             \
-                    threw_but_wrong_type = true ;                             \
-                }                                                             \
-                BREEZE_CHECK( ! threw_but_wrong_type ) ;                      \
-                BREEZE_CHECK( threw_as_expected ) ;                           \
-            } while ( false )                                              /**/
+#define BREEZE_CHECK_THROWS( exception_type, expression )           \
+    do {                                                            \
+        bool threw_as_expected = false ;                            \
+        bool threw_but_wrong_type = false ;                         \
+        try {                                                       \
+            expression ;                                            \
+        } catch ( exception_type const & ) {                        \
+            threw_as_expected = true ;                              \
+        } catch ( ... ) {                                           \
+            threw_but_wrong_type = true ;                           \
+        }                                                           \
+        BREEZE_CHECK( ! threw_but_wrong_type ) ;                    \
+        BREEZE_CHECK( threw_as_expected ) ;                         \
+    } while ( false )                                            /**/
 
 #endif

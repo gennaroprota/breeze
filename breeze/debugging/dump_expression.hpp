@@ -43,17 +43,17 @@
 //!     \note
 //!         The `\#include`'s are not part of the interface.
 // ---------------------------------------------------------------------------
-#define BREEZE_DUMP_EXPRESSION( expression )                                  \
-        do {                                                                  \
-            char const              expanded[] =                              \
-                             BREEZE_STRINGIZE_AFTER_EXPANSION( expression ) ; \
-            char const              unexpanded[] = # expression ;             \
-            std::ostream &          os = std::cout ;                          \
-            os << expanded << " = " << ( expression ) ;                       \
-            if ( std::strcmp( expanded, unexpanded ) != 0 ) {                 \
-                os << " [from: " << unexpanded << ']' ;                       \
-            }                                                                 \
-            os << std::endl ;                                                 \
-        } while ( false )                                                  /**/
+#define BREEZE_DUMP_EXPRESSION( expression )                                 \
+    do {                                                                     \
+        char const              expanded[] =                                 \
+                            BREEZE_STRINGIZE_AFTER_EXPANSION( expression ) ; \
+        char const              unexpanded[] = # expression ;                \
+        std::ostream &          os = std::cout ;                             \
+        os << expanded << " = " << ( expression ) ;                          \
+        if ( std::strcmp( expanded, unexpanded ) != 0 ) {                    \
+            os << " [from: " << unexpanded << ']' ;                          \
+        }                                                                    \
+        os << std::endl ;                                                    \
+    } while ( false )                                                     /**/
 
 #endif
