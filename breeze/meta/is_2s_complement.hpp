@@ -30,7 +30,8 @@ namespace breeze_ns {
 //!
 //!     \note
 //!         Starting with C++20, two's complement is the only
-//!         representation allowed by the standard.
+//!         representation allowed by the standard for signed integer
+//!         types.
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr bool      is_2s_complement() noexcept ;
