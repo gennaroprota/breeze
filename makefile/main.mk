@@ -52,7 +52,8 @@ endif
 export has_triplet
 
 define require_triplet
-    if [ $$has_triplet = "no" ] ; then                                         \
+    if [ $$has_triplet = "no" ] ;                                              \
+    then                                                                       \
         printf '%s%s\n' "Please, define 'system' and 'compiler' on the"        \
             " command line; e.g. run 'system=unix compiler=gcc make <target>'";\
         exit 2 ;                                                               \
