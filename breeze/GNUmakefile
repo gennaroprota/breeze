@@ -100,9 +100,9 @@ source_files := bench_harness.cpp                           \
                 trim_head.cpp                               \
                 trim_tail.cpp                               \
                                                             \
-                c_clock_timer.cpp                           \
+                c_clock_stopwatch.cpp                       \
                 format_time.cpp                             \
-                process_timer.cpp                           \
+                process_stopwatch.cpp                       \
                 thread_safe_reentrant_time_functions.cpp    \
                                                             \
                 uuid.cpp
@@ -113,7 +113,7 @@ ifeq ($(system),windows)
                 operating_system_id.cpp                     \
                 windows_version_info.cpp                    \
                                                             \
-                performance_counter_timer.cpp
+                performance_counter_stopwatch.cpp
 endif
 
 has_cpuid := no

@@ -11,10 +11,10 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/time/process_timer.hpp"
+#include "breeze/time/process_stopwatch.hpp"
 #include "breeze/text/to_string.hpp"
 #include "breeze/porting/dependent_source.hpp"
-#include BREEZE_DEPENDENT_SOURCE( system_family, process_timer.cpp )
+#include BREEZE_DEPENDENT_SOURCE( system_family, process_stopwatch.cpp )
 
 #include <ostream>
 #include <sstream>
@@ -54,7 +54,7 @@ operator <<( std::ostream & dest, process_duration const & t )
     return dest << t.to_string() ;
 }
 
-process_timer::process_timer( process_timer::start_mode mode )
+process_stopwatch::process_stopwatch( process_stopwatch::start_mode mode )
 {
     if ( mode == auto_start ) {
         start() ;
@@ -62,13 +62,13 @@ process_timer::process_timer( process_timer::start_mode mode )
 }
 
 void
-process_timer::start()
+process_stopwatch::start()
 {
     m_start = get_process_times() ;
 }
 
 process_duration
-process_timer::elapsed() const
+process_stopwatch::elapsed() const
 {
     process_duration    result = get_process_times() ;
     result.user   -= m_start.user ;

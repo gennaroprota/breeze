@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A policy-based timer class (class template).
+//!     \brief A policy-based stopwatch class (class template).
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_Jr0D8xlNtWxnToeomoet20V4lz0qIYDd
@@ -17,19 +17,19 @@
 
 namespace breeze_ns {
 
-//      timer:
-//      ======
+//      stopwatch:
+//      ==========
 //
-//!     \copybrief timer.hpp
+//!     \copybrief stopwatch.hpp
 //!
-//!     A policy-based timer which allows the user to retrieve the
-//!     amount of time elapsed from its start (i.e. a "stopwatch").
+//!     A policy-based stopwatch, i.e. a class template which allows
+//!     retrieving the amount of time elapsed from its start.
 //!
 //!     `Clock` is a type that satisfies the <tt>Clock</tt> requirements
-//!     (C++ standard, [time.clock.req]). This means that a `timer` can
-//!     be used e.g. with `std::system_clock`, `std::steady_clock`, or
-//!     `std::gps_clock`. In addition, we provide clocks that use the C
-//!     function `std::clock()` and, for Windows,
+//!     (C++ standard, [time.clock.req]). This means that a `stopwatch`
+//!     can be used e.g. with `std::system_clock`, `std::steady_clock`,
+//!     or `std::gps_clock`. In addition, we provide clocks that use the
+//!     C function `std::clock()` and, for Windows,
 //!     `QueryPerformanceCounter()`.
 //!
 //!     It's the user's responsibility to check that the clock is
@@ -44,11 +44,11 @@ namespace breeze_ns {
 //!            amount of time that the `Clock` can measure and doesn't,
 //!            in itself, tell anything about the \e accuracy
 //!
-//!     This function is only used in `timer::resolution()`, so if you
-//!     don't need the latter, you can omit it.
+//!     This function is only used in `stopwatch::resolution()`, so if
+//!     you don't need the latter, you can omit it.
 // ---------------------------------------------------------------------------
 template< class Clock >
-class timer
+class stopwatch
 {
 public:
     //!     A synonym of `Clock::duration`.
@@ -61,25 +61,26 @@ public:
     //!
     //!     \par Rationale
     //!
-    //!     Specifying copy semantics for a timer is a bit difficult
+    //!     Specifying copy semantics for a stopwatch is a bit difficult
     //!     and, although it can probably be done, it's not worth it, as
-    //!     who would copy a timer, anyway? (A timer will, in practice,
-    //!     always be used like a Python context.)
+    //!     who would copy a stopwatch, anyway? (A stopwatch will, in
+    //!     practice, always be used like a Python context.)
     // -----------------------------------------------------------------------
-                        timer(      timer const & ) = delete ;
+                        stopwatch(  stopwatch const & ) = delete ;
 
     //!     Deleted copy assignment operator.
     //!
     //!     See the documentation of the (deleted) copy constructor for
     //!     the rationale.
     // -----------------------------------------------------------------------
-    timer &             operator =( timer const & ) = delete ;
+    stopwatch &         operator =( stopwatch const & ) = delete ;
 
     //!     If `mode == auto_start`, calls start(); otherwise, it leaves
-    //!     the timer in an undefined state, in which the only member
-    //!     functions that can be called are start() and the destructor.
+    //!     the stopwatch in an undefined state, in which the only
+    //!     member functions that can be called are start() and the
+    //!     destructor.
     // -----------------------------------------------------------------------
-    explicit            timer( start_mode mode = auto_start ) ;
+    explicit            stopwatch( start_mode mode = auto_start ) ;
 
     //!     Marks the start of a measurement.
     // -----------------------------------------------------------------------
@@ -104,5 +105,5 @@ private:
 
 }
 
-#include "brz/timer.tpp"
+#include "brz/stopwatch.tpp"
 #endif

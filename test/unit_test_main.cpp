@@ -21,7 +21,7 @@
 #include "breeze/testing/assert_failure.hpp"
 #include "breeze/text/replace_all.hpp"
 #include "breeze/time/format_time.hpp"
-#include "breeze/time/process_timer.hpp"
+#include "breeze/time/process_stopwatch.hpp"
 #include <ctime>
 #include <iostream>
 
@@ -124,8 +124,8 @@ main()
     } ;
 
     std::time_t const   start_time = std::time( nullptr ) ;
-    breeze::process_timer
-                        process_timer ;
+    breeze::process_stopwatch
+                        process_stopwatch ;
     int                 failure_count = 0 ;
     for ( test_function_type * f : tests ) {
         int const           exit_code = f() ;
@@ -136,7 +136,7 @@ main()
     breeze::set_assert_handler( breeze::default_assert_handler ) ;
 
     breeze::process_duration const
-                        process_time = process_timer.elapsed() ;
+                        process_time = process_stopwatch.elapsed() ;
     std::time_t const   end_time = std::time( nullptr ) ;
 
     if ( failure_count == 0 ) {
@@ -175,7 +175,7 @@ main()
     std::cout << "Elapsed:     " << std::difftime( end_time, start_time ) <<
         's' << std::endl ;
 
-    //      ... and for the `process_timer` times.
+    //      ... and for the `process_stopwatch` times.
     // -----------------------------------------------------------------------
     std::cout << "Process times:" << std::endl ;
     std::cout << process_time     << std::endl ;

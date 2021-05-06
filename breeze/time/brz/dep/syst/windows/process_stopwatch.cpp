@@ -12,34 +12,30 @@
 // ___________________________________________________________________________
 
 #include "breeze/diagnostics/last_api_error.hpp"
-#include <sys/times.h>
-#include <unistd.h>
+#include <Windows.h>
 #include <chrono>
+#include <cstdint>
 
 namespace breeze_ns {
 namespace           {
 
-long
-get_ticks_per_second()
+std::int64_t
+to_int64( FILETIME const & ft )
 {
-    long const          t = sysconf( _SC_CLK_TCK ) ;
-
-    if ( t == -1 ) {
-        throw last_api_error( "sysconf( _SC_CLK_TCK ) failed" ) ;
-    }
-
-    return t ;
+    int const           dword_bits = 32 ;
+    return ( static_cast< std::int64_t >( ft.dwHighDateTime ) << dword_bits ) |
+           ft.dwLowDateTime ;
 }
 
-process_timer::duration
-ticks_to_duration( clock_t ticks )
+process_stopwatch::duration
+filetime_to_duration( FILETIME const & ft )
 {
-    static long const   ticks_per_second = get_ticks_per_second() ;
+    long const          ticks_per_second = 10'000'000 ;
     double const        second_count =
-        static_cast< double >( ticks ) /
+        static_cast< double >( to_int64( ft ) ) /
         static_cast< double >( ticks_per_second ) ;
 
-    return std::chrono::duration_cast< process_timer::duration >(
+    return std::chrono::duration_cast< process_stopwatch::duration >(
             std::chrono::duration< double >( second_count ) ) ;
 }
 
@@ -48,23 +44,31 @@ get_process_times()
 {
     using               steady_clock = std::chrono::steady_clock ;
 
-    tms                 t ;
-    clock_t const       ret = times( &t ) ;
+    process_duration    result ;
+
+    FILETIME            creation_time ;
+    FILETIME            exit_time ;
+    FILETIME            kernel_time ;
+    FILETIME            user_time ;
+
+    int const           ret =
+        GetProcessTimes( GetCurrentProcess(), &creation_time, &exit_time,
+                            &kernel_time, &user_time ) ;
     steady_clock::time_point const
                         now = steady_clock::now() ;
 
-    if ( ret == std::clock_t( -1 ) ) {
-        throw last_api_error( "times() failed" ) ;
+    if ( ret == 0 ) {
+        throw last_api_error( "GetProcessTimes() failed" ) ;
     }
 
-    process_duration    result ;
-    result.system = ticks_to_duration( t.tms_stime + t.tms_cstime ) ;
-    result.user   = ticks_to_duration( t.tms_utime + t.tms_cutime ) ;
-    result.wall   = now - steady_clock::time_point (
+    result.user   = filetime_to_duration( user_time   ) ;
+    result.system = filetime_to_duration( kernel_time ) ;
+    result.wall   = now - steady_clock::time_point(
                             steady_clock::duration( 0 ) ) ;
 
     return result ;
 }
 
 }
+
 }

@@ -7,14 +7,14 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A timer using `std::clock()`.
+//!     \brief A stopwatch using `std::clock()`.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
 #define BREEZE_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
 
 #include "breeze/top_level_namespace.hpp"
-#include "breeze/time/timer.hpp"
+#include "breeze/time/stopwatch.hpp"
 #include <chrono>
 
 namespace breeze_ns {
@@ -23,10 +23,11 @@ namespace breeze_ns {
 //      ==============
 //
 //!\brief
-//!     A clock for our `timer` template using the C function `clock()`.
+//!     A clock for our `stopwatch` template using the C function
+//!     `clock()`.
 //!
-//!     Most times, you'll just use `c_clock_timer`, and not this class
-//!     directly.
+//!     Most times, you'll just use `c_clock_stopwatch`, and not this
+//!     class directly.
 //!
 //!     \warning
 //!         Note that on some (non-conforming) implementations `clock()`
@@ -66,8 +67,8 @@ public:
     static duration     resolution() ;
 } ;
 
-typedef timer< c_clock_clock >
-                    c_clock_timer ;
+typedef stopwatch< c_clock_clock >
+                    c_clock_stopwatch ;
 
 }
 

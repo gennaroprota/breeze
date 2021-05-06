@@ -9,7 +9,7 @@
 namespace breeze_ns {
 
 template< typename Clock >
-timer< Clock >::timer( start_mode mode )
+stopwatch< Clock >::stopwatch( start_mode mode )
 {
     if ( mode == auto_start) {
         start() ;
@@ -18,21 +18,21 @@ timer< Clock >::timer( start_mode mode )
 
 template< typename Clock >
 void
-timer< Clock >::start()
+stopwatch< Clock >::start()
 {
     m_start_time = Clock::now() ;
 }
 
 template< typename Clock >
-typename timer< Clock >::duration
-timer< Clock >::elapsed() const
+typename stopwatch< Clock >::duration
+stopwatch< Clock >::elapsed() const
 {
     return Clock::now() - m_start_time ;
 }
 
 template< typename Clock >
-typename timer< Clock >::duration
-timer< Clock >::resolution()
+typename stopwatch< Clock >::duration
+stopwatch< Clock >::resolution()
 {
     return Clock::resolution() ;
 }

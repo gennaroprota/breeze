@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A process timer.
+//!     \brief A process stopwatch.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_zxEwjLKMFWpcg3nLySAyPIQM4tweppgu
@@ -25,7 +25,7 @@ namespace breeze_ns {
 //
 //!\brief
 //!     An aggregate holding the amounts of user and system time, and of
-//!     wall-clock time, measured by process_timer.
+//!     wall-clock time, measured by process_stopwatch.
 // ---------------------------------------------------------------------------
 class process_duration
 {
@@ -54,50 +54,53 @@ std::ostream &      operator <<( std::ostream & dest,
                                  process_duration const & t ) ;
 
 
-//      process_timer:
-//      ==============
+//      process_stopwatch:
+//      ==================
 //
-//!     \copybrief process_timer.hpp
+//!     \copybrief process_stopwatch.hpp
 //!
-//!     A timer that allows measuring the amounts of system and user
+//!     A stopwatch that allows measuring the amounts of system and user
 //!     time for the current process.
 //!
-//!     It has an interface similar to that of `timer`. The
+//!     It has an interface similar to that of `stopwatch`. The
 //!     functionality of this class might be implemented via `Clock`s,
-//!     using the general `timer` facility. However, since we measure
-//!     both system and user time, that would mean having to declare two
-//!     different timers in user code (with a `Clock` for system time
-//!     and a `Clock` for user time), which not only is inconvenient but
-//!     could introduce slight differences between the measures.
+//!     using the general `stopwatch` facility. However, since we
+//!     measure both system and user time, that would mean having to
+//!     declare two different stopwatches in user code (with a `Clock`
+//!     for system time and a `Clock` for user time), which not only is
+//!     inconvenient but could introduce slight differences between the
+//!     measures.
 // ---------------------------------------------------------------------------
-class process_timer
+class process_stopwatch
 {
 public:
     //!     Deleted copy constructor.
     //!
     //!     \par Rationale
     //!
-    //!     Same rationale as for `timer`.
+    //!     Same rationale as for `stopwatch`.
     // -----------------------------------------------------------------------
-                        process_timer( process_timer const & ) = delete ;
+                        process_stopwatch( process_stopwatch const & )
+                            = delete ;
 
     //!     Deleted copy assignment operator.
     //!
     //!     \par Rationale
     //!
-    //!     Same rationale as for `timer`.
+    //!     Same rationale as for `stopwatch`.
     // -----------------------------------------------------------------------
-    process_timer &     operator =( process_timer const & ) = delete ;
+    process_stopwatch & operator =( process_stopwatch const & ) = delete ;
 
     using               duration = process_duration::duration_type ;
 
     enum start_mode { auto_start, manual_start } ;
 
     //!     If `mode == auto_start`, calls start(); otherwise, it leaves
-    //!     the timer in an undefined state, in which the only member
-    //!     functions that can be called are start() and the destructor.
+    //!     the stopwatch in an undefined state, in which the only
+    //!     member functions that can be called are start() and the
+    //!     destructor.
     // -----------------------------------------------------------------------
-    explicit            process_timer( start_mode mode = auto_start ) ;
+    explicit            process_stopwatch( start_mode mode = auto_start ) ;
 
     //!     Marks the start of a measurement.
     // -----------------------------------------------------------------------

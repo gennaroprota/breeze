@@ -11,7 +11,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-#include "breeze/time/windows_only/performance_counter_timer.hpp"
+#include "breeze/time/windows_only/performance_counter_stopwatch.hpp"
 #include "breeze/diagnostics/last_api_error.hpp"
 #include <Windows.h>
 

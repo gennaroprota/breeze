@@ -14,7 +14,7 @@
 
 #include "breeze/benchmarking/bench_harness.hpp"
 #include "breeze/diagnostics/assert.hpp"
-#include "breeze/time/process_timer.hpp"
+#include "breeze/time/process_stopwatch.hpp"
 #include <ostream>
 
 namespace breeze_ns {
@@ -60,12 +60,12 @@ bench_harness::run()
     ( *this )() ;           // Ensure that the code is in main memory,
                             // and not in the virtual memory, on disk.
 
-    process_timer       timer ;
+    process_stopwatch   psw ;
     for ( long i = 0 ; i < s_loop_count ; ++ i ) {
         ( *this )() ;
     }
 
-    process_duration    elapsed = timer.elapsed() ;
+    process_duration    elapsed = psw.elapsed() ;
     elapsed.user   -= s_user_overhead ;
     elapsed.system -= s_system_overhead ;
 

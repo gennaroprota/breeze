@@ -15,7 +15,7 @@
 #define BREEZE_GUARD_pK7uzE6NUWfbHZgK5IMlmbqchOgU9SrW
 
 #include "breeze/top_level_namespace.hpp"
-#include "breeze/time/process_timer.hpp"
+#include "breeze/time/process_stopwatch.hpp"
 #include <iosfwd>
 
 namespace breeze_ns {
