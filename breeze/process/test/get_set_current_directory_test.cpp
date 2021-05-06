@@ -26,6 +26,8 @@ can_set_the_directory_which_is_already_current()
 {
     std::string const   cur = breeze::get_current_directory() ;
     breeze::set_current_directory( cur ) ;
+
+    BREEZE_CHECK( breeze::get_current_directory() == cur ) ;
 }
 
 void
