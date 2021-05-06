@@ -14,20 +14,20 @@
 #define BREEZE_GUARD_jUGeAMeGfcMWbQ12OyJckoIpy0CYCBq0
 
 #include "breeze/top_level_namespace.hpp"
+#include "breeze/porting/dependent_source.hpp"
+
+#   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wunused-const-variable"
 
 namespace breeze_ns {
 
-extern int const    exit_success ;
-
-//      Maintenance note:
-//          keep in sync with *all* the .cpp files of the various code
-//          variants (brz/dep/ subdirectory).
-//   -------------------------------------------------------------------------
-extern int const    exit_warning ;
-extern int const    exit_error ;
-extern int const    exit_fatal ;
-extern int const    exit_internal ;
+//      This can be specified portably, so we define it outside of the
+//      system_family-dependent exit_code.ipp's.
+// ---------------------------------------------------------------------------
+static int const    exit_success = 0 ;
 
 }
 
+#include BREEZE_DEPENDENT_SOURCE( system_family, exit_code.ipp )
+#pragma GCC diagnostic pop
 #endif

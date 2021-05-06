@@ -67,7 +67,6 @@ source_files := bench_harness.cpp                           \
                 file_name_extension.cpp                     \
                 get_directory_separators.cpp                \
                                                             \
-                exit_code.cpp                               \
                 get_current_directory.cpp                   \
                 program.cpp                                 \
                 set_current_directory.cpp                   \

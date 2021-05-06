@@ -231,7 +231,6 @@
     <ClCompile Include="..\..\breeze\path\brz\get_directory_separators.cpp" />
     <ClCompile Include="..\..\breeze\path\brz\base_file_name.cpp" />
     <ClCompile Include="..\..\breeze\path\brz\file_name_extension.cpp" />
-    <ClCompile Include="..\..\breeze\process\brz\exit_code.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\get_current_directory.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\program.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\set_current_directory.cpp" />

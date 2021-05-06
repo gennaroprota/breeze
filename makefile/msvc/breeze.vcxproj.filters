@@ -68,9 +68,6 @@
     <ClCompile Include="..\..\breeze\path\brz\file_name_extension.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\process\brz\exit_code.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\breeze\random\brz\entropy_source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

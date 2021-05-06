@@ -25,9 +25,9 @@ namespace breeze_ns {
 //       - exit_warning is 0, because treating another value as success
 //         in a shell script is too difficult
 // ---------------------------------------------------------------------------
-extern int const    exit_warning  = 0 ;
-extern int const    exit_error    = 20 ;
-extern int const    exit_fatal    = 30 ;
-extern int const    exit_internal = 50 ;
+static int const    exit_warning  = 0 ;
+static int const    exit_error    = 20 ;
+static int const    exit_fatal    = 30 ;
+static int const    exit_internal = 50 ;
 
 }
