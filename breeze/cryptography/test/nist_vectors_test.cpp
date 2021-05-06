@@ -242,7 +242,7 @@ public:
         breeze::sha1_digest result( m /* bogus argument */ ) ;
         word_type const     tot = 50 * 1000 ;
         for ( word_type i = 1 ; i <= tot ; ++ i ) {
-            for ( byte_type a = 1 ; a <= m_count / 4 + 3 ; ++ a ) {
+            for ( int a = 1 ; a <= m_count / 4 + 3 ; ++ a ) {
                 m.append( 0 ) ;
             }
 
