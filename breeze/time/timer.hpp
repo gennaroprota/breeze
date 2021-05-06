@@ -51,6 +51,12 @@ template< class Clock >
 class timer
 {
 public:
+    //!     A synonym of `Clock::duration`.
+    // -----------------------------------------------------------------------
+    using               duration = typename Clock::duration ;
+
+    enum start_mode { auto_start, manual_start } ;
+
     //!     Deleted copy constructor.
     //!
     //!     \par Rationale
@@ -68,12 +74,6 @@ public:
     //!     the rationale.
     // -----------------------------------------------------------------------
     timer &             operator =( timer const & ) = delete ;
-
-    //!     A synonym of `Clock::duration`.
-    // -----------------------------------------------------------------------
-    using               duration = typename Clock::duration ;
-
-    enum start_mode { auto_start, manual_start } ;
 
     //!     If `mode == auto_start`, calls start(); otherwise, it leaves
     //!     the timer in an undefined state, in which the only member
