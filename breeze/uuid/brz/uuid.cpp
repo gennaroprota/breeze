@@ -24,6 +24,10 @@
 #include <algorithm>
 #include <cstddef>
 #include <cstdint>
+#   pragma warning( push )
+#   pragma warning( disable: 4623 )
+#include <mutex>
+#   pragma warning( pop )
 #include <ostream>
 
 namespace breeze_ns {
@@ -35,19 +39,22 @@ namespace           {
 //      Gets the system time and compensates for the fact that the
 //      system clock resolution is (or may be) higher than 100ns, which
 //      is the resolution that would be required for UUIDs.
-//
-//      Note: this function is the reason why the uuid class is not
-//      thread-safe.
 // ---------------------------------------------------------------------------
 std::uint64_t
 adjusted_system_time()
 {
     int const           max_uuids_per_tick =
                              breeze::uuid_private::max_uuids_per_system_tick() ;
+
+    static std::mutex   mutex ;
+
     static int          uuids_on_this_tick ; // no initializer, see `if` below
     static std::uint64_t
                         last_time ;          // no initializer, see `if` below
     static bool         is_first_call = true ;
+
+    std::lock_guard< std::mutex > const
+                        lock( mutex ) ;
 
     if ( is_first_call ) {
         uuids_on_this_tick = 1 ;
