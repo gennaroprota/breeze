@@ -41,7 +41,11 @@ system_time_for_uuid()
     //
     //      UUIDs use time in 100ns ticks since Oct 15, 1582.
     //
-    //      TODO: verify the hex constant, which we took from RFC 4122.
+    //      The hex constant was taken RFC 4122, and I manually verified
+    //      that it corresponds to the difference, which is:
+    //
+    //      17 days in Oct + 30 (Nov) + 31 (Dec) + (18 + 369) years and
+    //      94 leap days, i.e. 141427 days.
     //
     //      Note: keep in sync with max_uuids_per_system_tick().
     // -----------------------------------------------------------------------
