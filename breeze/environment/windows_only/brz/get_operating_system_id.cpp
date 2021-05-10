@@ -230,8 +230,26 @@ identify_nt( windows_version_info const & info )
     } else {
         switch ( version ) {
         case win_version( 10, 0 ):
-            id = operating_system_id::windows_server_2016 ;
+        {
+            //      Build numbers taken from:
+            //        <https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info>.
+            //
+            //      Unfortunately, not even this filth is enough to
+            //      distinguish Server 2019 v.1809 from Server v.1809,
+            //      because they have the same everything. What the
+            //      heck, Microsoft.
+            // ---------------------------------------------------------------
+            int const           latest_2019   = 17763 ;
+            int const           latest_2016   = 14393 ;
+            if ( info.build_number() > latest_2019 ) {
+                id = operating_system_id::windows_server ;
+            } else if ( info.build_number() > latest_2016 ) {
+                id = operating_system_id::windows_server_2019 ;
+            } else {
+                id = operating_system_id::windows_server_2016 ;
+            }
             break ;
+        }
 
         case win_version( 6, 3 ):
             id = operating_system_id::windows_server_2012_r2 ;

@@ -82,7 +82,9 @@ enum class operating_system_id
     windows_8_1,
     windows_server_2012_r2,
     windows_10,
-    windows_server_2016
+    windows_server_2016,
+    windows_server_2019,
+    windows_server
 } ;
 
 //!     Converts an `operating_system_id` to a `std::string`. This
