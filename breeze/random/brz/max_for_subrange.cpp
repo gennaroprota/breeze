@@ -19,23 +19,26 @@ namespace breeze_ns {
 //      Implementation notes:
 //      ---------------------
 //
-//      We want to have a range [0, p] such that p+1 (the number of
-//      integer values that it contains) is a multiple of x+1 (the
+//      We want to have a range [0, p] such that p + 1 (the number of
+//      integer values that it contains) is a multiple of x + 1 (the
 //      number of integer values in [0, x]).
 //
 //      Mathematically:
 //
-//         m+1 = q(x+1) + r
+//         m + 1 = q(x + 1) + r
 //
-//      but *programmatically* we can't do that directly, because m+1
-//      may overflow. However, subtracting x+1 from both members (which
-//      is fine...)
+//      but *programmatically* we can't do that directly, because m + 1
+//      may overflow. However, subtracting x + 1 from both members
 //
-//         m-x = (q-1)(x+1) + r
+//         m - x = (q - 1)(x + 1) + r
 //
-//      which says that we can obtain the same remainder r performing a
-//      division of m-x (which is non-negative) by x+1. Hence the
-//      implementation below.
+//      which says that we can obtain the same remainder r by performing
+//      a division of m - x (which is non-negative) by x + 1.
+//
+//      And we can avoid overflow for x + 1, too, by simply treating the
+//      case x == m separately.
+//
+//      Hence the implementation below.
 // ---------------------------------------------------------------------------
 long
 max_for_subrange( long x, long m )
@@ -43,8 +46,9 @@ max_for_subrange( long x, long m )
     BREEZE_ASSERT( x >= 0 ) ;
     BREEZE_ASSERT( x <= m ) ;
 
-    // note how x+1 cannot overflow in its branch (because,
-    // there, x < m, and m has the same type as x)
+    //      Note how x + 1 cannot overflow in its branch (because,
+    //      there, x < m, and m has the same type as x).
+    // -----------------------------------------------------------------------
     return x == m
         ? m
         : m - ( (m-x) % (x+1) )
