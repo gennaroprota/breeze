@@ -50,6 +50,8 @@ private:
 //!
 //!     The uppercase flag (`std::ios_base::uppercase`) is supported, so
 //!     the user can obtain all-uppercase or all-lowercase.
+//!
+//!     \relatedalso roman.
 // ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream &, roman const & ) ;
 

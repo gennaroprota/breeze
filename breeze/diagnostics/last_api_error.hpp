@@ -87,6 +87,8 @@ private:
 
 //!\brief
 //!     Outputs a textual representation of a last_api_error.
+//!
+//!     \relatedalso last_api_error.
 // ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream &, last_api_error const & ) ;
 

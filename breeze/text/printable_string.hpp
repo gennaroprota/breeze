@@ -70,6 +70,8 @@ private:
 
 //!\brief
 //!     Outputs a printable_string.
+//!
+//!     \relatedalso printable_string.
 // ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream & dest,
                                  printable_string const & ) ;
