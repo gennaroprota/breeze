@@ -110,6 +110,8 @@ private:
 //!     support e.g. `std::uppercase` and `std::nouppercase` in the
 //!     future). But it's guaranteed that all letters will have the same
 //!     case.
+//!
+//!     \relatedalso digest.
 // ---------------------------------------------------------------------------
 template< typename Hasher >
 std::ostream &      operator <<( std::ostream           & os,

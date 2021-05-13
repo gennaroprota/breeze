@@ -189,6 +189,8 @@ private:
 //!     <tt>n</tt> uppercase hexadecimal digits (since CRCs are usually
 //!     presented in uppercase), where <tt>n</tt> is the ceiling of the
 //!     quotient between `Traits::width` and <tt>4</tt>.
+//!
+//!     \relatedalso crc.
 // ---------------------------------------------------------------------------
 template< typename Traits >
 std::ostream &      operator <<( std::ostream & dest,

@@ -33,6 +33,8 @@ public:
 
 //!\brief
 //!     Outputs a description of the operating system.
+//!
+//!     \relatedalso operating_system_name.
 // ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream &,
                                  operating_system_name const & ) ;

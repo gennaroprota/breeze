@@ -91,10 +91,14 @@ enum class operating_system_id
 //!     overloads the general `breeze:to_string()` template, since
 //!     `operating_system_id` is an enum and can't have member
 //!     functions.
+//!
+//!     \relatedalso operating_system_id.
 // ---------------------------------------------------------------------------
 std::string         to_string( operating_system_id id ) ;
 
 //!     Stream inserter for `operating_system_id`.
+//!
+//!     \relatedalso operating_system_id.
 // ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream &, operating_system_id ) ;
 
