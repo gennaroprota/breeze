@@ -53,7 +53,7 @@ public:
 //!     \relatedalso process_duration.
 // ---------------------------------------------------------------------------
 std::ostream &      operator <<( std::ostream & dest,
-                                 process_duration const & t ) ;
+                                 process_duration const & d ) ;
 
 
 //      process_stopwatch:

@@ -49,9 +49,9 @@ process_duration::to_string() const
 }
 
 std::ostream &
-operator <<( std::ostream & dest, process_duration const & t )
+operator <<( std::ostream & dest, process_duration const & d )
 {
-    return dest << t.to_string() ;
+    return dest << d.to_string() ;
 }
 
 process_stopwatch::process_stopwatch( process_stopwatch::start_mode mode )
