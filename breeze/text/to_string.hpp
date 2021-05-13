@@ -45,7 +45,7 @@ std::string         to_string( T const & object ) ;
 //!     for `std::chrono::duration`s.)
 // ---------------------------------------------------------------------------
 template< typename Rep, typename Period >
-std::string         to_string( std::chrono::duration< Rep, Period > d ) ;
+std::string         to_string( std::chrono::duration< Rep, Period > const & ) ;
 
 //      to_string():
 //      ============

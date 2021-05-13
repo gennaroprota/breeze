@@ -86,7 +86,7 @@ to_string( T const & object )
 
 template< typename Rep, typename Period >
 std::string
-to_string( std::chrono::duration< Rep, Period > d )
+to_string( std::chrono::duration< Rep, Period > const & d )
 {
     using namespace to_string_private ;
 
