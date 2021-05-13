@@ -87,6 +87,8 @@ public:
     class               less
     {
     public:
+        //!     Compares two digest objects.
+        // -------------------------------------------------------------------
         bool                operator ()( digest< Hasher > const & d1,
                                          digest< Hasher > const & d2 ) const ;
     } ;
