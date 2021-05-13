@@ -74,8 +74,6 @@ public:
     const_iterator      end() const ;
     //!\}
 
-    class               less ;
-    friend class        less ;
     //      less:
     //      =====
     //
@@ -86,10 +84,9 @@ public:
     //!     (from the same `Hasher` type). Useful for ordered
     //!     associative containers.
     //!
-    //!     The function call operator is not `noexcept`, and the class
-    //!     is a friend, because I'd like this part of the library,
-    //!     which is the oldest, to be still compilable as C++03, if
-    //!     needed.
+    //!     The function call operator is not `noexcept` because I'd
+    //!     like this part of the library, which is the oldest, to be
+    //!     still compilable as C++03, if needed.
     // -----------------------------------------------------------------------
     class               less
     {
