@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Returns the textual representation of an object.
+//!     \brief Returns a textual representation of an object.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_JRFfcCLm3oqVulEWGOycMApryPN2pq33
@@ -26,7 +26,7 @@ namespace breeze_ns {
 //!     \copybrief to_string.hpp
 //!
 //!     \return
-//!         The textual representation of its argument. If `T` has a
+//!         A textual representation of its argument. If `T` has a
 //!         `to_string() const` member function taking no arguments,
 //!         this template will use that. Otherwise, it will use
 //!         `breeze::to_string( object, std::locale() )`, which requires
@@ -39,7 +39,7 @@ std::string         to_string( T const & object ) ;
 //      ============
 //
 //!\brief
-//!     Returns the textual representation of a `std::chrono::duration`.
+//!     Returns a textual representation of a `std::chrono::duration`.
 //!
 //!     This is useful for pre-C++20 code (C++20 has a stream inserter
 //!     for `std::chrono::duration`s.)
@@ -53,9 +53,9 @@ std::string         to_string( std::chrono::duration< Rep, Period > const & ) ;
 //!     \copybrief to_string.hpp
 //!
 //!     \return
-//!         The textual representation of its argument. The
-//!         representation depends, in general, on `loc`. This template
-//!         requires a stream inserter.
+//!         A textual representation of its argument. The representation
+//!         depends, in general, on `loc`. This template requires a
+//!         stream inserter.
 //!
 //!     \par Exceptions
 //!         A `std::runtime_error` (or a `std::bad_alloc`) if the
