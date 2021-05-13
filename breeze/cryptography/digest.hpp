@@ -83,10 +83,6 @@ public:
     //!     Implements a strict weak ordering relation between digests
     //!     (from the same `Hasher` type). Useful for ordered
     //!     associative containers.
-    //!
-    //!     The function call operator is not `noexcept` because I'd
-    //!     like this part of the library, which is the oldest, to be
-    //!     still compilable as C++03, if needed.
     // -----------------------------------------------------------------------
     class               less
     {
