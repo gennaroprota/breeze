@@ -26,8 +26,8 @@ namespace breeze_ns {
 //!         The maximum value that can be kept (before taking the
 //!         remainder of the division by <tt>x + 1</tt>) for getting a
 //!         random (or pseudo-random) integer in the range <tt>[0, x]
-//!         </tt> from a source that spans <tt>[0, m]</tt>, <tt>x <= m
-//!         </tt>.
+//!         </tt> from a source that spans <tt>[0, m]</tt>, <tt>0 <= x
+//!         <= m</tt>.
 //!
 //!     Typical example: wanting a value in <tt>[0, 5]</tt> (die roll)
 //!     from <tt>[0, RAND_MAX]</tt>; if e.g. <tt>RAND_MAX == 32767</tt>
@@ -57,7 +57,7 @@ namespace breeze_ns {
 //!        numbers and thus consuming precious entropy.
 //!
 //!     \pre
-//!         0 <= x <= m   (i.e. destination range not wider
+//!         0 <= x <= m   (thus, destination range not wider
 //!                        than source one)
 // ---------------------------------------------------------------------------
 long                max_for_subrange( long x, long m ) ;
