@@ -54,7 +54,7 @@ do_test()
 
     std::string         t ;
     t.push_back( '\0' ) ;
-    BREEZE_CHECK( ! begins_with( s, t) ) ;
+    BREEZE_CHECK( ! begins_with( s, t ) ) ;
     t = "a" ;
     t.push_back( '\0' ) ;
     BREEZE_CHECK( begins_with( s, t ) ) ;

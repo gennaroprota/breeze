@@ -167,7 +167,7 @@ do_test()
 
         set_of_chars::iterator
                             it = std::find( sc.cbegin(), sc.cend(), 'a' ) ;
-        BREEZE_CHECK( * ( ++ it) == 'b' ) ;
+        BREEZE_CHECK( * ( ++ it ) == 'b' ) ;
 
         it = std::find( sc.begin(), sc.end(), 'b' ) ;
         BREEZE_CHECK(  it != sc.end() && *it == 'b' ) ;

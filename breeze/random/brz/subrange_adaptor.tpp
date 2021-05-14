@@ -13,7 +13,7 @@
 namespace breeze_ns {
 
 template< typename Engine >
-subrange_adaptor< Engine >::subrange_adaptor( Engine & e, result_type new_max)
+subrange_adaptor< Engine >::subrange_adaptor( Engine & e, result_type new_max )
     :   m_engine( e ), m_max( new_max )
 {
     //      Parenthesizing the expression m_engine.max, as Visual

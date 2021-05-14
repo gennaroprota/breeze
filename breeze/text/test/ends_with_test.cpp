@@ -53,7 +53,7 @@ do_test()
 
     std::string         t ;
     t.push_back( '\0' ) ;
-    BREEZE_CHECK( ! ends_with( s, t) ) ;
+    BREEZE_CHECK( ! ends_with( s, t ) ) ;
     t.push_back( 'b' ) ;
     BREEZE_CHECK( ends_with( s, t ) ) ;
     BREEZE_CHECK( ends_with( s, s ) ) ;

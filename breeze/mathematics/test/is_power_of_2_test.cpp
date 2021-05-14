@@ -38,7 +38,7 @@ do_check()
 
     for ( T i = max / 2 + 1 ; i > 1 ; i /= 2 ) {
         BREEZE_CHECK( breeze::is_power_of_2( i ) ) ;
-        if (i != 2) {
+        if ( i != 2 ) {
             BREEZE_CHECK( ! breeze::is_power_of_2( i - 1 ) ) ;
         }
         BREEZE_CHECK( ! breeze::is_power_of_2( i + 1 ) ) ;

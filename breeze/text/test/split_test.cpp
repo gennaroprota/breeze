@@ -31,7 +31,7 @@ do_test_split()
         std::string const   s ;
         std::string const   separators = { '\0' } ;
         std::vector< std::string > const
-                            v = split( s, separators) ;
+                            v = split( s, separators ) ;
         BREEZE_CHECK( v.size() == 1 ) ;
         BREEZE_CHECK( v[ 0 ].empty() ) ;
     }

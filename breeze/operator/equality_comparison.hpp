@@ -70,7 +70,7 @@ class equality_comparison
     //!     \return
     //!         lhs.is_equal( rhs )
     // -----------------------------------------------------------------------
-    friend bool         operator ==( T const & lhs, T const & rhs)
+    friend bool         operator ==( T const & lhs, T const & rhs )
     {
         return lhs.is_equal( rhs ) ;
     }

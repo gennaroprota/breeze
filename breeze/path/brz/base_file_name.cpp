@@ -19,7 +19,7 @@
 namespace breeze_ns {
 
 std::string
-base_file_name( std:: string const & full_path)
+base_file_name( std:: string const & full_path )
 {
     std::size_t const   pos = full_path.find_last_of(
                                 breeze::get_directory_separators() ) ;

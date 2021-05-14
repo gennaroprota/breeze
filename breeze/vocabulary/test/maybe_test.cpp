@@ -46,7 +46,7 @@ check_constructors()
         BREEZE_CHECK( ! m.is_valid() ) ;
 
         maybe< std::string > valid( "foo" ) ;
-        maybe< std::string > m2( valid) ;
+        maybe< std::string > m2( valid ) ;
 
         BREEZE_CHECK( m2.is_valid() && m2.value() == "foo" ) ;
     }

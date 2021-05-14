@@ -11,7 +11,7 @@ namespace breeze_ns {
 template< typename Clock >
 stopwatch< Clock >::stopwatch( start_mode mode )
 {
-    if ( mode == auto_start) {
+    if ( mode == auto_start ) {
         start() ;
     }
 }

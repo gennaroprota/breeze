@@ -64,7 +64,7 @@ check2()
 
     int const           a2 = 10 ;
 
-    BREEZE_CHECK( &breeze::clamp( a2, low, high) == &a2 ) ;
+    BREEZE_CHECK( &breeze::clamp( a2, low, high ) == &a2 ) ;
 
     //      Check that a reference to the first argument is returned
     //      when the first argument is equivalent to *both* bounds.

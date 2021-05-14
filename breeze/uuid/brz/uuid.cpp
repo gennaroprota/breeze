@@ -100,7 +100,7 @@ uuid::uuid( uuid::variant_type var, uuid::version_type ver )
     std::uint32_t const time_low = time_stamp & 0xFFFF'FFFF ;
     std::uint16_t const time_mid = (time_stamp >> 32) & 0xFFFF ;
     std::uint16_t const time_hi_and_version = static_cast< std::uint16_t >(
-                            ( (time_stamp >> 48) & 0x0FFF ) | ( 1 << 12 ) ) ;
+                            ( ( time_stamp >> 48 ) & 0x0FFF ) | ( 1 << 12 ) ) ;
 
     breeze::endian_store< big_endian_policy >( time_low, &m_octets[ 0 ] ) ;
     breeze::endian_store< big_endian_policy >( time_mid, &m_octets[ 4 ] ) ;
