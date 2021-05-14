@@ -24,14 +24,14 @@ namespace {
 void
 check_usability_with_map()
 {
-    std::string const   s = "test" ;
-    breeze::sha1_hasher const
-                        hasher( s.cbegin(), s.cend() ) ;
-    breeze::sha1_digest const
-                        digest( hasher ) ;
+    std::string const   s1 = "string #1" ;
+    std::string const   s2 = "string #2" ;
     std::map< breeze::sha1_digest, int, breeze::sha1_digest::less >
                         m ;
-    m[ digest ] = 1 ;
+    m[ breeze::sha1_digest( s1.cbegin(), s1.cend() ) ] = 1 ;
+    m[ breeze::sha1_digest( s2.cbegin(), s2.cend() ) ] = 2 ;
+
+    BREEZE_CHECK( m.size() == 2 ) ;
 }
 
 }
