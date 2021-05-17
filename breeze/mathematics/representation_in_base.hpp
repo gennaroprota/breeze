@@ -30,8 +30,7 @@ namespace breeze_ns {
 //!     correctly, even on a two's complement implementation).
 // ---------------------------------------------------------------------------
 template< typename T >
-std::string
-representation_in_base( T n, int base ) ;
+std::string         representation_in_base( T n, int base ) ;
 
 }
 
