@@ -88,7 +88,7 @@ check()
 }
 
 void
-out_of_range_integer_triggers_assert()
+out_of_range_integer_causes_assert()
 {
     BREEZE_CHECK_THROWS( breeze::assert_failure, breeze::roman(    0 ) ) ;
     BREEZE_CHECK_THROWS( breeze::assert_failure, breeze::roman( 4000 ) ) ;
@@ -102,5 +102,5 @@ test_roman()
     return breeze::test_runner::instance().run(
         "roman",
         { check,
-          out_of_range_integer_triggers_assert } ) ;
+          out_of_range_integer_causes_assert } ) ;
 }
