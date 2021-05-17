@@ -23,6 +23,9 @@ namespace breeze_ns {
 //!\brief
 //!     Returns `true` if an only if `x` is a power of two.
 //!
+//!     `T` must be a type for which `std::numeric_limits::is_integer`
+//!     is true; otherwise the program is ill-formed.
+//!
 //!     \note
 //!         C++20 has `std::has_single_bit()`, which can replace this
 //!         one (but only works with unsigned types and, on most

@@ -6,6 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
+#include <limits>
+
 namespace breeze_ns {
 
 //      Implementation note:
@@ -20,6 +22,8 @@ template< typename T >
 constexpr bool
 is_power_of_2( T x ) noexcept
 {
+    static_assert( std::numeric_limits< T >::is_integer, "" ) ;
+
     return x > 0 && ( x & ( x - 1 ) ) == 0 ;
 }
 
