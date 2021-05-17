@@ -11,7 +11,7 @@ namespace breeze_ns {
 //      Implementation note:
 //      ====================
 //
-//      If T has no sign, the two arguments to && can be swapped, thus
+//      If T has no sign, the two operands of && can be swapped, thus
 //      requiring a single test for non-null non-powers-of-2. Since I
 //      didn't do any measurement, and I wanted to keep things simple,
 //      I'm not doing this.
