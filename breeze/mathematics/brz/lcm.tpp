@@ -25,7 +25,8 @@ lcm( T a, T b )
     T                   result = 0 ;
 
     if ( a != 0 && b != 0 ) {
-        auto const          factor1 = absolute_value( a ) / gcd( a, b ) ;
+        auto const          factor1 =
+            absolute_value( a ) / breeze::gcd( a, b ) ;
         auto const          factor2 = absolute_value( b ) ;
 
         //      We renounce to using BREEZE_PREVENT_MACRO_EXPANSION
