@@ -53,10 +53,13 @@ test_is_power_of_2()
 {
     return breeze::test_runner::instance().run(
         "is_power_of_2()",
-        { do_check< short >,
+        { do_check< unsigned char >,
+          do_check< short >,
           do_check< unsigned short >,
           do_check< int >,
           do_check< unsigned >,
           do_check< long >,
-          do_check< unsigned long > } ) ;
+          do_check< unsigned long >,
+          do_check< long long >,
+          do_check< unsigned long long > } ) ;
 }
