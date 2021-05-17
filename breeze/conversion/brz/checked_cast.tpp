@@ -71,8 +71,8 @@ template< typename To, typename From >
 constexpr To
 checked_cast( From from )
 {
-    static_assert( std::numeric_limits< To   >::is_integral, "" ) ;
-    static_assert( std::numeric_limits< From >::is_integral, "" ) ;
+    static_assert( std::numeric_limits< To   >::is_integer, "" ) ;
+    static_assert( std::numeric_limits< From >::is_integer, "" ) ;
 
     bool const          is_ok =
         checked_cast_private::checker< To, From >::

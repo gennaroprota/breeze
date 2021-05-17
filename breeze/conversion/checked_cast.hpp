@@ -30,8 +30,8 @@ namespace breeze_ns {
 //!
 //!
 //!     `To` and `From` must be types for which
-//!     `std::numeric_limits::is_integral` is true; otherwise the
-//!     program is ill-formed.
+//!     `std::numeric_limits::is_integer` is true; otherwise the program
+//!     is ill-formed.
 // ---------------------------------------------------------------------------
 template< typename To, typename From >
 constexpr To        checked_cast( From from ) ;
