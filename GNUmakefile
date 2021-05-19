@@ -26,7 +26,7 @@ ruler := \
 ##      for a given architecture/system/compiler triplet. This is the
 ##      default target, and requires 'system' and 'compiler' to be
 ##      defined.
-##
+# ----------------------------------------------------------------------------
 .PHONY: all
 all: $(bin_dir)
 	$(info $(ruler))
@@ -36,7 +36,7 @@ all: $(bin_dir)
 
 ##      Deletes the build artifacts for a given triplet (see 'all').
 ##      Requires 'system' and 'compiler' to be defined.
-##
+# ----------------------------------------------------------------------------
 .PHONY: clean
 clean:
 	@$(require_triplet)
