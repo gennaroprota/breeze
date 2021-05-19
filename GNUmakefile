@@ -24,7 +24,7 @@ ruler := \
 
 ##      Builds the library, runs the unit tests and builds the tools,
 ##      for a given architecture/system/compiler triplet. This is the
-##      default target, and requires 'system' and 'compiler' to be
+##      default target, and requires `system` and `compiler` to be
 ##      defined.
 # ----------------------------------------------------------------------------
 .PHONY: all
@@ -34,8 +34,8 @@ all: $(bin_dir)
 	@printf '%s\n' "Running on: $$( uname -m )"
 	$(do_for_all_subdirs)
 
-##      Deletes the build artifacts for a given triplet (see 'all').
-##      Requires 'system' and 'compiler' to be defined.
+##      Deletes the build artifacts for a given triplet (see `all`).
+##      Requires `system` and `compiler` to be defined.
 # ----------------------------------------------------------------------------
 .PHONY: clean
 clean:

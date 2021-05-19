@@ -186,7 +186,7 @@ include $(wildcard $(dependency_files))
 #       name as the folder).
 # ----------------------------------------------------------------------------
 
-##      The same as 'documentation'.
+##      The same as `documentation`.
 # ----------------------------------------------------------------------------
 .PHONY: doc documentation
 doc: documentation
