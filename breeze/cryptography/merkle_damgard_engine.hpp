@@ -40,7 +40,7 @@ template< int                 bits_per_digest,
           typename            EndianPolicy,
           int                 bits_per_word,
           int                 bits_per_state  = bits_per_digest,
-          hashing_count::type count_type = hashing_count::is_limited,
+          hashing_count::type count_type      = hashing_count::is_limited,
           int                 bits_per_byte   = 8,
           int                 length_exponent = 2 * bits_per_word
 >
