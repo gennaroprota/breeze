@@ -14,10 +14,11 @@
 #  - subdirs?? -gps
 
 
-#       libraries:      (Optional.)
+#       additional_libraries    (Optional.)
 #
 #                       A space-separated list with the names of the
-#                       libraries to link with.
+#                       additional libraries to link with (where
+#                       "additional" means "not part of Breeze").
 #
 #                       Since Clang and GCC want the library names (-l
 #                       option) without prefix and suffix, and since
@@ -27,7 +28,6 @@
 #                       needed; for instance, suffixes will be added in
 #                       msvc.mk).
 # ----------------------------------------------------------------------------
-
 
 #       Rationale:
 #
@@ -45,18 +45,20 @@ SHELL := bash
 MAKEFLAGS += --warn-undefined-variables
 .DEFAULT_GOAL := all
 
-has_triplet := no
-ifneq ($(and $(compiler), $(system)),)
-    has_triplet := yes
+has_build_parameters := no
+ifneq ($(and $(compiler), $(system),$(build_type)),)
+    has_build_parameters := yes
 endif
-export has_triplet
+export has_build_parameters
 
-define require_triplet
-    if [ $$has_triplet = "no" ] ;                                              \
-    then                                                                       \
-        printf '%s%s\n' "Please, define 'system' and 'compiler' on the"        \
-            " command line; e.g. run 'system=unix compiler=gcc make <target>'";\
-        exit 2 ;                                                               \
+define require_build_parameters
+    if [ $$has_build_parameters = "no" ] ;                          \
+    then                                                            \
+        printf '%s%s%s\n'                                           \
+            "Please, define 'system', 'compiler' and 'build_type'"  \
+            " on the command line; e.g. run 'system=unix"           \
+            " compiler=gcc build_type=debug make <target>'";        \
+        exit 2 ;                                                    \
     fi
 endef
 
@@ -116,27 +118,18 @@ ifndef libraries
 endif
 
 
-ifeq ($(has_triplet),yes)
+ifeq ($(has_build_parameters),yes)
     include $(root)/makefile/$(system).mk
     include $(root)/makefile/$(compiler).mk
 endif
 
-
 bin_root := $(root)/bin
 dependent_subdir := $(architecture)/$(system)/$(compiler)-$(compiler_version)
-bin_dir := $(bin_root)/$(dependent_subdir)
+bin_dir := $(bin_root)/$(dependent_subdir)/$(build_type)
 exe_dir := $(bin_dir)
-         # ^^^^ variant debug/release?
+library_dir := $(bin_dir)
 
-cpp_options = $(cpp_basic_options)                  \
-              $(cpp_debug_options)                  \
-              $(cpp_extra_options)                  \
-              $(include_switch)"$(include_dir)"     \
-              $(cpp_preprocessing_defines)
-
-cpp_preprocessing_defines += -D BREEZE_SYSTEM_FAMILY=$(system_family)   \
-                             -D BREEZE_SYSTEM=$(system)                 \
-                             -D BREEZE_COMPILER=$(compiler)
+include $(root)/makefile/options.mk
 
 #       Automatic dependency generation:
 #       ================================

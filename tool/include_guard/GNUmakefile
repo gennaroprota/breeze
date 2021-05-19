@@ -11,8 +11,10 @@ root         := ../..
 source_files := include_guard.cpp               \
                 macro_name.cpp
 
+libraries := breeze
 ifeq ($(system),windows)
-    libraries += Advapi32
+    additional_libraries += Advapi32
 endif
 
+exe_base_name := include_guard
 include $(root)/makefile/executable.mk

@@ -127,21 +127,8 @@ ifeq ($(has_cpuid),yes)
     source_files += get_cpuid_info.cpp
 endif
 
-include $(root)/makefile/main.mk
+library_name := breeze
+include $(root)/makefile/library.mk
 
-target := $(bin_dir)/$(library_name_prefix)breeze$(library_name_suffix)
-object_files :=                                                             \
-    $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), $(source_files))
-
-
-$(target): $(object_files)
-	$(build_library)
-
-.PHONY: all
-all: $(target)
-
-.PHONY: clean
-clean:
-	rm -fr $(dependency_dir)
-	rm -f $(object_files)
-	rm -f $(target)
+.PHOMY: all
+all: $(target_library)

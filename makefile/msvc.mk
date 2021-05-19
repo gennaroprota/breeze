@@ -147,11 +147,13 @@ cpp_basic_options += /wd4127
 # ----------------------------------------------------------------------------
 cpp_basic_options += /wd4333
 
+cpp_optimize_options = /O2 /Oi /GL /wd4711
+
 include_switch := /I
 object_file_suffix := .obj
 
-library_options := $(addsuffix $(library_name_suffix),   \
-                     $(addprefix $(library_name_prefix),$(libraries)))
+additional_library_options := $(addsuffix $(library_name_suffix),   \
+                     $(addprefix $(library_name_prefix),$(additional_libraries)))
 
 compiler_command := cl
 
@@ -190,5 +192,5 @@ endef
 # ----------------------------------------------------------------------------
 define link_to_exec
     $(compiler_command) $(cpp_options) /Fe$@  $+                \
-                        /link $(linker_options) $(library_options)
+                        /link $(linker_options) $(additional_library_options)
 endef

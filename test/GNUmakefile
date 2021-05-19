@@ -129,21 +129,15 @@ source_files := unit_test_main.cpp                          \
 
 
 ifeq ($(system),windows)
-    libraries += Advapi32   \
-                 User32     \
-                 Version
+    additional_libraries += \
+        Advapi32   \
+        User32     \
+        Version
 endif
 
-include $(root)/makefile/main.mk
-
-target := $(bin_dir)/breeze_test$(exe_name_suffix)
-object_files :=     \
-    $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), $(source_files))
-
-breeze_library := $(bin_dir)/$(library_name_prefix)breeze$(library_name_suffix)
-
-$(target): $(object_files) $(breeze_library)
-	$(link_to_exec)
+exe_base_name := breeze_test
+libraries     := breeze
+include $(root)/makefile/executable.mk
 
 .PHONY: all test test-run check_include_guards
 all:        test test-run check_include_guards

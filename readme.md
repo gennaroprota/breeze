@@ -80,16 +80,17 @@ To build the library:
  - issue a command like this:
 
    ```
-   architecture=x86_64 system=windows compiler=gcc make
+   architecture=x86_64 system=windows compiler=gcc build_type=optimized make
    ```
 
    *Note: on some systems, you might need to use `gmake` instead of `make`.*
 
 The `architecture` part can be omitted for x86_64 (that's the default).
 
-The `clean` target is also supported (you still need to provide `system` and
-`compiler`: when you clean, only the files generated for a given
-architecture/system/compiler triplet are removed).
+The `clean` target is also supported (you still need to provide `system`,
+`compiler` and `build_type`: when you clean, only the files generated for a
+given architecture/system/compiler triplet and build type (debug/optimized) are
+removed).
 
 At the moment, `system` must be set to one of the following:
 
@@ -104,7 +105,9 @@ own value.
 
 Finally, `architecture` can be anything, because it is currently only used to
 include or exclude a component (get_cpuid_info()) which is specific to x86 and
-x86_64.
+x86_64; and `build_type` must be one of:
+
+ - debug, optimized
 
 Under Cygwin, with both Clang and GCC, you can build with `system=windows` or
 `system=unix`. In both cases, this will, by default, generate a library which
@@ -114,7 +117,7 @@ can use the compilers provided by the *mingw\*gcc\** or *mingw\*clang* packages
 `compiler_command` variable; e.g.:
 
 ```
-system=windows compiler=gcc compiler_command=x86_64-w64-mingw32-g++ make
+system=windows compiler=gcc build_type=optimized compiler_command=x86_64-w64-mingw32-g++ make
 ```
 
 **Warning:** you might want to also add

@@ -12,16 +12,16 @@ object_files  := $(patsubst                                 \
                     %.cpp,                                  \
                     $(bin_dir)/%$(object_file_suffix),      \
                     $(source_files))
-exe_base_name := $(shell basename "$(shell pwd)")
 target        := $(bin_dir)/$(exe_base_name)$(exe_name_suffix)
 
+
+libraries     :=    \
+    $(patsubst %,$(library_dir)/$(library_name_prefix)%$(library_name_suffix),$(libraries))
 
 .PHONY: all
 all: $(target)
 
-breeze_library := $(bin_dir)/$(library_name_prefix)breeze$(library_name_suffix)
-
-$(target): $(object_files) $(breeze_library)
+$(target): $(object_files) $(libraries)
 	$(link_to_exec)
 
 .PHONY: clean

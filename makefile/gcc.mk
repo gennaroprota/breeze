@@ -197,9 +197,11 @@ cpp_debug_options := -Og                             \
 
 cpp_debug_options += -ggdb3
 
+cpp_optimize_options := -O3 -fomit-frame-pointer -finline-functions
+
 include_switch := -I
 object_file_suffix := .o
-library_options := $(addprefix -l,$(libraries))
+additional_library_options := $(addprefix -l,$(additional_libraries))
 
 define compile_to_object
     $(compiler_command) $(cpp_options) -c -o $@ $<
@@ -216,5 +218,5 @@ define build_library
 endef
 
 define link_to_exec
-    $(compiler_command) $(cpp_options) -o $@ $+ $(library_options)
+    $(compiler_command) $(cpp_options) -o $@ $+ $(additional_library_options)
 endef
