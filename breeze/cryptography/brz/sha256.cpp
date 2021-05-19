@@ -115,7 +115,7 @@ sha256_engine::process_block( block_type const & block, state_type & state )
            std::begin( working ) ) ;
    {
        word_type            t[ 2 ] ;
-       for ( int i = 0 ; i < 64 ; ++ i ) {
+       for ( int i = 0 ; i < sz ; ++ i ) {
 
            t[ 0 ] = working[ 7 ] + big_sigma1( working[ 4 ] )
                   + ch( working[ 4 ], working[ 5 ], working[ 6 ] )

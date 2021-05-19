@@ -124,10 +124,11 @@ sha512_engine::process_block( block_type const & block, state_type & state )
 
     //      Create an 80-word "schedule" from the message block.
     // -----------------------------------------------------------------------
-    word_type           sched[ 80 ] ;
+    int const           sz = 80 ;
+    word_type           sched[ sz ] ;
     std::copy( breeze::cbegin( block ), breeze::cend( block ),
             breeze::begin( sched ) ) ;
-    for ( int i = 16 ; i < 80 ; ++ i ) {
+    for ( int i = 16 ; i < sz ; ++ i ) {
         sched[ i ] = sigma1( sched[ i -  2 ] ) + sched[ i -  7 ]
                    + sigma0( sched[ i - 15 ] ) + sched[ i - 16 ] ;
     }
@@ -140,7 +141,7 @@ sha512_engine::process_block( block_type const & block, state_type & state )
     // -----------------------------------------------------------------------
     {
         word_type           t[ 2 ] ;
-        for ( int i = 0 ; i < 80 ; ++ i ) {
+        for ( int i = 0 ; i < sz ; ++ i ) {
 
             t[ 0 ] = working[ 7 ] + big_sigma1( working[ 4 ] )
                    + ch( working[ 4 ], working[ 5 ], working[ 6 ] )
