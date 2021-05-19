@@ -38,7 +38,7 @@ namespace breeze_ns {
 template< int                 bits_per_digest,
           int                 bits_per_block,
           typename            EndianPolicy,
-          int                 bits_per_word   = 32,
+          int                 bits_per_word,
           int                 bits_per_state  = bits_per_digest,
           hashing_count::type count_type = hashing_count::is_limited,
           int                 bits_per_byte   = 8,

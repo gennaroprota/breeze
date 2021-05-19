@@ -39,7 +39,7 @@ typedef digest< sha1_hasher >
 //!     Notice 1.
 // ---------------------------------------------------------------------------
 class sha1_engine
-    :   public merkle_damgard_engine< 160, 512, big_endian_policy >
+    :   public merkle_damgard_engine< 160, 512, big_endian_policy, 32 >
 {
 public:
     static void         init_state( state_type & state ) ;
