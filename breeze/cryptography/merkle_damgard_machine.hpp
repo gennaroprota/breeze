@@ -110,7 +110,6 @@ public:
     typedef typename Engine::byte_type
                         byte_type ;
 
-public:
     //!\name Constructors
     //!\{
     // -----------------------------------------------------------------------
