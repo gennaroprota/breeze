@@ -6,9 +6,8 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 
-subdirs := include_guard
-
-root := ..
+subdirs                 := include_guard
+root                    := ..
 include $(root)/makefile/main.mk
 
 .PHONY: all

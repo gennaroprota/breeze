@@ -70,73 +70,71 @@
 
 #       Needed, otherwise we'll get Windows' sort, below.
 # ----------------------------------------------------------------------------
-cygwin_sort := '/bin/sort'
+cygwin_sort             := '/bin/sort'
 
-minimum_msvc_version := 19.15.26726
+minimum_msvc_version    := 19.15.26726
+compiler_display_name   := MSVC
 
-compiler_display_name := MSVC
-
-compiler_version := $(shell cl 2>&1 | head -1 | grep -E -o \
+compiler_version        := $(shell cl 2>&1 | head -1 | grep -E -o   \
                                 "[1-9][0-9]*\.[0-9]+\.[0-9]+\.?[0-9]*")
 
-lowest_version := $(shell                                                \
-  printf '%s\n%s\n' $(minimum_msvc_version) $(compiler_version)  |       \
-  $(cygwin_sort) -t . -k 1,1n -k 2,2n -k 3,3n -k 4,4n | head -1          \
+lowest_version          := $(shell                                  \
+  printf '%s\n%s\n' $(minimum_msvc_version) $(compiler_version)  |  \
+  $(cygwin_sort) -t . -k 1,1n -k 2,2n -k 3,3n -k 4,4n | head -1     \
   )
 
 ifneq "$(lowest_version)" "$(minimum_msvc_version)"
-    $(error You are using $(compiler_display_name) $(compiler_version) but the minimum \
-            supported version is $(minimum_msvc_version))
+    $(error You are using $(compiler_display_name) $(compiler_version) but the \
+        minimum supported version is $(minimum_msvc_version))
 endif
 
 
 #       KEEP in sync! (See above.)
 # ----------------------------------------------------------------------------
-cpp_basic_options := /std:c++14                 \
-                     /Zc:forScope               \
-                     /Zc:wchar_t                \
-                     /Zc:auto                   \
-                     /Zc:trigraphs              \
-                     /Zc:rvalueCast             \
-                     /Zc:strictStrings          \
-                     /Zc:inline                 \
-                     /volatile:iso              \
-                                                \
-                     /EHs                       \
-                     /Wall                      \
-                     /WX                        \
-                     /D _CRT_SECURE_NO_WARNINGS \
-                     /D _SCL_SECURE_NO_WARNINGS
+cpp_basic_options       := /std:c++14                           \
+                           /Zc:forScope                         \
+                           /Zc:wchar_t                          \
+                           /Zc:auto                             \
+                           /Zc:trigraphs                        \
+                           /Zc:rvalueCast                       \
+                           /Zc:strictStrings                    \
+                           /Zc:inline                           \
+                           /volatile:iso                        \
+                                                                \
+                           /EHs                                 \
+                           /Wall                                \
+                           /WX                                  \
+                           /D _CRT_SECURE_NO_WARNINGS           \
+                           /D _SCL_SECURE_NO_WARNINGS
 
-cpp_basic_options += /nologo
-
-cpp_basic_options += /wd4068        # unknown pragma (see gcc.mk for the why)
+cpp_basic_options       += /nologo
+cpp_basic_options       += /wd4068        # unknown pragma (see gcc.mk for the why)
 
 #       Enable /Wall, except for a handful of warnings (some of which
 #       arise in the standard headers). For a synopsis, see:
 #
 #         <https://docs.microsoft.com/en-us/cpp/preprocessor/compiler-warnings-that-are-off-by-default?view=vs-2015>
 # ----------------------------------------------------------------------------
-cpp_basic_options += /wd4191 /wd4365 /wd4514 /wd4571    \
-                     /wd4668 /wd4710 /wd4820
+cpp_basic_options       += /wd4191 /wd4365 /wd4514 /wd4571      \
+                           /wd4668 /wd4710 /wd4820
 
 #       Starting with Visual C++ 2017, disable these, most of which
 #       arise in standard headers. But enable /permissive-.
 # ----------------------------------------------------------------------------
-cpp_basic_options += /wd4623 /wd4625 /wd4626 /wd4774        \
-                     /wd5026 /wd5027 /wd5045 /permissive-
+cpp_basic_options       += /wd4623 /wd4625 /wd4626 /wd4774      \
+                           /wd5026 /wd5027 /wd5045 /permissive-
 
 #       These were encountered with MSVC 2019, when including
 #       <Windows.h>, and are related to messing up with #pragma pop/
 #       #pragma push. But why don't they occur when using the IDE?
 # ----------------------------------------------------------------------------
-cpp_basic_options += /wd5031 /wd5032
+cpp_basic_options       += /wd5031 /wd5032
 
 #       Apparently, MSVC 2019 emits more of these than MSVC 2017, so,
 #       rather than littering our code with calls to as_non_constant(),
 #       we just disable the warning.
 # ----------------------------------------------------------------------------
-cpp_basic_options += /wd4127
+cpp_basic_options       += /wd4127
 
 #       This is about shifting an integer by a too large amount;
 #       unfortunately, it is also emitted if the offending code is
@@ -145,19 +143,20 @@ cpp_basic_options += /wd4127
 #       (which don't have the just mentioned problem), so disabling the
 #       warning with MSVC is OK.
 # ----------------------------------------------------------------------------
-cpp_basic_options += /wd4333
+cpp_basic_options       += /wd4333
 
-cpp_optimize_options = /O2 /Oi /GL /wd4711
+cpp_optimize_options    = /O2 /Oi /GL /wd4711
 
-include_switch := /I
-object_file_suffix := .obj
+include_switch          := /I
+object_file_suffix      := .obj
 
-additional_library_options := $(addsuffix $(library_name_suffix),   \
-                     $(addprefix $(library_name_prefix),$(additional_libraries)))
+additional_library_options \
+                        := $(addsuffix $(library_name_suffix),   \
+                            $(addprefix $(library_name_prefix),$(additional_libraries)))
 
-compiler_command := cl
+compiler_command        := cl
 
-linker_options := /WX /LTCG
+linker_options          := /WX /LTCG
 
 define compile_to_object
     $(compiler_command) $(cpp_options) /c /Fo$@ $<

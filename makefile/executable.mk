@@ -8,14 +8,14 @@
 
 include $(root)/makefile/main.mk
 
-object_files  := $(patsubst                                 \
-                    %.cpp,                                  \
-                    $(bin_dir)/%$(object_file_suffix),      \
-                    $(source_files))
-target        := $(bin_dir)/$(exe_base_name)$(exe_name_suffix)
+object_files            := $(patsubst                           \
+                             %.cpp,                             \
+                             $(bin_dir)/%$(object_file_suffix), \
+                             $(source_files))
+target                  := $(bin_dir)/$(exe_base_name)$(exe_name_suffix)
 
 
-libraries     :=    \
+libraries               :=  \
     $(patsubst %,$(library_dir)/$(library_name_prefix)%$(library_name_suffix),$(libraries))
 
 .PHONY: all

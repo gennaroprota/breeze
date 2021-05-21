@@ -40,14 +40,14 @@
 #       Forcing the shell to Bash is just for FreeBSD: see the comments
 #       in .github/workflows/builds_and_tests.yaml.
 # ----------------------------------------------------------------------------
-SHELL := bash
-.SHELLFLAGS += -e -u
-MAKEFLAGS += --warn-undefined-variables
-.DEFAULT_GOAL := all
+SHELL                   := bash
+.SHELLFLAGS             += -e -u
+MAKEFLAGS               += --warn-undefined-variables
+.DEFAULT_GOAL           := all
 
-has_build_parameters := no
+has_build_parameters    := no
 ifneq ($(and $(compiler), $(system),$(build_type)),)
-    has_build_parameters := yes
+    has_build_parameters:= yes
 endif
 export has_build_parameters
 
@@ -62,14 +62,14 @@ define require_build_parameters
     fi
 endef
 
-default_architecture := x86_64
+default_architecture    := x86_64
 
 ifndef architecture
-    architecture := $(default_architecture)
+    architecture        := $(default_architecture)
 endif
 
 ifeq ($(architecture),)
-    architecture := $(default_architecture)
+    architecture        := $(default_architecture)
 endif
 
 #       check_compiler_is_found():
@@ -102,19 +102,19 @@ define do_for_all_subdirs
 endef
 
 
-include_dir := $(root)
+include_dir             := $(root)
 
 ifndef cpp_extra_options
     #       Silences warnings. (It's normal for this variable to be
     #       undefined.)
     # ------------------------------------------------------------------------
-    cpp_extra_options :=
+    cpp_extra_options   :=
 endif
 
 ifndef libraries
     #       Likewise.
     # ------------------------------------------------------------------------
-    libraries :=
+    libraries           :=
 endif
 
 
@@ -123,11 +123,11 @@ ifeq ($(has_build_parameters),yes)
     include $(root)/makefile/$(compiler).mk
 endif
 
-bin_root := $(root)/bin
-dependent_subdir := $(architecture)/$(system)/$(compiler)-$(compiler_version)
-bin_dir := $(bin_root)/$(dependent_subdir)/$(build_type)
-exe_dir := $(bin_dir)
-library_dir := $(bin_dir)
+bin_root                := $(root)/bin
+dependent_subdir        := $(architecture)/$(system)/$(compiler)-$(compiler_version)
+bin_dir                 := $(bin_root)/$(dependent_subdir)/$(build_type)
+exe_dir                 := $(bin_dir)
+library_dir             := $(bin_dir)
 
 include $(root)/makefile/options.mk
 
@@ -151,9 +151,9 @@ include $(root)/makefile/options.mk
 #          dependency file to be corrupted, the dependency file isn't
 #          actually used (see $(post_compile))
 # ----------------------------------------------------------------------------
-dependency_dir := .mkdep/$(dependent_subdir)
-post_compile = mv -f $(dependency_dir)/$*.temp_dep $(dependency_dir)/$*.dep \
-                 && touch $@
+dependency_dir          := .mkdep/$(dependent_subdir)
+post_compile            =  mv -f $(dependency_dir)/$*.temp_dep $(dependency_dir)/$*.dep \
+                             && touch $@
 
 $(bin_dir)/%$(object_file_suffix): %.cpp
 $(bin_dir)/%$(object_file_suffix): %.cpp $(dependency_dir)/%.dep  |  $(dependency_dir)
@@ -163,7 +163,7 @@ $(bin_dir)/%$(object_file_suffix): %.cpp $(dependency_dir)/%.dep  |  $(dependenc
 
 $(dependency_dir): ; mkdir -p $@
 
-dependency_files := $(patsubst %,$(dependency_dir)/%.dep, $(basename $(source_files)))
+dependency_files        := $(patsubst %,$(dependency_dir)/%.dep, $(basename $(source_files)))
 
 $(dependency_files):
 

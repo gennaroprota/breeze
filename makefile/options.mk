@@ -6,18 +6,19 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 
-cpp_options := $(cpp_basic_options)
+cpp_options             := $(cpp_basic_options)
 
 ifeq ($(build_type),optimized)
-    cpp_options += $(cpp_optimize_options)
+    cpp_options         += $(cpp_optimize_options)
 else
-    cpp_options += $(cpp_debug_options)
+    cpp_options         += $(cpp_debug_options)
 endif
 
-cpp_preprocessing_defines += -D BREEZE_SYSTEM_FAMILY=$(system_family)   \
-                             -D BREEZE_SYSTEM=$(system)                 \
-                             -D BREEZE_COMPILER=$(compiler)
+cpp_preprocessing_defines   \
+                        += -D BREEZE_SYSTEM_FAMILY=$(system_family) \
+                           -D BREEZE_SYSTEM=$(system)               \
+                           -D BREEZE_COMPILER=$(compiler)
 
-cpp_options += $(cpp_extra_options)                 \
-               $(include_switch)"$(include_dir)"    \
-               $(cpp_preprocessing_defines)
+cpp_options             += $(cpp_extra_options)                     \
+                           $(include_switch)"$(include_dir)"        \
+                           $(cpp_preprocessing_defines)

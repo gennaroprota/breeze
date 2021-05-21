@@ -9,14 +9,14 @@
 #       Breeze Library - Root makefile (for GNU Make)
 # ----------------------------------------------------------------------------
 
-subdirs := breeze   \
-           test     \
-           tool
+subdirs                 := breeze   \
+                           test     \
+                           tool
 
-root := .
+root                    := .
 include $(root)/makefile/main.mk
 
-ruler := \
+ruler                   := \
 ------------------------------------------------------------------------------
 
 #       Common targets

@@ -6,15 +6,15 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 
-root         := ../..
+root                    := ../..
 
-source_files := include_guard.cpp               \
-                macro_name.cpp
+source_files            := include_guard.cpp               \
+                           macro_name.cpp
 
-libraries := breeze
+libraries               := breeze
 ifeq ($(system),windows)
-    additional_libraries += Advapi32
+    additional_libraries+= Advapi32
 endif
 
-exe_base_name := include_guard
+exe_base_name           := include_guard
 include $(root)/makefile/executable.mk

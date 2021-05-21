@@ -65,26 +65,26 @@
 
 #       KEEP in sync! (See above.)
 # ----------------------------------------------------------------------------
-cpp_basic_options := -std=c++14                         \
-                     -Weverything                       \
-                     -Wno-c++98-compat                  \
-                     -Wno-c++98-compat-pedantic         \
-                     -Werror                            \
-                     -fuse-cxa-atexit                   \
-                     -D _XOPEN_SOURCE=700               \
-                     -D _GLIBCXX_USE_CXX11_ABI=1
+cpp_basic_options       := -std=c++14                           \
+                           -Weverything                         \
+                           -Wno-c++98-compat                    \
+                           -Wno-c++98-compat-pedantic           \
+                           -Werror                              \
+                           -fuse-cxa-atexit                     \
+                           -D _XOPEN_SOURCE=700                 \
+                           -D _GLIBCXX_USE_CXX11_ABI=1
 
-cpp_basic_options += -pipe                              \
-                                                        \
-                     -Wno-unknown-warning-option        \
-                                                        \
-                     -Wno-anon-enum-enum-conversion     \
-                     -Wno-padded                        \
-                     -Wno-sign-conversion               \
-                     -Wno-unknown-pragmas               \
-                     -Wno-weak-vtables                  \
-                     -Wno-zero-as-null-pointer-constant \
-                     -Wno-reserved-id-macro
+cpp_basic_options       += -pipe                                \
+                                                                \
+                           -Wno-unknown-warning-option          \
+                                                                \
+                           -Wno-anon-enum-enum-conversion       \
+                           -Wno-padded                          \
+                           -Wno-sign-conversion                 \
+                           -Wno-unknown-pragmas                 \
+                           -Wno-weak-vtables                    \
+                           -Wno-zero-as-null-pointer-constant   \
+                           -Wno-reserved-id-macro
 
 #       The following three options are temporary
 #       (-fcomment-block-commands=cond is a hack for Clang, which
@@ -96,9 +96,9 @@ cpp_basic_options += -pipe                              \
 #       Addendum: Clang doesn't recognize \copydoc and its variants,
 #       either.
 # ----------------------------------------------------------------------------
-cpp_basic_options += -Wno-exit-time-destructors         \
-                     -Wno-global-constructors           \
-                     -fcomment-block-commands=cond,copydoc,copybrief,copydetails
+cpp_basic_options       += -Wno-exit-time-destructors           \
+                           -Wno-global-constructors             \
+                           -fcomment-block-commands=cond,copydoc,copybrief,copydetails
 
 #       As of September 2020, Clang's -Og is the same as -O1 but
 #
@@ -121,18 +121,19 @@ cpp_basic_options += -Wno-exit-time-destructors         \
 #
 #       Keep in sync with gcc.mk.
 # ----------------------------------------------------------------------------
-cpp_debug_options := -O0                                \
-                     -D _GLIBCXX_ASSERTIONS=1           \
-                     -D _GLIBCXX_DEBUG                  \
-                     -D _GLIBCXX_DEBUG_PEDANTIC
+cpp_debug_options       := -O0                                  \
+                           -D _GLIBCXX_ASSERTIONS=1             \
+                           -D _GLIBCXX_DEBUG                    \
+                           -D _GLIBCXX_DEBUG_PEDANTIC
 
-cpp_debug_options += -ggdb3
+cpp_debug_options       += -ggdb3
 
-cpp_optimize_options := -O3 -fomit-frame-pointer -finline-functions
+cpp_optimize_options    := -O3 -fomit-frame-pointer -finline-functions
 
-include_switch := -I
-object_file_suffix := .o
-additional_library_options := $(addprefix -l,$(additional_libraries))
+include_switch          := -I
+object_file_suffix      := .o
+additional_library_options  \
+                        := $(addprefix -l,$(additional_libraries))
 
 #       Note that this differs from the compiler name, which is in
 #       $(compiler). And that, in the continuous integration (currently,
@@ -141,15 +142,15 @@ additional_library_options := $(addprefix -l,$(additional_libraries))
 #       the ifndef test.
 # ----------------------------------------------------------------------------
 ifndef compiler_command
-    compiler_command := clang++
+    compiler_command    := clang++
 endif
 
-compiler_display_name := Clang
+compiler_display_name   := Clang
 
 #       Get the version number from --version, because Clang's
 #       -dumpversion lies, for GCC compatibility.
 # ----------------------------------------------------------------------------
-compiler_version := $(shell $(compiler_command) --version 2>&1 |    \
+compiler_version        := $(shell $(compiler_command) --version 2>&1 |    \
                  sed -n 's/.*version \([1-9][0-9]*\.[0-9]*\.[0-9]*\).*/\1/p' )
 
 define compile_to_object

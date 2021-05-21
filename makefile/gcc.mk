@@ -96,17 +96,17 @@
 #       ---
 #       note1 This will replace -Wcast-align
 # ----------------------------------------------------------------------------
-minimum_gcc_version := 6.1.0
+minimum_gcc_version     := 6.1.0
 
 #       Note that this differs from the compiler name, which is in
 #       $(compiler). See also the comment about the analogous statement
 #       in clang.mk.
 # ----------------------------------------------------------------------------
 ifndef compiler_command
-    compiler_command := g++
+    compiler_command    := g++
 endif
 
-compiler_display_name := GCC
+compiler_display_name   := GCC
 
 #       Note:
 #           starting from GCC 7 -dumpversion might print the major
@@ -115,70 +115,70 @@ compiler_display_name := GCC
 #           --with-gcc-major-version-only configure option). This
 #           insight is from Jonathan Wakely, as well.
 # ----------------------------------------------------------------------------
-compiler_version := $(shell $(compiler_command) -dumpfullversion 2> /dev/null \
-                        || $(compiler_command) -dumpversion)
+compiler_version        := $(shell $(compiler_command) -dumpfullversion 2> /dev/null \
+                            || $(compiler_command) -dumpversion)
 
-lowest_version := $(shell                                            \
-  printf '%s\n%s\n' $(minimum_gcc_version) $(compiler_version)  |    \
-  sort -t . -k 1,1n -k 2,2n -k 3,3n | head -1                        \
+lowest_version          := $(shell                                  \
+  printf '%s\n%s\n' $(minimum_gcc_version) $(compiler_version)  |   \
+  sort -t . -k 1,1n -k 2,2n -k 3,3n | head -1                       \
   )
 
 ifneq "$(lowest_version)" "$(minimum_gcc_version)"
-    $(error You are using GCC $(compiler_version) but the minimum \
+    $(error You are using GCC $(compiler_version) but the minimum   \
             supported version is $(minimum_gcc_version))
 endif
 
 #       KEEP in sync! (See above.)
 # ----------------------------------------------------------------------------
-cpp_basic_options := -std=c++14                      \
-                     -Wall                           \
-                     -Wextra                         \
-                     -pedantic                       \
-                     -Werror                         \
-                     -fuse-cxa-atexit                \
-                     -D _XOPEN_SOURCE=700            \
-                     -D _GLIBCXX_USE_CXX11_ABI=1
+cpp_basic_options       := -std=c++14                           \
+                           -Wall                                \
+                           -Wextra                              \
+                           -pedantic                            \
+                           -Werror                              \
+                           -fuse-cxa-atexit                     \
+                           -D _XOPEN_SOURCE=700                 \
+                           -D _GLIBCXX_USE_CXX11_ABI=1
 
-cpp_basic_options += -flto-odr-type-merging          \
-                     -pipe                           \
-                     -Warray-bounds=2                \
-                     -Wcast-align                    \
-                     -Wconditionally-supported       \
-                     -Wconversion                    \
-                     -Wdate-time                     \
-                     -Wdelete-non-virtual-dtor       \
-                     -Wdouble-promotion              \
-                     -Wduplicated-cond               \
-                     -Wfloat-equal                   \
-                     -Wformat=2                      \
-                     -Wformat-signedness             \
-                     -Winvalid-pch                   \
-                     -Wlogical-op                    \
-                     -Wmissing-declarations          \
-                     -Wmissing-include-dirs          \
-                     -Wnoexcept                      \
-                     -Wnon-virtual-dtor              \
-                     -Wnull-dereference              \
-                     -Wold-style-cast                \
-                     -Woverloaded-virtual            \
-                     -Wplacement-new=2               \
-                     -Wredundant-decls               \
-                     -Wshadow                        \
-                     -Wshift-overflow=2              \
-                     -Wstack-usage=16384             \
-                     -Wstrict-null-sentinel          \
-                     -Wsuggest-attribute=noreturn    \
-                     -Wsuggest-override              \
-                     -Wswitch-enum                   \
-                     -Wsync-nand                     \
-                     -Wundef                         \
-                     -Wunreachable-code              \
-                     -Wunused-const-variable         \
-                     -Wunused-macros                 \
-                     -Wzero-as-null-pointer-constant
+cpp_basic_options       += -flto-odr-type-merging               \
+                           -pipe                                \
+                           -Warray-bounds=2                     \
+                           -Wcast-align                         \
+                           -Wconditionally-supported            \
+                           -Wconversion                         \
+                           -Wdate-time                          \
+                           -Wdelete-non-virtual-dtor            \
+                           -Wdouble-promotion                   \
+                           -Wduplicated-cond                    \
+                           -Wfloat-equal                        \
+                           -Wformat=2                           \
+                           -Wformat-signedness                  \
+                           -Winvalid-pch                        \
+                           -Wlogical-op                         \
+                           -Wmissing-declarations               \
+                           -Wmissing-include-dirs               \
+                           -Wnoexcept                           \
+                           -Wnon-virtual-dtor                   \
+                           -Wnull-dereference                   \
+                           -Wold-style-cast                     \
+                           -Woverloaded-virtual                 \
+                           -Wplacement-new=2                    \
+                           -Wredundant-decls                    \
+                           -Wshadow                             \
+                           -Wshift-overflow=2                   \
+                           -Wstack-usage=16384                  \
+                           -Wstrict-null-sentinel               \
+                           -Wsuggest-attribute=noreturn         \
+                           -Wsuggest-override                   \
+                           -Wswitch-enum                        \
+                           -Wsync-nand                          \
+                           -Wundef                              \
+                           -Wunreachable-code                   \
+                           -Wunused-const-variable              \
+                           -Wunused-macros                      \
+                           -Wzero-as-null-pointer-constant
 
-cpp_basic_options += -Wno-format-nonliteral          \
-                     -Wno-unknown-pragmas
+cpp_basic_options       += -Wno-format-nonliteral               \
+                           -Wno-unknown-pragmas
 
 #       See:
 #
@@ -190,18 +190,19 @@ cpp_basic_options += -Wno-format-nonliteral          \
 #
 #       Keep in sync with clang.mk.
 # ----------------------------------------------------------------------------
-cpp_debug_options := -Og                             \
-                     -D _GLIBCXX_ASSERTIONS=1        \
-                     -D _GLIBCXX_DEBUG               \
-                     -D _GLIBCXX_DEBUG_PEDANTIC
+cpp_debug_options       := -Og                                  \
+                           -D _GLIBCXX_ASSERTIONS=1             \
+                           -D _GLIBCXX_DEBUG                    \
+                           -D _GLIBCXX_DEBUG_PEDANTIC
 
-cpp_debug_options += -ggdb3
+cpp_debug_options       += -ggdb3
 
-cpp_optimize_options := -O3 -fomit-frame-pointer -finline-functions
+cpp_optimize_options    := -O3 -fomit-frame-pointer -finline-functions
 
-include_switch := -I
-object_file_suffix := .o
-additional_library_options := $(addprefix -l,$(additional_libraries))
+include_switch          := -I
+object_file_suffix      := .o
+additional_library_options \
+                        := $(addprefix -l,$(additional_libraries))
 
 define compile_to_object
     $(compiler_command) $(cpp_options) -c -o $@ $<

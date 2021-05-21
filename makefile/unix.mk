@@ -6,9 +6,8 @@
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 
-library_name_prefix := lib
-library_name_suffix := .a
+library_name_prefix     := lib
+library_name_suffix     := .a
+exe_name_suffix         :=
 
-exe_name_suffix  :=
-
-system_family := unix
+system_family           := unix

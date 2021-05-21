@@ -7,14 +7,14 @@
 # ____________________________________________________________________________
 
 
-library_name_prefix :=
-library_name_suffix := .lib
+library_name_prefix     :=
+library_name_suffix     := .lib
+exe_name_suffix         := .exe
 
-exe_name_suffix  := .exe
-
-system_family := windows
+system_family           := windows
 
 #       This was introduced to get the declaration of GetProductInfo()
 #       with GCC under Cywgin.
 # ----------------------------------------------------------------------------
-cpp_preprocessing_defines += -D _WIN32_WINNT=0x600
+cpp_preprocessing_defines \
+                        += -D _WIN32_WINNT=0x600

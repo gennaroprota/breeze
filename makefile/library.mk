@@ -8,11 +8,8 @@
 
 include $(root)/makefile/main.mk
 
-target_library :=     \
-    $(library_dir)/$(library_name_prefix)$(library_name)$(library_name_suffix)
-
-object_files :=      \
-    $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), $(source_files))
+target_library          := $(library_dir)/$(library_name_prefix)$(library_name)$(library_name_suffix)
+object_files            := $(patsubst %.cpp, $(bin_dir)/%$(object_file_suffix), $(source_files))
 
 $(target_library): $(object_files)
 	$(build_library)
