@@ -85,7 +85,7 @@ lowest_version := $(shell                                                \
   )
 
 ifneq "$(lowest_version)" "$(minimum_msvc_version)"
-    $(error You are using Visual C++ $(compiler_version) but the minimum \
+    $(error You are using $(compiler_display_name) $(compiler_version) but the minimum \
             supported version is $(minimum_msvc_version))
 endif
 
