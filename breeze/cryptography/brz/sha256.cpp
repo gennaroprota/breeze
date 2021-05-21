@@ -98,11 +98,11 @@ sha256_engine::process_block( block_type const & block, state_type & state )
 
     //      Expand the message block to a 64-word "schedule".
     // -----------------------------------------------------------------------
-    int const           sz = 64 ;
-    word_type           sched[ sz ] ;
+    int const           count = 64 ;
+    word_type           sched[ count ] ;
     std::copy( breeze::cbegin( block ), breeze::cend( block ),
             breeze::begin( sched ) ) ;
-    for ( int i = 16 ; i < sz ; ++ i ) {
+    for ( int i = 16 ; i < count ; ++ i ) {
         sched[ i ] = sigma1( sched[ i - 2  ] ) + sched[ i - 7  ]
                    + sigma0( sched[ i - 15 ] ) + sched[ i - 16 ] ;
     }
@@ -115,7 +115,7 @@ sha256_engine::process_block( block_type const & block, state_type & state )
            std::begin( working ) ) ;
    {
        word_type            t[ 2 ] ;
-       for ( int i = 0 ; i < sz ; ++ i ) {
+       for ( int i = 0 ; i < count ; ++ i ) {
 
            t[ 0 ] = working[ 7 ] + big_sigma1( working[ 4 ] )
                   + ch( working[ 4 ], working[ 5 ], working[ 6 ] )
