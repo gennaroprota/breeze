@@ -52,13 +52,13 @@ endif
 export has_build_parameters
 
 define require_build_parameters
-    if [ $$has_build_parameters = "no" ] ;                          \
-    then                                                            \
-        printf '%s%s%s\n'                                           \
-            "Please, define 'system', 'compiler' and 'build_type'"  \
-            " on the command line; e.g. run 'system=unix"           \
-            " compiler=gcc build_type=debug make <target>'";        \
-        exit 2 ;                                                    \
+    if [ $$has_build_parameters = "no" ] ;                                  \
+    then                                                                    \
+        printf '%s%s%s\n'                                                   \
+            "Please, define \`system\`, \`compiler\` and \`build_type\`"    \
+            " on the command line; e.g. run \`system=unix"                  \
+            " compiler=gcc build_type=debug make <target>\`";               \
+        exit 2 ;                                                            \
     fi
 endef
 
