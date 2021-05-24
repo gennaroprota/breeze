@@ -31,68 +31,68 @@
 *.log
 
 # Compiled object files
-*.slo
 *.lo
 *.o
 *.obj
+*.slo
 
 # Precompiled headers
 *.gch
 *.pch
 
 # Compiled dynamic libraries
-*.so
-*.dylib
 *.dll
+*.dylib
+*.so
 
 # Compiled static libraries
-*.lai
-*.la
 *.a
+*.la
+*.lai
 *.lib
 
 # Executables
+*.app
 *.exe
 *.out
-*.app
 
 # Stack dumps
 *.stackdump
 
 # Vim swap files (up to three levels; this seems a
 # reasonable compromise)
-*.swp
-*.swo
 *.swn
+*.swo
+*.swp
 
 # Visual C++ files and directories
+*.diagsession
 *.idb
 *.ilk
+*.iobj
+*.ipdb
 *.lastbuildstate
+*.lastcodeanalysis*
+*.lib.recipe
+*.nativecodeanalysis.all.xml
+*.nativecodeanalysis.sarif
+*.nativecodeanalysis.xml
+*.obj.enc
+*.pdb
 *.tlog
 *.VC.db
 *.VC.VC.opendb
-*.pdb
-*.ipdb
-*.iobj
-*.obj.enc
-*.nativecodeanalysis.xml
-*.nativecodeanalysis.all.xml
-*.nativecodeanalysis.sarif
-CodeAnalysisResultManifest.txt
-*.lastcodeanalysis*
 *.vcxproj.FileListAbsolute.txt
 *.vcxproj.user
-*.lib.recipe
-*.diagsession
 .vs/
+CodeAnalysisResultManifest.txt
 
 # Visual Studio Code files
 .vscode/
 
 # PVS-Studio files
-*.PVS-Studio.*
 *.plog
+*.PVS-Studio.*
 
 # Operating system files and directories
 # ======================================
@@ -100,8 +100,8 @@ CodeAnalysisResultManifest.txt
 # OSX
 # =========================
 
-.DS_Store
 .AppleDouble
+.DS_Store
 .LSOverride
 
 # Thumbnails
@@ -116,18 +116,18 @@ CodeAnalysisResultManifest.txt
 .VolumeIcon.icns
 
 # Directories potentially created on remote AFP shares
+.apdisk
 .AppleDB
 .AppleDesktop
 Network Trash Folder
 Temporary Items
-.apdisk
 
 # Windows
 # =========================
 
 # Windows image file caches
-Thumbs.db
 ehthumbs.db
+Thumbs.db
 
 # Folder config file
 Desktop.ini
