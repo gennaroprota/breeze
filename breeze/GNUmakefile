@@ -129,5 +129,5 @@ endif
 library_name            := breeze
 include $(root)/makefile/library.mk
 
-.PHOMY: all
+.PHONY: all
 all: $(target_library)
