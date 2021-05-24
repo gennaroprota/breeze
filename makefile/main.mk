@@ -181,11 +181,12 @@ include $(wildcard $(dependency_files))
 
 ##      The same as `documentation`.
 # ----------------------------------------------------------------------------
-.PHONY: doc documentation
+.PHONY: doc
 doc: documentation
 
 ##      Builds the Doxygen documentation.
 # ----------------------------------------------------------------------------
+.PHONY: documentation
 documentation:
 	$(root)/tool/build_docs/build_docs.sh "$$( pwd )"
 
