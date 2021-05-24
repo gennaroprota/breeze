@@ -74,15 +74,38 @@ enum class time_kind
 //      ==============
 //
 //!\brief
-//!     Formats a `time_t` value.
+//!     Produces a textual representation of a calendar time.
+//!
+//!     \param format
+//!         A string specifying how to format the result.
+//!         `format.c_str()` is passed to `::strftime()` together with a
+//!         broken-down time structure (`::tm`) which corresponds to
+//!         `time_stamp`. The `tm` structure is obtained in a
+//!         thread-safe and reentrant way.
+//!
+//!     \param kind
+//!         The kind of time (UTC or local) that `time_stamp`
+//!         represents.
+//!
+//!     \param time_stamp
+//!         The calendar time to be represented. This can be obtained
+//!         e.g. via `std::time()` or `std::mktime()`, and its encoding
+//!         depends on the C++ implementation.
+//!
+//!         The value `(time_t)-1`, which is the value returned by
+//!         `std::time()` in case of error, causes `format_time()` to
+//!         return an invalid `maybe` without attempting any formatting.
 //!
 //!     \return
-//!         The time corresponding to `time_stamp`, formatted according
-//!         to `format`. `format` is interpreted as if passed to the
-//!         `strftime()` standard function.
+//!         A representation of the time corresponding to `time_stamp`,
+//!         formatted according to `format`; or an invalid `maybe`.
 //!
 //!     \see
 //!         time_kind.
+//!
+//!     \warning
+//!         This function will fail if the length of the resulting
+//!         string is greater than <tt>255</tt>.
 //!
 //!     This is a simple tool for simple and quick formatting needs. You
 //!     should use a more complete solution for more complex needs (but
@@ -93,7 +116,7 @@ enum class time_kind
 // ---------------------------------------------------------------------------
 maybe< std::string >
                     format_time( std::string const & format,
-                                 time_kind = time_kind::utc,
+                                 time_kind kind = time_kind::utc,
                                std::time_t time_stamp = std::time( nullptr ) ) ;
 
 }
