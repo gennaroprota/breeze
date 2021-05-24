@@ -14,7 +14,7 @@ exe_name_suffix         := .exe
 system_family           := windows
 
 #       This was introduced to get the declaration of GetProductInfo()
-#       with GCC under Cywgin.
+#       with GCC under Cygwin.
 # ----------------------------------------------------------------------------
 cpp_preprocessing_defines \
                         += -D _WIN32_WINNT=0x600
