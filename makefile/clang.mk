@@ -74,7 +74,8 @@ cpp_basic_options       := -std=c++14                           \
                            -D _XOPEN_SOURCE=700                 \
                            -D _GLIBCXX_USE_CXX11_ABI=1
 
-cpp_basic_options       += -pipe                                \
+cpp_basic_options       += -finput-charset=utf-8                \
+                           -pipe                                \
                                                                 \
                            -Wno-unknown-warning-option          \
                                                                 \

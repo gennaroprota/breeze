@@ -107,7 +107,8 @@ cpp_basic_options       := /std:c++14                           \
                            /D _CRT_SECURE_NO_WARNINGS           \
                            /D _SCL_SECURE_NO_WARNINGS
 
-cpp_basic_options       += /nologo
+cpp_basic_options       += /utf-8                               \
+                           /nologo
 cpp_basic_options       += /wd4068        # unknown pragma (see gcc.mk for the why)
 
 #       Enable /Wall, except for a handful of warnings (some of which

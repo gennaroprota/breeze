@@ -139,7 +139,8 @@ cpp_basic_options       := -std=c++14                           \
                            -D _XOPEN_SOURCE=700                 \
                            -D _GLIBCXX_USE_CXX11_ABI=1
 
-cpp_basic_options       += -flto-odr-type-merging               \
+cpp_basic_options       += -finput-charset=utf-8                \
+                           -flto-odr-type-merging               \
                            -pipe                                \
                            -Warray-bounds=2                     \
                            -Wcast-align                         \
