@@ -6,7 +6,7 @@ Notes:
  - this license is also known by other names (as documented at the site of the
    Open Source Initiative:
 
-     <http://opensource.org/licenses/BSD-3-Clause>)
+     <https://opensource.org/licenses/BSD-3-Clause>)
 
  - a copyright symbol has been added for the copyright notices; there is no
    comma after the years
