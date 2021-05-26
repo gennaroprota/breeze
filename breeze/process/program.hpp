@@ -159,7 +159,7 @@ public:
     //!     function calls `std::cout.flush()`; then, if `std::cout` is
     //!     in a failed or bad state (because the flush failed or
     //!     because it already was in that state before the (failed)
-    //!     flush attempt), calls `declare_error( fatal )` (for this
+    //!     flush attempt), calls `declare_error( error )` (for this
     //!     reason, it is not const). This is somewhat of a hack, but it
     //!     ensures that the exit code never indicates success if there
     //!     is an I/O error on `std::cout`, which means that, for
