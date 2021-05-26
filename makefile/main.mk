@@ -46,7 +46,7 @@ MAKEFLAGS               += --warn-undefined-variables
 .DEFAULT_GOAL           := all
 
 has_build_parameters    := no
-ifneq ($(and $(compiler), $(system),$(build_type)),)
+ifneq ($(and $(compiler),$(system),$(build_type)),)
     has_build_parameters:= yes
 endif
 export has_build_parameters
