@@ -7,27 +7,21 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief Named constants for program termination codes.
+//!     \brief Named constants for program exit codes.
 // ---------------------------------------------------------------------------
 
 #ifndef BREEZE_GUARD_jUGeAMeGfcMWbQ12OyJckoIpy0CYCBq0
 #define BREEZE_GUARD_jUGeAMeGfcMWbQ12OyJckoIpy0CYCBq0
 
-#include "breeze/top_level_namespace.hpp"
-#include "breeze/porting/dependent_source.hpp"
-
-#   pragma GCC diagnostic push
-#   pragma GCC diagnostic ignored "-Wunused-const-variable"
-
-namespace breeze_ns {
-
-//      This can be specified portably, so we define it outside of the
-//      system_family-dependent exit_code.ipp's.
+//!     \enum exit_code
+//!
+//!     Constants for program exit codes.
+//
+//      TODO: how to trick Doxygen into thinking that the enum is
+//      defined in this file?
 // ---------------------------------------------------------------------------
-static int const    exit_success = 0 ;
 
-}
-
+#include "breeze/porting/dependent_source.hpp"
 #include BREEZE_DEPENDENT_SOURCE( system_family, exit_code.ipp )
-#pragma GCC diagnostic pop
+
 #endif

@@ -11,16 +11,4 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-namespace breeze_ns {
-
-//      Note:
-//          this currently uses the same values as the Unix variant, as
-//          there's no reason to do otherwise and that might simplify
-//          cross-platform scripts.
-// ---------------------------------------------------------------------------
-static int const    exit_warning  = 0 ;
-static int const    exit_error    = 20 ;
-static int const    exit_fatal    = 30 ;
-static int const    exit_internal = 50 ;
-
-}
+#include "breeze/process/brz/default_exit_code.ipp"

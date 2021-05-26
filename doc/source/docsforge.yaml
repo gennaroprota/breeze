@@ -20,7 +20,7 @@ autodocSettings:
     language: cpp
     INPUT: breeze breeze/main_page.dox breeze/namespaces.dox
     EXCLUDE: ''
-    EXCLUDE_PATTERNS: '*/breeze/testing/* */private/* */brz/* */dep/* */test/*
+    EXCLUDE_PATTERNS: '*/breeze/testing/* */private/* */dep/* */test/*
       */extra/* */example/* */dependent_source.hpp */top_level_namespace.hpp
       */version.hpp'
     includeApi: []

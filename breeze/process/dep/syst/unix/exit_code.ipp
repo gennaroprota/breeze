@@ -11,23 +11,4 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>.)
 // ___________________________________________________________________________
 
-namespace breeze_ns {
-
-//      Note (if you add/remove/change values):
-//
-//       - on POSIX conforming systems, "only the least significant 8
-//         bits (that is, status & 0377) shall be available to a waiting
-//         parent process", so stay below 256
-//
-//       - many de facto conventions exist and it is generally better to
-//         stay below 64 anyway
-//
-//       - exit_warning is 0, because treating another value as success
-//         in a shell script is too difficult
-// ---------------------------------------------------------------------------
-static int const    exit_warning  = 0 ;
-static int const    exit_error    = 20 ;
-static int const    exit_fatal    = 30 ;
-static int const    exit_internal = 50 ;
-
-}
+#include "breeze/process/brz/default_exit_code.ipp"
