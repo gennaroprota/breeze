@@ -32,11 +32,13 @@ namespace breeze_ns {
 
 enum exit_code
 {
-    exit_success  =  0,
-    exit_warning  = exit_success,
-    exit_error    = 20,
-    exit_fatal    = 30,
-    exit_internal = 50
+    exit_success  =  0,             //!< The program completed successfully.
+    exit_warning  = exit_success,   //!< The program issued warnings but still
+                                    //!< completed successfully.
+    exit_error    = 20,             //!< The program failed.
+    exit_fatal    = 30,             //!< The program encountered a fatal error
+                                    //!< and terminated prematurely.
+    exit_internal = 50              //!< The program detected a bug.
 } ;
 
 }
