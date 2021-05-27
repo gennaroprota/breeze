@@ -13,9 +13,6 @@
 #       delimiters and similar, which we use from the relevant scripts
 #       to inizialize the content of newly created files.
 #
-#       The important thing is that it allows adding support for new
-#       types of files without changing the scripts themselves.
-#
 #       Any line beginning with '#' in this file is treated as a comment
 #       (not because this file is written in any particular language:
 #       just because, conventionally, we chose to do so, and filter out
