@@ -55,7 +55,7 @@ function            s:InitPhaseOne()
     "       (unnecessary, given the Breeze file naming guidelines).
     " ------------------------------------------------------------------------
     :1,$!   sh -c --
-                \ "\"$BREEZE_ROOT/tool/init_file/init_file.sh\" \"<afile>\""
+                \ "\"$BREEZE_ROOT/tool/init_file/init_file.py\" \"<afile>\""
     if v:shell_error == 0
         let b:breeze_initializing = 1
     endif

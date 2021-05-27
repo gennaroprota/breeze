@@ -1,11 +1,12 @@
 # ============================================================================
-#                      Copyright 2008-2011 Gennaro Prota
+#                      Copyright 2008-2021 Gennaro Prota
 #
 #                   Licensed under the 3-Clause BSD License.
 #              (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
 
+from datetime import datetime
 
 #       make_copyright_notice():
 #       ========================
@@ -60,19 +61,14 @@
 #           publication in the USA. But this is really speculative
 #           as I've never seen this issue in a court anywhere."
 # ----------------------------------------------------------------------------
-#
-#       Arguments:
-#
-#       The first argument is a string to be used as the designation of
-#       the copyright owner.
-# ----------------------------------------------------------------------------
-make_copyright_notice()
-{
-    #gps use "-u" for the date command??
-    printf '%s\n' "Copyright $( date '+%Y' ) $1"
-}
+def make_copyright_notice( copyright_owner ):
+    """
+    Returns a copyright notice for the current year.
 
-# Local Variables:
-# mode: shell-script
-# End:
-# vim: set ft=sh:
+    Keyword arguments:
+        copyright_owner     A string to be used as the designation of
+                            the copyright owner.
+
+    See the comments to make_copyright_notice.py for more details.
+    """
+    return "Copyright {} {}".format( datetime.now().year, copyright_owner )

@@ -158,7 +158,7 @@ addition, files having name extensions that are not automatically recognized by
 Emacs or Vim (e.g. .tpp) have simple trailers which make these editors recognize
 the file type.
 
-If you plan to contribute, please use `tool/init_file/init_file.sh` to
+If you plan to contribute, please use `tool/init_file/init_file.py` to
 initialize your source files. You should define the environment variable
 `BREEZE_CONTRIBUTOR` to the name you wish to appear in your copyright notices.
 Also, you should build the `include_guard` tool (which is automatically built

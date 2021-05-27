@@ -38,23 +38,23 @@
 # ----------------------------------------------------------------------------
 
 
-# file name pattern   comment  comment   line
-# (extended regexp)    start     end    comment    language
+# file name pattern     comment  comment   line
+# (a Python regex)       start     end    comment    language
 # --------------------------------------------------------------------
-\.asm$                  /*       */       #          Asm
-\.awk$                  no       no       #          AWK
-\.bat$                  no       no       rem        Batch
-\.[chit]pp$             /*       */       //         C++
-\.css$                  /*       */       no         CSS
-\.el$                   no       no       ;;         Emacs-Lisp
-\.html$                 <!--     -->      no         HTML
-(^GNUmakefile|\.mk)$    no       no       #          Make
-\.md$                   <!--     -->      no         Markdown
-\.py$                   no       no       #          Python
-\.(sh|shc)$             no       no       #          Shell
-\.vim$                  no       no       "          Vim
-\.xhtml$                <!--     -->      no         XHTML
-\.xslt$                 <!--     -->      no         XSLT
-\.(yml|yaml)$           no       no       #          YAML
+.+\.asm$                  /*       */       #          Asm
+.+\.awk$                  no       no       #          AWK
+.+\.bat$                  no       no       rem        Batch
+.+\.[chit]pp$             /*       */       //         C++
+.+\.css$                  /*       */       no         CSS
+.+\.el$                   no       no       ;;         Emacs-Lisp
+.+\.html$                 <!--     -->      no         HTML
+(^GNUmakefile|.+\.mk)$    no       no       #          Make
+.+\.md$                   <!--     -->      no         Markdown
+.+\.py$                   no       no       #          Python
+.+\.(sh|shc)$             no       no       #          Shell
+.+\.vim$                  no       no       "          Vim
+.+\.xhtml$                <!--     -->      no         XHTML
+.+\.xslt$                 <!--     -->      no         XSLT
+.+\.(yml|yaml)$           no       no       #          YAML
 # --------------------------------------------------------------------
-\.txt$                  no       no       #          Text
+.+\.txt$                  no       no       #          Text
