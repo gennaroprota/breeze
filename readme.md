@@ -168,8 +168,8 @@ If you use Vim, just source `breeze.vim` from your `.vimrc` and that will take
 care of running the initialization script on any file you create in
 `BREEZE_ROOT` or in any subdirectory.
 
-If you use Emacs, please contribute something analogous to `breeze.vim` for that
-editor.
+If you use another editor, please contribute something analogous to `breeze.vim`
+for that editor.
 
 # Git commit message template
 
