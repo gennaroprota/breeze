@@ -8,9 +8,9 @@
 # ____________________________________________________________________________
 #
 #       This script must be used to initialize all text files intended
-#       for Breeze. It ensures, among other things, that our copyright
-#       notice and license reference (plus, guards for C++ includes) are
-#       inserted. See the documentation for further details.
+#       for Breeze. It ensures, among other things, that a copyright
+#       notice and the license reference (plus, guards for C++ includes)
+#       are inserted. See the top-level read_me for further details.
 # ----------------------------------------------------------------------------
 
 set -eu
