@@ -66,11 +66,7 @@ function            s:InitPhaseTwo()
     if exists( "b:breeze_initializing" )
         for x in [ "sh", "awk" ]
             if &filetype == x
-                let oldm = &modified
                 set ff=unix
-                if ! oldm
-                    set nomodified
-                endif
                 break
             endif
         endfor
