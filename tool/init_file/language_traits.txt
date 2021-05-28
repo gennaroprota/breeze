@@ -11,7 +11,7 @@
 #
 #       This is just a table that lists some aspects, such as comment
 #       delimiters and similar, which we use from the relevant scripts
-#       to inizialize the content of newly created files.
+#       to initialize the content of newly created files.
 #
 #       Any line beginning with '#' in this file is treated as a comment
 #       (not because this file is written in any particular language:
