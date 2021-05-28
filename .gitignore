@@ -94,6 +94,9 @@ CodeAnalysisResultManifest.txt
 *.plog
 *.PVS-Studio.*
 
+# Python byte code directories
+__pycache__/
+
 # Operating system files and directories
 # ======================================
 
