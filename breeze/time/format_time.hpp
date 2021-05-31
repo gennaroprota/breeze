@@ -15,9 +15,9 @@
 #define BREEZE_GUARD_wR9yYhDtICLHOJ6c2LmBkhMWoYoaeVkS
 
 #include "breeze/top_level_namespace.hpp"
-#include "breeze/vocabulary/maybe.hpp"
+#include <chrono>
+#include <iosfwd>
 #include <string>
-#include <ctime>
 
 namespace breeze_ns {
 
@@ -28,7 +28,7 @@ namespace breeze_ns {
 //!     `format_time()`; e.g. you can write
 //!
 //!     ```
-//!         format_time( iso8601_extended_date ) ;
+//!         format_time( iso8601_extended_date, std::cout ) ;
 //!     ```
 //!
 //!     Only a small number of format strings are provided.
@@ -74,50 +74,40 @@ enum class time_kind
 //      ==============
 //
 //!\brief
-//!     Produces a textual representation of a calendar time.
+//!     Produces a textual representation of a
+//!     `std::chrono::system_clock::time_point`.
+//!
+//!     This function is a wrapper around `std::put_time()`.
 //!
 //!     \param format
 //!         A string specifying how to format the result.
-//!         `format.c_str()` is passed to `::strftime()` together with a
-//!         broken-down time structure (`::tm`) which corresponds to
-//!         `time_stamp`. The `tm` structure is obtained in a
-//!         thread-safe and reentrant way.
+//!         `format.c_str()` is passed to `std::put_time()` together
+//!         with a broken-down time structure (`::tm`) which corresponds
+//!         to the specified `time_point`. The `tm` structure is
+//!         obtained in a thread-safe and reentrant way.
 //!
 //!     \param kind
-//!         The kind of time (UTC or local) that `time_stamp`
+//!         The kind of time (UTC or local) that `time_point`
 //!         represents.
 //!
-//!     \param time_stamp
-//!         The calendar time to be represented. This can be obtained
-//!         e.g. via `std::time()` or `std::mktime()`, and its encoding
-//!         depends on the C++ implementation.
-//!
-//!         The value `(time_t)-1`, which is the value returned by
-//!         `std::time()` in case of error, causes `format_time()` to
-//!         return an invalid `maybe` without attempting any formatting.
-//!
-//!     \return
-//!         A representation of the time corresponding to `time_stamp`,
-//!         formatted according to `format`; or an invalid `maybe`.
+//!     \param time_point
+//!         The `time point` to be represented.
 //!
 //!     \see
 //!         time_kind.
 //!
-//!     \warning
-//!         This function will fail if the length of the resulting
-//!         string is greater than <tt>255</tt>.
-//!
 //!     This is a simple tool for simple and quick formatting needs. You
-//!     should use a more complete solution for more complex needs (but
-//!     don't underestimate the good old `strftime()` ;-)).
+//!     should use a more complete solution for more complex needs.
 //!
 //!     \note
 //!         This function is thread-safe and reentrant.
 // ---------------------------------------------------------------------------
-maybe< std::string >
-                    format_time( std::string const & format,
-                                 time_kind kind = time_kind::utc,
-                               std::time_t time_stamp = std::time( nullptr ) ) ;
+void                format_time(
+    std::string const & format,
+    std::ostream & dest,
+    time_kind kind = time_kind::local,
+    std::chrono::system_clock::time_point const & time_point =
+    std::chrono::system_clock::now() ) ;
 
 }
 

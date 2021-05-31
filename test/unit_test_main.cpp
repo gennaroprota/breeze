@@ -22,10 +22,13 @@
 #include "breeze/text/replace_all.hpp"
 #include "breeze/time/format_time.hpp"
 #include "breeze/time/process_stopwatch.hpp"
-#include <ctime>
+#include <chrono>
 #include <iostream>
+#include <sstream>
 
 namespace {
+
+using               clock_type = std::chrono::system_clock ;
 
 [[ noreturn ]] void
 unit_test_assert_handler( char const *,
@@ -36,17 +39,15 @@ unit_test_assert_handler( char const *,
 }
 
 std::string
-describe_time( std::time_t time_stamp )
+describe_time( clock_type::time_point t )
 {
     std::string const   format = "%A, %B %e, %Y %I:%M:%S %p UTC" ;
-    breeze::maybe< std::string > const
-                        descr = breeze::format_time(
-                            format, breeze::time_kind::utc,
-                            time_stamp ) ;
 
-    return descr.is_valid()
-        ? breeze::replace_all( descr.value(),
-                               "  ", " ") // since %e may add a leading space
+    std::ostringstream  oss ;
+    breeze::format_time( format, oss, breeze::time_kind::utc, t ) ;
+
+    return ! oss.fail()
+        ? breeze::replace_all( oss.str(), "  ", " " ) // since %e may add a leading space
         : "n/a"
         ;
 }
@@ -123,7 +124,8 @@ main()
             test_width
     } ;
 
-    std::time_t const   start_time = std::time( nullptr ) ;
+    clock_type::time_point const
+                        start_time = clock_type::now() ;
     breeze::process_stopwatch
                         process_stopwatch ;
     int                 failure_count = 0 ;
@@ -137,7 +139,8 @@ main()
 
     breeze::process_duration const
                         process_time = process_stopwatch.elapsed() ;
-    std::time_t const   end_time = std::time( nullptr ) ;
+    clock_type::time_point const
+                        end_time = clock_type::now() ;
 
     if ( failure_count == 0 ) {
         std::cout << "All tests passed." ;
@@ -172,7 +175,9 @@ main()
     std::cout << '\n' ;
     std::cout << "Started at:  " << describe_time( start_time ) << std::endl ;
     std::cout << "Finished at: " << describe_time(   end_time ) << std::endl ;
-    std::cout << "Elapsed:     " << std::difftime( end_time, start_time ) <<
+    std::cout << "Elapsed:     " <<
+        std::chrono::duration_cast<
+            std::chrono::duration< double > >( end_time - start_time ).count() <<
         's' << std::endl ;
 
     //      ... and for the `process_stopwatch` times.

@@ -13,7 +13,9 @@
 
 #include "breeze/time/format_time.hpp"
 #include "breeze/testing/testing.hpp"
+#include <chrono>
 #include <ctime>
+#include <sstream>
 
 int                 test_format_time() ;
 
@@ -23,25 +25,10 @@ using breeze::time_kind ;
 namespace {
 
 void
-format_time_of_minus_one_returns_invalid_regardless_of_format_and_kind()
-{
-    std::time_t const   t = static_cast< std::time_t >( -1 ) ;
-
-    for ( std::string const & format :
-            { "", "%H", breeze::iso8601_basic_date, "some string" } ) {
-
-        breeze::maybe< std::string >
-                            m = format_time( format, time_kind::local, t ) ;
-        BREEZE_CHECK( ! m.is_valid() ) ;
-
-        m = format_time( format, time_kind::utc, t ) ;
-        BREEZE_CHECK( ! m.is_valid() ) ;
-    }
-}
-
-void
 format_time_of_a_specific_date_time_returns_that_date_time()
 {
+    using std::chrono::system_clock ;
+
     std::tm             dt ;
     dt.tm_mday = 7 ;
     dt.tm_mon  = 3 ;
@@ -53,12 +40,17 @@ format_time_of_a_specific_date_time_returns_that_date_time()
     dt.tm_isdst = -1 ;
 
     time_t const        time = std::mktime( &dt ) ;
-    breeze::maybe< std::string > const
-                        m = format_time( "%B %d, %Y %I:%M:%S %p",
-                            breeze::time_kind::local, time ) ;
+    system_clock::time_point const
+                        time_point = system_clock::from_time_t( time ) ;
 
-    BREEZE_CHECK( m.is_valid() ) ;
-    BREEZE_CHECK( m.value() == "April 07, 2021 02:15:23 PM" ) ;
+    std::ostringstream  oss ;
+    breeze::format_time( "%B %d, %Y %I:%M:%S %p",
+                         oss,
+                         time_kind::local,
+                         time_point ) ;
+
+    BREEZE_CHECK( ! oss.fail() ) ;
+    BREEZE_CHECK( oss.str() == "April 07, 2021 02:15:23 PM" ) ;
 }
 
 }
@@ -68,6 +60,5 @@ test_format_time()
 {
     return breeze::test_runner::instance().run(
         "format_time()",
-        { format_time_of_minus_one_returns_invalid_regardless_of_format_and_kind,
-          format_time_of_a_specific_date_time_returns_that_date_time } ) ;
+        { format_time_of_a_specific_date_time_returns_that_date_time } ) ;
 }
