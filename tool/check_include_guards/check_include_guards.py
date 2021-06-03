@@ -6,14 +6,18 @@
 #              (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 #               <https://opensource.org/licenses/BSD-3-Clause>.)
 # ____________________________________________________________________________
-#
-#       This script checks for mishaps in our include guards.
-#       Specifically, that every .hpp file has one guard (and only one),
-#       and that the names of the guarding macros are all distinct.
-#
-#       It is tailored to our coding style, and is particularly simple,
-#       given that we don't use conditional compilation for anything
-#       else than include guards.
+
+"""
+        Checks our include guards.
+
+        This script checks for mishaps in our include guards.
+        Specifically, that every .hpp file has one guard (and only one),
+        and that the names of the guarding macros are all distinct.
+
+        It is tailored to our coding style, and is particularly simple,
+        given that we don't use conditional compilation for anything
+        else than include guards.
+"""
 # ----------------------------------------------------------------------------
 
 import collections
