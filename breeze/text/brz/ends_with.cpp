@@ -30,8 +30,8 @@ ends_with( std::string const & s, std::string const & with ) noexcept
         && std::equal( with.cbegin(), with.cend(), s.cend() - sz ) ;
 }
 
-bool                ends_with( std::string const & s,
-                               char c ) noexcept
+bool
+ends_with( std::string const & s, char c ) noexcept
 {
     return ! s.empty() && s.back() == c ;
 }
