@@ -28,7 +28,7 @@ remove_from_end( std::string const & s, std::string const & to_be_removed )
 std::string
 remove_from_end( std::string const & s, char c )
 {
-    return ends_with( s, c )
+    return breeze::ends_with( s, c )
         ? s.substr( 0, s.length() - 1 )
         : s
         ;
