@@ -202,6 +202,13 @@ def write_header( traits, base_file_name ):
         print( "//!     \\brief")
         length = g_line_width - len( "// " )
         print( "// " + "-" * length )
+    elif name_extension == ".py":
+        print()
+        print( '"""')
+        print( "        TODO" )
+        print( '"""' )
+        length = g_line_width - len( "# " )
+        print( "# " + "-" * length )
 
     mark_section( "end", traits )
 
