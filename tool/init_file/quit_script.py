@@ -31,6 +31,6 @@ def quit_script( text ):
         script_name = _get_script_name()
         prefix = script_name if script_name != "" else "<no name>"
 
-        sys.stderr.write( "{}: {}\n".format( prefix, text ) )
+        print( "{}: {}".format( prefix, text ), file = sys.stderr )
 
     sys.exit( 2 )

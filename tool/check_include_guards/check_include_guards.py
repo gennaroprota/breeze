@@ -48,7 +48,7 @@ try:
                         macro_name = m.group( 1 )
                         macro_dict[ macro_name ].append( full_name )
 except Exception as ex:
-    sys.stderr.write( "An exception occurred: {}\n".format( ex ) )
+    print( "An exception occurred: {}".format( ex ), file = sys.stderr )
     exit_code = exit_error
 
 
