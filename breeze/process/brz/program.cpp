@@ -117,14 +117,20 @@ program::declare_error( program::gravity g ) // gps nome OK?
     }
 }
 
+void
+program::declare_error( program::gravity g, std::string const & message )
+{
+    std::cerr << message << std::endl ;
+    declare_error( g ) ;
+}
+
 int
 program::exit_code()
 {
     std::cout.flush() ;
 
     if ( std::cout.fail() ) {
-        std::cerr << "I/O error on standard output" << std::endl ;
-        declare_error( program::error ) ;
+        declare_error( program::error, "I/O error on standard output" ) ;
     }
 
     return exit_codes[ m_max_gravity ] ;

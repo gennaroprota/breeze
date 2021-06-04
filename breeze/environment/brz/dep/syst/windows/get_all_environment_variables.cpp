@@ -28,7 +28,8 @@ do_free( char * p ) noexcept
 {
     using               breeze::program ;
     if ( FreeEnvironmentStrings( p ) == 0 ) {
-        program::instance().declare_error( program::warning ) ; //gps
+        program::instance().declare_error( program::warning,
+            "FreeEnvironmentStrings() failed" ) ; //gps
     }
 }
 

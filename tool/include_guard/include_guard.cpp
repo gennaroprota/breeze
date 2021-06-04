@@ -133,15 +133,14 @@ main( int argc, char ** argv )
 
     try {
         if ( ! parse_command_line( argc, argv ) ) {
-            std::cerr << "Erroneous invocation;"
-                         " see usage in include_guard.cpp" ;
-            program::instance().declare_error( program::fatal ) ;
+            program::instance().declare_error( program::fatal,
+                "Erroneous invocation; see usage in include_guard.cpp") ;
         }
 
         if ( ::is_reserved( macro_prefix ) ) {
-            std::cerr << "Can't use a reserved name; please, change your prefix"
-                         " (see [lex.name] in the C++ standard)" ;
-            program::instance().declare_error( program::fatal ) ;
+            program::instance().declare_error( program::fatal,
+                "Can't use a reserved name; please, change your prefix"
+                " (see [lex.name] in the C++ standard)" ) ;
         }
 
         int const           random_part_length = 32 ;
@@ -152,8 +151,8 @@ main( int argc, char ** argv )
             ::make_macro_name( macro_prefix, random_part_length, &status ) ;
 
         if ( status == macro_name_creation::could_not_release_entropy_source ) {
-            std::cerr << "Unable to release the entropy source" << std::endl ;
-            program::instance().declare_error( program::comment ) ;
+            program::instance().declare_error( program::comment,
+                "Unable to release the entropy source" ) ;
         }
 
         std::cout << "#ifndef " << name   << std::endl
@@ -166,11 +165,10 @@ main( int argc, char ** argv )
         std::cout << "#endif"             << std::endl ;
 
     } catch ( std::exception const & ex ) {
-        std::cerr << ex.what() << std::endl ;
-        program::instance().declare_error( program::error ) ;
+        program::instance().declare_error( program::error, ex.what() ) ;
     } catch ( ... ) {
-        std::cerr << "An unknown exception occurred" << std::endl ;
-        program::instance().declare_error( program::fatal ) ;
+        program::instance().declare_error( program::fatal,
+            "An unknown exception occurred" ) ;
     }
     return program::instance().exit_code() ;
 }

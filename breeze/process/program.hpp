@@ -139,6 +139,17 @@ public:
     // -----------------------------------------------------------------------
     void                declare_error( gravity g ) ;
 
+    //      declare_error():
+    //      ----------------
+    //
+    //      Outputs a message to `std::cerr` and declares a program
+    //      error.
+    //
+    //      This function executes `std::cerr << message << std::endl`,
+    //      then calls `declare_error( g )`.
+    // -----------------------------------------------------------------------
+    void            declare_error( gravity g, std::string const & message ) ;
+
     //      exit_code():
     //      ------------
     //
