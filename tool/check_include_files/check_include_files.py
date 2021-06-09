@@ -84,14 +84,15 @@ for file_name in opens_namespace:
 for file_name in guard_counts:
     if guard_counts[ file_name ] != 1:
         print( "Error: {} Breeze guards in {}".format(
-            guard_counts[ file_name ], file_name ) )
+            guard_counts[ file_name ], file_name ), file = sys.stderr )
         exit_code = exit_error
 
 for macro_name in macro_dict:
     if len( macro_dict[ macro_name ] ) != 1 :
-        print( "Error: macro name {} duplicated in:".format( macro_name ) )
+        print( "Error: macro name {} duplicated in:".format( macro_name ),
+            file = sys.stderr )
         for f in macro_dict[ macro_name ]:
-            print( "    {}".format( f ) )
+            print( "    {}".format( f ), file = sys.stderr )
         exit_code = exit_error
 
 exit( exit_code )
