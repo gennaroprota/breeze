@@ -30,12 +30,12 @@ import re
 import sys
 
 argc = len( sys.argv )
-if ( argc != 2 ):
+if argc != 2:
     sys.exit( "Wrong number of arguments; usage:"
               " check_include_files.py <root_dir_path>" )
 
 root = sys.argv[ 1 ]
-if ( not os.path.isdir( root ) ):
+if not os.path.isdir( root ):
     sys.exit( "The specified directory was not found" )
 
 regex                 = re.compile( "^#ifndef (BREEZE_GUARD_\w+)" )
