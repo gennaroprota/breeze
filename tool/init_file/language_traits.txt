@@ -41,7 +41,6 @@
 # file name pattern     comment  comment   line
 # (a Python regex)       start     end    comment    language
 # --------------------------------------------------------------------
-.+\.asm$                  /*       */       #          Asm
 .+\.awk$                  no       no       #          AWK
 .+\.bat$                  no       no       rem        Batch
 .+\.[chit]pp$             /*       */       //         C++
@@ -54,7 +53,6 @@
 .+\.(sh|shc)$             no       no       #          Shell
 .+\.vim$                  no       no       "          Vim
 .+\.xhtml$                <!--     -->      no         XHTML
-.+\.xslt$                 <!--     -->      no         XSLT
-.+\.(yml|yaml)$           no       no       #          YAML
+.+\.yaml$                 no       no       #          YAML
 # --------------------------------------------------------------------
 .+\.txt$                  no       no       #          Text

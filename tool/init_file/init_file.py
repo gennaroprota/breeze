@@ -123,9 +123,6 @@ def opening_line( language, base_name ):
         if file_name_extension( base_name ) != ".shc":
             return "#! /bin/sh --"
 
-    if language == "XSLT":
-        return '<?xml version="1.0" encoding="UTF-8"?>'
-
     return None
 
 

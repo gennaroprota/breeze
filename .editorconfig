@@ -34,13 +34,8 @@ indent_style = tab
 indent_size = 2
 insert_final_newline = false
 
-#       The recommended name extension for YAML files is '.yaml', but
-#       Travis CI requires '.yml', instead; so we supported both. Now
-#       that we switched to GitHub Actions, I wonder: does GitHub allow
-#       '.yaml' everywhere?
-#
-#       As to indent_size, YAML looks irregular with 4-space indentation
-#       when you use "- "; consider e.g. this snippet:
+#       YAML looks irregular with 4-space indentation when you use "- ";
+#       consider e.g. this snippet:
 #
 #         include:
 #             - os: linux
@@ -61,5 +56,5 @@ insert_final_newline = false
 #       spaces "manually", or use the 2-space indentation that everyone
 #       is using. I chose the latter.
 # ----------------------------------------------------------------------------
-[*.{yml,yaml}]
+[*.yaml]
 indent_size = 2
