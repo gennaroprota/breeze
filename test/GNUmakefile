@@ -138,16 +138,16 @@ exe_base_name           := breeze_test
 libraries               := breeze
 include $(root)/makefile/executable.mk
 
-.PHONY: all test test-run check_include_guards
-all:        test test-run check_include_guards
+.PHONY: all test test-run check_include_files
+all:        test test-run check_include_files
 
 test:       $(target)
 
 test-run:   test
 	$(bin_dir)/breeze_test
 
-check_include_guards:
-	$(root)/tool/check_include_guards/check_include_guards.py $(root)
+check_include_files:
+	$(root)/tool/check_include_files/check_include_files.py $(root)
 
 .PHONY: clean
 clean:
