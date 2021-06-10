@@ -86,6 +86,9 @@ enum class time_kind
 //!         to the specified `time_point`. The `tm` structure is
 //!         obtained in a thread-safe and reentrant way.
 //!
+//!     \param dest
+//!         The stream to which the time representation is output.
+//!
 //!     \param kind
 //!         The kind of time (UTC or local) that `time_point`
 //!         represents.
