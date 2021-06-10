@@ -2,13 +2,15 @@
 # ----------------------------------------------------------------------------
 * text=auto
 
-#       List of all the file types used in Breeze (more precisely: the
-#       types of files normally created in a text editor; for instance,
-#       Visual Studio solution files are excluded from this list and set
-#       later).
+#       Patterns for all the file "types" used in Breeze (more
+#       precisely: the types of files normally created in a text editor;
+#       for instance, Visual Studio solution files are excluded from
+#       this list and set later).
 #
 #       Maintenance note:
-#           keep the following files in sync:
+#       -----------------
+#
+#           Keep the following files in sync:
 #
 #            - .editorconfig
 #            - .gitattributes
