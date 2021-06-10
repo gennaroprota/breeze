@@ -16,6 +16,16 @@
         are inserted. See the top-level Breeze read_me for further
         details.
 """
+
+#       Maintenance note:
+#       -----------------
+#
+#           Keep the following files in sync:
+#
+#            - .editorconfig
+#            - .gitattributes
+#            - init_file.py
+#            - language_traits.txt
 # ----------------------------------------------------------------------------
 
 from make_copyright_notice  import  make_copyright_notice
