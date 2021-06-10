@@ -22,15 +22,10 @@
 #       Given the above, it seemed natural to choose '#' for "comments"
 #       in .txt files.
 #
-#       NOTE:
-#           since, of course, we don't want to retrofit all existing
-#           files, changes to the table should be limited to *addition*
-#           of new entries, barring modifications which might be
-#           absolutely necessary.
+#       Maintenance note:
+#       -----------------
 #
-#       NOTE 2:
-#
-#           keep the following files in sync:
+#           Keep the following files in sync:
 #
 #            - .editorconfig
 #            - .gitattributes
