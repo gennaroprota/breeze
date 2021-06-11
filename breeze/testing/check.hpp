@@ -29,7 +29,7 @@
         bool threw_as_expected = false ;                            \
         bool threw_but_wrong_type = false ;                         \
         try {                                                       \
-            expression ;                                            \
+            static_cast< void >( expression ) ;                     \
         } catch ( exception_type const & ) {                        \
             threw_as_expected = true ;                              \
         } catch ( ... ) {                                           \
