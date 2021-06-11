@@ -19,7 +19,7 @@ from datetime import datetime
 #       For more information, see
 #
 #        - U.S. Copyright Office - Copyright Notice (Circular 3)
-#          <http://www.copyright.gov/circs/circ03.html>
+#          <https://www.copyright.gov/circs/circ03.pdf>
 #
 #        - U.S. Code, TITLE 17 > CHAPTER 4 > section 401
 #
