@@ -24,8 +24,9 @@ from datetime import datetime
 #        - U.S. Code, TITLE 17 > CHAPTER 4 > section 401
 #
 #       Note, among other things, that there's no "(c)" in it: it is
-#       indeed unclear whether a court would consider that string as a
-#       legal "ASCII alternative" to the copyright symbol.
+#       indeed unclear whether a court outside the U.S. would consider
+#       that string as a legal "ASCII alternative" to the copyright
+#       symbol.
 #
 #       Note, too, that---from Circular 3 linked to above---under the
 #       "Universal Copyright Convention" (the UCC) only the copyright
