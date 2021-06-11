@@ -39,7 +39,7 @@ unit_test_assert_handler( char const *,
 }
 
 std::string
-describe_time( clock_type::time_point t )
+describe_time( clock_type::time_point const & t )
 {
     std::string const   format = "%A, %B %e, %Y %I:%M:%S %p UTC" ;
 
