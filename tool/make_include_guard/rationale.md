@@ -28,9 +28,14 @@ characters (later changed to more characters).
 James went for a different approach (which I happened to suggest, although I
 wasn't at all sure it would work until James explained it back to me:-)), using
 the `tr` utility, which introduces a little bias. It's simpler, and the bias is
-acceptable, but of course C++ offers a lot more versatility, and the short
-development time which is spent on it is greatly repaid.
+acceptable, but of course C++ offers a lot more versatility, and I felt that the
+(short) development time that it required was in fact repaid.
 
+But it turned out that Python offers the best solution overall: it is fast
+enough on all my machines and the resulting code is very very maintainable.
+Also, of course, Python allows bootstrapping on a new machine without building
+anything. So, in 2021, I decided to switch to Python (as I had already done with
+several other tools).
 
 ---------
 [footnote1] Using underscore, too, would require more maneuvers to avoid the

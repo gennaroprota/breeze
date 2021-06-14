@@ -10,8 +10,7 @@
 # ----------------------------------------------------------------------------
 
 subdirs                 := breeze   \
-                           test     \
-                           tool
+                           test
 
 root                    := .
 include $(root)/makefile/main.mk

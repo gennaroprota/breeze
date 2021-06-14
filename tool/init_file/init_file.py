@@ -227,14 +227,12 @@ def write_body( traits, base_file_name ):
         guarded_contents = '#include "breeze/top_level_namespace.hpp"\n\n'  \
                            + namespace_definition
         if file_name_extension( base_file_name ) == ".hpp":
-            exe_path = os.environ[ "BREEZE_ROOT" ] + "/bin/include_guard"
-            if os.path.isfile( exe_path ) and os.access( exe_path, os.X_OK ):
-                sys.stdout.flush()
-                proc = subprocess.Popen( [ exe_path ], stdin = subprocess.PIPE )
-                proc.communicate( bytes( guarded_contents + "\n", "utf-8" ) )
-            else:
-                quit_script( "cannot find or execute the include_guard tool;"
-                        " did you build it?" )
+            make_include_guard_path = os.environ[ "BREEZE_ROOT" ]   \
+                    + "/tool/make_include_guard/make_include_guard.py"
+            sys.stdout.flush()
+            proc = subprocess.Popen( [ "python", make_include_guard_path ],
+                    stdin = subprocess.PIPE )
+            proc.communicate( bytes( guarded_contents + "\n", "utf-8" ) )
         else:
             print( namespace_definition )
 
