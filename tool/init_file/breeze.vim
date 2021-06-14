@@ -30,18 +30,6 @@
 "       on a buffer we have filled ourselves (so if, for instance, the
 "       user sets ff to the Windows style we don't revert it: he/she
 "       must have had a good reason to do so).
-"
-"       Note, too, the usage of an explicit 'sh -c' to invoke our
-"       script: Vim uses the value of the 'shell' option as name of the
-"       shell (command language interpreter) to use for ! and :!
-"       commands, and that is an important setting we don't want to
-"       interfere with. An idea would be to set it to 'sh' and restore
-"       it when we are done, but I couldn't find any synchronization
-"       mechanism in the Vim docs (nor a guarantee that it would work
-"       without locking). So, we simply use whatever shell is configured
-"       in the editor to launch our 'sh'; for this we rely on 'sh' to be
-"       on the PATH (which must be set anyway, even under Windows, to
-"       have sed, awk and the other utilities work).
 " ----------------------------------------------------------------------------
 augroup             breeze
     autocmd!
@@ -54,8 +42,7 @@ function            s:InitPhaseOne()
     "       Intentionally renouncing to full-proof escaping of <afile>
     "       (unnecessary, given the Breeze file naming guidelines).
     " ------------------------------------------------------------------------
-    :1,$!   sh -c --
-                \ "\"$BREEZE_ROOT/tool/init_file/init_file.py\" \"<afile>\""
+    :exe    "%! \"" . $BREEZE_ROOT . "/tool/init_file/init_file.py\"" "<afile>"
     if v:shell_error == 0
         let b:breeze_initializing = 1
     endif
