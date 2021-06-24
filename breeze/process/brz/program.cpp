@@ -15,10 +15,10 @@
 #include "breeze/process/program.hpp"
 #include "breeze/counting/signed_count.hpp"
 #include "breeze/diagnostics/assert.hpp"
-#include "breeze/path/base_file_name.hpp"
 #include "breeze/process/exit_code.hpp"
 
 #include <cstdlib>
+#include <filesystem>
 #include <iostream>
 #include <ostream>
 #include <string>
@@ -66,7 +66,7 @@ program::set_name( int argc, char const * const * argv )
 
 void
 program::set_name( int argc, char const * const * argv,
-                             std::string const & fallback )
+                             std::filesystem::path const & fallback )
 {
     BREEZE_ASSERT( ! m_program_name.is_valid() ) ;
     BREEZE_ASSERT( ! fallback.empty() ) ;
@@ -77,7 +77,7 @@ program::set_name( int argc, char const * const * argv,
 }
 
 void
-program::set_name( std::string const & name )
+program::set_name( std::filesystem::path const & name )
 {
     BREEZE_ASSERT( ! m_program_name.is_valid() ) ;
     BREEZE_ASSERT( ! name.empty() ) ;
@@ -85,7 +85,7 @@ program::set_name( std::string const & name )
     do_set_name( name ) ;
 }
 
-maybe< std::string >
+maybe< std::filesystem::path >
 program::name() const
 {
     return m_program_name ;
@@ -162,9 +162,9 @@ program::program() noexcept
 }
 
 void
-program::do_set_name( std::string const & name )
+program::do_set_name( std::filesystem::path const & name )
 {
-    m_program_name = breeze::base_file_name( name ) ;
+    m_program_name = name.filename() ;
 }
 
 }

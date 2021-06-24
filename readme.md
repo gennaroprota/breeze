@@ -39,8 +39,8 @@ years (as of June 2019) and I don't claim that all of it is of production
 quality.
 
 Some components don't take full advantage of the latest standards and some are
-or will be superseded by standard components or features (e.g. those in the
-path/ subdirectory). But, generally, the library is up to date with C++14.
+or will be superseded by standard components or features. But, generally, the
+library is up to date with C++17.
 
 The test/ subdirectories can be a good place to look at if you need to see usage
 examples (but, please, let me know if you feel that the usage of a component
@@ -51,7 +51,7 @@ should be documented better).
 Breeze has been designed and implemented to be as portable as possible, without
 a single usage of `#if`, `#ifdef` or `#ifndef` (the only conditional compilation
 is for include guards), and the goal is that it can be compiled with any
-conforming C++14 compiler.
+conforming C++17 compiler.
 
 The provided build system, however, requires a Unix toolkit, with Python 3 and
 GNU Make. On Microsoft Windows, you'll need Cygwin. (Historically, I used `awk`

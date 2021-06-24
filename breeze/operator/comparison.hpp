@@ -53,12 +53,10 @@ template< typename T >
 class comparison
     :   private equality_comparison< T >
 {
-    // [FUTURE], [C++17], [gps]:
-    //      These are all candidates for [[ nodiscard ]]
-    //
     //!     \return
     //!         lhs.compare( rhs ) < 0
     // -----------------------------------------------------------------------
+    [[ nodiscard ]]
     friend bool         operator <( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) < 0 ;
@@ -67,6 +65,7 @@ class comparison
     //!     \return
     //!         lhs.compare( rhs ) <= 0 ;
     // -----------------------------------------------------------------------
+    [[ nodiscard ]]
     friend bool         operator <=( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) <= 0 ;
@@ -75,6 +74,7 @@ class comparison
     //!     \return
     //!         lhs.compare( rhs ) > 0 ;
     // -----------------------------------------------------------------------
+    [[ nodiscard ]]
     friend bool         operator >( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) > 0 ;
@@ -83,6 +83,7 @@ class comparison
     //!     \return
     //!         lhs.compare( rhs ) >= 0 ;
     // -----------------------------------------------------------------------
+    [[ nodiscard ]]
     friend bool         operator >=( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) >= 0 ;

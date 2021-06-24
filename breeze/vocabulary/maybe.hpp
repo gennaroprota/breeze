@@ -197,35 +197,24 @@ public:
     typedef typename Traits::status
                         status_type ;
 
-    //      These static_asserts are ugly but... better having them.
-    //      They might be a bit less unpleasant in C++17, if we remove
-    //      the empty message. [FUTURE]
-    //
     //      Note: the static_assert on the move assignment of value_type
     //      has been excluded to cope with the case value_type ==
     //      std::string. Because, in that case, the static_assert might
     //      pass or not depending on the implementation (there was, in
     //      fact, a DR on the noexcept specification of basic_string's
-    //      move assignment operator---LWG 2063---but it was only
-    //      resolved for C++17; formally, in C++11 and C++14, the
-    //      operator should have an unconditional noexcept, despite that
-    //      being known as incorrect in virtue of that DR, but
-    //      implementations vary).
+    //      move assignment operator---LWG 2063--- and it was resolved
+    //      for C++17; but implementations vary).
     //
     //      We leave the static_assert commented out, as a reminder to
-    //      enable it when we'll require at least C++17. [FUTURE]
+    //      enable it when this will be possible. [FUTURE]
     // -----------------------------------------------------------------------
-    static_assert( std::is_nothrow_move_constructible< value_type >::value,
-                                                                          "" ) ;
-    // static_assert( std::is_nothrow_move_assignable< value_type >::value,
-    //                                                                    "" ) ;
+    static_assert( std::is_nothrow_move_constructible< value_type >::value  ) ;
+    // static_assert( std::is_nothrow_move_assignable< value_type >::value  ) ;
 
-    static_assert( std::is_nothrow_copy_constructible< status_type >::value,
-                                                                          "" ) ;
-    static_assert( std::is_nothrow_copy_assignable< status_type >::value, "" ) ;
-    static_assert( std::is_nothrow_move_constructible< status_type >::value,
-                                                                          "" ) ;
-    static_assert( std::is_nothrow_move_assignable< status_type >::value, "" ) ;
+    static_assert( std::is_nothrow_copy_constructible< status_type >::value ) ;
+    static_assert( std::is_nothrow_copy_assignable<    status_type >::value ) ;
+    static_assert( std::is_nothrow_move_constructible< status_type >::value ) ;
+    static_assert( std::is_nothrow_move_assignable<    status_type >::value ) ;
 
 
     //!\brief

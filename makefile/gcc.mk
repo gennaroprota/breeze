@@ -130,7 +130,7 @@ endif
 
 #       KEEP in sync! (See above.)
 # ----------------------------------------------------------------------------
-cpp_basic_options       := -std=c++14                           \
+cpp_basic_options       := -std=c++17                           \
                            -Wall                                \
                            -Wextra                              \
                            -pedantic                            \

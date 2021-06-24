@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -93,7 +93,7 @@
       <DiagnosticsFormat>Caret</DiagnosticsFormat>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
-      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4068 /wd4127 /wd4191 /wd4333 /wd4365 /wd4514 /wd4571 /wd4625 /wd 4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++17 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4068 /wd4127 /wd4191 /wd4333 /wd4365 /wd4514 /wd4571 /wd4625 /wd 4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <EnablePREfast>true</EnablePREfast>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
     </ClCompile>
@@ -118,7 +118,7 @@
       <DiagnosticsFormat>Caret</DiagnosticsFormat>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
-      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4068 /wd4127 /wd4191 /wd4333 /wd4365 /wd4514 /wd4571 /wd4625 /wd 4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++17 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4068 /wd4127 /wd4191 /wd4333 /wd4365 /wd4514 /wd4571 /wd4625 /wd 4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <EnablePREfast>true</EnablePREfast>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
     </ClCompile>
@@ -156,7 +156,7 @@
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4068 /wd4127 /wd4191 /wd4333 /wd4365 /wd4514 /wd4571 /wd4625 /wd 4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++17 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4068 /wd4127 /wd4191 /wd4333 /wd4365 /wd4514 /wd4571 /wd4625 /wd 4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <EnablePREfast>true</EnablePREfast>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
     </ClCompile>
@@ -188,7 +188,7 @@
       <PreprocessorDefinitions>BREEZE_SYSTEM_FAMILY=windows;BREEZE_SYSTEM=windows;BREEZE_COMPILER=msvc;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;</PreprocessorDefinitions>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
-      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4068 /wd4127 /wd4191 /wd4333 /wd4365 /wd4514 /wd4571 /wd4625 /wd 4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++17 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /volatile:iso /wd4068 /wd4127 /wd4191 /wd4333 /wd4365 /wd4514 /wd4571 /wd4625 /wd 4626 /wd4668 /wd4710 /wd4711 /wd4774 /wd4820 /wd5026 /wd5027 /wd5045 %(AdditionalOptions)</AdditionalOptions>
       <EnablePREfast>true</EnablePREfast>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
     </ClCompile>
@@ -229,8 +229,6 @@
     <ClCompile Include="..\..\breeze\metric\brz\damerau_levenshtein_distance.cpp" />
     <ClCompile Include="..\..\breeze\metric\brz\levenshtein_distance.cpp" />
     <ClCompile Include="..\..\breeze\path\brz\get_directory_separators.cpp" />
-    <ClCompile Include="..\..\breeze\path\brz\base_file_name.cpp" />
-    <ClCompile Include="..\..\breeze\path\brz\file_name_extension.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\get_current_directory.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\program.cpp" />
     <ClCompile Include="..\..\breeze\process\brz\set_current_directory.cpp" />
@@ -277,7 +275,6 @@
     <None Include="..\..\breeze\encoding\brz\base64_to_binary.tpp" />
     <None Include="..\..\breeze\encoding\brz\binary_to_base64.tpp" />
     <None Include="..\..\breeze\mathematics\brz\ceiling_of_quotient.tpp" />
-    <None Include="..\..\breeze\mathematics\brz\clamp.tpp" />
     <None Include="..\..\breeze\mathematics\brz\digital_root.tpp" />
     <None Include="..\..\breeze\mathematics\brz\gcd.tpp" />
     <None Include="..\..\breeze\mathematics\brz\integer_log2.tpp" />
@@ -337,7 +334,6 @@
     <ClInclude Include="..\..\breeze\iteration\begin_end.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\private\gcd_lcm_common.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\ceiling_of_quotient.hpp" />
-    <ClInclude Include="..\..\breeze\mathematics\clamp.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\digital_root.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\gcd.hpp" />
     <ClInclude Include="..\..\breeze\mathematics\integer_log2.hpp" />
@@ -361,8 +357,6 @@
     <ClInclude Include="..\..\breeze\operator\comparison.hpp" />
     <ClInclude Include="..\..\breeze\operator\equality_comparison.hpp" />
     <ClInclude Include="..\..\breeze\path\get_directory_separators.hpp" />
-    <ClInclude Include="..\..\breeze\path\base_file_name.hpp" />
-    <ClInclude Include="..\..\breeze\path\file_name_extension.hpp" />
     <ClInclude Include="..\..\breeze\porting\dependent_source.hpp" />
     <ClInclude Include="..\..\breeze\preprocessing\prevent_macro_expansion.hpp" />
     <ClInclude Include="..\..\breeze\preprocessing\stringize.hpp" />

@@ -63,8 +63,6 @@ source_files            := bench_harness.cpp                            \
                            damerau_levenshtein_distance.cpp             \
                            levenshtein_distance.cpp                     \
                                                                         \
-                           base_file_name.cpp                           \
-                           file_name_extension.cpp                      \
                            get_directory_separators.cpp                 \
                                                                         \
                            get_current_directory.cpp                    \

@@ -30,11 +30,6 @@ namespace breeze_ns {
 //!
 //!     \pre
 //!         x > 0
-//!
-//!     \note
-//!         This template does not compile with MSVC 2015 because the
-//!         compiler does not yet implement constexpr functions as
-//!         generalized in C++14.
 // ---------------------------------------------------------------------------
 template< typename T >
 constexpr int       integer_log2( T x ) ;

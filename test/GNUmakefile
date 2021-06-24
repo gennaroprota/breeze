@@ -72,7 +72,6 @@ source_files            := unit_test_main.cpp                           \
                            get_environment_variable_test.cpp            \
                                                                         \
                            ceiling_of_quotient_test.cpp                 \
-                           clamp_test.cpp                               \
                            digital_root_test.cpp                        \
                            gcd_test.cpp                                 \
                            is_power_of_2_test.cpp                       \
@@ -87,9 +86,6 @@ source_files            := unit_test_main.cpp                           \
                                                                         \
                            damerau_levenshtein_distance_test.cpp        \
                            levenshtein_distance_test.cpp                \
-                                                                        \
-                           base_file_name_test.cpp                      \
-                           file_name_extension_test.cpp                 \
                                                                         \
                            prevent_macro_expansion_test.cpp             \
                            stringize_after_expansion_test.cpp           \

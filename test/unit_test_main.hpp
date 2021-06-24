@@ -11,13 +11,11 @@
 
 int                 test_array_pointer() ;
 int                 test_breeze_assert() ;
-int                 test_base_file_name() ;
 int                 test_base64_to_binary() ;
 int                 test_begins_with() ;
 int                 test_binary_to_base64() ;
 int                 test_bit_cast() ;
 int                 test_ceiling_of_quotient() ;
-int                 test_clamp() ;
 int                 test_counter() ;
 int                 test_crc() ;
 int                 test_damerau_levenshtein_distance() ;
@@ -29,7 +27,6 @@ int                 test_ends_with() ;
 int                 test_entropy_source() ;
 int                 test_environment_variable_consistency() ;
 int                 test_eof_value() ;
-int                 test_file_name_extension() ;
 int                 test_format_time() ;
 int                 test_from_string() ;
 int                 test_gcd() ;

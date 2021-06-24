@@ -62,12 +62,6 @@
     <ClCompile Include="..\..\breeze\environment\windows_only\brz\windows_version_info.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breeze\path\brz\base_file_name.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\breeze\path\brz\file_name_extension.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\breeze\random\brz\entropy_source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -195,7 +189,6 @@
     <None Include="..\..\breeze\cryptography\brz\digest.tpp" />
     <None Include="..\..\breeze\encoding\brz\base64_to_binary.tpp" />
     <None Include="..\..\breeze\encoding\brz\binary_to_base64.tpp" />
-    <None Include="..\..\breeze\mathematics\brz\clamp.tpp" />
     <None Include="..\..\breeze\mathematics\brz\gcd.tpp" />
     <None Include="..\..\breeze\mathematics\brz\integer_log2.tpp" />
     <None Include="..\..\breeze\mathematics\brz\lcm.tpp" />
@@ -307,9 +300,6 @@
     <ClInclude Include="..\..\breeze\iteration\begin_end.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breeze\mathematics\clamp.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\breeze\mathematics\gcd.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -347,12 +337,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\operator\equality_comparison.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breeze\path\base_file_name.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breeze\path\file_name_extension.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breeze\porting\dependent_source.hpp">

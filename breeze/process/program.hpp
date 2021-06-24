@@ -18,6 +18,7 @@
 #include "breeze/top_level_namespace.hpp"
 #include "breeze/process/exit_code.hpp"
 #include "breeze/vocabulary/maybe.hpp"
+#include <filesystem>
 #include <string>
 
 namespace breeze_ns {
@@ -96,7 +97,7 @@ public:
     //!         `name().is_valid()`
     // -----------------------------------------------------------------------
     void                set_name( int argc, char const * const * argv,
-                                  std::string const & fallback ) ;
+                                  std::filesystem::path const & fallback ) ;
 
     //      set_name():
     //      -----------
@@ -110,7 +111,7 @@ public:
     //!     \post
     //!         `name().is_valid()`
     // -----------------------------------------------------------------------
-    void                set_name( std::string const & name ) ;
+    void                set_name( std::filesystem::path const & name ) ;
 
     //      name():
     //      -------
@@ -119,7 +120,7 @@ public:
     //!         The program name set by `set_name()`. An invalid `maybe`
     //!         if the name was never set.
     // -----------------------------------------------------------------------
-    maybe< std::string >
+    maybe< std::filesystem::path >
                         name() const ;
 
     //      declare_error():
@@ -231,10 +232,10 @@ public:
 
 private:
                         program() noexcept ;
-    void                do_set_name( std::string const & name ) ;
+    void                do_set_name( std::filesystem::path const & name ) ;
 
     gravity             m_max_gravity ;
-    maybe< std::string >
+    maybe< std::filesystem::path >
                         m_program_name ;
     void (*             m_terminate_handler)( int ) ;
 } ;

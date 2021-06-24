@@ -20,9 +20,6 @@
     <ClCompile Include="..\..\..\breeze\memory\test\array_pointer_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breeze\path\test\base_file_name_test.cpp">
-      <Filter>Component Tests</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\breeze\encoding\test\base64_to_binary_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
@@ -33,9 +30,6 @@
       <Filter>Component Tests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breeze\conversion\test\bit_cast_test.cpp">
-      <Filter>Component Tests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\breeze\mathematics\test\clamp_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breeze\mathematics\test\population_count_test.cpp">
@@ -66,9 +60,6 @@
       <Filter>Component Tests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breeze\stream\test\eof_value_test.cpp">
-      <Filter>Component Tests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\breeze\path\test\file_name_extension_test.cpp">
       <Filter>Component Tests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breeze\text\test\from_string_test.cpp">
