@@ -1,6 +1,6 @@
 <!--
  =============================================================================
-                      Copyright 2019-2020 Gennaro Prota
+                      Copyright 2019-2021 Gennaro Prota
 
                    Licensed under the 3-Clause BSD License.
               (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -29,22 +29,33 @@ https://tokei.rs/b1/github/gennaroprota/breeze?category=comments)
 [![DocsForge documentation](
 https://img.shields.io/badge/breeze-on%20docsforge-blue)](https://breeze.docsforge.com)
 
-Welcome to *Breeze*, my personal toolkit of C++ components. The components range
-from cryptography (MD5, SHA-1, SHA-2) to checksums, string utilities, operating
-system identification and much more. You'll get a precise idea by exploring the
-breeze/ subdirectory of the source tree or the full documentation (see below).
+Hi, and welcome.
 
-The library has been developed, in my spare time, over a period of about 13
-years (as of June 2019) and I don't claim that all of it is of production
-quality.
+This is a repository for quick experiments, mainly with C++ components.
 
-Some components don't take full advantage of the latest standards and some are
-or will be superseded by standard components or features. But, generally, the
-library is up to date with C++17.
+Although you'll find usable utilities here, keep in mind that most things are
+proofs of concepts, and are not of production quality.
 
-The test/ subdirectories can be a good place to look at if you need to see usage
-examples (but, please, let me know if you feel that the usage of a component
-should be documented better).
+In particular, for most components, I'm often the only author, and didn't
+benefit from any external review, which is crucial for quality.
+
+That being said, the components range from cryptography (MD5, SHA-1, SHA-2) to
+checksums, string utilities, operating system identification and much more.
+You'll get a precise idea by exploring the breeze/ subdirectory of the source
+tree or the full documentation (see below).
+
+All these experiments have been developed, in my spare time, over a period of
+about 15 years (as of June 2021). Some experiments just didn't pan out, so, in
+fact, I'm not using those parts as they are here. Also, some components don't
+take full advantage of the latest standards and some are or will be superseded
+by standard components or features. But, generally, the library is up to date
+with C++17.
+
+**NOTE: it's possible that I'll archive this repository, or make it private, and
+publish a new repository with updated components, instead. So, working on it to
+submit e.g. a pull request might not be a good idea. OTOH, you might found a
+defect which still exists in the definitive version of a component, so, feel
+free to contact me for issues (see below).**
 
 # Building the library
 
