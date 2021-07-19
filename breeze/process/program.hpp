@@ -118,12 +118,12 @@ public:
     //      declare_error():
     //      ----------------
     //
-    //      Outputs a message to `std::cerr` and declares a program
-    //      error.
-    //
-    //      This function outputs `message` and the program name,
-    //      followed by a newline, to `std::cerr`, then calls
-    //      `declare_error( g )`.
+    //!     Outputs a message to `std::cerr` and declares a program
+    //!     error.
+    //!
+    //!     This function outputs `message` and the program name,
+    //!     followed by a newline, to `std::cerr`, then calls
+    //!     `declare_error( g )`.
     // -----------------------------------------------------------------------
     void            declare_error( gravity g, std::string const & message ) ;
 
