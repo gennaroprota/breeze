@@ -54,14 +54,10 @@ describe_time( clock_type::time_point const & t )
 
 }
 
-namespace breeze_ns {
-
 std::string
-get_program_name()
+breeze::get_program_name()
 {
     return "Breeze unit tests" ;
-}
-
 }
 
 int

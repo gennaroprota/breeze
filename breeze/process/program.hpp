@@ -30,10 +30,10 @@ namespace breeze_ns {
 //!     `program::declare_error()`, so that the source of the error is
 //!     clear.
 //!
-//!     To implement this function, write:
+//!     To implement this function, don't write:
 //!
 //!     ```
-//!         namespace breeze_ns {
+//!         namespace breeze {
 //!
 //!         std::string
 //!         get_program_name()
@@ -44,15 +44,18 @@ namespace breeze_ns {
 //!         }
 //!     ```
 //!
-//!     and not:
+//!     because `breeze` is actually a namespace alias. Write:
 //!
 //!     ```
-//!         namespace breeze {  // <-- no
+//!         std::string
+//!         breeze::get_program_name() {  // <-- qualify the name here
 //!
 //!             ...
 //!
 //!         }
 //!     ```
+//!
+//!     instead.
 // ---------------------------------------------------------------------------
 std::string         get_program_name() ;
 
