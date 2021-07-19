@@ -32,25 +32,25 @@ namespace breeze_ns {
 //!
 //!     To implement this function, write:
 //!
-//!         ```
-//!             namespace breeze_ns {
+//!     ```
+//!         namespace breeze_ns {
 //!
-//!             std::string
-//!             get_program_name()
-//!             {
-//!                 ...
-//!             }
+//!         std::string
+//!         get_program_name()
+//!         {
+//!             ...
+//!         }
 //!
-//!             }
-//!         ```
+//!         }
+//!     ```
 //!
-//!         and not:
+//!     and not:
 //!
-//!         ```
-//!             namespace breeze {  // <-- no
-//!                 ...
-//!             }
-//!         ```
+//!     ```
+//!         namespace breeze {  // <-- no
+//!             ...
+//!         }
+//!     ```
 // ---------------------------------------------------------------------------
 std::string         get_program_name() ;
 
