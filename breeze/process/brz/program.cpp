@@ -18,7 +18,6 @@
 #include "breeze/process/exit_code.hpp"
 
 #include <cstdlib>
-#include <filesystem>
 #include <iostream>
 #include <ostream>
 #include <string>
@@ -38,12 +37,6 @@ int const           exit_codes[] = {
     breeze::exit_internal
 } ;
 
-bool
-has_program_name( int argc, char const * const * argv )
-{
-    return argc > 0 && argv[ 0 ][ 0 ] != '\0' ;
-}
-
 }
 
 program &
@@ -52,43 +45,6 @@ program::instance() noexcept
     static program      the_instance ;
 
     return the_instance ;
-}
-
-void
-program::set_name( int argc, char const * const * argv )
-{
-    BREEZE_ASSERT( ! m_program_name.is_valid() ) ;
-
-    if ( has_program_name( argc, argv ) ) {
-        do_set_name( argv[ 0 ] ) ;
-    }
-}
-
-void
-program::set_name( int argc, char const * const * argv,
-                             std::filesystem::path const & fallback )
-{
-    BREEZE_ASSERT( ! m_program_name.is_valid() ) ;
-    BREEZE_ASSERT( ! fallback.empty() ) ;
-
-    do_set_name( has_program_name( argc, argv )
-                    ? argv[ 0 ]
-                    : fallback ) ;
-}
-
-void
-program::set_name( std::filesystem::path const & name )
-{
-    BREEZE_ASSERT( ! m_program_name.is_valid() ) ;
-    BREEZE_ASSERT( ! name.empty() ) ;
-
-    do_set_name( name ) ;
-}
-
-maybe< std::filesystem::path >
-program::name() const
-{
-    return m_program_name ;
 }
 
 void
@@ -120,7 +76,7 @@ program::declare_error( program::gravity g ) // gps nome OK?
 void
 program::declare_error( program::gravity g, std::string const & message )
 {
-    std::cerr << message << std::endl ;
+    std::cerr << breeze::get_program_name() << ": " << message << std::endl ;
     declare_error( g ) ;
 }
 
@@ -159,12 +115,6 @@ program::program() noexcept
     :   m_max_gravity( comment ),
         m_terminate_handler( nullptr )
 {
-}
-
-void
-program::do_set_name( std::filesystem::path const & name )
-{
-    m_program_name = name.filename() ;
 }
 
 }

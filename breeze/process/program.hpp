@@ -17,11 +17,44 @@
 
 #include "breeze/top_level_namespace.hpp"
 #include "breeze/process/exit_code.hpp"
-#include "breeze/vocabulary/maybe.hpp"
-#include <filesystem>
 #include <string>
 
 namespace breeze_ns {
+
+//      get_program_name():
+//      -------------------
+//
+//!     This function must be implemented by the user of the library and
+//!     should, of course, return the program name. This will be output
+//!     together with any error message emitted by
+//!     `program::declare_error()`, so that the source of the error is
+//!     clear.
+//!
+//!     \note
+//!         To implement this function, write:
+//!
+//!         ```
+//!             namespace breeze_ns {
+//!
+//!             std::string
+//!             get_program_name()
+//!             {
+//!                 ...
+//!             }
+//!
+//!             }
+//!         ```
+//!
+//!         and not:
+//!
+//!         ```
+//!             namespace breeze {  // <-- no
+//!                 ...
+//!             }
+//!         ```
+// ---------------------------------------------------------------------------
+std::string         get_program_name() ;
+
 
 //      program:
 //      ========
@@ -64,65 +97,6 @@ public:
     // -----------------------------------------------------------------------
     static program &    instance() noexcept ;
 
-    //      set_name():
-    //      -----------
-    //
-    //!     Sets the program name from the arguments to `main()`, if
-    //!     `argv[ 0 ]` points to a non-empty name (i.e. if `argc > 0 &&
-    //!     argv[ 0 ][ 0 ] != '\0'`). Otherwise does nothing.
-    //!
-    //!     If the name is set, any leading path is stripped.
-    //!
-    //!     \pre
-    //!         No name was set before
-    //!
-    //!     \post
-    //!         \e none
-    // -----------------------------------------------------------------------
-    void                set_name( int argc, char const * const * argv ) ;
-
-    //      set_name():
-    //      -----------
-    //
-    //!     Sets the program name from the arguments to `main()`, if
-    //!     `argv[ 0 ]` points to a non-empty name; otherwise sets it
-    //!     from `fallback`.
-    //!
-    //!     In any case, any leading path is stripped.
-    //!
-    //!     \pre
-    //!         `! fallback.empty()` and no name was set before
-    //!
-    //!     \post
-    //!         `name().is_valid()`
-    // -----------------------------------------------------------------------
-    void                set_name( int argc, char const * const * argv,
-                                  std::filesystem::path const & fallback ) ;
-
-    //      set_name():
-    //      -----------
-    //
-    //!     Sets the program name to `name`, with any leading path
-    //!     stripped.
-    //!
-    //!     \pre
-    //!         `! name.empty()` and no name was set before
-    //!
-    //!     \post
-    //!         `name().is_valid()`
-    // -----------------------------------------------------------------------
-    void                set_name( std::filesystem::path const & name ) ;
-
-    //      name():
-    //      -------
-    //
-    //!     \return
-    //!         The program name set by `set_name()`. An invalid `maybe`
-    //!         if the name was never set.
-    // -----------------------------------------------------------------------
-    maybe< std::filesystem::path >
-                        name() const ;
-
     //      declare_error():
     //      ----------------
     //
@@ -146,8 +120,9 @@ public:
     //      Outputs a message to `std::cerr` and declares a program
     //      error.
     //
-    //      This function executes `std::cerr << message << std::endl`,
-    //      then calls `declare_error( g )`.
+    //      This function outputs `message` and the program name,
+    //      followed by a newline, to `std::cerr`, then calls
+    //      `declare_error( g )`.
     // -----------------------------------------------------------------------
     void            declare_error( gravity g, std::string const & message ) ;
 
@@ -232,11 +207,8 @@ public:
 
 private:
                         program() noexcept ;
-    void                do_set_name( std::filesystem::path const & name ) ;
 
     gravity             m_max_gravity ;
-    maybe< std::filesystem::path >
-                        m_program_name ;
     void (*             m_terminate_handler)( int ) ;
 } ;
 
