@@ -25,13 +25,12 @@ namespace breeze_ns {
 //      -------------------
 //
 //!     This function must be implemented by the user of the library and
-//!     should, of course, return the program name. This will be output
-//!     together with any error message emitted by
+//!     should, of course, return the program name. That name will be
+//!     output together with any error message emitted by
 //!     `program::declare_error()`, so that the source of the error is
 //!     clear.
 //!
-//!     \note
-//!         To implement this function, write:
+//!     To implement this function, write:
 //!
 //!         ```
 //!             namespace breeze_ns {
